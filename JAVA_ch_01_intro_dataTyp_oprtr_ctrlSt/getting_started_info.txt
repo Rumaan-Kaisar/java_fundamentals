@@ -26,3 +26,47 @@ jv_ch_01_00_02
 jv_ch_01_00_03
 
 
+
+-=-=-=-=-=-=-=-=-=         File/Folder structuer         -=-=-=-=-=-=-=-=-=
+
+Objective:
+    
+    Java Intro:
+        History, Var, Naming & Conventions
+        Environmnet Setup
+        Sample JAVA program (basic-skeleton)
+        File naming & Execution
+    
+    Data types, 
+    Operators 
+    Control St.
+
+
+
+1.1  History of Java And C#
+1.2  JAVA : applet, bytecode and JVM
+1.3  Installing Java Development Kit (JDK),  Netbeans IDE  and compiling a program
+1.3  Variable Declarations, Data-types, Operator Basic
+1.4  Control statement: "if" & "for"
+1.5  The Java Keywords
+1.6  The Java Class Libraries
+1.7  Java’s Primitive Types
+1.8  Literals 
+1.9  Character escape sequences or backslash  character constants
+1.10 Hexadecimal, Octal, and Binary Literals
+1.11 String literals
+1.12 Initialization and Dynamic Initialization
+1.13 Scope and Lifetime of Variables
+1.14 Operators
+1.15 Operator Precedence
+1.16 Type Conversions and type-cast (Recall  C/C++ 3.5, 3.6)
+1.17 Spacing and parenthesis
+1.18 Input Characters from the Keyboard
+1.19 if-else, Nested if, if-else-if ladder
+1.20 Switch statement(similar C/C++ switch .
+1.21 for loop (with variations)[ Recall C/C++ 2.5 , 2.11 ]
+1.22 while and do-while loop (similar to C/C++)
+1.23 Nested Loops:
+1.24 "break" and "continue"
+1.25 "break" and "continue" with LABEL (Replacing "goto" )          
+
