@@ -1,0 +1,307 @@
+    
+    ----------    Source    ----------
+    ChatGPT
+    w3school
+    javaTpoint
+    Oracle : Sldt
+    Oracle : Sldt java-ref
+
+
+Use Codex to build fundamental-circle
+Use above source to increase circle
+
+For project: use java_prctc
+
+
+
+Codex:
+
+            -=-=-=-=-=-=-=-         part 1         -=-=-=-=-=-=-=-
+
+1     Java/C# Intro, Data types, Operators & 
+       Control St.
+1.1 History of Java And C#
+1.2 JAVA : applet, bytecode and JVM
+1.3 Installing Java Development Kit (JDK), 
+       Netbeans IDE  and compiling a program
+1.3 Variable Declarations, Data-types, 
+       Operator Basic
+1.4 Control statement: "if" & "for"
+1.5 The Java Keywords
+1.6 The Java Class Libraries
+1.7 Java’s Primitive Types
+1.8 Literals 
+1.9 Character escape sequences or backslash 
+       character constants
+1.10 Hexadecimal, Octal, and Binary Literals
+1.11 String literals
+1.12 Initialization and Dynamic Initialization
+1.13 Scope and Lifetime of Variables
+1.14 Operators
+1.15 Operator Precedence
+1.16 Type Conversions and type-cast (Recall 
+         C/C++ 3.5, 3.6)
+1.17 Spacing and parenthesis
+1.18 Input Characters from the Keyboard
+1.19 if-else, Nested if, if-else-if ladder
+1.20 Switch statement(similar C/C++ switch .
+1.21 for loop (with variations)[ Recall C/C++ 2.5
+          , 2.11 ]
+1.22 while and do-while loop (similar to C/C++)
+1.23 Nested Loops:
+1.24  "break" and "continue"
+1.25  "break" and "continue" with LABEL 
+          (Replacing "goto" )
+
+
+
+
+            -=-=-=-=-=-=-=-         part 2         -=-=-=-=-=-=-=-
+
+
+2      Class, objects & method overloading
+2.1 Class in java
+2.2 Reference Variables and Assignment
+2.3 Methods and returning from methods
+2.4 Methods with parameters
+2.5 Constructor
+2.6 General form of "new" and details about
+        object declaration
+2.7 Garbage collection and finalize()
+2.8 The this reference 
+2.9 Arrays : One-Dimensional Arrays 
+2.10 Multidimensional Arrays
+2.11 Array (advanced)
+2.12 Data structure "stack" and "queue" with
+         array
+2.13 Enhanced for [ For-Each Style for Loop ]
+2.14 Strings
+2.15 Strings Are Immutable
+2.16 Strings to control SWITCH and 
+         Command-Line arguments 
+2.17 Bitwise Operators 
+2.18 The ? ternary Operator
+2.19 Signed binary numbers 
+2.20 Access Modifiers
+2.21 Pass Objects to Methods
+2.22  Two ways to Pass Arguments
+2.23 Returning Objects
+2.24 Method Overloading 
+2.25 Overloading Constructors
+2.26 Recursion
+2.27 Static in Java (Variables, Methods and
+         Blocks)
+2.28 QuickSort Algorithm
+2.29 Nested and Inner Classes
+2.30 Varargs: Variable-Length Arguments 
+
+
+
+
+            -=-=-=-=-=-=-=-         part 3         -=-=-=-=-=-=-=-
+
+
+4      Inheritance in Java/C#
+4.1 Inheritance fundamentals
+4.2 Constructors and Inheritance 
+4.3 Multilevel Hierarchy
+4.4 Superclass References and Subclass
+        Objects
+4.5 Method Overriding 
+4.6 Abstract Methods and Abstract Classes 
+4.7 Final
+4.8 The Object Class
+
+
+
+
+            -=-=-=-=-=-=-=-         part 4         -=-=-=-=-=-=-=-
+
+
+5      Packages and Interfaces
+5.1 Packages (Encapsulation of classes)
+5.2 Defining a Package
+5.3 Packages and Access specifier
+5.4 Protected Members in Packages
+5.5 Importing Packages
+5.6 API: Java's Standard Packages  
+5.7 More abstraction with Interfaces
+5.8 Implementing Interfaces
+5.9 Using Interface References
+5.10 Variables in Interfaces
+5.11 Interfaces Can Be Extended
+5.12 Default Interface Methods
+5.13 Default Method Fundamentals
+5.14 Multiple inheritance and Interface
+5.15 static Methods in an Interface
+
+
+
+            -=-=-=-=-=-=-=-         part 5         -=-=-=-=-=-=-=-
+
+
+6      Exception Handling & I/O
+6.1 Exception Handling basics 
+6.2 try and catch
+6.3 Try and catch advanced
+6.4 Throw, Rethrow and Subclasses of
+        throwable
+6.5 Finally and Throws
+6.6 Built-in Exceptions and Some Recent
+        Features
+6.7 Chained exceptions 
+6.8 Creating Exception Subclasses
+6.9 Java I/O System
+6.10 Byte Streams, Character Streams and 
+          Pre-defined Streams
+6.11 Console I/O using BYTE Streams
+6.12 File I/O using BYTE Streams
+6.12.1 Reading from a File
+6.12.2 Writing to a File
+6.12.3 Automatically Closing a File
+11.13 Reading and Writing Binary Data
+11.14 Random-Access Files
+11.15 Console-based I/O using Console class
+6.16 Console I/O Using Character Streams
+6.16.1 Reading Characters
+6.16.2 Reading Strings
+6.16.3 Console Output/writing Using
+             Character Streams
+6.17 File I/O Using Character Streams
+6.18 TYPE WRAPPERS and SCANNER class to 
+          convert numeric strings
+
+
+
+
+            -=-=-=-=-=-=-=-         part 6         -=-=-=-=-=-=-=-
+
+
+8      Threads, Enumerations & Autoboxing 
+8.1 Multithreading Introduction
+8.2 Thread Class and Runnable Interface
+8.3 Creating a Thread_1 
+8.4 Creating a Thread_2 
+8.4.1 Extending Thread or implementing 
+           Runnable -> which is better?
+8.4.2 Creating Multiple Threads
+8.4.3 isAlive() to determine when a THREAD 
+           ENDS and join() to control WAITING TIME
+8.5 Priorities of Threads
+8.6 Synchronization
+8.6.1 Synchronized Methods
+8.6.2 Synchronized Statement
+8.6.3 CONCURRENCY utilities and 
+            FORK/JOIN Framework
+8.7 Thread Communication:  notify(),    wait(), 
+       &   notifyAll()
+8.8 Suspending, Resuming, and Stopping 
+        Threads
+8.9 Using the Main Thread
+8.10 Enumerations : Introduction
+8.11 Enumerations: Constructors, Methods,
+         Instance Variables
+8.12 Restrictions of inheritance, 
+         JAVA.LANG.ENUM's ordinal() and
+         compareTo()
+8.13 BOXING - UNBOXING and TYPE 
+         WRAPPERS 
+8.14 Autoboxing/Unboxing
+8.15 STATIC import 
+8.16 Annotations (Metadata)
+
+
+
+
+            -=-=-=-=-=-=-=-         part 7         -=-=-=-=-=-=-=-
+
+
+9      Generics
+9.1 Generics : Fundamentals
+9.2 Generics : Details
+9.3 Wildcard Arguments
+9.4 Generic Methods and Generic
+        Constructors 
+9.5 Generic Interfaces
+9.6 Raw Types and Legacy Code
+9.7 TYPE INFERENCE using DIAMOND
+       Operator  <>
+9.8 Erasure
+9.9 AMBIGUITY Errors and RESTRICTIONS
+        on Generic Classes
+
+
+
+
+            -=-=-=-=-=-=-=-         part 8         -=-=-=-=-=-=-=-
+
+
+10      Lambda Expression, 
+          Method referencing and Modules 
+10.1 Introduction to LAMBDA 
+         Expressions ("LE")
+10.2 Functional Interfaces ("FI")
+10.2.1 Lambda Expression with 
+             no Parameters
+10.2.2 Parameterized Lambda Expression
+10.3 Block Lambda Expressions
+10.4 Generic Functional Interfaces
+10.5 Pass an LE as an Argument
+10.6 Lambda Expressions and 
+         Variable Capture 
+10.7 Exception and LE
+10.8 Use an array parameter in LE
+10.9Method References (MRf) and 
+         Constructor References (CRf) &
+          Introducing separator '::'
+10.10 Predefined FIs (PREDICATE interfaces) 
+            and LEs with API Library
+10.11 MODULE Intro
+10.12 MODULE: Declaration and Use
+10.13 requires and exports : Details
+10.14 java.base And PLATFORM modules
+10.15 LEGACY code and the 
+            UNNAMED module
+10.16 The to clause and requires transitive, 
+            multi-module compilation
+10.17 SERVICES
+10.18 Example of A Module-Based Service 
+10. 19 Runtime MODULE FEATURES
+10.20 Module graph
+
+
+
+
+            -=-=-=-=-=-=-=-         part 9         -=-=-=-=-=-=-=-
+
+
+11      Applet, Event, Swing and JavaFx
+11.0 AWT, Swing and JavaFx
+11.1 Applet fundamentals
+11.2 How an Applet works and 
+         applet Skeleton
+11.3  repaint(), update() and getGraphics( )
+11.4 Using the Status Window
+11.5 Passing Parameters to Applets
+11.6 The Applet Class
+11.7 Event Handling
+11.8 Using the Delegation Event Model
+11.9 More Java Keywords and more on "this"
+11.10 Swing Intro
+11.10.1 Components
+11.10.2 Containers: Swing defines two types
+              of containers. 
+11.11 JButton, JTextField, JCheckBox and
+          JList
+11.11.1 JButton:
+11.11.2 JTextField:
+11.11.3 JCheckBox:
+11.11.4 JList:
+11.12 Use Anonymous INNER CLASSES or LE 
+           to Handle Events
+11.13 Create a Swing Applet
+11.14 JavaFX fundamentals
+11.15 JavaFX Label
+11.16Events handling: Buttons, CheckBox, 
+          ListView and TextField 
+11.17 Effects and Transforms
