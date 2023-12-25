@@ -34,34 +34,73 @@ Objective:
     Java Intro:
         History, Var, Naming & Conventions
         Environmnet Setup
+
         Sample JAVA program (basic-skeleton)
         File naming & Execution
     
     Data types, 
     Operators 
     Control St.
+    Escape sequences
+    Literals
+    conIO
 
 
+jv_ch_01_01_1_intro_cnvntion            # 1.1, 1.2, 1.3(data: var, dt-type) 
+jv_ch_01_01_2_first_run                 # 1.3, 1.3(install)
+jv_ch_01_01_3_libs_keywrds              # 1.5, 1.6
+jv_ch_01_01_4_operators                 # 1.3(oprtr), 1.14, 1.15
+jv_ch_01_01_5_prantsis_space            # 1.17
+jv_ch_01_01_6_escape_Seq                # 1.9
+
+jv_ch_01_02_1_if_for_ctrl_logic         # 1.4
+jv_ch_01_02_2_if_elif_switch            # 1.19, 1.20
+jv_ch_01_02_3_loop_advanced             # 1.21, 1.22, 1.23
+jv_ch_01_02_4_break_continue            # 1.24, 1.25
+
+jv_ch_01_03_1_prmitv_type               # 1.7
+jv_ch_01_03_2_litrl_hex_bin_oct         # 1.8, 1.10
+jv_ch_01_03_3_strings                   # 1.11
+jv_ch_01_03_4_typeCast_convrtn          # 1.16
+
+jv_ch_01_04_1_init_dynmicInit           # 1.12
+jv_ch_01_04_2_scope_VarLife             # 1.13
+
+jv_ch_01_05_IO_basic                    # 1.18
+
+
+
+## main track on CODEX
 
 1.1  History of Java And C#
 1.2  JAVA : applet, bytecode and JVM
+
 1.3  Installing Java Development Kit (JDK),  Netbeans IDE  and compiling a program
 1.3  Variable Declarations, Data-types, Operator Basic
+
 1.4  Control statement: "if" & "for"
+
 1.5  The Java Keywords
 1.6  The Java Class Libraries
+
 1.7  Java’s Primitive Types
 1.8  Literals 
 1.9  Character escape sequences or backslash  character constants
 1.10 Hexadecimal, Octal, and Binary Literals
 1.11 String literals
+
 1.12 Initialization and Dynamic Initialization
 1.13 Scope and Lifetime of Variables
+
 1.14 Operators
 1.15 Operator Precedence
+
 1.16 Type Conversions and type-cast (Recall  C/C++ 3.5, 3.6)
+
 1.17 Spacing and parenthesis
+
 1.18 Input Characters from the Keyboard
+
 1.19 if-else, Nested if, if-else-if ladder
 1.20 Switch statement(similar C/C++ switch .
 1.21 for loop (with variations)[ Recall C/C++ 2.5 , 2.11 ]
@@ -69,4 +108,6 @@ Objective:
 1.23 Nested Loops:
 1.24 "break" and "continue"
 1.25 "break" and "continue" with LABEL (Replacing "goto" )          
+
+
 
