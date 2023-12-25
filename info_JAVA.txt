@@ -5,6 +5,9 @@
     javaTpoint
     Oracle : Sldt
     Oracle : Sldt java-ref
+    sams: 24h
+    sams: 21 Day
+    outline : DSA
 
 
 Use Codex to build fundamental-circle
