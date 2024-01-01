@@ -110,21 +110,92 @@
 
 
 
-// ----  rev  ----
 
-// 1. Variable Declarations,
-// 2. Data-types, 
-// 3. Operator Basic
-// 4. Variable Naming & Conventions
 
 /*
-1.3 Variable Declarations, Data-types, Operator Basic
-Variable declaration is same as C/C++ :     type var_name;  and int, float and double are available for numerical type data. 
 
-All operators rules for +, -, *, / including "=" are same as C/C++. Relational operators are also same <, >, <=, >=, ==, !=.
+    --------    Variable Declarations:    --------
+    Variable declaration is same as C/C++ :
 
-Note: Why int, float, double for numerical data type? Why not only one data type: Because int is faster than float, double. Also int require less memory. So separating int and float/double makes program fast and efficient. 
+            type var_name;  
+
+
+
+
+    --------    Data-types     --------
+           
+    int, float and double are available for numerical type data. 
+
+    Note: Why int, float, double for numerical data type? Why not only one data type?
+        Because int is faster than float, double. 
+        Also int require less memory. 
+        
+        So separating int and float/double makes program fast and efficient. 
+
+
+
+
+    --------    Operator Basic    --------
+
+    All operators rules for 
+
+        + 
+        - 
+        * 
+        / 
+
+    including "=" are same as C/C++. 
+
+    Relational operators are also same 
+
+        <
+        >
+        <=  
+        >=  
+        ==  
+        != 
+
+
 */
+
+
+
+
+/* --------    Naming Conventions in Java    --------
+    All variables, class, method names should be meaningful, descriptive
+
+    Java constants:  
+        capitalized 'SNAKE_CASE'         
+            static final int MAX_WIDTH = 999;
+
+
+    Java methods & Variables:  
+        'camelCase'      
+            getBackground();
+    
+
+    Java Class & interfaces:
+        'PascalCase'
+            class ImageSprite;
+            interface RasterDelegate;
+        
+        some programmers like to distinguish interfaces by beginning the name with an "I":
+            interface IComparable; 
+            interface IEnumerable;
+
+            
+    Java Package:
+        all lowercase
+
+
+*/
+
+
+
+// snake_case
+// camelCase
+// PascalCase
+
 
 
 /* Example : Check youur Java-version. */
@@ -138,7 +209,6 @@ public class JV_ch1_0_1_javaVersion{
         System.out.println(System.getProperty("java.class.path"));   
     }
 }
-
 
 
 
