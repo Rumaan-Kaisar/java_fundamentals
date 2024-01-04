@@ -70,7 +70,9 @@
 	
                 Executing the application/program: 
                     To actually run the program, you must use the Java interpreter, "java". 
-                        To do so, pass the class name "Example" as a command-line argument, as shown here: 	java Example
+                        To do so, pass the class name "Example" as a command-line argument, as shown here: 	
+                        
+                            java Example
                     
                         Notice, no file extension ".class" is used. 
 */
