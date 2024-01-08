@@ -79,43 +79,108 @@
 
 
 
-// ----  rev  ----
+
 /* Example 1:  The First Sample Program Line by Line: 
-                This is a simple Java program. Call this file Example.java.
+                This is a simple Java program. Call this file 'Example.java'.
 */
 
-
-
-class Example { 	// A Java program begins with a call to main( ).
-public static void main(String args[]){ System.out.println("Java drives the Web.");
+class Example { 	
+    // A Java program begins with a call to main().
+    public static void main(String args[]){ 
+        System.out.println("Java drives the Web.");
+    }
 }
-}
 
-/* 
-Method: In Java any function/subroutine is called "method"
-	The first line is a multiple line comment section. 
-	The next line is: 	class Example {
-This line uses the keyword class to declare that a new class is being defined. Example is the name of the class. The class definition begins with the opening curly brace "{" and ends with the closing curly brace "}". The elements between the two braces are members of the class.  All program activity occurs within this main-class. On the right there is a single line comment.
-	The next line: 		public static void main (String args[]) {
-This line begins the main() method (function/subroutine called method in Java). This is similar to C/C++'s main() function, and some modifier and specifier are used in addition.  This is the line at which the program will begin executing. All Java applications begin execution by calling main(). Now let's see why the specifiers/modifiers are used :
-	public is an access modifier defined previously in C/C++. In this case, main() must be declared as public, since it must be called by code outside of its class when the program is started. 
-	The keyword static allows main() to be called before an object of the class has been created. This is necessary because main() is called by the JVM before any objects are made. [Recall C/C++ 14.3: Static Class Members: A static member variable exists before any object of its class is created]
-	The keyword void simply tells the compiler that main() does not return a value. 
-	In main() there is only one parameter, String args[], which declares a parameter named args. This is an array of objects of type String. Objects of type String store sequences of characters. In this case, args receives any command-line arguments present when the program is executed [Recall 5.4 Pass Arguments to main() of C/C++, the command line argument]. This program does not make use of this " String args[]" information, but other programs will.
-	The last character on the line is the {. This signals the start of main()’s body. All of the code included in a method will occur between the method’s opening curly brace and its closing curly brace.
-	The next line of code is the statement: 	System.out.println("Java drives the Web.");
-	This line outputs the string "Java drives the Web." followed by a new line on the screen. Output is done by the built-in println() method. 
-	The line begins with System.out. "System" is a predefined class that provides access to the system, and out is the output stream that is connected to the console.  Thus, System.out is an object that encapsulates console output. 
-
-Note:		All statements in Java end with a semicolon. 
-	The Java compiler will compile classes that do not contain a main() method. But, the Java interpreter would report an error because it would be unable to find the main() method.
-	In Java there is no " return 0; " statement. Program execution terminates when "}" is reached. The { and } exist only in your program’s source code. Java does not, per se, execute the { or }.
-
-1.2.4 println() and print(): println() outputs the data in the "new line" after each call. The print() method is just like println(), except that it does not output a new line after each call.
-	Using the + operator, you can chain together as many items as you want within a single println() statement. Eg:
-System.out.println("var1 contains " +x);
-In this statement, the plus "+" sign causes the value of x to be displayed after the string that precedes it.
-	To print a blank line, simply call println() without any arguments. i.e. 	"println():"
+/*  --------    walkthrough    --------
 
 
- */
+    Method: 
+        In Java any function/subroutine is called "method"
+    
+    The line : 	class Example {
+        uses the keyword 'class' to declare that a new class is being defined. 
+        'Example' is the name of the class. 
+        The class definition begins with the opening curly brace "{" and ends with the closing curly brace "}". 
+            members: The elements between the two braces are members of the class. 
+        
+        main-class: All program activity occurs within this 'main-class'. 
+    
+    Next line is a single line comment.
+            
+    public static void main (String args[]) {
+        main() method: This line begins the 'main() method' (function/subroutine called method in Java). 
+            This is similar to C/C++'s main() function, and some modifier and specifier are used in addition.  
+            
+            This is the line at which the program will 'begin executing'. 
+            All Java applications begin 'execution' by calling main(). 
+        
+            Now let's see why the specifiers/modifiers are used :
+                public: 
+                    is an access modifier defined previously in C/C++. 
+                    In this case, main() must be declared as public, 
+                        since it must be called by 'code outside of its class' when the program is started. 
+        
+                static:
+                    static allows main() to be called 'before an object of the class
+                    This is necessary because main() is called by the JVM before any objects are made. 
+                    [Recall C/C++: Static Class Members: A static member variable exists before any object of its class is created]
+
+                void:
+                    simply tells the compiler that main() does not return a value. 
+                
+                String args[]:
+                    this only parameter of main() declares a parameter named args. 
+                    This is an array of objects of type 'String'. 
+                        Objects of type String store sequences of characters. 
+                    In this case, 'args' receives any "command-line arguments" present when the program is executed 
+                        [Recall Pass Arguments to main() of C/C++, the command line argument]. 
+                        This program does not make use of this "String args[]" information, but other programs will.
+        
+                {:
+                    This signals the start of main()’s body. 
+                    All of the code included in a method will occur between the method’s opening curly brace and its closing curly brace.
+
+
+
+        System.out.println("Java drives the Web.");
+            All statements in Java end with a semicolon.    
+        
+            This line outputs the string "Java drives the Web." followed by a new line on the screen. 
+            Output is done by the built-in println() method. 
+
+            System.out:
+                "System" is a predefined class that provides access to the 'system', and 'out' is the "output stream" that is connected to the 'console'.  
+                Thus, 'System.out' is an object that encapsulates 'console output'. 
+
+
+
+    Note:		 
+        The Java compiler 'will compile' classes that "do not contain a main()" method. 
+        But, the Java 'interpreter' would report an 'error' because it would be unable to find the main() method.
+
+
+
+    no 'return 0;'
+        In Java there is no " return 0; " statement. 
+        Program execution terminates when "}" is reached. 
+        
+        The { and } exist only in your program’s source code. Java does not, per se, execute the { or }.
+
+
+
+    --------    println() and print()    --------
+    println():
+        println() outputs the data in the "new line" after each call. 
+        
+        chain using '+':
+            Using the + operator, you can chain together as many items as you want within a single println() statement. Eg:
+                    System.out.println("var1 contains " +x);
+            In this statement, the plus "+" sign causes the value of x to be 'displayed after' the string that precedes it.
+        
+            To print a blank line, simply call println() without any arguments. i.e. 	"println():"
+    
+    
+    print():    
+        print() method is just like println(), except that it does not output a new-line after each call.
+
+*/
