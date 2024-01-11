@@ -184,3 +184,23 @@ class Example {
         print() method is just like println(), except that it does not output a new-line after each call.
 
 */
+
+
+
+/* --------    File naming    --------
+        By conversion, the "name of the main class" should match the "name of the source-file". 
+            Same name helps us to maintain and organize the codes easily.
+            The 'main-class' name and the 'source-file name' must maintain the CAPITALIZATION, because Java is case sensitive. 
+*/
+
+
+
+/* --------    Handling Syntax Errors    --------
+    When your program contains a syntax error, you shouldn’t necessarily take the compiler's messages at face value. 
+        The messages may be misleading. 
+        You may need to “second-guess” an error message in order to find the real problem. 
+        
+        Also, look at the 'last few lines' of code in your program that 'precede the line being flagged'. 
+            Sometimes an error will not be reported until 'several lines after' the point at which the error actually occurred. 
+*/
+
