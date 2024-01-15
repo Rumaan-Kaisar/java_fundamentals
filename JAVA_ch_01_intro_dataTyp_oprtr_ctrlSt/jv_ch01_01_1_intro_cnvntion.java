@@ -162,7 +162,43 @@
 
 
 /* --------    Naming Conventions in Java    --------
-    All variables, class, method names should be meaningful, descriptive
+
+    Identifiers:
+        In Java an 'identifier' is a "name" given to a method, a variable, or any other user-defined item.
+
+        Identifiers can be from one to several characters long. 
+        
+        Variable names may start with any letter of the alphabet, an underscore '_', or a dollar sign '$'. 
+            Do not start with digits
+
+            Next characters may be either a letter, a digit,  an underscore '_', or a dollar sign '$'. 
+                The underscore can be used to 'enhance the readability' of a variable name, as in line_count. 
+            
+            Uppercase and lowercase are different; that is, to Java, 'myvar' and 'MyVar' are separate names. 
+            
+        Eg: Here are some examples of acceptable identifiers:
+            Test 
+            x 
+            y2 
+            MaxLoad
+            $up 
+            _top 
+            my_var 
+            sample23
+
+
+
+    RESTRICTIONS            
+        You cannot start an identifier with a 'digit'. Thus, 12x is invalid, for example.
+        You cannot use any of the 'Java keywords' as identifier names. 
+        You should not use the name of any standard method, such as println, as an identifier. 
+
+
+
+    -=-=-=-    naming conventions    -=-=-=-
+
+    Your identifier names should reflect the meaning or usage of the items being named. 
+        i.e. all variables, class, method names should be meaningful, descriptive
 
     Java constants:  
         capitalized 'SNAKE_CASE'         
@@ -195,6 +231,7 @@
 // snake_case
 // camelCase
 // PascalCase
+
 
 
 
