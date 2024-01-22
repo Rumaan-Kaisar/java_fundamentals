@@ -1,21 +1,42 @@
 
-/* -=-=-=-=-=-=-=-=-=-=-=      chapter name      -=-=-=-=-=-=-=-=-=-=-= */
+/* -=-=-=-=-=-=-=-=-=-=-=      Opeartors in JAVA      -=-=-=-=-=-=-=-=-=-=-= 
+
+    Arithmeatic operator: 
+        All operators rules are same as C/C++.  
+            +	        Addition (also unary plus)
+            –	        Subtraction (also unary minus)
+            *	        Multiplication
+            /	        Division
+            %	        Modulus
+            ++	        Increment
+            ––	        Decrement
+            =           Assignment
+            
+
+    Relational operators: 
+        are also same as C/C++
+            ==	    Equal to	
+            !=	    Not equal to	
+            >	    GREATER than	
+            <	    LESS than	
+            >=	    Greater than or equal to	
+            <=	    Less than or equal to	
 
 
-All operators rules for +, -, *, / including "=" are same as C/C++. Relational operators are also same <, >, <=, >=, ==, !=.
+	Logical operatrs:
+            &	    AND
+            |	    OR
+            !	    NOT
+            ^	    XOR (exclusive OR)
+            
+            ||	    Short-circuit OR
+            &&	    Short-circuit AND
+            
+	
 
 
 
-1.14 Operators
-Operator	Meaning (Arithmetic)	Operator	Meaning	Operator	Meaning
-+	Addition (also unary plus)	Relational operators	Logical operatrs
-–	Subtraction (also unary minus)	==	Equal to	&	AND
-*	Multiplication	!=	Not equal to	|	OR
-/	Division	>	Greater than	^	XOR (exclusive OR)
-%	Modulus	<	Less than	||	Short-circuit OR
-++	Increment	>=	Greater than or equal to	&&	Short-circuit AND
-––	Decrement	<=	Less than or equal to	!	NOT
-	All arithmetic and relational operators can be applicable to both numeric and char type of data.
+All arithmetic and relational operators can be applicable to both numeric and char type of data.
 	relational operators are not applicable to Boolean type data. i.e.  true > false  has no meaning in Java. 
 	relational operators and logical operators can act together. For logical operators the operands must be Boolean type .
 	Increment , Decrement and their postfix-prefix: Both the ++ and -- operators can either precede (prefix) or follow (postfix) the operand. Eg: x = x + 1; can be written as prefix:    ++x;    or  as  postfix:   x++; In this case there is no difference whether the increment is applied as a prefix or a postfix. (Recall: C/C++ 2.6)
@@ -57,11 +78,11 @@ if(d != 0 & (n % d) == 0) System.out.println(d + " is a factor of " + n);	// wit
 
 int i;
 i = 0;
-/*  i incremented even though if statement fails. */
+//  i incremented even though if statement fails. 
 	if(false & (++i < 100) ) System.out.println("won't be displayed");
 	System.out.println("if stmt executed:" +i); 		// displays 1
 
-/* In this case, i is not incremented because the short-circuit operator skips the increment. */
+// In this case, i is not incremented because the short-circuit operator skips the increment. 
 	if(false && (++i < 100) ) System.out.println("won't be displayed");
 	System.out.println("if statement executed: " + i); 	// still 1 !!
 	SHORTHAND assignment operators (Recall C/C++ 7.8.3): Java allow some shorthand assignment operators similar to C/C++.
@@ -84,3 +105,4 @@ x––	––x  (prefix)	/	-	>>>	>=	!=								op=
 	(type-cast)													
 
 
+ */
