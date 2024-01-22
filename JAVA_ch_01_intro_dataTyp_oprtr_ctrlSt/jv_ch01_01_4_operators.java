@@ -23,18 +23,19 @@
             <=	    Less than or equal to	
 
 
-	Logical operatrs:
+    Logical operatrs:
             &	    AND
             |	    OR
             !	    NOT
             ^	    XOR (exclusive OR)
-            
+
             ||	    Short-circuit OR
             &&	    Short-circuit AND
             
 	
 
 
+----  rev  ----
 
 All arithmetic and relational operators can be applicable to both numeric and char type of data.
 	relational operators are not applicable to Boolean type data. i.e.  true > false  has no meaning in Java. 
