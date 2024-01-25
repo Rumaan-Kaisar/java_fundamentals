@@ -32,30 +32,105 @@
             ||	    Short-circuit OR
             &&	    Short-circuit AND
             
-	
+        Note: 
+            '||', '&&' are also called "Logical AND, OR"
+            '|', '&', '^' are  called "Bitwise AND, OR, XOR"
 
 
-----  rev  ----
 
-All arithmetic and relational operators can be applicable to both numeric and char type of data.
-	relational operators are not applicable to Boolean type data. i.e.  true > false  has no meaning in Java. 
-	relational operators and logical operators can act together. For logical operators the operands must be Boolean type .
-	Increment , Decrement and their postfix-prefix: Both the ++ and -- operators can either precede (prefix) or follow (postfix) the operand. Eg: x = x + 1; can be written as prefix:    ++x;    or  as  postfix:   x++; In this case there is no difference whether the increment is applied as a prefix or a postfix. (Recall: C/C++ 2.6)
-	However, when an increment or decrement is used as part of a larger expression, there is an important difference. 
-prefix:        ++x;   	postfix:   x++;
-When an increment or decrement operator precedes its operand, Java will perform the corresponding operation prior to obtaining the operand’s value for use by the rest of the expression.
-	x = 10;    y = ++x;
-	In this case, y will be set to 11.	If the operator follows its operand, Java will obtain the operand’s value before incrementing or decrementing it.
-	x = 10; y = x++;
-	then y will be set to 10. 
-In both cases, x is still set to 11;
+    Data-type restrictions:
+        ARITHMETIC and RELATIONAL operators can be applicable to both 'numeric' and 'char' type of data.
+        RELATIONAL operators are 'NOT applicable' to "Boolean" type data. i.e.  true > false  has no meaning in Java. 
 
-	C/C++ logical operator modification:
+    Operator combination:
+        'relational' and 'logical' operators can act together. 
+        For 'logical' operators the operands must be 'Boolean' type .
+
+
+
+----  rev [25-jan-24]  ----
+
+Java Bitwise and Shift Operators
+In Java, bitwise operators perform operations on integer data at the individual bit-level. Here, the integer data includes byte, short, int, and long types of data.
+
+There are 7 operators to perform bit-level operations in Java.
+The bitwise operators act directly upon the bits of their operands. They are defined only for integer operands. They cannot be used on bool, float, double, or class types. 
+
+Bitwise operators are used to test, set, or shift the individual bits that make up a value. Bitwise operations are important to a wide variety of systems-level programming tasks in which status information from a device must be interrogated or constructed. 
+	The bitwise operators can be used on values of type long, int, short, char, or byte. 
+	Bitwise operations cannot be used on boolean, float, or double, or class types. 
+
+
+Operator	Description
+|	Bitwise OR
+&	Bitwise AND
+^	Bitwise XOR
+~	Bitwise Complement (1's complement. Unary NOT)
+<<	Left Shift
+>>	Signed Right Shift
+>>>	Unsigned Right Shift
+
+Bitwise	bitwise AND	&
+bitwise exclusive OR	^
+bitwise inclusive OR	|
+Logical	logical AND	&&
+logical OR	||
+
+	Bitwise AND, OR, XOR, and NOT: The bitwise operators &, |, ^, and ~ perform the same operations as their Boolean logical equivalents. The difference is that the bitwise operators work on a bit-by-bit basis. 
+
+
+
+
+
+
+	C/C++ logical operator modification in JAVA:
 	[So what happened to  	bitwise AND/OR ''&' |' ?]		"&&" is for 'AND' operation in C/C++, Which is changed to "&" to denote "AND" operation in Java.
 	"||" is for 'OR' operation in C/C++, Which is changed to "|" to denote "OR" operation in Java.
 	"&&" is now denote " Short-circuit AND" operation in Java.
 	"||" is now denote " Short-circuit OR" operation in Java.
 	Newly introduced '^' operator for "XOR" operation in Java. This is unavailable in C/C++. 
+
+
+
+
+    
+
+    ------------    postfix-prefix    ------------
+    postfix-prefix:    
+        Both the ++ and -- operators can either 'precede (prefix)' or 'follow (postfix)' the operand. 
+                    Eg: x = x + 1; can be written as 
+                    prefix:    ++x;    or  as  
+                    postfix:   x++; 
+        In this case there is no difference whether the increment is applied as a prefix or a postfix. (Recall: C/C++ C_Ch2_2_1)
+	
+
+        However, when an increment or decrement is used as part of a 'larger expression', there is an important difference. 
+
+        prefix ++x
+            When ++ or -- precedes its operand, Java will perform the 'corresponding operation prior' 
+                to obtaining the operand’s value for use by the rest of the expression. For example:
+                    x = 10;
+                    y = ++x;
+                In this case, y will be set to 11.
+
+
+        postfix x++
+            If ++ or -- follows its operand, Java will obtain the operand’s value before incrementing or decrementing it.
+                x = 10; 
+                y = x++;
+            then y will be set to 10. 
+
+            Notice, In both cases, x is still set to 11;
+
+
+        In short way:
+                j = i++;    current value of i is assigned to j. Then i is incremented.
+                j = ++i;    current value of i is incremented then assigned to j 
+
+
+
+
+
 
 	Explanation for "Short-circuit AND/OR"::
 Truth table. T:true, F:false		The only difference between the normal and short-circuit versions is that the normal operands will always evaluate each operand, but short-circuit versions focus only first operand and will evaluate the second operand   iff    first operand is true.
