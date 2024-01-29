@@ -48,52 +48,54 @@
 
 
 
-----  rev [25-jan-24]  ----
+    --------  Bitwise and Shift  --------
+    Java Bitwise and Shift Operators:
+        In Java, bitwise operators perform operations on INTEGER DATA at the 'individual bit-level'. 
+        Here, the INTEGER DATA includes byte, short, int, and long types of data.
 
-Java Bitwise and Shift Operators
-In Java, bitwise operators perform operations on integer data at the individual bit-level. Here, the integer data includes byte, short, int, and long types of data.
+    There are 7 operators to perform bit-level operations in Java:
 
-There are 7 operators to perform bit-level operations in Java.
-The bitwise operators act directly upon the bits of their operands. They are defined only for integer operands. They cannot be used on bool, float, double, or class types. 
+            |       Bitwise OR
+            &       Bitwise AND
+            ^       Bitwise XOR
+            ~       Bitwise Complement (1's complement. Unary NOT)
+            <<      Left Shift
+            >>      Signed Right Shift
+            >>>     Unsigned Right Shift
 
-Bitwise operators are used to test, set, or shift the individual bits that make up a value. Bitwise operations are important to a wide variety of systems-level programming tasks in which status information from a device must be interrogated or constructed. 
-	The bitwise operators can be used on values of type long, int, short, char, or byte. 
-	Bitwise operations cannot be used on boolean, float, or double, or class types. 
+        The bitwise operators act directly upon the bits of their operands. 
+            They are defined only for 'integer operands'. 
+                can be used on values of type long, int, short, char, or byte
+            They cannot be used on bool, float, double, or class types. 
 
+    Bitwise operators are used to test, set, or shift the 'individual bits' that make up a value. 
 
-Operator	Description
-|	Bitwise OR
-&	Bitwise AND
-^	Bitwise XOR
-~	Bitwise Complement (1's complement. Unary NOT)
-<<	Left Shift
->>	Signed Right Shift
->>>	Unsigned Right Shift
+    Bitwise operations are important to a wide variety of 'systems-level programming tasks' 
+        in which status information from a device must be interrogated or constructed. 
 
-Bitwise	bitwise AND	&
-bitwise exclusive OR	^
-bitwise inclusive OR	|
-Logical	logical AND	&&
-logical OR	||
-
-	Bitwise AND, OR, XOR, and NOT: The bitwise operators &, |, ^, and ~ perform the same operations as their Boolean logical equivalents. The difference is that the bitwise operators work on a bit-by-bit basis. 
-
+    Note:
+        Bitwise AND, OR, XOR, and NOT  operators (&, |, ^, and ~) perform the 'same operations' as their "BOOLEAN LOGICAL equivalents". 
+        The difference is that the bitwise operators work on a 'bit-by-bit basis'. 
 
 
 
+	--------    C/C++ logical operator modification in JAVA    --------
+        "&&" is for 'logical AND operation in C/C++', 
+            Which is changed to "&" to denote "logical as wel as bitwise AND" operation in Java.
+            "&&" is now denote " Short-circuit AND" operation in Java.
+            i.e. in C++ "bitwise and logical AND" was different, but in JAVA '&' is for both "bitwise and logical"
+        
+        "||" is for 'logical OR operation in C/C++', 
+            Which is changed to "|" to denote "logical as wel as bitwise OR" operation in Java.
+            "||" is now denote " Short-circuit OR" operation in Java.
+            i.e. in C++ "bitwise and logical OR" was different, but in JAVA '|' is for both "bitwise and logical"
+
+        No XOR available in C++
+            Newly introduced '^' operator for "XOR" operation in Java. This is unavailable in C/C++. 
 
 
-	C/C++ logical operator modification in JAVA:
-	[So what happened to  	bitwise AND/OR ''&' |' ?]		"&&" is for 'AND' operation in C/C++, Which is changed to "&" to denote "AND" operation in Java.
-	"||" is for 'OR' operation in C/C++, Which is changed to "|" to denote "OR" operation in Java.
-	"&&" is now denote " Short-circuit AND" operation in Java.
-	"||" is now denote " Short-circuit OR" operation in Java.
-	Newly introduced '^' operator for "XOR" operation in Java. This is unavailable in C/C++. 
 
 
-
-
-    
 
     ------------    postfix-prefix    ------------
     postfix-prefix:    
@@ -131,9 +133,14 @@ logical OR	||
 
 
 
+    ------------    Short-circuit AND/OR    ------------
 
-	Explanation for "Short-circuit AND/OR"::
+----  rev [29-jan-24]  ----
+
+	
 Truth table. T:true, F:false		The only difference between the normal and short-circuit versions is that the normal operands will always evaluate each operand, but short-circuit versions focus only first operand and will evaluate the second operand   iff    first operand is true.
+
+
 	Notice the truth table, in an AND "&" operation, if the first operand is false, the outcome is false no matter what value the second operand has. 
 	In an OR operation, if the first operand is true, the outcome of the operation is true no matter what the value of the second operand. 
 So, in these two cases there is no need to evaluate the second operand. So time can be saved and more efficient code can be produced if we use "&&", "||" the "short-circuit versions" of "AND", "OR" .
