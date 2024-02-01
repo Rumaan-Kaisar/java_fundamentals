@@ -1,0 +1,28 @@
+
+----    Day count    ----
+
+11-jan-2024:    book page: 16
+                jv_ch01_01_2 - done 
+                jv_ch01_01_2 - start
+                2nd sample program - variable demo (later)
+
+22-Jan-2024:    start jv_ch01_01_4_operators
+
+25-Jan-2024:    jv_ch01_01_4_operators; logical & relational modify, i++ vs ++i
+                Next >> Difference between Bitwise vs Logical, restriction
+
+29-Jan-2024:    jv_ch01_01_4_operators; Bitwise vs Logical
+                Next >> Difference between Short-circuit vs Logical AND/OR
+
+01-feb-2024:    Short-circuit vs Logical AND/OR
+                Next >> Side effect of "short circuit" forms; SHORTHAND assignment operators; precednece
+
+
+
+SLDT Book Page count:
+    1-10 ok
+    11-16 ok
+    29 ok
+
+
+
