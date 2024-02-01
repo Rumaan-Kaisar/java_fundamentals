@@ -24,8 +24,8 @@
 
 
     Logical operatrs:
-            &	    AND
-            |	    OR
+            &	    (Logical) AND
+            |	    (Logical) OR
             !	    NOT
             ^	    XOR (exclusive OR)
 
@@ -33,8 +33,8 @@
             &&	    Short-circuit AND
             
         Note: 
-            '||', '&&' are also called "Logical AND, OR"
-            '|', '&', '^' are  called "Bitwise AND, OR, XOR"
+            '||', '&&' are also called "Shortcircuit AND, OR" [in C++ these are Logical AND, OR]
+            '|', '&', '^' are  called "Bitwise AND, OR, XOR" these are also "Logical AND, OR, XOR"
 
 
 
@@ -135,29 +135,56 @@
 
     ------------    Short-circuit AND/OR    ------------
 
-----  rev [29-jan-24]  ----
+        Truth table. T:true, F:false
+
+        ------------------------------------------
+        p       q       p&q     p|q     p^q     !p	
+        ------------------------------------------
+        T       T       T       T       F       F	
+        T       F       F       T       T       F	
+        F       T       F       T       T       T	
+        F       F       F       F       F       T	
+        ------------------------------------------
+
+    The only difference between the 'normal & |' and 'short-circuit && ||' versions is that the 
+        NORMAL operands (&, |) will always 'evaluate each operand', but 
+        SHORT-CIRCUIT versions (&&, ||) focus 'only first operand' and will evaluate the second operand   iff    'first operand is TRUE'.
+
+
+	Notice the truth table of 'Logical ANR, OR':
+        AND "&" operation: if the first operand is FALSE, the 'outcome is false' no matter what value the second operand has. 
+	    OR "|" operation: if the first operand is TRUE, the 'outcome is true' no matter what the value of the second operand. 
+
+        So, in these two cases there is no need to evaluate the second operand (no need to use Logocal '&', '|'). 
+            So time can be saved and more efficient code can be produced if we use "&&", "||" the "short-circuit versions" of "AND", "OR".
+
 
 	
-Truth table. T:true, F:false		The only difference between the normal and short-circuit versions is that the normal operands will always evaluate each operand, but short-circuit versions focus only first operand and will evaluate the second operand   iff    first operand is true.
+    short-circuit "&&" and  "||" can be used to solve following kind of situations: 
+        Since the 'modulus' operation involves a division, the short-circuit form '&&' is used to prevent a 'divide-by-zero error'.
+
+            n = 10;
+            d = 2; 
+
+            if(d!=0 && (n%d)==0){
+                System.out.println(d + " is a factor of " + n); 	// Since d is 2, the second operand "modulus" is evaluated
+            }
+
+            d = 0; // d is now set to 0
+            // in following cases '&&' is more safe
+            if(d!=0 && (n%d)==0){
+                System.out.println(d + " is a factor of " + n);	    // Since d is zero, the second operand "modulus" is not evaluated
+            }
+            if(d!=0 && (n%d)==0){
+                System.out.println(d + " is a factor of " + n);	    // without && operator. This will cause a 'divide-by-zero error'
+            }
 
 
-	Notice the truth table, in an AND "&" operation, if the first operand is false, the outcome is false no matter what value the second operand has. 
-	In an OR operation, if the first operand is true, the outcome of the operation is true no matter what the value of the second operand. 
-So, in these two cases there is no need to evaluate the second operand. So time can be saved and more efficient code can be produced if we use "&&", "||" the "short-circuit versions" of "AND", "OR" .
-p	q	p&q	p|q	p^q	!p	
-T	T	T	T	F	F	
-T	F	F	T	T	F	
-F	T	F	T	T	T	
-F	F	F	F	F	T	
-	"&&" and  "||" can be used to solve following kind of situations: Since the modulus operation involves a division, the short-circuit form of the AND is used to prevent a divide-by-zero error.
 
-n = 10;
-d = 2; 
-if(d != 0 && (n % d) == 0) System.out.println(d + " is a factor of " + n);	// Since d is 2, the second operand "modulus" is evaluated
-d = 0; 
-if(d != 0 && (n % d) == 0) System.out.println(d + " is a factor of " + n);	// Since d is zero, the second operand "modulus" is not evaluated.
-if(d != 0 & (n % d) == 0) System.out.println(d + " is a factor of " + n);	// without && operator. This will cause a divide-by-zero error.
-	Side effect of "short circuit" forms: However sometimes we need both "&", "|" and "&&", "||". In some cases you will want both operands of an AND or OR operation to be evaluated because of the side effects produced. For Example:
+----  rev [01-feb-24]  ----
+
+Side effect of "short circuit" forms: 
+    However sometimes we need both "&", "|" and "&&", "||". In some cases you will want both operands of an AND or OR operation to be evaluated because of the side effects produced. For Example:
 
 int i;
 i = 0;
@@ -168,7 +195,15 @@ i = 0;
 // In this case, i is not incremented because the short-circuit operator skips the increment. 
 	if(false && (++i < 100) ) System.out.println("won't be displayed");
 	System.out.println("if statement executed: " + i); 	// still 1 !!
-	SHORTHAND assignment operators (Recall C/C++ 7.8.3): Java allow some shorthand assignment operators similar to C/C++.
+	
+    
+    
+
+----  rev [01-feb-24]  ----
+
+	
+    
+    SHORTHAND assignment operators (Recall C/C++ 7.8.3): Java allow some shorthand assignment operators similar to C/C++.
 	To create a chain of assignments: For example, consider this fragment:	int x, y, z;
 x = y = z = 100; 	// set x, y, and z to 100
 Here the = is an operator that yields the value of the right-hand expression. Thus, the value of z = 100 is 100, which is then assigned to y, which in turn is assigned to x. Using a “chain of assignment” is an easy way to set a group of variables to a common value.
@@ -177,7 +212,10 @@ The general form of the shorthand is:   var op = expression ;
 The arithmetic and logical shorthand assignment operators :
 	+=	–=	*=	/=
 	%=	&=	|=	^=
-1.15 Operator Precedence: 
+
+
+
+    1.15 Operator Precedence: 
 Highest														Lowest
 x++	++x  (prefix)	*	+	>>	>	==	&	^	|	&&	||	?:	->	=
 x––	––x  (prefix)	/	-	>>>	>=	!=								op=
