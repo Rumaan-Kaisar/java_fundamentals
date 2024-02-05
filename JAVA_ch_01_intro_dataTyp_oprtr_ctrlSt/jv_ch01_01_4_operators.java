@@ -159,7 +159,8 @@
             So time can be saved and more efficient code can be produced if we use "&&", "||" the "short-circuit versions" of "AND", "OR".
 
 
-	
+
+    ------------    usage of "short circuit"    ------------
     short-circuit "&&" and  "||" can be used to solve following kind of situations: 
         Since the 'modulus' operation involves a division, the short-circuit form '&&' is used to prevent a 'divide-by-zero error'.
 
@@ -180,38 +181,68 @@
             }
 
 
+    ------------    Side effect of "short circuit" forms    ------------
+    Side effect of "short circuit" forms:    
+        Sometimes we need both "&", "|" and "&&", "||". 
+        there are some cases where you will want "both operands" of an AND or OR operation to be 'evaluated'. For Example:
 
-----  rev [01-feb-24]  ----
+            int i;
+            i = 0;
 
-Side effect of "short circuit" forms: 
-    However sometimes we need both "&", "|" and "&&", "||". In some cases you will want both operands of an AND or OR operation to be evaluated because of the side effects produced. For Example:
+            // 'i' incremented even though if statement fails.
+                // because 'false' and '++i<100' both evaluated
+                // during evaluation of '++i<100', i is incremented
 
-int i;
-i = 0;
-//  i incremented even though if statement fails. 
-	if(false & (++i < 100) ) System.out.println("won't be displayed");
-	System.out.println("if stmt executed:" +i); 		// displays 1
+            if(false & (++i < 100) ) System.out.println("won't be displayed");
+            System.out.println("if stmt executed:" +i); 		// displays 1
 
-// In this case, i is not incremented because the short-circuit operator skips the increment. 
-	if(false && (++i < 100) ) System.out.println("won't be displayed");
-	System.out.println("if statement executed: " + i); 	// still 1 !!
+
+            // In this case, i is not incremented because the short-circuit operator skips the increment
+                // '++i<100' is skipped here, hence i is not incremented
+
+            if(false && (++i < 100) ) System.out.println("won't be displayed");
+            System.out.println("if statement executed: " + i); 	// still 1 !!
+                
+            
+    
+
+
+    ------------    SHORTHAND assignment    ------------
+    SHORTHAND = operators: 
+        Java allow some 'shorthand assignment' operators similar to C++.
 	
-    
-    
+        To create a chain of assignments: 
+            int x, y, z;
+            x = y = z = 100; 	// set x, y, and z to 100
 
-----  rev [01-feb-24]  ----
-
+            Here the = is an operator that yields the value of the 'right-hand expression'. 
+            Thus, the value of z = 100 is 100, which is then assigned to y, which in turn is assigned to x. 
+            
+            Using a “chain of assignment” is an easy way to set a 'group of variables' to a "common value".
 	
+    Shorthand / compound assignment operators: 
+            x = x + 10; can be written as 
+            x += 10;  
+        and   
+            x = x - 100; can be written as 
+            x -= 100;  
+        In both cases the operator pairs '+='  ,  '-=' tells the compiler 
+            to assign to x the value of " x plus 10 " , " x minus 100 ".	
     
-    SHORTHAND assignment operators (Recall C/C++ 7.8.3): Java allow some shorthand assignment operators similar to C/C++.
-	To create a chain of assignments: For example, consider this fragment:	int x, y, z;
-x = y = z = 100; 	// set x, y, and z to 100
-Here the = is an operator that yields the value of the right-hand expression. Thus, the value of z = 100 is 100, which is then assigned to y, which in turn is assigned to x. Using a “chain of assignment” is an easy way to set a group of variables to a common value.
-	Shorthand / compound assignment operators: x = x + 10; can be written as x += 10;  and   x = x - 100; can be written as x -= 100;  In both cases the operator pairs +=  ,  -= tells the compiler to assign to x the value of " x plus 10 " , " x minus 100 ".	This shorthand will work for all the binary operators in Java .
-The general form of the shorthand is:   var op = expression ;
-The arithmetic and logical shorthand assignment operators :
-	+=	–=	*=	/=
-	%=	&=	|=	^=
+            
+    This shorthand will work for all the 'binary operators' in Java . The general form of the shorthand is:   
+            var op = expression ;
+        
+    Following is a list of the ARITHMETIC and LOGICAL 'shorthand assignment operators' :
+    
+            +=	
+            –=	
+            *=	
+            /=
+            %=	
+            &=	
+            |=	
+            ^=
 
 
 
