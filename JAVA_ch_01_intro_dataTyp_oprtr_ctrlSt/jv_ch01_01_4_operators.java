@@ -234,7 +234,7 @@
             var op = expression ;
         
     Following is a list of the ARITHMETIC and LOGICAL 'shorthand assignment operators' :
-    
+
             +=	
             –=	
             *=	
@@ -246,15 +246,39 @@
 
 
 
-    1.15 Operator Precedence: 
-Highest														Lowest
-x++	++x  (prefix)	*	+	>>	>	==	&	^	|	&&	||	?:	->	=
-x––	––x  (prefix)	/	-	>>>	>=	!=								op=
-(Postfix)	~	%		<<	<									
-	!				<=									
-	+ (unary)				instanceof									
-	– (unary)													
-	(type-cast)													
+    ------------    Operator Precedence    ------------
+    Highest 
+            x++   x––   (Postfix)
 
+            ++x   ––x   (prefix)   ~   !   + (unary)   – (unary)   (type-cast)
 
- */
+            *   /   %
+    
+            +   -
+
+            >>   >>>   <<
+
+            >   >=   <   <=   instanceof
+
+            ==   !=
+            
+            &
+
+            ^
+
+            |
+
+            &&
+
+            ||
+
+            ?:
+
+            ->
+
+            =   op=
+
+    Lowest
+
+*/
+
