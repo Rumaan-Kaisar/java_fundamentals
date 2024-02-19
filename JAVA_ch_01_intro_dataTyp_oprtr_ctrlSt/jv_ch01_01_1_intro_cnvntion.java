@@ -118,6 +118,9 @@
     Variable declaration is same as C/C++ :
 
             type var_name;  
+    
+        A 'variable' is a "named memory location" that can be assigned a value.
+            Further, the value of a variable can be changed during the execution of a program
 
 
 
