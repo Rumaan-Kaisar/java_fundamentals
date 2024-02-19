@@ -42,10 +42,8 @@
 
 
 
-// ----  rev[15-2-24]  ----
-
 /* Example 1: Following demonstrate 'IF statement' */
-public class JV_ch1_3_1_ctrl_statement_selection{
+public class jv_ch01_02_1_if_ctrl{
     public static void main(String args[]){
 
         // ----------------------  IF statement  ----------------------  
@@ -74,12 +72,13 @@ public class JV_ch1_3_1_ctrl_statement_selection{
 
     }
 }
+// Note: using online compiler, use 'Main' insted of 'jv_ch01_02_1_if_ctrl' as file naming
 
 
 
 
 /* Example 2: Following demonstrate 'FOR-loop' */
-public class JV_ch1_3_2_ctrl_statement_loops{
+public class jv_ch01_02_1_for_ctrl{
     public static void main(String args[]){
         int count;
 
@@ -92,7 +91,6 @@ public class JV_ch1_3_2_ctrl_statement_loops{
         for(int i = 5; i > 0; i--){
             System.out.println("This is i: " + i);
         }
-
         System.out.println("Block is Done!");
     }
 }
