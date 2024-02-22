@@ -58,3 +58,40 @@ class var_int {
     }
 }
 
+
+
+
+/* Example 2: This program illustrates the differences  between 'int' and 'double'.
+                Java defines two floating-point types: float and double, 
+                    which represent single- and double-precision values, respectively. 
+                    Of the two, 'double' is the most "commonly used"
+
+                Notice: 
+                    when 'var' is divided by 4, a "whole-number division" is performed, and 
+                        Fractional component lost: the outcome is 2
+                    when x is divided by 4, the fractional component is preserved 
+                    print a blank line, by calling println() without any arguments.
+*/
+class Example3 {
+    public static void main(String args[]) {
+        int var; // declares an int 
+        double x; // declares a floating-point variable
+
+        var = 10; // assign value
+        x = 10.0; // assign value
+
+        System.out.println("Original value of var: " + var);
+        System.out.println("Original value of x: " + x);
+        System.out.println(); // print a blank line
+        
+        // now, divide both by 4
+        var = var/4;    // Fractional component lost
+        x = x/4;
+
+        System.out.println("var after division: " + var);
+        System.out.println("x after division: " + x);
+    }
+}
+
+
+
