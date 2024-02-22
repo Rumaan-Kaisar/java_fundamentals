@@ -31,7 +31,8 @@
 
 
 
-/* Example 3: A 'variable' is a "named memory location" that can be assigned a value.
+
+/* Example 1: A 'variable' is a "named memory location" that can be assigned a value.
                 The following program creates two variables called var1 and var2: 
 
                 Notice: 
@@ -47,11 +48,13 @@ class var_int {
         int var2; // this declares another int variable
 
         var1 = 1024; // this assigns 1024 to var1
+
         System.out.println("var1 contains " + var1);
+
         var2 = var1 / 2;    // division operation
+
         System.out.print("var2 contains var1 / 2: ");
         System.out.println(var2);
     }
 }
-
 
