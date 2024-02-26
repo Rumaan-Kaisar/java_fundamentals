@@ -95,3 +95,30 @@ class Example3 {
 
 
 
+
+/*  Example 3: "Converting Gallons to Liters"
+                The program will work by declaring two double variables. 
+                    One will hold the number of the gallons, and the second will hold the number of liters after the conversion. 
+                There are 3.7854 liters in a gallon. Thus, to convert gallons to liters, the gallon value is multiplied by 3.7854.
+                The program displays both the number of 'gallons' and the equivalent number of 'liters'. 
+*/
+
+// Try This 1_1: This program converts gallons to liters. Call this program GalToLit.java.
+
+class GalToLit {
+    public static void main(String args[]) {
+        double gallons; // holds the number of gallons
+        double liters; // holds conversion to liters
+    
+        gallons = 10;   // start with 10 gallons
+        liters = gallons * 3.7854;  // convert to liters
+        System.out.println(gallons + " gallons is " + liters + " liters.");
+    }
+}
+
+// Compile the program using the following command line:
+javac GalToLit.java
+
+// Run the program using this command:
+java GalToLit
+
