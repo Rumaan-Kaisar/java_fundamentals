@@ -77,7 +77,40 @@ public class jv_ch01_02_1_if_ctrl{
 
 
 
-/* Example 2: Following demonstrate 'FOR-loop' */
+/* Example 2: Here is a program that illustrates the if statement: */
+
+// Demonstrate the if. Call this file 'IfDemo.java'.
+class IfDemo {
+    public static void main(String args[]) {
+        int a, b, c;
+
+        a = 2;
+        b = 3;
+
+        if(a < b) System.out.println("a is less than b");
+        // this won't display anything
+        if(a == b) System.out.println("you won't see this");
+
+        System.out.println();   // print a blank line
+        
+        c = a - b; // c contains -1
+        System.out.println("c contains -1");
+
+        if(c >= 0) System.out.println("c is non-negative");
+        if(c < 0) System.out.println("c is negative");
+        System.out.println();
+
+        c = b - a; // c now contains 1
+        System.out.println("c contains 1");
+        if(c >= 0) System.out.println("c is non-negative");
+        if(c < 0) System.out.println("c is negative");
+    }
+}
+
+
+
+
+/* Example 3: Following demonstrate 'FOR-loop' */
 public class jv_ch01_02_1_for_ctrl{
     public static void main(String args[]){
         int count;
