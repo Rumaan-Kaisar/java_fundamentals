@@ -150,3 +150,22 @@ class BlockDemo {
     }
 }
 
+
+
+
+/* Example 5: Does the use of a code block introduce any 'run-time inefficiencies'? 
+                In other words, does Java actually execute the '{' and "}"?
+
+                Ans: No. Code blocks do not add any overhead whatsoever. 
+                    In fact, because of their ability to simplify the coding of certain algorithms, 
+                    their use generally increases speed and efficiency.
+
+                    Also, the { and } exist only in your program’s source code. 
+                        Java does not, per se, execute  the { or }
+
+                However, blocks of code have additional properties and uses.
+                The main reason for their existence is to create logically inseparable units of code 
+*/
+
+
+
