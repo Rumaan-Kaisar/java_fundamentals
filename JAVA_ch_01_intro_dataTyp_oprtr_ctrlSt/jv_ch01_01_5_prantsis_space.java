@@ -21,3 +21,41 @@
 
 
 
+
+/* ----------------    Semicolons and Positioning    ----------------
+    ';' used to terminate a statement. 
+        each individual statement must be ended with a semicolon.
+        
+
+    Block of code: 
+        A block is a set of logically connected statements that are surrounded by '{' and '}'
+        A block is NOT terminated by a semicolon ';'
+            instead, the end of the block is indicated by the closing brace.
+
+
+    Line-breaks or multiline:
+        Java does not recognize the end of the line as a 'terminator'. 
+        the ';' is actual terminator
+        For this reason, it does not matter where on a line you put a statement. For example,
+                x = y;
+                y = y + 1;
+                System.out.println(x + " " + y);
+
+        is the same as the following, to Java:
+
+                x = y; y = y + 1; System.out.println(x + " " + y);
+
+
+        Furthermore, the individual elements of a statement can also be put on separate lines. 
+            Following is perfectly acceptable:
+                System.out.println("This is a long line of output" +
+                x + y + z +
+                "more output");
+            Breaking long lines in this fashion makes "more readable" code.
+
+
+    Indentation Practices:
+        In Java it does not matter where you place statements relative to each other on a line. 
+            indentation style is allowed for more readable programs.
+*/
+
