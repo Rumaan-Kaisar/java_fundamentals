@@ -169,3 +169,40 @@ class BlockDemo {
 
 
 
+
+/* Example 6: Improving the Gallons-to-Liters Converter
+                    use the for loop, 
+                    the if statement, and 
+                    code blocks
+
+                This new version will print a table of conversions, 
+                    beginning with 1 gallon and ending at 100 gallons.
+
+                After every 10 gallons, a blank line will be output. 
+
+                This is accomplished through the use of a variable called 'counter' 
+                    that counts the number of lines that have been output.
+*/
+
+// This program displays a conversion table of gallons to liters.
+class GalToLitTable {
+    public static void main(String args[]) {
+        double gallons, liters;
+        int counter;
+
+        counter = 0;
+        for(gallons = 1; gallons <= 100; gallons++) {
+            liters = gallons * 3.7854; // convert to liters
+            System.out.println(gallons + " gallons is " + liters + " liters.");
+            counter++;
+            // every 10th line, print a blank line
+            if(counter == 10) {
+                System.out.println();
+                counter = 0; // reset the line counter
+            }
+        }
+    }
+}
+
+
+
