@@ -131,3 +131,16 @@ java GalToLit
                 The contents of a variable can be changed during the execution of a program. 
 */
 
+
+
+    
+/* Example 5. Which of the following variable names is invalid?
+
+                        A. count
+                        B. $count
+                        C. count27
+                        D. 67count
+
+                The invalid variable is "D. 67count" Variable names cannot begin with a digit 
+*/
+
