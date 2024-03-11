@@ -259,3 +259,13 @@ public class JV_ch1_0_1_javaVersion{
                 Bytecode helps Java achieve both portability and security.
 */
 
+
+
+
+/* Example 3. What are the three main principles of object-oriented programming? 
+
+                Encapsulation, 
+                Polymorphism, and 
+                Inheritance
+*/
+
