@@ -204,3 +204,27 @@ class Example {
             Sometimes an error will not be reported until 'several lines after' the point at which the error actually occurred. 
 */
 
+
+
+
+/* Example 1: Where do Java programs begin execution? 
+
+                Java programs begin execution at main()
+*/
+
+
+
+
+/* Example 2: If you make a typing mistake when entering your program, what sort of error will result? 
+                
+                A syntax error.
+*/
+
+
+
+
+/* Example 3: Does it matter where on a line you put a statement? 
+
+                No, Java is a free-form language 
+*/
+
