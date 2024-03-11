@@ -125,4 +125,9 @@ java GalToLit
 
 
 
+/* Example 4: What is a variable?
+
+                A variable is a 'named memory location'. 
+                The contents of a variable can be changed during the execution of a program. 
+*/
 
