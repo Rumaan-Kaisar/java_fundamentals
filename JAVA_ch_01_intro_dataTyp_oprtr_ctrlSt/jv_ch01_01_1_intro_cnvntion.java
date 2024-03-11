@@ -230,7 +230,7 @@
 */
 
 
-
+// --------    identifier naming    --------
 // snake_case
 // camelCase
 // PascalCase
@@ -238,7 +238,7 @@
 
 
 
-/* Example : Check youur Java-version. */
+/* Example 1: Check youur Java-version. */
 public class JV_ch1_0_1_javaVersion{
     public static void main(String[] args) {
         System.out.println(System.getProperty("java.version"));
@@ -251,4 +251,11 @@ public class JV_ch1_0_1_javaVersion{
 }
 
 
+
+
+/* Example 2. What is "BYTECODE" and why is it important to Java’s use for Internet programming? 
+
+                Bytecode is a highly optimized 'set of instructions' that is executed by the Java Virtual Machine 'JVM'.
+                Bytecode helps Java achieve both portability and security.
+*/
 
