@@ -222,3 +222,9 @@ class GalToLitTable {
 */
 
 
+
+
+/* Example 8. How do you create a block of code?
+                A block of code is started with a { and ended with a }. 
+*/
+
