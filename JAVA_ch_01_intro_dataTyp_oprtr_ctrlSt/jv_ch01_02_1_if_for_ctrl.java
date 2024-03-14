@@ -206,3 +206,17 @@ class GalToLitTable {
 
 
 
+
+/* Example 7. Show the general form of the "if" statement. Show the general form of the "for loop". 
+
+    The general form of the "IF":
+
+        if(condition) statement;
+
+        
+
+    The general form of the "FOR":
+
+        for(initialization; condition; iteration) statement;
+
+*/
