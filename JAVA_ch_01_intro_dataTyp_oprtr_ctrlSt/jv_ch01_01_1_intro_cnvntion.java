@@ -269,3 +269,15 @@ public class JV_ch1_0_1_javaVersion{
                 Inheritance
 */
 
+
+
+
+/* Example 4. How do you create a single-line comment? How do you create a multiline comment? */
+
+A single-line comment begins with: 
+// and ends at the end of the line. 
+
+A multiline comment begins with:
+/* and ends with */
+
+
