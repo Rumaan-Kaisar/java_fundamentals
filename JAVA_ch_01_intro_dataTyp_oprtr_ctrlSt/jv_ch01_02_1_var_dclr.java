@@ -144,3 +144,22 @@ java GalToLit
                 The invalid variable is "D. 67count" Variable names cannot begin with a digit 
 */
 
+
+
+    
+/* Example 6. The moon's gravity is about 17 percent that of earth's. 
+                Write a program that computes your effective weight on the moon. */
+
+// Compute your weight on the moon.
+class moon_weight {
+    public static void main(String args[]) {
+        double earthweight; // weight on earth
+        double moonweight; // weight on moon
+    
+        earthweight = 165;
+        moonweight = earthweight * 0.17;
+
+        System.out.println(earthweight + " earth-pounds is equivalent to " + moonweight + " moon-pounds.");
+    }
+}
+
