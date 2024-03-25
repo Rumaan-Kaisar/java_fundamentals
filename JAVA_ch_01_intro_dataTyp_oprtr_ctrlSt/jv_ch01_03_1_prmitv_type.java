@@ -1,26 +1,96 @@
 
+/*  -=-=-=-=-=-=-=-=-=-=-=      PRIMITIVE Types and LITERALS      -=-=-=-=-=-=-=-=-=-=-= 
 
-/* -=-=-=-=-=-=-=-=-=-=-=      chapter name      -=-=-=-=-=-=-=-=-=-=-= */
+    Built-in DATA TYPES:
+        Java contains two general categories of built-in data types:
+
+                object-oriented
+                non-objectoriented
 
 
- /* 
-    Java contains two general categories of built-in data types:
-    object-oriented
-    non-objectoriented
-
-    1.  Primitive types:
+    PRIMITIVE types:
         i)      Boolean : 1 is for "true" and 0 is for "false"
         ii)     Integer numbers: byte, short, int, long
-
         iii)    Character: char
         iv)     Floating numbers: double, float
+
+        There are 8 PRIMITIVE-TYPES of data, which are shown in the Table.
+            These are also called 'elemental' or "simple".
+        
+                    boolean     1 bit (true), 0 bit (false)
+                    byte        8 bit
+                    short       16 bit
+                    int         32 bit
+                    long        64 bit
+                    char        16 bit
+                    double      32 bit
+                    float       64 bit
+
+        The term PRIMITIVE is used to indicate that these types are "not objects" in an Object-Oriented sense,
+            PRIMITIVE means normal "BINARY values". 
+
+
+    Literals / constants:
+        Eg: 100 is a literal.
+
+        
+    // --------    rev[25-mar-24]    --------
+
+    Literal specifier:
+        By default, integer literals are of type int. 
+        long: 
+        To specify a long literal, append an l or an L. For example, 12 is an int, but 12L is a long.
+By default, floating-point literals are of type double. To specify a float literal, append an F or f.  Eg:  10.19F  is of type float.
+
+
+	Although integer literals create an int value by default, they can still be assigned to variables of type char, byte, or short as long as the value being assigned can be represented by the target type. An integer literal can always be assigned to a long variable.
+
+In JDK 7, you can embed one or more underscores into an integer or floating-point literal. Doing so can make it easier to read values consisting of many digits. When the literal is compiled, the underscores are simply discarded. Here is an example: 123_45_1234 specifies the value 123,451,234. The use of "_" is particularly useful when encoding things like part numbers, customer IDs, and status codes .
+
+
+
 
     By default, integer literals are of type "int". To specify a "long" literal, append an "l or an L". For example, 12 is an int, but "12L" is a long.
     By default, floating-point literals are of type "double". To specify a "float" literal, append an "F or f".  Eg:  "10.19F"  is of type float.
     underscores: "123_45_1234" specifies the value "123,451,234". 
         The use of "_" is particularly useful when encoding things like part numbers, customer IDs, and status codes . 
 
- */
+
+
+
+    
+
+
+    Type group	Type specifier	Meaning	Width in bit	Range
+    Boolean	boolean	Represents true/false values	1 bit (true), 0 bit (false)	0 and 1
+    Integer
+    numbers	byte	8-bit integer	8 bit	–128 to 127
+        short	Short integer	16	–32,768 to 32,767
+        int	Integer	32	–2,147,483,648 to 2,147,483,647
+        long	Long integer	64	–9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+    Character	char	Character	16	0 to 65,536
+    Floating
+    numbers	double	Double-precision floating point	32	–2,147,483,648 to 2,147,483,647
+        float	Single-precision floating point	64	–9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+    	Size of Boolean data type "boolean" is 1 bit long. 1 is for "true" and 0 is for "false". However, the actual size of a boolean variable in memory is not precisely defined (undefined?), by java specification.
+    	double is the most commonly used because all of the math functions in Java’s class library use double values. For example, the sqrt() method (which is defined by the standard Math class ) returns a double value that is the square root of its double argument.
+    	In Java long is 64 bit and in C/C++ long int is 32 bit. Also there is no unsigned (+ve only) in Java.
+    	Characters in Java is actually int type, also it can be used for integer data types. However, it is generally used for character type data. In Java, char is  not 8-bit like C/C++. Instead, Java uses Unicode. Unicode defines a character set that can represent all of the characters found in all human languages and for this it requires 16 bit. In Java, char is an unsigned 16-bit type having a range of 0 to 65,536. The standard 8-bit ASCII character set is a subset of Unicode and also available in Java.
+    	A character variable can be assigned a value by enclosing the character in single quotes which makes the character act like a constant (called character constants Recall 1.2.1 C/C++, Constant, 'A' is a char constant). Eg: 	char ch; ch='b';
+
+    Note:	Math class is similar to C's  math.h header file. As well as all other standard classes of Java they are all like header files.  To access a member of Math class (i.e. a method ) we use the "." operator as we did for println(). Eg: to access sqrt():
+    Math.sqrt(x*x + y*y)
+
+
+
+
+
+*/
+
+
+
+
+
 
 
 
@@ -254,4 +324,3 @@ public class JV_ch1_2_1_primitive_types{
 /* Java Octal to Decimal conversion: Integer.parseInt()
 The Integer.parseInt() method converts a string to an int with the given radix. If you pass 8 as a 'radix', it converts an 'octal' string into 'decimal'. 
  */
-
