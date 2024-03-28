@@ -34,62 +34,77 @@
         Eg: 100 is a literal.
 
         
-    // --------    rev[25-mar-24]    --------
-
     Literal specifier:
-        By default, integer literals are of type int. 
+        By default, integer literals are of type "int". 
+
         long: 
-        To specify a long literal, append an l or an L. For example, 12 is an int, but 12L is a long.
-By default, floating-point literals are of type double. To specify a float literal, append an F or f.  Eg:  10.19F  is of type float.
+            To specify a long literal, append an 'l' or an 'L'. 
+            For example, 12 is an "int", but 12L is a "long".
 
-
-	Although integer literals create an int value by default, they can still be assigned to variables of type char, byte, or short as long as the value being assigned can be represented by the target type. An integer literal can always be assigned to a long variable.
-
-In JDK 7, you can embed one or more underscores into an integer or floating-point literal. Doing so can make it easier to read values consisting of many digits. When the literal is compiled, the underscores are simply discarded. Here is an example: 123_45_1234 specifies the value 123,451,234. The use of "_" is particularly useful when encoding things like part numbers, customer IDs, and status codes .
-
-
-
-
-    By default, integer literals are of type "int". To specify a "long" literal, append an "l or an L". For example, 12 is an int, but "12L" is a long.
-    By default, floating-point literals are of type "double". To specify a "float" literal, append an "F or f".  Eg:  "10.19F"  is of type float.
-    underscores: "123_45_1234" specifies the value "123,451,234". 
-        The use of "_" is particularly useful when encoding things like part numbers, customer IDs, and status codes . 
+        float:
+            By default, floating-point literals are of type 'double'. 
+            To specify a float literal, append an 'F' or 'f'.  
+            Eg:  "10.19F"  is of type 'float'.
 
 
 
+    int to char / byte / short:
+        'int' can be assigned to variables of type char, byte, or short 
+            as long as the 'value being assigned' can be represented by the target type (i.e. char / byte / short).
 
-    
-
-
-    Type group	Type specifier	Meaning	Width in bit	Range
-    Boolean	boolean	Represents true/false values	1 bit (true), 0 bit (false)	0 and 1
-    Integer
-    numbers	byte	8-bit integer	8 bit	–128 to 127
-        short	Short integer	16	–32,768 to 32,767
-        int	Integer	32	–2,147,483,648 to 2,147,483,647
-        long	Long integer	64	–9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
-    Character	char	Character	16	0 to 65,536
-    Floating
-    numbers	double	Double-precision floating point	32	–2,147,483,648 to 2,147,483,647
-        float	Single-precision floating point	64	–9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
-    	Size of Boolean data type "boolean" is 1 bit long. 1 is for "true" and 0 is for "false". However, the actual size of a boolean variable in memory is not precisely defined (undefined?), by java specification.
-    	double is the most commonly used because all of the math functions in Java’s class library use double values. For example, the sqrt() method (which is defined by the standard Math class ) returns a double value that is the square root of its double argument.
-    	In Java long is 64 bit and in C/C++ long int is 32 bit. Also there is no unsigned (+ve only) in Java.
-    	Characters in Java is actually int type, also it can be used for integer data types. However, it is generally used for character type data. In Java, char is  not 8-bit like C/C++. Instead, Java uses Unicode. Unicode defines a character set that can represent all of the characters found in all human languages and for this it requires 16 bit. In Java, char is an unsigned 16-bit type having a range of 0 to 65,536. The standard 8-bit ASCII character set is a subset of Unicode and also available in Java.
-    	A character variable can be assigned a value by enclosing the character in single quotes which makes the character act like a constant (called character constants Recall 1.2.1 C/C++, Constant, 'A' is a char constant). Eg: 	char ch; ch='b';
-
-    Note:	Math class is similar to C's  math.h header file. As well as all other standard classes of Java they are all like header files.  To access a member of Math class (i.e. a method ) we use the "." operator as we did for println(). Eg: to access sqrt():
-    Math.sqrt(x*x + y*y)
+        An integer literal can always be assigned to a long variable.
 
 
 
+    Underscore '_' Embedding:
+        In JDK 7, you can embed one or more underscores into an integer or floating-point literal. 
+        Doing so can "make it easier to read" values consisting of many digits. 
+        When the literal is compiled, the underscores are simply 'DISCARDED'. 
 
+        The use of "_" is particularly useful when encoding things like: 
+            part numbers, customer IDs, and status codes .
+
+        Here is an example: 123_45_1234 specifies the value 123,451,234. 
+
+
+
+    character constant:
+        A character variable can be assigned as value by enclosing the character in single quotes '' 
+            which makes the character act like a constant 
+        Eg: 	char ch; ch='b';
+
+
+            
+    Using standard classes:        
+        standard classes of Java they are all like header files of C++.  
+        To access a member-functions of Math class (i.e. a method ) we use the "." operator as we did for println(). 
+        
+        Eg: to access sqrt():
+            Math.sqrt(x*x + y*y)
+
+
+
+    Notes:
+        Size of Boolean data type "boolean" is 1 bit long. 1 is for "true" and 0 is for "false". 
+            However, the actual size of a boolean variable in memory is not precisely defined, by java specification.
+
+        double is the most commonly used because all of the "MATH functions" in Java’s class library use double values.
+            For example, the sqrt() method returns a 'double'
+
+        JAVA vs C++:
+            In Java 'long' is 64 bit and in C/C++ "long int" is 32 bit. 
+            Also there is no unsigned (+ve only) in Java.
+            Characters in Java is actually 'int' type, also it can be used for integer data types. 
+            In Java, "char" is  not 8-bit like C/C++. 
+                Instead, Java uses "Unicode". therefore "16-bit" is used for char.
+                In Java, char is an unsigned 16-bit type having a range of 0 to 65,536. 
+                The standard 8-bit ASCII character set is a subset of Unicode and also available in Java.
 
 */
 
 
 
-
+// ----  rev[28-mar-24]  ----
 
 
 
