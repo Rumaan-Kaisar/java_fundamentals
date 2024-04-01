@@ -104,22 +104,72 @@
 
 
 
-// ----  rev[28-mar-24]  ----
+// ------------    Java's Primitive Types    ------------
 
+/*
+    boolean (not precise, 1-bit)         true/false values
 
-
-
-/* 
+    double    (64-bit)                   Double-precision floating point
+    float     (32-bit)                   Single-precision floating point
  
-    boolean(not precise, 1-bit)    true/false values
-    byte(8-bit)         8-bit integer   
-    char(16-bit)        Character: Java use "unicode", ASCII(8-bit) is subset of unicode
-    double(64-bit)      Double-precision floating point
-    float(32-bit)       Single-precision floating point
-    int(32-bit)         Integer
-    long(64-bit)        Long integer
-    short(16-bit)       integer         
- */
+    char      (16-bit)                   Character: Java use "unicode", ASCII(8-bit) is subset of unicode
+
+    byte      (8-bit)                    8-bit integer  
+    int       (32-bit)                   Integer
+    long      (64-bit)                   Long integer
+    short     (16-bit)                   integer         
+
+
+    Java defines "four integer types": byte, short, int, and long, 
+
+        byte      8      –128    to    127
+        short     16     –32,768    to    32,767
+        int       32     –2,147,483,648    to    2,147,483,647
+        long      64     –9,223,372,036,854,775,808    to    9,223,372,036,854,775,807
+
+
+    Itegral types:
+        char can also be categorized as an integer type in Java.
+        However, char type is treated separately.
+
+        Java defines a "type category" called INTEGRAL TYPES, it includes: byte, short, int, long, and char. 
+            Because they all hold whole-number, binary values. 
+
+        However, the purpose of the first four is to represent "numeric integer quantities". 
+        The purpose of "char" is to represent "characters".
+
+        i.e. the principal uses of char and the other integral types are fundamentally different. 
+            That's why the char type is treated separately
+*/
+
+
+
+
+/* Example 1: When you need an integer that has a range greater than int, use long. 
+                For example, here is a program that computes the "number of cubic inches" 
+                contained in a cube of one cubic-mile. 
+
+                Hint: 1 mile = 5280 feet; 1 feet = 12 inches
+*/
+
+// Compute the number of cubic inches in 1 cubic mile.
+class InchesOneCubicMile {
+    public static void main(String args[]) {
+        long cubicInch;
+        long inchMile;
+
+        inchMile = 5280 * 12;   // 1 mile = 5280 feet; 1 feet = 12 inches
+        cubicInch = inchMile * inchMile * inchMile;
+
+        System.out.println("There are " + cubicInch + " cubic inches in a cubic mile.");
+    }
+}
+
+// Output:
+// There are 254358061056000 cubic inches in cubic mile.
+
+
+
 
 public class JV_ch1_4_1_data_types{
     public static void main(String[] args) {
