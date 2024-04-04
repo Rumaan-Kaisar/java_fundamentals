@@ -171,17 +171,38 @@ class InchesOneCubicMile {
 
 
 
+/* Example 2: Use the Pythagorean theorem to find the length of the hypotenuse
+                given the lengths of the two opposing sides.
+
+                Note that, sqrt() is a member of the standard Math class. 
+                Notice how sqrt() is called; it is preceded by the name Math. 
+                Similarly "System.out" precedes println().
+*/
+class Hypot {
+    public static void main(String args[]) {
+        double x, y, z;
+    
+        x = 3;
+        y = 4;
+    
+        // Notice how sqrt() is called. It is preceded by the name of the class "Math" of which it is a member.
+        z = Math.sqrt(x*x + y*y);
+        System.out.println("Hypotenuse is " + z);
+    }
+}
+    
+    
+    
+    
+
+
+
+
+
+// ----  rev[04-Apr-24]  ----
+
 public class JV_ch1_4_1_data_types{
     public static void main(String[] args) {
-
-        // --------------- int ----------------
-        /* int : Compute the number of cubic inches in 1 cubic mile. */
-        long ci;
-        long im;
-        im = 5280 * 12;
-        ci = im * im * im;
-        System.out.println("There are " + ci + " cubic inches in cubic mile.");
-
 
         // --------------- float ----------------
         /* 
