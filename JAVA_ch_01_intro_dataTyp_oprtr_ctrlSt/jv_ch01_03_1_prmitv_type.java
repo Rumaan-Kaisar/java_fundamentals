@@ -71,7 +71,9 @@
     character constant:
         A character variable can be assigned as value by enclosing the character in single quotes '' 
             which makes the character act like a constant 
-        Eg: 	char ch; ch='b';
+        Eg: 	
+            char ch; 
+            ch='b';
 
 
             
@@ -190,11 +192,40 @@ class Hypot {
         System.out.println("Hypotenuse is " + z);
     }
 }
-    
-    
-    
-    
 
+
+
+
+/* Example 3: Since char is an "unsigned 16-bit" type, it is possible 
+                to perform various arithmetic manipulations on a char variable.
+                For example, Character variables can be handled like integers.
+
+                In following program, ch is first given the value X. 
+                    Next, ch is incremented. This results in ch containing Y. 
+
+                    Then, ch is assigned the value 90, which is letter 'Z' in the ASCII (and Unicode) value.
+*/
+// Character variables can be handled like integers.
+class CharArithDemo {
+    public static void main(String args[]) {
+        char ch;
+
+        ch = 'X';
+        System.out.println("ch contains " + ch);
+
+        ch++; // increment ch
+        System.out.println("ch is now " + ch);
+
+        ch = 90; // give ch the value Z
+        System.out.println("ch is now " + ch);
+    }
+}
+
+
+/* 
+    Note that the "ASCII character set" occupies the first 127 values in the "Unicode character set", 
+    So all the tricks applied for ASCII in C/C++ also applicable to Unicode.
+*/
 
 
 
@@ -203,31 +234,6 @@ class Hypot {
 
 public class JV_ch1_4_1_data_types{
     public static void main(String[] args) {
-
-        // --------------- float ----------------
-        /* 
-        float: Use the Pythagorean theorem to
-        find the length of the hypotenuse
-        given the lengths of the two opposing sides.
-        */
-        double x, y, z;
-            x = 3;
-            y = 4;
-            z = Math.sqrt(x*x + y*y);
-            System.out.println("Hypotenuse is " +z);
-
-
-        // --------------- char ----------------
-        // char: A character variable can be assigned a value by enclosing the character in single quotes.
-        // Character variables can be handled like integers.
-        char ch;
-        ch = 'X';
-        System.out.println("ch contains " + ch);
-        ch++; // increment ch
-        System.out.println("ch is now " + ch);
-        ch = 90; // give ch the value Z
-        System.out.println("ch is now " + ch);
-
 
         // --------------- boolean ----------------
         // Demonstrate boolean values.
