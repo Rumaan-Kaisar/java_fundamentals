@@ -230,14 +230,24 @@ class CharArithDemo {
 
 
 
-// ----  rev[04-Apr-24]  ----
+/* ----------------    boolean    ----------------
+    when a boolean value is output by println(), "true" or "false" is displayed. 
 
-public class JV_ch1_4_1_data_types{
-    public static void main(String[] args) {
+    boolean variable also used to control the if statement. 
+        There is no need to write an "if(b == true)" we can just use "if(b)"
 
-        // --------------- boolean ----------------
-        // Demonstrate boolean values.
+    The outcome of a relational operator, such as <, is a boolean value.
+*/
+
+
+/* Example 4: The boolean type represents true/false values. 
+                Java defines the values true and false using the reserved words 'true' and 'false'. 
+                Here is a program that demonstrates the boolean type: */
+// Demonstrate boolean values.
+class BoolDemo {
+    public static void main(String args[]) {
         boolean b;
+    
         b = false;
         System.out.println("b is " + b);
 
@@ -248,10 +258,117 @@ public class JV_ch1_4_1_data_types{
         if(b) System.out.println("This is executed.");
         b = false;
         if(b) System.out.println("This is not executed.");
+
         // outcome of a relational operator is a boolean value
         System.out.println("10 > 9 is " + (10 > 9));
+        // '()' around 10 > 9 is necessary because the '+' operator has a higher precedence than the >
+    }
+}
 
 
+
+
+/* Example 5: How Far Away Is the Lightning?  
+                create a program that computes how far away, in feet, a listener is from a lightning strike. 
+
+                Sound travels approximately 1,100 feet per second through air. 
+
+                Thus, knowing the interval between the time you see a lightning bolt and
+                    the time the sound reaches you enables you to compute the distance to the lightning. 
+
+                Assume that the time interval is 7.2 seconds.
+*/
+
+// Compute the distance to a lightning strike whose sound takes 7.2 seconds to reach you.
+
+class Sound {
+    public static void main(String args[]) {
+        double dist;
+    
+        dist = 7.2 * 1100;
+        System.out.println("The lightning is " + dist + " feet away.");
+    }
+}
+
+
+
+
+/* ----------------    literals    ----------------
+    literals:
+        fixed values that are represented in their human-readable form
+        Java literals can be of any of the primitive data types. 
+        The way each literal is represented depends upon its type
+        
+        For example, 
+            'a' and ' %' are both character constants.
+            10 and –100 are integer literals.
+            11.123 is a floating-point literal.
+
+        Literal specifier:
+                By default, integer literals are of type "int". 
+                    int can be assigned to variables of type 'char', 'byte', or 'short' 
+                        as long as the value being assigned can be represented by the target type.
+
+                long: 
+                    To specify a long literal, append an 'l' or an 'L'. 
+                    For example, 12 is an "int", but 12L is a "long".
+                    An integer literal can always be assigned to a long variable.
+
+                float:
+                    By default, floating-point literals are of type 'double'. 
+                    To specify a float literal, append an 'F' or 'f'.  
+                    Eg:  "10.19F"  is of type 'float'.
+
+
+    '_' into an integer or floatingpoint literal:
+        When the literal is compiled, the underscores are simply discarded. 
+        Here is an example: 123_45_1234 
+*/
+
+
+// ----  rev[08-Apr-24]  ----
+
+            // --------------- Hexadecimal, Octal, and Binary literals ----------------
+            int hex = 0xFF; // 255 in decimal
+            System.out.println("hex is " + hex);
+
+            int oct = 011; // 9 in decimal
+            System.out.println("oct is " + oct);
+
+            // specify an integer literal by use of binary: precede the binary number with a 0b or 0B.
+            //  For example, this specifies the value 12 in binary:
+
+            int binr = 0b1100;
+            System.out.println("binr is " + binr);
+
+            int undScrTest = 123_45_1234;
+            System.out.println("undScrTest is " + undScrTest);
+
+
+            // --------------- character literals : single quote ----------------
+            char ch_dmo = 'b'; 
+            System.out.println("ch_dmo is " + ch_dmo);
+
+            
+            // --------------- string literals : single quote ----------------
+            // A string is a set of characters enclosed by double quotes. For example, "this is a test"
+            String str;
+            str = "First line\nSecond line";
+            System.out.println(str);
+            System.out.println("A\tB\tC");
+            System.out.println("D\tE\tF");
+
+
+
+
+
+
+
+
+
+
+public class JV_ch1_4_1_data_types{
+    public static void main(String[] args) {
 
 
         // --------------- literals ----------------
