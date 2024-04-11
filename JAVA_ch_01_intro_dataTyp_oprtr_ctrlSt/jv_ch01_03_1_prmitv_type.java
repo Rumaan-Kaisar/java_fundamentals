@@ -326,75 +326,101 @@ class Sound {
 */
 
 
-// ----  rev[08-Apr-24]  ----
-
-            // --------------- Hexadecimal, Octal, and Binary literals ----------------
-            int hex = 0xFF; // 255 in decimal
-            System.out.println("hex is " + hex);
-
-            int oct = 011; // 9 in decimal
-            System.out.println("oct is " + oct);
-
-            // specify an integer literal by use of binary: precede the binary number with a 0b or 0B.
-            //  For example, this specifies the value 12 in binary:
-
-            int binr = 0b1100;
-            System.out.println("binr is " + binr);
-
-            int undScrTest = 123_45_1234;
-            System.out.println("undScrTest is " + undScrTest);
+// ----  rev[11-Apr-24]  ----
+/* 
+--------------- Hexadecimal, Octal, and Binary literals ----------------
 
 
-            // --------------- character literals : single quote ----------------
+
+Hexadecimal:
+    A hexadecimal literal must begin with 0x or 0X (a zero followed by an x or X).
+    int hex = 0xFF;     // 255 in decimal
+
+
+Octal:
+    An octal literal begins with a zero.
+    int oct = 011;      // 9 in decimal
+
+
+Binary:
+    precede the binary number with a 0b or 0B.
+    For example, following specifies the value 12 in binary:
+    int binr = 0b1100;
+
+
+int undScrTest = 123_45_1234;
+System.out.println("undScrTest is " + undScrTest);
+
+
+--------------- character literals : single quote ----------------
+'' vs ""
+    '' is used for single character or charcter constants
             char ch_dmo = 'b'; 
-            System.out.println("ch_dmo is " + ch_dmo);
+    "" used for strings
+            "this is a test"
+    similar to C++
 
-            
-            // --------------- string literals : single quote ----------------
-            // A string is a set of characters enclosed by double quotes. For example, "this is a test"
-            String str;
-            str = "First line\nSecond line";
-            System.out.println(str);
-            System.out.println("A\tB\tC");
-            System.out.println("D\tE\tF");
-
-
-
+To print escape sequnces for \', \", \\, \r, \n, \t, \b, \f, \ddd etc use single quotes ''
+    For example, this assigns ch the tab character:
+        ch = '\t';
+    
+    The next example assigns a single quote to ch:
+        ch = '\'';
+    
 
 
+// ----  rev[next after 11-4-24]  ----
 
-
-
-
-
-public class JV_ch1_4_1_data_types{
-    public static void main(String[] args) {
-
-
-        // --------------- literals ----------------
-        // literals refer to fixed values that are represented in their human-readable form
-        // Java literals can be of any of the primitive data types. The way each literal is represented depends upon its type
-        /*      
-                For example, 'a' and ' %' are both character constants.
-
-                10 and –100 are integer literals.
-                11.123 is a floating-point literal.
-
-                specify a long literal, append an l or an L. For example, 12 is an int, but 12L is a long.
-                An integer literal can always be assigned to a long variable.
-                specify a float literal, append an F or f to the constant. For example, 10.19F is of type float.
-
-                Although integer literals create an int value by default, they can still be assigned to variables
-                of type char, byte, or short as long as the value being assigned can be represented by the target type. 
+Is a string consisting of a single character the same as a character literal? For example,
+is "k" the same as 'k'?
+A: No. You must not confuse strings with characters. A character literal represents a single
+letter of type char. A string containing only one letter is still a string. Although strings
+consist of characters, they are not the same type.
 
 
 
-                underscores into an integer or floatingpoint literal:
-                When the literal is compiled, the underscores are simply discarded. Here is an example:
-                123_45_1234 
-        */
+// --------------- string literals : single quote ----------------
+// A string is a set of characters enclosed by double quotes. For example, "this is a test"
+String str;
+str = "First line\nSecond line";
+System.out.println(str);
+System.out.println("A\tB\tC");
+System.out.println("D\tE\tF");
 
-        
+ */
+
+For example, consider the following program. It uses the \n and \t
+escape sequences.
+// Demonstrate escape sequences in strings.
+class StrDemo {
+public static void main(String args[]) {
+System.out.println("First line\nSecond line");
+System.out.println("A\tB\tC");
+System.out.println("D\tE\tF") ;
+}
+}
+The output is shown here:
+First line
+Second line
+A B C
+D E F
+
+
+Notice how the \n escape sequence is used to generate a new line. You don’t need to use
+multiple println( ) statements to get multiline output. Just embed \n within a longer string at
+the points where you want the new lines to occur.
+
+Use \n to generate a new line.
+
+Use tabs to align output.
+
+
+
+
+
+
+public class LiteralDemo{
+    public static void main(String[] args) {        
             // --------------- Hexadecimal, Octal, and Binary literals ----------------
             int hex = 0xFF; // 255 in decimal
             System.out.println("hex is " + hex);
