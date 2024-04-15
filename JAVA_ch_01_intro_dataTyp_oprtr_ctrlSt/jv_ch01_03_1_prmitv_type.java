@@ -326,57 +326,53 @@ class Sound {
 */
 
 
-// ----  rev[11-Apr-24]  ----
-/* 
---------------- Hexadecimal, Octal, and Binary literals ----------------
+
+/*  --------------- Hexadecimal, Octal, and Binary literals ----------------
+    Hexadecimal:
+        A hexadecimal literal must begin with 0x or 0X (a zero followed by an x or X).
+        int hex = 0xFF;     // 255 in decimal
 
 
-
-Hexadecimal:
-    A hexadecimal literal must begin with 0x or 0X (a zero followed by an x or X).
-    int hex = 0xFF;     // 255 in decimal
-
-
-Octal:
-    An octal literal begins with a zero.
-    int oct = 011;      // 9 in decimal
+    Octal:
+        An octal literal begins with a zero.
+        int oct = 011;      // 9 in decimal
 
 
-Binary:
-    precede the binary number with a 0b or 0B.
-    For example, following specifies the value 12 in binary:
-    int binr = 0b1100;
+    Binary:
+        precede the binary number with a 0b or 0B.
+        For example, following specifies the value 12 in binary:
+        int binr = 0b1100;
 
 
-int undScrTest = 123_45_1234;
-System.out.println("undScrTest is " + undScrTest);
+    int undScrTest = 123_45_1234;
+    System.out.println("undScrTest is " + undScrTest);
 
 
---------------- character literals : single quote ----------------
-'' vs ""
-    '' is used for single character or charcter constants
-            char ch_dmo = 'b'; 
-    "" used for strings
-            "this is a test"
-    similar to C++
+    --------------- character literals : single quote ----------------
+    '' vs ""
+        '' is used for single character or charcter constants
+                char ch_dmo = 'b'; 
+        "" used for strings
+                "this is a test"
+        similar to C++
 
-To print escape sequnces for \', \", \\, \r, \n, \t, \b, \f, \ddd etc use single quotes ''
-    For example, this assigns ch the tab character:
-        ch = '\t';
-    
-    The next example assigns a single quote to ch:
-        ch = '\'';
-    
+        You must not confuse STRINGS with CHARACTERS. 
+            A character literal represents a single letter of "type char". Eg: 'a'
+            
+        A string containing only one letter is still a string.
+            Although strings consist of characters, they are not the same type. Eg. "a"
 
 
-// ----  rev[next after 11-4-24]  ----
+    To print escape sequnces for \', \", \\, \r, \n, \t, \b, \f, \ddd etc use single quotes ''
+        For example, this assigns ch the tab character:
+            ch = '\t';
+        
+        The next example assigns a single quote to ch:
+            ch = '\'';
+        
 
-Is a string consisting of a single character the same as a character literal? For example,
-is "k" the same as 'k'?
-A: No. You must not confuse strings with characters. A character literal represents a single
-letter of type char. A string containing only one letter is still a string. Although strings
-consist of characters, they are not the same type.
 
+// ----  rev[15-4-24]  ----
 
 
 // --------------- string literals : single quote ----------------
@@ -558,4 +554,5 @@ public class JV_ch1_2_1_primitive_types{
 
 /* Java Octal to Decimal conversion: Integer.parseInt()
 The Integer.parseInt() method converts a string to an int with the given radix. If you pass 8 as a 'radix', it converts an 'octal' string into 'decimal'. 
- */
+*/
+
