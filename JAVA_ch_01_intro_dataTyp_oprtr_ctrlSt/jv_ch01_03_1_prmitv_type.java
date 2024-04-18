@@ -348,6 +348,7 @@ class Sound {
     System.out.println("undScrTest is " + undScrTest);
 
 
+
     --------------- character literals : single quote ----------------
     '' vs ""
         '' is used for single character or charcter constants
@@ -362,7 +363,9 @@ class Sound {
         A string containing only one letter is still a string.
             Although strings consist of characters, they are not the same type. Eg. "a"
 
+          
 
+    --------------- character literals : escape sequence ----------------
     To print escape sequnces for \', \", \\, \r, \n, \t, \b, \f, \ddd etc use single quotes ''
         For example, this assigns ch the tab character:
             ch = '\t';
@@ -372,47 +375,41 @@ class Sound {
         
 
 
-// ----  rev[15-4-24]  ----
+    --------------- string literals : double quote ----------------
+    A string is a set of characters enclosed by double quotes. For example, "this is a test"
+        String str;
+        str = "First line\nSecond line";
+        System.out.println(str);  
+
+        Notice how the "\n" escape sequence is used to generate a new line. 
+        You don't need to use multiple println( ) statements to get multiline output.
+
+    Use '\n' to generate a new line.
+    Use tabs '\t' to align output.
+
+*/
 
 
-// --------------- string literals : single quote ----------------
-// A string is a set of characters enclosed by double quotes. For example, "this is a test"
-String str;
-str = "First line\nSecond line";
-System.out.println(str);
-System.out.println("A\tB\tC");
-System.out.println("D\tE\tF");
 
- */
 
-For example, consider the following program. It uses the \n and \t
-escape sequences.
+/* Example 6: Following program uses the \n and \t escape sequences. */
+
 // Demonstrate escape sequences in strings.
 class StrDemo {
-public static void main(String args[]) {
-System.out.println("First line\nSecond line");
-System.out.println("A\tB\tC");
-System.out.println("D\tE\tF") ;
+    public static void main(String args[]) {
+        String str;
+
+        str = "First line\nSecond line";
+        System.out.println(str);
+        System.out.println("A\tB\tC");
+        System.out.println("D\tE\tF");
+    }
 }
-}
-The output is shown here:
-First line
-Second line
-A B C
-D E F
-
-
-Notice how the \n escape sequence is used to generate a new line. You don’t need to use
-multiple println( ) statements to get multiline output. Just embed \n within a longer string at
-the points where you want the new lines to occur.
-
-Use \n to generate a new line.
-
-Use tabs to align output.
 
 
 
 
+// ----  rev[18-apr-24]  ----
 
 
 public class LiteralDemo{
