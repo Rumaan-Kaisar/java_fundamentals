@@ -293,8 +293,6 @@ class Sound {
 
 
 
-
-
 /*  Why does Java have different data types for integers and floating-point values? 
         That is, why aren’t all numeric values just the same type?
 
@@ -307,6 +305,4 @@ class Sound {
     Algorithms: 
         some algorithms require (or at least benefit from) the use of a specific type of data. 
 */
-
-
 
