@@ -77,8 +77,8 @@ class Example3 {
         int var; // declares an int 
         double x; // declares a floating-point variable
 
-        var = 10; // assign value
-        x = 10.0; // assign value
+        var = 10; // assign integer value
+        x = 10.0; // assign floating-point value
 
         System.out.println("Original value of var: " + var);
         System.out.println("Original value of x: " + x);
@@ -88,7 +88,7 @@ class Example3 {
         var = var/4;    // Fractional component lost
         x = x/4;
 
-        System.out.println("var after division: " + var);
+        System.out.println("var after division (Notice fraction is lost): " + var);
         System.out.println("x after division: " + x);
     }
 }
