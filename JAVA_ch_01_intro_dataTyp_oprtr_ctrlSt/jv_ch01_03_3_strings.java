@@ -70,3 +70,54 @@ class StrDemo {
 }
 
 
+
+
+// ----    rev[25-Apr-24]    ----
+
+/* Example 2: We saw that in previous section the Hexadecimal, Octal, and Binary literals  
+                ouput as "deciaml" by System.out.println() 
+*/
+ 
+public class StringLiteral{
+    public static void main(String[] args) {        
+        // --------------- Hexadecimal, Octal, and Binary literals ----------------
+        int hex = 0xFF; // 255 in decimal
+        System.out.println("hex is " + hex);
+
+        int oct = 011; // 9 in decimal
+        System.out.println("oct is " + oct);
+
+        // specify an integer literal by use of binary: precede the binary number with a 0b or 0B.
+        //  For example, this specifies the value 12 in binary:
+
+        int binr = 0b1100;
+        System.out.println("binr is " + binr);
+
+
+        
+
+        // Octal, Hexa decimal, Binary
+        /* Convert int to String: 
+            Using toString() method of "Integer" class
+            Using valueOf() method of "String" class 
+        */
+        int octl = 016;
+        // Octal is coverted to Decimal "by using radix:10" during data-type-conversion to String
+        String octStr = Integer.toString(octl, 10); 
+        System.out.println("Converted num: "+octStr);   // gives 14 in decimal: equivalent to 16 in octal 
+        System.out.println("Type of octStr: "+octStr.getClass().getName()+"\n");
+        // The Integer.parseInt() method converts a string to an int with the given radix
+        int hexd = Integer.parseInt(octStr, 16);    // gives 20 in decimal: equivalent to 14 in Hexadecimal
+        // preceeding line takes the String value as a Hexadecimal number and converts it to Decimal
+        // parseInt(octStr, 16)  consideres the number-string octStr in Hexadecimal
+        System.out.println("Converted dec num to hexd: "+hexd);
+
+        int hex2 = 0x20;
+        String hexStr = Integer.toString(hex2, 10); 
+        System.out.println("Converted num: "+hexStr);   // gives 32 in decimal: equivalent to 20 in Hexadecimal
+        // String hexStr = Integer.toString(hex2, 16); // remains same; Hexadecimal to Hexadecimal 
+    }
+}
+
+
+
