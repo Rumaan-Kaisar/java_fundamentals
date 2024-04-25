@@ -54,12 +54,18 @@
 // Demonstrate escape sequences in strings.
 class StrDemo {
     public static void main(String args[]) {
+        // --------------- string literals : single quote ----------------
+        // A string is a set of characters enclosed by double quotes. For example, "this is a test"
         String str;
 
         str = "First line\nSecond line";
         System.out.println(str);
         System.out.println("A\tB\tC");
         System.out.println("D\tE\tF");
+
+        // --------------- character literals : single quote ----------------
+        char ch_dmo = 'b'; 
+        System.out.println("ch_dmo is " + ch_dmo);
     }
 }
 
