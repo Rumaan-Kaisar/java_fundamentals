@@ -1,18 +1,7 @@
 
-/* -=-=-=-=-=-=-=-=-=-=-=      Hexadecimal, Octal, and Binary literals      -=-=-=-=-=-=-=-=-=-=-= */
+/* -=-=-=-=-=-=-=-=-=-=-=      Hexadecimal, Octal, and Binary literals      -=-=-=-=-=-=-=-=-=-=-= 
 
-/* 
- literals
-    hexadecimal: literal must begin with 0x or 0X (a zero followed by an x or X). Eg: 	hex = 0xFF;  // 255 in decimal
-    octal: literal begins with a zero. Eg: 	oct = 011;   // 9 in decimal
-    binary: precede the binary number with a 0b or 0B. For example, this specifies the value 12 in binary: 0b1100.
- */
-
-
-
-
- 
-/* ----------------    literals    ----------------
+    ----------------    literals    ----------------
     literals:
         fixed values that are represented in their human-readable form
         Java literals can be of any of the primitive data types. 
@@ -66,14 +55,14 @@
     int undScrTest = 123_45_1234;
     System.out.println("undScrTest is " + undScrTest);
 
-
-
 */
 
 
 
 
-
+/* Example 1: Following demonstrates the Hexadecimal, Octal, and Binary literals  
+                Notice, System.out.println() prints those in "deciaml"
+*/
  
 public class LiteralDemo{
     public static void main(String[] args) {        
@@ -92,25 +81,13 @@ public class LiteralDemo{
 
             int undScrTest = 123_45_1234;
             System.out.println("undScrTest is " + undScrTest);
-
-
-            // --------------- character literals : single quote ----------------
-            char ch_dmo = 'b'; 
-            System.out.println("ch_dmo is " + ch_dmo);
-
-            
-            // --------------- string literals : single quote ----------------
-            // A string is a set of characters enclosed by double quotes. For example, "this is a test"
-            String str;
-            str = "First line\nSecond line";
-            System.out.println(str);
-            System.out.println("A\tB\tC");
-            System.out.println("D\tE\tF");
     }
 }
 
 
 
+
+// ----    rev[25-Apr-24]    ----
 
 public class JV_ch1_2_1_primitive_types{
     public static void main(String[] args) {
