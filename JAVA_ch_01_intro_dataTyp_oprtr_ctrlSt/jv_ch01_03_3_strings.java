@@ -74,6 +74,8 @@ class StrDemo {
 
 // ----    rev[25-Apr-24]    ----
 
+// ------------    int to String conversion    ------------
+
 /* Example 2: We saw that in previous section the Hexadecimal, Octal, and Binary literals  
                 ouput as "deciaml" by System.out.println() 
 */
@@ -120,4 +122,14 @@ public class StringLiteral{
 }
 
 
+
+// ------------    String to int conversion    ------------
+
+
+/* Example 3: We know that the Integer.parseInt() method converts a string to an int with the given radix. 
+        Write a program that converts a given number (input by an user) to Binary, Octal and Hexadecimal form.
+        Store each one of those in variables 
+        Get the Object-type of each.
+        Convert each from String to int
+*/
 
