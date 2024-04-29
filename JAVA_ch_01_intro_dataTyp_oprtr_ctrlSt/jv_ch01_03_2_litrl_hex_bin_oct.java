@@ -86,9 +86,12 @@ public class LiteralDemo{
 
 
 
-// ----    rev[25-Apr-24]    ----
 
-/* Java Octal to Decimal conversion: Integer.parseInt()
-The Integer.parseInt() method converts a string to an int with the given radix. If you pass 8 as a 'radix', it converts an 'octal' string into 'decimal'. 
+// ----    rev[29-Apr-24]    ----
+
+/*  ------------    Java "Octal to Decimal" conversion: Integer.parseInt()    ------------
+    String to int:
+        The Integer.parseInt() method converts a string to an int with the given radix. 
+        If you pass 8 as a 'radix', it converts an "octal string" into 'decimal'. 
 */
 
