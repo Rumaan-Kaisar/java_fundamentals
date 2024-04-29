@@ -310,9 +310,15 @@ class Sound {
 
 
 
-// ----    rev[25-Apr-24]    ----
+// ----    rev[29-Apr-24]    ----
+/* Example 6: In Java all data-types are considered object types. 
+                To convert primitive types into object-types a BOXING mechanism is used.
+                BOXING is a kind of wrapping mechanism.
 
-public class JV_ch1_2_1_primitive_types{
+                We can get the "Class types" for a data-type as below.
+                Notice how 'Object' is applied on the variables. It's similar to "type-cast"
+*/
+public class getTypeInfo{
     public static void main(String[] args) {
 
         long var3;
@@ -323,6 +329,7 @@ public class JV_ch1_2_1_primitive_types{
         System.out.print("Long int value "+var3+"\n");
         // You can use the getClass() method to get the type of the object you are using, 
         // For primitive type we use "Boxing": "(Object)var3" converts 'primitive types' into 'object types'
+            // any "Object" type of data of Java contains the getClass() and getName() methods
         System.out.print("Type of ver3"+((Object)var3).getClass().getName()+"\n");
         System.out.print("Type of ver4"+((Object)var4).getClass().getName()+"\n");
         System.out.print("Type of ver5"+((Object)var5).getClass().getName()+"\n");
@@ -332,7 +339,7 @@ public class JV_ch1_2_1_primitive_types{
         String s1="hello"; 
         char ch1='a';
         System.out.println("Type of s1: "+((Object)s1).getClass().getName());
-        // Following works too: because String is already an Object type, so need to Object-boxing 
+        // Following works too: because String is already an "Object type", so no need to Object-boxing 
         // System.out.print("Type of s1: "+s1.getClass().getName()+"\n");
         System.out.println("Type of ch1: "+((Object)ch1).getClass().getName());
 
