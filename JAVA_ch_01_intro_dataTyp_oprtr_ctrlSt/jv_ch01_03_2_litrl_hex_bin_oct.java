@@ -87,11 +87,52 @@ public class LiteralDemo{
 
 
 
-// ----    rev[29-Apr-24]    ----
-
 /*  ------------    Java "Octal to Decimal" conversion: Integer.parseInt()    ------------
+    Integer.parseInt() used to parse (convert) a string representation of an integer 
+        into its corresponding integer value. 
+    
+    This method is part of the "Integer" class, 
+        which is a "wrapper class" for the primitive data type "int".
+
     String to int:
-        The Integer.parseInt() method converts a string to an int with the given radix. 
-        If you pass 8 as a 'radix', it converts an "octal string" into 'decimal'. 
+        The Integer.parseInt() method converts a string to an int with the given "radix" 
+            (radix refers to the base of the numeral system). 
+        
+            If you pass 8 as a 'radix', it converts an "octal string" into 'decimal'. 
+
+        The method signature with radix looks like this:
+
+                public static int parseInt(String s, int radix) throws NumberFormatException
+
+        Example:
+            String binaryString = "1010";
+            int decimalValue = Integer.parseInt(binaryString, 2); // Parse binary string to decimal (base 10)
+            System.out.println(decimalValue); // Output: 10
+                
+    [method signature: the concept of a "method signature" in Java is similar to that of a "function prototype" in C++.]
 */
+
+
+
+
+/* Example 2: Below is a Java program that demonstrates parsing a binary string 
+                to a decimal value using the Integer.parseInt() method 
+*/
+
+public class BinaryToDecimal {
+    public static void main(String[] args) {
+        // Binary string representation
+        String binaryString = "1010";
+        
+        // Parse binary string to decimal (base 10)
+        int decimalValue = Integer.parseInt(binaryString, 2);
+        // here "radix: 2" means: treat the string "1010" as a binary integer
+        // If we use "radix: 8" (a radix of 8), then the string "1010" will be treated as an OCTAL integer.
+        
+        // Output the decimal value
+        System.out.println(decimalValue); // Output: 10
+    }
+}
+
+
 
