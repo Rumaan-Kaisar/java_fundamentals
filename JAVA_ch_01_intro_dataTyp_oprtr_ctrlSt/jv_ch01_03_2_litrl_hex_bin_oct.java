@@ -97,7 +97,6 @@ public class LiteralDemo{
     String to int:
         The Integer.parseInt() method converts a string to an int with the given "radix" 
             (radix refers to the base of the numeral system). 
-        
             If you pass 8 as a 'radix', it converts an "octal string" into 'decimal'. 
 
         The method signature with radix looks like this:
