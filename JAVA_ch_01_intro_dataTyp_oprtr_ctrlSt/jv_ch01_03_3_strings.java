@@ -126,10 +126,14 @@ public class StringLiteral{
 // ------------    String to int conversion    ------------
 
 
-/* Example 3: We know that the Integer.parseInt() method converts a string to an int with the given radix. 
-        Write a program that converts a given number (input by an user) to Binary, Octal and Hexadecimal form.
-        Store each one of those in variables 
-        Get the Object-type of each.
-        Convert each from String to int
+/*  Example 3: We know that Integer.parseInt() converts a string to an int with the given radix (or base).
+                Write a program that converts a given number (input by a user) to 
+                        binary, 
+                        octal, and 
+                        hexadecimal bases.
+
+                Store each one of those in variables.
+                Get the object type of each.
+                Convert each from String to int.
 */
 
