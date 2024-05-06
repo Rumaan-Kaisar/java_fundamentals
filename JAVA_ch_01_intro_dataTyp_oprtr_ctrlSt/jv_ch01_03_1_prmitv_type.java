@@ -309,38 +309,37 @@ class Sound {
 
 
 
+/* Example 6: In Java, all data types are considered object types. 
+                To convert primitive types into object types, a boxing mechanism is used.
+                Boxing is a kind of wrapping mechanism.
 
-// ----    rev[29-Apr-24]    ----
-/* Example 6: In Java all data-types are considered object types. 
-                To convert primitive types into object-types a BOXING mechanism is used.
-                BOXING is a kind of wrapping mechanism.
-
-                We can get the "Class types" for a data-type as below.
-                Notice how 'Object' is applied on the variables. It's similar to "type-cast"
+                We can obtain the "Class types" for a data type as shown below.
+                Notice how 'Object' is applied to the variables. This is similar to a "type cast".                
 */
-public class getTypeInfo{
+public class TypeCheck{
     public static void main(String[] args) {
-
+        // ----  long, double, float  ---- 
         long var3;
         var3 = 45L;
-        double ver4 = 67;
-        float ver5 = 56F;
+        double var4 = 67;
+        float var5 = 56F;
 
         System.out.print("Long int value "+var3+"\n");
         // You can use the getClass() method to get the type of the object you are using, 
         // For primitive type we use "Boxing": "(Object)var3" converts 'primitive types' into 'object types'
             // any "Object" type of data of Java contains the getClass() and getName() methods
-        System.out.print("Type of ver3"+((Object)var3).getClass().getName()+"\n");
-        System.out.print("Type of ver4"+((Object)var4).getClass().getName()+"\n");
-        System.out.print("Type of ver5"+((Object)var5).getClass().getName()+"\n");
+        System.out.print("Type of var3 is: "+((Object)var3).getClass().getName()+"\n");
+        System.out.print("Type of var4 is: "+((Object)var4).getClass().getName()+"\n");
+        System.out.print("Type of var5 is: "+((Object)var5).getClass().getName()+"\n");
 
 
-        // String and char: 
+        // ----  String and char:  ---- 
         String s1="hello"; 
         char ch1='a';
+
         System.out.println("Type of s1: "+((Object)s1).getClass().getName());
         // Following works too: because String is already an "Object type", so no need to Object-boxing 
-        // System.out.print("Type of s1: "+s1.getClass().getName()+"\n");
+        System.out.print("Type of s1: "+s1.getClass().getName()+"\n");  // no cast or boxing needed
         System.out.println("Type of ch1: "+((Object)ch1).getClass().getName());
 
     }
