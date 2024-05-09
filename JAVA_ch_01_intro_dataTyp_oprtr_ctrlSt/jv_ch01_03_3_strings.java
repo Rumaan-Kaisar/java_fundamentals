@@ -140,3 +140,47 @@ public class StringLiteral{
                 Convert each from String to int.
 */
 
+import java.util.Scanner;
+
+public class NumberConverter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input number from user
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+
+        // Convert to binary, octal, and hexadecimal
+        String binary = Integer.toBinaryString(number);
+        String octal = Integer.toOctalString(number);
+        String hexadecimal = Integer.toHexString(number);
+
+        // Print the converted values
+        System.out.println("Binary: " + binary);
+        System.out.println("Octal: " + octal);
+        System.out.println("Hexadecimal: " + hexadecimal);
+
+        // Get the object type of each converted value
+        String binaryType = binary.getClass().getName();
+        String octalType = octal.getClass().getName();
+        String hexadecimalType = hexadecimal.getClass().getName();
+
+        // Convert each from String to int
+        int binaryInt = Integer.parseInt(binary, 2);
+        int octalInt = Integer.parseInt(octal, 8);
+        int hexadecimalInt = Integer.parseInt(hexadecimal, 16);
+
+        // Print the object type of each converted value
+        System.out.println("Type of binary: " + binaryType);
+        System.out.println("Type of octal: " + octalType);
+        System.out.println("Type of hexadecimal: " + hexadecimalType);
+
+        // Print the converted values
+        System.out.println("Binary to int: " + binaryInt);
+        System.out.println("Octal to int: " + octalInt);
+        System.out.println("Hexadecimal to int: " + hexadecimalInt);
+
+        scanner.close();
+    }
+}
+
