@@ -72,14 +72,16 @@ class StrDemo {
 
 
 
-// ----    rev[25-Apr-24]    ----
-
 // ------------    int to String conversion    ------------
 
 /* Example 2: We saw that in previous section the Hexadecimal, Octal, and Binary literals  
                 ouput as "deciaml" by System.out.println() 
+
+                following program first converts "octal 16 to decimal"
+                then it converts the result to hexadecimal and outputs eqivalent decimal value.
+                It also converts a hexadecimal value to decimal
 */
- 
+
 public class StringLiteral{
     public static void main(String[] args) {        
         // --------------- Hexadecimal, Octal, and Binary literals ----------------
@@ -91,12 +93,8 @@ public class StringLiteral{
 
         // specify an integer literal by use of binary: precede the binary number with a 0b or 0B.
         //  For example, this specifies the value 12 in binary:
-
         int binr = 0b1100;
         System.out.println("binr is " + binr);
-
-
-        
 
         // Octal, Hexa decimal, Binary
         /* Convert int to String: 
@@ -105,10 +103,12 @@ public class StringLiteral{
         */
         int octl = 016;
         // Octal is coverted to Decimal "by using radix:10" during data-type-conversion to String
-        String octStr = Integer.toString(octl, 10); 
-        System.out.println("Converted num: "+octStr);   // gives 14 in decimal: equivalent to 16 in octal 
+        String octStr = Integer.toString(octl, 10); // gives 14 in decimal: equivalent to 16 in octal 
+        System.out.println("Converted num: "+octStr);   
         System.out.println("Type of octStr: "+octStr.getClass().getName()+"\n");
+
         // The Integer.parseInt() method converts a string to an int with the given radix
+            // following converts string "14" to decimal considerinh 14 as a hexadecimal
         int hexd = Integer.parseInt(octStr, 16);    // gives 20 in decimal: equivalent to 14 in Hexadecimal
         // preceeding line takes the String value as a Hexadecimal number and converts it to Decimal
         // parseInt(octStr, 16)  consideres the number-string octStr in Hexadecimal
@@ -122,6 +122,9 @@ public class StringLiteral{
 }
 
 
+
+
+// ----    rev[09-may-24]    ----
 
 // ------------    String to int conversion    ------------
 
