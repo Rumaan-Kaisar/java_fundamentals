@@ -124,8 +124,6 @@ public class StringLiteral{
 
 
 
-// ----    rev[09-may-24]    ----
-
 // ------------    String to int conversion    ------------
 
 
