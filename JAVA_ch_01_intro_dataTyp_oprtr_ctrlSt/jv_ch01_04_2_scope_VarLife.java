@@ -1,16 +1,18 @@
 
-/* -=-=-=-=-=-=-=-=-=-=-=      scope and life of a variable      -=-=-=-=-=-=-=-=-=-=-= */
-
-Does a block define a scope?
+/* -=-=-=-=-=-=-=-=-=-=-=      scope and life of a variable      -=-=-=-=-=-=-=-=-=-=-= 
 
 
-/* 
+
 Scope In Java:
-    #   endregionScopes defined by class. We'll discuss this kind later with classes.
-    #   Scopes defined by method. For now we focus on 
+    #   Scopes defined by class: 
+            We'll discuss this kind later with classes.
+    
+    #   Scopes defined by method: 
+            For now we focus on Scope defined by methods
 
 
-    Scope defined by methods is mostly similar to C/C++'s local variables scope. The scope defined by a method begins with its opening curly brace. The parameters of the method are also included within the method’s scope.
+    Scope defined by methods is mostly similar to C/C++'s local variables scope. 
+    The scope defined by a method begins with its opening curly brace. The parameters of the method are also included within the method’s scope.
 
     1.  Variables declared inside a scope are not visible/accessible to code that is defined outside that scope.
 
@@ -23,6 +25,23 @@ Scope In Java:
     5.  variables declared within a method will not hold their values between calls to that method. 
     
     6.  If a variable declaration includes an initializer, that variable will be reinitialized each time the block in which it is declared is entered.
+
+
+
+
+Does a block define a scope?
+Within a block, variables can be declared at any point, but are valid only after they are
+declared. Thus, if you define a variable at the start of a method, it is available to all of the code
+within that method. Conversely, if you declare a variable at the end of a block, it is effectively
+useless, because no code will have access to it.
+Here is another important point to remember: variables are created when their scope is
+entered, and destroyed when their scope is left. This means that a variable will not hold its
+value once it has gone out of scope. Therefore, variables declared within a method will not
+hold their values between calls to that method. Also, a variable declared within a block will
+lose its value when the block is left. Thus, the lifetime of a variable is confined to its scope.
+If a variable declaration includes an initializer, that variable will be reinitialized each time
+the block in which it is declared is entered. 
+
 
 */
 
