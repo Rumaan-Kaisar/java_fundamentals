@@ -29,19 +29,15 @@
         6.  If a variable declaration includes an initializer, that variable will be reinitialized each time the block in which it is declared is entered.
 
 
-
-
-
-
-
-
-
-Thus, the lifetime of a variable is confined to its scope.
-If a variable declaration includes an initializer, that variable will be reinitialized each time
-the block in which it is declared is entered. 
-
-
+    lifetime of a variable:
+        The lifetime of a variable is confined to its scope.
 */
+
+
+
+
+
+
 
 /* nested-Scope restriction: no variable declared within an inner scope can have the same name as a variable declared by an enclosing scope. [In C/C++ there is no restriction]
 For example, following tries to declare two separate variables with the same name, will not compile.
