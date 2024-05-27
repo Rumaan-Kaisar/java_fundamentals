@@ -31,16 +31,15 @@
 
     lifetime of a variable:
         The lifetime of a variable is confined to its scope.
-*/
 
 
 
+    --------    NESTED-Scope restriction    --------
+    No variable declared within an inner scope can have the same name as a variable declared by an enclosing scope. 
+    [In C/C++ there is no restriction]
+    
+    For example, following tries to declare two separate variables with the same name, will not compile.
 
-
-
-
-/* nested-Scope restriction: no variable declared within an inner scope can have the same name as a variable declared by an enclosing scope. [In C/C++ there is no restriction]
-For example, following tries to declare two separate variables with the same name, will not compile.
 
         public static void main(String args[]) { 
             int count; 
