@@ -68,25 +68,27 @@
 
 /* Example 1: consider the following program (similar to C/C++) demonstrate scope */
 
-class ScopeDemo {	
+class ScopeDemo {
     public static void main(String args[]) { 
-        int x; 			// x's declaration: known to all code within main
+        int x;              // x's declaration: known to all code within main
 
         x = 10;
         if(x == 10) {  
-            int y = 20; 	// y's declaration: y is known only to if block
-            System.out.println("x and y: " + x + " " + y); 	// x and y both accessible
+            int y = 20;     // y's declaration: y is known only to if block
+            System.out.println("x and y: " + x + " " + y);  // x and y both accessible
             x = y * 2; 
         }
 
-        y = 100; 			// Won't run, returns an error. y is unknown here
+        y = 100;            // Won't run, returns an error. y is unknown here
         // y wasn't declared in outer scope
         System.out.println("x is " + x);     // x is still accessible   
-    }	    
-}	
+    }
+}
 
 
 
+
+// --------  rev[27-May-2024]  --------
 
 // Before: 1.14
 
