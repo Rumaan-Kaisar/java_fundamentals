@@ -287,8 +287,8 @@ for(count = 0; count < 2; count++) System.out.println("Gives error!");
 
 
 
-/* Example 2: If a variable declaration includes an initializer, that variable will be reinitialized each time the block in which it is declared is entered. 
- *    
+/* Example 3: If a variable declaration includes an initializer, that variable will be reinitialized each time the block in which it is declared is entered. 
+
     
     output : 	y is: -1
 		y is now: 100
@@ -309,7 +309,7 @@ public static void main(String args[]) {  int x;
 
 
 
-/* Example 3:  
+/* Example 4:  
 no variable declared within an inner scope can have the same name as a variable declared by an enclosing scope.
 following tries to declare two separate variables with the same name, will not compile*/
 
@@ -320,8 +320,10 @@ public static void main(String args[]) { int count;
     }    }
 
 
-/* Example 4 (use GPT): demostrate "A variable declared within a block will lose its value when the block is left. " 
+/* Example 5 (use GPT): demostrate "A variable declared within a block will lose its value when the block is left. " 
         Use only a block i.e. just "{}" i.e. no control-statement, methot or class
+
+        Can a block in C++ or Java be created only using "{}", i.e. without being alongside of a class or function or  control statement?
 */
 
 
