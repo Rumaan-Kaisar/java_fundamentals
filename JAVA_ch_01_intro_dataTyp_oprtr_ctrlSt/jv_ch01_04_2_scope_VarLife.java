@@ -232,7 +232,6 @@ Understanding these differences helps when transitioning between these languages
 
 
 
-
 /* Example 1: consider the following program (similar to C/C++) demonstrate scope */
 
 class ScopeDemo {
@@ -255,23 +254,26 @@ class ScopeDemo {
 
 
 
-// --------  rev[30-May-2024]  --------
-
-// Before: 1.14
+// --------  rev[03-jun-2024]  --------
 
 /* 
  
-
-
-1.13 Scope and Lifetime of Variables
-
-
-
-
+--------    variable naming in nested-scope    --------
 
 C/C++ Differs: 
-    Although blocks can be nested, no variable declared within an inner scope can have the same name as a variable declared by an enclosing scope. 
-    For example, following tries to declare two separate variables with the same name, will not compile.
+    Although blocks can be nested in Java, 
+        no variable declared within an inner scope can have the same name as a variable declared by an enclosing scope. 
+    
+    In C/C++ however, there is no restriction on the names that you give variables declared in an inner scope. 
+        Thus, in C/C++ the declaration of "count" within the block of the "outer for loop" is completely valid, 
+        and such a declaration hides the outer variable. 
+    
+*/
+
+
+
+ 
+/* Example 2: following tries to declare two separate variables with the same name, will not compile. */
 
 ChatGPT: "Give an example in C++ that same case won't generate an error"
 
@@ -281,13 +283,6 @@ for(count = 0; count < 10; count ++) { System.out.println("This is count: " + co
 for(count = 0; count < 2; count++) System.out.println("Gives error!");      
 }    }
 
-
-In C/C++ there is no restriction on the names that you give variables declared in an inner scope. Thus, in C/C++ the declaration of count within the block of the outer for loop is completely valid, and such a declaration hides the outer variable. 
-
-
-
-
- */
 
 
 
