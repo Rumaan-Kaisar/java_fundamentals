@@ -255,43 +255,42 @@ class ScopeDemo {
 
 
 
-// --------  rev[03-jun-2024]  --------
-
-/* 
- 
---------    variable naming in nested-scope    --------
-
-C/C++ Differs: 
-    Although blocks can be nested in Java, 
-        no variable declared within an inner scope can have the same name as a variable declared by an enclosing scope. 
-    
-    In C/C++ however, there is no restriction on the names that you give variables declared in an inner scope. 
-        Thus, in C/C++ the declaration of "count" within the block of the "outer for loop" is completely valid, 
-        and such a declaration hides the outer variable. 
-    
+/*  --------    variable naming in nested-scope    --------
+    C/C++ Differs: 
+        Although blocks can be nested in Java, 
+            no variable declared within an inner scope can have the same name as a variable declared by an enclosing scope. 
+        
+        In C/C++ however, there is no restriction on the names that you give variables declared in an inner scope. 
+            Thus, in C/C++ the declaration of "count" within the block of the "outer for loop" is completely valid, 
+            and such a declaration hides the outer variable. 
 */
 
 
-
- 
 /* Example 2: following tries to declare two separate variables with the same name, will not compile. */
 
+class NameCollision{
+    public static void main(String args[]) { 
+        int count; 
+        
+        for(count = 0; count < 10; count ++) { 
+            System.out.println("This is count: " + count); 
+            int count; 	// illegal!!! ERROR: variable count is already defined in method main(String[])
+            // notice "count" is used in following FOR-loop as loop-controller, thus "count" is in nested-scope
+            for(count = 0; count < 2; count++) System.out.println("Gives error!");      
+        }    
+    }
+}
+
+
+
+
 ChatGPT: "Give an example in C++ that same case won't generate an error"
-
-public static void main(String args[]) { int count; 
-for(count = 0; count < 10; count ++) { System.out.println("This is count: " + count); 
-						int count; 	// illegal!!! 
-for(count = 0; count < 2; count++) System.out.println("Gives error!");      
-}    }
-
-
-
-
 
 /* Example 3: If a variable declaration includes an initializer, that variable will be reinitialized each time the block in which it is declared is entered. 
 
     
-    output : 	y is: -1
+    output : 	
+        y is: -1
 		y is now: 100
 		y is: -1
 		y is now: 100
