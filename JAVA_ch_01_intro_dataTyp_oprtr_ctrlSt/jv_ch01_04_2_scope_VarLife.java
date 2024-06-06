@@ -284,9 +284,53 @@ class NameCollision{
 
 
 
-ChatGPT: "Give an example in C++ that same case won't generate an error"
 
-/* Example 3: If a variable declaration includes an initializer, that variable will be reinitialized each time the block in which it is declared is entered. 
+/* Example 3:  ChatGPT: "Give an example in C++ that same case won't generate an error" 
+
+                Explanation:
+                    Outer count: The variable count is declared outside the outer for loop.
+                    Inner count: Inside the inner scope (within the block), 
+                                    another variable named count is declared. This hides the outer count.
+
+                        This code will compile and run without any errors in C++. 
+                        The inner count is completely separate from the outer count.
+
+                    In each iteration of the outer loop, the inner loop will run twice, printing its own count variable, which is independent of the outer loop's count.
+
+                Contrast with Java:
+                    In Java, this same code would result in a compilation error because 
+                        Java does not allow a variable declared in an inner scope 
+                        to have the same name as a variable declared in an outer scope. 
+*/
+
+// C++ version will compile !!
+#include <iostream>
+
+int main() {
+    int count;
+
+    // Outer for loop with 'count'
+    for(count = 0; count < 10; count++) {
+        std::cout << "This is count in the outer loop: " << count << std::endl;
+
+        // Inner scope
+        {
+            int count;  // This declaration hides the outer 'count'
+            for (count = 0; count < 2; count++) {
+                std::cout << "This is count in the inner loop: " << count << std::endl;
+            }
+        }
+    }
+
+    return 0;
+}
+
+
+
+
+// --------    rev[06-jun-2024]    --------
+
+/* Example 4: If a variable declaration includes an initializer, that variable will be reinitialized each time the block in which it is declared is entered. 
 
     
     output : 	
@@ -309,7 +353,7 @@ public static void main(String args[]) {  int x;
 
 
 
-/* Example 4:  
+/* Example 5:  
 no variable declared within an inner scope can have the same name as a variable declared by an enclosing scope.
 following tries to declare two separate variables with the same name, will not compile*/
 
@@ -320,7 +364,7 @@ public static void main(String args[]) { int count;
     }    }
 
 
-/* Example 5 (use GPT): demostrate "A variable declared within a block will lose its value when the block is left. " 
+/* Example 6 (use GPT): demostrate "A variable declared within a block will lose its value when the block is left. " 
         Use only a block i.e. just "{}" i.e. no control-statement, methot or class
 
         Can a block in C++ or Java be created only using "{}", i.e. without being alongside of a class or function or  control statement?
