@@ -356,16 +356,34 @@ class VarInitDemo {
 
 
 
-/* Example 5:  
-no variable declared within an inner scope can have the same name as a variable declared by an enclosing scope.
-following tries to declare two separate variables with the same name, will not compile*/
 
-public static void main(String args[]) { int count; 
-    for(count = 0; count < 10; count ++) { System.out.println("This is count: " + count); 
-                            int count; 	// illegal!!! 
-    for(count = 0; count < 2; count++) System.out.println("Gives error!");      
-    }    }
+/* Example 5: No variable declared within an inner scope can have the same name as a variable declared by an enclosing scope.
+                Following  attempts to declare a variable in an inner scope with the same name as one defined in an outer scope.
 
+                *** This program will not compile. ***
+*/
+
+class NestVar {
+    public static void main(String args[]) {
+        int count;
+    
+        for(count = 0; count < 10; count = count+1) {
+            System.out.println("This is count: " + count);
+            int count; // illegal!!!
+            for(count = 0; count < 2; count++) System.out.println("This program is in error!");
+        }
+    }
+}
+
+/*  However, in C/C++ the declaration of "count" within the block of the outer for loop is completely valid, 
+        and such a declaration "HIDES" the outer variable. 
+    
+        The designers of Java felt that this "name hiding" could easily lead to programming errors and disallowed it. 
+*/
+
+
+
+// --------    rev[10-jun-2024]    --------
 
 /* Example 6 (use GPT): demostrate "A variable declared within a block will lose its value when the block is left. " 
         Use only a block i.e. just "{}" i.e. no control-statement, methot or class
