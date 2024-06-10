@@ -272,7 +272,7 @@ class NameCollision{
     public static void main(String args[]) { 
         int count; 
         
-        for(count = 0; count < 10; count ++) { 
+        for(count = 0; count < 10; count++) { 
             System.out.println("This is count: " + count); 
             int count; 	// illegal!!! ERROR: variable count is already defined in method main(String[])
             // notice "count" is used in following FOR-loop as loop-controller, thus "count" is in nested-scope
@@ -328,28 +328,31 @@ int main() {
 
 
 
-// --------    rev[06-jun-2024]    --------
+/* Example 4: If a variable declaration includes an "initializer", 
+                that variable will be re-initialized each time the block in which it is declared is entered. 
+*/
 
-/* Example 4: If a variable declaration includes an initializer, that variable will be reinitialized each time the block in which it is declared is entered. 
+class VarInitDemo {
+    public static void main( String args[] ) {
+        int x;
+	
+        for(x = 0; x < 3; x++) { 
+            int y = -1; // y is initialized each time block is entered 
+			System.out.println("y is: " + y); // this always prints -1 
+			y = 100; 
+	        System.out.println("y is now: " + y);   
+        }	  
+    }    
+}
 
-    
-    output : 	
+/*  output : 	
         y is: -1
 		y is now: 100
 		y is: -1
 		y is now: 100
 		y is: -1
 		y is now: 100
-
 */
-
-class VarInitDemo {
-public static void main(String args[]) {  int x;
-	for(x = 0; x < 3; x++) { int y = -1; // y is initialized each time block is entered 
-			System.out.println("y is: " + y); // this always prints -1 
-			y = 100; 
-	System.out.println("y is now: " + y);   }	  }    }
-
 
 
 
