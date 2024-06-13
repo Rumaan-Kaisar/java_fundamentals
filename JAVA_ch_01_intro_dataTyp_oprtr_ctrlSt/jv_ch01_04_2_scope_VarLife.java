@@ -433,7 +433,7 @@ public class BlockScopeExample {
    
 
 
-/* Example 8 (C++): In this example, blockVar is defined within an independent block scope inside the main function. 
+/* Example 7 (C++): In this example, blockVar is defined within an independent block scope inside the main function. 
                 Outside the {} block, blockVar is not accessible. 
 */
 
