@@ -40,7 +40,16 @@
 
     Data-type restrictions:
         ARITHMETIC and RELATIONAL operators can be applicable to both 'numeric' and 'char' type of data.
-        RELATIONAL operators are 'NOT applicable' to "Boolean" type data. i.e.  true > false  has no meaning in Java. 
+        
+        RELATIONAL operators are 'NOT applicable' to "Boolean" type data. 
+            i.e.  "true > false"  has no meaning in Java. 
+        
+        In Java, all "OBJECTS" can be compared for equality or inequality using == and !=
+    
+        However, <, >, <=, or >=, can be applied only to those types that 
+            support an ordering relationship (i.e. numeric or char type)
+
+
 
     Operator combination:
         'relational' and 'logical' operators can act together. 
@@ -281,4 +290,53 @@
     Lowest
 
 */
+
+
+
+
+/* Example 1: The following program demonstrates the modulus operator '%' 
+                The % yields a remainder of 1 for both "integer" and "floating" - point operations
+*/
+class ModDemo {
+    public static void main(String args[]) {
+        int iresult, irem;
+        double dresult, drem;
+    
+        iresult = 10 / 3;   // indeger division cause data-loss, truncates to integer
+        irem = 10 % 3;      // Demonstrate the % operator.
+
+        dresult = 10.0 / 3.0;   // no data-loss
+        drem = 10.0 % 3.0;
+
+        System.out.println("Result and remainder of 10 / 3: " + iresult + " " + irem);
+        System.out.println("Result and remainder of 10.0 / 3.0: " + dresult + " " + drem);
+    }
+}
+
+
+
+
+/* Example 2: Here is a program that demonstrates several of the RELATIONAL and LOGICAL operators. */
+class RelLogOps {
+    public static void main(String args[]) {
+        int i, j;
+        boolean b1, b2;
+
+        i = 10;
+        j = 11;
+        if(i < j) System.out.println("i < j");
+        if(i <= j) System.out.println("i <= j");
+        if(i != j) System.out.println("i != j");
+        if(i == j) System.out.println("this won't execute");
+        if(i >= j) System.out.println("this won't execute");
+        if(i > j) System.out.println("this won't execute");
+
+        b1 = true;
+        b2 = false;
+        if(b1 & b2) System.out.println("this won't execute");
+        if(!(b1 & b2)) System.out.println("!(b1 & b2) is true");
+        if(b1 | b2) System.out.println("b1 | b2 is true");
+        if(b1 ^ b2) System.out.println("b1 ^ b2 is true");
+    }
+}
 
