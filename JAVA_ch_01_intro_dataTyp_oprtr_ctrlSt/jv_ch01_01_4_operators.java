@@ -29,12 +29,13 @@
             !	    NOT
             ^	    XOR (exclusive OR)
 
-            ||	    Short-circuit OR
-            &&	    Short-circuit AND
+            ||	    Short-circuit OR (conditional-OR)
+            &&	    Short-circuit AND (conditional-AND)
             
         Note: 
             '||', '&&' are also called "Shortcircuit AND, OR" [in C++ these are Logical AND, OR]
             '|', '&', '^' are  called "Bitwise AND, OR, XOR" these are also "Logical AND, OR, XOR"
+            The "short-circuit" operators in Java refers as the conditional-OR and the conditional-AND operators
 
 
 
@@ -339,4 +340,47 @@ class RelLogOps {
         if(b1 ^ b2) System.out.println("b1 ^ b2 is true");
     }
 }
+
+
+
+
+/* Example 3: Here is a program that demonstrates the short-circuit AND operator. 
+                The program determines whether the value in d is a factor of n.
+
+                It does this by performing a modulus operation. 
+                If the remainder of n / d is zero, then d is a factor. 
+
+                However, since the modulus operation involves a "DIVISION", 
+                the short-circuit form of the AND is used to prevent a "divide-by-zero error" 
+*/
+
+class SCops {
+    public static void main(String args[]) {
+        int n, d, q;
+    
+        n = 10;
+        d = 2;
+
+        if((d != 0) && (n % d) == 0) System.out.println(d + " is a factor of " + n);
+
+        d = 0; // now, set d to zero
+        // Since d is zero, the second operand is not evaluated
+        // The short-circuit operator prevents a division by zero
+        if((d != 0) && (n % d) == 0) System.out.println(d + " is a factor of " + n);
+
+
+        // try same thing without short-circuit operator, using normal '&'
+        // This will cause a divide-by-zero error, because both operands will execute
+        if((d != 0) & (n % d) == 0) System.out.println(d + " is a factor of " + n);
+    }
+}
+
+/*  To prevent a divide-by-zero, the if statement first checks to see if d is equal to zero. 
+    If it is, the short-circuit AND stops at that point and does not perform the modulus division. 
+
+    Trying normal AND operator, causes both operands to be evaluated, 
+    which leads to a "runtime error" when the division by zero occurs.
+*/
+
+
 
