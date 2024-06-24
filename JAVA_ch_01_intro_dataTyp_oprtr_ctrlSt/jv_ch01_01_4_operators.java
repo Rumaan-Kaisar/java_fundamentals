@@ -221,7 +221,7 @@
     SHORTHAND = operators: 
         Java allow some 'shorthand assignment' operators similar to C++.
 	
-        To create a chain of assignments: 
+        To create a "chain" of assignments: 
             int x, y, z;
             x = y = z = 100; 	// set x, y, and z to 100
 
@@ -382,5 +382,35 @@ class SCops {
     which leads to a "runtime error" when the division by zero occurs.
 */
 
+
+
+
+// ------------    Side effects of short-circuit operators    ------------
+
+/* Example 4: Since the short-circuit operators are, in some cases, more efficient than their normal counterparts, 
+                why does Java still offer the normal AND and OR operators?
+
+                ans: In some cases you will want both operands of an AND or OR operation to be evaluated
+                        because of the side effects produced. Consider the following: 
+*/
+// Side effects can be important.
+class SideEffects {
+    public static void main(String args[]) {
+        int i;
+
+        i = 0;
+        // Here, i is still incremented even though the if statement fails.
+        if(false & (++i < 100)) System.out.println("this won't be displayed");
+        System.out.println("if statement executed: " + i); // displays 1
+
+        // In this case, i is not incremented because the short-circuit operator skips the increment.
+        if(false && (++i < 100)) System.out.println("this won't be displayed");
+        System.out.println("if statement executed: " + i); // still 1 !!
+    }
+}
+
+/* The point is that: if your code expects the right-hand operand of an AND or OR operation to be evaluated, 
+                        you must use Java’s "nonshort-circuit" forms of these operations. 
+*/
 
 
