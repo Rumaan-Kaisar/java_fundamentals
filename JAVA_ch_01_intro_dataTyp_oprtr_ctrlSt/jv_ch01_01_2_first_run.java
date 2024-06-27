@@ -229,18 +229,29 @@ class Example {
 */
 
 
-// rev[24-jun-24]
-/* String[] args conventions!!
-In Java, both String[] args and String args[] are syntactically correct and valid ways to declare an array parameter in the main method. However, there are some conventions and preferences that you might find useful to follow:
 
-Preferred Convention
-The preferred and more common convention in Java is to use String[] args. This style is generally recommended because it clearly indicates that the type of the variable is a "String array". This aligns with Java's general practice of placing the brackets next to the type rather than the variable name.
 
-Alternative Syntax
-String args[] is also valid and used by some developers and books, particularly those with a background in C/C++ where this syntax is more common. In C and C++, the array notation is typically placed next to the variable name, and this convention has carried over for some developers into Java.
- */
-// Examples Both are correct:
+/*  ------------    String[] args conventions!!    ------------
+    In Java, both "String[] args" and "String args[]" are syntactically correct (position of [] is different) 
+    both are valid ways to declare an "array parameter" in the main method. 
 
+
+
+    --------  Preferred Convention  --------
+    "String[] args" is generally recommended because it clearly indicates that 
+        the type of the variable is a "String array". 
+
+    This aligns with Java's general practice of placing the brackets [] next to the "type" rather than the "variable name".
+
+
+
+    --------  Alternative Syntax  --------
+    "String args[]" is more preferable fopr the programmers with a background in C/C++ 
+    This syntax is more common in C and C++, the array notation [] is typically placed next to the "variable name"
+*/
+
+
+// Example 4: Both syntax are correct:
 
 public class MainMethodExample {
     public static void main(String[] args) {
@@ -256,12 +267,3 @@ public class MainMethodExample {
     }
 }
 
-/* 
-Style Guides
-Most Java style guides, including those from Oracle and widely used development frameworks, prefer String[] args because it emphasizes the type of the array.
-
-Consistency
-Regardless of which style you choose, it is important to be consistent within your codebase or project. Consistency helps improve readability and maintainability.
-
-Conclusion
-While both String[] args and String args[] are correct, String[] args is the more commonly accepted and preferred convention in Java. It's best to follow this convention unless you have a specific reason to use the alternative syntax. */
