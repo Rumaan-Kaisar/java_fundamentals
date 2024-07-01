@@ -48,15 +48,29 @@
 
 
     --------    Type-Cast    --------
-
-    	Type-Cast for Incompatible Types: When type-conversion is illegal (long to double) or incompatible (Boolean to int) we can use the type-cast. A cast is an instruction to the compiler to convert one type into another.   A cast has this general form:
+    
+    Type-Cast for Incompatible Types: 
+        When type-conversion is illegal (long to double) or incompatible (Boolean to int) we can use the "type-cast". 
+        A cast is an "instruction to the compiler" to convert one type into another.   
+        A cast has this general form:
 
             (target-type) expression
 
-Here, target-type specifies the desired type to convert the specified expression to. Eg:  double x,y; int k =(int)(x/y);
+        Here, "target-type" specifies the desired data-type to convert the specified expression to. Eg:  
+            double x,y; 
+            int k =(int)(x/y);
+        
+        "Data loss" occurs when converting from a larger to a smaller data-type.
+
+        
+// ----  rev[01-jul-2024]  ----
+
+
 	The parentheses surrounding  x/y  are necessary. Otherwise, the cast to int would apply only to the  x. 
 	The cast is necessary here because there is no automatic conversion from double to int.
-	Data-loss during type-cast: When a cast involves a narrowing conversion, information might be lost. When casting a long into a short, information will be lost if the long’s value is greater than the range of a short because its high-order bits are removed. When a floating-point value is cast to an integer type, the fractional component will also be lost due to truncation. For example, if the value 1.23 is assigned to an integer, the resulting value will simply be 1. The 0.23 is lost. For Example:
+	Data-loss during type-cast: When a cast involves a narrowing conversion, information might be lost. When casting a long into a short, information will be lost if the long’s value is greater than the range of a short because its high-order bits are removed. When a floating-point value is cast to an integer type, the fractional component will also be lost due to truncation. 
+
+For example, if the value 1.23 is assigned to an integer, the resulting value will simply be 1. The 0.23 is lost. For Example:
 byte b;  int i;
 i = 100; b = (byte) i; 	// No loss of info here. A byte can hold the value 100
 i = 257; b = (byte) i;	// Information loss this time. A byte cannot hold the value 257
