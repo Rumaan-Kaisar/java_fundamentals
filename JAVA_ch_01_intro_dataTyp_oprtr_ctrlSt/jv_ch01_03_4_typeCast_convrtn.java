@@ -1,14 +1,34 @@
 
-/* -=-=-=-=-=-=-=-=-=-=-=      Type Conversion and Type-cast      -=-=-=-=-=-=-=-=-=-=-= */
+/* -=-=-=-=-=-=-=-=-=-=-=      Type Conversion and Type-cast      -=-=-=-=-=-=-=-=-=-=-= 
+
+    assignment type Conversion:
+        When compatible types are mixed in an assignment, 
+        right side value automatically converted to the type of the left side
+
+            Eg: 
+                    int i;  
+                    float f;  
+
+                    i = 10;  
+                    f = i;  
+
+                i is converted into a float and then assigned to f
+
+        Not all types are compatible, for example, "boolean" and "int" are not compatible.
 
 
-1.16 Type Conversions and type-cast (Recall C/C++ 3.5, 3.6):
-When compatible types are mixed in an assignment, the value of the right side is automatically converted to the type of the left side. Eg: int i;  float f;  i = 10;  f = i;  here, the value in i is converted into a float and then assigned to f. Not all types are compatible, for example, boolean and int are not compatible.
-	Type conversion: When one type of data is assigned to another type of variable, an automatic type conversion will take place if
-	The two types are compatible.		The destination type is larger than the source type.
-When these two conditions are met, a widening conversion takes place. For example, the int type is always large enough to hold all valid byte values, and both int and byte are integer types, so an automatic conversion from byte to int can be applied.
 
-Example: long to double is a widening conversion and is legal. But there is no automatic conversion from double to long, since this is not a widening conversion.		long L, l; 	 double D, d;
+    Type conversion: 
+        When one type of data is assigned to another type of variable, 
+            an automatic type conversion will take place if:
+
+        1. The two types are compatible.
+        2. The destination type is larger than the source type.
+
+
+When these two conditions are met, a "widening conversion" takes place. For example, the int type is always large enough to hold all valid byte values, and both int and byte are integer types, so an automatic conversion from byte to int can be applied.
+
+Example: long to double is a "widening conversion" and is legal. But there is no automatic conversion from double to long, since this is not a "widening conversion".		long L, l; 	 double D, d;
 	L = 100123285L;  d = 90123285.0;
 	D = L; 	// legal
 	l = d; 	// illegal!!!
@@ -40,4 +60,8 @@ b = 10;   b = (byte) (b * b); 	// cast needed!!
 char ch1 = 'a',   ch2 = 'b';
 ch1 = (char) (ch1 + ch2);
 Without the cast, the result of adding ch1 to ch2 would be int, which can’t be assigned to a char.
+
+
+
+*/
 
