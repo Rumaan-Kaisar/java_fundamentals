@@ -25,16 +25,33 @@
         1. The two types are compatible.
         2. The destination type is larger than the source type.
 
+        When these two conditions are met, a "widening conversion" takes place. 
+        For example, 
+            Both "int" and "byte" are integer types, 
+            the "int" is always large enough to hold all valid "byte" values, 
 
-When these two conditions are met, a "widening conversion" takes place. For example, the int type is always large enough to hold all valid byte values, and both int and byte are integer types, so an automatic conversion from byte to int can be applied.
+        so an automatic conversion from byte to int can be applied.
 
-Example: long to double is a "widening conversion" and is legal. But there is no automatic conversion from double to long, since this is not a "widening conversion".		long L, l; 	 double D, d;
-	L = 100123285L;  d = 90123285.0;
-	D = L; 	// legal
-	l = d; 	// illegal!!!
-	Type-Cast for Incompatible Types: When type-conversion is illegal (long to double) or incompatible (Boolean to int) we can use the type-cast. A cast is an instruction to the compiler to convert one type into another.   A cast has this general form:
 
-(target-type) expression
+        Example :  "long" to "double" is a "widening conversion" and is legal. 
+                    But there is no automatic conversion from double to long, since this is not a "widening conversion".		
+                    
+                    long L, l; 	 
+                    double D, d;
+	
+                    L = 100123285L;  
+                    d = 90123285.0;
+	
+                    D = L; 	// legal
+	                l = d; 	// illegal!!!
+
+
+
+    --------    Type-Cast    --------
+
+    	Type-Cast for Incompatible Types: When type-conversion is illegal (long to double) or incompatible (Boolean to int) we can use the type-cast. A cast is an instruction to the compiler to convert one type into another.   A cast has this general form:
+
+            (target-type) expression
 
 Here, target-type specifies the desired type to convert the specified expression to. Eg:  double x,y; int k =(int)(x/y);
 	The parentheses surrounding  x/y  are necessary. Otherwise, the cast to int would apply only to the  x. 
