@@ -18,12 +18,12 @@
 
 
 
-    Type conversion: 
+    Type conversion (automatic): 
         When one type of data is assigned to another type of variable, 
             an automatic type conversion will take place if:
 
-        1. The two types are compatible.
-        2. The destination type is larger than the source type.
+                1. The two types are compatible.
+                2. The destination type is larger than the source type.
 
         When these two conditions are met, a "widening conversion" takes place. 
         For example, 
@@ -60,15 +60,28 @@
             double x,y; 
             int k =(int)(x/y);
         
-        "Data loss" occurs when converting from a larger to a smaller data-type.
+            "Data loss" occurs when converting from a larger to a smaller data-type.
+            The parentheses () surrounding  x/y  are necessary. Otherwise, the cast to int would apply only to the x
+
+        The cast is necessary here because there is "no automatic conversion" from "double" to "int"
+
 
         
+    Data-loss during type-cast: 
+        When a cast involves a "narrowing conversion" (i.e. bigger data-type to lower data-type, e.g "double" to "int"), 
+        information might be LOST. 
+        
+        When casting a "long" into a "short", 
+            information will be lost if the long’s value is "greater than the range" of a short 
+            because its high-order bits are removed. 
+            
+        When a floating-point value is cast to an integer type, 
+            the "fractional" component will also be lost due to truncation 
+
+
+            
+
 // ----  rev[01-jul-2024]  ----
-
-
-	The parentheses surrounding  x/y  are necessary. Otherwise, the cast to int would apply only to the  x. 
-	The cast is necessary here because there is no automatic conversion from double to int.
-	Data-loss during type-cast: When a cast involves a narrowing conversion, information might be lost. When casting a long into a short, information will be lost if the long’s value is greater than the range of a short because its high-order bits are removed. When a floating-point value is cast to an integer type, the fractional component will also be lost due to truncation. 
 
 For example, if the value 1.23 is assigned to an integer, the resulting value will simply be 1. The 0.23 is lost. For Example:
 byte b;  int i;
