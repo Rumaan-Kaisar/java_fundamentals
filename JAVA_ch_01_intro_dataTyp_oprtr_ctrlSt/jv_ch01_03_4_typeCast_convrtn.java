@@ -79,20 +79,40 @@
             the "fractional" component will also be lost due to truncation 
 
 
-            
+        Example:
+            For Example, consider this byte to int conversion
 
-// ----  rev[01-jul-2024]  ----
+                    byte b;  
+                    int i;
 
-For example, if the value 1.23 is assigned to an integer, the resulting value will simply be 1. The 0.23 is lost. For Example:
-byte b;  int i;
-i = 100; b = (byte) i; 	// No loss of info here. A byte can hold the value 100
-i = 257; b = (byte) i;	// Information loss this time. A byte cannot hold the value 257
+                    i = 100; 
+                    b = (byte) i; 	// No loss of info here. A byte can hold the value 100
+                    
+                    i = 257; 
+                    b = (byte) i;	// Information loss this time. A byte cannot hold the value 257
 
-	Type Conversion in Expressions: When different types of data are mixed within an expression, they are all converted to the same type. This is accomplished through the use of Java’s type promotion rules .	Recall C/C++ 3.5
-[1]	First, all char, byte, and short values are promoted to int. 
-[2]	Then, if one operand is a long, the whole expression is promoted to long. 
-[3]	If one operand is a float operand, the entire expression is promoted to float. 
-[4]	If any of the operands is double, the result is double.
+
+
+    --------    Type Conversion in Expressions    --------
+    Type Conversion in Expressions:
+        When "different types "of data are "mixed" within an expression, 
+        they are all converted to the same type. 
+        This is accomplished through the use of Java’s "TYPE PROMOTION" rules
+
+
+        [1] First, all "char", "byte", and "short" values are promoted to "int"
+        [2] Then, if one operand is a "long", the whole expression is promoted to "long"
+        [3] If one operand is a "float" operand, the entire expression is promoted to "float"
+        [4]	If any of the operands is "double", the result is "double"
+
+                char / byte / short     promoted to     "int"
+                For a   "long"    operand, whole expression is promoted to "long"
+                For a   "float"   operand, whole expression is promoted to "float"
+                For a   "double"  operand, whole expression is promoted to "double"
+
+
+// ----  rev[04-jul-2024]  ----
+
 	type promotions of a variable expire after the evaluation of the expression. For example, if the value of a byte variable is promoted to int inside an expression, outside the expression, the variable is still a byte. Type promotion only affects the evaluation of an expression.
 	type-cast in expression: Even though we have type-promotion in an expression, but in some cases we still need type-cast. Eg:
 byte b;   int i;
