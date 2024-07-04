@@ -103,7 +103,7 @@
         [1] First, all "char", "byte", and "short" values are promoted to "int"
         [2] Then, if one operand is a "long", the whole expression is promoted to "long"
         [3] If one operand is a "float" operand, the entire expression is promoted to "float"
-        [4]	If any of the operands is "double", the result is "double"
+        [4] If any of the operands is "double", the result is "double"
 
                 char / byte / short     promoted to     "int"
                 For a   "long"    operand, whole expression is promoted to "long"
