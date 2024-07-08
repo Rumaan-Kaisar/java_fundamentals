@@ -117,3 +117,25 @@
 
         Type promotion only affects the evaluation of an expression.
 */
+
+
+/*  Example 1: if the value of a "byte variable" is promoted to int inside an expression, 
+            outside the expression, the variable is still a byte.  
+*/
+
+public class TypePromotionExample {
+    public static void main(String[] args) {
+        byte b = 42;
+        int result;
+
+        // Inside the expression, 'b' is promoted to int
+        result = b * 2;
+
+        // Print the result of the expression
+        System.out.println("Result of expression (b * 2): " + result);
+
+        // 'b' is still a byte after the expression
+        System.out.println("Type of b: " + ((Object) b).getClass().getName());
+        System.out.println("Value of b: " + b);
+    }
+}
