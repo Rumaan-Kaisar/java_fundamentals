@@ -150,7 +150,7 @@ public class TypePromotionExample {
 
 
 
-// ----  rev[11-JUL-2024]  ----
+
 
 /*  --------    type-cast in Expressions    --------
 
@@ -190,3 +190,43 @@ public class TypePromotionExample {
 
 
 // ChatGPT :: why cast needed, ask for explanation to ChatGPT
+
+
+
+
+// ----  rev[11-JUL-2024]  ----
+
+/* Example 2: The following program is perfectly valid since
+                long to double is a "widening conversion" that is automatically performed.
+*/
+
+class LtoD {
+    public static void main(String args[]) {
+        long L;
+        double D;
+
+        L = 100123285L;
+        D = L;
+        System.out.println("L and D: " + L + " " + D);
+    }
+}
+
+
+
+
+/* Example 3: there is no automatic conversion from double to long (float-type to int-type), 
+                    since it is not a widening conversion. 
+                Thus, the following version of the preceding program is invalid.
+*/
+// *** This program will not compile. ***
+class LtoD {
+    public static void main(String args[]) {
+        long L;
+        double D;
+
+        D = 100123285.0;
+        L = D; // Illegal!!!
+        // L = (long) D    // type-cast is a solution, "int" or "long" 
+        System.out.println("L and D: " + L + " " + D);
+    }
+}
