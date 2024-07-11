@@ -150,19 +150,43 @@ public class TypePromotionExample {
 
 
 
-// ----  rev[08-JUL-2024]  ----
-/*  
-	type-cast in expression: Even though we have type-promotion in an expression, but in some cases we still need type-cast. Eg:
-byte b;   int i;
-b = 10;   i = b * b; 		// OK, no cast needed
-b = 10;   b = (byte) (b * b); 	// cast needed!!
-	No cast is needed when assigning b*b to i, because b is promoted to int when the expression is evaluated. 
-	However, when you try to assign b*b to b, you do need a cast—back to byte! Keep this in mind if you get unexpected type-incompatibility error messages on expressions that would otherwise seem perfectly OK.
-	This same sort of situation also occurs when performing operations on chars. For example, in the following fragment, the cast back to char is needed because of the promotion of ch1 and ch2 to int within the expression:
-char ch1 = 'a',   ch2 = 'b';
-ch1 = (char) (ch1 + ch2);
-Without the cast, the result of adding ch1 to ch2 would be int, which can’t be assigned to a char.
+// ----  rev[11-JUL-2024]  ----
+
+/*  --------    type-cast in Expressions    --------
+
+    Even though we have type-promotion in an expression, 
+        but in some cases we still need type-cast.
+        For example:
+
+            byte b;
+            int i;
+
+            b = 10;
+            i = b * b; 		// OK, no cast needed
+
+            b = 10;
+            b = (byte) (b * b); 	// cast needed!!
 
 
+        No cast is needed when assigning b*b to i, because b is promoted to int when the expression is evaluated. 
+        However, when you try to assign b*b to b, you do need a "cast—back" to byte! 
 
+        Keep this in mind if you get unexpected type-incompatibility error messages 
+            on expressions that would otherwise seem perfectly OK.
+
+
+    This "same sort of situation" also occurs when performing operations on "chars". 
+        For example, in the following fragment, 
+        the "cast back to char" is needed because of the promotion of ch1 and ch2 to int within the expression.
+
+            char ch1 = 'a',   ch2 = 'b';
+            ch1 = (char) (ch1 + ch2);
+
+        Without the cast, the result of adding ch1 to ch2 would be int, which can’t be assigned to a char.
+
+        
+        // ChatGPT ::
 */
+
+
+// ChatGPT :: why cast needed, ask for explanation to ChatGPT
