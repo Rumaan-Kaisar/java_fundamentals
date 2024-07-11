@@ -46,7 +46,15 @@
 	                l = d; 	// illegal!!!
 
 
+        No autometic conversion:
+            from numeric types to char or boolean
+            char and boolean are not compatible with each other
+            from double to long
 
+        However, an integer literal can be assigned to char
+
+
+        
     --------    Type-Cast    --------
     
     Type-Cast for Incompatible Types: 
