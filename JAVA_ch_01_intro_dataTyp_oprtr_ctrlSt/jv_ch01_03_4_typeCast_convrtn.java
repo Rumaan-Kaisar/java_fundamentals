@@ -162,7 +162,8 @@ public class TypePromotionExample {
             int i;
 
             b = 10;
-            i = b * b; 		// OK, no cast needed
+            i = b * b; 		// OK, no cast needed. 
+            // since b is promoted to int before the multiplication and i is an int
 
             b = 10;
             b = (byte) (b * b); 	// cast needed!!
@@ -171,7 +172,7 @@ public class TypePromotionExample {
         No cast is needed when assigning b*b to i, because b is promoted to int when the expression is evaluated. 
         However, when you try to assign b*b to b, you do need a "cast—back" to byte! 
 
-        Keep this in mind if you get unexpected type-incompatibility error messages 
+        Keep this in mind if you get "unexpected type-incompatibility error" messages 
             on expressions that would otherwise seem perfectly OK.
 
 
@@ -182,14 +183,15 @@ public class TypePromotionExample {
             char ch1 = 'a',   ch2 = 'b';
             ch1 = (char) (ch1 + ch2);
 
+        ch1 and ch2 are both promoted to int before the addition, when assigned to a character
         Without the cast, the result of adding ch1 to ch2 would be int, which can’t be assigned to a char.
 
-        
-        // ChatGPT ::
+    similarly,
+        Even though b is promoted to int during the evaluation of the expression b * b, 
+        the result of this expression is still an int. 
+        Assigning this int result back to a byte requires an explicit cast
+
 */
-
-
-// ChatGPT :: why cast needed, ask for explanation to ChatGPT
 
 
 
