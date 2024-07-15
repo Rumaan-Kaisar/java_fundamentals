@@ -194,8 +194,6 @@ public class TypePromotionExample {
 
 
 
-// ----  rev[11-JUL-2024]  ----
-
 /* Example 2: The following program is perfectly valid since
                 long to double is a "widening conversion" that is automatically performed.
 */
@@ -206,7 +204,7 @@ class LtoD {
         double D;
 
         L = 100123285L;
-        D = L;
+        D = L;  // auto-conversion
         System.out.println("L and D: " + L + " " + D);
     }
 }
@@ -219,14 +217,16 @@ class LtoD {
                 Thus, the following version of the preceding program is invalid.
 */
 // *** This program will not compile. ***
-class LtoD {
+class DtoL {
     public static void main(String args[]) {
         long L;
         double D;
 
         D = 100123285.0;
-        L = D; // Illegal!!!
-        // L = (long) D    // type-cast is a solution, "int" or "long" 
+        L = D; // Illegal & NO auto-conversion
+        // L = (long) D;    // type-cast is a solution, "int" or "long" 
         System.out.println("L and D: " + L + " " + D);
     }
 }
+
+
