@@ -65,16 +65,16 @@
             (target-type) expression
 
         Here, "target-type" specifies the desired data-type to convert the specified expression to. Eg:  
-            double x,y; 
+            double x, y; 
             int k =(int)(x/y);
         
+            Even though x and y are of type double, the cast converts the outcome of the expression to int.
             "Data loss" occurs when converting from a larger to a smaller data-type.
             The parentheses () surrounding  x/y  are necessary. Otherwise, the cast to int would apply only to the x
 
         The cast is necessary here because there is "no automatic conversion" from "double" to "int"
 
 
-        
     Data-loss during type-cast: 
         When a cast involves a "narrowing conversion" (i.e. bigger data-type to lower data-type, e.g "double" to "int"), 
         information might be LOST. 
@@ -84,7 +84,8 @@
             because its high-order bits are removed. 
             
         When a floating-point value is cast to an integer type, 
-            the "fractional" component will also be lost due to truncation 
+            the "fractional" component will also be lost due to truncation
+            1.23 will become 1 and ".23" will be lost
 
 
         Example:
@@ -230,5 +231,4 @@ class DtoL {
         System.out.println("L and D: " + L + " " + D);
     }
 }
-
 
