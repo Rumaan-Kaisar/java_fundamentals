@@ -466,14 +466,8 @@ class LogicalOpTable {
 
 // another version
 
+// --------    [25-JUL-2024]    --------
 
-
-
-// --------    rev[QTA-22-JUL-2024]    --------
-
-
-
-
-/* Example 6. On your own, try modifying the program so that it uses and displays 1’s and 0’s, rather than
+/* Example 6: Modifying the program so that it uses and displays 1’s and 0’s, rather than
 true and false. This may involve a bit more effort than you might at first think! */
 
