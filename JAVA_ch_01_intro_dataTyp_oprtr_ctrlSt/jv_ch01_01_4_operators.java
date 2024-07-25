@@ -414,3 +414,69 @@ class SideEffects {
 */
 
 
+
+// --------    rev[QTA-22-JUL-2024]    --------
+
+// --------  Truth Table  --------
+
+/* 
+
+program that displays the truth table
+for Java’s logical operators. You must make the columns in the table
+line up. This project makes use of several features covered in this chapter, including one of
+Java’s escape sequences and the logical operators. It also illustrates the differences in the
+precedence between the arithmetic + operator and the logical operators.
+
+To ensure that the columns line up, you will use the \t escape sequence to embed tabs into
+each output string. For example, this println( ) statement displays the header for the table:
+System.out.println("P\tQ\tAND\tOR\tXOR\tNOT");
+
+
+Each subsequent line in the table will use tabs to position the outcome of each operation
+under its proper heading.
+
+
+Here is the entire LogicalOpTable.java program listing. Enter it at this time.
+
+
+
+*/
+
+
+// Try This 2-2: a truth table for the logical operators.
+class LogicalOpTable {
+    public static void main(String args[]) {
+    boolean p, q;
+    System.out.println("P\tQ\tAND\tOR\tXOR\tNOT");
+    p = true; q = true;
+    System.out.print(p + "\t" + q +"\t");
+    System.out.print((p&q) + "\t" + (p|q) + "\t");
+    System.out.println((p^q) + "\t" + (!p));
+    p = true; q = false;
+    System.out.print(p + "\t" + q +"\t");
+    System.out.print((p&q) + "\t" + (p|q) + "\t");
+    System.out.println((p^q) + "\t" + (!p));
+    p = false; q = true;
+    System.out.print(p + "\t" + q +"\t");
+    System.out.print((p&q) + "\t" + (p|q) + "\t");
+    System.out.println((p^q) + "\t" + (!p));
+
+    p = false; q = false;
+    System.out.print(p + "\t" + q +"\t");
+    System.out.print((p&q) + "\t" + (p|q) + "\t");
+    System.out.println((p^q) + "\t" + (!p));
+}
+}
+
+Notice the parentheses surrounding the logical operations inside the println( ) statements.
+They are necessary because of the precedence of Java’s operators. The + operator is higher
+than the logical operators.
+5. Compile and run the program. The following table is displayed.
+P Q AND OR XOR NOT
+true true true true false false
+true false false true true false
+false true false true true true
+false false false false false true
+6. On your own, try modifying the program so that it uses and displays 1’s and 0’s, rather than
+true and false. This may involve a bit more effort than you might at first think!
+
