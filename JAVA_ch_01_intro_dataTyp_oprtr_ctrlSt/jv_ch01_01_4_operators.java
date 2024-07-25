@@ -418,23 +418,13 @@ class SideEffects {
 
 // --------  Truth Table  --------
 
-/*  Example 5: fOLLOWING program displays the truth table for Java’s LOGICAL operators. 
+/*  Example 5: fOLLOWING program displays the "truth table" for Java’s LOGICAL operators. 
 
-
-
-To ensure that the columns line up, you will use the \t escape sequence to embed tabs into
-each output string. For example, this println( ) statement displays the header for the table:
-System.out.println("P\tQ\tAND\tOR\tXOR\tNOT");
-
-
-Each subsequent line in the table will use tabs to position the outcome of each operation
-under its proper heading.
-
-
-Here is the entire LogicalOpTable.java program listing. Enter it at this time.
-
-
-
+                Line up the columns: 
+                    use the \t escape sequence to embed tabs into each output string
+                    Eg:  the header for the table:
+                        
+                        System.out.println("P\tQ\tAND\tOR\tXOR\tNOT");
 */
 
 
