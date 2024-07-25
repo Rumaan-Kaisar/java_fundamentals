@@ -456,6 +456,12 @@ class LogicalOpTable {
     }
 }
 
+/*  Notice the parentheses "()" surrounding the logical operations inside the println() statements.
+    They are necessary because of the precedence of Java’s operators. 
+    The "+" operator is higher than the logical operators. 
+*/
+
+
 
 
 // another version
@@ -466,15 +472,8 @@ class LogicalOpTable {
 // --------    rev[QTA-22-JUL-2024]    --------
 
 
-Notice the parentheses surrounding the logical operations inside the println( ) statements.
-They are necessary because of the precedence of Java’s operators. The + operator is higher
-than the logical operators.
-5. Compile and run the program. The following table is displayed.
-P Q AND OR XOR NOT
-true true true true false false
-true false false true true false
-false true false true true true
-false false false false false true
-6. On your own, try modifying the program so that it uses and displays 1’s and 0’s, rather than
-true and false. This may involve a bit more effort than you might at first think!
+
+
+/* Example 6. On your own, try modifying the program so that it uses and displays 1’s and 0’s, rather than
+true and false. This may involve a bit more effort than you might at first think! */
 
