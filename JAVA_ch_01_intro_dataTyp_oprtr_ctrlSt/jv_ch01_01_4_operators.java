@@ -415,17 +415,12 @@ class SideEffects {
 
 
 
-// --------    rev[QTA-22-JUL-2024]    --------
 
 // --------  Truth Table  --------
 
-/* 
+/*  Example 5: fOLLOWING program displays the truth table for Java’s LOGICAL operators. 
 
-program that displays the truth table
-for Java’s logical operators. You must make the columns in the table
-line up. This project makes use of several features covered in this chapter, including one of
-Java’s escape sequences and the logical operators. It also illustrates the differences in the
-precedence between the arithmetic + operator and the logical operators.
+
 
 To ensure that the columns line up, you will use the \t escape sequence to embed tabs into
 each output string. For example, this println( ) statement displays the header for the table:
@@ -442,6 +437,8 @@ Here is the entire LogicalOpTable.java program listing. Enter it at this time.
 
 */
 
+
+// --------    rev[QTA-22-JUL-2024]    --------
 
 // Try This 2-2: a truth table for the logical operators.
 class LogicalOpTable {
