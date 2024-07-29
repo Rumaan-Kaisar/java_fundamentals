@@ -466,7 +466,7 @@ class LogicalOpTable {
 
 // another version: use ChatGPT
 
-// --------    [25-JUL-2024]    --------
+// --------    [29-JUL-2024]    --------
 
 /* Example 6: Modifying the program so that it uses and displays 1’s and 0’s, rather than true and false. 
                 This may involve a bit more effort than you might at first think! (use ChatGPT)
@@ -513,4 +513,61 @@ class LogicalOpTable {
 
 
 
+
+// ChatGPT:
+Sure! Here's the modified program that uses and displays 1 for true and 0 for false:
+
+java
+Copy code
+// A truth table for the logical operators using 1's and 0's.
+class LogicalOpTable {
+    public static void main(String args[]) {
+        boolean p, q;
+
+        System.out.println("P\tQ\tAND\tOR\tXOR\tNOT p");
+
+        p = true; q = true;
+        System.out.print(boolToInt(p) + "\t" + boolToInt(q) + "\t");
+        System.out.print(boolToInt(p & q) + "\t" + boolToInt(p | q) + "\t");
+        System.out.println(boolToInt(p ^ q) + "\t" + boolToInt(!p));
+
+        p = true; q = false;
+        System.out.print(boolToInt(p) + "\t" + boolToInt(q) + "\t");
+        System.out.print(boolToInt(p & q) + "\t" + boolToInt(p | q) + "\t");
+        System.out.println(boolToInt(p ^ q) + "\t" + boolToInt(!p));
+
+        p = false; q = true;
+        System.out.print(boolToInt(p) + "\t" + boolToInt(q) + "\t");
+        System.out.print(boolToInt(p & q) + "\t" + boolToInt(p | q) + "\t");
+        System.out.println(boolToInt(p ^ q) + "\t" + boolToInt(!p));
+
+        p = false; q = false;
+        System.out.print(boolToInt(p) + "\t" + boolToInt(q) + "\t");
+        System.out.print(boolToInt(p & q) + "\t" + boolToInt(p | q) + "\t");
+        System.out.println(boolToInt(p ^ q) + "\t" + boolToInt(!p));
+    }
+
+    // Helper method to convert boolean to 1 or 0
+    public static int boolToInt(boolean value) {
+        return value ? 1 : 0;
+    }
+}
+Explanation:
+Helper Method:
+
+The boolToInt method is added to convert a boolean value to 1 if true and 0 if false.
+Using boolToInt:
+
+In the main method, wherever p or q or the result of a logical operation is used, it is passed through the boolToInt method to convert the boolean values to 1 or 0.
+Output:
+The output of this program will look like this:
+
+css
+Copy code
+P	Q	AND	OR	XOR	NOT p
+1	1	1	1	0	0
+1	0	0	1	1	0
+0	1	0	1	1	1
+0	0	0	0	0	1
+This demonstrates the truth table for logical operators using 1 and 0 instead of true and false
 
