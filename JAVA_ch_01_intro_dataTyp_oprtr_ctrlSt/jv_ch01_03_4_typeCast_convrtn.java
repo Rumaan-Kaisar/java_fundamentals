@@ -265,3 +265,29 @@ class CastDemo {
 }
 
 
+
+
+// ------------    rev[29-JUL-2024]    ------------
+
+
+/* Example 5: the outcome of an operation involving two byte values will be an int. This is not what
+you might intuitively expect. Consider the following program: 
+same sort of situation also occurs when performing operations on chars. For example,
+in the following fragment, the cast back to char is needed because of the promotion of ch1 and
+ch2 to int within the expression:
+char ch1 = 'a', ch2 = 'b';
+ch1 = (char) (ch1 + ch2);
+*/
+// A promotion surprise!
+class PromDemo {
+public static void main(String args[]) {
+byte b;
+int i;
+b = 10;
+i = b * b; // OK, no cast needed
+b = 10;
+b = (byte) (b * b); // cast needed!!
+System.out.println("i and b: " + i + " " + b);
+}
+}
+
