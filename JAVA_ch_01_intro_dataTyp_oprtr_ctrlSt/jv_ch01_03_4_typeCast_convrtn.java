@@ -1,7 +1,7 @@
 
 /* -=-=-=-=-=-=-=-=-=-=-=      Type Conversion and Type-cast      -=-=-=-=-=-=-=-=-=-=-= 
 
-    assignment type Conversion:
+    ASSIGNMENT type Conversion:
         When compatible types are mixed in an assignment, 
         right side value automatically converted to the type of the left side
 
@@ -109,10 +109,10 @@
         This is accomplished through the use of Java’s "TYPE PROMOTION" rules
 
 
-        [1] First, all "char", "byte", and "short" values are promoted to "int"
-        [2] Then, if one operand is a "long", the whole expression is promoted to "long"
-        [3] If one operand is a "float" operand, the entire expression is promoted to "float"
-        [4] If any of the operands is "double", the result is "double"
+        [1]  First, all "char", "byte", and "short" values are promoted to "int"
+        [2]  Then, if one operand is a "long", the whole expression is promoted to "long"
+        [3]  If one operand is a "float" operand, the entire expression is promoted to "float"
+        [4]  If any of the operands is "double", the result is "double"
 
                 char / byte / short     promoted to     "int"
                 For a   "long"    operand, whole expression is promoted to "long"
@@ -207,7 +207,8 @@ class LtoD {
         double D;
 
         L = 100123285L;
-        D = L;  // auto-conversion
+        D = L;  // auto-conversion from long to double
+
         System.out.println("L and D: " + L + " " + D);
     }
 }
