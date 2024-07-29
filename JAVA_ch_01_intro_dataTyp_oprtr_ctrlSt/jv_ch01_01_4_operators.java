@@ -464,10 +464,53 @@ class LogicalOpTable {
 
 
 
-// another version
+// another version: use ChatGPT
 
 // --------    [25-JUL-2024]    --------
 
-/* Example 6: Modifying the program so that it uses and displays 1’s and 0’s, rather than
-true and false. This may involve a bit more effort than you might at first think! */
+/* Example 6: Modifying the program so that it uses and displays 1’s and 0’s, rather than true and false. 
+                This may involve a bit more effort than you might at first think! (use ChatGPT)
+
+                ans:
+                Explanation:
+Helper Method:
+
+The boolToInt method is added to convert a boolean value to 1 if true and 0 if false.
+Using boolToInt:
+
+In the main method, wherever p or q or the result of a logical operation is used, it is passed through the boolToInt method to convert the boolean values to 1 or 0.
+*/
+
+
+// A truth table for the logical operators.
+class LogicalOpTable {
+    public static void main(String args[]) {
+        boolean p, q;
+
+        System.out.println("P\tQ\tAND\tOR\tXOR\tNOT p");
+
+        p = true; q = true;
+        System.out.print(p + "\t" + q +"\t");
+        System.out.print((p&q) + "\t" + (p|q) + "\t");
+        System.out.println((p^q) + "\t" + (!p));
+
+        p = true; q = false;
+        System.out.print(p + "\t" + q +"\t");
+        System.out.print((p&q) + "\t" + (p|q) + "\t");
+        System.out.println((p^q) + "\t" + (!p));
+
+        p = false; q = true;
+        System.out.print(p + "\t" + q +"\t");
+        System.out.print((p&q) + "\t" + (p|q) + "\t");
+        System.out.println((p^q) + "\t" + (!p));
+
+        p = false; q = false;
+        System.out.print(p + "\t" + q +"\t");
+        System.out.print((p&q) + "\t" + (p|q) + "\t");
+        System.out.println((p^q) + "\t" + (!p));
+    }
+}
+
+
+
 
