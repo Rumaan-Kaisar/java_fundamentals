@@ -291,3 +291,23 @@ System.out.println("i and b: " + i + " " + b);
 }
 }
 
+
+
+
+/* Example 6: Casts are not only useful when converting between types in an assignment. For example,
+consider the following program. It uses a cast to double to obtain a fractional component from
+an otherwise integer division. */
+// Using a cast.
+class UseCast {
+public static void main(String args[]) {
+int i;
+for(i = 0; i < 5; i++) {
+System.out.println(i + " / 3: " + i / 3);
+System.out.println(i + " / 3 with fractions: "
++ (double) i / 3);
+System.out.println();
+}
+}
+}
+
+
