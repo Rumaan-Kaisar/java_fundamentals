@@ -476,41 +476,7 @@ class LogicalOpTable {
                         it is passed through the boolToInt() to convert the boolean values to 1 or 0.
 */
 
-
-// A truth table for the logical operators.
-class LogicalOpTable {
-    public static void main(String args[]) {
-        boolean p, q;
-
-        System.out.println("P\tQ\tAND\tOR\tXOR\tNOT p");
-
-        p = true; q = true;
-        System.out.print(p + "\t" + q +"\t");
-        System.out.print((p&q) + "\t" + (p|q) + "\t");
-        System.out.println((p^q) + "\t" + (!p));
-
-        p = true; q = false;
-        System.out.print(p + "\t" + q +"\t");
-        System.out.print((p&q) + "\t" + (p|q) + "\t");
-        System.out.println((p^q) + "\t" + (!p));
-
-        p = false; q = true;
-        System.out.print(p + "\t" + q +"\t");
-        System.out.print((p&q) + "\t" + (p|q) + "\t");
-        System.out.println((p^q) + "\t" + (!p));
-
-        p = false; q = false;
-        System.out.print(p + "\t" + q +"\t");
-        System.out.print((p&q) + "\t" + (p|q) + "\t");
-        System.out.println((p^q) + "\t" + (!p));
-    }
-}
-
-
-
-
-/* Here's the modified program that uses and displays 1 for true and 0 for false: */
-
+// Here's the modified program that uses and displays 1 for true and 0 for false:
 
 // A truth table for the logical operators using 1's and 0's.
 class LogicalOpTable {
