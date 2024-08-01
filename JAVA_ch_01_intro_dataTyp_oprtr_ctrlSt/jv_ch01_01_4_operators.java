@@ -466,19 +466,14 @@ class LogicalOpTable {
 
 // another version: use ChatGPT
 
-// --------    [29-JUL-2024]    --------
-
 /* Example 6: Modifying the program so that it uses and displays 1’s and 0’s, rather than true and false. 
                 This may involve a bit more effort than you might at first think! (use ChatGPT)
 
                 ans:
-                Explanation:
-Helper Method:
+                    We've used the boolToInt() method to convert a boolean value to 1 if 'true' and 0 if 'false'.
 
-The boolToInt method is added to convert a boolean value to 1 if true and 0 if false.
-Using boolToInt:
-
-In the main method, wherever p or q or the result of a logical operation is used, it is passed through the boolToInt method to convert the boolean values to 1 or 0.
+                    inside main(), wherever p or q or the result of a logical operation is used, 
+                        it is passed through the boolToInt() to convert the boolean values to 1 or 0.
 */
 
 
@@ -514,11 +509,9 @@ class LogicalOpTable {
 
 
 
-// ChatGPT:
-Sure! Here's the modified program that uses and displays 1 for true and 0 for false:
+/* Here's the modified program that uses and displays 1 for true and 0 for false: */
 
-java
-Copy code
+
 // A truth table for the logical operators using 1's and 0's.
 class LogicalOpTable {
     public static void main(String args[]) {
@@ -552,22 +545,13 @@ class LogicalOpTable {
         return value ? 1 : 0;
     }
 }
-Explanation:
-Helper Method:
 
-The boolToInt method is added to convert a boolean value to 1 if true and 0 if false.
-Using boolToInt:
 
-In the main method, wherever p or q or the result of a logical operation is used, it is passed through the boolToInt method to convert the boolean values to 1 or 0.
-Output:
-The output of this program will look like this:
-
-css
-Copy code
+/* OUTPUT:
 P	Q	AND	OR	XOR	NOT p
 1	1	1	1	0	0
 1	0	0	1	1	0
 0	1	0	1	1	1
 0	0	0	0	0	1
-This demonstrates the truth table for logical operators using 1 and 0 instead of true and false
 
+*/
