@@ -459,6 +459,14 @@ class LogicalOpTable {
 /*  Notice the parentheses "()" surrounding the logical operations inside the println() statements.
     They are necessary because of the precedence of Java’s operators. 
     The "+" operator is higher than the logical operators. 
+
+    OUTPUT:
+
+    P       Q       AND     OR      XOR     NOT p
+    true    true    true    true    false   false
+    true    false   false   true    true    false
+    false   true    false   true    true    true
+    false   false   false   false   false   true
 */
 
 
@@ -513,11 +521,13 @@ class LogicalOpTable {
 }
 
 
-/* OUTPUT:
-P	Q	AND	OR	XOR	NOT p
-1	1	1	1	0	0
-1	0	0	1	1	0
-0	1	0	1	1	1
-0	0	0	0	0	1
+/*  OUTPUT:
+
+    P	Q	AND	OR	XOR	NOT p
+    1	1	1	1	0	0
+    1	0	0	1	1	0
+    0	1	0	1	1	1
+    0	0	0	0	0	1
 
 */
+
