@@ -267,9 +267,6 @@ class CastDemo {
 
 
 
-// ------------    rev[1-Aug-2024]    ------------
-
-
 /* Example 5: the outcome of an operation involving two "byte values" will be an "int". 
                 This is not what you might intuitively expect. 
                 Consider the following program: 
@@ -295,12 +292,16 @@ class PromDemo {
     }
 }
 
+// "incompatible types" ERROR occurs if "type-cast" not used
 
 
 
-/* Example 6: Casts are not only useful when converting between types in an assignment. For example,
-consider the following program. It uses a cast to double to obtain a fractional component from
-an otherwise integer division. */
+
+/* Example 6: Casts are not only useful when "converting between types" in an assignment. 
+                For example, consider the following program. 
+                It uses a cast to double to obtain a fractional component 
+                    from an otherwise integer division.
+*/
 // Using a cast.
 class UseCast {
 public static void main(String args[]) {
