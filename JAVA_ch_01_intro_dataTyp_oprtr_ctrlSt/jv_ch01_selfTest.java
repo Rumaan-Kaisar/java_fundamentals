@@ -2,13 +2,13 @@
 /* ------------    Chapter 2 Self Test    ------------
 
 
-1. Why does Java strictly specify the range and behavior of its primitive types?
+Example 1: Why does Java strictly specify the range and behavior of its primitive types?
 Java strictly specifies the range and behavior of its primitive types to ensure portability across platforms.
 
 
 
 
-2. What is Java’s character type, and how does it differ from the character type used by some
+Example 2: What is Java’s character type, and how does it differ from the character type used by some
 other programming languages?
 Java’s character type is char. Java characters are Unicode rather than ASCII, which is used by some
 other computer languages.
@@ -16,13 +16,13 @@ other computer languages.
 
 
 
-3. A boolean value can have any value you like because any non-zero value is true. True or False?
+Example 3: A boolean value can have any value you like because any non-zero value is true. True or False?
 False. A boolean value must be either true or false.
 
 
 
 
-4. Given this output,
+Example 4: Given this output,
 One
 Two
 Three
@@ -32,7 +32,7 @@ System.out.println("One\nTwo\nThree");
 
 
 
-5. What is wrong with this fragment?
+Example 5: What is wrong with this fragment?
 for(i = 0; i < 10; i++) {
 int sum;
 sum = sum + i;
@@ -46,7 +46,7 @@ block in which it is declared. Thus, the reference to it in the println( ) state
 
 
 
-6. Explain the difference between the prefix and postfix forms of the increment operator.
+Example 6: Explain the difference between the prefix and postfix forms of the increment operator.
 When the increment operator precedes its operand, Java will perform the increment prior to obtaining
 the operand’s value for use by the rest of the expression. If the operator follows its operand, then Java
 will obtain the operand’s value before incrementing.
@@ -54,26 +54,26 @@ will obtain the operand’s value before incrementing.
 
 
 
-7. Show how a short-circuit AND can be used to prevent a divide-by-zero error.
+Example 7: Show how a short-circuit AND can be used to prevent a divide-by-zero error.
 if((b != 0) && (val / b)) ...
 
 
 
 
-8. In an expression, what type are byte and short promoted to?
+Example 8: In an expression, what type are byte and short promoted to?
 In an expression, byte and short are promoted to int.Appendix A: Answers to Self Tests 619
 
 
 
 
-9. In general, when is a cast needed?
+Example 9: In general, when is a cast needed?
 A cast is needed when converting between incompatible types or when a narrowing conversion is
 occurring.
 
 
 
 
-10. Write a program that finds all of the prime numbers between 2 and 100.
+Example 10: Write a program that finds all of the prime numbers between 2 and 100.
 // Find prime numbers between 2 and 100.
 class Prime {
 public static void main(String args[]) {
@@ -94,13 +94,13 @@ System.out.println(i + " is prime.");
 
 
 
-11. Does the use of redundant parentheses affect program performance?
+Example 11: Does the use of redundant parentheses affect program performance?
 No.
 
 
 
 
-12. Does a block define a scope?
+Example 12: Does a block define a scope?
 Yes.
 
  */
