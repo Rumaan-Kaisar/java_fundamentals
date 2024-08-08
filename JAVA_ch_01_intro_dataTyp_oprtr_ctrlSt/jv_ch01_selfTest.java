@@ -1,144 +1,106 @@
 
-/*  ------------    Chapter 1 Self Test    ------------
-
-    Example 1. What is bytecode and why is it important to Java’s use for Internet programming?
-
-    Bytecode is a highly optimized set of instructions that is executed by the Java Virtual Machine.
-    Bytecode helps Java achieve both portability and security.
+/* ------------    Chapter 2 Self Test    ------------
 
 
-
-
-    Example 2. What are the three main principles of object-oriented programming?
-
-    Encapsulation, polymorphism, and inheritance
+1. Why does Java strictly specify the range and behavior of its primitive types?
+Java strictly specifies the range and behavior of its primitive types to ensure portability across platforms.
 
 
 
 
-    Example 3. Where do Java programs begin execution?
-
-    Java programs begin execution at main( )
-
-
-
-
-    Example 4. What is a variable?
-
-    A variable is a named memory location. The contents of a variable can be changed during the execution
-    of a program.
+2. What is Java’s character type, and how does it differ from the character type used by some
+other programming languages?
+Java’s character type is char. Java characters are Unicode rather than ASCII, which is used by some
+other computer languages.
 
 
 
 
-    Example 5. Which of the following variable names is invalid?
-    A. count
-    B. $count
-    C. count27
-    D. 67count
-
-    The invalid variable is "D. 67count" Variable names cannot begin with a digit
+3. A boolean value can have any value you like because any non-zero value is true. True or False?
+False. A boolean value must be either true or false.
 
 
 
 
-    Example 6. How do you create a single-line comment? How do you create a multiline comment?
-
-    A single-line comment begins with // and ends at the end of the line. A multiline comment begins with
-    |* and ends with *|
-
-
-
-
-    Example 7. Show the general form of the "if" statement. Show the general form of the "for loop".
-
-    The general form of the if:
-        if(condition) statement;
-    The general form of the for:
-        for(initialization; condition; iteration) statement;
+4. Given this output,
+One
+Two
+Three
+use a single string to show the println( ) statement that produced it.
+System.out.println("One\nTwo\nThree");
 
 
 
 
-    Example 8. How do you create a block of code?
-    A block of code is started with a { and ended with a }.
+5. What is wrong with this fragment?
+for(i = 0; i < 10; i++) {
+int sum;
+sum = sum + i;
+}
+System.out.println("Sum is: " + sum);
+There are two fundamental flaws in the fragment. First, sum is created each time the block defined by the
+for loop is entered and destroyed on exit. Thus, it will not hold its value between iterations. Attempting to
+use sum to hold a running sum of the iterations is pointless. Second, sum will not be known outside of the
+block in which it is declared. Thus, the reference to it in the println( ) statement is invalid.
 
 
 
 
-    Example 9. The moon’s gravity is about 17 percent that of earth’s. Write a program that computes your
-    effective weight on the moon.
-        //
-        Compute your weight on the moon.
-        Call this file Moon.java.
-        //
-
-        class Moon {
-            public static void main(String args[]) {
-            double earthweight; // weight on earth
-            double moonweight; // weight on moon
-
-        earthweight = 165;
-        moonweight = earthweight * 0.17;
-        System.out.println(earthweight +
-        " earth-pounds is equivalent to " +
-        moonweight + " moon-pounds.");
-        }
-        }
-
-
-        // Compute your weight on the moon.
-        class JV_ch1_1_1_moon_weight {
-            public static void main(String args[]) {
-                double earthweight; // weight on earth
-                double moonweight; // weight on moon
-            
-                earthweight = 165;
-                moonweight = earthweight * 0.17;
-
-                System.out.println(earthweight + " earth-pounds is equivalent to " + moonweight + " moon-pounds.");
-            }
-        }
+6. Explain the difference between the prefix and postfix forms of the increment operator.
+When the increment operator precedes its operand, Java will perform the increment prior to obtaining
+the operand’s value for use by the rest of the expression. If the operator follows its operand, then Java
+will obtain the operand’s value before incrementing.
 
 
 
 
-    Example 10. Adapt Try This 1-2 so that it prints a conversion table of inches to meters. Display 12 feet
-    of conversions, inch by inch. Output a blank line every 12 inches. (One meter equals
-    approximately 39.37 inches.)
-
-        //
-        This program displays a conversion
-        table of inches to meters.
-        Call this program InchToMeterTable.java.
-        //
-        class InchToMeterTable {
-            public static void main(String args[]) {
-            double inches, meters;
-            int counter;
-            counter = 0;
-            for(inches = 1; inches <= 144; inches++) {
-            meters = inches / 39.37; // convert to meters
-            System.out.println(inches + " inches is " +
-            meters + " meters.");
-            counter++;
-            // every 12th line, print a blank line
-            if(counter == 12) {
-            System.out.println();
-            counter = 0; // reset the line counter
-            }
-            }
-            }
-            }
+7. Show how a short-circuit AND can be used to prevent a divide-by-zero error.
+if((b != 0) && (val / b)) ...
 
 
 
 
-    Example 11. If you make a typing mistake when entering your program, what sort of error will result?
-    A syntax error.
+8. In an expression, what type are byte and short promoted to?
+In an expression, byte and short are promoted to int.Appendix A: Answers to Self Tests 619
 
 
 
-    Example 12. Does it matter where on a line you put a statement? 
-    No, Java is a free-form language
-*/
+
+9. In general, when is a cast needed?
+A cast is needed when converting between incompatible types or when a narrowing conversion is
+occurring.
+
+
+
+
+10. Write a program that finds all of the prime numbers between 2 and 100.
+// Find prime numbers between 2 and 100.
+class Prime {
+public static void main(String args[]) {
+int i, j;
+boolean isprime;
+for(i=2; i < 100; i++) {
+isprime = true;
+// see if the number is evenly divisible
+for(j=2; j <= i/j; j++)
+// if it is, then it's not prime
+if((i%j) == 0) isprime = false;
+if(isprime)
+System.out.println(i + " is prime.");
+}
+}
+}
+
+
+
+
+11. Does the use of redundant parentheses affect program performance?
+No.
+
+
+
+
+12. Does a block define a scope?
+Yes.
+
+ */
