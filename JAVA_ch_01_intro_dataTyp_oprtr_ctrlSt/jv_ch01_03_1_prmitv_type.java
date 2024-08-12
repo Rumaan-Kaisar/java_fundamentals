@@ -347,3 +347,10 @@ public class TypeCheck{
 
 
 
+
+/*  Example 7: Why does Java "strictly specify" the range and behavior of its primitive types?
+
+                ans:
+                    to ensure portability across platforms.
+*/
+
