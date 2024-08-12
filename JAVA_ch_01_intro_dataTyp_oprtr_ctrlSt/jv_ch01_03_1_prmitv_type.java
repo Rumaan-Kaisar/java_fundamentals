@@ -354,3 +354,15 @@ public class TypeCheck{
                     to ensure portability across platforms.
 */
 
+
+
+
+/*  Example 8: What is Java’s character type, and how does it differ 
+                from the character type used by some other programming languages?
+
+            ans:
+                Java’s character type is char. 
+                Java characters are "Unicode" rather than "ASCII" 
+                ASCII is used by some other computer languages
+*/
+
