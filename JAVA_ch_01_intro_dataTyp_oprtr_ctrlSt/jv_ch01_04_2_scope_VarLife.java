@@ -450,4 +450,11 @@ int main() {
 }
 
 
- 
+
+
+/*  Example 8: Does a block define a scope?
+
+            ans:
+                Yes
+*/
+
