@@ -59,3 +59,12 @@
             indentation style is allowed for more readable programs.
 */
 
+
+
+
+/* Example 1: Does the use of redundant parentheses affect program performance?
+
+            ans:
+                No.
+*/
+
