@@ -135,3 +135,11 @@ public class BinaryToDecimal {
 
 
 
+
+/*  Example 3: A boolean value can have any value you like because any non-zero value is true. True or False?
+
+            ans:
+                False.
+                A boolean value must be either "true" or "false".
+*/
+
