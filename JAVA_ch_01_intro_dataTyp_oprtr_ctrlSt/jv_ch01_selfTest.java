@@ -1,19 +1,7 @@
 
 /* ------------    Chapter 2 Self Test    ------------
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+// ----  rev[12-Aug-2024]  ----
 
 Example 4: Given this output,
 One
@@ -85,43 +73,6 @@ System.out.println(i + " is prime.");
 }
 
 
-
-
-Example 11: Does the use of redundant parentheses affect program performance?
-No.
-
-
-
-
-Example 12: Does a block define a scope?
-Yes.
-
  */
 
-
-
-
-/*  Example 1: Why does Java "strictly specify" the range and behavior of its primitive types?
-
-                ans:
-                    to ensure portability across platforms.
-*/
-
-
-/*  Example 2: What is Java’s character type, and how does it differ 
-                from the character type used by some other programming languages?
-
-            ans:
-                Java’s character type is char. 
-                Java characters are "Unicode" rather than "ASCII" 
-                ASCII is used by some other computer languages
-*/
-
-
-/*  Example 3: A boolean value can have any value you like because any non-zero value is true. True or False?
-
-            ans:
-                False.
-                A boolean value must be either "true" or "false".
-*/
 
