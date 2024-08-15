@@ -458,3 +458,29 @@ int main() {
                 Yes
 */
 
+
+
+
+/*  Example 9: What is wrong with this fragment?
+
+
+                    for(i=0; i<10; i++) {
+                        int sum;
+                        sum = sum + i;
+                    }
+                    System.out.println("Sum is: " + sum);
+
+                    
+            ans:
+                There are two fundamental flaws in the fragment. 
+
+                First, 
+                    "sum" is created each time the block defined by the for loop is entered and destroyed on exit.
+                    Thus, it will not hold its value between iterations. 
+                        Attempting to use sum to hold a "running sum of the iterations" is pointless. 
+
+                Second, 
+                    sum will not be known outside of the block in which it is declared.
+                    Thus, the reference to it in the println() statement is "invalid".
+*/
+
