@@ -1,29 +1,7 @@
 
 /* ------------    Chapter 2 Self Test    ------------
 
-// ----  rev[12-Aug-2024]  ----
-
-Example 4: Given this output,
-One
-Two
-Three
-use a single string to show the println( ) statement that produced it.
-System.out.println("One\nTwo\nThree");
-
-
-
-
-Example 5: What is wrong with this fragment?
-for(i = 0; i < 10; i++) {
-int sum;
-sum = sum + i;
-}
-System.out.println("Sum is: " + sum);
-There are two fundamental flaws in the fragment. First, sum is created each time the block defined by the
-for loop is entered and destroyed on exit. Thus, it will not hold its value between iterations. Attempting to
-use sum to hold a running sum of the iterations is pointless. Second, sum will not be known outside of the
-block in which it is declared. Thus, the reference to it in the println( ) statement is invalid.
-
+// ----  rev[15-Aug-2024]  ----
 
 
 
@@ -42,7 +20,7 @@ if((b != 0) && (val / b)) ...
 
 
 Example 8: In an expression, what type are byte and short promoted to?
-In an expression, byte and short are promoted to int.Appendix A: Answers to Self Tests 619
+            In an expression, byte and short are promoted to int.Appendix A: answers to Self Tests 619:
 
 
 
@@ -73,6 +51,6 @@ System.out.println(i + " is prime.");
 }
 
 
- */
+*/
 
 
