@@ -19,3 +19,16 @@
 */
 
 
+
+
+/*  Example 1: Given this output,
+                    One
+                    Two
+                    Three
+
+                use a "single string" to show the "println()" statement that produced it.
+                
+            ans:
+                System.out.println("One\nTwo\nThree");
+*/
+
