@@ -544,3 +544,12 @@ class LogicalOpTable {
                     obtain the operand’s value "before incrementing"
 */
 
+
+
+
+/*  Example 8: Show how a short-circuit AND can be used to prevent a divide-by-zero error.
+
+            ans:
+                if((b != 0) && (val / b))
+*/
+
