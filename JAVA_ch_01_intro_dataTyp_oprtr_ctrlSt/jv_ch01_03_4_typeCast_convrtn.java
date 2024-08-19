@@ -317,3 +317,12 @@ class UseCast {
 }
 
 
+
+
+/*  Example 7: In an expression, what type are byte and short promoted to?
+            
+            ans:
+                In an expression, byte and short are promoted to int.
+
+*/
+
