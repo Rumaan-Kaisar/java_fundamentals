@@ -531,3 +531,16 @@ class LogicalOpTable {
 
 */
 
+
+
+
+/*  Example 7: Explain the difference between the prefix and postfix forms of the increment operator.
+
+            ans:
+                When the increment operator "precedes" its operand, Java will 
+                    perform the increment "prior to obtaining the operand's value" for use by the rest of the expression
+
+                If the operator "follows" its operand, then Java will 
+                    obtain the operand’s value "before incrementing"
+*/
+
