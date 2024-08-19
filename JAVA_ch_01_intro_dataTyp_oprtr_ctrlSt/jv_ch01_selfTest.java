@@ -1,28 +1,7 @@
 
 /* ------------    Chapter 2 Self Test    ------------
 
-// ----  rev[15-Aug-2024]  ----
-
-
-
-Example 6: Explain the difference between the prefix and postfix forms of the increment operator.
-When the increment operator precedes its operand, Java will perform the increment prior to obtaining
-the operand’s value for use by the rest of the expression. If the operator follows its operand, then Java
-will obtain the operand’s value before incrementing.
-
-
-
-
-Example 7: Show how a short-circuit AND can be used to prevent a divide-by-zero error.
-if((b != 0) && (val / b)) ...
-
-
-
-
-Example 8: In an expression, what type are byte and short promoted to?
-            In an expression, byte and short are promoted to int.Appendix A: answers to Self Tests 619:
-
-
+// ----  rev[19-Aug-2024]  ----
 
 
 Example 9: In general, when is a cast needed?
@@ -52,5 +31,6 @@ System.out.println(i + " is prime.");
 
 
 */
+
 
 
