@@ -326,3 +326,13 @@ class UseCast {
 
 */
 
+
+
+
+/*  Example 8: In general, when is a cast needed?
+            
+            ans:
+                A cast is needed when converting between INCOMPATIBLE types 
+                or when a NARROWING conversion is occurring.
+*/
+
