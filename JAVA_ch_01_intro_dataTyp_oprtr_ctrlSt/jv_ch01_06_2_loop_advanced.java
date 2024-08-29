@@ -1,5 +1,12 @@
 
-\* -=-=-=-=-=-=-=-=-=-=-=      chapter name      -=-=-=-=-=-=-=-=-=-=-= *\
+/* -=-=-=-=-=-=-=-=-=-=-=      LOOPS      -=-=-=-=-=-=-=-=-=-=-= 
+GPT: give important points to remember, important facts / aspects following in JAVA. Also control-flow mechanism and difference from C/C++. 
+for loop
+for loop variations
+while 
+do-while
+nested loops
+
 
 
 1.21 for loop (with variations)[ Recall C/C++ 2.5 , 2.11 ]
@@ -33,11 +40,20 @@ fact *= i; }
 	Note: the scope of that variable ends when the for statement does. (That is, the scope of the variableis limited to the for loop.) Outside the for loop, the variable will cease to exist. 
 [6]	The Enhanced for Loop: Relatively recently, a new form of the for loop, called the enhanced for, was added to Java. The enhanced for provides a streamlined way to cycle through the contents of a collection of objects, such as an array. We'll discuss with array.
 
+
+
 1.22 while and do-while loop (similar to C/C++)
 While loop:  	while(condition){}	Do-While loop: 	do{}while(condition);
+
+
 
 1.23 Nested Loops: 	One loop can be nested inside of another. Eg: To find factors of numbers
 for(int i=2; i <= 100; i++){ System.out.print("Factors of " + i + ": ");
   for(int j=2; j<i; j++) if((i%j) == 0) System.out.print(j + " ");
   System.out.println(); }
+
+
+*/
+
+
 
