@@ -1,6 +1,10 @@
 
 /* -=-=-=-=-=-=-=-=-=-=-=      if-else      -=-=-=-=-=-=-=-=-=-=-= 
-
+GPT: give important points to remember, important facts / aspects following in JAVA. Also control-flow mechanism and difference from C/C++. 
+if-else
+Nested if
+if-else-if ladder
+Switch statement
 
 1.19 if-else, Nested if, if-else-if ladder
 	if, if-else : Everything is similar to C/C++. In Java "if(condition)" is used and in C/C++ "if(expression)" is used. In Java "condition" must be a "Boolean expression " which returns true/false value. (Recall C/C++ 2.3, 2.4)
