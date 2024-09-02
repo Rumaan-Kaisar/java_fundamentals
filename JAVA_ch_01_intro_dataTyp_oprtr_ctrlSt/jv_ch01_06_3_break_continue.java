@@ -1,5 +1,5 @@
 
-\* -=-=-=-=-=-=-=-=-=-=-=      chapter name      -=-=-=-=-=-=-=-=-=-=-= *\
+/* -=-=-=-=-=-=-=-=-=-=-=      chapter name      -=-=-=-=-=-=-=-=-=-=-= 
 
 
 1.24  "break" and "continue"
@@ -129,3 +129,7 @@ else if(y != 0) 	// ...
 else if(!done) 	// ...
 This sequence cannot be recoded into a switch because all three conditions involve different variables—and differing types. 
 	Also, you will need to use an if-else-if ladder when testing floating-point values or other objects that are not of types valid for use in a switch expression.
+
+
+*/
+
