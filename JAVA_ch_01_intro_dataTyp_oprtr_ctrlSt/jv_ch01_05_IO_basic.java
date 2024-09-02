@@ -35,13 +35,14 @@
 
 /* Example 1: Here is a program that reads a character from the keyboard: 
 
-Notice that  main()  begins like this: 	
-public static void main(String args[])
-throws java.io.IOException {
-Because System.in.read() is being used, the program must specify the throws java.io.IOException clause. This line is necessary to handle input errors. It is part of Java’s Exception Handling mechanism.
+                IO Exception Handling: Notice that  main()  begins like this: 	
 
+                        public static void main(String args[]) throws java.io.IOException {
 
+                    Because System.in.read() is being used, the program must specify the "throws java.io.IOException clause"
+                    This line is necessary to "handle Input Errors". It is part of Java’s Exception Handling mechanism.
 */
+
 class KbIn {
     public static void main(String args[]) throws java.io.IOException{
         char ch;
