@@ -26,19 +26,22 @@
                 Instead, they are stored in the buffer until you press the ENTER key. 
 
 
+    Note:
+        Real-world Java programs and applets will be graphical and window based, not console based. So keyboard use isn't popular.
+*/
 
 
 
 
-	Notice that  main()  begins like this: 	public static void main(String args[])
+/* Example 1: Here is a program that reads a character from the keyboard: 
+
+Notice that  main()  begins like this: 	
+public static void main(String args[])
 throws java.io.IOException {
 Because System.in.read() is being used, the program must specify the throws java.io.IOException clause. This line is necessary to handle input errors. It is part of Java’s Exception Handling mechanism.
 
-Note:  Real-world Java programs and applets will be graphical and window based, not console based. So keyboard use isn't popular.
 
 */
-
-/* Example 1: Here is a program that reads a character from the keyboard: */
 class KbIn {
     public static void main(String args[]) throws java.io.IOException{
         char ch;
