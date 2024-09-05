@@ -1,10 +1,34 @@
 
-/* -=-=-=-=-=-=-=-=-=-=-=      if-else      -=-=-=-=-=-=-=-=-=-=-= 
+/* -=-=-=-=-=-=-=-=-=-=-=      SELECTIONs      -=-=-=-=-=-=-=-=-=-=-= 
+
+There are 3 types of control statements in JAVA:
+    Selection Statements: 
+        To choose different paths of execution based on certain conditions
+            1. if
+            2. if-else
+            3. switch
+
+    Iteration (Loop) Statements: 
+        To execute a block of code multiple times
+            1. for
+            2. while
+            3. do-while
+
+    Jump Statements: 
+        To break out of loops or skip to the next iteration of a loop
+            1. break
+            2. continue
+            3. return
+
+
+------  rev[05-Sep-2024]  ------
+
 GPT: give important points to remember, important facts / aspects following in JAVA. Also control-flow mechanism and difference from C/C++. 
 if-else
 Nested if
 if-else-if ladder
 Switch statement
+
 
 1.19 if-else, Nested if, if-else-if ladder
 	if, if-else : Everything is similar to C/C++. In Java "if(condition)" is used and in C/C++ "if(expression)" is used. In Java "condition" must be a "Boolean expression " which returns true/false value. (Recall C/C++ 2.3, 2.4)
@@ -35,5 +59,11 @@ In this fragment, if i has the value 1, 2, or 3, the first println() statement e
 
 */
 
+
+/*  
+
+
+
+*/
 
 
