@@ -36,7 +36,7 @@
 /* Example 1: Here is a program that reads a character from the keyboard: 
 
                 IO Exception Handling: 
-                    Notice that  main()  begins like this: 	
+                    Notice the usage of "java.io.IOException" that main() begins like this: 	
 
                         public static void main(String args[]) throws java.io.IOException {
 
@@ -64,3 +64,15 @@ class KbIn {
         In some case, you may need to remove them (by reading them) before the next input operation.
 
 */
+
+
+
+
+To read a character from the keyboard, we will use System.in.read( ). System.in is the
+complement to System.out. It is the input object attached to the keyboard. The read( ) methodChapter 3: Program Control Statements 65
+waits until the user presses a key and then returns the result. The character is returned as an
+integer, so it must be cast into a char to assign it to a char variable. By default, console input
+is line buffered. Here, the term buffer refers to a small portion of memory that is used to hold
+the characters before they are read by your program. In this case, the buffer holds a complete
+line of text. As a result, you must press ENTER before any character that you type will be sent
+to your program. Here is a program that reads a character from the keyboard
