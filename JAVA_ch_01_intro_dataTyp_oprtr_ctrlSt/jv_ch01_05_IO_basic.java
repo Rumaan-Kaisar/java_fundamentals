@@ -35,7 +35,8 @@
 
 /* Example 1: Here is a program that reads a character from the keyboard: 
 
-                IO Exception Handling: Notice that  main()  begins like this: 	
+                IO Exception Handling: 
+                    Notice that  main()  begins like this: 	
 
                         public static void main(String args[]) throws java.io.IOException {
 
@@ -55,4 +56,11 @@ class KbIn {
 }
 
 
+/* The fact that "System.in" is Line-Buffered is a "source of ANNOYANCE" at times. 
 
+    When you press ENTER, a carriage return, "line feed sequence" is entered into the "input stream". 
+
+    Furthermore, these characters are left "pending" in the input buffer "until you read them". 
+        In some case, you may need to remove them (by reading them) before the next input operation.
+
+*/
