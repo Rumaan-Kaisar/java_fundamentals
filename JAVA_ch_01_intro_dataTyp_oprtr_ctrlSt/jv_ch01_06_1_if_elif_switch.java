@@ -89,7 +89,11 @@ In this fragment, if i has the value 1, 2, or 3, the first println() statement e
 
 /*  
 
-
+GPT: give important points to remember, important facts / aspects following in JAVA. Also control-flow mechanism and difference from C/C++. 
+if-else
+Nested if
+if-else-if ladder
+Switch statement
 
 */
 
