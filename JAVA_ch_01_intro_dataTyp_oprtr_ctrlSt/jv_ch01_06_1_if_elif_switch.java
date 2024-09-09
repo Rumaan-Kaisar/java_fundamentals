@@ -21,18 +21,45 @@ There are 3 types of control statements in JAVA:
             3. return
 
 
-------  rev[05-Sep-2024]  ------
-
-GPT: give important points to remember, important facts / aspects following in JAVA. Also control-flow mechanism and difference from C/C++. 
-if-else
-Nested if
-if-else-if ladder
-Switch statement
 
 
-1.19 if-else, Nested if, if-else-if ladder
-	if, if-else : Everything is similar to C/C++. In Java "if(condition)" is used and in C/C++ "if(expression)" is used. In Java "condition" must be a "Boolean expression " which returns true/false value. (Recall C/C++ 2.3, 2.4)
-	Nested if : In a nested if-else, an invisible block appears around the nearest if-else of the same visible block. Eg: 
+    ------------    if-else, Nested if, if-else-if ladder    ------------
+
+    if, if-else:
+        Everything is similar to C/C++. The general form of the if, using blocks of statements, is:
+
+                        if(condition) {
+                            statement sequence
+                        }
+                        else {
+                            statement sequence
+                        }
+
+            '{}' isn't necessary for "single line statement"
+            If the "conditional expression" is true, the TARGET of the 'if' will be executed; 
+            otherwise, the TARGET of the 'else' (if it exists) will be executed.
+            The "conditional expression" controlling the 'if' must produce a boolean resul
+
+        Recall:
+            C_Ch2_1_1_ctrl_stmnt_slct_1_ifElse.c
+            C_Ch2_1_2_ctrl_stmnt_slct_2_ELIF.c
+
+
+    ----  rev[09-Sep-2024]  ----
+
+        Note:
+            In Java "if(condition)" is used and in C/C++ "if(expression)" is used. 
+            In Java "condition" must be a "Boolean expression " which returns true/false value.
+
+
+
+
+    Nested if:
+        In a nested if-else, an "invisible block" appears around the nearest if-else of the same visible block.
+        For example:
+
+
+
 
 if(i == 10) { if(j < 20) a = b;
 if(k > 100) c = d;
