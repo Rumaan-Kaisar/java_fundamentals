@@ -45,12 +45,10 @@ There are 3 types of control statements in JAVA:
             C_Ch2_1_2_ctrl_stmnt_slct_2_ELIF.c
 
 
-    ----  rev[09-Sep-2024]  ----
-
         Note:
-            In Java "if(condition)" is used and in C/C++ "if(expression)" is used. 
+            In Java "if(condition)" is used and in C/C++ "if(expression)" is used.
             In Java "condition" must be a "Boolean expression " which returns true/false value.
-
+            But in C/C++, any non-zero value is considered true, and zero is false.
 
 
 
