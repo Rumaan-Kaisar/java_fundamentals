@@ -54,18 +54,23 @@ There are 3 types of control statements in JAVA:
 
     Nested if:
         In a nested if-else, an "invisible block" appears around the nearest if-else of the same visible block.
-        For example:
+            (Recall 'Example 2' of C/C++ C_Ch2_1_2_ctrl_stmnt_slct_2_ELIF.c)
+            when {} not used an "else" connects to "nearest if". For example:
+
+                    if(i == 10) { 
+                        if(j < 20) a = b;
+                        if(k > 100) c = d;  // Makes an if-else block.
+                        else a = c;         // this else refers to if(k > 100)
+                    }
+                    else a = d;     // this else refers to if(i == 10)
 
 
 
+----  rev[12-Seop-2024]  ----
 
-if(i == 10) { if(j < 20) a = b;
-if(k > 100) c = d;
-else a = c;   // this else refers to if(k > 100), Makes an if-else block. Both reacts when "j<20" is true. None will be executed when "k<20" is false
-}
-else a = d;   // this else refers to if(i == 10)
-	The key point about nested ifs in Java is that an else statement always refers to the nearest if statement that is within the same block as the else and not already associated with an else. (Recall C/C++ 2.10 Last portion)
-	if-else-if ladder: Exactly same as C/C++ and "condition" must be used instead of "expression". Last else act as default condition. 
+
+    if-else-if ladder:
+        Exactly same as C/C++ and "condition" must be used instead of "expression". Last else act as default condition. 
 
 
 
@@ -220,5 +225,6 @@ Switch Statements:
 Be cautious when using String in switch statements—null values will cause a NullPointerException. Ensure that the String being switched on is not null.
 By keeping these facts and best practices in mind, you'll be better prepared to write clear, efficient, and error-free control structures in Java.
 */
+
 
 
