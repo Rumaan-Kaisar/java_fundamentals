@@ -229,8 +229,6 @@ By keeping these facts and best practices in mind, you'll be better prepared to 
 
 
 
-
-
 /* Example 1: A simple computerized guessing game (version 1). 
                 In this version of the game, the program asks the player for a letter between A and Z. 
                 If the player presses the correct letter on the keyboard, 
@@ -249,5 +247,22 @@ class Guess {
     }
 }
 
+
+
+
+/* Example 2: Guessing game (version 2) this version uses the else to print a message when the wrong letter is picked. */
+
+class Guess2 {
+    public static void main(String args[]) throws java.io.IOException {
+        char ch, answer = 'K';
+
+        System.out.println("I'm thinking of a letter between A and Z.");
+        System.out.print("Can you guess it: ");
+        ch = (char) System.in.read(); // get a char
+
+        if(ch == answer) System.out.println("** Right **");
+        else System.out.println("...Sorry, you're wrong.");
+    }
+}
 
 
