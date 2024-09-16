@@ -1,24 +1,24 @@
 
 /* -=-=-=-=-=-=-=-=-=-=-=      SELECTIONs      -=-=-=-=-=-=-=-=-=-=-= 
 
-There are 3 types of control statements in JAVA:
-    Selection Statements: 
-        To choose different paths of execution based on certain conditions
-            1. if
-            2. if-else
-            3. switch
+    There are 3 types of control statements in JAVA:
+        Selection Statements: 
+            To choose different paths of execution based on certain conditions
+                1. if
+                2. if-else
+                3. switch
 
-    Iteration (Loop) Statements: 
-        To execute a block of code multiple times
-            1. for
-            2. while
-            3. do-while
+        Iteration (Loop) Statements: 
+            To execute a block of code multiple times
+                1. for
+                2. while
+                3. do-while
 
-    Jump Statements: 
-        To break out of loops or skip to the next iteration of a loop
-            1. break
-            2. continue
-            3. return
+        Jump Statements: 
+            To break out of loops or skip to the next iteration of a loop
+                1. break
+                2. continue
+                3. return
 
 
 
@@ -264,5 +264,31 @@ class Guess2 {
         else System.out.println("...Sorry, you're wrong.");
     }
 }
+
+
+
+
+/* Example 3: Guessing game (version 3) used nested-if-else to add a further improvement.
+                Now provides the player with feedback about a wrong guess 
+*/
+
+class Guess3 {
+    public static void main(String args[]) throws java.io.IOException {
+        char ch, answer = 'K';
+
+        System.out.println("I'm thinking of a letter between A and Z.");
+        System.out.print("Can you guess it: ");
+
+        ch = (char) System.in.read();   // get a char
+        if(ch == answer) System.out.println("** Right **");
+        else {
+            System.out.print("...Sorry, you're ");
+            // a nested if
+            if(ch < answer) System.out.println("too low");
+            else System.out.println("too high");
+        }
+    }
+}
+
 
 
