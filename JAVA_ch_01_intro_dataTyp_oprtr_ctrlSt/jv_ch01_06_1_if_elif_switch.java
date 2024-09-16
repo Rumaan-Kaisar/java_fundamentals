@@ -26,7 +26,7 @@
     ------------    if-else, Nested if, if-else-if ladder    ------------
 
     if, if-else:
-        Everything is similar to C/C++. The general form of the if, using blocks of statements, is:
+        Everything is similar to C/C++. The general form of the if (if-else), using blocks of statements, is:
 
                         if(condition) {
                             statement sequence
@@ -35,10 +35,11 @@
                             statement sequence
                         }
 
-            '{}' isn't necessary for "single line statement"
+            '{}' isn't necessary for "single line statement" 
+                but recommended for clarity and to avoid errors
             If the "conditional expression" is true, the TARGET of the 'if' will be executed; 
-            otherwise, the TARGET of the 'else' (if it exists) will be executed.
-            The "conditional expression" controlling the 'if' must produce a boolean resul
+            Otherwise, the TARGET of the 'else' (if it exists) will be executed.
+            The "conditional expression" controlling the 'if' must produce a boolean result
 
         Recall:
             C_Ch2_1_1_ctrl_stmnt_slct_1_ifElse.c
@@ -46,6 +47,7 @@
 
 
         Note:
+            The "else" part is optional, without it, we get a simple 'if' statement    
             In Java "if(condition)" is used and in C/C++ "if(expression)" is used.
             In Java "condition" must be a "Boolean expression " which returns true/false value.
             But in C/C++, any non-zero value is considered true, and zero is false.
@@ -118,16 +120,6 @@ Switch statement
 
 
 1. if-else Statement in Java:
-Important Points:
-The if statement evaluates a boolean expression and executes a block of code if the expression is true.
-The else part is optional and provides an alternative block of code to execute if the if condition is false.
-Curly braces {} are optional for a single statement but recommended for clarity and to avoid errors.
-Control Flow:
-If the condition in the if statement is true, the program executes the code inside the if block.
-If the condition is false, and if there's an else block, the program executes the code inside the else block.
-Differences from C/C++:
-Boolean Expressions: In Java, the condition in an if statement must be a boolean expression (i.e., something that evaluates to true or false). In C/C++, any non-zero value is considered true, and zero is false.
-
 
 2. Nested if Statements in Java:
 Important Points:
