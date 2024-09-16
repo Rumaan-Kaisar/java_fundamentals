@@ -66,13 +66,31 @@
 
 
 
-----  rev[12-Seop-2024]  ----
-
-
     if-else-if ladder:
-        Exactly same as C/C++ and "condition" must be used instead of "expression". Last else act as default condition. 
+        Exactly same as C/C++ and "condition" must be used instead of "expression". 
+            i.e. conditions must be "explicitly boolean", unlike C/C++ where any non-zero value can be true
+        
+        The if-else-if ladder is a sequence of if and else-if conditions used to "test multiple conditions".
+            The program executes the first true condition and ignores the rest.
+            The final else block (optional) act as default condition, catches any cases where none of the previous conditions were true.
 
 
+        Control Flow:
+            The program checks each if and else-if condition in order.
+            The first block with a true condition is executed.
+            If no conditions are true, and there's an else block, that block is executed.
+
+
+        Differences from C/C++:
+            conditions must be "explicitly boolean", unlike C/C++
+
+
+
+            ----  rev[16-Sep-2024]  ----
+
+    ------------    switch    ------------
+
+    
 
 1.20 Switch statement(similar C/C++ switch . Recall C/C++ 2.17)
 In C/C++ we used only value to control switch i.e. "switch(value){ }" where value must be int or char constant. In Java we use "expression" i.e "switch(expression){ }", generally expression must be of the types: byte, short, int, char or an enumeration. In JDK 7, expression can also be of type String. This means that modern versions of Java can use a string to control a switch. 
@@ -109,6 +127,8 @@ If the condition in the if statement is true, the program executes the code insi
 If the condition is false, and if there's an else block, the program executes the code inside the else block.
 Differences from C/C++:
 Boolean Expressions: In Java, the condition in an if statement must be a boolean expression (i.e., something that evaluates to true or false). In C/C++, any non-zero value is considered true, and zero is false.
+
+
 2. Nested if Statements in Java:
 Important Points:
 Nested if statements refer to having one if statement inside another.
@@ -120,17 +140,12 @@ If the outer if condition is true, the program then evaluates the inner if condi
 This can continue to any number of levels, though deep nesting should be avoided for readability.
 Differences from C/C++:
 Java's nested if statements work similarly to C/C++, with the primary difference being that Java requires conditions to be explicitly boolean expressions.
+
+
+
 3. if-else-if Ladder in Java:
-Important Points:
-The if-else-if ladder is a sequence of if and else-if conditions used to test multiple conditions.
-The program executes the first true condition and ignores the rest.
-The final else block (optional) catches any cases where none of the previous conditions were true.
-Control Flow:
-The program checks each if and else-if condition in order.
-The first block with a true condition is executed.
-If no conditions are true, and there's an else block, that block is executed.
-Differences from C/C++:
-Again, Java requires conditions to be explicitly boolean, unlike C/C++ where any non-zero value can be true.
+
+
 4. switch Statement in Java:
 Important Points:
 The switch statement is used for multi-way branching, where a variable is tested against a list of values.
@@ -174,6 +189,9 @@ Always ensure that objects being checked in conditions are not null to avoid Nul
 Ternary Operator:
 
 For simple if-else conditions, the ternary operator (condition ? expr1 : expr2) can be a concise alternative, though it should be used carefully to avoid reducing code readability.
+
+
+
 2. Switch Statement Specific Facts:
 Fall-Through:
 
@@ -203,10 +221,17 @@ switch (day) {
     default:
         System.out.println("Invalid day");
 }
+
+
+
 3. Performance Considerations:
 Switch vs. If-Else:
 Generally, switch statements can be faster than an equivalent if-else-if ladder, especially when there are many cases to evaluate, due to the way the bytecode is optimized by the JVM.
 However, the choice between switch and if-else should primarily be driven by readability and maintainability rather than performance.
+
+
+
+
 4. Best Practices for Readability and Maintenance:
 Avoid Deep Nesting:
 
@@ -220,6 +245,10 @@ Maintain consistent formatting and indentation across all control structures (if
 Default Case:
 
 Always include a default case in a switch statement, even if it’s just to handle unexpected values or errors.
+
+
+
+
 5. Null Safety:
 Switch Statements:
 Be cautious when using String in switch statements—null values will cause a NullPointerException. Ensure that the String being switched on is not null.
