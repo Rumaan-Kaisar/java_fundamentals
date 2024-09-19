@@ -66,6 +66,18 @@
                     }
                     else a = d;     // this else refers to if(i == 10)
 
+        note:
+            Useful when you have multiple conditions that need to be checked in a sequence.
+            Proper indentation and use of braces {} are crucial to maintaining readability.
+
+        Control Flow:
+            The program evaluates the outer if condition first.
+            If the outer if condition is true, the program then evaluates the inner if condition(s).
+            This can continue to any number of levels, though "deep nesting" should be avoided for readability.
+
+        Differences from C/C++:
+            Java requires conditions to be explicitly "boolean" expressions.
+
 
 
     if-else-if ladder:
@@ -87,10 +99,7 @@
             conditions must be "explicitly boolean", unlike C/C++
 
 
-  
 
-
-            ----  rev[16-Sep-2024]  ----
 
     ------------    switch    ------------
 
@@ -114,31 +123,7 @@ In this fragment, if i has the value 1, 2, or 3, the first println() statement e
 
 /*  
 
-GPT: give important points to remember, important facts / aspects following in JAVA. Also control-flow mechanism of following in Java and difference from C/C++. 
-if-else
-Nested if
-if-else-if ladder
-Switch statement
-
-
-1. if-else Statement in Java:
-
-2. Nested if Statements in Java:
-Important Points:
-Nested if statements refer to having one if statement inside another.
-Useful when you have multiple conditions that need to be checked in a sequence.
-Proper indentation and use of braces {} are crucial to maintaining readability.
-Control Flow:
-The program evaluates the outer if condition first.
-If the outer if condition is true, the program then evaluates the inner if condition(s).
-This can continue to any number of levels, though deep nesting should be avoided for readability.
-Differences from C/C++:
-Java's nested if statements work similarly to C/C++, with the primary difference being that Java requires conditions to be explicitly boolean expressions.
-
-
-
-3. if-else-if Ladder in Java:
-
+GPT:
 
 4. switch Statement in Java:
 Important Points:
