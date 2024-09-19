@@ -73,12 +73,12 @@
             i.e. conditions must be "explicitly boolean", unlike C/C++ where any non-zero value can be true
         
         The if-else-if ladder is a sequence of if and else-if conditions used to "test multiple conditions".
-            The program executes the first true condition and ignores the rest.
+            The program executes the first true condition (if found) and ignores the rest.
             The final else block (optional) act as default condition, catches any cases where none of the previous conditions were true.
 
 
         Control Flow:
-            The program checks each if and else-if condition in order.
+            The program checks each if and else-if condition evaluated from the top downward
             The first block with a true condition is executed.
             If no conditions are true, and there's an else block, that block is executed.
 
@@ -86,6 +86,8 @@
         Differences from C/C++:
             conditions must be "explicitly boolean", unlike C/C++
 
+
+  
 
 
             ----  rev[16-Sep-2024]  ----
@@ -311,5 +313,23 @@ class Guess3 {
     }
 }
 
+
+
+
+/* Example 4: The following program demonstrates the if-else-if ladder */
+
+class Ladder {
+    public static void main(String args[]) {
+        int x;
+
+        for(x=0; x<6; x++) {
+            if(x==1) System.out.println("x is one");
+            else if(x==2) System.out.println("x is two");
+            else if(x==3) System.out.println("x is three");
+            else if(x==4) System.out.println("x is four");
+            else System.out.println("x is not between 1 and 4");    // default statement
+        }
+    }
+}
 
 
