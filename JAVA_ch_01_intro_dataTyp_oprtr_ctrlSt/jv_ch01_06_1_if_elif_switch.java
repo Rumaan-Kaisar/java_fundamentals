@@ -103,10 +103,21 @@
 
     ------------    switch    ------------
 
-    
+    The switch statement is used for multi-way branching, where a variable is tested against a list of values.
+        Each case value must be a "compile-time constant", and 
+        The data types must match the switch expression's type.
+        
+    To prevent "fall-through", a "break" statement is usually used to exit the switch block after a matching case is executed.
+        
+----  rev[19-Sep-2024]  ----
 
+    
 1.20 Switch statement(similar C/C++ switch . Recall C/C++ 2.17)
-In C/C++ we used only value to control switch i.e. "switch(value){ }" where value must be int or char constant. In Java we use "expression" i.e "switch(expression){ }", generally expression must be of the types: byte, short, int, char or an enumeration. In JDK 7, expression can also be of type String. This means that modern versions of Java can use a string to control a switch. 
+In C/C++ we used only value to control switch i.e. "switch(value){ }" where value must be int or char constant. 
+In Java we use "expression" i.e "switch(expression){ }", 
+generally expression must be of the types: byte, short, int, char or an enumeration. 
+In JDK 7, expression can also be of type String. This means that modern versions of Java can use a string to control a switch. 
+
 	Frequently, the expression controlling a switch is simply a variable rather than a larger expression.
 	Each value specified in the case statements must be a unique constant expression (such as a literal value).
 	You can have empty cases (Recall C/C++ 2.17 Note 8), as shown in this example:
@@ -115,6 +126,7 @@ case 2:
 case 3: System.out.println("i is 1, 2 or 3"); break;
 case 4: System.out.println("i is 4"); break; }
 In this fragment, if i has the value 1, 2, or 3, the first println() statement executes. If it is 4, the second println() statement executes. The “stacking” of cases, as shown in this example, is common when several cases share common code.
+
 	Nested Switch: Similar to C/C++ 2.18 Nested switch.
 
 
@@ -125,16 +137,15 @@ In this fragment, if i has the value 1, 2, or 3, the first println() statement e
 
 GPT:
 
-4. switch Statement in Java:
-Important Points:
-The switch statement is used for multi-way branching, where a variable is tested against a list of values.
-Each case value must be a compile-time constant, and the data types must match the switch expression's type.
-A break statement is usually used to exit the switch block after a matching case is executed, to prevent "fall-through" (executing subsequent cases).
+
+
 Control Flow:
-The program evaluates the switch expression and jumps to the matching case.
+The program evaluates the "switch expression" and jumps to the matching case.
 If a case matches, the corresponding block of code is executed.
 Without a break, the program continues executing the next case statements (fall-through).
 The default case (optional) is executed if no other case matches.
+
+
 Differences from C/C++:
 Expression Types: Java switch statements can switch on byte, short, char, int, enum, String, and since Java 7, String values as well. In C/C++, only integral types are allowed.
 String in Switch: Unlike C/C++, Java allows String objects in the switch expression.
