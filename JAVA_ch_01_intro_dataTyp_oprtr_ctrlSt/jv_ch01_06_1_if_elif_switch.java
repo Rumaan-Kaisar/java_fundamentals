@@ -116,6 +116,14 @@
         Frequently, the expression controlling a switch is simply a variable rather than a larger expression.
         Each value specified in the case statements must be a unique constant expression (such as a literal value).
 
+
+    Control Flow:
+        The program evaluates the "switch expression" and jumps to the matching case.
+        If a case matches, the corresponding block of code is executed.
+        Without a break, the program continues executing the next case statements (fall-through).
+        The default case (optional) is executed if no other case matches.
+
+
     Fall-Through: To prevent "fall-through", a "break" statement is usually used to exit the switch block after a matching case is executed.
         But it is generally considered a bad practice unless intentionally used.
  
@@ -128,7 +136,10 @@
 
         In Java, switch statements can work with int, char, short, byte, enum, String (since Java 7), and "boxed primitive types" like Integer, Character, etc.
         In C++, switch statements work with int, char, enum, and other types that can be implicitly converted to int. It does not support String.
-
+    
+        Handling of null in Java:
+            Java switch statements throw a "NullPointerException" if a String is null. 
+            C++ doesn't have this issue since it does not handle "String" types.
 
 
     ----  "stacking" of cases  ----
@@ -147,48 +158,15 @@
 
 
     ----  Nested Switch: Similar to C/C++  ----
-
-// ----  rev[23-Sep-2024]  ----
-
     The nesting level does not impact the functionality of a switch statement.
     You can nest as many switch statements as needed.
 
-    Difference in Expression Types:
-
-
-
-    Fall-through Behavior:
-
-    Java requires explicit break statements to prevent fall-through between cases, except in cases where fall-through is desired.
-    C++ also requires break statements but offers less explicit control over fall-through. 
-    The break must be manually placed in both languages to prevent unintended execution of subsequent cases.
-
-
-    b. Handling of null in Java:
-    Java switch statements throw a NullPointerException if a String is null. 
-    C++ doesn't have this issue since switch does not handle String types.
-
-    Java allows String, enum, and boxed primitives in the switch statement, while C++ only allows integral types and enums.
-    null values in Java will throw a NullPointerException in a String-based switch statement.
-    Java requires explicit break to avoid fall-through, whereas C++ also requires it but lacks the String feature.
-
-
-    b. Readability Concerns:
-    Nested switches can reduce readability if overused or deeply nested.
-
-
-    c. Fall-Through Control:
-    You need separate break statements for each nested switch to prevent fall-through between cases. Skipping break in the inner switch won’t break out of the outer switch.
-
-    d. Efficiency:
-    Java's switch statement is often implemented as a jump table for int values, making it more efficient than a sequence of if-else statements when handling many cases.
-    The use of a switch with String values is efficient because Java’s JVM optimizes this by using the hashCode() and equals() methods under the hood.
-
-    5. Best Practices for Nested Switch:
-    Simplify Code: Use nested switch statements only when necessary. If there are too many levels of conditions, refactor the code for clarity.
-    Avoid Deep Nesting: Try to avoid deep nesting as it can make code hard to understand. Consider breaking down nested switch blocks into smaller, manageable methods if possible.
-    Default Case: Always include a default case in both the outer and inner switch to handle unexpected values and improve robustness.
-    String in Switch: Be cautious of null values when using String in the switch, as it can cause runtime exceptions.
+    Notes:
+        Nested switches can reduce readability if overused or deeply nested.
+        Separate break statements needed for each nested switch to prevent fall-through between cases. 
+        Skipping break in the inner switch won’t break out of the outer switch.
+        Default Case: Always include a default case in both the outer and inner switch to handle unexpected values and improve robustness.
+        String in Switch: Be cautious of "null values" when using "String" in the switch, as it can cause runtime exceptions.
 
 
 
@@ -200,28 +178,17 @@
 
 /*  
 
+
+// ----  rev[23-Sep-2024]  ----
+
 GPT:
 
 
 
-Control Flow:
-The program evaluates the "switch expression" and jumps to the matching case.
-If a case matches, the corresponding block of code is executed.
-Without a break, the program continues executing the next case statements (fall-through).
-The default case (optional) is executed if no other case matches.
-
-
-Differences from C/C++:
-
-Break Statement: 
 
 
 
 
-
-
-Fall-through in switch: 
-Be cautious with fall-through in switch statements. Always use a break statement unless fall-through is intended.
 
 
 
