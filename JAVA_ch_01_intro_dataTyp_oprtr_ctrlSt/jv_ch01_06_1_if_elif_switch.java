@@ -99,38 +99,55 @@
             conditions must be "explicitly boolean", unlike C/C++
 
 
+    ----  Avoid Overuse  ----
+    Overusing "nested if" statements and "if-else-if ladders" can make code harder to maintain. 
+    In such cases, consider refactoring your code, possibly using "switch" or "polymorphism".
+
+
 
 
     ------------    switch    ------------
 
+    (similar C/C++ switch . Recall C_Ch2_1_3_ctrl_stmnt_slct_3_switch.c)
     The switch statement is used for multi-way branching, where a variable is tested against a list of values.
         Each case value must be a "compile-time constant", and 
         The data types must match the switch expression's type.
-        
+
+        Frequently, the expression controlling a switch is simply a variable rather than a larger expression.
+        Each value specified in the case statements must be a unique constant expression (such as a literal value).
+
     To prevent "fall-through", a "break" statement is usually used to exit the switch block after a matching case is executed.
-        
-----  rev[19-Sep-2024]  ----
+ 
 
-    
-1.20 Switch statement(similar C/C++ switch . Recall C/C++ 2.17)
-In C/C++ we used only value to control switch i.e. "switch(value){ }" where value must be int or char constant. 
-In Java we use "expression" i.e "switch(expression){ }", 
-generally expression must be of the types: byte, short, int, char or an enumeration. 
-In JDK 7, expression can also be of type String. This means that modern versions of Java can use a string to control a switch. 
+    Differences from C/C++:
+        In C/C++ we used only "value" to control switch i.e. "switch(value){ }" where "value" must be "int" or "char" constant. 
+        In Java we use "expression" i.e "switch(expression){ }", 
+            Generally expression must be of the types: 'byte', 'short', 'int', 'char' or an 'enumeration'. 
+            In JDK 7, expression can also be of type 'String'
 
-	Frequently, the expression controlling a switch is simply a variable rather than a larger expression.
-	Each value specified in the case statements must be a unique constant expression (such as a literal value).
-	You can have empty cases (Recall C/C++ 2.17 Note 8), as shown in this example:
-switch(i) { 	case 1:
-case 2:
-case 3: System.out.println("i is 1, 2 or 3"); break;
-case 4: System.out.println("i is 4"); break; }
-In this fragment, if i has the value 1, 2, or 3, the first println() statement executes. If it is 4, the second println() statement executes. The “stacking” of cases, as shown in this example, is common when several cases share common code.
 
-	Nested Switch: Similar to C/C++ 2.18 Nested switch.
+----  "stacking" of cases  ----
+You can have empty cases (Similar C/C++), as shown in this example:
+
+        switch(i) {
+            case 1:
+            case 2:
+            case 3: System.out.println("i is 1, 2 or 3"); break;
+            case 4: System.out.println("i is 4"); break; 
+        }
+
+In this fragment, if i has the value 1, 2, or 3, the first println() statement executes. 
+If it is 4, the second println() statement executes. 
+The "stacking" of cases, is common when several cases share common code.
+
+
+Nested Switch: Similar to C/C++
 
 
 */
+       
+// ----  rev[19-Sep-2024]  ----
+
 
 
 /*  
@@ -150,10 +167,13 @@ Differences from C/C++:
 Expression Types: Java switch statements can switch on byte, short, char, int, enum, String, and since Java 7, String values as well. In C/C++, only integral types are allowed.
 String in Switch: Unlike C/C++, Java allows String objects in the switch expression.
 Break Statement: Like in C/C++, forgetting a break statement in a switch can lead to fall-through, but it is generally considered a bad practice unless intentionally used.
-General Advice:
-Readability: Use proper indentation and avoid deep nesting when possible to keep code readable.
-Avoid Overuse: Overusing nested if statements and if-else-if ladders can make code harder to maintain. In such cases, consider refactoring your code, possibly using switch or polymorphism.
-Fall-through in switch: Be cautious with fall-through in switch statements. Always use a break statement unless fall-through is intended.
+
+
+
+
+
+Fall-through in switch: 
+Be cautious with fall-through in switch statements. Always use a break statement unless fall-through is intended.
 
 
 
