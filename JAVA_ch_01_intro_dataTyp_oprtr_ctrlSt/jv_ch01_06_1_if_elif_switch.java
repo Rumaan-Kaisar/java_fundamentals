@@ -116,37 +116,85 @@
         Frequently, the expression controlling a switch is simply a variable rather than a larger expression.
         Each value specified in the case statements must be a unique constant expression (such as a literal value).
 
-    To prevent "fall-through", a "break" statement is usually used to exit the switch block after a matching case is executed.
+    Fall-Through: To prevent "fall-through", a "break" statement is usually used to exit the switch block after a matching case is executed.
+        But it is generally considered a bad practice unless intentionally used.
  
 
     Differences from C/C++:
         In C/C++ we used only "value" to control switch i.e. "switch(value){ }" where "value" must be "int" or "char" constant. 
         In Java we use "expression" i.e "switch(expression){ }", 
             Generally expression must be of the types: 'byte', 'short', 'int', 'char' or an 'enumeration'. 
-            In JDK 7, expression can also be of type 'String'
+            In JDK 7, expression can also be of type 'String' i.e. it allows String-object
+
+        In Java, switch statements can work with int, char, short, byte, enum, String (since Java 7), and "boxed primitive types" like Integer, Character, etc.
+        In C++, switch statements work with int, char, enum, and other types that can be implicitly converted to int. It does not support String.
 
 
-----  "stacking" of cases  ----
-You can have empty cases (Similar C/C++), as shown in this example:
 
-        switch(i) {
-            case 1:
-            case 2:
-            case 3: System.out.println("i is 1, 2 or 3"); break;
-            case 4: System.out.println("i is 4"); break; 
-        }
+    ----  "stacking" of cases  ----
+    You can have empty cases (Similar C/C++), as shown in this example:
 
-In this fragment, if i has the value 1, 2, or 3, the first println() statement executes. 
-If it is 4, the second println() statement executes. 
-The "stacking" of cases, is common when several cases share common code.
+            switch(i) {
+                case 1:
+                case 2:
+                case 3: System.out.println("i is 1, 2 or 3"); break;
+                case 4: System.out.println("i is 4"); break; 
+            }
+
+    In this fragment, if i has the value 1, 2, or 3, the first println() statement executes. 
+    If it is 4, the second println() statement executes. 
+    The "stacking" of cases, is common when several cases share common code.
 
 
-Nested Switch: Similar to C/C++
+    ----  Nested Switch: Similar to C/C++  ----
+
+// ----  rev[23-Sep-2024]  ----
+
+    The nesting level does not impact the functionality of a switch statement.
+    You can nest as many switch statements as needed.
+
+    Difference in Expression Types:
+
+
+
+    Fall-through Behavior:
+
+    Java requires explicit break statements to prevent fall-through between cases, except in cases where fall-through is desired.
+    C++ also requires break statements but offers less explicit control over fall-through. 
+    The break must be manually placed in both languages to prevent unintended execution of subsequent cases.
+
+
+    b. Handling of null in Java:
+    Java switch statements throw a NullPointerException if a String is null. 
+    C++ doesn't have this issue since switch does not handle String types.
+
+    Java allows String, enum, and boxed primitives in the switch statement, while C++ only allows integral types and enums.
+    null values in Java will throw a NullPointerException in a String-based switch statement.
+    Java requires explicit break to avoid fall-through, whereas C++ also requires it but lacks the String feature.
+
+
+    b. Readability Concerns:
+    Nested switches can reduce readability if overused or deeply nested.
+
+
+    c. Fall-Through Control:
+    You need separate break statements for each nested switch to prevent fall-through between cases. Skipping break in the inner switch won’t break out of the outer switch.
+
+    d. Efficiency:
+    Java's switch statement is often implemented as a jump table for int values, making it more efficient than a sequence of if-else statements when handling many cases.
+    The use of a switch with String values is efficient because Java’s JVM optimizes this by using the hashCode() and equals() methods under the hood.
+
+    5. Best Practices for Nested Switch:
+    Simplify Code: Use nested switch statements only when necessary. If there are too many levels of conditions, refactor the code for clarity.
+    Avoid Deep Nesting: Try to avoid deep nesting as it can make code hard to understand. Consider breaking down nested switch blocks into smaller, manageable methods if possible.
+    Default Case: Always include a default case in both the outer and inner switch to handle unexpected values and improve robustness.
+    String in Switch: Be cautious of null values when using String in the switch, as it can cause runtime exceptions.
+
 
 
 */
        
-// ----  rev[19-Sep-2024]  ----
+
 
 
 
@@ -164,9 +212,9 @@ The default case (optional) is executed if no other case matches.
 
 
 Differences from C/C++:
-Expression Types: Java switch statements can switch on byte, short, char, int, enum, String, and since Java 7, String values as well. In C/C++, only integral types are allowed.
-String in Switch: Unlike C/C++, Java allows String objects in the switch expression.
-Break Statement: Like in C/C++, forgetting a break statement in a switch can lead to fall-through, but it is generally considered a bad practice unless intentionally used.
+
+Break Statement: 
+
 
 
 
@@ -263,6 +311,83 @@ Always include a default case in a switch statement, even if it’s just to hand
 Switch Statements:
 Be cautious when using String in switch statements—null values will cause a NullPointerException. Ensure that the String being switched on is not null.
 By keeping these facts and best practices in mind, you'll be better prepared to write clear, efficient, and error-free control structures in Java.
+
+
+
+
+
+
+Example: The following demonstrates a Nested Switch.
+
+class NestedSwitchExample {
+    public static void main(String[] args) {
+        int level = 1;
+        int subject = 2;
+
+        switch (level) {
+            case 1:
+                System.out.println("Level 1");
+                switch (subject) {
+                    case 1:
+                        System.out.println("Math");
+                        break;
+                    case 2:
+                        System.out.println("Science");
+                        break;
+                    default:
+                        System.out.println("Unknown Subject");
+                        break;
+                }
+                break;
+            case 2:
+                System.out.println("Level 2");
+                break;
+            default:
+                System.out.println("Unknown Level");
+                break;
+        }
+    }
+}
+
+
+
+
+Example: Here is a more complex example of a nested switch in Java:
+
+class NestedSwitchDemo {
+    public static void main(String[] args) {
+        int region = 1; // Let's say: 1 = North America, 2 = Europe
+        int country = 1; // 1 = USA, 2 = Canada
+
+        switch (region) {
+            case 1:
+                System.out.println("North America");
+                switch (country) {
+                    case 1:
+                        System.out.println("USA");
+                        break;
+                    case 2:
+                        System.out.println("Canada");
+                        break;
+                    default:
+                        System.out.println("Unknown Country");
+                }
+                break;
+            case 2:
+                System.out.println("Europe");
+                break;
+            default:
+                System.out.println("Unknown Region");
+        }
+    }
+}
+
+
+
+
+
+
+
 */
 
 
