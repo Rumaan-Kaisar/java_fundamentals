@@ -232,101 +232,7 @@
 
 
 
-
-/*  
-
-
 // ----  rev[26-Sep-2024]  ----
-
-GPT:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Example: The following demonstrates a Nested Switch.
-
-class NestedSwitchExample {
-    public static void main(String[] args) {
-        int level = 1;
-        int subject = 2;
-
-        switch (level) {
-            case 1:
-                System.out.println("Level 1");
-                switch (subject) {
-                    case 1:
-                        System.out.println("Math");
-                        break;
-                    case 2:
-                        System.out.println("Science");
-                        break;
-                    default:
-                        System.out.println("Unknown Subject");
-                        break;
-                }
-                break;
-            case 2:
-                System.out.println("Level 2");
-                break;
-            default:
-                System.out.println("Unknown Level");
-                break;
-        }
-    }
-}
-
-
-
-
-Example: Here is a more complex example of a nested switch in Java:
-
-class NestedSwitchDemo {
-    public static void main(String[] args) {
-        int region = 1; // Let's say: 1 = North America, 2 = Europe
-        int country = 1; // 1 = USA, 2 = Canada
-
-        switch (region) {
-            case 1:
-                System.out.println("North America");
-                switch (country) {
-                    case 1:
-                        System.out.println("USA");
-                        break;
-                    case 2:
-                        System.out.println("Canada");
-                        break;
-                    default:
-                        System.out.println("Unknown Country");
-                }
-                break;
-            case 2:
-                System.out.println("Europe");
-                break;
-            default:
-                System.out.println("Unknown Region");
-        }
-    }
-}
-
-
-
-
-
-
-
-*/
-
-
 
 
 /* Example 1: A simple computerized guessing game (version 1). 
@@ -405,6 +311,74 @@ class Ladder {
             else if(x==3) System.out.println("x is three");
             else if(x==4) System.out.println("x is four");
             else System.out.println("x is not between 1 and 4");    // default statement
+        }
+    }
+}
+
+
+
+
+/* Example 5: The following demonstrates a Nested Switch. */
+
+class NestedSwitchExample {
+    public static void main(String[] args) {
+        int level = 1;
+        int subject = 2;
+
+        switch (level) {
+            case 1:
+                System.out.println("Level 1");
+                switch (subject) {
+                    case 1:
+                        System.out.println("Math");
+                        break;
+                    case 2:
+                        System.out.println("Science");
+                        break;
+                    default:
+                        System.out.println("Unknown Subject");
+                        break;
+                }
+                break;
+            case 2:
+                System.out.println("Level 2");
+                break;
+            default:
+                System.out.println("Unknown Level");
+                break;
+        }
+    }
+}
+
+
+
+
+/* Example 6: Here is a more complex example of a nested switch in Java: */
+
+class NestedSwitchDemo {
+    public static void main(String[] args) {
+        int region = 1; // Let's say: 1 = North America, 2 = Europe
+        int country = 1; // 1 = USA, 2 = Canada
+
+        switch (region) {
+            case 1:
+                System.out.println("North America");
+                switch (country) {
+                    case 1:
+                        System.out.println("USA");
+                        break;
+                    case 2:
+                        System.out.println("Canada");
+                        break;
+                    default:
+                        System.out.println("Unknown Country");
+                }
+                break;
+            case 2:
+                System.out.println("Europe");
+                break;
+            default:
+                System.out.println("Unknown Region");
         }
     }
 }
