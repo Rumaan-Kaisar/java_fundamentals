@@ -414,3 +414,32 @@ class SwitchDemo {
 }
 
 
+
+
+/* Example 8: Demonstrate "Fall-Through" this program displays the following output, 
+                since no "break" is used. It falls-through
+
+                i is less than one
+                i is less than two
+                i is less than three
+                i is less than four
+                i is less than five
+
+                i is less than two
+                i is less than three
+                i is less than four
+                i is less than five
+
+                i is less than three
+                i is less than four
+                i is less than five
+
+                i is less than four
+                i is less than five
+
+                i is less than five
+*/
+
+
+
+
