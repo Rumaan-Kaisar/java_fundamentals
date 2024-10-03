@@ -384,7 +384,12 @@ class NestedSwitchDemo {
 
 
 
-/* Example 7: Another program demonstrates the switch: */
+/* Example 7: Another program demonstrates the switch. Notice:
+
+                Each time through the loop, the statements associated with the case constant that matches i are executed. 
+                All others are bypassed. 
+                When i is five or greater, no case statements match, so the default statement is executed
+*/
 
 class SwitchDemo {
     public static void main(String args[]) {
@@ -415,6 +420,7 @@ class SwitchDemo {
 
 
 
+// ----  rev[03-Oct-2024]  ----
 
 /* Example 8: Demonstrate "Fall-Through" this program displays the following output, 
                 since no "break" is used. It falls-through
@@ -440,6 +446,27 @@ class SwitchDemo {
                 i is less than five
 */
 
+// Demonstrate the switch without break statements.
+class NoBreak {
+    public static void main(String args[]) {
+    int i;
+    for(i=0; i<=5; i++) {
+    switch(i) {
+    case 0:
+    System.out.println("i is less than one");
+    case 1:
+    System.out.println("i is less than two");
+    case 2:
+    System.out.println("i is less than three");
+    case 3:
+    System.out.println("i is less than four");
+    case 4:
+    System.out.println("i is less than five");
+    }
+    System.out.println();
+    }
+    }
+    }
 
 
 
