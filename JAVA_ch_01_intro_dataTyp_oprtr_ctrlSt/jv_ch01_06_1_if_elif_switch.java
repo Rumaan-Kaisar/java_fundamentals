@@ -420,10 +420,10 @@ class SwitchDemo {
 
 
 
-// ----  rev[03-Oct-2024]  ----
 
-/* Example 8: Demonstrate "Fall-Through" this program displays the following output, 
+/* Example 8: (Demonstrate "Fall-Through") this program displays the following output, 
                 since no "break" is used. It falls-through
+                i.e., execution will continue into the next case if no break statement is present
 
                 i is less than one
                 i is less than two
@@ -449,24 +449,22 @@ class SwitchDemo {
 // Demonstrate the switch without break statements.
 class NoBreak {
     public static void main(String args[]) {
-    int i;
-    for(i=0; i<=5; i++) {
-    switch(i) {
-    case 0:
-    System.out.println("i is less than one");
-    case 1:
-    System.out.println("i is less than two");
-    case 2:
-    System.out.println("i is less than three");
-    case 3:
-    System.out.println("i is less than four");
-    case 4:
-    System.out.println("i is less than five");
+        int i;
+        for(i=0; i<=5; i++) {
+            switch(i){
+                case 0:
+                    System.out.println("i is less than one");
+                case 1:
+                    System.out.println("i is less than two");
+                case 2:
+                    System.out.println("i is less than three");
+                case 3:
+                    System.out.println("i is less than four");
+                case 4:
+                    System.out.println("i is less than five");
+            }
+            System.out.println();
+        }
     }
-    System.out.println();
-    }
-    }
-    }
-
-
+}
 
