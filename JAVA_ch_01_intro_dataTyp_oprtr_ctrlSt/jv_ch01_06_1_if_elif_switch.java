@@ -468,3 +468,33 @@ class NoBreak {
     }
 }
 
+
+
+
+/* Example 9: You can have empty cases, as shown in following example. 
+                In this fragment, if i has the value 1, 2, or 3, the first println() statement executes. 
+                If it is 4, the second println() statement executes. 
+
+                The “stacking” of cases, as shown in this example, is common when several cases share common code.
+*/
+class EmptyCase {
+    public static void main(String args[]) {
+        int i;
+        for(i=0; i<=5; i++) {
+            switch(i){
+                case 1:
+                case 2:
+                case 3: 
+                    System.out.println("i is 1, 2 or 3");
+                    break;
+                case 4: 
+                    System.out.println("i is 4");
+                    break;
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
