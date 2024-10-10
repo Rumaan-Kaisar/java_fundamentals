@@ -161,6 +161,7 @@
     ----  Nested Switch: Similar to C/C++  ----
     The nesting level does not impact the functionality of a switch statement.
     You can nest as many switch statements as needed.
+    If the case constants of the inner and outer switch contain common values, no conflicts will arise.
 
     Notes:
         Nested switches can reduce readability if overused or deeply nested.
@@ -497,4 +498,47 @@ class EmptyCase {
 }
 
 
+
+
+/* Example 10: (nested switch) if the "case constants" of the inner and outer switch contain common values, no conflicts will arise. 
+
+                This is possible because the inner and outer switch statements are "evaluated independently" of each other. 
+                    The scope of case labels is restricted to the switch they belong to.
+
+                when the outer switch executes, only the outer switch's case values are evaluated. 
+                When control passes to the inner switch, it evaluates its own case values independently.
+*/
+
+public class NestedSwitchExample2 {
+    public static void main(String[] args) {
+        char ch1 = 'A';
+        char ch2 = 'A';
+
+        // Outer switch
+        switch (ch1) {
+            case 'A':
+                System.out.println("This A is part of the outer switch.");
+
+                // Inner switch
+                switch (ch2) {
+                    case 'A':
+                        System.out.println("This A is part of the inner switch.");
+                        break;
+                    case 'B':
+                        System.out.println("B is part of inner switch.");
+                        break;
+                    default:
+                        System.out.println("Unknown character in inner switch.");
+                        break;
+                }
+                break;
+            case 'B':
+                System.out.println("B is in outer switch.");
+                break;
+            default:
+                System.out.println("Unknown character in outer");
+                break;
+        }
+    }
+}
 
