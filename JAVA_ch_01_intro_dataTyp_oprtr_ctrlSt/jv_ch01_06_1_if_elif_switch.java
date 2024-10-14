@@ -229,6 +229,24 @@
         Switch vs. If-Else Performance:
             Generally, switch statements can be faster than an equivalent if-else-if ladder, due to the way the bytecode is optimized by the JVM.
 
+
+
+    --------    Use "if-else-if" instead of "switch"    --------
+    Use an "if-else-if" ladder rather than a "switch" when
+        The CONDITIONS controlling the selection process do not rely upon a "single value"
+
+        For example, consider the following if-else-if sequence:
+
+                    if(x < 10)  // ...
+                    else if(y != 0)  // ...
+                    else if(!done)  // ...
+
+        This sequence cannot be "recoded" into a switch 
+            because all three conditions involve different "variables" and differing "types".
+            What variable would control the switch? 
+            
+        Also, you will need to use an "if-else-if ladder" when testing "floating-point" values 
+            or other objects that are not of types valid for use in a switch expression.
 */
        
 
@@ -586,4 +604,5 @@ class Help {
         }
     }
 }
+
 
