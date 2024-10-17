@@ -1,3 +1,30 @@
+
+
+    --------    Use ChatGPT prompts like below    --------
+
+        prompt 1:
+            GPT: Provide important points to remember, key facts, and aspects of the following in Java. 
+            Also, explain the control-flow mechanism and differences from C/C++:
+
+                for loop variations
+                while loop
+                do-while loop
+                Nested loops
+
+
+        prompt 2:
+            Explain the control flow mechanisms and key differences between Java and C/C++ for the following loop structures:
+
+                for loop variations
+                while loop
+                do-while loop
+                Nested loops
+
+            Also, provide important points to remember and key facts related to each loop structure in Java.
+
+
+
+----  MORE PROMPTS  ----
 I want to learn how to code in JAVA. Can you use the "Pareto Principle", which identifies the 20% of the topic that will yield 80% of the desired results, to create a focused learning plan for me?
 
 
