@@ -1,11 +1,30 @@
 
 /* -=-=-=-=-=-=-=-=-=-=-=      LOOPS      -=-=-=-=-=-=-=-=-=-=-= 
-GPT: give important points to remember, important facts / aspects following in JAVA. Also control-flow mechanism and difference from C/C++. 
-for loop
+
+// ----  rev[17-Oct-2024]  ----
+
+GPT: give important points to remember, important facts / aspects of following in JAVA. Also control-flow mechanism and difference from C/C++. 
+
 for loop variations
 while 
 do-while
 nested loops
+
+
+    ------------    FOR loop    ------------
+    Following are the most traditional forms of the for
+
+        Repeats a single statement:
+
+            for(initialization; condition; iteration) statement;
+
+
+        Repeats a block:
+
+            for(initialization; condition; iteration){
+                statement sequence
+            }
+
 
 
 
@@ -53,6 +72,11 @@ for(int i=2; i <= 100; i++){ System.out.print("Factors of " + i + ": ");
   System.out.println(); }
 
 
+
+
+  -=-=-=-=-  GPT  -=-=-=-=-
+
+  
 */
 
 
