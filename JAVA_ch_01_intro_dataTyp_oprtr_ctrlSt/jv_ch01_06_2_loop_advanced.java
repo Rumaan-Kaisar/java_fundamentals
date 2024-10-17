@@ -3,12 +3,6 @@
 
 // ----  rev[17-Oct-2024]  ----
 
-GPT: give important points to remember, important facts / aspects of following in JAVA. Also control-flow mechanism and difference from C/C++. 
-
-for loop variations
-while 
-do-while
-nested loops
 
 
     ------------    FOR loop    ------------
@@ -366,6 +360,29 @@ Iterator-based loops are preferred for collections in Java, whereas C++ uses poi
 Java’s switch expression (Java 12+) enhances control flow by making switch more expressive compared to C++.
 These differences are essential to understand when transitioning between Java and C/C++ or when using loops effectively in Java.
 
+
+
+    --------    Use ChatGPT prompts like below    --------
+
+        prompt 1:
+            GPT: Provide important points to remember, key facts, and aspects of the following in Java. 
+            Also, explain the control-flow mechanism and differences from C/C++:
+
+                for loop variations
+                while loop
+                do-while loop
+                Nested loops
+
+
+        prompt 2:
+            Explain the control flow mechanisms and key differences between Java and C/C++ for the following loop structures:
+
+                for loop variations
+                while loop
+                do-while loop
+                Nested loops
+
+            Also, provide important points to remember and key facts related to each loop structure in Java.
 
 
 */
