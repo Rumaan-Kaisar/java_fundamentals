@@ -1,10 +1,6 @@
 
 /* -=-=-=-=-=-=-=-=-=-=-=      LOOPS      -=-=-=-=-=-=-=-=-=-=-= 
 
-// ----  rev[17-Oct-2024]  ----
-
-
-
     ------------    FOR loop    ------------
     Following are the most traditional forms of the for
 
@@ -33,9 +29,10 @@
 
 
 
+    // ----  rev[21-Oct-2024]  ----
 
 
-	Some Variations on the for Loop
+------------    FOR-Loop Variations    ------------
 [1]	Multiple loop control variables can be used in the for loop. Multiple loop control variables are often convenient and can simplify certain algorithms. Any number of initialization and iteration statements are possible, but, more than two or three make the for loop unwieldy. Consider the following code:
 for(i=0, j=10; i<j; i++, j--) System.out.println("i and j: " + i + " " + j);
 	Here, commas separate the two initialization statements and the two iteration expressions. When the loop begins, both i and j are initialized. Each time the loop repeats, i is incremented and j is decremented. 
@@ -83,6 +80,95 @@ While loop:  	while(condition){}	Do-While loop: 	do{}while(condition);
 for(int i=2; i <= 100; i++){ System.out.print("Factors of " + i + ": ");
   for(int j=2; j<i; j++) if((i%j) == 0) System.out.print(j + " ");
   System.out.println(); }
+
+
+-=-=-=-=-    Above GPT    -=-=-=-=-
+
+Here’s a simplified and clear explanation of for loop variations:
+
+1. Multiple Loop Control Variables:
+You can use more than one control variable in a for loop.
+Example:
+java
+Copy code
+for(i = 0, j = 10; i < j; i++, j--) {
+    System.out.println("i and j: " + i + " " + j);
+}
+Here, i is incremented and j is decremented in each iteration.
+Commas separate multiple initialization and iteration statements.
+2. Boolean Condition Control:
+The condition in the loop can be any valid Boolean expression, not just related to the loop control variable.
+Example:
+java
+Copy code
+for(i = 0; (char)System.in.read() != 'S'; i++) {
+    System.out.println("Pass #" + i);
+}
+The loop will run until the user types 'S'.
+3. Blank Sections in for Loop:
+Any part (initialization, condition, iteration) of a for loop can be left blank.
+Example:
+java
+Copy code
+for(i = 0; i < 10;) { 
+    System.out.println("Pass #" + i);
+    i++; // Increment inside the loop body
+}
+You can also have an infinite loop with for(;;).
+4. Loops with No Body:
+The body of a for loop can be empty if all the logic is handled within the loop declaration.
+Example:
+java
+Copy code
+for(i = 1; i <= 5; sum += i++);
+This loop sums numbers from 1 to 5, but there’s no body for the loop.
+5. Declaring Variables Inside for Loop:
+Loop control variables can be declared inside the loop.
+Example:
+java
+Copy code
+for(int i = 1; i <= 5; i++) {
+    sum += i;
+}
+The variable i exists only within the loop.
+6. Enhanced for Loop:
+Java offers an enhanced for loop for iterating over collections like arrays.
+Example (used for arrays):
+java
+Copy code
+for(int num : array) {
+    System.out.println(num);
+}
+While and Do-While Loops:
+while Loop:
+
+java
+Copy code
+while(condition) {
+    // statements
+}
+The loop checks the condition before executing the body.
+do-while Loop:
+
+java
+Copy code
+do {
+    // statements
+} while(condition);
+The body is executed at least once, then the condition is checked.
+Nested Loops:
+You can have loops inside loops.
+Example:
+java
+Copy code
+for(int i = 2; i <= 100; i++) {
+    System.out.print("Factors of " + i + ": ");
+    for(int j = 2; j < i; j++) {
+        if(i % j == 0) System.out.print(j + " ");
+    }
+    System.out.println();
+}
+This example finds and prints the factors of numbers from 2 to 100.
 
 
 
