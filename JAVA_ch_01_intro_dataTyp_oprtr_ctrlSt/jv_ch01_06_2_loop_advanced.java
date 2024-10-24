@@ -29,26 +29,59 @@
 
 
 
-    // ----  rev[21-Oct-2024]  ----
+    ------------    FOR-Loop Variations    ------------
+
+    Multi Loop-Control Var:
+        Any number of "initialization" and "iteration" are possible
+        "Commas" separate multiple initialization and iteration statements
+        But, more than two or three make the the loop complicated
+
+            for(i=0, j=10; i<j; i++, j--) {
+                System.out.println("i and j: " + i + " " + j);
+            }
+
+        When the loop begins, both i and j are initialized.
+        Each time the loop repeats, i is incremented and j is decremented in each iteration.
 
 
-------------    FOR-Loop Variations    ------------
+    Boolean Condition Control:
+        The loop-condition can be any valid Boolean expression, not just related to the loop control variable.
+        Eg: the loop continues until the user types the letter 'S' at the keyboard:
+
+            for(i = 0; (char)System.in.read() != 'S'; i++) {
+                System.out.println("Pass #" + i);
+            }
+
+
+    BLANK Sections in for Loop:
+        Any part (initialization, condition, iteration) of a for loop can be left blank
+
+            for(i=0; i<10;) { 
+                System.out.println("Pass #" + i);
+                i++;    // Increment inside the loop body
+            }
+
+        Outer initialization:
+            Initialization portion can be moved outside of the for:
+
+                int i = 0; 				// move initialization out of loop
+                for( ; i<10 ; ) {
+                    System.out.println("Pass #" + i);
+                    i++;
+                }  
+
+        No increment (indefinite run):
+            for(i=0;  (char)System.in.read() != 'S';  ) System.out.println("Again");
+
+        Infinite Loop:
+            To create an infinite loop use the for by leaving the conditional expression empty. Eg:
+
+                for(;;){ } // intentionally infinite loop
+
+            This loop will run forever. (It can be terminated by using the break statement.)
 
 
 
-
-
-[3]	It is possible for any or all of the initialization, condition, or iteration portions of the for loop to be blank.  For example, 
-for(i=0; i<10; ) { 	System.out.println("Pass #" + i);
-i++; }  	// increment loop control variable is inside the for loop 
-	or iteration may not present at all. Eg:
-for(i = 0;  (char)System.in.read() != 'S';  ) System.out.println("Again");
-	The initialization portion can be moved out of the for:
-int i = 0; 				// move initialization out of loop
-for( ; i<10 ; ) { 	System.out.println("Pass #" + i); i++; }  
-	The Infinite Loop: To create an infinite loop use the for by leaving the conditional expression empty. Eg:
-for(;;){ } // intentionally infinite loop
-This loop will run forever. (It can be terminated by using the break statement.)
 
 
 [4]	Loops with No Body: In Java, the body associated with a for loop (or any other loop) can be empty. This is because a null statement is syntactically valid. They are often useful. For example, the following program uses one to sum the numbers 1 through 5: 	for(i = 1; i <= 5; sum += i++) ;
@@ -78,43 +111,15 @@ for(int i=2; i <= 100; i++){ System.out.print("Factors of " + i + ": ");
   System.out.println(); }
 
 
+// ----  rev[24-Oct-2024]  ----
+
 -=-=-=-=-    Above GPT    -=-=-=-=-
 
 ------------    FOR loop variations    ------------
 
-Multi Loop-Control Var:
-    Any number of "initialization" and "iteration" are possible
-    "Commas" separate multiple initialization and iteration statements
-    But, more than two or three make the the loop complicated
-
-        for(i=0, j=10; i<j; i++, j--) {
-            System.out.println("i and j: " + i + " " + j);
-        }
-
-    When the loop begins, both i and j are initialized.
-    Each time the loop repeats, i is incremented and j is decremented in each iteration.
 
 
-Boolean Condition Control:
-    The loop-condition can be any valid Boolean expression, not just related to the loop control variable.
-    Eg: the loop continues until the user types the letter 'S' at the keyboard:
 
-        for(i = 0; (char)System.in.read() != 'S'; i++) {
-            System.out.println("Pass #" + i);
-        }
-
-
-BLANK Sections in for Loop:
-Any part (initialization, condition, iteration) of a for loop can be left blank.
-
-Example:
-java
-Copy code
-for(i = 0; i < 10;) { 
-    System.out.println("Pass #" + i);
-    i++; // Increment inside the loop body
-}
-You can also have an infinite loop with for(;;).
 4. Loops with No Body:
 The body of a for loop can be empty if all the logic is handled within the loop declaration.
 Example:
