@@ -33,13 +33,9 @@
 
 
 ------------    FOR-Loop Variations    ------------
-[1]	Multiple loop control variables can be used in the for loop. Multiple loop control variables are often convenient and can simplify certain algorithms. Any number of initialization and iteration statements are possible, but, more than two or three make the for loop unwieldy. Consider the following code:
-for(i=0, j=10; i<j; i++, j--) System.out.println("i and j: " + i + " " + j);
-	Here, commas separate the two initialization statements and the two iteration expressions. When the loop begins, both i and j are initialized. Each time the loop repeats, i is incremented and j is decremented. 
 
 
-[2]	The condition controlling the loop can be any valid Boolean expression. It does not need to involve the loop control variable. Eg: the loop continues to execute until the user types the letter S at the keyboard:
-for(i = 0;  (char)System.in.read() != 'S';  i++) System.out.println("Pass #" + i);
+
 
 
 [3]	It is possible for any or all of the initialization, condition, or iteration portions of the for loop to be blank.  For example, 
@@ -84,29 +80,33 @@ for(int i=2; i <= 100; i++){ System.out.print("Factors of " + i + ": ");
 
 -=-=-=-=-    Above GPT    -=-=-=-=-
 
-Here’s a simplified and clear explanation of for loop variations:
+------------    FOR loop variations    ------------
 
-1. Multiple Loop Control Variables:
-You can use more than one control variable in a for loop.
-Example:
-java
-Copy code
-for(i = 0, j = 10; i < j; i++, j--) {
-    System.out.println("i and j: " + i + " " + j);
-}
-Here, i is incremented and j is decremented in each iteration.
-Commas separate multiple initialization and iteration statements.
-2. Boolean Condition Control:
-The condition in the loop can be any valid Boolean expression, not just related to the loop control variable.
-Example:
-java
-Copy code
-for(i = 0; (char)System.in.read() != 'S'; i++) {
-    System.out.println("Pass #" + i);
-}
-The loop will run until the user types 'S'.
-3. Blank Sections in for Loop:
+Multi Loop-Control Var:
+    Any number of "initialization" and "iteration" are possible
+    "Commas" separate multiple initialization and iteration statements
+    But, more than two or three make the the loop complicated
+
+        for(i=0, j=10; i<j; i++, j--) {
+            System.out.println("i and j: " + i + " " + j);
+        }
+
+    When the loop begins, both i and j are initialized.
+    Each time the loop repeats, i is incremented and j is decremented in each iteration.
+
+
+Boolean Condition Control:
+    The loop-condition can be any valid Boolean expression, not just related to the loop control variable.
+    Eg: the loop continues until the user types the letter 'S' at the keyboard:
+
+        for(i = 0; (char)System.in.read() != 'S'; i++) {
+            System.out.println("Pass #" + i);
+        }
+
+
+BLANK Sections in for Loop:
 Any part (initialization, condition, iteration) of a for loop can be left blank.
+
 Example:
 java
 Copy code
