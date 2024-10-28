@@ -92,33 +92,39 @@
             It is equivalent to:    sum = sum + i; i++;
 
 
-[5]	Declaring Loop Control Variables Inside the for Loop: Often the variable that controls a for is needed only for the purposes of the loop and is not used elsewhere. In this case, we declare the variable inside the initialization portion of the for. Eg:
-int sum = 0, fact = 1;
-for(int i = 1; i <= 5; i++) { 	sum += i; 	// i is known throughout the loop
-fact *= i; }
-	In this example, i is not accessible outside the for loop. If you need to use the loop control variable elsewhere in your program, you will not be able to declare it inside the for loop.
-	Note: the scope of that variable ends when the for statement does. (That is, the scope of the variableis limited to the for loop.) Outside the for loop, the variable will cease to exist. 
+    Declaring Variables Inside for Loop:
+        Loop control variables can be "declared" inside the loop (if it's not used elsewhere).
+        In this case, we declare the variable inside the initialization portion of the FOR. Eg:
+
+                int sum = 0, 
+                fact = 1;
+
+                for(int i = 1; i <= 5; i++) { 	// notice the initialization of i
+                    sum += i; 	// i is known throughout the loop
+                    fact *= i; 
+                }
+
+            In this example, i cannot be accessed outside the for loop
+            If you need to use the loop variable "i" elsewhere in your program, don't declare it inside the for loop
+            The scope (or lifetime) of i is limited to the for loop. Once the loop ends, i no longer exists
+
+
+    The Enhanced for Loop:
+        Java offers an enhanced for loop for "iterating over collections" like arrays.
+        We'll discuss it more thoroughly in the next chapter when we cover arrays.
+        EG: used for arrays
+
+                for(int num : array) {
+                    System.out.println(num);
+                }
 
 
 
-5. Declaring Variables Inside for Loop:
-Loop control variables can be declared inside the loop.
-Example:
-java
-Copy code
-for(int i = 1; i <= 5; i++) {
-    sum += i;
-}
-The variable i exists only within the loop.
+    ------------    WHILE and DO-WHILE loop    ------------
+    // ----  rev[28-Oct-2024]  ----
 
 
-
-
-[6]	The Enhanced for Loop: Relatively recently, a new form of the for loop, called the enhanced for, was added to Java. The enhanced for provides a streamlined way to cycle through the contents of a collection of objects, such as an array. We'll discuss with array.
-
-
-
-1.22 while and do-while loop (similar to C/C++)
+(similar to C/C++)
 While loop:  	while(condition){}	Do-While loop: 	do{}while(condition);
 
 
@@ -129,7 +135,7 @@ for(int i=2; i <= 100; i++){ System.out.print("Factors of " + i + ": ");
   System.out.println(); }
 
 
-// ----  rev[24-Oct-2024]  ----
+// ----  rev[28-Oct-2024]  ----
 
 -=-=-=-=-    Above GPT    -=-=-=-=-
 
@@ -137,18 +143,6 @@ for(int i=2; i <= 100; i++){ System.out.print("Factors of " + i + ": ");
 
 
 
-
-
-
-
-6. Enhanced for Loop:
-Java offers an enhanced for loop for iterating over collections like arrays.
-Example (used for arrays):
-java
-Copy code
-for(int num : array) {
-    System.out.println(num);
-}
 While and Do-While Loops:
 while Loop:
 
@@ -158,6 +152,10 @@ while(condition) {
     // statements
 }
 The loop checks the condition before executing the body.
+
+
+
+
 do-while Loop:
 
 java
