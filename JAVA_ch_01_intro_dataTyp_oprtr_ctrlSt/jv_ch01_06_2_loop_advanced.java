@@ -81,12 +81,16 @@
             This loop will run forever. (It can be terminated by using the break statement.)
 
 
+    Loops with No Body:
+        The body of a FOR-loop can be "empty" if all the logic is handled within the loop declaration.
+        EG: This loop sums numbers from 1 to 5, but there’s no body for the loop.
 
+                for(i = 1; i <= 5; sum += i++);
 
+        Notice that the summation process is handled entirely within the FOR statement, and no body is needed. 
+            Pay special attention to the iteration expression: 	sum += i++; 
+            It is equivalent to:    sum = sum + i; i++;
 
-[4]	Loops with No Body: In Java, the body associated with a for loop (or any other loop) can be empty. This is because a null statement is syntactically valid. They are often useful. For example, the following program uses one to sum the numbers 1 through 5: 	for(i = 1; i <= 5; sum += i++) ;
-	Notice that the summation process is handled entirely within the for statement, and no body is needed. 
-	Pay special attention to the iteration expression: 	sum += i++. It is equivalent to:    sum = sum + i; i++;
 
 [5]	Declaring Loop Control Variables Inside the for Loop: Often the variable that controls a for is needed only for the purposes of the loop and is not used elsewhere. In this case, we declare the variable inside the initialization portion of the for. Eg:
 int sum = 0, fact = 1;
@@ -94,6 +98,20 @@ for(int i = 1; i <= 5; i++) { 	sum += i; 	// i is known throughout the loop
 fact *= i; }
 	In this example, i is not accessible outside the for loop. If you need to use the loop control variable elsewhere in your program, you will not be able to declare it inside the for loop.
 	Note: the scope of that variable ends when the for statement does. (That is, the scope of the variableis limited to the for loop.) Outside the for loop, the variable will cease to exist. 
+
+
+
+5. Declaring Variables Inside for Loop:
+Loop control variables can be declared inside the loop.
+Example:
+java
+Copy code
+for(int i = 1; i <= 5; i++) {
+    sum += i;
+}
+The variable i exists only within the loop.
+
+
 
 
 [6]	The Enhanced for Loop: Relatively recently, a new form of the for loop, called the enhanced for, was added to Java. The enhanced for provides a streamlined way to cycle through the contents of a collection of objects, such as an array. We'll discuss with array.
@@ -120,22 +138,9 @@ for(int i=2; i <= 100; i++){ System.out.print("Factors of " + i + ": ");
 
 
 
-4. Loops with No Body:
-The body of a for loop can be empty if all the logic is handled within the loop declaration.
-Example:
-java
-Copy code
-for(i = 1; i <= 5; sum += i++);
-This loop sums numbers from 1 to 5, but there’s no body for the loop.
-5. Declaring Variables Inside for Loop:
-Loop control variables can be declared inside the loop.
-Example:
-java
-Copy code
-for(int i = 1; i <= 5; i++) {
-    sum += i;
-}
-The variable i exists only within the loop.
+
+
+
 6. Enhanced for Loop:
 Java offers an enhanced for loop for iterating over collections like arrays.
 Example (used for arrays):
@@ -181,6 +186,7 @@ This example finds and prints the factors of numbers from 2 to 100.
 -=-=-=-=-  GPT  -=-=-=-=-
 
 Important Points to Remember: Control Flow in Java (Differences and Key Aspects Compared to C/C++)
+
 1. for Loop Variations
 Basic Structure:
 
