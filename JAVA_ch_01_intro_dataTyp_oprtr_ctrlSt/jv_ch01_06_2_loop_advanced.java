@@ -121,12 +121,39 @@
 
 
     ------------    WHILE and DO-WHILE loop    ------------
-    // ----  rev[28-Oct-2024]  ----
+
+    WHILE Loop: 
+        Same behavior in both Java and C/C++.
+
+                while(condition) {
+                    // statements
+                }
+
+        The loop evaluates the condition before executing the body.
+            i.e. if the condition is false at the start, the loop is never executed
 
 
-(similar to C/C++)
-While loop:  	while(condition){}	Do-While loop: 	do{}while(condition);
+        Infinite Loop using while:
 
+                while(true) {
+                    // infinite loop
+                }
+
+
+
+    DO-WHILE Loop:
+        Similar to C/C++.
+
+                do {
+                    // statements
+                } while(condition);
+
+        The body is executed before the condition is checked.
+        The body of the loop will always be executed at least once, 
+            even if the condition is false on the first evaluation.
+
+
+    
 
 
 1.23 Nested Loops: 	One loop can be nested inside of another. Eg: To find factors of numbers
@@ -143,27 +170,15 @@ for(int i=2; i <= 100; i++){ System.out.print("Factors of " + i + ": ");
 
 
 
-While and Do-While Loops:
-while Loop:
-
-java
-Copy code
-while(condition) {
-    // statements
-}
-The loop checks the condition before executing the body.
 
 
 
 
-do-while Loop:
 
-java
-Copy code
-do {
-    // statements
-} while(condition);
-The body is executed at least once, then the condition is checked.
+
+
+
+
 Nested Loops:
 You can have loops inside loops.
 Example:
@@ -214,60 +229,10 @@ for (int i = 0, j = 10; i < j; i++, j--) {
 Differences from C/C++:
 
 In Java, the scope of the variables declared in the initialization section is restricted to the body of the loop. In C++, variables can be declared outside and can have an extended scope.
-2. while Loop
-Basic Structure:
 
-java
-Copy code
-while (condition) {
-    // body of loop
-}
-Important Aspects:
 
-The while loop evaluates the condition first, meaning if the condition is false at the start, the loop is never executed.
-Same behavior in both Java and C/C++.
-Infinite Loop:
-java
-Copy code
-while (true) {
-    // infinite loop
-}
-Control Flow Mechanism:
 
-Condition evaluated first.
-If the condition is true, the loop body is executed.
-Repeat step 1.
-3. do-while Loop
-Basic Structure:
 
-java
-Copy code
-do {
-    // body of loop
-} while (condition);
-Important Aspects:
-
-The do-while loop is similar to the while loop but with one key difference: the body of the loop will always be executed at least once, even if the condition is false on the first evaluation.
-Similar to C/C++.
-Useful when the loop must run at least once before checking the condition.
-Control Flow Mechanism:
-
-The body is executed once before the condition is checked.
-The condition is evaluated after each iteration.
-If the condition is true, the loop continues; otherwise, it terminates.
-Example:
-
-java
-Copy code
-int i = 0;
-do {
-    System.out.println(i);
-    i++;
-} while (i < 5);
-Difference from while:
-
-The while loop checks the condition before execution of the loop body.
-The do-while loop checks the condition after the loop body, so the loop is guaranteed to run at least once.
 4. Nested Loops
 Basic Structure:
 
