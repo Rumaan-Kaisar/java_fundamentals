@@ -156,11 +156,6 @@
     
 
 
-1.23 Nested Loops: 	One loop can be nested inside of another. Eg: To find factors of numbers
-for(int i=2; i <= 100; i++){ System.out.print("Factors of " + i + ": ");
-  for(int j=2; j<i; j++) if((i%j) == 0) System.out.print(j + " ");
-  System.out.println(); }
-
 
 // ----  rev[28-Oct-2024]  ----
 
@@ -174,24 +169,29 @@ for(int i=2; i <= 100; i++){ System.out.print("Factors of " + i + ": ");
 
 
 
-
-
-
-
-
 Nested Loops:
-You can have loops inside loops.
-Example:
-java
-Copy code
-for(int i = 2; i <= 100; i++) {
-    System.out.print("Factors of " + i + ": ");
-    for(int j = 2; j < i; j++) {
-        if(i % j == 0) System.out.print(j + " ");
-    }
-    System.out.println();
-}
-This example finds and prints the factors of numbers from 2 to 100.
+    One loop can be nested inside of another.
+    Similar in Java and C/C++.
+    
+    Eg: To find factors of numbers we can use nested FOR-loops
+
+        for(int i=2; i <= 100; i++){ 
+            System.out.print("Factors of " + i + ": ");
+            for(int j=2; j<i; j++) if((i%j) == 0) System.out.print(j + " ");
+            System.out.println(); 
+        }
+
+    You can nest FOR, WHILE, and DO-WHILE loops.
+    Loops are executed from the outermost to innermost, 
+        with the "inner loop" completing all its iterations for each iteration of the "outer loop".
+
+
+Variable Scoping (different in Java and C++): 
+In Java, variables declared in a loop have block-level scope (limited to the loop or block they are declared in). 
+In C++, variables declared in a loop can have a different scope depending on how they are declared.
+
+
+
 
 
 
@@ -233,47 +233,8 @@ In Java, the scope of the variables declared in the initialization section is re
 
 
 
-4. Nested Loops
-Basic Structure:
 
-java
-Copy code
-for (initialization; condition; iteration) {
-    for (initialization; condition; iteration) {
-        // inner loop body
-    }
-    // outer loop body
-}
-Important Aspects:
 
-You can nest for, while, and do-while loops.
-Loops are executed from the outermost to innermost, with the inner loop completing all its iterations for each iteration of the outer loop.
-Similar in Java and C/C++.
-Example of Nested for Loops:
-
-java
-Copy code
-for (int i = 1; i <= 3; i++) {
-    for (int j = 1; j <= 3; j++) {
-        System.out.println("i: " + i + ", j: " + j);
-    }
-}
-Output:
-
-yaml
-Copy code
-i: 1, j: 1
-i: 1, j: 2
-i: 1, j: 3
-i: 2, j: 1
-i: 2, j: 2
-i: 2, j: 3
-i: 3, j: 1
-i: 3, j: 2
-i: 3, j: 3
-Differences from C/C++:
-
-Variable Scoping: In Java, variables declared in a loop have block-level scope (limited to the loop or block they are declared in). In C++, variables declared in a loop can have a different scope depending on how they are declared.
 5. Additional Notes:
 Java has an enhanced for-each loop (also called the enhanced for loop) which is useful for iterating through arrays and collections.
 java
