@@ -153,7 +153,26 @@
             even if the condition is false on the first evaluation.
 
 
-    
+
+    ------------    Nested Loops    ------------
+            
+    Nested Loops:
+        One loop can be nested inside of another.
+        Similar in Java and C/C++.
+        
+        Eg: To find factors of numbers we can use nested FOR-loops
+
+            for(int i=2; i <= 100; i++){ 
+                System.out.print("Factors of " + i + ": ");
+                for(int j=2; j<i; j++) if((i%j) == 0) System.out.print(j + " ");
+                System.out.println(); 
+            }
+
+        You can nest FOR, WHILE, and DO-WHILE loops.
+        Loops are executed from the outermost to innermost, 
+            with the "inner loop" completing all its iterations for each iteration of the "outer loop".
+
+
 
 
 
@@ -168,31 +187,37 @@
 
 
 
-
-Nested Loops:
-    One loop can be nested inside of another.
-    Similar in Java and C/C++.
-    
-    Eg: To find factors of numbers we can use nested FOR-loops
-
-        for(int i=2; i <= 100; i++){ 
-            System.out.print("Factors of " + i + ": ");
-            for(int j=2; j<i; j++) if((i%j) == 0) System.out.print(j + " ");
-            System.out.println(); 
-        }
-
-    You can nest FOR, WHILE, and DO-WHILE loops.
-    Loops are executed from the outermost to innermost, 
-        with the "inner loop" completing all its iterations for each iteration of the "outer loop".
-
-
 Variable Scoping (different in Java and C++): 
 In Java, variables declared in a loop have block-level scope (limited to the loop or block they are declared in). 
 In C++, variables declared in a loop can have a different scope depending on how they are declared.
 
 
 
+Variable Scoping in Java vs. C++
+In Java, variables declared inside a loop or a block (such as an if statement or a for loop) have block-level scope. This means that the variable is only accessible within that specific block (the code enclosed by {} where it was declared). Once the execution leaves the block, the variable no longer exists, and it cannot be accessed outside of that block.
 
+Example in Java:
+
+java
+Copy code
+for (int i = 0; i < 5; i++) {
+    System.out.println(i); // `i` is accessible here
+}
+// `i` is no longer accessible here
+In C++, the scope can behave differently based on where the variable is declared. If you declare a variable inside a loop or block, it will have the same block-level scope as in Java, meaning it is only accessible within that block. However, in C++, it is common to declare variables outside of loops or blocks, giving them broader scope, so they remain accessible outside the loop or block they were used in.
+
+Example in C++:
+
+cpp
+Copy code
+int i;
+for (i = 0; i < 5; i++) {
+    std::cout << i << std::endl; // `i` is accessible here
+}
+// `i` is still accessible here because it was declared outside the loop
+Key Difference:
+In Java, the variable scope is strictly limited to the block in which it was declared.
+In C++, you have the option to declare variables outside of loops and blocks to make them accessible beyond that specific block.
 
 
 
