@@ -17,13 +17,15 @@
 
             Initialization: 
                 Sets the starting value of the loop control variable (often a counter that controls the loop)
-                It is usually an assignment statement.
+                It is usually an assignment statement. Executed once at the beginning
 
             Condition: 
                 A "Boolean expression" that checks if the loop should continue
+                checked before each iteration; loop runs as long as it's true
 
             Iteration: 
                 Defines how the loop control variable changes after each loop cycle
+                performed after each loop body execution
 
             Semicolons: The three sections (initialization, condition, iteration) are separated by semicolons
 
@@ -206,39 +208,6 @@
 
 
 -=-=-=-=-  GPT  -=-=-=-=-
-
-Important Points to Remember: Control Flow in Java (Differences and Key Aspects Compared to C/C++)
-
-1. for Loop Variations
-Basic Structure:
-
-java
-Copy code
-for (initialization; condition; iteration) {
-    // body of loop
-}
-Initialization: executed once at the beginning.
-Condition: checked before each iteration; loop runs as long as it's true.
-Iteration: performed after each loop body execution.
-Important Aspects:
-
-Same as in C/C++ in terms of syntax and behavior.
-Infinite Loop: Can be written like this (same as C/C++):
-java
-Copy code
-for(;;) {
-    // infinite loop
-}
-Multiple Initialization and Iteration Expressions: You can use multiple comma-separated expressions:
-java
-Copy code
-for (int i = 0, j = 10; i < j; i++, j--) {
-    // loop body
-}
-Differences from C/C++:
-
-In Java, the scope of the variables declared in the initialization section is restricted to the body of the loop. In C++, variables can be declared outside and can have an extended scope.
-
 
 
 
