@@ -217,7 +217,7 @@
 
 --------  Notes  --------
 
-Type Promotion and Casting in Loops
+Type Promotion and Casting in Loops:
     In Java, arithmetic on smaller data types (like byte, char, short) promotes them to "int" in expressions. 
     To assign the result back to a smaller type, an "explicit cast" is needed.
 
@@ -227,41 +227,38 @@ Type Promotion and Casting in Loops
             }
 
 
-2. break and continue Statements
-The break statement in Java (similar to C/C++) exits the nearest enclosing loop entirely.
-The continue statement skips the current iteration of the loop and proceeds to the next iteration.
-Labeled break and continue: Java allows you to use labels with break and continue to break or continue outer loops. This feature doesn't exist in C/C++.
-Example (Labeled break):
+break and continue:
+    break exits the nearest enclosing loop entirely
+    continue skips the current iteration of the loop and proceeds to the next iteration
 
-java
-Copy code
-outerLoop:
-for (int i = 0; i < 3; i++) {
-    for (int j = 0; j < 3; j++) {
-        if (j == 1) {
-            break outerLoop;  // Exits both loops
-        }
-        System.out.println("i = " + i + ", j = " + j);
-    }
-}
-Output:
-css
-Copy code
-i = 0, j = 0
+    Labeled break and continue: 
+        Use labels with break and continue to break or continue "outer multiple loops". 
+        Doesn't exist in C/C++
+
+    Example (Labeled break):
+
+            outerLoop:
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    if (j == 1) {
+                        break outerLoop;  // Exits both loops
+                    }
+                    System.out.println("i = " + i + ", j = " + j);
+                }
+            }
 
 
+Scope of Loop Variables:
+    Variables declared within a loop in Java have block scope,
+        means they are only accessible within the loop where they are declared. 
+        After the loop finishes, the variable is no longer accessible.
 
-3. Scope of Loop Variables
-Variables declared within a loop in Java have block scope, which means they are only accessible within the loop where they are declared. After the loop finishes, the variable is no longer accessible.
-This is similar to C++ unless the variables are declared outside the loop.
-Example:
+            for(int i = 0; i < 5; i++) {
+                // notice i is declared in the initialization portion of the FOR-loop
+                // i is accessible here
+            }
+            // i is no longer accessible here
 
-java
-Copy code
-for (int i = 0; i < 5; i++) {
-    // i is accessible here
-}
-// i is no longer accessible here
 
 
 
