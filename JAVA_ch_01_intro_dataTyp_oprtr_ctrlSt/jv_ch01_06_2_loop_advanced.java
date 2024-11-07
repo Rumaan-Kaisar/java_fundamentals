@@ -119,9 +119,16 @@
                     // body of loop
                 }
         
+        You can only use it to read data, not modify the collection
+        Iterates through each element of the collection without requiring an "index".
+        It's particularly useful for iterating over arrays, ArrayList, HashSet, and other collection types in Java.
+        Not present in C/C++.
+
         EG: used for arrays
 
-                for(int num : array) {
+                int[] numbers = {1, 2, 3, 4, 5};
+
+                for(int num : numbers) {
                     System.out.println(num);
                 }
 
@@ -262,22 +269,6 @@ Scope of Loop Variables:
 
 
 
-4. The for-each Loop (Enhanced for Loop)
-Java provides the enhanced for loop for iterating over arrays and collections. It simplifies the iteration process and reduces the chance of errors associated with loop boundaries.
-You can only use it to read data, not modify the collection. This is different from regular for loops, where you have full control over the index.
-Example:
-
-java
-Copy code
-int[] numbers = {1, 2, 3, 4, 5};
-for (int num : numbers) {
-    System.out.println(num);
-}
-Important Points:
-
-The enhanced for loop iterates through each element of the collection without requiring an index.
-It's particularly useful for iterating over arrays, ArrayList, HashSet, and other collection types in Java.
-Not present in C/C++.
 
 
 
