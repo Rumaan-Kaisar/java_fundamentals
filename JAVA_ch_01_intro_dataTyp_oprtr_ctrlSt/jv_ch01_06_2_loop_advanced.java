@@ -282,35 +282,15 @@ Unreachable Code in Loops
             }
 
 
+Floating Point Loops:
+    Be cautious when using floating-point numbers as loop counters. 
+    Due to the inaccuracy of floating-point arithmetic, conditions may not behave as expected.
+    This problem exists in both Java and C/C++, but Java has stricter type-checking, which might prevent some issues upfront.
 
-7. Switch Expression in Java (Java 12+):
-Java, from version 12 onwards, allows the switch expression, which simplifies the use of switch by making it an expression that can return a value.
-This feature is not present in C/C++.
-Example:
-
-java
-Copy code
-int dayOfWeek = 2;
-String day = switch (dayOfWeek) {
-    case 1 -> "Monday";
-    case 2 -> "Tuesday";
-    default -> "Invalid day";
-};
-System.out.println(day);
-
-
-
-8. Floating Point Loops
-Be cautious when using floating-point numbers as loop counters. Due to the inaccuracy of floating-point arithmetic, conditions may not behave as expected.
-This problem exists in both Java and C/C++, but Java has stricter type-checking, which might prevent some issues upfront.
-Example of a potential issue:
-
-java
-Copy code
-for (float f = 0.1f; f != 1.0f; f += 0.1f) {
-    System.out.println(f);
-}
-// May not terminate as expected due to floating-point precision issues
+            for(float f = 0.1f; f != 1.0f; f += 0.1f) {
+                System.out.println(f);
+            }
+            // May not terminate as expected due to floating-point precision issues
 
 
 
