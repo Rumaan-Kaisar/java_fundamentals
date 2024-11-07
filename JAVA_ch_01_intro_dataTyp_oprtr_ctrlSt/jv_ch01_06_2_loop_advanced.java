@@ -267,28 +267,19 @@ Scope of Loop Variables:
             // i is no longer accessible here
 
 
+Nested Loops and Performance:
+    There's potential performance issues, especially when the loops have high iteration counts (e.g., O(n^2) complexity).
+    Nested loops can also lead to complex code, so use them judiciously and refactor where possible.
 
 
+Unreachable Code in Loops
+    If the compiler detects code after an unconditional return or break within a loop, it will throw an error. 
+    This rule is stricter than in C/C++, which may not always flag unreachable code.
 
-
-
-5. Nested Loops and Performance
-Nested loops are allowed in Java, just like in C/C++, but care should be taken when using nested loops due to potential performance issues, especially when the loops have high iteration counts (e.g., O(n^2) complexity).
-Nested loops can also lead to complex code, so use them judiciously and refactor where possible.
-
-
-
-6. Unreachable Code in Loops
-Java has a strict rule against unreachable code. If a loop contains code that the compiler determines will never be reached (e.g., after an unconditional return or break), the compiler will produce an error.
-This is slightly stricter than C/C++ compilers, which might not always catch unreachable code.
-Example:
-
-java
-Copy code
-for (int i = 0; i < 5; i++) {
-    break; // Loop will break immediately
-    System.out.println("This is unreachable"); // Causes a compilation error
-}
+            for(int i = 0; i < 5; i++) {
+                break;  // Loop will break immediately
+                System.out.println("This is unreachable");  // Causes a compilation error
+            }
 
 
 
