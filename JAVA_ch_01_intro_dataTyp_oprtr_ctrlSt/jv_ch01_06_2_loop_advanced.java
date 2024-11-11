@@ -314,25 +314,19 @@ Iterator vs. for Loop:
 
 
 
-10. Final Variables in Loops
-In Java, final variables (constants) cannot be modified inside a loop. They must be initialized only once.
-This is a stricter enforcement compared to C++, where const variables have a similar but slightly different set of rules.
-Example:
+Final Variables in Loops:
+    In Java, final variables (constants) cannot be modified inside a loop. They must be initialized only once.
+    This is a stricter enforcement compared to C++, 
+        where const variables have a similar but slightly different set of rules.
 
-java
-Copy code
-final int limit = 5;
-for (int i = 0; i < limit; i++) {
-    System.out.println(i);  // Works fine, but you cannot modify `limit`
-}
-Summary of Key Differences and Facts:
-Java provides the enhanced for-each loop, not available in C/C++.
-Variable scoping is stricter in Java, especially within loop bodies.
-Strict type-checking and promotion rules apply inside expressions (e.g., promoting smaller types like byte to int).
-Labeled break and continue in Java provide more control over nested loops, which are not available in C++.
-Iterator-based loops are preferred for collections in Java, whereas C++ uses pointer-based iterations.
-Java’s switch expression (Java 12+) enhances control flow by making switch more expressive compared to C++.
-These differences are essential to understand when transitioning between Java and C/C++ or when using loops effectively in Java.
+        Example:
+
+            final int limit = 5;
+
+            for (int i = 0; i < limit; i++) {
+                System.out.println(i);  // Works fine, but you cannot modify `limit`
+            }
+
 
 
 
@@ -357,8 +351,6 @@ These differences are essential to understand when transitioning between Java an
                 Nested loops
 
             Also, provide important points to remember and key facts related to each loop structure in Java.
-
-
 */
 
 
