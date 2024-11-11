@@ -213,145 +213,184 @@
 
 
 
+    --------  Notes  --------
 
+    Type Promotion and Casting in Loops:
+        In Java, arithmetic on smaller data types (like byte, char, short) promotes them to "int" in expressions. 
+        To assign the result back to a smaller type, an "explicit cast" is needed.
 
-
-// ----  rev[31-Oct-2024]  ----
-
-
--=-=-=-=-  GPT  -=-=-=-=-
-
-
---------  Notes  --------
-
-Type Promotion and Casting in Loops:
-    In Java, arithmetic on smaller data types (like byte, char, short) promotes them to "int" in expressions. 
-    To assign the result back to a smaller type, an "explicit cast" is needed.
-
-            byte b = 1;
-            for(int i = 0; i < 10; i++) {
-                b = (byte) (b + 1); // Requires explicit cast, as result is promoted to int
-            }
-
-
-break and continue:
-    break exits the nearest enclosing loop entirely
-    continue skips the current iteration of the loop and proceeds to the next iteration
-
-    Labeled break and continue: 
-        Use labels with break and continue to break or continue "outer multiple loops". 
-        Doesn't exist in C/C++
-
-    Example (Labeled break):
-
-            outerLoop:
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 3; j++) {
-                    if (j == 1) {
-                        break outerLoop;  // Exits both loops
-                    }
-                    System.out.println("i = " + i + ", j = " + j);
+                byte b = 1;
+                for(int i = 0; i < 10; i++) {
+                    b = (byte) (b + 1); // Requires explicit cast, as result is promoted to int
                 }
-            }
 
 
-Scope of Loop Variables:
-    Variables declared within a loop in Java have block scope,
-        means they are only accessible within the loop where they are declared. 
-        After the loop finishes, the variable is no longer accessible.
+    break and continue:
+        break exits the nearest enclosing loop entirely
+        continue skips the current iteration of the loop and proceeds to the next iteration
 
-            for(int i = 0; i < 5; i++) {
-                // notice i is declared in the initialization portion of the FOR-loop
-                // i is accessible here
-            }
-            // i is no longer accessible here
+        Labeled break and continue: 
+            Use labels with break and continue to break or continue "outer multiple loops". 
+            Doesn't exist in C/C++
 
+        Example (Labeled break):
 
-Nested Loops and Performance:
-    There's potential performance issues, especially when the loops have high iteration counts (e.g., O(n^2) complexity).
-    Nested loops can also lead to complex code, so use them judiciously and refactor where possible.
-
-
-Unreachable Code in Loops
-    If the compiler detects code after an unconditional return or break within a loop, it will throw an error. 
-    This rule is stricter than in C/C++, which may not always flag unreachable code.
-
-            for(int i = 0; i < 5; i++) {
-                break;  // Loop will break immediately
-                System.out.println("This is unreachable");  // Causes a compilation error
-            }
+                outerLoop:
+                for (int i = 0; i < 3; i++) {
+                    for (int j = 0; j < 3; j++) {
+                        if (j == 1) {
+                            break outerLoop;  // Exits both loops
+                        }
+                        System.out.println("i = " + i + ", j = " + j);
+                    }
+                }
 
 
-Floating Point Loops:
-    Be cautious when using floating-point numbers as loop counters. 
-    Due to the inaccuracy of floating-point arithmetic, conditions may not behave as expected.
-    This problem exists in both Java and C/C++, but Java has stricter type-checking, which might prevent some issues upfront.
+    Scope of Loop Variables:
+        Variables declared within a loop in Java have block scope,
+            means they are only accessible within the loop where they are declared. 
+            After the loop finishes, the variable is no longer accessible.
 
-            for(float f = 0.1f; f != 1.0f; f += 0.1f) {
-                System.out.println(f);
-            }
-            // May not terminate as expected due to floating-point precision issues
-
-
-Iterator vs. for Loop:
-    When iterating over collections (like ArrayList or HashSet), 
-        it's generally preferable to use an "Iterator" or an "enhanced for-each" loop in Java.
-    Unlike C++, Java doesn’t provide "pointer-based iteration" but rather "object-based iterators".
-    The use of Iterator ensures fail-safe behavior, 
-        meaning it avoids ConcurrentModificationException when modifying collections during iteration.
-
-    Example:
-
-            ArrayList<String> list = new ArrayList<>();
-
-            list.add("A");
-            list.add("B");
-
-            Iterator<String> iterator = list.iterator();
-            while (iterator.hasNext()) {
-                System.out.println(iterator.next());
-            }
+                for(int i = 0; i < 5; i++) {
+                    // notice i is declared in the initialization portion of the FOR-loop
+                    // i is accessible here
+                }
+                // i is no longer accessible here
 
 
+    Nested Loops and Performance:
+        There's potential performance issues, especially when the loops have high iteration counts (e.g., O(n^2) complexity).
+        Nested loops can also lead to complex code, so use them judiciously and refactor where possible.
 
-Final Variables in Loops:
-    In Java, final variables (constants) cannot be modified inside a loop. They must be initialized only once.
-    This is a stricter enforcement compared to C++, 
-        where const variables have a similar but slightly different set of rules.
+
+    Unreachable Code in Loops
+        If the compiler detects code after an unconditional return or break within a loop, it will throw an error. 
+        This rule is stricter than in C/C++, which may not always flag unreachable code.
+
+                for(int i = 0; i < 5; i++) {
+                    break;  // Loop will break immediately
+                    System.out.println("This is unreachable");  // Causes a compilation error
+                }
+
+
+    Floating Point Loops:
+        Be cautious when using floating-point numbers as loop counters. 
+        Due to the inaccuracy of floating-point arithmetic, conditions may not behave as expected.
+        This problem exists in both Java and C/C++, but Java has stricter type-checking, which might prevent some issues upfront.
+
+                for(float f = 0.1f; f != 1.0f; f += 0.1f) {
+                    System.out.println(f);
+                }
+                // May not terminate as expected due to floating-point precision issues
+
+
+    Iterator vs. for Loop:
+        When iterating over collections (like ArrayList or HashSet), 
+            it's generally preferable to use an "Iterator" or an "enhanced for-each" loop in Java.
+        Unlike C++, Java doesn’t provide "pointer-based iteration" but rather "object-based iterators".
+        The use of Iterator ensures fail-safe behavior, 
+            meaning it avoids ConcurrentModificationException when modifying collections during iteration.
 
         Example:
 
-            final int limit = 5;
+                ArrayList<String> list = new ArrayList<>();
 
-            for (int i = 0; i < limit; i++) {
-                System.out.println(i);  // Works fine, but you cannot modify `limit`
-            }
+                list.add("A");
+                list.add("B");
 
-
-
-
-    --------    Use ChatGPT prompts like below    --------
-
-        prompt 1:
-            GPT: Provide important points to remember, key facts, and aspects of the following in Java. 
-            Also, explain the control-flow mechanism and differences from C/C++:
-
-                for loop variations
-                while loop
-                do-while loop
-                Nested loops
+                Iterator<String> iterator = list.iterator();
+                while (iterator.hasNext()) {
+                    System.out.println(iterator.next());
+                }
 
 
-        prompt 2:
-            Explain the control flow mechanisms and key differences between Java and C/C++ for the following loop structures:
 
-                for loop variations
-                while loop
-                do-while loop
-                Nested loops
+    Final Variables in Loops:
+        In Java, final variables (constants) cannot be modified inside a loop. They must be initialized only once.
+        This is a stricter enforcement compared to C++, 
+            where const variables have a similar but slightly different set of rules.
 
-            Also, provide important points to remember and key facts related to each loop structure in Java.
+            Example:
+
+                final int limit = 5;
+
+                for (int i = 0; i < limit; i++) {
+                    System.out.println(i);  // Works fine, but you cannot modify `limit`
+                }
+
+
+
+
+        --------    Use ChatGPT prompts like below    --------
+
+            prompt 1:
+                GPT: Provide important points to remember, key facts, and aspects of the following in Java. 
+                Also, explain the control-flow mechanism and differences from C/C++:
+
+                    for loop variations
+                    while loop
+                    do-while loop
+                    Nested loops
+
+
+            prompt 2:
+                Explain the control flow mechanisms and key differences between Java and C/C++ for the following loop structures:
+
+                    for loop variations
+                    while loop
+                    do-while loop
+                    Nested loops
+
+                Also, provide important points to remember and key facts related to each loop structure in Java.
+
 */
 
+
+
+The following program uses a for loop to print the square roots of the numbers between 1
+and 99. It also displays the rounding error present for each square root.
+// Show square roots of 1 to 99 and the rounding error.
+class SqrRoot {
+public static void main(String args[]) {
+double num, sroot, rerr;
+for(num = 1.0; num < 100.0; num++) {
+sroot = Math.sqrt(num);
+System.out.println("Square root of " + num +
+" is " + sroot);
+// compute rounding error
+rerr = num - (sroot * sroot);
+System.out.println("Rounding error is " + rerr);
+System.out.println();
+}
+}
+}
+Notice that the rounding error is computed by squaring the square root of each number. This result
+is then subtracted from the original number, thus yielding the rounding erro
+
+
+
+
+
+The for loop can proceed in a positive or negative fashion, and it can change the loop
+control variable by any amount. For example, the following program prints the numbers 100 to
+–95, in decrements of 5:
+// A negatively running for loop.
+class DecrFor {
+public static void main(String args[]) {
+int x;
+for(x = 100; x > -100; x -= 5)
+System.out.println(x);
+}
+}
+An important point about for loops is that the conditional expression is always tested at
+the top of the loop. This means that the code inside the loop may not be executed at all if the
+condition is false to begin with. Here is an example:
+for(count=10; count < 5; count++)
+x += count; // this statement will not execute
+Loop control variable is
+decremented by 5 each time.Chapter 3: Program Control Statements 77
+This loop will never execute because its control variable, count, is greater than 5 when the
+loop is first entered. This makes the conditional expression, count < 5, false from the outset;
+thus, not even one iteration of the loop will occur.
 
 
