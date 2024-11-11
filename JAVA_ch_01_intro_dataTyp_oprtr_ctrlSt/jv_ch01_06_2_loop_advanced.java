@@ -293,22 +293,24 @@ Floating Point Loops:
             // May not terminate as expected due to floating-point precision issues
 
 
+Iterator vs. for Loop:
+    When iterating over collections (like ArrayList or HashSet), 
+        it's generally preferable to use an "Iterator" or an "enhanced for-each" loop in Java.
+    Unlike C++, Java doesn’t provide "pointer-based iteration" but rather "object-based iterators".
+    The use of Iterator ensures fail-safe behavior, 
+        meaning it avoids ConcurrentModificationException when modifying collections during iteration.
 
-9. Iterator vs. for Loop
-When iterating over collections (like ArrayList or HashSet), it's generally preferable to use an Iterator or an enhanced for-each loop in Java.
-Unlike C++, Java doesn’t provide pointer-based iteration but rather object-based iterators.
-The use of Iterator ensures fail-safe behavior, meaning it avoids ConcurrentModificationException when modifying collections during iteration.
-Example:
+    Example:
 
-java
-Copy code
-ArrayList<String> list = new ArrayList<>();
-list.add("A");
-list.add("B");
-Iterator<String> iterator = list.iterator();
-while (iterator.hasNext()) {
-    System.out.println(iterator.next());
-}
+            ArrayList<String> list = new ArrayList<>();
+
+            list.add("A");
+            list.add("B");
+
+            Iterator<String> iterator = list.iterator();
+            while (iterator.hasNext()) {
+                System.out.println(iterator.next());
+            }
 
 
 
