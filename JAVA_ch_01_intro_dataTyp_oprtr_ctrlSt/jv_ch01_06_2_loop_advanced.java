@@ -347,33 +347,33 @@
 
 
 
-The following program uses a for loop to print the square roots of the numbers between 1
-and 99. It also displays the rounding error present for each square root.
-// Show square roots of 1 to 99 and the rounding error.
+/* Example 1: Following uses a FOR-loop to print the square roots of the numbers between 1 and 99.
+                It also displays the rounding error present for each square root.
+*/
+
 class SqrRoot {
-public static void main(String args[]) {
-double num, sroot, rerr;
-for(num = 1.0; num < 100.0; num++) {
-sroot = Math.sqrt(num);
-System.out.println("Square root of " + num +
-" is " + sroot);
-// compute rounding error
-rerr = num - (sroot * sroot);
-System.out.println("Rounding error is " + rerr);
-System.out.println();
+    public static void main(String args[]) {
+        double num, sroot, round_err;
+
+        for(num = 1.0; num < 100.0; num++) {
+            sroot = Math.sqrt(num);
+            System.out.println("Square root of " + num + " is " + sroot);
+            // compute rounding error
+            round_err = num - (sroot * sroot);
+            System.out.println("Rounding error is " + round_err);
+            System.out.println();
+        }
+    }
 }
-}
-}
-Notice that the rounding error is computed by squaring the square root of each number. This result
-is then subtracted from the original number, thus yielding the rounding erro
 
 
 
 
 
-The for loop can proceed in a positive or negative fashion, and it can change the loop
+
+/* Example 2: The for loop can proceed in a positive or negative fashion, and it can change the loop
 control variable by any amount. For example, the following program prints the numbers 100 to
-–95, in decrements of 5:
+–95, in decrements of 5: */
 // A negatively running for loop.
 class DecrFor {
 public static void main(String args[]) {
