@@ -29,6 +29,8 @@
 
             Semicolons: The three sections (initialization, condition, iteration) are separated by semicolons
 
+            For loop can proceed in a positive or negative fashion (increment & decrement), 
+                and it can change the loop control variable by any amount.
 
 
     ------------    FOR-Loop Variations    ------------
@@ -369,11 +371,11 @@ class SqrRoot {
 
 
 
+/* Example 2: The for loop can proceed in a positive or negative fashion, 
+and it can change the loop control variable by any amount.
 
-
-/* Example 2: The for loop can proceed in a positive or negative fashion, and it can change the loop
-control variable by any amount. For example, the following program prints the numbers 100 to
-–95, in decrements of 5: */
+For example, the following program prints the numbers 100 to –95, in decrements of 5. 
+*/
 // A negatively running for loop.
 class DecrFor {
 public static void main(String args[]) {
