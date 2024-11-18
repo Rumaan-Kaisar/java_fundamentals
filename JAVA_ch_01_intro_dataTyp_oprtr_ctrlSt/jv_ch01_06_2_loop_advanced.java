@@ -371,28 +371,44 @@ class SqrRoot {
 
 
 
+
 /* Example 2: The for loop can proceed in a positive or negative fashion, 
-and it can change the loop control variable by any amount.
+                and it can change the loop control variable by any amount.
 
-For example, the following program prints the numbers 100 to –95, in decrements of 5. 
+                Following program prints the numbers 100 to –95, in decrements of 5. 
 */
-// A negatively running for loop.
-class DecrFor {
-public static void main(String args[]) {
-int x;
-for(x = 100; x > -100; x -= 5)
-System.out.println(x);
-}
-}
-An important point about for loops is that the conditional expression is always tested at
-the top of the loop. This means that the code inside the loop may not be executed at all if the
-condition is false to begin with. Here is an example:
-for(count=10; count < 5; count++)
-x += count; // this statement will not execute
-Loop control variable is
-decremented by 5 each time.Chapter 3: Program Control Statements 77
-This loop will never execute because its control variable, count, is greater than 5 when the
-loop is first entered. This makes the conditional expression, count < 5, false from the outset;
-thus, not even one iteration of the loop will occur.
 
+// A negatively running for loop
+class DecrFor {
+    public static void main(String[] args) {
+        int x;
+
+        for(x = 100; x > -100; x -= 5) System.out.println(x);
+    }
+}
+
+
+
+
+/* Example 3: The loop's condition can be any valid Boolean expression 
+                and doesn't have to use the loop control variable.
+
+                For example, the loop below runs until the user types 'S': 
+*/
+
+// Loop until an S is typed.
+class ForTest {
+public static void main(String args[])
+throws java.io.IOException {
+int i;
+System.out.println("Press S to stop.");
+for(i = 0; (char) System.in.read() != 'S'; i++)
+System.out.println("Pass #" + i);
+}
+}
+
+
+
+
+// ----  rev[18-nov-2024]  ----
 
