@@ -409,5 +409,23 @@ class ForTest{
 
 
 
-// ----  rev[18-nov-2024]  ----
+/* Example 4: It is possible for any or all of the initialization, condition, or iteration portions 
+                of the FOR loop to be blank. 
+                
+                For example, in the following program iteration variable moved to inside FOr-loop's body 
+*/
 
+class Empty {
+    public static void main(String args[]) {
+        int i;
+        
+        for(i = 0; i < 10; ){
+            System.out.println("Pass #" + i);
+            i++; // increment loop control var
+        }
+    }
+}
+
+
+
+// ----  rev[18-nov-2024]  ----
