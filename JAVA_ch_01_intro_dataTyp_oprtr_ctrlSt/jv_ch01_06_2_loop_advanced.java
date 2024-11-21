@@ -371,7 +371,6 @@ class SqrRoot {
 
 
 
-
 /* Example 2: The for loop can proceed in a positive or negative fashion, 
                 and it can change the loop control variable by any amount.
 
@@ -448,6 +447,46 @@ class Empty2 {
         }
     }
 }
+
+
+
+/* Example 6: The body of a loop can be empty. In this program the 
+                FOR-loop only used to calculate sum the numbers through 5
+*/
+class Empty3 {
+    public static void main(String args[]) {
+    int i;
+    int sum = 0;
+
+    // sum the numbers through 5
+    for(i = 1; i <= 5; sum += i++); // No body in this loop!
+    System.out.println("Sum is " + sum);
+    }
+}
+
+
+
+
+/* Example 7: Declaring loop control variables inside the for loop. 
+                Notice the declaration the variable inside the initialization portion of the FOR.
+*/
+class ForVar {
+    public static void main(String args[]) {
+        int sum = 0;
+        int fact = 1;
+
+        // compute the factorial of the numbers through 5
+        for(int i = 1; i <= 5; i++) {   // The variable i is declared inside the for statement.
+            sum += i; // i is known throughout the loop
+            fact *= i;
+        }
+        // but, i is not known here
+        System.out.println("Sum is " + sum);
+        System.out.println("Factorial is " + fact);
+    }
+}
+
+
 
 
 // ----  rev[21-nov-2024]  ----
