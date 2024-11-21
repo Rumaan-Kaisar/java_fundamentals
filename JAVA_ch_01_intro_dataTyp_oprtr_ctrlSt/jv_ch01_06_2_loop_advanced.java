@@ -491,3 +491,16 @@ class ForVar {
 
 // ----  rev[21-nov-2024]  ----
 
+Here is a simple example in which a while is used to print the alphabet:
+// Demonstrate the while loop.
+class WhileDemo {
+public static void main(String args[]) {
+char ch;
+// print the alphabet using a while loop
+ch = 'a';
+while(ch <= 'z') {
+System.out.print(ch);
+ch++;
+}
+}
+}
