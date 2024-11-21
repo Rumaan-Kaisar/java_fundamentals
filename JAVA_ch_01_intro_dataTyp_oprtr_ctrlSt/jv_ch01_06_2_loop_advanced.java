@@ -428,7 +428,6 @@ class Empty {
 
 
 
-// ----  rev[18-nov-2024]  ----
 
 /* Example 5: In following program, the initialization portion is also moved out of the FOR.
                 Initialization is placed outside the loop when the initial value is calculated 
@@ -439,13 +438,17 @@ class Empty {
 
 // Move more out of the for loop.
 class Empty2 {
-public static void main(String args[]) {
-int i;
-i = 0; // move initialization out of loop
-for(; i < 10; ) {
-System.out.println("Pass #" + i);
-i++; // increment loop control var
+    public static void main(String args[]) {
+        int i;
+
+        i = 0; // move initialization out of loop
+        for(; i < 10;){
+            System.out.println("Pass #" + i);
+            i++; // increment loop control var
+        }
+    }
 }
-}
-}
+
+
+// ----  rev[21-nov-2024]  ----
 
