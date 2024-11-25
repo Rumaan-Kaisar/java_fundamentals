@@ -1,6 +1,12 @@
 
 /* -=-=-=-=-=-=-=-=-=-=-=      LOOPS      -=-=-=-=-=-=-=-=-=-=-= 
 
+    ----  Usage  ----
+    FOR:        Use a FOR loop when the number of iterations is known in advance.
+    DO-WHILE:   Use a DO-WHILE loop when the loop must execute at least once.
+    WHILE:      Use a WHILE loop when the number of iterations is unknown and depends on a condition.
+
+    
     ------------    FOR loop    ------------
     Following are the most traditional forms of the for
 
