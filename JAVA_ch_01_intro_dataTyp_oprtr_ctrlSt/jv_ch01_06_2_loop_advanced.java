@@ -508,3 +508,30 @@ class WhileDemo {
 
 
 
+
+/* Example 9: Like the for loop, the while loop checks its condition at the start.
+                
+                Following program computes the integer powers of 2, from 0 to 9.
+                Notice that the while loop executes only when "e" is greater than 0.
+*/
+
+class Power {
+    public static void main(String args[]) {
+        int e;
+        int result;
+    
+        for(int i=0; i < 10; i++) {
+            result = 1;
+            e = i;
+            while(e > 0) {
+                result *= 2;
+                e--;
+            }
+            System.out.println("2 to the " + i + " power is " + result);
+        }
+    }
+}
+    
+
+// ----  rev[25-nov-2024]  ----
+
