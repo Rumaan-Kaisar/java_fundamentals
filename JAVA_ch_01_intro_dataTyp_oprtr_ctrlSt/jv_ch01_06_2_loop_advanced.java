@@ -147,6 +147,9 @@
 
         The loop evaluates the condition before executing the body.
             i.e. if the condition is false at the start, the loop is never executed
+        
+        Like the for loop, the while loop checks its condition at the start, so the loop may not run at all. 
+            This removes the need for a separate pre-check before the loop.
 
 
         Infinite Loop using while:
@@ -489,18 +492,19 @@ class ForVar {
 
 
 
-// ----  rev[21-nov-2024]  ----
-
-Here is a simple example in which a while is used to print the alphabet:
-// Demonstrate the while loop.
+/* Example 8: Here is a simple example in which a while is used to print the alphabet: */
 class WhileDemo {
-public static void main(String args[]) {
-char ch;
-// print the alphabet using a while loop
-ch = 'a';
-while(ch <= 'z') {
-System.out.print(ch);
-ch++;
+    public static void main(String args[]) {
+        char ch;
+
+        // print the alphabet using a while loop
+        ch = 'a';
+        while(ch <= 'z'){
+            System.out.print(ch);
+            ch++;
+        }
+    }
 }
-}
-}
+
+
+
