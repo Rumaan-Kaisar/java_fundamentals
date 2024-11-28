@@ -589,59 +589,34 @@ class Guess4 {
 }
 
 
+/*  Notice here are two do-while loops in the program: 
+        The first loops until the user guesses the letter. So it is already clear
+        The second do-while loop, shown again here, needs some explanation:
 
 
-/* 
+            // discard any other characters in the input buffer
+            do {
+                ignore = (char) System.in.read();
+            } while(ignore != '\n');
+
+
+    As explained earlier, console input is "line buffered" you have to press ENTER before characters are sent.
+
+        Pressing ENTER causes a "carriage return" and a line feed (newline) sequence to be generated.
+        These characters are left pending in the input buffer.
+
+        Also, if you typed more than one key before pressing ENTER, they too would still be in the input buffer.
+
+
+    This loop discards those characters by continuing to read input until the end of the line is reached.
+
+    If they were not discarded, then those characters would also be 
+        sent to the program as "guesses", which is not what is wanted. 
+
+    There are some other, higher-level ways of handling console input are described.
+*/
+
 
 
 // ----  rev[28-nov-2024]  ----
 
-Notice one other thing of interest in this program. There are two do-while loops in the
-program. The first loops until the user guesses the letter. Its operation and meaning should be
-clear. The second do-while loop, shown again here, warrants some explanation:
-
-// discard any other characters in the input buffer
-do {
-ignore = (char) System.in.read();
-} while(ignore != '\n');
-
-As explained earlier, console input is line buffered—you have to press ENTER before characters are
-sent. Pressing ENTER causes a carriage return and a line feed (newline) sequence to be generated.
-These characters are left pending in the input buffer. Also, if you typed more than one key before
-pressing ENTER, they too would still be in the input buffer. This loop discards those characters by
-continuing to read input until the end of the line is reached. If they were not discarded, then those
-characters would also be sent to the program as guesses, which is not what is wanted. (To see the
-effect of this, you might try removing the inner do-while loop.) In Chapter 10, after you have
-learned more about Java, some other, higher-level ways of handling console input are described.
-However, the use of read( ) here gives you insight into how the foundation of Java's I/O system
-operates. It also shows another example of Java's loops in action.
-
-
-
-
-Simplified Explanation:
-
-Purpose of Two Loops:
-
-The first do-while loop ensures the program keeps running until the user guesses the correct letter.
-The second do-while loop handles leftover characters in the input buffer.
-Why the Second Loop is Needed:
-
-Console input in Java is line-buffered, meaning input isn't sent to the program until you press ENTER.
-When ENTER is pressed, extra characters (like the newline character \n or any additional input typed) remain in the input buffer.
-This leftover input needs to be cleared; otherwise, the program might mistakenly treat it as a guess.
-How It Works:
-
-The second loop repeatedly reads characters from the input buffer until it encounters a newline character (\n), indicating the end of the input.
-This ensures no extra characters interfere with the guessing logic.
-What Happens Without It?
-
-If the second loop is removed, any extra characters typed before pressing ENTER will be processed by the program as guesses, potentially causing errors or unexpected behavior.
-Relevance to Java:
-
-This example demonstrates the basics of Java’s input/output (I/O) system and the importance of handling input properly.
-More advanced input-handling techniques will be covered later in Chapter 10.
-Key Takeaway: The second loop cleans the input buffer, ensuring the program only processes valid guesses from the user. It also shows how low-level input handling works in Java.
-
-// 
- */
