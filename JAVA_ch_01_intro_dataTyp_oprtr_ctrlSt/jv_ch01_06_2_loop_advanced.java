@@ -620,3 +620,77 @@ class Guess4 {
 
 // ----  rev[28-nov-2024]  ----
 
+Improve the Java Help System
+This project expands on the Java help system that was created in Try This 3-1. This
+version adds the syntax for the for, while, and do-while loops. It also checks the
+user’s menu selection, looping until a valid response is entered.
+
+Here is the entire Help2.java program listing:
+/*
+Try This 3-2
+An improved Help system that uses a
+do-while to process a menu selection.
+*/
+// NOTICE: first part of main( ) so that it uses a loop to display the choices, as shown here
+class Help2 {
+public static void main(String args[])
+throws java.io.IOException {
+char choice, ignore;
+do {
+System.out.println("Help on:");
+System.out.println(" 1. if");
+System.out.println(" 2. switch");
+System.out.println(" 3. for");
+System.out.println(" 4. while");
+System.out.println(" 5. do-while\n");
+System.out.print("Choose one: ");
+
+choice = (char) System.in.read();
+do {
+ignore = (char) System.in.read();
+} while(ignore != '\n');
+} while( choice < '1' | choice > '5');
+
+// Notice that a nested do-while loop is used to discard any unwanted characters remaining in the input buffer. After making this change, the program will loop, displaying the menu until the user enters a response that is between 1 and 5.
+
+
+System.out.println("\n");
+
+
+// Expand the switch statement to include the for, while, and do-while loops, as shown here
+// Notice that no default statement is present in this version of the switch. Since the menu loop ensures that a valid response will be entered, it is no longer necessary to include a default statement to handle an invalid choice.
+switch(choice) {
+case '1':
+System.out.println("The if:\n");
+System.out.println("if(condition) statement;");
+System.out.println("else statement;");
+break;
+case '2':
+System.out.println("The switch:\n");
+System.out.println("switch(expression) {");
+System.out.println(" case constant:");
+System.out.println(" statement sequence");
+System.out.println(" break;");
+System.out.println(" // ...");
+System.out.println("}");
+break;
+case '3':
+System.out.println("The for:\n");
+System.out.print("for(init; condition; iteration)");
+System.out.println(" statement;");
+break;
+case '4':
+System.out.println("The while:\n");
+System.out.println("while(condition) statement;");
+break;
+case '5':
+System.out.println("The do-while:\n");
+System.out.println("do {");
+System.out.println(" statement;");
+System.out.println("} while (condition);");
+break;
+}
+}
+}
+
+
