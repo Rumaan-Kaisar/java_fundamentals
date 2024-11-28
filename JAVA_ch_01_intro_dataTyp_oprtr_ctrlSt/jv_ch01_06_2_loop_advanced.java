@@ -539,5 +539,23 @@ class Power {
 }
     
 
+
+
+/* Example 10: The following program uses "do-while loop" to loop until the user enters the letter q */
+
+class DWDemo {
+    public static void main(String args[]) throws java.io.IOException {
+        char ch;
+        do {
+            System.out.print("Press a key followed by ENTER: ");
+            ch = (char) System.in.read();   // get a char
+        } while(ch != 'q');
+    }
+}
+
+
+
 // ----  rev[25-nov-2024]  ----
+
+
 
