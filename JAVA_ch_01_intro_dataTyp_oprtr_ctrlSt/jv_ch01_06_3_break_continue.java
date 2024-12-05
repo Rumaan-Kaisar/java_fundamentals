@@ -142,5 +142,136 @@ else if(!done) 	// ...
 This sequence cannot be recoded into a switch because all three conditions involve different variables—and differing types. 
 	Also, you will need to use an if-else-if ladder when testing floating-point values or other objects that are not of types valid for use in a switch expression.
 
+
+
+
+
+--------    GPT    --------
+
+Key Points to Remember About break and continue in Java:
+
+
+break:
+    Terminates the nearest enclosing loop (for, while, do-while) or exits a switch statement.
+    Control jumps to the statement immediately following the loop or switch.
+
+    General form:
+        break;
+
+    Labels:
+        It is optional
+        Java allows "labeled break" to exit "nested" loops.
+        The label specifies which loop to terminate.
+
+Example: notice the label "outer", using break we can jump to outer
+
+outer: for (int i = 0; i < 5; i++) {
+    for (int j = 0; j < 5; j++) {
+        if (i == j) break outer;  // Breaks out of the outer loop
+    }
+}
+
+
+Key Fact:
+
+Without a label, break applies to the innermost enclosing loop or switch.
+
+
+
+
+
+
+continue:
+Purpose:
+
+Skips the remaining statements in the current loop iteration and jumps to the next iteration.
+Usage:
+
+Used to skip specific iterations of a loop while allowing the loop to continue.
+Commonly used in scenarios where certain conditions should bypass some part of the loop body.
+Behavior:
+
+Control skips to the next iteration of the loop, bypassing the rest of the code in the current iteration.
+Syntax:
+
+java
+Copy code
+continue;
+Optional Labels:
+
+Java allows labeled continue to skip iterations of an outer loop in nested loops.
+Example:
+java
+Copy code
+outer: for (int i = 0; i < 5; i++) {
+    for (int j = 0; j < 5; j++) {
+        if (i == j) continue outer;  // Skips to the next iteration of the outer loop
+    }
+}
+Key Fact:
+
+Without a label, continue applies to the innermost enclosing loop.
+Control Flow Mechanism:
+break:
+In switch:
+
+Immediately terminates the current case block and prevents "fall-through" to the next case.
+Example:
+java
+Copy code
+switch (day) {
+    case 1:
+        System.out.println("Monday");
+        break; // Exit switch here
+    case 2:
+        System.out.println("Tuesday");
+        break;
+}
+In Loops:
+
+Stops the execution of the loop entirely when a specific condition is met.
+Example:
+java
+Copy code
+for (int i = 0; i < 10; i++) {
+    if (i == 5) break;  // Exits the loop when i is 5
+}
+continue:
+Skips the current iteration and moves directly to the next iteration of the loop.
+Example:
+java
+Copy code
+for (int i = 0; i < 10; i++) {
+    if (i % 2 == 0) continue;  // Skips even numbers
+    System.out.println(i);  // Prints only odd numbers
+}
+Differences from C/C++:
+Syntax:
+
+Both break and continue have the same syntax in Java and C/C++.
+Java introduces labeled break and continue, which are not available in C/C++.
+Usage in switch:
+
+The use of break in a switch is mandatory in Java to prevent "fall-through."
+In C/C++, omitting break in a switch causes fall-through behavior by default, which can lead to unintentional bugs.
+Labels:
+
+Java supports labeled loops with break and continue, allowing control over nested loops.
+Labels are not a feature of C/C++.
+Memory Safety:
+
+Java does not allow unintentional memory corruption or undefined behavior related to break or continue as C/C++ might when used with pointers or in unsafe code.
+Usage in Switch:
+
+In Java, continue cannot be used inside a switch statement. This is different from C++, where continue simply applies to the innermost loop if present.
+Summary:
+Feature	break	continue
+Purpose	Exits the loop or switch completely	Skips to the next iteration of the loop
+Labeling	Supports labeled termination	Supports labeled skipping
+In Switch	Used to prevent fall-through	Not allowed in switch
+Scope	Affects the nearest enclosing loop or switch	Affects the nearest enclosing loop
+Difference from C++	Java mandates break in switch cases; supports labels	Labels supported; no usage in switch
+By remembering these rules, you'll handle break and continue effectively in Java programs.
+
 */
 
