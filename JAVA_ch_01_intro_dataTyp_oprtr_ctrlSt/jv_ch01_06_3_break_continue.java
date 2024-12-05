@@ -1,13 +1,25 @@
 
-/* -=-=-=-=-=-=-=-=-=-=-=      chapter name      -=-=-=-=-=-=-=-=-=-=-= 
+/*  -=-=-=-=-=-=-=-=-=-=-=      JUMPs      -=-=-=-=-=-=-=-=-=-=-= 
+
+    "break" and "continue":
+        Both are similar to C/C++'s "break" and "continue" (Recall C/C++ C_Ch2_3_1_ctrl_stmnt_jumps.c)
+    
+
+    // ----  rev[05-Dec-2024]  ----
+
+    
+    Remember the following points:
+
+    break with infinite loops:
+        The break statement can be used with any of Java’s loops, 
+            including intentionally "infinite loops". Eg: force user to types the letter q:
+
+        for( ; ; ) {
+            ch = (char) System.in.read();       // get a char
+            if(ch == 'q') break;
+        }
 
 
-1.24  "break" and "continue"
-Both are similar to C/C++'s "break" and "continue" (Recall C/C++ 2.15, 2.16). Remember the following points:
-	The break statement can be used with any of Java’s loops, including intentionally infinite loops. Eg: force user to types the letter q:
-
-for( ; ; ) { 	ch = (char) System.in.read(); // get a char
-if(ch == 'q') break; }
 	When used inside a set of nested loops, the break statement will break out of only the innermost loop. For example:
 for(int i=0; i<3; i++){ 	System.out.println("Outer loop count: " + i);
      	System.out.print(" Inner loop count: ");
@@ -129,7 +141,6 @@ else if(y != 0) 	// ...
 else if(!done) 	// ...
 This sequence cannot be recoded into a switch because all three conditions involve different variables—and differing types. 
 	Also, you will need to use an if-else-if ladder when testing floating-point values or other objects that are not of types valid for use in a switch expression.
-
 
 */
 
