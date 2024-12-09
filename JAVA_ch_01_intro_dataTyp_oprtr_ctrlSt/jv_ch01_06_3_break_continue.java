@@ -5,7 +5,58 @@
         Both are similar to C/C++'s "break" and "continue" (Recall C/C++ C_Ch2_3_1_ctrl_stmnt_jumps.c)
     
 
-    // ----  rev[05-Dec-2024]  ----
+            
+    BREAK:
+        Terminates the nearest enclosing loop (for, while, do-while) or exits a switch statement.
+        Control jumps to the statement immediately following the loop or switch.
+
+        General form:
+            break;
+
+        Labels:
+            It is optional
+            Java allows "labeled break" to exit "nested" loops.
+            The label specifies which loop to terminate.
+
+            Without a label, break applies to the innermost enclosing loop or switch
+
+            Example: 
+                notice the label "outer", using break we can jump to outer
+
+                    outer: for (int i = 0; i < 5; i++) {
+                        for (int j = 0; j < 5; j++) {
+                            if (i == j) break outer;  // Breaks out of the outer loop
+                        }
+                    }
+
+
+
+    CONTINUE:
+        Skips the remaining statements in the current loop iteration and jumps to the next iteration.
+        Used to skip specific iterations of a loop while allowing the loop to continue.
+        i.e. bypassing the rest of the code in the current iteration
+        
+        General form:
+            continue;
+
+        labeled:
+            Java allows labeled continue to skip iterations of an outer loop in nested loops.
+
+            Example: 
+                notice the label "outer", used to skip to the next iteration of the outer loop
+
+                    outer: for (int i = 0; i < 5; i++) {
+                        for (int j = 0; j < 5; j++) {
+                            if (i == j) continue outer;  // Skips to the next iteration of the outer loop
+                        }
+                    }
+
+            Without a label, continue applies to the innermost enclosing loop.
+
+
+            
+
+    // ----  rev[09-Dec-2024]  ----
 
     
     Remember the following points:
@@ -151,66 +202,8 @@ This sequence cannot be recoded into a switch because all three conditions invol
 Key Points to Remember About break and continue in Java:
 
 
-break:
-    Terminates the nearest enclosing loop (for, while, do-while) or exits a switch statement.
-    Control jumps to the statement immediately following the loop or switch.
-
-    General form:
-        break;
-
-    Labels:
-        It is optional
-        Java allows "labeled break" to exit "nested" loops.
-        The label specifies which loop to terminate.
-
-Example: notice the label "outer", using break we can jump to outer
-
-outer: for (int i = 0; i < 5; i++) {
-    for (int j = 0; j < 5; j++) {
-        if (i == j) break outer;  // Breaks out of the outer loop
-    }
-}
 
 
-Key Fact:
-
-Without a label, break applies to the innermost enclosing loop or switch.
-
-
-
-
-
-
-continue:
-Purpose:
-
-Skips the remaining statements in the current loop iteration and jumps to the next iteration.
-Usage:
-
-Used to skip specific iterations of a loop while allowing the loop to continue.
-Commonly used in scenarios where certain conditions should bypass some part of the loop body.
-Behavior:
-
-Control skips to the next iteration of the loop, bypassing the rest of the code in the current iteration.
-Syntax:
-
-java
-Copy code
-continue;
-Optional Labels:
-
-Java allows labeled continue to skip iterations of an outer loop in nested loops.
-Example:
-java
-Copy code
-outer: for (int i = 0; i < 5; i++) {
-    for (int j = 0; j < 5; j++) {
-        if (i == j) continue outer;  // Skips to the next iteration of the outer loop
-    }
-}
-Key Fact:
-
-Without a label, continue applies to the innermost enclosing loop.
 Control Flow Mechanism:
 break:
 In switch:
