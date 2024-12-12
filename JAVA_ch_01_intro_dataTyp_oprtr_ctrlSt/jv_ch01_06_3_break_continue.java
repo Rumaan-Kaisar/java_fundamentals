@@ -54,32 +54,41 @@
             Without a label, continue applies to the innermost enclosing loop.
 
 
-            
-
-    // ----  rev[09-Dec-2024]  ----
 
     
     ------------    Remember the following points    ------------
 
-    break with infinite loops:
+    Break with infinite loops:
         The break statement can be used with any of Java’s loops, 
             including intentionally "infinite loops". Eg: force user to types the letter q:
 
-        for( ; ; ) {
-            ch = (char) System.in.read();       // get a char
-            if(ch == 'q') break;
-        }
+            for( ; ; ) {
+                ch = (char) System.in.read();       // get a char
+                if(ch == 'q') break;
+            }
 
 
-	When used inside a set of nested loops, the break statement will break out of only the innermost loop. For example:
-for(int i=0; i<3; i++){ 	System.out.println("Outer loop count: " + i);
-     	System.out.print(" Inner loop count: ");
-int t = 0;
-while(t<100){	if(t == 10) break; 	// terminate loop if t is 10
-System.out.print(t + " ");
-t++;}
-System.out.println();  }
-System.out.println("Loops complete."); }
+    Break out of only the innermost loop:
+        In nested loops, break exits only the innermost loop. For example:
+
+            for(int i=0; i<3; i++){
+                System.out.println("Outer loop count: " + i);
+                System.out.print(" Inner loop count: ");
+                
+                int t = 0;
+                while(t<100){
+                    if(t == 10) break; 	// terminate loop if t is 10
+                    System.out.print(t + " ");
+                    t++;
+                }
+                System.out.println();
+            }
+            System.out.println("Loops complete.");
+
+
+// ----  rev[12-Dec-2024]  ----
+
+
 	The break statement in the inner loop causes the termination of only that loop. The outer loop is unaffected. The break that terminates a switch statement affects only that switch statement and not any enclosing loops.
 
 1.25  "break" and "continue" with LABEL (Replacing "goto" )
