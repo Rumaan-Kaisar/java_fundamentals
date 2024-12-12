@@ -59,7 +59,7 @@
     // ----  rev[09-Dec-2024]  ----
 
     
-    Remember the following points:
+    ------------    Remember the following points    ------------
 
     break with infinite loops:
         The break statement can be used with any of Java’s loops, 
@@ -267,4 +267,32 @@ Difference from C++	Java mandates break in switch cases; supports labels	Labels 
 By remembering these rules, you'll handle break and continue effectively in Java programs.
 
 */
+
+
+
+
+/* Example 1: The break statement stops a loop immediately and moves program control to the statement after the loop.
+                Notice following program, the loop is set to run from 0 to 100,
+                    but it ends early when i*i becomes greater than or equal to "num", (which in this case is 100)
+                    the break statement causes it to terminate early
+
+                Output:
+                    0 1 2 3 4 5 6 7 8 9 Loop complete
+*/
+
+class BreakDemo {
+    public static void main(String args[]) {
+        int num;
+
+        num = 100;
+        // loop while i-squared is less than num
+        for(int i=0; i < num; i++) {
+            if(i*i >= num) break; // terminate loop if i*i >= 100
+            System.out.print(i + " ");
+        }
+        System.out.println("Loop complete.");
+    }
+}
+
+
 
