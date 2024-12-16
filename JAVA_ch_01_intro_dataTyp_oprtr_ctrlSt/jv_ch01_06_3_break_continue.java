@@ -89,16 +89,30 @@
 // ----  rev[12-Dec-2024]  ----
 
 
-	The break statement in the inner loop causes the termination of only that loop. The outer loop is unaffected. The break that terminates a switch statement affects only that switch statement and not any enclosing loops.
+The break statement in the inner loop causes the termination of only that loop. 
+The outer loop is unaffected. 
+
+The break that terminates a switch statement affects only that switch statement and not any enclosing loops.
+
+
+
 
 1.25  "break" and "continue" with LABEL (Replacing "goto" )
-	Labeled break:  The break can be employed by itself to provide a “civilized” form of the goto. Java does not have goto. There are, however, a few places where the goto is a useful, eg: the goto can be helpful when exiting from a deeply nested set of loops. To handle such situations, Java defines an expanded form of break. 
-	By using this form of break, you can, for example, break out of one or more blocks of code. These blocks need not be part of a loop or a switch. They can be any block. It gives you the benefits of a goto without its problems.
+	Labeled break:  The break can be employed by itself to provide a “civilized” form of the goto. 
+Java does not have goto. There are, however, a few places where the goto is a useful, eg: the goto can be helpful when exiting from a deeply nested set of loops. To handle such situations, Java defines an expanded form of break. 
+
+	By using this form of break, you can, for example, break out of one or more blocks of code. 
+These blocks need not be part of a loop or a switch. They can be any block. It gives you the benefits of a goto without its problems.
+
 	Further, you can specify precisely where execution will resume, because this form of break works with a label. 
 	The general form of the labeled break, 	break label;
 	Typically, label is the name of a label that identifies a block of code. When this form of break executes, control is transferred out of the named block of code. 
-	The labeled block of code must enclose the break, but it does not need to be the immediately enclosing block. This means that you can use a labeled break to exit from a set of nested blocks. But you cannot use break to transfer control to a block of code that does not enclose the break.
+
+	The labeled block of code must enclose the break, but it does not need to be the immediately enclosing block. 
+This means that you can use a labeled break to exit from a set of nested blocks. But you cannot use break to transfer control to a block of code that does not enclose the break.
+
 	To name a block, put a label at the start of it. The block can be a stand-alone block, or a statement that has a block as its target. A label is any valid Java identifier followed by a colon. Once you have labeled a block, you can then use this label as the target of a break. Doing so causes execution to resume at the end of the labeled block. 
+
 	Example 1: Following program shows three nested blocks:
 for(i=1; i<4; i++) { one: { two: { three: { System.out.println("\n i is " + i);
 	        if(i==1) break one;
@@ -300,6 +314,24 @@ class BreakDemo {
             System.out.print(i + " ");
         }
         System.out.println("Loop complete.");
+    }
+}
+
+
+
+
+/* Example 2: The break statement used to terminate intentionally infinite loops. 
+                For example, the following program simply reads input until the user types the letter q.
+*/
+class Break2 {
+    public static void main(String args[]) throws java.io.IOException {
+        char ch;
+
+        for( ; ; ) {
+            ch = (char) System.in.read(); // get a char
+            if(ch == 'q') break;
+        }
+        System.out.println("You pressed q!");
     }
 }
 
