@@ -3,9 +3,9 @@
 
     "break" and "continue":
         Both are similar to C/C++'s "break" and "continue" (Recall C/C++ C_Ch2_3_1_ctrl_stmnt_jumps.c)
-    
 
-            
+
+
     BREAK:
         Terminates the nearest enclosing loop (for, while, do-while) or exits a switch statement.
         Control jumps to the statement immediately following the loop or switch.
@@ -141,31 +141,34 @@ class Break2 {
 
 
 
+/*  ------------    "break" and "continue" with LABEL (Replacing "goto")    ------------
+
+    -=-=-=-    Labeled break    -=-=-=-
+    Labeled Break:
+        Break can act like a "civilized" form of goto.
+        Because Java doesn’t support goto.
+        Labeled break can help exit deeply nested loops or blocks.
+        It allows breaking out of multiple blocks, not limited to loops or switch.
+        Provides the usefulness of goto without its downsides.
+
+        Further, you can specify precisely where execution will resume, 
+            because this form of break works with a label. 
+
+
+        The general form of the labeled break:
+                break label;
+
+            Typically, "label" is the name of a label that identifies a block of code. 
+            When this form of break executes, control is "transferred out" of the named block of code. 
+
+
+        The labeled block must enclose the break, but it doesn’t have to be the closest block.
+        You can use a labeled break to exit multiple nested blocks.
+        However, you cannot use break to jump to a block that doesn’t enclose it.
+
 
 // ----  rev[16-Dec-2024]  ----
 
-/* 
-------------    "break" and "continue" with LABEL (Replacing "goto")    ------------
-
--=-=-=-    Labeled break    -=-=-=-
-Labeled Break:
-    Break can act like a "civilized" form of goto.
-    Because Java doesn’t support goto.
-    Labeled break can help exit deeply nested loops or blocks.
-    It allows breaking out of multiple blocks, not limited to loops or switch.
-    Provides the usefulness of goto without its downsides.
-
-    Further, you can specify precisely where execution will resume, 
-        because this form of break works with a label. 
-
-
-    The general form of the labeled break:
-            break label;
-
-        Typically, "label" is the name of a label that identifies a block of code. When this form of break executes, control is transferred out of the named block of code. 
-
-	The labeled block of code must enclose the break, but it does not need to be the immediately enclosing block. 
-This means that you can use a labeled break to exit from a set of nested blocks. But you cannot use break to transfer control to a block of code that does not enclose the break.
 
 	To name a block, put a label at the start of it. The block can be a stand-alone block, or a statement that has a block as its target. A label is any valid Java identifier followed by a colon. Once you have labeled a block, you can then use this label as the target of a break. Doing so causes execution to resume at the end of the labeled block. 
 
