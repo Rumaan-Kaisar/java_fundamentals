@@ -148,21 +148,21 @@ class Break2 {
 ------------    "break" and "continue" with LABEL (Replacing "goto")    ------------
 
 -=-=-=-    Labeled break    -=-=-=-
+Labeled Break:
+    Break can act like a "civilized" form of goto.
+    Because Java doesn’t support goto.
+    Labeled break can help exit deeply nested loops or blocks.
+    It allows breaking out of multiple blocks, not limited to loops or switch.
+    Provides the usefulness of goto without its downsides.
 
-	Labeled break:  
-The break can be employed by itself to provide a “civilized” form of the goto. 
-Java does not have goto. There are, however, a few places where the goto is a useful, eg: the goto can be helpful when exiting from a deeply nested set of loops. To handle such situations, Java defines an expanded form of break. 
-
-	By using this form of break, you can, for example, break out of one or more blocks of code. 
-These blocks need not be part of a loop or a switch. They can be any block. It gives you the benefits of a goto without its problems.
-
-	Further, you can specify precisely where execution will resume, because this form of break works with a label. 
+    Further, you can specify precisely where execution will resume, 
+        because this form of break works with a label. 
 
 
-	The general form of the labeled break:
+    The general form of the labeled break:
             break label;
 
-            	Typically, label is the name of a label that identifies a block of code. When this form of break executes, control is transferred out of the named block of code. 
+        Typically, "label" is the name of a label that identifies a block of code. When this form of break executes, control is transferred out of the named block of code. 
 
 	The labeled block of code must enclose the break, but it does not need to be the immediately enclosing block. 
 This means that you can use a labeled break to exit from a set of nested blocks. But you cannot use break to transfer control to a block of code that does not enclose the break.
