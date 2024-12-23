@@ -201,38 +201,87 @@ class Break3 {
 
 /* Example 4: Following program has three nested blocks. We exit the block using break with a label */
 
-
-for(i=1; i<4; i++) { one: { two: { three: { System.out.println("\n i is " + i);
-	        if(i==1) break one;
-	        if(i==2) break two;
-	        if(i==3) break three;
-	        System.out.println("won't print");  // this is never reached
-	    }
-           System.out.println("After block three.");
-          	     }
-      System.out.println("After block two.");
-         }
-System.out.println("After block one.");
+class Break4 {
+    public static void main(String args[]) {
+        int i;
+    
+        for(i=1; i<4; i++) {
+            one: {
+                two: {
+                    three: {
+                        System.out.println("\ni is " + i);
+                        if(i==1) break one;
+                        if(i==2) break two;
+                        if(i==3) break three;
+                        // this is never reached
+                        System.out.println("won't print");
+                    }
+                    System.out.println("After block three.");
+                }
+                System.out.println("After block two.");
+            }
+            System.out.println("After block one.");
+        }
+        System.out.println("After for.");
+    }
 }
-System.out.println("After for.");
 
 
 /* Output:
 	i is 1
 	After block one.
+
 	i is 2
 	After block two.
 	After block one.
+
 	i is 3
 	After block three.
 	After block two.
 	After block one.
 	After for.
 
-	When i is 1, the first if succeeds, causing a break to the end of the block of code defined by label one. This causes After block one. to print. 
-	When i is 2, the second if succeeds, causing control to be transferred to the end of the block labeled by two. This causes the messages After block two. and After block one. to be printed, in that order. 
-	When i is 3, the third if succeeds, and control is transferred to the end of the block labeled by three. Now, all three messages are displayed.
- */
+
+
+    When i is 1, the first if succeeds, causing a break to the end of the block of code defined by label one. 
+        This causes "After block one." to print. 
+
+    When i is 2, the second if succeeds, causing control to be transferred to the end of the block labeled by two. 
+        This causes the messages "After block two." and "After block one." to be printed, in that order. 
+
+    When i is 3, the third if succeeds, and control is transferred to the end of the block labeled by three. 
+        Now, all three messages are displayed.
+*/
+
+
+
+
+
+Here is another example. This time, break is being used to jump outside of a series of
+nested for loops. When the break statement in the inner loop is executed, program control
+jumps to the end of the block defined by the outer for loop, which is labeled by done. This
+causes the remainder of all three loops to be bypassed.
+// Another example of using break with a label.
+class Break5 {
+public static void main(String args[]) {
+done:
+for(int i=0; i<10; i++) {
+for(int j=0; j<10; j++) {
+for(int k=0; k<10; k++) {
+System.out.println(k + " ");
+if(k == 5) break done; // jump to done
+}
+System.out.println("After k loop"); // won't execute
+}
+System.out.println("After j loop"); // won't execute
+}
+System.out.println("After i loop");
+}
+}92 Java: A Beginner’s Guide
+The output from the program is shown here:
+012345
+After i loo
+
 
 
  // ----  rev[23-Dec-2024]  ----
