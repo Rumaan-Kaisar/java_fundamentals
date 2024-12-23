@@ -292,23 +292,6 @@ class Break5 {
 
 /*
 
-	Example 2: This time, break is being used to jump outside of a series of nested for loops. When the break statement in the inner loop is executed, program control jumps to the end of the block defined by the outer for loop, which is labeled by done. 
-
-done: for(int i=0; i<10; i++) { 
-      for(int j=0; j<10; j++) {
-for(int k=0; k<10; k++) { System.out.println(k + " ");
-        if(k == 5) break done; 	// jump to done
-      }
-System.out.println("After k loop"); 		// won't execute
-         }
-      System.out.println("After j loop"); 		// won't execute
-      	                }
-System.out.println("After i loop");	
-
-
-
-
-
     	Example 3: Precisely where you put a label is very important—especially when working with loops. For example:
 
 // here, put label before for statement.
