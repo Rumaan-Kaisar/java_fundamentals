@@ -166,15 +166,42 @@ class Break2 {
         You can use a labeled break to exit multiple nested blocks.
         However, you cannot use break to jump to a block that doesn’t enclose it.
 
-
-// ----  rev[16-Dec-2024]  ----
-
-
-	To name a block, put a label at the start of it. The block can be a stand-alone block, or a statement that has a block as its target. A label is any valid Java identifier followed by a colon. Once you have labeled a block, you can then use this label as the target of a break. Doing so causes execution to resume at the end of the labeled block. 
-
+        To name a block, add a label at the beginning. 
+            A label is a valid Java identifier followed by a colon. 
+            Once labeled, you can use it as the target of a break, which resumes execution at the block's end.
+*/
 
 
-	Example 1: Following program shows three nested blocks:
+
+
+/* Example 3: When used inside a set of nested loops, the break statement will break out of only the innermost loop. 
+                Following program shows three nested blocks
+*/
+// Using break with nested loops.
+class Break3 {
+    public static void main(String args[]) {
+        for(int i=0; i<3; i++) {
+            System.out.println("Outer loop count: " + i);
+            System.out.print(" Inner loop count: ");
+            
+            int t = 0;
+            while(t < 100) {
+                if(t == 10) break; // terminate loop if t is 10
+                System.out.print(t + " ");
+                t++;
+            }
+            System.out.println();
+        }
+        System.out.println("Loops complete.");
+    }
+}
+
+
+
+
+/* Example 4: Following program has three nested blocks. We exit the block using break with a label */
+
+
 for(i=1; i<4; i++) { one: { two: { three: { System.out.println("\n i is " + i);
 	        if(i==1) break one;
 	        if(i==2) break two;
@@ -187,7 +214,10 @@ for(i=1; i<4; i++) { one: { two: { three: { System.out.println("\n i is " + i);
          }
 System.out.println("After block one.");
 }
-System.out.println("After for.");	Output:
+System.out.println("After for.");
+
+
+/* Output:
 	i is 1
 	After block one.
 	i is 2
@@ -202,8 +232,13 @@ System.out.println("After for.");	Output:
 	When i is 1, the first if succeeds, causing a break to the end of the block of code defined by label one. This causes After block one. to print. 
 	When i is 2, the second if succeeds, causing control to be transferred to the end of the block labeled by two. This causes the messages After block two. and After block one. to be printed, in that order. 
 	When i is 3, the third if succeeds, and control is transferred to the end of the block labeled by three. Now, all three messages are displayed.
+ */
 
 
+ // ----  rev[23-Dec-2024]  ----
+
+
+/*
 
 	Example 2: This time, break is being used to jump outside of a series of nested for loops. When the break statement in the inner loop is executed, program control jumps to the end of the block defined by the outer for loop, which is labeled by done. 
 
