@@ -174,10 +174,8 @@ class Break2 {
 
 
 
-/* Example 3: When used inside a set of nested loops, the break statement will break out of only the innermost loop. 
-                Following program shows three nested blocks
-*/
-// Using break with nested loops.
+/* Example 3: When used inside a set of nested loops, the break statement will break out of only the innermost loop. */
+
 class Break3 {
     public static void main(String args[]) {
         for(int i=0; i<3; i++) {
@@ -242,7 +240,6 @@ class Break4 {
 	After for.
 
 
-
     When i is 1, the first if succeeds, causing a break to the end of the block of code defined by label one. 
         This causes "After block one." to print. 
 
@@ -278,7 +275,15 @@ class Break5 {
     }
 }
 
-
+/*  Output:
+    0
+    1
+    2
+    3
+    4
+    5
+    After i loop
+*/
 
 
 
@@ -298,14 +303,8 @@ System.out.println("After k loop"); 		// won't execute
          }
       System.out.println("After j loop"); 		// won't execute
       	                }
-System.out.println("After i loop");	Output:
-	0
-	1
-	2
-	3
-	4
-	5
-	After i loop
+System.out.println("After i loop");	
+
 
 
 
