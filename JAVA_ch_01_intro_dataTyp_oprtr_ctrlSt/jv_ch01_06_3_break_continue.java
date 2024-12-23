@@ -256,31 +256,29 @@ class Break4 {
 
 
 
+/* Example 5: In following example, break is used to exit a series of "nested for" loops. 
+                When the break in the inner loop runs, control jumps to the end of the outer loop labeled "done", 
+                skipping the rest of all three loops. 
+*/
 
-Here is another example. This time, break is being used to jump outside of a series of
-nested for loops. When the break statement in the inner loop is executed, program control
-jumps to the end of the block defined by the outer for loop, which is labeled by done. This
-causes the remainder of all three loops to be bypassed.
-// Another example of using break with a label.
 class Break5 {
-public static void main(String args[]) {
-done:
-for(int i=0; i<10; i++) {
-for(int j=0; j<10; j++) {
-for(int k=0; k<10; k++) {
-System.out.println(k + " ");
-if(k == 5) break done; // jump to done
+    public static void main(String args[]) {
+        done:
+        for(int i=0; i<10; i++) {
+            for(int j=0; j<10; j++) {
+                for(int k=0; k<10; k++) {
+                    System.out.println(k + " ");
+                    if(k == 5) break done; // jump to done
+                }
+                System.out.println("After k loop");     // won't execute
+            }
+            System.out.println("After j loop");     // won't execute
+        }
+        System.out.println("After i loop");
+    }
 }
-System.out.println("After k loop"); // won't execute
-}
-System.out.println("After j loop"); // won't execute
-}
-System.out.println("After i loop");
-}
-}92 Java: A Beginner’s Guide
-The output from the program is shown here:
-012345
-After i loo
+
+
 
 
 
