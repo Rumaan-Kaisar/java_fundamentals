@@ -169,6 +169,11 @@ class Break2 {
         To name a block, add a label at the beginning. 
             A label is a valid Java identifier followed by a colon. 
             Once labeled, you can use it as the target of a break, which resumes execution at the block's end.
+
+
+    unstructured (goto vs labeled-break):
+        Using a labeled break can make code somewhat unstructured as it allows jumps across multiple lines or nested levels, 
+        but it still retains more structure compared to an "unstructured goto".
 */
 
 
@@ -325,66 +330,31 @@ class Break6 {
 
 
 
+/* Example 4: We cannot break to any label that is not defined for an enclosing block.
+
+                In the folloing program,
+                    since the loop labeled "one" does not enclose the break, 
+                    it is not possible to transfer control to that block. 
+*/
+
+class BreakErr {
+    public static void main(String args[]) {
+        one: for(int i=0; i<3; i++) {
+            System.out.print("Pass " + i + ": ");
+        }
+
+        for(int j=0; j<100; j++) {
+            if(j == 10) break one;      // WRONG: label "one" is not defined for this block
+            System.out.print(j + " ");
+        }
+    }
+}
+
 
 // ----  rev[26-Dec-2024]  ----
 
 
-/*
-
-
-
-Q:You say that the goto is unstructured and that the break with a label offers a better
-alternative. But really, doesn’t breaking to a label, which might be many lines of code
-and levels of nesting removed from the break, also destructure code?
-
-A: The short answer is yes! However, in those cases in which a jarring change in program flow
-is required, breaking to a label still retains some structure. A goto has none!
-
-
-Q: Doesn't using a labeled break, which can jump across many lines of code and nested levels, also make the code unstructured, just like goto?
-
-A: Yes, it does to some extent. However, a labeled break retains some structure, unlike goto, which has no structure at all.
-
-
-
-// here, put label before for statement.
-stop1: for(x=0; x < 5; x++) 
-{ for(y = 0; y < 5; y++) { if(y == 2) break stop1;
-     System.out.println("x and y: " + x + " " + y); }
-}
-System.out.println();
-
-// now, put label immediately before {
-for(x=0; x < 5; x++)
-stop2: {	 for(y = 0; y < 5; y++) { if(y == 2) break stop2;
-     System.out.println("x and y: " + x + " " + y);  }
-             }	Output: 	x and y: 0 0
-		x and y: 0 1
-
-		x and y: 0 0
-		x and y: 0 1
-		x and y: 1 0
-		x and y: 1 1
-		x and y: 2 0
-		x and y: 2 1
-		x and y: 3 0
-		x and y: 3 1
-		x and y: 4 0
-		x and y: 4 1
-	Both sets of nested loops are the same except for one point. In the first set, the label precedes the outer for loop. In this case, when the break executes, it transfers control to the end of the entire for block, skipping the rest of the outer loop’s iterations.
-	In the second set, the label precedes the outer for’s opening curly brace. Thus, when break stop2 executes, control is transferred to the end of the outer for’s block, causing the next iteration to occur.
-
-
-	Example 4: We cannot break to any label that is not defined for an enclosing block. Eg:  following is invalid & won't compile:
-
-one: 	for(int i=0; i<3; i++) { System.out.print("Pass " + i + ": "); }
-for(int j=0; j<100; j++) {	if(j == 10) break one; // WRONG
-System.out.print(j + " "); }
-	Since the loop labeled one does not enclose the break, it is not possible to transfer control to that block.
-
-
-
--=-=-=-    Labeled continue    -=-=-=-
+/*  -=-=-=-    Labeled continue    -=-=-=-
 
 
 	Labeled continue:   As with the break statement, continue may specify a label to describe which enclosing loop to continue. Eg:
