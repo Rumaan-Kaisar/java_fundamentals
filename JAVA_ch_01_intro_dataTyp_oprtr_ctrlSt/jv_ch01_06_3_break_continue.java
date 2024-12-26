@@ -287,12 +287,65 @@ class Break5 {
 
 
 
- // ----  rev[23-Dec-2024]  ----
+
+/* Example 6: Precisely where you put a label is very important— especially when working with loops. 
+
+                The program has two sets of nested loops with one key difference:
+
+                In the first set, the label is "before" the outer FOR-loop. 
+                    When the break executes, it skips all remaining iterations of the outer loop and exits the loop entirely.
+
+                In the second set, the label is before the outer FOR-loop's "opening brace". 
+                    Here, when the break executes, it jumps to the end of the block, 
+                    allowing the next iteration of the outer loop to continue.
+*/
+
+class Break6 {
+    public static void main(String args[]){
+        int x=0, y=0;
+    
+        // here, put label before for statement (labeled both FOR & its block)
+        stop1: for(x=0; x < 5; x++){
+            for(y = 0; y < 5; y++) {
+                if(y == 2) break stop1;
+                System.out.println("x and y: " + x + " " + y);
+            }
+        }
+    
+        System.out.println();
+        // now, put label immediately before '{' (labeled just FOR's block)
+        for(x=0; x < 5; x++) stop2: {   // notice the label
+            for(y = 0; y < 5; y++) {
+                if(y == 2) break stop2;
+                System.out.println("x and y: " + x + " " + y);
+            }
+        }
+    }
+}
+
+
+
+
+// ----  rev[26-Dec-2024]  ----
 
 
 /*
 
-    	Example 3: Precisely where you put a label is very important—especially when working with loops. For example:
+
+
+Q:You say that the goto is unstructured and that the break with a label offers a better
+alternative. But really, doesn’t breaking to a label, which might be many lines of code
+and levels of nesting removed from the break, also destructure code?
+
+A: The short answer is yes! However, in those cases in which a jarring change in program flow
+is required, breaking to a label still retains some structure. A goto has none!
+
+
+Q: Doesn't using a labeled break, which can jump across many lines of code and nested levels, also make the code unstructured, just like goto?
+
+A: Yes, it does to some extent. However, a labeled break retains some structure, unlike goto, which has no structure at all.
+
+
 
 // here, put label before for statement.
 stop1: for(x=0; x < 5; x++) 
