@@ -330,7 +330,8 @@ class Break6 {
 
 
 
-/* Example 4: We cannot break to any label that is not defined for an enclosing block.
+
+/* Example 7: We cannot break to any label that is not defined for an enclosing block.
 
                 In the folloing program,
                     since the loop labeled "one" does not enclose the break, 
@@ -351,25 +352,28 @@ class BreakErr {
 }
 
 
-// ----  rev[26-Dec-2024]  ----
+
 
 
 /*  -=-=-=-    Labeled continue    -=-=-=-
+    
+    Labeled continue:
+        The "continue" statement can also specify a "label" to indicate which enclosing loop to continue. 
 
+        For example:
 
-	Labeled continue:   As with the break statement, continue may specify a label to describe which enclosing loop to continue. Eg:
-outerloop: 
-for(int i=1; i < 10; i++) { System.out.print("\nOuter loop pass " + i + ", Inner loop: ");
-for(int j = 1; j < 10; j++) { if(j == 5) continue outerloop;  // continue outer loop
-					              System.out.print(j);  }
-    }	Output
-Outer loop pass 1, Inner loop: 1234
-Outer loop pass 2, Inner loop: 1234
-Outer loop pass 3, Inner loop: 1234
-. . .    . . .    . . .
-Outer loop pass 9, Inner loop: 1234
-	As the output shows, when the continue executes, control passes to the outer loop, skipping the remainder of the inner loop.
+                outerloop: for(int i=1; i < 10; i++) { 
+                    System.out.print("\nOuter loop pass " + i + ", Inner loop: ");
+                        for(int j = 1; j < 10; j++) { 
+                            if(j == 5) continue outerloop;  // continue outer loop
+                            System.out.print(j);  
+                        }
+                    }	
 
+        when the "continue" executes, control passes to the OUTER loop, 
+        "skipping" the remainder of the INNER loop.
+
+        
 Note
 [1]	Choosing appropriate loop: Use a for loop when performing a known number of iterations. Use the do-while when you need a loop that will always perform at least one iteration. The while is best used when the loop will repeat an unknown number of times.
 [2]	Using if-else-if ladder: Use an if-else-if ladder when the conditions controlling the selection process do not rely upon a single value.
