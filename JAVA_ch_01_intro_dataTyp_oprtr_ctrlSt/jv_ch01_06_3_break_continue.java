@@ -354,7 +354,6 @@ class BreakErr {
 
 
 
-
 /*  -=-=-=-    Labeled continue    -=-=-=-
     
     Labeled continue:
@@ -372,92 +371,22 @@ class BreakErr {
 
         when the "continue" executes, control passes to the OUTER loop, 
         "skipping" the remainder of the INNER loop.
-
-        
-Note
-[1]	Choosing appropriate loop: Use a for loop when performing a known number of iterations. Use the do-while when you need a loop that will always perform at least one iteration. The while is best used when the loop will repeat an unknown number of times.
-[2]	Using if-else-if ladder: Use an if-else-if ladder when the conditions controlling the selection process do not rely upon a single value.
-if(x < 10) 		// ...
-else if(y != 0) 	// ...
-else if(!done) 	// ...
-This sequence cannot be recoded into a switch because all three conditions involve different variables—and differing types. 
-	Also, you will need to use an if-else-if ladder when testing floating-point values or other objects that are not of types valid for use in a switch expression.
-
-
-
-
-
---------    GPT    --------
-
-Key Points to Remember About break and continue in Java:
-
-
-
-
-Control Flow Mechanism:
-break:
-In switch:
-
-Immediately terminates the current case block and prevents "fall-through" to the next case.
-Example:
-java
-Copy code
-switch (day) {
-    case 1:
-        System.out.println("Monday");
-        break; // Exit switch here
-    case 2:
-        System.out.println("Tuesday");
-        break;
-}
-In Loops:
-
-Stops the execution of the loop entirely when a specific condition is met.
-Example:
-java
-Copy code
-for (int i = 0; i < 10; i++) {
-    if (i == 5) break;  // Exits the loop when i is 5
-}
-continue:
-Skips the current iteration and moves directly to the next iteration of the loop.
-Example:
-java
-Copy code
-for (int i = 0; i < 10; i++) {
-    if (i % 2 == 0) continue;  // Skips even numbers
-    System.out.println(i);  // Prints only odd numbers
-}
-Differences from C/C++:
-Syntax:
-
-Both break and continue have the same syntax in Java and C/C++.
-Java introduces labeled break and continue, which are not available in C/C++.
-Usage in switch:
-
-The use of break in a switch is mandatory in Java to prevent "fall-through."
-In C/C++, omitting break in a switch causes fall-through behavior by default, which can lead to unintentional bugs.
-Labels:
-
-Java supports labeled loops with break and continue, allowing control over nested loops.
-Labels are not a feature of C/C++.
-Memory Safety:
-
-Java does not allow unintentional memory corruption or undefined behavior related to break or continue as C/C++ might when used with pointers or in unsafe code.
-Usage in Switch:
-
-In Java, continue cannot be used inside a switch statement. This is different from C++, where continue simply applies to the innermost loop if present.
-Summary:
-Feature	break	continue
-Purpose	Exits the loop or switch completely	Skips to the next iteration of the loop
-Labeling	Supports labeled termination	Supports labeled skipping
-In Switch	Used to prevent fall-through	Not allowed in switch
-Scope	Affects the nearest enclosing loop or switch	Affects the nearest enclosing loop
-Difference from C++	Java mandates break in switch cases; supports labels	Labels supported; no usage in switch
-By remembering these rules, you'll handle break and continue effectively in Java programs.
-
 */
 
 
 
-
+/* Example 8:  continue is the opposite of break. 
+                In this program, continue helps print even numbers between 0 and 100. 
+                It skips the odd numbers by causing the loop to iterate early, 
+                    bypassing the println() call for odd numbers. 
+*/
+class ContDemo {
+    public static void main(String args[]) {
+    int i;
+    // print even numbers between 0 and 100
+    for(i = 0; i<=100; i++) {
+    if((i%2) != 0) continue; // iterate
+    System.out.println(i);
+    }
+    }
+    }
