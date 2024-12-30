@@ -375,6 +375,7 @@ class BreakErr {
 
 
 
+
 /* Example 8:  continue is the opposite of break. 
                 In this program, continue helps print even numbers between 0 and 100. 
                 It skips the odd numbers by causing the loop to iterate early, 
@@ -382,11 +383,33 @@ class BreakErr {
 */
 class ContDemo {
     public static void main(String args[]) {
-    int i;
-    // print even numbers between 0 and 100
-    for(i = 0; i<=100; i++) {
-    if((i%2) != 0) continue; // iterate
-    System.out.println(i);
+        int i;
+    
+        // print even numbers between 0 and 100
+        for(i = 0; i<=100; i++) {
+            if((i%2) != 0) continue; // iterate
+            System.out.println(i);
+        }
     }
+}
+
+
+
+
+/* Example 9: "continue" can be used with a "label" to specify which outer loop to continue. 
+                In the following program, when continue executes, control passes to the outer loop, 
+                    skipping the rest of the inner loop.
+*/
+class ContToLabel {
+    public static void main(String args[]) {
+        outerloop: for(int i=1; i < 10; i++) {
+            System.out.print("\nOuter loop pass " + i + ", Inner loop: ");
+            for(int j = 1; j < 10; j++) {
+                if(j == 5) continue outerloop;  // continue outer loop
+                System.out.print(j);
+            }
+        }
     }
-    }
+}
+
+
