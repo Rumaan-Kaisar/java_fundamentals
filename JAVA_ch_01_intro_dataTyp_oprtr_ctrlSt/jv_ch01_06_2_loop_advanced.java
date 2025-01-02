@@ -696,23 +696,16 @@ class Help2 {
 
 
 
-/* Example 13: following program uses a nested for loop to find the factors of
-the numbers from 2 to 100: */
-/*
-Use nested loops to find factors of numbers
-between 2 and 100.
-*/
+/* Example 13: following program uses a "nested FOR" loop to find the factors of the numbers from 2 to 100 */
 class FindFac {
-public static void main(String args[]) {
-for(int i=2; i <= 100; i++) {
-System.out.print("Factors of " + i + ": ");
-for(int j = 2; j < i; j++)
-if((i%j) == 0) System.out.print(j + " ");
-System.out.println();
+    public static void main(String args[]) {
+        for(int i=2; i <= 100; i++) {
+            System.out.print("Factors of " + i + ": ");
+            for(int j = 2; j < i; j++)  if((i%j) == 0) System.out.print(j + " ");
+            System.out.println();
+        }
+    }
 }
-}
-}
-
 
 
 /* Example 13: Extra challenge: The preceding
