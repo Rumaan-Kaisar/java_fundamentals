@@ -723,3 +723,34 @@ class FindFac {
     }
 }
 
+
+/* GPT:: Version 3: Use Sqrt to reduce iterations 
+    Inner Loop Reduction:
+        Instead of iterating up to i-1, the loop now stops at Math.sqrt(i)
+        This avoids unnecessary checks
+
+    Print the Pair Factor:
+        When a divisor j is found, i/j is also a factor of i
+        Both are printed, avoiding redundant checks
+
+    Condition to Avoid Duplicates:
+        The condition if(j != i/j) ensures the same factor isn't printed twice 
+        (e.g., for perfect squares).
+*/
+class FindFac {
+    public static void main(String args[]) {
+        for(int i = 2; i <= 100; i++) {
+            System.out.print("Factors of " + i + ": ");
+            for(int j = 2; j <= Math.sqrt(i); j++) {    // Stop at the square root of i
+                if((i % j) == 0) {
+                    System.out.print(j + " "); // Print the factor
+                    // i/j is also a factor of i, and if it's different, print it
+                    if(j != i/j) System.out.print((i/j) + " ");  
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+
