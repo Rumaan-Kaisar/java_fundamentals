@@ -83,7 +83,14 @@
     if-else-if ladder:
         Exactly same as C/C++ and "condition" must be used instead of "expression". 
             i.e. conditions must be "explicitly boolean", unlike C/C++ where any non-zero value can be true
-        
+        General form of the if-else-if ladder:
+
+                    if(condition) statement;
+                    else if(condition) statement;
+                    else if(condition) statement;
+                    ...
+                    else statement;
+            
         The if-else-if ladder is a sequence of if and else-if conditions used to "test multiple conditions".
             The program executes the first true condition (if found) and ignores the rest.
             The final else block (optional) act as default condition, catches any cases where none of the previous conditions were true.
