@@ -613,3 +613,19 @@ class Help {
 }
 
 
+
+
+/* Example 12: Consider following fragment. 
+                to what "if" does the last else associate?
+
+                if(x < 10)
+                    if(y > 100) {
+                        if(!done) x = z;
+                        else y = z;
+                    }
+                    else System.out.println("error");   // what "if" its associated?
+
+                ans:
+                    The last else associates with "if(y > 100)"
+*/
+
