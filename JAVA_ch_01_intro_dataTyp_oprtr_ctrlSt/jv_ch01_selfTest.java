@@ -83,24 +83,9 @@ display the number of case changes that have taken place.
 */
 
 
-/* Example 1: Write a program that reads characters from the keyboard until a period is received. 
-                Have the program count the number of spaces. 
-                Report the total at the end of the program.
-*/
-// Count spaces.
-class Spaces {
-public static void main(String args[])
-throws java.io.IOException {
-char ch;
-int spaces = 0;
-System.out.println("Enter a period to stop.");620 Java: A Beginner’s Guide
-do {
-ch = (char) System.in.read();
-if(ch == ' ') spaces++;
-} while(ch != '.');
-System.out.println("Spaces: " + spaces);
-}
-}
+
+
+/* 
 2. Show the general form of the if-else-if ladder.
 if(condition)
 statement;
@@ -111,6 +96,11 @@ statement;
 ...
 else
 statement;
+
+
+
+
+
 3. Given
 if(x < 10)
 if(y > 100) {
@@ -120,16 +110,34 @@ else y = z;
 else System.out.println("error"); // what if?
 to what if does the last else associate?
 The last else associates with if(y > 100).
+
+
+
+
+
 4. Show the for statement for a loop that counts from 1000 to 0 by –2.
 for(int i = 1000; i >= 0; i -= 2) // ...
+
+
+
+
+
 5. Is the following fragment valid?
 for(int i = 0; i < num; i++)
 sum += i;
 count = i;
 No; i is not known outside of the for loop in which it is declared.
+
+
+
+
 6. Explain what break does. Be sure to explain both of its forms.
 A break without a label causes termination of its immediately enclosing loop or switch statement.
 A break with a label causes control to transfer to the end of the labeled block.Appendix A: Answers to Self Tests 621
+
+
+
+
 7. In the following fragment, after the break statement executes, what is displayed?
 for(i = 0; i < 10; i++) {
 while(running) {
@@ -140,6 +148,10 @@ System.out.println("after while");
 }
 System.out.println("After for");
 After break executes, “after while” is displayed.
+
+
+
+
 8. What does the following fragment print?
 for(int i = 0; i<10; i++) {
 System.out.print(i + " ");
@@ -152,19 +164,30 @@ Here is the answer:
 4 5
 6 7
 8 9
+
+
+
+
+
 9. The iteration expression in a for loop need not always alter the loop control variable by a
 fixed amount. Instead, the loop control variable can change in any arbitrary way. Using this
 concept, write a program that uses a for loop to generate and display the progression 1, 2, 4,
 8, 16, 32, and so on.
-/* Use a for loop to generate the progression
+
+
+// Use a for loop to generate the progression
 1 2 4 8 16, ...
-*/
+
 class Progress {
 public static void main(String args[]) {
 for(int i = 1; i < 100; i += i)
 System.out.print(i + " ");
 }
 }
+
+
+
+
 10. The ASCII lowercase letters are separated from the uppercase letters by 32. Thus, to convert
 a lowercase letter to uppercase, subtract 32 from it. Use this information to write a program
 that reads characters from the keyboard. Have it convert all lowercase letters to uppercase,622 Java: A Beginner’s Guide
@@ -194,7 +217,7 @@ System.out.println(ch);
 System.out.println("Case changes: " + changes);
 }
 }
-11. What is an infinite loop?
-An infinite loop is a loop that runs indefinitely.
-12. When using break with a label, must the label be on a block that contains the break?
-Yes.
+
+
+
+*/
