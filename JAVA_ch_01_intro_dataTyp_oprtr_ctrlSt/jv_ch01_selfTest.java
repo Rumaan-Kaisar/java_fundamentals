@@ -1,23 +1,6 @@
 
 /* ------------    Chapter 3 Self Test    ------------
 
-2. Show the general form of the if-else-if ladder.
-3. Given
-if(x < 10)
-if(y > 100) {
-if(!done) x = z;
-else y = z;
-}
-else System.out.println("error"); // what if?
-to what if does the last else associate?
-
-
-
-
-4. Show the for statement for a loop that counts from 1000 to 0 by –2.
-
-
-
 
 5. Is the following fragment valid?
 for(int i = 0; i < num; i++)
@@ -83,45 +66,13 @@ display the number of case changes that have taken place.
 */
 
 
+/* Example 4: Show the for statement for a loop that counts from 1000 to 0 by –2.
+
+                for(int i = 1000; i >= 0; i -= 2)   // ...
+*/
 
 
-/* 
-2. Show the general form of the if-else-if ladder.
-if(condition)
-statement;
-else if(condition)
-statement;
-else if(condition)
-statement;
-...
-else
-statement;
-
-
-
-
-
-3. Given
-if(x < 10)
-if(y > 100) {
-if(!done) x = z;
-else y = z;
-}
-else System.out.println("error"); // what if?
-to what if does the last else associate?
-The last else associates with if(y > 100).
-
-
-
-
-
-4. Show the for statement for a loop that counts from 1000 to 0 by –2.
-for(int i = 1000; i >= 0; i -= 2) // ...
-
-
-
-
-
+/*
 5. Is the following fragment valid?
 for(int i = 0; i < num; i++)
 sum += i;
