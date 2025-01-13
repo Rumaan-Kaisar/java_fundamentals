@@ -1,15 +1,6 @@
 
 /* ------------    Chapter 3 Self Test    ------------
 
-
-5. Is the following fragment valid?
-for(int i = 0; i < num; i++)
-sum += i;
-count = i;
-
-
-
-
 6. Explain what break does. Be sure to explain both of its forms.
 
 
@@ -61,15 +52,8 @@ display the number of case changes that have taken place.
 
 
 
+
 /*
-5. Is the following fragment valid?
-for(int i = 0; i < num; i++)
-sum += i;
-count = i;
-No; i is not known outside of the for loop in which it is declared.
-
-
-
 
 6. Explain what break does. Be sure to explain both of its forms.
 A break without a label causes termination of its immediately enclosing loop or switch statement.
