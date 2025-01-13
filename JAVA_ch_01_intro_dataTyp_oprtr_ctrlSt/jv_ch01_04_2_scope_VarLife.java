@@ -484,3 +484,16 @@ int main() {
                     Thus, the reference to it in the println() statement is "invalid".
 */
 
+
+
+
+/* Example 10: Is the following fragment valid?
+
+                    for(int i = 0; i < num; i++)
+                    sum += i;
+                    count = i;
+
+                ans:
+                    No; i is not known outside of the for loop in which it is declared.
+*/
+
