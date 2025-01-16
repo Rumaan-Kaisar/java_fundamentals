@@ -501,3 +501,14 @@ class Help3 {
 
 
 
+
+/*  Example 11: Explain what break does. Be sure to explain both of its forms.
+
+                A break without a label:
+                    causes termination of its immediately enclosing loop or switch statement.
+
+                A break with a label: 
+                    causes control to transfer to the "end of the labeled block".
+*/
+
+
