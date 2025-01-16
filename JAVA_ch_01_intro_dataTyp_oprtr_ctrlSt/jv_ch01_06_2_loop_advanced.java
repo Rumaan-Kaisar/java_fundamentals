@@ -783,3 +783,20 @@ class Spaces {
                 for(int i = 1000; i >= 0; i -= 2)   // ...
 */
 
+
+
+
+/* Example 17: The iteration in a FOR loop does not need to change the loop control variable by a "fixed amount"
+
+                Instead, the loop control variable can change in any arbitrary way. 
+                Using this concept, write a program that uses a for loop 
+                    to generate and display the progression 1, 2, 4, 8, 16, 32, and so on.
+*/
+class Progress{
+    public static void main(String args[]) {
+        for(int i = 1; i < 100; i += i)
+        System.out.print(i + " ");
+    }
+}
+
+
