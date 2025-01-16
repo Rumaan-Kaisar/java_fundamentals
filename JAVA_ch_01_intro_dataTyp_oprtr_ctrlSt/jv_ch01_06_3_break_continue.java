@@ -530,3 +530,36 @@ class Help3 {
 */
 
 
+
+
+/* example 13: What does the following fragment print?
+
+                        for(int i = 0; i<10; i++) {
+                            System.out.print(i + " ");
+                            if((i%2) == 0) continue;
+                            System.out.println();
+                        }
+
+            ans:
+                "System.out.println();" will execute for odd numbers
+
+                Here is the answer:
+                0 1
+                2 3
+                4 5
+                6 7
+                8 9
+
+*/
+
+public class DemoContinue{
+    public static void main(String[] args) {
+        for(int i = 0; i<10; i++) {
+            System.out.print(i + " ");
+            if((i%2) == 0) continue;
+            System.out.println();
+        }
+    }
+}
+
+
