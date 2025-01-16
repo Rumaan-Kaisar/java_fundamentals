@@ -512,3 +512,21 @@ class Help3 {
 */
 
 
+
+
+/* Example 12: In the following fragment, after the break statement executes, what is displayed?
+
+                        for(i=0; i < 10; i++) {
+                            while(running){
+                                if(x<y) break;
+                                // ...
+                            }
+                            System.out.println("after while");
+                        }
+                        System.out.println("After for");
+
+            ans:
+                After "break" executes, "after while" is displayed.
+*/
+
+
