@@ -1,6 +1,7 @@
 
-            -=-=-=-=-=-=-=-         part 2 :Class, Objects & Method overloading         -=-=-=-=-=-=-=-
+-=-=-=-=-=-=-=-         Class, Objects        -=-=-=-=-=-=-=-
 
+Book: ch4 + ch5
 
 2      Class, objects & method overloading
 2.1 Class in java
@@ -24,19 +25,9 @@
          Command-Line arguments 
 2.17 Bitwise Operators 
 2.18 The ? ternary Operator
-2.19 Signed binary numbers 
-2.20 Access Modifiers
-2.21 Pass Objects to Methods
-2.22  Two ways to Pass Arguments
-2.23 Returning Objects
-2.24 Method Overloading 
-2.25 Overloading Constructors
-2.26 Recursion
-2.27 Static in Java (Variables, Methods and
-         Blocks)
-2.28 QuickSort Algorithm
-2.29 Nested and Inner Classes
-2.30 Varargs: Variable-Length Arguments 
+
+
+
 
 
 
