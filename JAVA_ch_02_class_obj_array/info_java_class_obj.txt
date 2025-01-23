@@ -1,0 +1,53 @@
+
+            -=-=-=-=-=-=-=-         part 2 :Class, Objects & Method overloading         -=-=-=-=-=-=-=-
+
+
+2      Class, objects & method overloading
+2.1 Class in java
+2.2 Reference Variables and Assignment
+2.3 Methods and returning from methods
+2.4 Methods with parameters
+2.5 Constructor
+2.6 General form of "new" and details about
+        object declaration
+2.7 Garbage collection and finalize()
+2.8 The this reference 
+2.9 Arrays : One-Dimensional Arrays 
+2.10 Multidimensional Arrays
+2.11 Array (advanced)
+2.12 Data structure "stack" and "queue" with
+         array
+2.13 Enhanced for [ For-Each Style for Loop ]
+2.14 Strings
+2.15 Strings Are Immutable
+2.16 Strings to control SWITCH and 
+         Command-Line arguments 
+2.17 Bitwise Operators 
+2.18 The ? ternary Operator
+2.19 Signed binary numbers 
+2.20 Access Modifiers
+2.21 Pass Objects to Methods
+2.22  Two ways to Pass Arguments
+2.23 Returning Objects
+2.24 Method Overloading 
+2.25 Overloading Constructors
+2.26 Recursion
+2.27 Static in Java (Variables, Methods and
+         Blocks)
+2.28 QuickSort Algorithm
+2.29 Nested and Inner Classes
+2.30 Varargs: Variable-Length Arguments 
+
+
+
+
+--------   NEXT   --------
+
+    Goes to                         CODEX,                      Book-pg,  
+
+jv_ch01_05_IO_basic                 # 1.18                      64 - 65.8 (ok)
+jv_ch01_06_1_if_elif_switch         # 1.19, 1.20                65.8 - 75.2, + ask the expert (75.7-75.9)
+jv_ch01_06_2_loop_advanced          # 1.21, 1.22, 1.23          75.5-75.7; 76-87; 99
+jv_ch01_06_3_break_continue         # 1.24, 1.25                88-98
+self test   
+
