@@ -55,6 +55,27 @@ jv_ch02_12_ternary_operator
 
     Goes to                         CODEX,                      Book-pg,  
 
+jv_ch02_01_class_in_Java            2.1
+jv_ch02_02_reference_assignment     2.2
+jv_ch02_03_1_methods_return         2.3
+jv_ch02_03_2_methods_parameters     2.4
+jv_ch02_04_constructor              2.5
+jv_ch02_05_new_object               2.6
+jv_ch02_06_garbage_finalize         2.7
+jv_ch02_07_this                     2.8
+jv_ch02_08_1_OneD_Array             2.9
+jv_ch02_08_2_MultiD_Array           2.10
+jv_ch02_08_3_Array_Advanced         2.11
+jv_ch02_08_4_Stack_Queue            2.12
+jv_ch02_09_for_each                 2.13
+jv_ch02_10_1_strings                2.14
+jv_ch02_10_2_strings_immutable      2.15
+jv_ch02_10_3_string_switch_cmdArg   2.16
+jv_ch02_11_bitwise_operators        2.17
+jv_ch02_12_ternary_operator         2.18
+
+
+
 jv_ch01_05_IO_basic                 # 1.18                      64 - 65.8 (ok)
 jv_ch01_06_1_if_elif_switch         # 1.19, 1.20                65.8 - 75.2, + ask the expert (75.7-75.9)
 jv_ch01_06_2_loop_advanced          # 1.21, 1.22, 1.23          75.5-75.7; 76-87; 99
