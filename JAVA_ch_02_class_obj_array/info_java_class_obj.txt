@@ -3,7 +3,7 @@
 
 Book: ch4 + ch5
 
-2      Class, objects & method overloading
+
 2.1 Class in java
 2.2 Reference Variables and Assignment
 2.3 Methods and returning from methods
@@ -15,10 +15,9 @@ Book: ch4 + ch5
 2.8 The this reference 
 2.9 Arrays : One-Dimensional Arrays 
 2.10 Multidimensional Arrays
-2.11 Array (advanced)
-2.12 Data structure "stack" and "queue" with
-         array
-2.13 Enhanced for [ For-Each Style for Loop ]
+2.11 Array advanced
+2.12 Data structure "stack" and "queue" with array
+2.13 For-Each
 2.14 Strings
 2.15 Strings Are Immutable
 2.16 Strings to control SWITCH and 
@@ -27,6 +26,26 @@ Book: ch4 + ch5
 2.18 The ? ternary Operator
 
 
+-----------  file structure  -----------
+
+jv_ch02_01_class_in_Java
+jv_ch02_02_reference_assignment
+jv_ch02_03_1_methods_return
+jv_ch02_03_2_methods_parameters
+jv_ch02_04_constructor
+jv_ch02_05_new_object
+jv_ch02_06_garbage_finalize
+jv_ch02_07_this
+jv_ch02_08_1_OneD_Array
+jv_ch02_08_2_MultiD_Array
+jv_ch02_08_3_Array_Advanced
+jv_ch02_08_4_Stack_Queue
+jv_ch02_09_for_each
+jv_ch02_10_1_strings
+jv_ch02_10_2_strings_immutable
+jv_ch02_10_3_string_switch_cmdArg
+jv_ch02_11_bitwise_operators
+jv_ch02_12_ternary_operator
 
 
 
