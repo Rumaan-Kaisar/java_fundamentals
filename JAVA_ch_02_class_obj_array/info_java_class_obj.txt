@@ -53,12 +53,12 @@ jv_ch02_12_ternary_operator
 
 --------   NEXT   --------
 
-    Goes to                         CODEX,                      Book-pg,  
+    Goes to                         CODEX,      Book-pg,  
 
-jv_ch02_01_class_in_Java            2.1
-jv_ch02_02_reference_assignment     2.2
-jv_ch02_03_1_methods_return         2.3
-jv_ch02_03_2_methods_parameters     2.4
+jv_ch02_01_class_in_Java            2.1         104-108.9
+jv_ch02_02_reference_assignment     2.2         108.9-110.3
+jv_ch02_03_1_methods_return         2.3         110.3-115.9
+jv_ch02_03_2_methods_parameters     2.4         115.9-124.7
 jv_ch02_04_constructor              2.5
 jv_ch02_05_new_object               2.6
 jv_ch02_06_garbage_finalize         2.7
