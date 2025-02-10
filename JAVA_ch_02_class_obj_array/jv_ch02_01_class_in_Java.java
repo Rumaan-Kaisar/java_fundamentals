@@ -1,10 +1,32 @@
 
 /* -=-=-=-=-=-=-=-=-=-=-=      Class in java      -=-=-=-=-=-=-=-=-=-=-= 
 
+    Classes in Java:
+        All Java program activities happen within a class. 
+        While we've been using simple classes so far, Java classes have much more power and flexibility.
+
+        Class Definition:
+            A class is a "template" that defines an object’s structure. 
+            It includes both the 
+                -   data (instance variables) and 
+                -   methods (code) that operate on that data.
+
+    Object:
+        The objects of a class are called instances of that class, 
+            essentially created using the class as a blueprint.
+
+        Here, a class plays the role of "logical design", and it only gets 
+            a physical representation in memory when an object of that class is created
+
+    Class Members:
+        The components of a class, including "methods" and "variables", are called members. 
+        These members are also called instance variables
+
+
     Class in java: 
-The methods and variables that constitute a class are called members of the class. 
-These members are also called instance variables. 
-The objects of a class are called instances of that class. 
+
+
+. 
 Keyword "class" is used to create a class. The simplified form of a class in Java:
 
 class classname {		
@@ -39,6 +61,66 @@ class Vehicle {	int passengers; 	// number of passengers
 
 /* Declaring a Vehicle object called minivan */
 Vehicle minivan = new Vehicle(); 
+
+
+**Java vs C++ Classes (Brief Comparison):**
+
+1. **Memory Management:**
+   - **Java**: Automatic garbage collection.
+   - **C++**: Manual with `new` and `delete`.
+
+2. **Inheritance:**
+   - **Java**: Single inheritance, multiple via interfaces.
+   - **C++**: Supports multiple inheritance.
+
+3. **Access Control:**
+   - **Java**: `public`, `protected`, `private`, default.
+   - **C++**: `public`, `private`, `protected`.
+
+4. **Constructor/Destructor:**
+   - **Java**: Constructor for init, `finalize()` for cleanup (garbage collection).
+   - **C++**: Constructor and destructor required for resource management.
+
+5. **Object Creation:**
+   - **Java**: `new` for objects, garbage collection.
+   - **C++**: `new` for heap, stack auto-destroys objects.
+
+6. **Multiple Inheritance:**
+   - **Java**: No direct multiple inheritance, via interfaces.
+   - **C++**: Direct multiple inheritance allowed.
+
+7. **Method Overloading/Overriding:**
+   - **Java**: Overloading and overriding supported.
+   - **C++**: Overloading supported, `virtual` for overriding.
+
+8. **Pointers:**
+   - **Java**: No pointers, uses references.
+   - **C++**: Uses pointers, allows direct memory manipulation.
+
+9. **Exception Handling:**
+   - **Java**: Requires method declarations for exceptions.
+   - **C++**: Optional exception declarations.
+
+10. **Virtual Functions:**
+    - **Java**: All methods are virtual by default.
+    - **C++**: Needs `virtual` keyword for polymorphism.
+
+11. **Default Constructor:**
+    - **Java**: Default provided if not defined.
+    - **C++**: Default only if no other constructors are defined.
+
+12. **Static Methods:**
+    - **Java**: Can be called without class instances.
+    - **C++**: Can access static members.
+
+13. **Static Variables:**
+    - **Java**: Shared across all instances.
+    - **C++**: Shared across all instances, tied to class lifetime.
+
+### Summary:
+- **Java**: Automatic memory management, no multiple inheritance, more controlled exception handling.
+- **C++**: Manual memory management, supports multiple inheritance and pointers.
+
 
 	Notice that the general form of a class does not specify a main() method. A main() method is required only if that class is the starting point for your program. Also, some types of Java applications, such as applets, don’t require a main().
 	Notice in the example that Vehicle is used twice to declare an object one as type fashion (object's type) and another is as method fashion [Actually Vehicle() is the Vehicle class's default constructor see 2.5] with the keyword "new". To declare an object of class type "classname" we use,			classname object_name = new classname();
