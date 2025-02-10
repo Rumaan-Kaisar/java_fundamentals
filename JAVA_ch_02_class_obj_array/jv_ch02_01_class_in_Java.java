@@ -1,20 +1,35 @@
 
 /* -=-=-=-=-=-=-=-=-=-=-=      Class in java      -=-=-=-=-=-=-=-=-=-=-= 
 
-2.1 Class in java
-The methods and variables that constitute a class are called members of the class. These members are also called instance variables. The objects of a class are called instances of that class. Keyword class is used to create a class. The simplified form of a class in Java:
+    Class in java: 
+The methods and variables that constitute a class are called members of the class. 
+These members are also called instance variables. 
+The objects of a class are called instances of that class. 
+Keyword "class" is used to create a class. The simplified form of a class in Java:
 
-class classname {		// declare instance variables
-type var1; 
-type var2;
-       ...
-type varN;
+class classname {		
+    // declare instance variables
+    type var1; 
+    type var2;
+        ...
+    type varN;
 
-// declare methods
-type method1(parameters) { /* body of method */ }
-type method2(parameters) { /* body of method */ }
-...
-		type methodN(parameters) { /* body of method */ }}
+    // declare methods
+    type method1(parameters) { 
+        // body of method 
+    }
+
+    type method2(parameters) { 
+        // body of method 
+    }
+        ...
+        ...
+        ...
+
+    type methodN(parameters) { 
+        // body of method 
+    }
+}
 
 /* defining a class of type Vehicle */
 class Vehicle {	int passengers; 	// number of passengers
