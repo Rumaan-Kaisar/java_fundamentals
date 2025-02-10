@@ -23,11 +23,46 @@
         These members are also called instance variables
 
 
-    Class in java: 
+
+    --------------------    The General Form of a Class    --------------------
+
+    // ----  rev[10-Feb-2025]  ----
 
 
-. 
 Keyword "class" is used to create a class. The simplified form of a class in Java:
+
+A class defines a logical entity by specifying instance variables and methods that operate on them. It is created using the class keyword. A well-designed class should group logically related information. 
+
+The general form of a class includes instance variables and methods,  
+    Notice that the general form of a class does not specify a main() method. 
+    A main() method is required only if that class is the starting point for your program.
+    
+    Some Java applications, like applets, don't require a main() method.
+
+
+
+-------------  default access level for class members  -------------
+For both C++ and Java the class members are "Private by default".
+That's why public is used in public static void main(String[] args)
+
+Break down main()
+The reason public is used in the public static void main(String[] args) method is to make it accessible from outside the class.
+
+In Java:
+
+By default, members (variables and methods) of a class are private, meaning they cannot be accessed from outside the class unless specified otherwise.
+For the main method (which is the entry point for running a Java program), it must be accessible by the Java Virtual Machine (JVM) from outside the class to start executing the program. Therefore, it is declared public.
+Additionally:
+
+static allows the method to be called without creating an instance of the class (since main is executed before any objects are created).
+void means the method doesn’t return any value.
+String[] args allows command-line arguments to be passed into the program.
+
+
+
+
+A simplified general form of a class
+definition is 
 
 class classname {		
     // declare instance variables
@@ -53,14 +88,19 @@ class classname {
     }
 }
 
-/* defining a class of type Vehicle */
+// defining a class of type Vehicle 
 class Vehicle {	int passengers; 	// number of passengers
     int fuelcap;  	// fuel capacity in gallons
     int mpg;       // fuel consumption in miles -gallon
           }
 
-/* Declaring a Vehicle object called minivan */
+// Declaring a Vehicle object called minivan 
 Vehicle minivan = new Vehicle(); 
+
+
+
+
+
 
 
 **Java vs C++ Classes (Brief Comparison):**
