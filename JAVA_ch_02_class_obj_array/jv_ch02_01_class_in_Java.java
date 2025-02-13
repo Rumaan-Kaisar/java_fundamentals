@@ -57,32 +57,33 @@
             A well-designed class should group logically related information. 
 
 
+
+    -------------  Break down main()  -------------
+
     Notice that the "general form" of a class does not specify a main() method. 
-    A main() method is required only if that class is the starting point for your program.
-    
+    A main() method is required only if that class is the "starting point" for your program.
     Some Java applications, like applets, don't require a main() method.
 
--------------  default access level for class members  -------------
-For both C++ and Java the class members are "Private by default".
-That's why public is used in public static void main(String[] args)
+
+
+    -------------  default access level for class members  -------------
+
+    For both C++ and Java the class members are "Private by default".
+    That's why "public" is used in public static void main(String[] args)
+        to make it accessible from outside the class (which is the entry point for running a Java program),
+        it must be accessible by the Java Virtual Machine (JVM) from outside the class to start executing the program.
+        
+    Additionally:
+        "static" allows the method to be called without creating an instance of the class 
+            (since main is executed before any objects are created).
+        "void" means the method doesn’t return any value.
+        "String[] args" allows command-line arguments to be passed into the program.
 
 
 
-Break down main()
-The reason public is used in the public static void main(String[] args) method is to make it accessible from outside the class.
+        // ----  rev[13-Feb-2025]  ----
 
-In Java:
-
-By default, members (variables and methods) of a class are private, meaning they cannot be accessed from outside the class unless specified otherwise.
-For the main method (which is the entry point for running a Java program), it must be accessible by the Java Virtual Machine (JVM) from outside the class to start executing the program. Therefore, it is declared public.
-Additionally:
-
-static allows the method to be called without creating an instance of the class (since main is executed before any objects are created).
-void means the method doesn’t return any value.
-String[] args allows command-line arguments to be passed into the program.
-
-
-
+    -------------  defining a class and Declaring a Vehicle object  -------------
 
 
 
@@ -96,7 +97,7 @@ class Vehicle {	int passengers; 	// number of passengers
 Vehicle minivan = new Vehicle(); 
 
 
-// ----  rev[13-Feb-2025]  ----
+
 
 
 
