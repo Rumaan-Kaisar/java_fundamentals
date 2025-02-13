@@ -25,25 +25,48 @@
 
 
     --------------------    The General Form of a Class    --------------------
+    Keyword "class" is used to create a class. The simplified form of a class in Java:
 
-    // ----  rev[10-Feb-2025]  ----
+                class classname {		
+                    // declare instance variables
+                    type var1; 
+                    type var2;
+                        ...
+                    type varN;
 
 
-Keyword "class" is used to create a class. The simplified form of a class in Java:
+                    // declare methods
+                    type method1(parameters) { 
+                        // body of method 
+                    }
 
-A class defines a logical entity by specifying instance variables and methods that operate on them. It is created using the class keyword. A well-designed class should group logically related information. 
+                    type method2(parameters) { 
+                        // body of method 
+                    }
+                        ...
+                        ...
+                        ...
 
-The general form of a class includes instance variables and methods,  
-    Notice that the general form of a class does not specify a main() method. 
+                    type methodN(parameters) { 
+                        // body of method 
+                    }
+                }
+
+        A class defines a LOGICAL ENTITY by specifying "instance variables" and "methods" that operate on them. 
+            It is created using the "class" keyword. 
+            A well-designed class should group logically related information. 
+
+
+    Notice that the "general form" of a class does not specify a main() method. 
     A main() method is required only if that class is the starting point for your program.
     
     Some Java applications, like applets, don't require a main() method.
 
-
-
 -------------  default access level for class members  -------------
 For both C++ and Java the class members are "Private by default".
 That's why public is used in public static void main(String[] args)
+
+
 
 Break down main()
 The reason public is used in the public static void main(String[] args) method is to make it accessible from outside the class.
@@ -61,32 +84,7 @@ String[] args allows command-line arguments to be passed into the program.
 
 
 
-A simplified general form of a class
-definition is 
 
-class classname {		
-    // declare instance variables
-    type var1; 
-    type var2;
-        ...
-    type varN;
-
-    // declare methods
-    type method1(parameters) { 
-        // body of method 
-    }
-
-    type method2(parameters) { 
-        // body of method 
-    }
-        ...
-        ...
-        ...
-
-    type methodN(parameters) { 
-        // body of method 
-    }
-}
 
 // defining a class of type Vehicle 
 class Vehicle {	int passengers; 	// number of passengers
@@ -98,7 +96,7 @@ class Vehicle {	int passengers; 	// number of passengers
 Vehicle minivan = new Vehicle(); 
 
 
-
+// ----  rev[13-Feb-2025]  ----
 
 
 
