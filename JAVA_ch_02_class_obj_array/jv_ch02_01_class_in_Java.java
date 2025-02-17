@@ -83,20 +83,17 @@
 
         // ----  rev[13-Feb-2025]  ----
 
-    -------------  defining a class and Declaring a Vehicle object  -------------
+    -------------  defining a class and Declaring a object  -------------
 
+    // Defining a class of type "Vehicle"
+    class Vehicle {	
+        int passengers;  // Number of passengers
+        int fuelcap;     // Fuel capacity in gallons
+        int mpg;         // Fuel consumption in miles per gallon
+    }
 
-
-// defining a class of type Vehicle 
-class Vehicle {	int passengers; 	// number of passengers
-    int fuelcap;  	// fuel capacity in gallons
-    int mpg;       // fuel consumption in miles -gallon
-          }
-
-// Declaring a Vehicle object called minivan 
-Vehicle minivan = new Vehicle(); 
-
-
+    // Declaring a Vehicle object called minivan
+    Vehicle minivan = new Vehicle();
 
 
 
