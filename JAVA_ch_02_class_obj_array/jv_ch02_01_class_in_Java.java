@@ -95,66 +95,82 @@
 
 
 
-// ----  rev[17-Feb-2025]  ----
+    ----------------    Java vs C++ Classes (Brief Comparison):    ----------------
 
-**Java vs C++ Classes (Brief Comparison):**
+    1. Memory Management:
+            Java:   Automatic garbage collection.
+            C++:    Manual with `new` and `delete`.
 
-1. **Memory Management:**
-   - **Java**: Automatic garbage collection.
-   - **C++**: Manual with `new` and `delete`.
+    2. Inheritance:
+            Java:   Single inheritance, multiple via interfaces.
+            C++:    Supports multiple inheritance.
 
-2. **Inheritance:**
-   - **Java**: Single inheritance, multiple via interfaces.
-   - **C++**: Supports multiple inheritance.
+    3. Access Control:
+            Java:   `public`, `protected`, `private`, default.
+            C++:    `public`, `private`, `protected`.
 
-3. **Access Control:**
-   - **Java**: `public`, `protected`, `private`, default.
-   - **C++**: `public`, `private`, `protected`.
+    4. Constructor/Destructor:
+            Java:   Constructor for init, `finalize()` for cleanup (garbage collection).
+            C++:    Constructor and destructor required for resource management.
 
-4. **Constructor/Destructor:**
-   - **Java**: Constructor for init, `finalize()` for cleanup (garbage collection).
-   - **C++**: Constructor and destructor required for resource management.
+    5. Object Creation:
+            Java:   `new` for objects, garbage collection.
+            C++:    `new` for heap, stack auto-destroys objects.
 
-5. **Object Creation:**
-   - **Java**: `new` for objects, garbage collection.
-   - **C++**: `new` for heap, stack auto-destroys objects.
+    6. Multiple Inheritance:
+            Java:   No direct multiple inheritance, via interfaces.
+            C++:    Direct multiple inheritance allowed.
 
-6. **Multiple Inheritance:**
-   - **Java**: No direct multiple inheritance, via interfaces.
-   - **C++**: Direct multiple inheritance allowed.
+    7. Method Overloading/Overriding:
+            Java:   Overloading and overriding supported.
+            C++:    Overloading supported, `virtual` for overriding.
 
-7. **Method Overloading/Overriding:**
-   - **Java**: Overloading and overriding supported.
-   - **C++**: Overloading supported, `virtual` for overriding.
+    8. Pointers:
+            Java:   No pointers, uses references.
+            C++:    Uses pointers, allows direct memory manipulation.
 
-8. **Pointers:**
-   - **Java**: No pointers, uses references.
-   - **C++**: Uses pointers, allows direct memory manipulation.
+    9. Exception Handling:
+            Java:   Requires method declarations for exceptions.
+            C++:    Optional exception declarations.
 
-9. **Exception Handling:**
-   - **Java**: Requires method declarations for exceptions.
-   - **C++**: Optional exception declarations.
+    10. Virtual Functions:
+            Java:   All methods are virtual by default.
+            C++:    Needs `virtual` keyword for polymorphism.
 
-10. **Virtual Functions:**
-    - **Java**: All methods are virtual by default.
-    - **C++**: Needs `virtual` keyword for polymorphism.
+    11. Default Constructor:
+            Java:   Default provided if not defined.
+            C++:    Default only if no other constructors are defined.
 
-11. **Default Constructor:**
-    - **Java**: Default provided if not defined.
-    - **C++**: Default only if no other constructors are defined.
+    12. Static Methods:
+            Java:   Can be called without class instances.
+            C++:    Can access static members.
 
-12. **Static Methods:**
-    - **Java**: Can be called without class instances.
-    - **C++**: Can access static members.
+    13. Static Variables:
+            Java:   Shared across all instances.
+            C++:    Shared across all instances, tied to class lifetime.
 
-13. **Static Variables:**
-    - **Java**: Shared across all instances.
-    - **C++**: Shared across all instances, tied to class lifetime.
 
-### Summary:
-- **Java**: Automatic memory management, no multiple inheritance, more controlled exception handling.
-- **C++**: Manual memory management, supports multiple inheritance and pointers.
+    |         Feature               |         Java                                      |         C++                                                   |
+    |-------------------------------|---------------------------------------------------|---------------------------------------------------------------|
+    | Memory Management             | Automatic garbage collection                      | Manual with `new` and `delete`                                |
+    | Inheritance                   | Single inheritance, multiple via interfaces       | Supports multiple inheritance                                 |
+    | Access Control                | `public`, `protected`, `private`, default         | `public`, `private`, `protected`                              |
+    | Constructor/Destructor        | Constructor for init, `finalize()`                | Constructor and destructor required for resource management   |
+    |                               |       (garbage collection)                        |                                                               |
+    | Object Creation               | `new` for objects, garbage collection             | `new` for heap, stack auto-destroys objects                   |
+    | Multiple Inheritance          | No direct multiple inheritance, via interfaces    | Direct multiple inheritance allowed                           |
+    | Method Overloading/Overriding | Overloading and overriding supported              | Overloading supported, `virtual` for overriding               |
+    | Pointers                      | No pointers, uses references                      | Uses pointers, allows direct memory manipulation              |
+    | Exception Handling            | Requires method declarations for exceptions       | Optional exception declarations                               |
+    | Virtual Functions             | All methods are virtual by default                | Needs `virtual` keyword for polymorphism                      |
+    | Default Constructor           | Default provided if not defined                   | Default only if no other constructors are defined             |
+    | Static Methods                | Can be called without class instances             | Can access static members                                     |
+    | Static Variables              | Shared across all instances                       | Shared across all instances, tied to class lifetime           |
 
+
+
+    
+// ----  rev[20-Feb-2025]  ----
 
 	Notice that the general form of a class does not specify a main() method. A main() method is required only if that class is the starting point for your program. Also, some types of Java applications, such as applets, don’t require a main().
 	Notice in the example that Vehicle is used twice to declare an object one as type fashion (object's type) and another is as method fashion [Actually Vehicle() is the Vehicle class's default constructor see 2.5] with the keyword "new". To declare an object of class type "classname" we use,			classname object_name = new classname();
