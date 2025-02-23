@@ -113,6 +113,30 @@
         Changes in one object don’t affect another, even though they share the same class type.
 
 
+    When following line is executed, two things happen:
+
+            Vehicle minivan = new Vehicle();
+
+        "Vehicle minivan" declares a variable that can refer to a Vehicle object but doesn't create one.
+        "new Vehicle()" creates an object in memory, and minivan stores its reference.        
+
+        The statement can be split into two steps:
+
+            Vehicle minivan;            // Declares a reference to a Vehicle object  
+            minivan = new Vehicle();    // Creates a Vehicle object and assigns its reference to minivan  
+
+        The first line declares minivan as a reference but doesn't create an object.
+        The second line creates a Vehicle object and assigns its reference to minivan.
+
+
+    In Java, objects of a class must be created dynamically using the new operator. 
+        The new operator dynamically allocates (i.e., allocates at run time) memory for an object and returns a reference to it.
+            This means memory for the object is allocated at runtime, rather than at compile time.
+        This reference is, more or less, the address in memory of the object allocated by new (reference is kind of pointer). 
+            This reference is then stored in a variable. 
+        "new" used here with class's "default constructor" to initialize the object.
+
+
 
     ----------------    Java vs C++ Classes (Brief Comparison):    ----------------
 
@@ -189,28 +213,9 @@
 
 
     
-// ----  rev[20-Feb-2025]  ----
+// ----  rev[24-Feb-2025]  ----
 
 
-
-
-
-
-	Following two things happened when this line used to declare an object of type Vehicle,         Vehicle minivan = new Vehicle();
-[1]	It declares a variable called minivan of the class type Vehicle by " Vehicle minivan". This variable does not define an object. Instead, it is simply a variable that can refer to an object. 
-[2]	The declaration creates a physical copy of the object and assigns to minivan a reference to that object by using new.
-
-
-	In Java, all class objects must be dynamically allocated: The new operator dynamically allocates (i.e., allocates at run time) memory for an object and returns a reference to it. This reference is, more or less, the address in memory of the object allocated by new (reference is kind of pointer). This reference is then stored in a variable. new used here with class's default constructor.
-
-
-	The two steps combined in the preceding statement can be rewritten like this to show each step individually:
-Vehicle minivan; 		// declare reference to object
-minivan = new Vehicle(); 	// allocate a Vehicle object using class's default constructor Vehicle()
-
-
-	The first line declares minivan as a reference to an object of type Vehicle. Thus, minivan is a variable that can refer to an object, but it is not an object itself. At this point, minivan does not refer to an object. 
-	The next line creates a new Vehicle object and assigns a reference to it to minivan. Now, minivan is linked with an object.
 	To access these instance variables of an object, use the dot (.) operator. It links the name of an object with the name of a member.  The general form,  	object.member		Example:	   minivan.fuelcap = 16;
 
 	Example 1: complete code that uses the Vehicle class 
