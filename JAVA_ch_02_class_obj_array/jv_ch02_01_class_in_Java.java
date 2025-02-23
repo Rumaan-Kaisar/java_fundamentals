@@ -94,6 +94,25 @@
     Vehicle minivan = new Vehicle();
 
 
+    Notice in the example that "Vehicle" is used twice to "declare an object" 
+        one as type fashion (object's type) and 
+        another is as method fashion "Vehicle()" with the keyword "new". 
+        [Actually Vehicle() is the Vehicle class's default constructor]
+
+            // Declaring a Vehicle object called minivan
+            Vehicle minivan = new Vehicle();
+
+
+    To declare an object of class type "classname" we use, general form:
+
+            classname object_name = new classname();
+
+        After this statement executes, "object_name"  will be an instance of "classname".
+        Each time you create an instance of a class, you are creating an object that contains 
+            its own copy of each instance variable defined by the class.
+        Changes in one object don’t affect another, even though they share the same class type.
+
+
 
     ----------------    Java vs C++ Classes (Brief Comparison):    ----------------
 
@@ -172,17 +191,24 @@
     
 // ----  rev[20-Feb-2025]  ----
 
-	Notice that the general form of a class does not specify a main() method. A main() method is required only if that class is the starting point for your program. Also, some types of Java applications, such as applets, don’t require a main().
-	Notice in the example that Vehicle is used twice to declare an object one as type fashion (object's type) and another is as method fashion [Actually Vehicle() is the Vehicle class's default constructor see 2.5] with the keyword "new". To declare an object of class type "classname" we use,			classname object_name = new classname();
-After this statement executes, object_name  will be an instance of classname.
-[Each time you create an instance of a class, you are creating an object that contains its own copy of each instance variable defined by the class. Thus, the contents of the variables in one object can differ from the contents of the variables in another. There is no connection between the two objects except for the fact that they are both objects of the same type.]
+
+
+
+
+
 	Following two things happened when this line used to declare an object of type Vehicle,         Vehicle minivan = new Vehicle();
 [1]	It declares a variable called minivan of the class type Vehicle by " Vehicle minivan". This variable does not define an object. Instead, it is simply a variable that can refer to an object. 
 [2]	The declaration creates a physical copy of the object and assigns to minivan a reference to that object by using new.
+
+
 	In Java, all class objects must be dynamically allocated: The new operator dynamically allocates (i.e., allocates at run time) memory for an object and returns a reference to it. This reference is, more or less, the address in memory of the object allocated by new (reference is kind of pointer). This reference is then stored in a variable. new used here with class's default constructor.
+
+
 	The two steps combined in the preceding statement can be rewritten like this to show each step individually:
 Vehicle minivan; 		// declare reference to object
 minivan = new Vehicle(); 	// allocate a Vehicle object using class's default constructor Vehicle()
+
+
 	The first line declares minivan as a reference to an object of type Vehicle. Thus, minivan is a variable that can refer to an object, but it is not an object itself. At this point, minivan does not refer to an object. 
 	The next line creates a new Vehicle object and assigns a reference to it to minivan. Now, minivan is linked with an object.
 	To access these instance variables of an object, use the dot (.) operator. It links the name of an object with the name of a member.  The general form,  	object.member		Example:	   minivan.fuelcap = 16;
