@@ -225,13 +225,31 @@
 // ----  rev[24-Feb-2025]  ----
 
 
-	To access these instance variables of an object, use the dot (.) operator. It links the name of an object with the name of a member.  The general form,  	object.member		Example:	   minivan.fuelcap = 16;
 
-	Example 1: complete code that uses the Vehicle class 
-	The file that contains this program is VehicleDemo.java because the main() is in the class called VehicleDemo, not the class called Vehicle. 
-	When you compile this program, two .class files will be created, one for Vehicle and one for VehicleDemo. The Java compiler automatically puts each class into its own .class file. 
-	It is not necessary for both the Vehicle and the VehicleDemo class to be in the same source file. Each class can be in its own file, called Vehicle.java and VehicleDemo.java, respectively.
+
+	Example 1:
+
+
+	It is not necessary for both the Vehicle and the VehicleDemo class to be in the same source file. 
+
+
 	To run this program, you must execute VehicleDemo.class.
+
+
+
+Example 1: (Using the Vehicle Class)
+                This program is saved in VehicleDemo.java because the main() method (the program’s starting point) 
+                is in the VehicleDemo class, not the Vehicle class.
+
+                What happens when you compile?
+                    Two ".class" files are created: Vehicle.class and VehicleDemo.class.
+                        (Java automatically creates a separate "compiled file" for each class.)
+                        one for Vehicle and one for VehicleDemo
+
+                classes can be in seperate files:
+                    Each class can be in its own file, called Vehicle.java and VehicleDemo.java, respectively.
+                    But we must run VehicleDemo.class (since it contains the main() method).
+
 
 
 class Vehicle{	int passengers; 
