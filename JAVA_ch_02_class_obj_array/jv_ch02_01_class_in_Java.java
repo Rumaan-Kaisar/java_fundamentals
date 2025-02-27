@@ -137,6 +137,15 @@
         "new" used here with class's "default constructor" to initialize the object.
 
 
+    To access an object's instance variables, use the dot (.) operator. 
+        It connects the object's name with a member's name.
+
+            object.member
+
+        Example:
+            minivan.fuelcap = 16;
+
+
 
     ----------------    Java vs C++ Classes (Brief Comparison):    ----------------
 
