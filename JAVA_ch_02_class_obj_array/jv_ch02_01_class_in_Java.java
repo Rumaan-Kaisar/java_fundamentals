@@ -219,14 +219,7 @@
     | Static Methods                | Can be called without class instances             | Can access static members                                     |
     | Static Variables              | Shared across all instances                       | Shared across all instances, tied to class lifetime           |
 
-
-
-    
-// ----  rev[24-Feb-2025]  ----
-
 */
-
-
 
 
 
@@ -259,13 +252,14 @@ class VehicleDemo {
         Vehicle minivan = new Vehicle();
         int range;
 
+        // assigning instance variables of Vehicle class
         minivan.passengers = 7;
         minivan.fuelcap = 16;
         minivan.mpg = 21;
 
+        // calculating range of a minivan
         range = minivan.fuelcap * minivan.mpg;
-        System.out.println("Minivan can carry " + minivan.passengers +
-        " with a range of " + range);
+        System.out.println("Minivan can carry " + minivan.passengers + " with a range of " + range);
     } 
 }
 
