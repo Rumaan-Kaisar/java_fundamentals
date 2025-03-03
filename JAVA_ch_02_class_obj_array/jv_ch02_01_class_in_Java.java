@@ -224,20 +224,14 @@
     
 // ----  rev[24-Feb-2025]  ----
 
+*/
 
 
 
-	Example 1:
-
-
-	It is not necessary for both the Vehicle and the VehicleDemo class to be in the same source file. 
-
-
-	To run this program, you must execute VehicleDemo.class.
 
 
 
-Example 1: (Using the Vehicle Class)
+/* Example 1: (Using the Vehicle Class)
                 This program is saved in VehicleDemo.java because the main() method (the program’s starting point) 
                 is in the VehicleDemo class, not the Vehicle class.
 
@@ -249,25 +243,30 @@ Example 1: (Using the Vehicle Class)
                 classes can be in seperate files:
                     Each class can be in its own file, called Vehicle.java and VehicleDemo.java, respectively.
                     But we must run VehicleDemo.class (since it contains the main() method).
-
-
-
-class Vehicle{	int passengers; 
-    int fuelcap; 
-    int mpg;  }
-    
-    class VehicleDemo {	/* main class, starting point of the program  */
-    public static void main(String args[]) {
-    Vehicle minivan = new Vehicle();
-    int range;
-    
-    minivan.passengers = 7;
-    minivan.fuelcap = 16;
-    minivan.mpg = 21;
-    
-    range = minivan.fuelcap * minivan.mpg;
-    System.out.println("Minivan can carry " + minivan.passengers +
-    " with a range of " + range);
-    } }
-    
 */
+
+// a class
+class Vehicle{	
+    int passengers; 
+    int fuelcap; 
+    int mpg;  
+}
+    
+// main class, starting point of the program
+class VehicleDemo {	
+    public static void main(String args[]) {
+        // crating an object of Vehicle class
+        Vehicle minivan = new Vehicle();
+        int range;
+
+        minivan.passengers = 7;
+        minivan.fuelcap = 16;
+        minivan.mpg = 21;
+
+        range = minivan.fuelcap * minivan.mpg;
+        System.out.println("Minivan can carry " + minivan.passengers +
+        " with a range of " + range);
+    } 
+}
+
+
