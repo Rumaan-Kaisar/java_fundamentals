@@ -152,6 +152,17 @@
 
 
 
+    ----------------    Connection between two objects of the same class    ----------------
+    Each object has its own copies of the instance variables defined by its class.
+        Thus, the contents of the variables in one object can differ from the contents of the variables in another
+        Even if both objects are of the same type.
+        The only link between the two objects is that they share the same type.
+
+    For example, two Vehicle objects each have separate copies of variables like passengers, fuelcap, and mpg, which may hold different values.
+    The program in the class TwoVehicles demonstrates this principle.
+
+
+
     ----------------    Java vs C++ Classes (Brief Comparison):    ----------------
 
     1. Memory Management:
@@ -267,5 +278,18 @@ class VehicleDemo {
         System.out.println("Minivan can carry " + minivan.passengers + " with a range of " + range);
     } 
 }
+
+
+
+// ----  rev[06-Mar-2025]  ----
+
+/* Example 2: There is no connection between the two objects except for the fact that they are both objects of the same type. 
+
+                In the following example we have two Vehicle objects, each has its own copy of passengers, fuelcap, and mpg, 
+                and the contents of these can differ between the two objects. 
+
+                The class with main() is now called TwoVehicles.
+*/
+
 
 
