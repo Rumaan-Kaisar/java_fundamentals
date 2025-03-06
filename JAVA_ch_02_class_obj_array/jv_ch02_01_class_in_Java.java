@@ -59,12 +59,13 @@
 
 
     -------------  Break down main()  -------------
+    Notice- up to this point, the classes that we have been using have had only one method: main().
 
-    Notice that the "general form" of a class does not specify a main() method. 
-    A main() method is required only if that class is the "starting point" for your program.
-    Some Java applications, like applets, don't require a main() method.
+        Also notice that the "general form" of a class does not specify a main() method. 
+        A main() method is required only if that class is the "starting point" for your program.
+        Some Java applications, like applets, don't require a main() method.
 
-
+    
 
     -------------  default access level for class members  -------------
 
@@ -82,16 +83,20 @@
 
 
     -------------  defining a class and Declaring a object  -------------
+    Following class encapsulates information about vehicles, such as cars, vans, and trucks.
+        A class definition creates a "new data type". In this case, the new data type is called "Vehicle".
+        We will use this name to declare objects of type Vehicle. 
+        Remember that a class declaration is only a type description; it does not create an actual object.
 
-    // Defining a class of type "Vehicle"
-    class Vehicle {	
-        int passengers;  // Number of passengers
-        int fuelcap;     // Fuel capacity in gallons
-        int mpg;         // Fuel consumption in miles per gallon
-    }
+            // Defining a class of type "Vehicle"
+            class Vehicle {	
+                int passengers;  // Number of passengers
+                int fuelcap;     // Fuel capacity in gallons
+                int mpg;         // Fuel consumption in miles per gallon
+            }
 
-    // Declaring a Vehicle object called minivan
-    Vehicle minivan = new Vehicle();
+            // Declaring a Vehicle object called minivan
+            Vehicle minivan = new Vehicle();
 
 
     Notice in the example that "Vehicle" is used twice to "declare an object" 
@@ -239,10 +244,10 @@
 */
 
 // a class
-class Vehicle{	
-    int passengers; 
-    int fuelcap; 
-    int mpg;  
+class Vehicle{
+    int passengers;  // Number of passengers
+    int fuelcap;     // Fuel capacity in gallons
+    int mpg;         // Fuel consumption in miles per gallon
 }
     
 // main class, starting point of the program
