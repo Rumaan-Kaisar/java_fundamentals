@@ -269,6 +269,7 @@ class VehicleDemo {
         int range;
 
         // assigning instance variables of Vehicle class
+        // Notice the use of the dot operator to access a member
         minivan.passengers = 7;
         minivan.fuelcap = 16;
         minivan.mpg = 21;
@@ -281,7 +282,6 @@ class VehicleDemo {
 
 
 
-// ----  rev[06-Mar-2025]  ----
 
 /* Example 2: There is no connection between the two objects except for the fact that they are both objects of the same type. 
 
@@ -293,34 +293,35 @@ class VehicleDemo {
 
 // This program creates two Vehicle objects.
 class Vehicle {
-    int passengers; // number of passengers
-    int fuelcap; // fuel capacity in gallons
-    int mpg; // fuel consumption in miles per gallon
-    }
-    // This class declares an object of type Vehicle.
-    class TwoVehicles {
+    int passengers;  // number of passengers
+    int fuelcap;     // fuel capacity in gallons
+    int mpg;         // fuel consumption in miles per gallon
+}
+
+
+// This class declares an object of type Vehicle.
+class TwoVehicles {
     public static void main(String args[]) {
-    Notice the use of the dot
-    operator to access a member.108 Java: A Beginner’s Guide
-    Vehicle minivan = new Vehicle();
-    Vehicle sportscar = new Vehicle();
-    int range1, range2;
-    // assign values to fields in minivan
-    minivan.passengers = 7;
-    minivan.fuelcap = 16;
-    minivan.mpg = 21;
-    // assign values to fields in sportscar
-    sportscar.passengers = 2;
-    sportscar.fuelcap = 14;
-    sportscar.mpg = 12;
-    // compute the ranges assuming a full tank of gas
-    range1 = minivan.fuelcap * minivan.mpg;
-    range2 = sportscar.fuelcap * sportscar.mpg;
-    System.out.println("Minivan can carry " + minivan.passengers +
-    " with a range of " + range1);
-    System.out.println("Sportscar can carry " + sportscar.passengers +
-    " with a range of " + range2);
-    }
-    }
-    The outp
+        Vehicle minivan = new Vehicle();
+        Vehicle sportscar = new Vehicle();
+        int range1, range2;
+
+// assign values to fields in minivan
+minivan.passengers = 7;
+minivan.fuelcap = 16;
+minivan.mpg = 21;
+// assign values to fields in sportscar
+sportscar.passengers = 2;
+sportscar.fuelcap = 14;
+sportscar.mpg = 12;
+// compute the ranges assuming a full tank of gas
+range1 = minivan.fuelcap * minivan.mpg;
+range2 = sportscar.fuelcap * sportscar.mpg;
+System.out.println("Minivan can carry " + minivan.passengers +
+" with a range of " + range1);
+System.out.println("Sportscar can carry " + sportscar.passengers +
+" with a range of " + range2);
+}
+}
+
 
