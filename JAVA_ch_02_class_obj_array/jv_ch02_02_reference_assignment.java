@@ -26,99 +26,70 @@ System.out.println(car2.mpg);
 /* 
 How Objects Are Created
 
-This declaration performs two functions:
-
-
-First, it declares a variable called minivan of the class type Vehicle. 
-
- Instead, it is simply a variable that can
-refer to an object. 
 
 
 
 
 
-The new operator dynamically allocates (that is, allocates at run time) memory for an object
-and returns a reference to it. This reference is, more or less, the address in memory of the object
-allocated by new. This reference is then stored in a variable. Thus, in Java, all class objects must
-be dynamically allocated.
+
+// -------- rev[13-Mar-2025] --------
+
+    ------------    object creation and "new"    ------------
+    Objects in Java are created using the "new" operator:
+        Example: 
+                    Vehicle minivan = new Vehicle();
+
+                This line is used to "declare an object" of type "Vehicle"
 
 
-The two steps combined in this statement
+        Object Creation happens in Two Steps:
+            Step 1: "Vehicle minivan"
+                        Declares a reference variable (minivan) of type Vehicle. 
+                        This variable does not define an object.
 
-    Vehicle minivan = new Vehicle();
-
-can be rewritten each step individually:
-
-    Vehicle minivan; // declare reference to object
-    minivan = new Vehicle(); // allocate a Vehicle object
-
-
-The first line declares minivan as a reference to an object of type Vehicle.
-    Thus, "minivan" is a variable that can refer to an object, but it is not an object itself.
-    At this point, minivan does not refer to an object. 
-
-The next line creates a new Vehicle object and assigns a reference to it to minivan. 
-    Now, minivan is linked with an object.
+            Step 2: "new Vehicle()"
+                        Dynamically allocates memory for an object and assigns a reference to minivan.
+                        i.e. this declaration creates a physical copy of the object
+                        This is done by using the "new" operator.
 
 
-// -------- rev[10-Mar-2025] --------
+    The statement  
+            Vehicle minivan = new Vehicle();
 
-------------    object creation and "new"    ------------
-Objects in Java are created using the "new" operator:
-    Example: 
-                Vehicle minivan = new Vehicle();
-
-            This line is used to "declare an object" of type "Vehicle"
+        can be broken into two steps: 
+            Vehicle minivan;        // Declare reference to a Vehicle object
+            minivan = new Vehicle();    // Allocate a Vehicle object
 
 
-    Object Creation happens in Two Steps:
-        Step 1: "Vehicle minivan"
-                    Declares a reference variable (minivan) of type Vehicle. 
-                    This variable does not define an object.
-
-        Step 2: "new Vehicle()"
-                    Dynamically allocates memory for an object and assigns a reference to minivan.
-                    i.e. this declaration creates a physical copy of the object
-                    This is done by using the "new" operator.
+    1. Declaration:
+    
+            Vehicle minivan;        // Declare reference to a Vehicle object
+        
+        - declares 'minivan' as a reference to an object of type 'Vehicle'.
+        - This creates a variable "minivan" (not an object itself) that can refer to a "Vehicle" object. 
+        - At this point, "minivan" does not refer to any object yet.  
 
 
-The statement  
-        Vehicle minivan = new Vehicle();
+    2. Object Creation & Assignment:
+    
+            minivan = new Vehicle();    // Allocate a Vehicle object
+    
+        - This creates a new "Vehicle" object in memory.
+        - The reference to this object is assigned to "minivan", linking it to the object.  
 
-    can be broken into two steps: 
-        Vehicle minivan;        // Declare reference to a Vehicle object
-        minivan = new Vehicle();    // Allocate a Vehicle object
-
-
-1. Declaration:
-   
-        Vehicle minivan;        // Declare reference to a Vehicle object
-   
-    - This creates a variable "minivan" (not an object itself) that can refer to a "Vehicle" object. 
-    - At this point, "minivan" does not refer to any object yet.  
+    So, initially, "minivan" is just a reference. After object creation, it gets linked to an actual object.
 
 
-2. Object Creation & Assignment:
-   
-        minivan = new Vehicle();    // Allocate a Vehicle object
-   
-    - This creates a new "Vehicle" object in memory.  
-    - The reference to this object is assigned to "minivan", linking it to the object.  
-
-So, initially, "minivan" is just a reference. After object creation, it gets linked to an actual object.
+    Role of "new" Operator:
+        The new operator dynamically allocates (i.e., allocates at run time) memory for an object
+        Returns a reference to the allocated object
+            This reference is, more or less, the "address in memory" of the object allocated by "new"
+        This reference is then stored in a variable.
+            In Java, all class objects must be dynamically allocated.
 
 
-Role of "new" Operator
-
-Dynamically allocates memory at runtime.
-Returns a reference (memory address) to the allocated object.
-In Java, all class objects must be dynamically allocated.
-Separate Objects
-
-Different object references (e.g., minivan and sportscar) refer to separate memory allocations and do not share data.
+    Separate Objects:
+        Different object references (e.g., minivan and sportscar) refer to "separate memory allocations" 
+        and they do not share data.
 
 */
-
-
-
