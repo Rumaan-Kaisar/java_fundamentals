@@ -23,11 +23,14 @@
                     return a + b;
                 }
 
+        while "methods" and "functions" serve the same purpose, Java's methods are tightly integrated into its object-oriented design.
 
     Differences:
+        Java enforces OOP principles, making methods an integral part of objects and classes.
+        Java methods use "reference-based" memory management, while C/C++ functions can use both "references" and "pointers".
+        
         Belongs To:
-            Java Methods: Always inside a class.
-            C/C++ Functions: Can exist independently.
+            In C/C++, functions can exist outside of classes, while in Java, methods must be inside a class.
 
         Call Format:
             Java Methods: Called using an object (obj.method(), unless static).
@@ -46,11 +49,12 @@
             C/C++ Functions: int main().
 
 
-Summary:
-In C/C++, functions can exist outside of classes, while in Java, methods must be inside a class.
-Java enforces OOP principles, making methods an integral part of objects and classes.
-Java methods use reference-based memory management, while C/C++ functions can use both references and pointers.
-So, while methods and functions serve the same purpose, Java's methods are tightly integrated into its object-oriented design.
+
+// ----  rev[24-Mar-2025]  ----
+
+
+
+
 
 
 
