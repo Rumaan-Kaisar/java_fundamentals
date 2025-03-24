@@ -4,34 +4,48 @@
     Methods in Java Classes:
 
 
-    ------GPT------
+    ------    Methods in Java vs C++ functions    ------
+    "Methods in Java" are similar to "functions in C/C++", but there are key differences:
 
-    Methods in Java vs C++ functions:
-Yes, methods in Java are similar to functions in C/C++, but there are key differences:
+    Similarities:
+        Both encapsulate reusable code that performs a specific task.
+        Both can take parameters and return values.
+        Both follow a similar syntax:
 
-Similarities:
-Both encapsulate reusable code that performs a specific task.
-Both can take parameters and return values.
-Both follow a similar syntax:
-cpp
-Copy
-Edit
-// C++ Function
-int add(int a, int b) {
-    return a + b;
-}
+                // C++ Function
+                int add(int a, int b) {
+                    return a + b;
+                }
 
-// Java Method (inside a class)
-int add(int a, int b) {
-    return a + b;
-}
-Differences:
-Feature	Java Methods	C/C++ Functions
-Belongs To	Always inside a class	Can exist independently
-Call Format	Called using an object (obj.method(), unless static)	Called directly (function())
-Static Keyword	static methods belong to the class itself	No static keyword for functions
-Encapsulation	Part of OOP (Object-Oriented Programming)	Functions are procedural (unless inside a class)
-Main Function	public static void main(String[] args)	int main()
+
+                // Java Method (inside a class)
+                int add(int a, int b) {
+                    return a + b;
+                }
+
+
+    Differences:
+        Belongs To:
+            Java Methods: Always inside a class.
+            C/C++ Functions: Can exist independently.
+
+        Call Format:
+            Java Methods: Called using an object (obj.method(), unless static).
+            C/C++ Functions: Called directly (function()).
+
+        Static Keyword:
+            Java Methods: static methods belong to the class itself.
+            C/C++ Functions: No static keyword for functions (except for internal linkage).
+
+        Encapsulation:
+            Java Methods: Part of Object-Oriented Programming (OOP).
+            C/C++ Functions: Procedural (unless inside a class).
+
+        Main Function:
+            Java Methods: public static void main(String[] args).
+            C/C++ Functions: int main().
+
+
 Summary:
 In C/C++, functions can exist outside of classes, while in Java, methods must be inside a class.
 Java enforces OOP principles, making methods an integral part of objects and classes.
