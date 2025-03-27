@@ -71,26 +71,85 @@
 
 
 
+
     ----  Returning  ----
 
     Returning from a Method: 
-        there are two conditions that "cause" a method to return
+        there are two conditions that "cause" a method to return (i.e. stops execution and goes back to the calling code)
 
-        [1]     First, when the method’s closing curly brace is encountered. 
+        [1]     If a method reaches its closing curly brace '}', it automatically returns to the caller.
+                    This applies to methods with a void return type since they do not return a value.
+                    Eg:
+                            void showMessage() { 
+                                System.out.println("Hello!");
+                            } // Method ends here, returns automatically
+
         [2]     Second, when a return statement is executed. 
 
 
-	Return : There are two forms of return:
-[a]	One for void methods (those that do not return a value). The form is,   	return;
-[b]	One for methods which return values. The form is, 	   return value;
 
 
+--------------  rev[27-Mar-2025]  -------------------
+
+When Does a Method Return in Java?
+
+
+Encountering the Closing Curly Brace (})
+
+
+Executing a return Statement
+
+A return statement explicitly ends the method and sends control back to the caller.
+
+If the method has a return type (e.g., int, double), return must return a value of that type.
+
+Example:
+
+java
+Copy
+Edit
+int square(int num) {
+    return num * num;  // Method returns when this line executes
+}
+Even in void methods, return; can be used to exit the method early:
+
+java
+Copy
+Edit
+void checkNumber(int num) {
+    if (num < 0) return; // Method exits if num is negative
+    System.out.println("Number is positive.");
+}
+In summary, a method always returns when it reaches } or executes a return statement.
+
+---------------------------------
+
+
+
+
+    Return :
+        There are two forms of return:
+
+            [a]     void methods (those that do not return a value). The form is:
+                            return;
+
+            [b]     methods which return values. The form is,
+                            return value;
+
+
+
+
+                            
 	Second form of return can be used only with methods that have a non-void return type. Furthermore, a non-void method must return a value by using this "return value;" form of return. Example of The second form " return value;": 	
 int range() { return x * y; }. 
 	Notice that range() has a return type of int. i.e. it will return an integer value to the caller. The return type of a method is important because the type of data returned by a method must be compatible with the return type specified by the method. Thus, if you want a method to return data of type double, its return type must be type double. Eg:
 double devide(int x, int y) { return (double) (x /y); }
 Here a type cast is used to return "double value" from int values (which are int parameters of the method)
 	It is permissible to have multiple return statements in a method, however, because having too many exit points (i.e. return statements) in a method can destructure code. A well-designed method has well-defined exit points.
+
+
+
+
 
 
 
@@ -163,4 +222,5 @@ returnType: Type of data the method returns (use void if no value is returned).
 methodName: Any valid identifier not conflicting with other names in the scope.
 parameter-list: Variables that receive values passed to the method. (Empty if no parameters).
 */
+
 
