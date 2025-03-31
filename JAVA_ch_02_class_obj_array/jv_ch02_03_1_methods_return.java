@@ -72,55 +72,45 @@
 
 
 
-    ----  Returning  ----
+    --------  Returning  --------
 
     Returning from a Method: 
         there are two conditions that "cause" a method to return (i.e. stops execution and goes back to the calling code)
 
-        [1]     If a method reaches its closing curly brace '}', it automatically returns to the caller.
-                    This applies to methods with a void return type since they do not return a value.
-                    Eg:
-                            void showMessage() { 
-                                System.out.println("Hello!");
-                            } // Method ends here, returns automatically
 
-        [2]     Second, when a return statement is executed. 
-
+    [1]     If a method reaches its closing curly brace '}', it automatically returns to the caller.
+                This applies to methods with a void return type since they do not return a value.
+                Eg:
+                        void showMessage() { 
+                            System.out.println("Hello!");
+                        } // Method ends here, returns automatically
 
 
 
---------------  rev[27-Mar-2025]  -------------------
+    [2]     Second, when a "return statement" is executed. 
+                A "return statement" explicitly ends the method and sends control back to the caller.
+                If a method has a "return type" (e.g. int, double), the return statement "must return a value of that type".
+                Eg:
+                        int square(int num) {
+                            return num * num;  // Method returns when this line executes
+                        }
 
-When Does a Method Return in Java?
+                    Notice "num" is "int" type so the method square()'s' retrun type is "int".
 
 
-Encountering the Closing Curly Brace (})
+                Even in void methods, return; can be used to exit the method early:
+
+                        void checkNumber(int num) {
+                            if (num < 0) return; // Method exits if num is negative
+                            System.out.println("Number is positive.");
+                        }
 
 
-Executing a return Statement
+--------------  rev[30-Mar-2025]  -------------------
 
-A return statement explicitly ends the method and sends control back to the caller.
 
-If the method has a return type (e.g., int, double), return must return a value of that type.
 
-Example:
 
-java
-Copy
-Edit
-int square(int num) {
-    return num * num;  // Method returns when this line executes
-}
-Even in void methods, return; can be used to exit the method early:
-
-java
-Copy
-Edit
-void checkNumber(int num) {
-    if (num < 0) return; // Method exits if num is negative
-    System.out.println("Number is positive.");
-}
-In summary, a method always returns when it reaches } or executes a return statement.
 
 ---------------------------------
 
