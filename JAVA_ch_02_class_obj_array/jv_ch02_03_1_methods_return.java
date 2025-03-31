@@ -101,19 +101,9 @@
                 Even in void methods, return; can be used to exit the method early:
 
                         void checkNumber(int num) {
-                            if (num < 0) return; // Method exits if num is negative
+                            if(num < 0) return;    // Method exits if num is negative
                             System.out.println("Number is positive.");
                         }
-
-
---------------  rev[30-Mar-2025]  -------------------
-
-
-
-
-
----------------------------------
-
 
 
 
@@ -126,15 +116,24 @@
             [b]     methods which return values. The form is,
                             return value;
 
+            Second form of return can be used only with methods that have a "non-void return type" (e.g., int, double)
+                and that non-void method must use the "return value;" statement to send a result back to the caller.
+
+            Example of The second form "return value;": 	
+
+                        int range() { 
+                            return x*y; 
+                        }. 
 
 
 
-                            
-	Second form of return can be used only with methods that have a non-void return type. Furthermore, a non-void method must return a value by using this "return value;" form of return. Example of The second form " return value;": 	
-int range() { return x * y; }. 
-	Notice that range() has a return type of int. i.e. it will return an integer value to the caller. The return type of a method is important because the type of data returned by a method must be compatible with the return type specified by the method. Thus, if you want a method to return data of type double, its return type must be type double. Eg:
+	Notice that range() has a return type of int. i.e. it will return an integer value to the caller. 
+The return type of a method is important because the type of data returned by a method must be compatible with the return type specified by the method. Thus, if you want a method to return data of type double, its return type must be type double. Eg:
+
 double devide(int x, int y) { return (double) (x /y); }
 Here a type cast is used to return "double value" from int values (which are int parameters of the method)
+
+
 	It is permissible to have multiple return statements in a method, however, because having too many exit points (i.e. return statements) in a method can destructure code. A well-designed method has well-defined exit points.
 
 
