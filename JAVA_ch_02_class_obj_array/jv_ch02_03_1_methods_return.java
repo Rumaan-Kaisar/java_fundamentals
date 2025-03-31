@@ -106,8 +106,7 @@
                         }
 
 
-
-    Return :
+    Forms of Return :
         There are two forms of return:
 
             [a]     void methods (those that do not return a value). The form is:
@@ -125,14 +124,21 @@
                             return x*y; 
                         }. 
 
+            The "return type" of a method defines the "type of data" it returns.
+                The returned value must match the method’s declared "return type".
+                Example: 
+                    range() has a return type of int. i.e. it will return an integer value to the caller. 
+                
+                If you want a method to return data of type double, its return type must be type double. 
+                Example:
+                        double devide(int x, int y) { 
+                            return (double)(x /y); 
+                        }
+
+                Type Cast: Here a type cast is used to return "double value" from int values (which are int parameters of the method)
 
 
-	Notice that range() has a return type of int. i.e. it will return an integer value to the caller. 
-The return type of a method is important because the type of data returned by a method must be compatible with the return type specified by the method. Thus, if you want a method to return data of type double, its return type must be type double. Eg:
-
-double devide(int x, int y) { return (double) (x /y); }
-Here a type cast is used to return "double value" from int values (which are int parameters of the method)
-
+rev[31-Mar-2025] Eid mubarak
 
 	It is permissible to have multiple return statements in a method, however, because having too many exit points (i.e. return statements) in a method can destructure code. A well-designed method has well-defined exit points.
 
