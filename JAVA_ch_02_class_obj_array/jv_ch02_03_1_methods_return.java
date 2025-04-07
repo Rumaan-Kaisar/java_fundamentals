@@ -166,44 +166,36 @@
 
 */
 
+
+
+
 /* Example 1: Consider the "Vehicle Class" examples in jv_ch02_01_class_in_Java.java
                 The methods of a class typically manipulate and provide access to the data of the class.
 
+                In earlier examples, the main() method calculated a vehicle’s range (fuel capacity × mileage).
 
+                But it's better to let the Vehicle class do this itself, 
+                    Since the range of a vehicle is dependent upon the 
+                        capacity of the fuel tank i.e. "fuelcap" and the rate of fuel consumption i.e. "mpg"
+                        and both of these quantities (variables) are encapsulated by Vehicle. 
 
+                By adding a range() method inside the class, the calculation becomes part of the object’s behavior, 
+                    making the code more object-oriented.
 
-Since the range of a vehicle is dependent upon the 
-capacity of the fuel tank i.e. "fuelcap" and 
-the rate of fuel consumption i.e. "mpg"
-and both of these quantities (variables) are encapsulated by Vehicle. 
-
-
-By adding
-a method to Vehicle that computes the range, you are enhancing its object-oriented structure.
-To add a method to Vehicle, specify it within Vehicle’s declaration. For example, the following
-version of Vehicle contains a method called range( ) that displays the range of the vehicle.
-
-
-In earlier examples, the main() method calculated a vehicle’s range (fuel capacity × mileage).
-
-But it's better to let the Vehicle class do this itself, 
-
-By adding a range() method inside the class, the calculation becomes part of the object’s behavior, making the code more object-oriented.
-
-To add the method, define it inside the class declaration.
-
-
+                To add the method, define it inside the class declaration.
 */
 
-
+// ----  rev[07-apr-2025]  ----
 
 // Add range to Vehicle.
 class Vehicle {
-int passengers; // number of passengers
-int fuelcap; // fuel capacity in gallons
-int mpg; // fuel consumption in miles per gallon
-// Display the range.
-void range() {  // The range( ) method is contained within the Vehicle class.
+    int passengers; // number of passengers
+    int fuelcap; // fuel capacity in gallons
+    int mpg; // fuel consumption in miles per gallon
+
+    // Display the range: The range() method is contained within the Vehicle class.
+    void range() {  
+        // 
 System.out.println("Range is " + fuelcap * mpg);    // Notice that fuelcap and mpg are used directly, without the dot operator.
 }
 }
