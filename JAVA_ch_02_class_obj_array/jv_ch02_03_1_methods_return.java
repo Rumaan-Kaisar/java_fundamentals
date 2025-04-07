@@ -166,24 +166,35 @@
 
 */
 
-
-// consider the "Vehicle Class" examples in jv_ch02_01_class_in_Java.java
-
-
-Adding a Method to the Vehicle Class
-As just explained, the methods of a class typically manipulate and provide access to the data of
-the class. 
+/* Example 1: Consider the "Vehicle Class" examples in jv_ch02_01_class_in_Java.java
+                The methods of a class typically manipulate and provide access to the data of the class.
 
 
-With this in mind, recall that main( ) in the preceding examples computed the range of
-a vehicle by multiplying its fuel consumption rate by its fuel capacity. While technically correct,Chapter 4: Introducing Classes, Objects, and Methods 111
-this is not the best way to handle this computation. The calculation of a vehicle’s range is
-something that is best handled by the Vehicle class itself. The reason for this conclusion is easy
-to understand: the range of a vehicle is dependent upon the capacity of the fuel tank and the
-rate of fuel consumption, and both of these quantities are encapsulated by Vehicle. By adding
+
+
+Since the range of a vehicle is dependent upon the 
+capacity of the fuel tank i.e. "fuelcap" and 
+the rate of fuel consumption i.e. "mpg"
+and both of these quantities (variables) are encapsulated by Vehicle. 
+
+
+By adding
 a method to Vehicle that computes the range, you are enhancing its object-oriented structure.
 To add a method to Vehicle, specify it within Vehicle’s declaration. For example, the following
 version of Vehicle contains a method called range( ) that displays the range of the vehicle.
+
+
+In earlier examples, the main() method calculated a vehicle’s range (fuel capacity × mileage).
+
+But it's better to let the Vehicle class do this itself, 
+
+By adding a range() method inside the class, the calculation becomes part of the object’s behavior, making the code more object-oriented.
+
+To add the method, define it inside the class declaration.
+
+
+*/
+
 
 
 // Add range to Vehicle.
