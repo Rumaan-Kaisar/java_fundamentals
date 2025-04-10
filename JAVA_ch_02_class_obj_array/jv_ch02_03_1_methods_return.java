@@ -222,60 +222,50 @@ class AddMeth {
 }
 
 
+/*  ----  Key Points  ----
+
+    Method Declaration: 
+        "void range()":
+
+        () means no parameters and 
+        void means it does not return any value to the caller
+
+
+    It prints the range:
+        System.out.println("Range is " + fuelcap * mpg);
+
+        it uses "fuelcap" and "mpg" which are instance variables.
+        Each object of type Vehicle has its own copy of fuelcap and mpg.
+        so range() uses the calling object's copies of those variables
+
+
+    Calling the Method:
+        minivan.range();
+
+        Called using an object: invokes the range() method on minivan
+        Control goes to the method, and returns after it finishes.
+
+
+    No Need for Object Name Inside Method:
+        Inside range(), we can directly use "fuelcap" and "mpg" without "this" or "object name" or the dot operator
+        That's because the method already knows which object it belongs to when called.
+        (i.e. without explicit reference to an object and without use of the dot operator)
+        Because a method is always invoked relative to some object of its class.
+        It implicitly refer to the copies of those variables found in the object that invokes range().
+
+
+    Object-Specific Output:
+        If range() is called on minivan, it shows minivan's range.
+        If called on sportscar, it shows sportscar’s range.
+*/
+
+
 
 /* 
-// ----  rev[07-apr-2025]  ----
+// ----  rev[10-apr-2025]  ----
 
 
-This program generates the following output:
-Minivan can carry 7. Range is 336
-Sportscar can carry 2. Range is 168
-
-
-
-Let’s look at the key elements of this program, beginning with the range( ) method itself.
-The first line of range( ) is
-void range() {
-This line declares a method called range that has no parameters. Its return type is void. Thus,
-range( ) does not return a value to the caller. The line ends with the opening curly brace of the
-method body.
-
-
-The body of range( ) consists solely of this line:
-System.out.println("Range is " + fuelcap * mpg);
-This statement displays the range of the vehicle by multiplying fuelcap by mpg. Since each
-object of type Vehicle has its own copy of fuelcap and mpg, when range( ) is called, the range
-computation uses the calling object’s copies of those variables.
-
-The range( ) method ends when its closing curly brace is encountered. This causes
-program control to transfer back to the caller.
-Next, look closely at this line of code from inside main( ):
-
-minivan.range();
-This statement invokes the range( ) method on minivan. That is, it calls range( ) relative to
-the minivan object, using the object’s name followed by the dot operator. When a method is
-called, program control is transferred to the method. When the method terminates, control is
-transferred back to the caller, and execution resumes with the line of code following the call.
-In this case, the call to minivan.range( ) displays the range of the vehicle defined by minivan.
-In similar fashion, the call to sportscar.range( ) displays the range of the vehicle defined by
-sportscar. Each time range( ) is invoked, it displays the range for the specified object.
-
-
-There is something very important to notice inside the range( ) method: the instance
-variables fuelcap and mpg are referred to directly, without preceding them with an object name
-or the dot operator. When a method uses an instance variable that is defined by its class, it does
-so directly, without explicit reference to an object and without use of the dot operator. This is
-easy to understand if you think about it. A method is always invoked relative to some object of
-its class. Once this invocation has occurred, the object is known. Thus, within a method, there is
-no need to specify the object a second time. This means that fuelcap and mpg inside range( )
-implicitly refer to the copies of those variables found in the object that invokes range( ).
-
-
-
-
-
-
-
+PAGE 112.9
 
 
 Returning from a Method
