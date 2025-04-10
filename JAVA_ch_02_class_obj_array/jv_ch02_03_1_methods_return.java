@@ -185,8 +185,6 @@
                 To add the method, define it inside the class declaration.
 */
 
-// ----  rev[07-apr-2025]  ----
-
 // Add range to Vehicle.
 class Vehicle {
     int passengers; // number of passengers
@@ -195,35 +193,38 @@ class Vehicle {
 
     // Display the range: The range() method is contained within the Vehicle class.
     void range() {  
-        // 
-System.out.println("Range is " + fuelcap * mpg);    // Notice that fuelcap and mpg are used directly, without the dot operator.
+        // Notice that fuelcap and mpg are used directly, without the dot operator.
+        System.out.println("Range is " + fuelcap*mpg);
+    }
 }
-}
+
 class AddMeth {
-public static void main(String args[]) {
-Vehicle minivan = new Vehicle();
-Vehicle sportscar = new Vehicle();
-int range1, range2;
-// assign values to fields in minivan
-minivan.passengers = 7;
-minivan.fuelcap = 16;
-minivan.mpg = 21;
-// assign values to fields in sportscar
-sportscar.passengers = 2;
-sportscar.fuelcap = 14;
-sportscar.mpg = 12;
-System.out.print("Minivan can carry " + minivan.passengers +
-". ");
-minivan.range(); // display range of minivan
-System.out.print("Sportscar can carry " + sportscar.passengers +
-". ");
-sportscar.range(); // display range of sportscar.
+    public static void main(String args[]) {
+        Vehicle minivan = new Vehicle();
+        Vehicle sportscar = new Vehicle();
+
+        // assign values to fields in minivan
+        minivan.passengers = 7;
+        minivan.fuelcap = 16;
+        minivan.mpg = 21;
+
+        // assign values to fields in sportscar
+        sportscar.passengers = 2;
+        sportscar.fuelcap = 14;
+        sportscar.mpg = 12;
+
+        System.out.print("Minivan can carry " + minivan.passengers + ". ");
+        minivan.range();    // display range of minivan
+
+        System.out.print("Sportscar can carry " + sportscar.passengers + ". ");
+        sportscar.range();  // display range of sportscar
+    }
 }
-}
 
 
 
-
+/* 
+// ----  rev[07-apr-2025]  ----
 
 
 This program generates the following output:
@@ -245,9 +246,11 @@ System.out.println("Range is " + fuelcap * mpg);
 This statement displays the range of the vehicle by multiplying fuelcap by mpg. Since each
 object of type Vehicle has its own copy of fuelcap and mpg, when range( ) is called, the range
 computation uses the calling object’s copies of those variables.
+
 The range( ) method ends when its closing curly brace is encountered. This causes
 program control to transfer back to the caller.
 Next, look closely at this line of code from inside main( ):
+
 minivan.range();
 This statement invokes the range( ) method on minivan. That is, it calls range( ) relative to
 the minivan object, using the object’s name followed by the dot operator. When a method is
@@ -256,6 +259,8 @@ transferred back to the caller, and execution resumes with the line of code foll
 In this case, the call to minivan.range( ) displays the range of the vehicle defined by minivan.
 In similar fashion, the call to sportscar.range( ) displays the range of the vehicle defined by
 sportscar. Each time range( ) is invoked, it displays the range for the specified object.
+
+
 There is something very important to notice inside the range( ) method: the instance
 variables fuelcap and mpg are referred to directly, without preceding them with an object name
 or the dot operator. When a method uses an instance variable that is defined by its class, it does
@@ -264,6 +269,15 @@ easy to understand if you think about it. A method is always invoked relative to
 its class. Once this invocation has occurred, the object is known. Thus, within a method, there is
 no need to specify the object a second time. This means that fuelcap and mpg inside range( )
 implicitly refer to the copies of those variables found in the object that invokes range( ).
+
+
+
+
+
+
+
+
+
 Returning from a Method
 In general, there are two conditions that cause a method to return—first, as the range( ) method
 in the preceding example shows, when the method’s closing curly brace is encountered. The
@@ -376,3 +390,4 @@ if(v1.range() > v2.range()) System.out.println("v1 has greater range");
 
 
 
+ */
