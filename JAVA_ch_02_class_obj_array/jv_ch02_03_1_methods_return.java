@@ -102,6 +102,9 @@
                             System.out.println("Hello!");
                         } // Method ends here, returns automatically
 
+                Note: A void method can return in two ways: 
+                    When its closing curly brace is reached,  or
+                    When a "return;" statement is executed.
 
 
     [2]     Second, when a "return statement" is executed. 
@@ -157,7 +160,15 @@
 
 
     Avoid Too Many Return Statements
-        A method can have multiple return statements, 
+        A method can have multiple return statements, especially when there are two or more routes out of it.
+            Eg:
+                    void myMeth(){
+                        // ...
+                        if(done) return;
+                        // ...
+                        if(error) return;
+                        // ...
+                    }
             but using too many exit points (i.e. return statements) can destructure code.
             and make it difficult to debug.
 
@@ -261,42 +272,34 @@ class AddMeth {
 
 
 
+
+/* Example 2: Following code use return in void Methods:
+                In void methods, you can use "return;" to exit the method early.
+
+                When this "return;" statement executes
+                    It immediately stops the method and returns control to the caller.
+                    Any code after return; is skipped. 
+*/
+
+// Here, the for loop will only run from 0 to 5, because once i equals 5, the method returns.
+void myMeth(){
+    int i;
+    
+    for(i=0; i<10; i++){
+        if(i == 5) return; // stop at 5
+        System.out.println();
+    }
+}
+
+
+
+
+
+
 /* 
-// ----  rev[10-apr-2025]  ----
+// ----  rev[14-apr-2025]  ----
 
 
-PAGE 112.9
-
-
- The first form is
-examined here. The next section explains how to return values.
-In a void method, you can cause the immediate termination of a method by using this form
-of return:
-return ;
-When this statement executes, program control returns to the caller, skipping any remaining
-code in the method. For example, consider this method:
-void myMeth() {
-int i;
-for(i=0; i<10; i++) {
-if(i == 5) return; // stop at 5
-System.out.println();
-}
-}
-Here, the for loop will only run from 0 to 5, because once i equals 5, the method returns. It is
-permissible to have multiple return statements in a method, especially when there are two or
-more routes out of it. For example:
-void myMeth() {
-// ...
-if(done) return;
-// ...
-if(error) return;
-// ...
-}
-Here, the method returns if it is done or if an error occurs. Be careful, however, because
-having too many exit points in a method can destructure your code; so avoid using them
-casually. A well-designed method has well-defined exit points.
-To review: A void method can return in one of two ways—its closing curly brace is
-reached, or a return statement is executed.
 Returning a Value
 Although methods with a return type of void are not rare, most methods will return a value.
 In fact, the ability to return a value is one of the most useful features of a method. You have
