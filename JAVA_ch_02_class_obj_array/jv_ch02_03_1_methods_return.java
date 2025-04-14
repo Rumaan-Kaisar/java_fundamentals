@@ -268,11 +268,7 @@ class AddMeth {
 PAGE 112.9
 
 
-Returning from a Method
-In general, there are two conditions that cause a method to return—first, as the range( ) method
-in the preceding example shows, when the method’s closing curly brace is encountered. The
-second is when a return statement is executed. There are two forms of return—one for use inChapter 4: Introducing Classes, Objects, and Methods 113
-void methods (those that do not return a value) and one for returning values. The first form is
+ The first form is
 examined here. The next section explains how to return values.
 In a void method, you can cause the immediate termination of a method by using this form
 of return:
