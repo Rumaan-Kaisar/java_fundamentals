@@ -294,55 +294,58 @@ void myMeth(){
 
 
 
+/* Example 3: Improving the "range()" Method Using a Return Value:
+                Instead of printing the range inside the range() method, it's better to return the value.
+                The returned value can be used in other calculations or printed elsewhere.
+*/
+
+class Vehicle {
+    int passengers; // number of passengers
+    int fuelcap; // fuel capacity in gallons
+    int mpg; // fuel consumption in miles per gallon
+    
+    // Return the range.
+    int range(){
+        return mpg * fuelcap;
+    }
+}
+
+
+class RetMeth {
+    public static void main(String args[]){
+        Vehicle minivan = new Vehicle();
+        Vehicle sportscar = new Vehicle();
+        int range1, range2;
+
+        // assign values to fields in minivan
+        minivan.passengers = 7;
+        minivan.fuelcap = 16;
+        minivan.mpg = 21;
+
+        // assign values to fields in sportscar
+        sportscar.passengers = 2;
+        sportscar.fuelcap = 14;
+        sportscar.mpg = 12;
+
+        // Use a return value to get the range and assign them
+        range1 = minivan.range();
+        range2 = sportscar.range();
+
+        System.out.println("Minivan can carry " + minivan.passengers + " with range of " + range1 + " Miles");
+        System.out.println("Sportscar can carry " + sportscar.passengers + " with range of " + range2 + " miles");
+    }
+}
 
 
 /* 
-// ----  rev[14-apr-2025]  ----
+// ----  rev[17-apr-2025]  ----
 
 
-
-You can use a return value to improve the implementation of range( ). Instead of displaying
-the range, a better approach is to have range( ) compute the range and return this value. Among
-the advantages to this approach is that you can use the value for other calculations. The following
-example modifies range( ) to return the range rather than displaying it.
-// Use a return value.
-class Vehicle {
-int passengers; // number of passengers
-int fuelcap; // fuel capacity in gallons
-int mpg; // fuel consumption in miles per gallon
-// Return the range.
-int range() {
-return mpg * fuelcap;
-}
-}
-class RetMeth {
-public static void main(String args[]) {
-Vehicle minivan = new Vehicle();
-Vehicle sportscar = new Vehicle();
-int range1, range2;
-// assign values to fields in minivan
-minivan.passengers = 7;
-minivan.fuelcap = 16;
-minivan.mpg = 21;
-// assign values to fields in sportscar
-sportscar.passengers = 2;
-sportscar.fuelcap = 14;
-sportscar.mpg = 12;
-// get the ranges
-range1 = minivan.range();
-range2 = sportscar.range();
-Return the range for a given vehicle.
-Assign the value
-returned to a variable.Chapter 4: Introducing Classes, Objects, and Methods 115
-System.out.println("Minivan can carry " + minivan.passengers +
-" with range of " + range1 + " Miles");
-System.out.println("Sportscar can carry " + sportscar.passengers +
-" with range of " + range2 + " miles");
-}
-}
 The output is shown here:
 Minivan can carry 7 with range of 336 Miles
 Sportscar can carry 2 with range of 168 miles
+
+
 In the program, notice that when range( ) is called, it is put on the right side of an assignment
 statement. On the left is a variable that will receive the value returned by range( ). Thus, after
 range1 = minivan.range();
@@ -361,6 +364,45 @@ will be passed to println( ). Furthermore, you can use a call to range( ) whenev
 Vehicle object is needed. For example, this statement compares the ranges of two vehicles:
 if(v1.range() > v2.range()) System.out.println("v1 has greater range");
 
+
+
+GPT
+Using return values from methods (like range()) in Java:
+
+Assigning Return Value to Variable:
+
+You can call a method like range() on the right-hand side of an assignment.
+
+Example: range1 = minivan.range(); stores the returned value into range1.
+
+Return Type Must Match:
+
+If a method returns a value, its return type must match the type of value it returns.
+
+Example: If returning an int, the method must be declared with int as the return type.
+
+If you want to return a double, use double as the return type.
+
+Using Method Call Directly:
+
+You don’t always need a variable to store the returned value.
+
+You can use the method call directly in expressions:
+
+java
+Copy
+Edit
+System.out.println("Minivan can carry " + minivan.passengers +
+" with range of " + minivan.range() + " Miles");
+Calling Methods in Conditions:
+
+Method calls can also be used in logical expressions:
+
+java
+Copy
+Edit
+if(v1.range() > v2.range())
+    System.out.println("v1 has greater range");
 
 
 
