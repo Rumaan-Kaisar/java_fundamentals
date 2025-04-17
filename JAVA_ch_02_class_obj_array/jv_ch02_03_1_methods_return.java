@@ -300,20 +300,7 @@ void myMeth(){
 // ----  rev[14-apr-2025]  ----
 
 
-Returning a Value
-Although methods with a return type of void are not rare, most methods will return a value.
-In fact, the ability to return a value is one of the most useful features of a method. You have
-already seen one example of a return value: when we used the sqrt( ) function to obtain a
-square root.
-Return values are used for a variety of purposes in programming. In some cases, such as
-with sqrt( ), the return value contains the outcome of some calculation. In other cases, the
-return value may simply indicate success or failure. In still others, it may contain a status code.
-Whatever the purpose, using method return values is an integral part of Java programming.114 Java: A Beginner’s Guide
-Methods return a value to the calling routine using this form of return:
-return value;
-Here, value is the value returned. This form of return can be used only with methods that have
-a non-void return type. Furthermore, a non-void method must return a value by using this form
-of return.
+
 You can use a return value to improve the implementation of range( ). Instead of displaying
 the range, a better approach is to have range( ) compute the range and return this value. Among
 the advantages to this approach is that you can use the value for other calculations. The following
