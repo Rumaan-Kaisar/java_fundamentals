@@ -306,7 +306,7 @@ class Vehicle {
     
     // Return the range.
     int range(){
-        return mpg * fuelcap;
+        return mpg*fuelcap;
     }
 }
 
@@ -341,18 +341,7 @@ class RetMeth {
 // ----  rev[17-apr-2025]  ----
 
 
-The output is shown here:
-Minivan can carry 7 with range of 336 Miles
-Sportscar can carry 2 with range of 168 miles
-
-
-In the program, notice that when range( ) is called, it is put on the right side of an assignment
-statement. On the left is a variable that will receive the value returned by range( ). Thus, after
-range1 = minivan.range();
-executes, the range of the minivan object is stored in range1.
-Notice that range( ) now has a return type of int. This means that it will return an integer
-value to the caller. The return type of a method is important because the type of data returned
-by a method must be compatible with the return type specified by the method. Thus, if you
+ Thus, if you
 want a method to return data of type double, its return type must be type double.
 Although the preceding program is correct, it is not written as efficiently as it could be.
 Specifically, there is no need for the range1 or range2 variables. A call to range( ) can be
@@ -367,25 +356,26 @@ if(v1.range() > v2.range()) System.out.println("v1 has greater range");
 
 
 GPT
-Using return values from methods (like range()) in Java:
+
 
 Assigning Return Value to Variable:
+    You can call a method like range() on the right-hand side of an assignment.
+    Example: 
+            range1 = minivan.range(); 
+    
+        stores the returned value into range1.
 
-You can call a method like range() on the right-hand side of an assignment.
-
-Example: range1 = minivan.range(); stores the returned value into range1.
 
 Return Type Must Match:
+    If a method returns a value, its "return type" must match the "type of value" it returns.
+    Example: 
+        If returning an int, the method must be declared with int as the return type.
+        If you want to return a double, use double as the return type.
 
-If a method returns a value, its return type must match the type of value it returns.
 
-Example: If returning an int, the method must be declared with int as the return type.
+Direct call of a method:
 
-If you want to return a double, use double as the return type.
-
-Using Method Call Directly:
-
-You don’t always need a variable to store the returned value.
+You don't always need a variable to store the returned value.
 
 You can use the method call directly in expressions:
 
@@ -408,4 +398,4 @@ if(v1.range() > v2.range())
 
 
 
- */
+*/
