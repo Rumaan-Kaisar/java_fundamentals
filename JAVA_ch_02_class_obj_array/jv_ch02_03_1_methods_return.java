@@ -1,6 +1,4 @@
 
-// 110.3-115.9
-
 /* -=-=-=-=-=-=-=-=-=-=-=      Methods and returning from methods      -=-=-=-=-=-=-=-=-=-=-= 
 
     ------    Methods in Java vs C++ functions    ------
@@ -174,7 +172,6 @@
 
         A well-structured method should have clear and minimal exit points 
             for better readability and maintainability.
-
 */
 
 
@@ -233,7 +230,7 @@ class AddMeth {
 }
 
 
-/*  ----  Key Points  ----
+/*  ----  Key Points from Example 1  ----
 
     Method Declaration: 
         "void range()":
@@ -337,65 +334,31 @@ class RetMeth {
 }
 
 
-/* 
-// ----  rev[17-apr-2025]  ----
+/*  ----  Key Points from Example 3  ----
+
+    Assigning Return Value to Variable:
+        You can call a method like range() on the right-hand side of an assignment.
+        Example: 
+                range1 = minivan.range(); 
+        
+            stores the returned value into range1.
 
 
- Thus, if you
-want a method to return data of type double, its return type must be type double.
-Although the preceding program is correct, it is not written as efficiently as it could be.
-Specifically, there is no need for the range1 or range2 variables. A call to range( ) can be
-used in the println( ) statement directly, as shown here:
-System.out.println("Minivan can carry " + minivan.passengers +
-" with range of " + minivan.range() + " Miles");
-In this case, when println( ) is executed, minivan.range( ) is called automatically and its value
-will be passed to println( ). Furthermore, you can use a call to range( ) whenever the range of a
-Vehicle object is needed. For example, this statement compares the ranges of two vehicles:
-if(v1.range() > v2.range()) System.out.println("v1 has greater range");
+    Return Type Must Match:
+        If a method returns a value, its "return type" must match the "type of value" it returns.
+        Example: 
+            If returning an int, the method must be declared with int as the return type.
+            If you want to return a double, use double as the return type.
 
 
+    Direct call of a method:
+        You don't always need a variable to store the returned value.
+        You can use the method call directly in expressions:
 
-GPT
+            System.out.println("Minivan can carry " + minivan.passengers + " with range of " + minivan.range() + " Miles");
 
+        Furthermore, you can use a call to range() whenever the range of a Vehicle object is needed.
+            EG: method calls used in logical expressions:
 
-Assigning Return Value to Variable:
-    You can call a method like range() on the right-hand side of an assignment.
-    Example: 
-            range1 = minivan.range(); 
-    
-        stores the returned value into range1.
-
-
-Return Type Must Match:
-    If a method returns a value, its "return type" must match the "type of value" it returns.
-    Example: 
-        If returning an int, the method must be declared with int as the return type.
-        If you want to return a double, use double as the return type.
-
-
-Direct call of a method:
-
-You don't always need a variable to store the returned value.
-
-You can use the method call directly in expressions:
-
-java
-Copy
-Edit
-System.out.println("Minivan can carry " + minivan.passengers +
-" with range of " + minivan.range() + " Miles");
-Calling Methods in Conditions:
-
-Method calls can also be used in logical expressions:
-
-java
-Copy
-Edit
-if(v1.range() > v2.range())
-    System.out.println("v1 has greater range");
-
-
-
-
-
+            if(v1.range() > v2.range()) System.out.println("v1 has greater range");
 */
