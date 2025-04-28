@@ -172,6 +172,13 @@
 
         A well-structured method should have clear and minimal exit points 
             for better readability and maintainability.
+
+
+    ------------    methods and CLASS    ------------
+    
+    In Java, to create a method, it must be inside a class. 
+        It's not necessary for a class to always have "member variables"; it can just contain "methods" only
+        but in C++, we can define a function directly without a class.
 */
 
 
