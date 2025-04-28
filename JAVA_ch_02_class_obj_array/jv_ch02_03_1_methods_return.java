@@ -369,3 +369,30 @@ class RetMeth {
 
             if(v1.range() > v2.range()) System.out.println("v1 has greater range");
 */
+
+
+
+
+/* Example 4: In Java, to create a method, it must be inside a class. 
+                A class can have one or more methods, like following RetInt class.
+                The purpose of the RetInt class is only to define the IntRand() method. 
+*/
+
+class RetInt {
+    // This method will return a random integer
+    int IntRand() {
+        return (int)(Math.random() * 100); // returns a random integer between 0 and 99
+    }
+}
+
+class MethDemo {
+    public static void main(String args[]) {
+        // Create an object of RetInt to use the IntRand() method
+        RetInt makeint = new RetInt();
+        
+        // Call the IntRand() method and display the returned value
+        System.out.println("A random integer: " + makeint.IntRand());
+    }
+}
+
+
