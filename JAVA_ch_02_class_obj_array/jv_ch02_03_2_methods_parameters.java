@@ -64,18 +64,12 @@ class ParmDemo{
 
 
 
-// ----  rev [28-Apr-2025]  ----
-
-
-
-
 
 /* Example 2: A method can have more than one parameter.
                 
                 In this program, the "Factor class" has a method isFactor() 
                 that checks if the first number is a factor of the second.
 */
-
 
 class Factor {
     // This method has two parameters.
@@ -87,18 +81,17 @@ class Factor {
 
 
 class IsFact {
-public static void main(String args[]) {
-Factor x = new Factor();
-// Pass two arguments to isFactor()
-if(x.isFactor(2, 20)) System.out.println("2 is factor");
-if(x.isFactor(3, 20)) System.out.println("this won't be displayed");
-}
+    public static void main(String args[]) {
+        Factor x = new Factor();
+
+        // Pass two arguments to isFactor()
+        if(x.isFactor(2, 20)) System.out.println("2 is factor");
+        if(x.isFactor(3, 20)) System.out.println("this won't be displayed");
+    }
 }
 
 
-Notice that when isFactor( ) is called, the arguments are also separated by commas.
-When using multiple parameters, each parameter specifies its own type, which can differ
-from the others. For example, this is perfectly valid:
-int myMeth(int a, double b, float c) {
-// ...
+// ----  rev [01-May-2025]  ----
+// 117.5-124.7
+
 
