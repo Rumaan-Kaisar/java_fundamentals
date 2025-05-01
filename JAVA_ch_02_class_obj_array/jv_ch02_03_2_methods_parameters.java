@@ -1,6 +1,4 @@
 
-// 115.9-124.7
-
 /* -=-=-=-=-=-=-=-=-=-=-=      methods with parameters      -=-=-=-=-=-=-=-=-=-=-= 
     parameters and arguments:
         A value passed to a method is called an "argument". 
