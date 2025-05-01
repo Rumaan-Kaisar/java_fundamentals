@@ -64,36 +64,41 @@ class ParmDemo{
 
 
 
-// ----  rev [24-Apr-2025]  ----
+// ----  rev [28-Apr-2025]  ----
 
 
 
 
 
-/* Example 2: A method can have more than one parameter. Simply declare each parameter, separating
-one from the next with a comma. For example, the Factor class defines a method called
-isFactor( ) that determines whether the first parameter is a factor of the second. */
+/* Example 2: A method can have more than one parameter.
+                
+                In this program, the "Factor class" has a method isFactor() 
+                that checks if the first number is a factor of the second.
+*/
+
+
 class Factor {
-boolean isFactor(int a, int b) {
-if( (b % a) == 0) return true;
-else return false;
-Here, x is an integer parameter of isEven( ).
-Pass arguments
-to isEven( ).
-This method has two parameters.Chapter 4: Introducing Classes, Objects, and Methods 117
+    // This method has two parameters.
+    boolean isFactor(int a, int b) {
+        if( (b % a) == 0 ) return true;
+        else return false;
+    }
 }
-}
+
+
 class IsFact {
 public static void main(String args[]) {
 Factor x = new Factor();
+// Pass two arguments to isFactor()
 if(x.isFactor(2, 20)) System.out.println("2 is factor");
 if(x.isFactor(3, 20)) System.out.println("this won't be displayed");
 }
 }
+
+
 Notice that when isFactor( ) is called, the arguments are also separated by commas.
 When using multiple parameters, each parameter specifies its own type, which can differ
 from the others. For example, this is perfectly valid:
 int myMeth(int a, double b, float c) {
 // ...
-
 
