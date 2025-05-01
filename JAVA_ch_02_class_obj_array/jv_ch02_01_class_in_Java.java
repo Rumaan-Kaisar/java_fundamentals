@@ -217,6 +217,19 @@
             Java:   Shared across all instances.
             C++:    Shared across all instances, tied to class lifetime.
 
+    14. Using };  :
+            C++: After a class definition, a semicolon is required:
+
+                    class MyClass {
+                        // members
+                    };
+
+            Java: After a class definition, no semicolon is needed:
+
+                    class MyClass {
+                        // members
+                    }
+
 
     |         Feature               |         Java                                      |         C++                                                   |
     |-------------------------------|---------------------------------------------------|---------------------------------------------------------------|
