@@ -129,7 +129,7 @@ class CompFuel {
         Vehicle minivan = new Vehicle();
         Vehicle sportscar = new Vehicle();
         double gallons;
-        
+
         int dist = 252;
 
         // assign values to fields in minivan
@@ -154,5 +154,127 @@ class CompFuel {
 
 // ----  rev [05-May-2025]  ----
 // 119.0-124.7
+
+// recall "Example 10" from jv_ch01_06_3_break_continue.java
+
+Creating a Help Class
+If one were to try to summarize the essence of the class in one sentence,
+it might be this: a class encapsulates functionality. Of course, sometimes
+the trick is knowing where one “functionality” ends and another begins. As a general rule,
+you will want your classes to be the building blocks of your larger application. In order to do
+this, each class must represent a single functional unit that performs clearly delineated actions.
+Thus, you will want your classes to be as small as possible—but no smaller! That is, classes
+that contain extraneous functionality confuse and destructure code, but classes that contain too
+little functionality are fragmented. What is the balance? It is at this point that the science of
+programming becomes the art of programming. Fortunately, most programmers find that this
+balancing act becomes easier with experience.
+To begin to gain that experience you will convert the help system from Try This 3-3 in
+the preceding chapter into a Help class. Let’s examine why this is a good idea. First, the help
+system defines one logical unit. It simply displays the syntax for Java’s control statements.
+Thus, its functionality is compact and well defined. Second, putting help in a class is an
+esthetically pleasing approach. Whenever you want to offer the help system to a user, simply
+instantiate a help-system object. Finally, because help is encapsulated, it can be upgraded or
+changed without causing unwanted side effects in the programs that use it.
+1. Create a new file called HelpClassDemo.java. To save you some typing, you might want
+to copy the file from Try This 3-3, Help3.java, into HelpClassDemo.java.
+2. To convert the help system into a class, you must first determine precisely what constitutes
+the help system. For example, in Help3.java, there is code to display a menu, input the
+user’s choice, check for a valid response, and display information about the item selected.
+The program also loops until the letter q is pressed. If you think about it, it is clear that
+the menu, the check for a valid response, and the display of the information are integral
+to the help system. How user input is obtained, and whether repeated requests should be
+processed, are not. Thus, you will create a class that displays the help information, the help
+menu, and checks for a valid selection. Its methods will be called helpOn( ), showMenu( ),
+and isValid( ), respectively
+
+
+The entire listing for HelpClassDemo.java is shown here:
+/*
+Try This 4-1
+Convert the help system from Try This 3-3 into
+a Help class.
+*/
+class Help {
+void helpOn(int what) {
+switch(what) {
+case '1':
+System.out.println("The if:\n");
+System.out.println("if(condition) statement;");
+System.out.println("else statement;");
+break;Chapter 4: Introducing Classes, Objects, and Methods 123
+case '2':
+System.out.println("The switch:\n");
+System.out.println("switch(expression) {");
+System.out.println(" case constant:");
+System.out.println(" statement sequence");
+System.out.println(" break;");
+System.out.println(" // ...");
+System.out.println("}");
+break;
+case '3':
+System.out.println("The for:\n");
+System.out.print("for(init; condition; iteration)");
+System.out.println(" statement;");
+break;
+case '4':
+System.out.println("The while:\n");
+System.out.println("while(condition) statement;");
+break;
+case '5':
+System.out.println("The do-while:\n");
+System.out.println("do {");
+System.out.println(" statement;");
+System.out.println("} while (condition);");
+break;
+case '6':
+System.out.println("The break:\n");
+System.out.println("break; or break label;");
+break;
+case '7':
+System.out.println("The continue:\n");
+System.out.println("continue; or continue label;");
+break;
+}
+System.out.println();
+}
+void showMenu() {
+System.out.println("Help on:");
+System.out.println(" 1. if");
+System.out.println(" 2. switch");
+System.out.println(" 3. for");
+System.out.println(" 4. while");
+System.out.println(" 5. do-while");
+System.out.println(" 6. break");
+System.out.println(" 7. continue\n");
+System.out.print("Choose one (q to quit): ");
+}
+(continued)124 Java: A Beginner’s Guide
+boolean isValid(int ch) {
+if(ch < '1' | ch > '7' & ch != 'q') return false;
+else return true;
+}
+}
+class HelpClassDemo {
+public static void main(String args[])
+throws java.io.IOException {
+char choice, ignore;
+Help hlpobj = new Help();
+for(;;) {
+do {
+hlpobj.showMenu();
+choice = (char) System.in.read();
+do {
+ignore = (char) System.in.read();
+} while(ignore != '\n');
+} while( !hlpobj.isValid(choice) );
+if(choice == 'q') break;
+System.out.println("\n");
+hlpobj.helpOn(choice);
+}
+}
+}
+When you try the program, you will find that it is functionally the same as before. The
+advantage to this approach is that you now have a help system component that can be reused
+whenever it is needed
 
 
