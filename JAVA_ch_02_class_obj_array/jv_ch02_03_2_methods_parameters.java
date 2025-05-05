@@ -155,7 +155,141 @@ class CompFuel {
 // ----  rev [05-May-2025]  ----
 // 119.0-124.7
 
-// recall "Example 10" from jv_ch01_06_3_break_continue.java
+/* Example 4: Now we'll modify "Example 10" from jv_ch01_06_3_break_continue.java 
+
+Creating a Help Class (Simplified)
+A class encapsulates functionality — it groups related actions together.
+
+A good class should represent one clear, functional unit.
+
+If a class has too many unrelated features, it becomes messy. If it has too little, it’s fragmented. Finding the right balance comes with experience.
+
+
+
+Example: Converting a Help System into a Class
+In a previous example, a program displayed syntax help for Java’s control statements.
+
+That help system is one logical unit — so it makes sense to turn it into a class.
+
+
+
+Why?
+
+The functionality is compact and well-defined.
+
+It’s clean and organized to encapsulate it inside a class.
+
+It can be upgraded later without affecting other parts of the program.
+
+
+
+Plan:
+
+Create a file called HelpClassDemo.java.
+
+Identify what belongs in the help system:
+
+Displaying the menu
+
+Checking for valid input
+
+Showing syntax info
+
+User input handling and looping stay outside the class.
+
+
+
+Class Methods:
+
+showMenu() — Displays the list of topics
+
+isValid() — Checks if user input is a valid option
+
+helpOn() — Displays the help info for a selected topic
+
+This approach keeps your program clean, modular, and easy to maintain.
+
+*/
+
+// recall 
+
+class Help3 {
+    public static void main(String args[]) throws java.io.IOException {
+        char choice, ignore;
+        
+        for(;;) {
+            do {
+                System.out.println("Help on:");
+                System.out.println(" 1. if");
+                System.out.println(" 2. switch");
+                System.out.println(" 3. for");
+                System.out.println(" 4. while");
+                System.out.println(" 5. do-while");
+                System.out.println(" 6. break");
+                System.out.println(" 7. continue\n");
+
+                System.out.print("Choose one (q to quit): ");
+                choice = (char) System.in.read();
+                do {
+                    ignore = (char) System.in.read();
+                } while(ignore != '\n');
+
+            } while( choice < '1' | choice > '7' & choice != 'q');
+            
+            if(choice == 'q') break;
+            System.out.println("\n");
+
+            switch(choice) {
+                case '1':
+                    System.out.println("The if:\n");
+                    System.out.println("if(condition) statement;");
+                    System.out.println("else statement;");
+                    break;
+
+                case '2':
+                    System.out.println("The switch:\n");
+                    System.out.println("switch(expression) {");
+                    System.out.println(" case constant:");
+                    System.out.println(" statement sequence");
+                    System.out.println(" break;");
+                    System.out.println(" // ...");
+                    System.out.println("}");
+                    break;
+
+                case '3':
+                    System.out.println("The for:\n");
+                    System.out.print("for(init; condition; iteration)");
+                    System.out.println(" statement;");
+                    break;
+
+                case '4':
+                    System.out.println("The while:\n");
+                    System.out.println("while(condition) statement;");
+                    break;
+
+                case '5':
+                    System.out.println("The do-while:\n");
+                    System.out.println("do {");
+                    System.out.println(" statement;");
+                    System.out.println("} while (condition);");
+                    break;
+
+                case '6':
+                    System.out.println("The break:\n");
+                    System.out.println("break; or break label;");
+                    break;
+
+                case '7':
+                    System.out.println("The continue:\n");
+                    System.out.println("continue; or continue label;");
+                    break;
+            }
+            System.out.println();
+        }
+    }
+}
+
+
 
 Creating a Help Class
 If one were to try to summarize the essence of the class in one sentence,
