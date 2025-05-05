@@ -89,8 +89,7 @@ class IsFact {
 }
 
 
-// ----  rev [01-May-2025]  ----
-// 117.5-124.7
+
 
 /* Example 3: Adding a Parameterized Method to Vehicle class (recall jv_ch02_03_1_methods_return.java)
                 We can improve the Vehicle class by adding a method with a parameter.
@@ -109,46 +108,51 @@ class IsFact {
 // Add a parameterized method that computes the fuel required for a given distance.
 
 class Vehicle {
-int passengers; // number of passengers
-int fuelcap; // fuel capacity in gallons
-int mpg; // fuel consumption in miles per gallon
-Pass two arguments
-to isFactor( ).118 Java: A Beginner’s Guide
-// Return the range.
-int range() {
-return mpg * fuelcap;
-}
-// Compute fuel needed for a given distance.
-double fuelneeded(int miles) {
-return (double) miles / mpg;
-}
+    int passengers; // number of passengers
+    int fuelcap;    // fuel capacity in gallons
+    int mpg;        // fuel consumption in miles per gallon
+
+    // Return the range.
+    int range() {
+        return mpg * fuelcap;
+    }
+
+    // Compute fuel needed for a given distance.
+    double fuelneeded(int miles) {
+        return (double) miles / mpg;
+    }
 }
 
 
 class CompFuel {
-public static void main(String args[]) {
-Vehicle minivan = new Vehicle();
-Vehicle sportscar = new Vehicle();
-double gallons;
-int dist = 252;
-// assign values to fields in minivan
-minivan.passengers = 7;
-minivan.fuelcap = 16;
-minivan.mpg = 21;
-// assign values to fields in sportscar
-sportscar.passengers = 2;
-sportscar.fuelcap = 14;
-sportscar.mpg = 12;
-gallons = minivan.fuelneeded(dist);
-System.out.println("To go " + dist + " miles minivan needs " +
-gallons + " gallons of fuel.");
-gallons = sportscar.fuelneeded(dist);
-System.out.println("To go " + dist + " miles sportscar needs " +
-gallons + " gallons of fuel.");
-}
+    public static void main(String args[]) {
+        Vehicle minivan = new Vehicle();
+        Vehicle sportscar = new Vehicle();
+        double gallons;
+        
+        int dist = 252;
+
+        // assign values to fields in minivan
+        minivan.passengers = 7;
+        minivan.fuelcap = 16;
+        minivan.mpg = 21;
+
+        // assign values to fields in sportscar
+        sportscar.passengers = 2;
+        sportscar.fuelcap = 14;
+        sportscar.mpg = 12;
+
+        gallons = minivan.fuelneeded(dist);
+        System.out.println("To go " + dist + " miles minivan needs " + gallons + " gallons of fuel.");
+
+        gallons = sportscar.fuelneeded(dist);
+        System.out.println("To go " + dist + " miles sportscar needs " + gallons + " gallons of fuel.");
+    }
 }
 
 
-The output from the program is shown here:
-To go 252 miles minivan needs 12.0 gallons of fuel.
-To go 252 miles sportscar needs 21.0 gallons of fu
+
+// ----  rev [05-May-2025]  ----
+// 119.0-124.7
+
+
