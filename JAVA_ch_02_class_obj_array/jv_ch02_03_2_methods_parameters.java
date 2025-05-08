@@ -24,6 +24,13 @@
 
                     int myMeth(int a, double b, float c){  }
 
+
+    ----  Proper use of class  ----
+    A class groups related functionality together.
+    A good class should handle one clear, specific job.
+        Too many unrelated features make a class messy.
+        Too little functionality makes it fragmented.
+        Balancing this comes with experience.
 */
 
 
@@ -157,12 +164,6 @@ class CompFuel {
 
 /* Example 4: Now we'll modify "Example 10" from jv_ch01_06_3_break_continue.java 
 
-Creating a Help Class (Simplified)
-A class encapsulates functionality — it groups related actions together.
-
-A good class should represent one clear, functional unit.
-
-If a class has too many unrelated features, it becomes messy. If it has too little, it’s fragmented. Finding the right balance comes with experience.
 
 
 
@@ -183,31 +184,6 @@ It can be upgraded later without affecting other parts of the program.
 
 
 
-Plan:
-
-Create a file called HelpClassDemo.java.
-
-Identify what belongs in the help system:
-
-Displaying the menu
-
-Checking for valid input
-
-Showing syntax info
-
-User input handling and looping stay outside the class.
-
-
-
-Class Methods:
-
-showMenu() — Displays the list of topics
-
-isValid() — Checks if user input is a valid option
-
-helpOn() — Displays the help info for a selected topic
-
-This approach keeps your program clean, modular, and easy to maintain.
 
 */
 
