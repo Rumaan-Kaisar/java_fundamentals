@@ -159,33 +159,16 @@ class CompFuel {
 
 
 
-// ----  rev [05-May-2025]  ----
-// 119.0-124.7
 
 /* Example 4: Now we'll modify "Example 10" from jv_ch01_06_3_break_continue.java 
 
-
-
-
-Example: Converting a Help System into a Class
-In a previous example, a program displayed syntax help for Java’s control statements.
-
-That help system is one logical unit — so it makes sense to turn it into a class.
-
-
-
-Why?
-
-The functionality is compact and well-defined.
-
-It’s clean and organized to encapsulate it inside a class.
-
-It can be upgraded later without affecting other parts of the program.
-
-
-
-
+                Converting a Help System into a Class:
+                    Previous program showed help for Java’s control statements.
+                    Since this is one clear, separate task, it makes sense to turn it into a class.
 */
+
+// ----  rev [08-May-2025]  ----
+// 119.0-124.7
 
 // recall 
 
