@@ -165,6 +165,53 @@ class CompFuel {
                 Converting a Help System into a Class:
                     Previous program showed help for Java’s control statements.
                     Since this is one clear, separate task, it makes sense to turn it into a class.
+
+
+
+
+Example: Converting a Help System to a Class
+
+In an earlier program (Help3.java), a help system displayed Java control statement syntax.
+
+Since this is one logical, compact task, it makes sense to turn it into a Help class.
+
+Why create a class for it?
+
+The feature is compact and well-defined.
+
+It’s organized and clean when encapsulated inside a class.
+
+It’s easy to reuse and upgrade without affecting other code.
+
+Steps to convert:
+
+Create a file: HelpClassDemo.java.
+
+Copy existing code from Help3.java to save time.
+
+Identify what belongs to the help system:
+
+Displaying a menu.
+
+Checking user input.
+
+Showing help information.
+
+Exclude unrelated parts:
+
+How user input is taken.
+
+Repeated request handling.
+
+Define three methods in the Help class:
+
+helpOn() → Displays help information.
+
+showMenu() → Displays the menu.
+
+isValid() → Checks for valid input.
+
+
 */
 
 // ----  rev [08-May-2025]  ----
