@@ -197,22 +197,13 @@ class CompFuel {
 
 // recall 
 
-class Help3 {
+class HelpClassDemo {
     public static void main(String args[]) throws java.io.IOException {
         char choice, ignore;
         
         for(;;) {
             do {
-                System.out.println("Help on:");
-                System.out.println(" 1. if");
-                System.out.println(" 2. switch");
-                System.out.println(" 3. for");
-                System.out.println(" 4. while");
-                System.out.println(" 5. do-while");
-                System.out.println(" 6. break");
-                System.out.println(" 7. continue\n");
 
-                System.out.print("Choose one (q to quit): ");
                 choice = (char) System.in.read();
                 do {
                     ignore = (char) System.in.read();
@@ -284,24 +275,23 @@ class Help {
         System.out.println();
     }
 
+    void showMenu() {
+        System.out.println("Help on:");
+        System.out.println(" 1. if");
+        System.out.println(" 2. switch");
+        System.out.println(" 3. for");
+        System.out.println(" 4. while");
+        System.out.println(" 5. do-while");
+        System.out.println(" 6. break");
+        System.out.println(" 7. continue\n");
 
+        System.out.print("Choose one (q to quit): ");
+    }
 
-void showMenu() {
-System.out.println("Help on:");
-System.out.println(" 1. if");
-System.out.println(" 2. switch");
-System.out.println(" 3. for");
-System.out.println(" 4. while");
-System.out.println(" 5. do-while");
-System.out.println(" 6. break");
-System.out.println(" 7. continue\n");
-System.out.print("Choose one (q to quit): ");
-}
-
-boolean isValid(int ch) {
-if(ch < '1' | ch > '7' & ch != 'q') return false;
-else return true;
-}
+    boolean isValid(int ch) {
+        if((ch < '1' | ch > '7') & ch != 'q') return false;
+        else return true;
+    }
 }
 
 
@@ -310,6 +300,7 @@ else return true;
 class HelpClassDemo {
 public static void main(String args[])
 throws java.io.IOException {
+
 char choice, ignore;
 Help hlpobj = new Help();
 for(;;) {
