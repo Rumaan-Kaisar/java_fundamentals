@@ -192,36 +192,9 @@ class CompFuel {
                     Repeated request handling.
 */
 
-// ----  rev [012May-2025]  ----
+// ----  rev [15-May-2025]  ----
 // 119.0-124.7
 
-// recall 
-
-class HelpClassDemo {
-    public static void main(String args[]) throws java.io.IOException {
-        char choice, ignore;
-        
-        for(;;) {
-            do {
-
-                choice = (char) System.in.read();
-                do {
-                    ignore = (char) System.in.read();
-                } while(ignore != '\n');
-
-            } while( choice < '1' | choice > '7' & choice != 'q');
-            
-            if(choice == 'q') break;
-            System.out.println("\n");
-
-        }
-    }
-}
-
-
-
-
-// The entire listing for HelpClassDemo.java is shown here:
 
 
 // Define help method 
@@ -296,10 +269,8 @@ class Help {
 
 
 
-
 class HelpClassDemo {
-public static void main(String args[])
-throws java.io.IOException {
+    public static void main(String args[]) throws java.io.IOException {
 
 char choice, ignore;
 Help hlpobj = new Help();
@@ -315,8 +286,11 @@ if(choice == 'q') break;
 System.out.println("\n");
 hlpobj.helpOn(choice);
 }
+
 }
-}
+
+
+
 When you try the program, you will find that it is functionally the same as before. The
 advantage to this approach is that you now have a help system component that can be reused
 whenever it is needed
