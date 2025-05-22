@@ -17,6 +17,34 @@ because Java automatically provides a default constructor that initializes all m
 which are zero, null, and false, for numeric types, reference types, and booleans, respectively. 
 However, once you define your own constructor, the default constructor is no longer used. Example:
 
+--------------------------
+
+Constructor (Simplified)
+A constructor initializes an object when it’s created.
+
+It can set initial values for instance variables or run startup procedures.
+
+A constructor has the same name as its class.
+
+It looks like a method but has no return type (not even void).
+
+Java’s Default Constructor
+Every class in Java automatically has a default constructor if no constructor is written.
+
+This default constructor initializes:
+
+Numeric types to 0
+
+Reference types to null
+
+Booleans to false
+
+If you create your own constructor, the default one is no longer provided.
+
+--------------------------
+
+
+
 
 
 
