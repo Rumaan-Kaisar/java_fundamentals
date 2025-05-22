@@ -1,19 +1,29 @@
 
-/* -=-=-=-=-=-=-=-=-=-=-=      chapter name      -=-=-=-=-=-=-=-=-=-=-= */
+/* -=-=-=-=-=-=-=-=-=-=-=      chapter name      -=-=-=-=-=-=-=-=-=-=-= 
 
 // jv_ch02_04_constructor_new          2.5+2.6     124.7-128.5
 
 // rev [19-May-2025]
 
-2.5 Constructor
-A constructor initializes an object (i.e. to give initial values to the instance variables defined by the class) when it is created or to perform any other startup procedures required to create a fully formed object. It has the same name as its class and is syntactically similar to a method. However, constructors have no explicit return type. 
-	Java's Default constructor: All classes have constructors, whether you define one or not, because Java automatically provides a default constructor that initializes all member variables to their default values, which are zero, null, and false, for numeric types, reference types, and booleans, respectively. However, once you define your own constructor, the default constructor is no longer used. Example:
+Constructor:
+A constructor initializes an object (i.e. to give initial values to the instance variables defined by the class) 
+when it is created or to perform any other startup procedures required to create a fully formed object. 
+It has the same name as its class and is syntactically similar to a method. 
+However, constructors have no explicit return type. 
+
+Java's Default constructor: 
+All classes have constructors, whether you define one or not, 
+because Java automatically provides a default constructor that initializes all member variables to their default values, 
+which are zero, null, and false, for numeric types, reference types, and booleans, respectively. 
+However, once you define your own constructor, the default constructor is no longer used. Example:
+
+
 
 
 class MyClass { int x;
    MyClass(){ x = 10; }  }	class ConsDemo { public static void main(String args[]) {
-	MyClass t1 = new MyClass(); 	/* parameter-less initialization */
-	MyClass t2 = new MyClass(); 	/* parameter-less initialization */
+	MyClass t1 = new MyClass(); 	// parameter-less initialization 
+	MyClass t2 = new MyClass(); 	// parameter-less initialization 
 	System.out.println(t1.x + " " + t2.x); 	}}
 	Constructor is called by new when an object is created. For example, in the line 	MyClass t1 = new MyClass();
 the constructor MyClass() is called on the t1 object, giving t1.x the value 10. The same is true for t2. After construction, t2.x has the value 10. Thus, the output from the program is 10 10. 
@@ -23,8 +33,8 @@ classname() is the class's default constructor.
 
 class MyClass { int x;
    MyClass(int i){ x = i; }  }	class PeramConsDemo { public static void main(String args[]) {
-	MyClass t1 = new MyClass(10); 	/* parameter-less initialization */
-	MyClass t2 = new MyClass(88); 	/* parameter-less initialization */
+	MyClass t1 = new MyClass(10); 	// parameter-less initialization
+	MyClass t2 = new MyClass(88); 	// parameter-less initialization
 	System.out.println(t1.x + " " + t2.x); 	}}
 	The  MyClass() constructor defines one parameter called i, which is used to initialize the instance variable, x. Thus, when 
  MyClass t1 = new MyClass(10); 	executes, the value 10 is passed to i, which is then assigned to x.
@@ -62,4 +72,6 @@ The new operator has this general form: 	class_variable = new class-name(arg-lis
 	A run-time exception will occur if new is unable to allocate memory for an object because insufficient memory space.
 
 
+
+*/
 
