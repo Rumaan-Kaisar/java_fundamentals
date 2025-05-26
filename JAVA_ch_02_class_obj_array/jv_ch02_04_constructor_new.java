@@ -16,23 +16,22 @@
             Booleans to "false"
         If you create your own constructor, the default one is no longer provided.
 
+        When creating an object in Java using:
+                ClassName objectName = new ClassName();
+            The part "new ClassName()" calls the class's default constructor.
+
+
 --------------------------
 
 
 
 
 
+Parameterized constructor:
+It has the same name as its class and is syntactically similar to a parameterized method. Parameterized constructor is used to initialize objects on-spot (by setting values of member variables from constructor), for example,
 
-class MyClass { int x;
-   MyClass(){ x = 10; }  }	class ConsDemo { public static void main(String args[]) {
-	MyClass t1 = new MyClass(); 	// parameter-less initialization 
-	MyClass t2 = new MyClass(); 	// parameter-less initialization 
-	System.out.println(t1.x + " " + t2.x); 	}}
-	Constructor is called by new when an object is created. For example, in the line 	MyClass t1 = new MyClass();
-the constructor MyClass() is called on the t1 object, giving t1.x the value 10. The same is true for t2. After construction, t2.x has the value 10. Thus, the output from the program is 10 10. 
-	i.e., in general from of object in 2.1,     classname object_name = new classname();  in the part "new  classname()" 
-classname() is the class's default constructor.
-	Parameterized constructor: It has the same name as its class and is syntactically similar to a parameterized method. Parameterized constructor is used to initialize objects on-spot (by setting values of member variables from constructor), for example,
+
+
 
 class MyClass { int x;
    MyClass(int i){ x = i; }  }	class PeramConsDemo { public static void main(String args[]) {
@@ -77,3 +76,54 @@ The new operator has this general form: 	class_variable = new class-name(arg-lis
 
 
 */
+
+// rev [26-May-2025]
+
+/* Example 1: In following program, the constructor for MyClass is
+
+                        MyClass() {
+                            x = 10;
+                        }
+
+                This sets the value of x to 10 when an object is created.
+
+                Constructor is called by "new" when an object is created. For example, in the line
+                        MyClass t1 = new MyClass();
+                    the constructor MyClass() is called on the t1 object, giving t1.x the value 10. 
+
+                The same is true for t2. 
+                That's why the output is 10  10
+*/
+
+// A simple constructor.
+class MyClass {
+int x;
+// This is the constructor for MyClass
+MyClass() {
+x = 10;
+}
+}
+class ConsDemo {
+public static void main(String args[]) {
+MyClass t1 = new MyClass();
+MyClass t2 = new MyClass();
+System.out.println(t1.x + " " + t2.x);
+}
+}
+In this example, the constructor for MyClass is
+MyClass() {
+x = 10;
+}
+
+
+
+
+
+class MyClass { int x;
+   MyClass(){ x = 10; }  }	class ConsDemo { public static void main(String args[]) {
+	MyClass t1 = new MyClass(); 	// parameter-less initialization 
+	MyClass t2 = new MyClass(); 	// parameter-less initialization 
+	System.out.println(t1.x + " " + t2.x); 	}}
+
+
+
