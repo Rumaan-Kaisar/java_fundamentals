@@ -1,45 +1,20 @@
+// jv_ch02_04_constructor_new          2.5+2.6     124.7-128.5
 
 /* -=-=-=-=-=-=-=-=-=-=-=      chapter name      -=-=-=-=-=-=-=-=-=-=-= 
 
-// jv_ch02_04_constructor_new          2.5+2.6     124.7-128.5
+    Constructor (Simplified)
+        A constructor initializes an object when it’s created.
+        It can set initial values for "instance variables defined by the class" or run "startup procedures".
+        A constructor has the same name as its class.
+        It looks like a method but has no return type (not even void).
 
-// rev [19-May-2025]
-
-Constructor:
-A constructor initializes an object (i.e. to give initial values to the instance variables defined by the class) 
-when it is created or to perform any other startup procedures required to create a fully formed object. 
-It has the same name as its class and is syntactically similar to a method. 
-However, constructors have no explicit return type. 
-
-Java's Default constructor: 
-All classes have constructors, whether you define one or not, 
-because Java automatically provides a default constructor that initializes all member variables to their default values, 
-which are zero, null, and false, for numeric types, reference types, and booleans, respectively. 
-However, once you define your own constructor, the default constructor is no longer used. Example:
-
---------------------------
-
-Constructor (Simplified)
-A constructor initializes an object when it’s created.
-
-It can set initial values for instance variables or run startup procedures.
-
-A constructor has the same name as its class.
-
-It looks like a method but has no return type (not even void).
-
-Java’s Default Constructor
-Every class in Java automatically has a default constructor if no constructor is written.
-
-This default constructor initializes:
-
-Numeric types to 0
-
-Reference types to null
-
-Booleans to false
-
-If you create your own constructor, the default one is no longer provided.
+    Java’s Default Constructor
+        Every class in Java automatically has a default constructor if no constructor is written.
+        This default constructor initializes:
+            Numeric types to "0"
+            Reference types to "null"
+            Booleans to "false"
+        If you create your own constructor, the default one is no longer provided.
 
 --------------------------
 
