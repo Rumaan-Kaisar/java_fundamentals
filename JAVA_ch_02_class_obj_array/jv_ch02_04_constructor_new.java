@@ -24,11 +24,12 @@
 --------------------------
 
 
+Parameterized Constructor:
+    A constructor (i.e. same name as its class) that takes parameters, like a method.
+    It's used to initialize objects with specific values when they’re created.
+    (by setting values of member variables from constructor)
 
 
-
-Parameterized constructor:
-It has the same name as its class and is syntactically similar to a parameterized method. Parameterized constructor is used to initialize objects on-spot (by setting values of member variables from constructor), for example,
 
 
 
@@ -97,33 +98,24 @@ The new operator has this general form: 	class_variable = new class-name(arg-lis
 
 // A simple constructor.
 class MyClass {
-int x;
-// This is the constructor for MyClass
-MyClass() {
-x = 10;
+    int x;
+    // This is the constructor for MyClass
+    MyClass() {
+        x = 10;
+    }
 }
-}
+
+// main class
 class ConsDemo {
-public static void main(String args[]) {
-MyClass t1 = new MyClass();
-MyClass t2 = new MyClass();
-System.out.println(t1.x + " " + t2.x);
-}
-}
-In this example, the constructor for MyClass is
-MyClass() {
-x = 10;
+    public static void main(String args[]) {
+        MyClass t1 = new MyClass();
+        MyClass t2 = new MyClass();
+        
+        System.out.println(t1.x + " " + t2.x);
+    }
 }
 
 
-
-
-
-class MyClass { int x;
-   MyClass(){ x = 10; }  }	class ConsDemo { public static void main(String args[]) {
-	MyClass t1 = new MyClass(); 	// parameter-less initialization 
-	MyClass t2 = new MyClass(); 	// parameter-less initialization 
-	System.out.println(t1.x + " " + t2.x); 	}}
 
 
 
