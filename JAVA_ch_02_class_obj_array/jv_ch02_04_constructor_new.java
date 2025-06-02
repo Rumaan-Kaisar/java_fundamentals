@@ -134,34 +134,41 @@ class ConsDemo {
 }
 
 
-// rev [29-May-2025]
+
 
 /* Example 2: Following program uses parameterized constructor
 
-The  MyClass() constructor defines one parameter called i, which is used to initialize the instance variable, x. 
-Thus, when 
- MyClass t1 = new MyClass(10); 	
- 
- executes, the value 10 is passed to i, which is then assigned to x.
+            The  MyClass() constructor defines one parameter called i, 
+                which is used to initialize the instance variable, x. 
 
+            Thus, when 
+                        MyClass t1 = new MyClass(10); 	
+                executes, the value 10 is passed to i, which is then assigned to x.
 */
 
-class MyClass { int x;
-   MyClass(int i){ x = i; }  }	class PeramConsDemo { public static void main(String args[]) {
-	MyClass t1 = new MyClass(10); 	// parameter-less initialization
-	MyClass t2 = new MyClass(88); 	// parameter-less initialization
-	System.out.println(t1.x + " " + t2.x); 	}}
+
+// A simple constructor.
+class MyClass {
+    int x;
+    // constructor with a paramater i
+    MyClass(int i) {
+        x = i;
+    }
+}
+
+// main class
+class PeramConsDemo {
+    public static void main(String args[]) {
+        MyClass t1 = new MyClass(10);
+        MyClass t2 = new MyClass(88);
+        
+        System.out.println(t1.x + " " + t2.x);
+    }
+}
 
 
 
-
-
-
-
-
-
-
-
+// rev [29-May-2025]
 
 
 
