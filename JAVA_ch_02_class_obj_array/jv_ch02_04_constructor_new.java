@@ -172,3 +172,73 @@ class PeramConsDemo {
 
 
 
+
+/* We can improve the Vehicle class by adding a constructor that automatically initializes the
+passengers, fuelcap, and mpg fields when an object is constructed. Pay special attention to
+how Vehicle objects are created. */
+// Add a constructor.
+class Vehicle {
+int passengers; // number of passengers
+int fuelcap; // fuel capacity in gallons
+int mpg; // fuel consumption in miles per gallon
+This constructor has a parameter.Chapter 4: Introducing Classes, Objects, and Methods 127
+// This is a constructor for Vehicle.
+Vehicle(int p, int f, int m) {
+passengers = p;
+fuelcap = f;
+mpg = m;
+}
+// Return the range.
+int range() {
+return mpg * fuelcap;
+}
+// Compute fuel needed for a given distance.
+double fuelneeded(int miles) {
+return (double) miles / mpg;
+}
+}
+class VehConsDemo {
+public static void main(String args[]) {
+// construct complete vehicles
+Vehicle minivan = new Vehicle(7, 16, 21);
+Vehicle sportscar = new Vehicle(2, 14, 12);
+double gallons;
+int dist = 252;
+gallons = minivan.fuelneeded(dist);
+System.out.println("To go " + dist + " miles minivan needs " +
+gallons + " gallons of fuel.");
+gallons = sportscar.fuelneeded(dist);
+System.out.println("To go " + dist + " miles sportscar needs " +
+gallons + " gallons of fuel.");
+}
+}
+
+/* 
+Both minivan and sportscar are initialized by the Vehicle( ) constructor when they are
+created. Each object is initialized as specified in the parameters to its constructor. For example,
+in the following line,
+Vehicle minivan = new Vehicle(7, 16, 21);
+the values 7, 16, and 21 are passed to the Vehicle( ) constructor when new creates the object.
+Thus, minivan’s copy of passengers, fuelcap, and mpg will contain the values 7, 16, and 21,
+respectively. The output from this program is the same as the previous version.
+Constructor for Vehicle
+
+ */
+
+/* The new Operator Revisited
+Now that you know more about classes and their constructors, let’s take a closer look at the
+new operator. In the context of an assignment, the new operator has this general form:
+class-var = new class-name(arg-list);
+Here, class-var is a variable of the class type being created. The class-name is the name of
+the class that is being instantiated. The class name followed by a parenthesized argument list
+(which can be empty) specifies the constructor for the class. If a class does not define its own
+constructor, new will use the default constructor supplied by Java. Thus, new can be used to
+create an object of any class type. The new operator returns a reference to the newly created
+object, which (in this case) is assigned to class-var.
+Since memory is finite, it is possible that new will not be able to allocate memory for
+an object because insufficient memory exists. If this happens, a run-time exception will
+occur. (You will learn about exceptions in Chapter 9.) For the sample programs in this book,
+you won’t need to worry about running out of memory, but you will need to consider this
+possibility in real-world programs that you write
+
+ */
