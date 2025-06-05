@@ -168,65 +168,66 @@ class PeramConsDemo {
 
 
 
-// rev [29-May-2025]
-
-
-
 
 /* Excample 3: We can improve the Vehicle class by adding a constructor that automatically initializes 
                 the passengers, fuelcap, and mpg fields when an object is constructed. 
                 Notice how Vehicle objects are created. 
+
+
+                Both minivan and sportscar are initialized using the Vehicle() constructor when they are created.
+                    Each object is initialized as specified in the parameters to its constructor.
+
+                The values given inside "new Vehicle(7, 16, 21)" are passed to the constructor.
+                    These values set the object's passengers, fuelcap, and mpg.
+
+                The program’s output will remain the same as before — just now, values are assigned through the constructor.
+
 */
 
-
-// Add a constructor.
 class Vehicle {
-int passengers; // number of passengers
-int fuelcap; // fuel capacity in gallons
-int mpg; // fuel consumption in miles per gallon
-This constructor has a parameter.Chapter 4: Introducing Classes, Objects, and Methods 127
-// This is a constructor for Vehicle.
-Vehicle(int p, int f, int m) {
-passengers = p;
-fuelcap = f;
-mpg = m;
+    int passengers; // number of passengers
+    int fuelcap; // fuel capacity in gallons
+    int mpg; // fuel consumption in miles per gallon
+
+    // This is a constructor for Vehicle.
+    Vehicle(int p, int f, int m) {
+        passengers = p;
+        fuelcap = f;
+        mpg = m;
+    }
+
+    // Return the range.
+    int range() {
+        return mpg * fuelcap;
+    }
+
+    // Compute fuel needed for a given distance.
+    double fuelneeded(int miles) {
+        return (double) miles / mpg;
+    }
 }
-// Return the range.
-int range() {
-return mpg * fuelcap;
-}
-// Compute fuel needed for a given distance.
-double fuelneeded(int miles) {
-return (double) miles / mpg;
-}
-}
+
+
 class VehConsDemo {
-public static void main(String args[]) {
-// construct complete vehicles
-Vehicle minivan = new Vehicle(7, 16, 21);
-Vehicle sportscar = new Vehicle(2, 14, 12);
-double gallons;
-int dist = 252;
-gallons = minivan.fuelneeded(dist);
-System.out.println("To go " + dist + " miles minivan needs " +
-gallons + " gallons of fuel.");
-gallons = sportscar.fuelneeded(dist);
-System.out.println("To go " + dist + " miles sportscar needs " +
-gallons + " gallons of fuel.");
-}
+    public static void main(String args[]) {
+        double gallons;
+        int dist = 252;
+
+        // construct complete vehicles
+        Vehicle minivan = new Vehicle(7, 16, 21);
+        Vehicle sportscar = new Vehicle(2, 14, 12);
+
+        gallons = minivan.fuelneeded(dist);
+        System.out.println("To go " + dist + " miles minivan needs " + gallons + " gallons of fuel.");
+
+        gallons = sportscar.fuelneeded(dist);
+        System.out.println("To go " + dist + " miles sportscar needs " + gallons + " gallons of fuel.");
+    }
 }
 
-/* 
-Both minivan and sportscar are initialized by the Vehicle( ) constructor when they are
-created. Each object is initialized as specified in the parameters to its constructor. For example,
-in the following line,
-Vehicle minivan = new Vehicle(7, 16, 21);
-the values 7, 16, and 21 are passed to the Vehicle( ) constructor when new creates the object.
-Thus, minivan’s copy of passengers, fuelcap, and mpg will contain the values 7, 16, and 21,
-respectively. The output from this program is the same as the previous version.
-Constructor for Vehicle
 
- */
+// rev [05-Jun-2025]
+
 
 /* The new Operator Revisited
 Now that you know more about classes and their constructors, let’s take a closer look at the
