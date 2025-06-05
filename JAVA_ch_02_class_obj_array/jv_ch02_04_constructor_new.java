@@ -173,9 +173,12 @@ class PeramConsDemo {
 
 
 
-/* We can improve the Vehicle class by adding a constructor that automatically initializes the
-passengers, fuelcap, and mpg fields when an object is constructed. Pay special attention to
-how Vehicle objects are created. */
+/* Excample 3: We can improve the Vehicle class by adding a constructor that automatically initializes 
+                the passengers, fuelcap, and mpg fields when an object is constructed. 
+                Notice how Vehicle objects are created. 
+*/
+
+
 // Add a constructor.
 class Vehicle {
 int passengers; // number of passengers
