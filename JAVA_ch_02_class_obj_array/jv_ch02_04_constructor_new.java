@@ -83,18 +83,28 @@
 
 
 
---------------------------
+    General Form of "new" in Java:
+        The new operator is used to create objects in Java.
+
+                classVariable = new ClassName(argumentList);
+
+            classVariable: the reference variable of the class type.
+            ClassName(argumentList): calls the class's constructor (can be empty if no parameters).
+                If no constructor is defined, Java uses a default constructor.
+
+        What new Does
+            Allocates memory for the object.
+            Calls the specified constructor.
+            Returns a reference to the newly created object.
+            This reference is assigned to classVariable.
 
 
-2.6 General form of "new" and details about object declaration (Recall C/C++'s 10.11)
-The new operator has this general form: 	class_variable = new class-name(arg-list);
-	Here, class_variable is a variable of the class type being created. The class-name is the name of the class that is being instantiated. The class name followed by a parenthesized argument list (which can be empty) i.e. class-name(arg-list) specifies the constructor for the class. If a class does not define its own constructor, new will use the default constructor supplied by Java. 
-	The new operator returns a reference to the newly created object, which (in this case) is assigned to class-var.
-	A run-time exception will occur if new is unable to allocate memory for an object because insufficient memory space.
-
-
-
+        Important Note
+            If the system runs out of memory while using "new", a "run-time exception" occurs.
+            This isn't an issue in small examples, 
+                but in real applications, it needs to be handled properly (using exceptions, covered later).
 */
+
 
 
 
@@ -169,7 +179,7 @@ class PeramConsDemo {
 
 
 
-/* Excample 3: We can improve the Vehicle class by adding a constructor that automatically initializes 
+/* Example 3: We can improve the Vehicle class by adding a constructor that automatically initializes 
                 the passengers, fuelcap, and mpg fields when an object is constructed. 
                 Notice how Vehicle objects are created. 
 
@@ -226,23 +236,7 @@ class VehConsDemo {
 }
 
 
-// rev [05-Jun-2025]
+// rev [09-Jun-2025]
 
+// --------------------------
 
-/* The new Operator Revisited
-Now that you know more about classes and their constructors, let’s take a closer look at the
-new operator. In the context of an assignment, the new operator has this general form:
-class-var = new class-name(arg-list);
-Here, class-var is a variable of the class type being created. The class-name is the name of
-the class that is being instantiated. The class name followed by a parenthesized argument list
-(which can be empty) specifies the constructor for the class. If a class does not define its own
-constructor, new will use the default constructor supplied by Java. Thus, new can be used to
-create an object of any class type. The new operator returns a reference to the newly created
-object, which (in this case) is assigned to class-var.
-Since memory is finite, it is possible that new will not be able to allocate memory for
-an object because insufficient memory exists. If this happens, a run-time exception will
-occur. (You will learn about exceptions in Chapter 9.) For the sample programs in this book,
-you won’t need to worry about running out of memory, but you will need to consider this
-possibility in real-world programs that you write
-
- */
