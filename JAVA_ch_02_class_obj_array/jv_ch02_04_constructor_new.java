@@ -1,4 +1,3 @@
-// jv_ch02_04_constructor_new          2.5+2.6     124.7-128.5
 
 /* -=-=-=-=-=-=-=-=-=-=-=      chapter name      -=-=-=-=-=-=-=-=-=-=-= 
 
@@ -82,6 +81,8 @@
         to initialize the object minivan instantly.
 
 
+
+    ----------------  new  ----------------
 
     General Form of "new" in Java:
         The new operator is used to create objects in Java.
@@ -235,8 +236,4 @@ class VehConsDemo {
     }
 }
 
-
-// rev [09-Jun-2025]
-
-// --------------------------
 
