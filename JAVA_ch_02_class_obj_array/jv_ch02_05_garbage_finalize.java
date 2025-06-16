@@ -1,7 +1,7 @@
 
 // jv_ch02_05_garbage_finalize         2.7         128.5-132.3
 
-/* -=-=-=-=-=-=-=-=-=-=-=      chapter name      -=-=-=-=-=-=-=-=-=-=-= 
+/* -=-=-=-=-=-=-=-=-=-=-=      Garbage collection and finalize()      -=-=-=-=-=-=-=-=-=-=-= 
 
 
 2.7 Garbage collection and finalize()
@@ -16,13 +16,13 @@ In C++, to free allocated memory space after use of an object we used the keywor
 
 	finalize(): finalize() is the Method which can be called just before an object’s final destruction by the garbage collector, it can be used to ensure that an object terminates cleanly. Eg: use finalize() to make sure that an open file owned by that object is closed.
 	To add a finalizer to a class, you simply define the finalize() and inside finalize() specify those actions that must be performed before an object is destroyed. The Java run-time system calls that finalizer whenever it is about to recycle an object of that class. 
-	General form of finalize( ): 		protected void finalize(){   /* finalization code here   */ } 
+	General form of finalize( ): 		protected void finalize(){   // finalization code here } 
 Here, the keyword protected is an access specifier.
 	finalize() is called just before garbage collection hence unpredictable (i.e. it is not called when an object goes out of scope). For example, if your program ends before garbage collection occurs, finalize() will not execute. Therefore, it should be used as a “backup” procedure to ensure the proper handling of some resource, or for special-use applications.
 	Java does not have "destructors": Although it is true that the finalize() approximates the function of a destructor, it is not the same, a C++ destructor is always called just before an object goes out of scope, but you can’t know when finalize() will be called for any specific object. Frankly, because of Java’s use of garbage collection, there is little need for a destructor.
 	Example: To demonstrate garbage collection via finalize(), you often need to create and destroy a large number of objects ,
-class FDemo {	int x; 			/* class that contain finalize() */
-FDemo(int i) { x = i; } 	/* constructor */
+class FDemo {	int x; 			// class that contain finalize() 
+FDemo(int i) { x = i; } 	// constructor 
 
 // called when object is recycled
 protected void finalize(){ System.out.println("Finalizing " + x);}
@@ -33,9 +33,9 @@ void generator(int i){ FDemo ob = new FDemo(i); }
 
 class Finalize { public static void main(String args[]) {
 int count;
-FDemo ob = new FDemo(0); 	/* assigning initial value */
+FDemo ob = new FDemo(0); 	// assigning initial value 
 
-/* Now, generate a large number of objects. At some point, garbage collection will occur. */
+// Now, generate a large number of objects. At some point, garbage collection will occur.
 for(count=1; count < 100000; count++) ob.generator(count);	}}
 
 
