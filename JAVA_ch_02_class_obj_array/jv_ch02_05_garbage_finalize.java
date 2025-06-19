@@ -3,25 +3,40 @@
 
 /* -=-=-=-=-=-=-=-=-=-=-=      Garbage collection and finalize()      -=-=-=-=-=-=-=-=-=-=-= 
 
-📌 2.7 Garbage Collection and finalize() in Java (Simplified)
+
+2.7 Garbage collection and finalize()
 
 
-Garbage Collection (GC)
+
+	Java’s garbage collection system reclaims objects automatically—occurring transparently, behind the scenes, without any programmer intervention. It works like this: When no references to an object exist, that object is assumed to be no longer needed, and the memory occupied by the object is released. This recycled memory can then be used for a subsequent allocation.
+
+
+	Garbage collection takes time, so the Java run-time system does it only when it is appropriate. It will not occur simply because one or more objects exist that are no longer used. Thus, you can’t know precisely when garbage collection will take place.
+	For efficiency, the garbage collector will usually run only when two conditions are met: 
+	There are objects to recycle, and 	
+	There is a need to recycle them. 
+
+
+
+	new is not used with primitive types (unlike C++) in Java: In C++ we used new for int, float etc. Recall C/C++ 10.11. In Java you don’t need to use new for variables of the primitive types, such as int or float. 
+	Java’s primitive types are not implemented as objects, they are implemented as “normal” variables. A variable of a primitive type actually contains the value that you have given it.
+	But object variables are references (pointers) to the object. This layer of indirection (and other object features) adds overhead to an object.
+
+
+
+
+
+--------    Garbage Collection (GC)    --------
 In C++:
-
-Uses delete to free memory.
-
-Destructor runs when an object goes out of scope.
+    Uses the keyword "delete" to free memory.
+    Also "destructor" runs when an object goes out of scope.
 
 In Java:
-
-No destructor — memory is automatically cleaned up by Garbage Collector (GC).
-
-The GC runs automatically, but when it runs is unpredictable.
-
-When no references point to an object, it is marked for garbage collection.
-
-GC reclaims memory only when necessary (not immediately after an object becomes unused).
+    No destructor — memory is automatically cleaned up by Garbage Collector (GC).
+    The GC runs automatically (called by Java run-time system), but when it runs is unpredictable.
+    
+    When no references point to an object, it is 'marked' for garbage collection.
+    GC reclaims memory only when necessary (not immediately after an object becomes unused).
 
 
 
@@ -31,7 +46,7 @@ Only when:
 
 There are unused (unreferenced) objects.
 
-The system decides it’s a good time to reclaim memory.
+The system decides it's a good time to reclaim memory.
 
 
 
@@ -116,19 +131,6 @@ You’ll see messages like Finalizing 12345 in the console.
 
 
 
-
-
-2.7 Garbage collection and finalize()
-
-
-In C++, to free allocated memory space after use of an object we used the keyword "delete" and also the destructor is called when the object goes out of scope. In Java there is no destructor  , the allocated memory cleanup is performed by "garbage collection". It is unpredictable when "garbage collector" is called by Java run-time system, it is called automatically when it needed.
-	Java’s garbage collection system reclaims objects automatically—occurring transparently, behind the scenes, without any programmer intervention. It works like this: When no references to an object exist, that object is assumed to be no longer needed, and the memory occupied by the object is released. This recycled memory can then be used for a subsequent allocation.
-	Garbage collection takes time, so the Java run-time system does it only when it is appropriate. It will not occur simply because one or more objects exist that are no longer used. Thus, you can’t know precisely when garbage collection will take place.
-	For efficiency, the garbage collector will usually run only when two conditions are met: 
-	There are objects to recycle, and 		There is a need to recycle them. 
-	new is not used with primitive types (unlike C++) in Java: In C++ we used new for int, float etc. Recall C/C++ 10.11. In Java you don’t need to use new for variables of the primitive types, such as int or float. 
-	Java’s primitive types are not implemented as objects, they are implemented as “normal” variables. A variable of a primitive type actually contains the value that you have given it.
-	But object variables are references (pointers) to the object. This layer of indirection (and other object features) adds overhead to an object.
 
 
 
