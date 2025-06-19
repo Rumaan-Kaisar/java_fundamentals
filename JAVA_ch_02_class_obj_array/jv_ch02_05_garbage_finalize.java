@@ -4,44 +4,48 @@
 /* -=-=-=-=-=-=-=-=-=-=-=      Garbage collection and finalize()      -=-=-=-=-=-=-=-=-=-=-= 
 
 
-2.7 Garbage collection and finalize()
+    --------    Garbage Collection (GC)    --------
+    In C++:
+        Uses the keyword "delete" to free memory.
+        Also "destructor" runs when an object goes out of scope.
+        uses 'new' to allocate memory
+
+    In Java:
+        No destructor — memory is automatically cleaned up by Garbage Collector (GC).
+        The GC runs automatically (called by Java run-time system), but when it runs is unpredictable.
+        
+        When no references point to an object, it is 'marked' for garbage collection.
+        GC reclaims memory only when necessary (not immediately after an object becomes unused).
+
+
+    How GC works:
+        When no references point to an object, Java considers it unreachable and marks its memory for cleanup. 
+        That memory is then recycled for future use when needed.
+
+
+    When Does GC Run?
+        Java's garbage collection system automatically reclaims memory from objects that are no longer needed. 
+        This process happens behind the scenes, without any action required from the programmer.
+
+        Garbage collection doesn't happen immediately after objects become unused. 
+            It runs only when the Java run-time decides it's appropriate.
+        
+        For efficiency, the garbage collector typically runs when:
+            There are objects that can be recycled.
+            There's a need for additional memory or system resources.
+
+        As a result, you can't predict exactly when garbage collection will occur during a program’s execution.
 
 
 
-	Java’s garbage collection system reclaims objects automatically—occurring transparently, behind the scenes, without any programmer intervention. It works like this: When no references to an object exist, that object is assumed to be no longer needed, and the memory occupied by the object is released. This recycled memory can then be used for a subsequent allocation.
+    ----  rev[19-Jun-2025]  ----
 
-
-	Garbage collection takes time, so the Java run-time system does it only when it is appropriate. It will not occur simply because one or more objects exist that are no longer used. Thus, you can’t know precisely when garbage collection will take place.
-	For efficiency, the garbage collector will usually run only when two conditions are met: 
-	There are objects to recycle, and 	
-	There is a need to recycle them. 
-
-
-
-	new is not used with primitive types (unlike C++) in Java: In C++ we used new for int, float etc. Recall C/C++ 10.11. In Java you don’t need to use new for variables of the primitive types, such as int or float. 
-	Java’s primitive types are not implemented as objects, they are implemented as “normal” variables. A variable of a primitive type actually contains the value that you have given it.
-	But object variables are references (pointers) to the object. This layer of indirection (and other object features) adds overhead to an object.
+'new' for allocaton:
 
 
 
 
 
---------    Garbage Collection (GC)    --------
-In C++:
-    Uses the keyword "delete" to free memory.
-    Also "destructor" runs when an object goes out of scope.
-
-In Java:
-    No destructor — memory is automatically cleaned up by Garbage Collector (GC).
-    The GC runs automatically (called by Java run-time system), but when it runs is unpredictable.
-    
-    When no references point to an object, it is 'marked' for garbage collection.
-    GC reclaims memory only when necessary (not immediately after an object becomes unused).
-
-
-
-
-🔸 When Does GC Run?
 Only when:
 
 There are unused (unreferenced) objects.
