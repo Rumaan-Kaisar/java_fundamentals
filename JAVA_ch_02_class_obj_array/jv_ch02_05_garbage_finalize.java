@@ -65,36 +65,24 @@
 CP 1: 
 
 
+    To add a finalizer to a class, you simply define the finalize() and 
+        inside finalize() specify those actions that must be performed before an object is destroyed.
+ 
+    Important notes:
+        finalize() is unpredictable — no guarantee when it runs.
+        It's not called when an object goes out of scope.
+        Not a direct replacement for C++ "destructors".
+        Should be used as a backup for resource management, not relied on for "regular cleanup".
 
 
+    Java does not have "destructors": 
+        A C++ destructor is always called just before an object goes out of scope
+        But Java's use of garbage collection, there is little need for a destructor.
 
 
-🔸 finalize() Method
-A special method called just before an object is destroyed by GC.
+CP 2: 
 
-Used for cleanup tasks (like closing a file).
-
-Syntax:
-
-java
-Copy
-Edit
-protected void finalize() {
-    // finalization code
-}
-Important notes:
-
-finalize() is unpredictable — no guarantee when it runs.
-
-It’s not called when an object goes out of scope.
-
-Not a direct replacement for C++ destructors.
-
-Should be used as a backup for resource management, not relied on for regular cleanup.
-
-
-
-
+----  rev[23-Jun-2025]  ----
 
 
 🔸 Example: Garbage Collection with finalize()
@@ -134,15 +122,6 @@ You’ll see messages like Finalizing 12345 in the console.
 
 
 
-
-
-
-	finalize(): finalize() is the Method which can be called just before an object’s final destruction by the garbage collector, it can be used to ensure that an object terminates cleanly. Eg: use finalize() to make sure that an open file owned by that object is closed.
-	To add a finalizer to a class, you simply define the finalize() and inside finalize() specify those actions that must be performed before an object is destroyed. The Java run-time system calls that finalizer whenever it is about to recycle an object of that class. 
-	General form of finalize( ): 		protected void finalize(){   // finalization code here } 
-Here, the keyword protected is an access specifier.
-	finalize() is called just before garbage collection hence unpredictable (i.e. it is not called when an object goes out of scope). For example, if your program ends before garbage collection occurs, finalize() will not execute. Therefore, it should be used as a “backup” procedure to ensure the proper handling of some resource, or for special-use applications.
-	Java does not have "destructors": Although it is true that the finalize() approximates the function of a destructor, it is not the same, a C++ destructor is always called just before an object goes out of scope, but you can’t know when finalize() will be called for any specific object. Frankly, because of Java’s use of garbage collection, there is little need for a destructor.
 
 
 	Example: To demonstrate garbage collection via finalize(), you often need to create and destroy a large number of objects ,
