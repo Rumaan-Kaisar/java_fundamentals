@@ -38,33 +38,31 @@
 
 
 
-    ----  rev[19-Jun-2025]  ----
+    --------  memory allocation using new  --------
+    we know:
+        Primitive variables hold actual values.
+        Object variables hold references (pointers) to objects.
 
-'new' for allocaton:
-
-
-
-
-
-Only when:
-
-There are unused (unreferenced) objects.
-
-The system decides it's a good time to reclaim memory.
+    'new' for allocaton:
+        In C++ we can use "new" for primitive types like int, float.
+        In Java, no need to use new for primitive types (int, float, char, etc.).
 
 
 
+    --------  finalize()  --------
+    A special method called just before an object is destroyed by GC (final destruction).
+        It can be used to ensure that an object terminates cleanly. 
+        eg: Used for cleanup tasks (like closing a file).
 
-🔸 Primitive Types and new
-In C++: You can use new for primitive types like int, float.
+    Syntax:
+            protected void finalize() {
+                // finalization code
+            }
 
-In Java:
+        Here, the keyword "protected" is an access specifier.
 
-No need to use new for primitive types (int, float, char, etc.).
 
-Primitive variables hold actual values.
-
-Object variables hold references (pointers) to objects.
+CP 1: 
 
 
 
