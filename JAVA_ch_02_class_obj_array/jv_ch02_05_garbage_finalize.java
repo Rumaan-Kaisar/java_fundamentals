@@ -62,9 +62,6 @@
         Here, the keyword "protected" is an access specifier.
 
 
-CP 1: 
-
-
     To add a finalizer to a class, you simply define the finalize() and 
         inside finalize() specify those actions that must be performed before an object is destroyed.
  
@@ -82,7 +79,7 @@ CP 1:
 
 CP 2: 
 
-----  rev[23-Jun-2025]  ----
+----  rev[26-Jun-2025]  ----
 
 
 🔸 Example: Garbage Collection with finalize()
@@ -120,28 +117,38 @@ At some point, garbage collection runs, and finalize() is called for collected o
 You’ll see messages like Finalizing 12345 in the console.
 
 
+*/
 
 
+// ----  rev[26-Jun-2025]  ----
 
 
-	Example: To demonstrate garbage collection via finalize(), you often need to create and destroy a large number of objects ,
-class FDemo {	int x; 			// class that contain finalize() 
-FDemo(int i) { x = i; } 	// constructor 
+/* Example 1: Demonstrating garbage collection via finalize().
+                You often need to create and destroy a "large number of objects"
+*/
 
-// called when object is recycled
-protected void finalize(){ System.out.println("Finalizing " + x);}
+class FDemo {
+    int x;      // class that contain finalize() 
+    FDemo(int i) { x = i; }     // constructor 
 
-// generates an object that is immediately destroyed
-void generator(int i){ FDemo ob = new FDemo(i); }
+    // called when object is recycled
+    protected void finalize(){ System.out.println("Finalizing " + x); }
+
+    // generates an object that is immediately destroyed
+    void generator(int i){ 
+        FDemo ob = new FDemo(i); 
+    }
 }
 
-class Finalize { public static void main(String args[]) {
-int count;
-FDemo ob = new FDemo(0); 	// assigning initial value 
+// main class
+class Finalize { 
+    public static void main(String args[]) {
+        int count;
+        FDemo ob = new FDemo(0);    // assigning initial value 
 
-// Now, generate a large number of objects. At some point, garbage collection will occur.
-for(count=1; count < 100000; count++) ob.generator(count);	}}
+        // Now, generate a large number of objects. At some point, "garbage collection" will occur.
+        for(count=1; count < 100000; count++) ob.generator(count);
+    }
+}
 
 
-
-*/
