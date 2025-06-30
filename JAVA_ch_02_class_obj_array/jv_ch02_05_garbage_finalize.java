@@ -75,6 +75,13 @@
     Java does not have "destructors": 
         A C++ destructor is always called just before an object goes out of scope
         But Java's use of garbage collection, there is little need for a destructor.
+
+
+    Note:
+        To encourage garbage collection during testing (though it's unpredictable when it actually runs), 
+        you could optionally call:
+                System.gc();
+        inside the loop or after it — but it's just a suggestion to the JVM, not a guarantee.
 */
 
 
@@ -113,57 +120,5 @@ class Finalize {
 }
 
 
+// ----  rev[30-Jun-2025]  ----
 
-// corrected, cleaned-up, and properly formatted version of your code with comments clarified where needed:
-
-// Example 1: 
-
-class FDemo {
-    int x;  // instance variable
-
-    // Constructor
-    FDemo(int i) {
-        x = i;
-    }
-
-    // Called when the object is recycled by the garbage collector
-    protected void finalize() {
-        System.out.println("Finalizing " + x);
-    }
-
-    // Generates an object that is immediately eligible for garbage collection
-    void generator(int i) {
-        FDemo ob = new FDemo(i);
-        // 'ob' goes out of scope here and becomes unreachable
-    }
-}
-
-class FinalizeDemo {
-    public static void main(String args[]) {
-        int count;
-
-        FDemo ob = new FDemo(0);  // creating an initial object
-
-        // Now, generate a large number of objects.
-        // At some point, garbage collection will run and call finalize().
-        for (count = 1; count < 100000; count++)
-            ob.generator(count);
-    }
-}
-✅ Key Corrections:
-Fixed class name in main() wrapper: Finalize → FinalizeDemo (since Java convention prefers each file/class pairing to match and to avoid confusion with finalize concept).
-
-Added clean, clear comments.
-
-Minor spacing adjustments for readability.
-
-Clarified the comment on the generator method — the created object becomes unreachable immediately after the method ends.
-
-Note:
-To encourage garbage collection during testing (though it's unpredictable when it actually runs), you could optionally call:
-
-java
-Copy
-Edit
-System.gc();
-inside the loop or after it — but it's just a suggestion to the JVM, not a guarantee.
