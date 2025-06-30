@@ -75,60 +75,21 @@
     Java does not have "destructors": 
         A C++ destructor is always called just before an object goes out of scope
         But Java's use of garbage collection, there is little need for a destructor.
-
-
-CP 2: 
-
-----  rev[26-Jun-2025]  ----
-
-
-🔸 Example: Garbage Collection with finalize()
-java
-Copy
-Edit
-class FDemo {
-    int x;
-
-    FDemo(int i) {
-        x = i;
-    }
-
-    protected void finalize() {
-        System.out.println("Finalizing " + x);
-    }
-
-    void generator(int i) {
-        FDemo ob = new FDemo(i);
-    }
-}
-
-class Finalize {
-    public static void main(String args[]) {
-        FDemo ob = new FDemo(0);
-
-        for (int count = 1; count < 100000; count++)
-            ob.generator(count);
-    }
-}
-This program creates a large number of objects.
-
-At some point, garbage collection runs, and finalize() is called for collected objects.
-
-You’ll see messages like Finalizing 12345 in the console.
-
-
 */
 
 
-// ----  rev[26-Jun-2025]  ----
 
 
 /* Example 1: Demonstrating garbage collection via finalize().
-                You often need to create and destroy a "large number of objects"
+                You often need to create and destroy a "large number of objects".
+
+                This program creates a large number of objects.
+                    At some point, garbage collection runs, and finalize() is called for collected objects.
+                    You'll see messages like "Finalizing 12345" in the console.
 */
 
-class FDemo {
-    int x;      // class that contain finalize() 
+class FDemo {       // class that contain finalize() 
+    int x;
     FDemo(int i) { x = i; }     // constructor 
 
     // called when object is recycled
@@ -147,7 +108,7 @@ class Finalize {
         FDemo ob = new FDemo(0);    // assigning initial value 
 
         // Now, generate a large number of objects. At some point, "garbage collection" will occur.
-        for(count=1; count < 100000; count++) ob.generator(count);
+        for(count=1; count < 300000; count++) ob.generator(count);
     }
 }
 
