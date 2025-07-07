@@ -114,7 +114,58 @@
         For efficiency, primitive types avoid this overhead by storing values directly without needing new.
 
 
+        In C++:
+            Primitive types like int, float, char, etc. are not objects — just like in Java.
+            However, C++ allows you to allocate memory dynamically for primitive types using "new", like this:
 
+                        int* p = new int;   // dynamically allocate an int ("heap" allocation)
+                        *p = 10;
+
+                This creates an int in "heap memory", and p holds its address.
+                But this is optional in C++, you can still declare normal "stack variables" without new:
+
+                        int x = 10;  // normal "stack" allocation
+
+        In Java:
+            Primitive types like int, float, char are also not objects.
+            But Java does not allow using 'new' with primitive types — only for objects.
+            Primitive variables directly store their value in memory.
+            For example:
+
+                        int x = 10;    // direct storage, no new
+                        Integer y = new Integer(10);  // deprecated, but shows how objects are created
+
+
+
+    ----  Stack Memory  ----
+        A special memory area for storing "local variables" and "function call" information 
+        (like parameters, return addresses).
+
+        How it works:
+            Memory is organized like a stack (LIFO — last in, first out).
+            When a function is called, its local variables and information are pushed onto the stack.
+            When the function ends, they're popped off automatically.
+
+
+            Fast to allocate and free.
+            Lifetime: Exists only while the function is running.
+
+        Example:
+            int x = 5;  // stored in stack
+
+
+    ----  Heap Memory  ----
+        A large pool of memory used for dynamic allocation — for data whose size or lifetime isn't known in advance.
+
+        How it works:
+            You manually request memory (using 'new' in C++, or 'new' in Java for objects).
+            In C++, you must manually 'delete' it. In Java, garbage collection handles it.
+
+            Slower to allocate/free than stack.
+            Lifetime: Exists until explicitly freed (C++) or garbage collected (Java).
+
+        Example:
+            int* p = new int;  // stored in heap
 
 */
 
