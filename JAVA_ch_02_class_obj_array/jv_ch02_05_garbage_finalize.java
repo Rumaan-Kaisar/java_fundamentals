@@ -3,6 +3,11 @@
 
 /* -=-=-=-=-=-=-=-=-=-=-=      Garbage collection and finalize()      -=-=-=-=-=-=-=-=-=-=-= 
 
+    Since objects are dynamically allocated from a pool of free memory by using the "new" operator.  
+    But, memory is finite, and the free memory can be exhausted.
+    Thus, it is possible for "new" to fail because there could be insufficient free memory to create the desired object.
+    So its crucial to relese/free up memory to create new objects
+
 
     --------    Garbage Collection (GC)    --------
     In C++:
@@ -120,5 +125,5 @@ class Finalize {
 }
 
 
-// ----  rev[30-Jun-2025]  ----
+// ----  rev[30-Jun-2025]  Book 129 ----
 
