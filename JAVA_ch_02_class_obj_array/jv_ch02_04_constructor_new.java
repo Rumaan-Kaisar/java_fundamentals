@@ -104,6 +104,18 @@
             If the system runs out of memory while using "new", a "run-time exception" occurs.
             This isn't an issue in small examples, 
                 but in real applications, it needs to be handled properly (using exceptions, covered later).
+
+
+    Why don't we use "new" for primitive types like 'int' or 'float' in Java?
+        Primitive types are not objects in Java.
+        They behave like regular variables and directly hold their value.
+        Object variables, however, store a reference (like a pointer) to an object in memory.
+        Using objects "adds extra overhead" (like managing references and object features).
+        For efficiency, primitive types avoid this overhead by storing values directly without needing new.
+
+
+
+
 */
 
 
