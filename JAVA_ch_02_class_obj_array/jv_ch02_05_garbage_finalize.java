@@ -1,9 +1,8 @@
 
-// jv_ch02_05_garbage_finalize         2.7         128.5-132.3
 
 /* -=-=-=-=-=-=-=-=-=-=-=      Garbage collection and finalize()      -=-=-=-=-=-=-=-=-=-=-= 
 
-    Since objects are dynamically allocated from a pool of free memory by using the "new" operator.  
+    Since objects are dynamically allocated from a "pool of free memory" by using the "new" operator.  
     But, memory is finite, and the free memory can be exhausted.
     Thus, it is possible for "new" to fail because there could be insufficient free memory to create the desired object.
     So its crucial to relese/free up memory to create new objects
@@ -98,6 +97,22 @@
                 This program creates a large number of objects.
                     At some point, garbage collection runs, and finalize() is called for collected objects.
                     You'll see messages like "Finalizing 12345" in the console.
+
+
+                FDemo:
+                    The constructor sets the value of x (works like an object ID).
+                    The finalize() method prints the value of x when an object is destroyed by the garbage collector.
+                    The generator() method creates a new FDemo object, which is immediately discarded and made ready for garbage collection.
+
+
+                What the Program Does in main class Finalize:
+                    Creates one initial FDemo object named ob.
+                    Using 'ob', it calls generator() in a loop 300,000 times, creating and discarding 300,000 FDemo objects.
+                    While the loop runs, Java's garbage collector will eventually free memory by destroying unused objects.
+                    When an object is collected, its finalize() runs, printing the object's ID.
+
+                If you don't see any messages, increase the loop count — 
+                    more discarded objects increase the chance for garbage collection to happen.
 */
 
 class FDemo {       // class that contain finalize() 
@@ -123,7 +138,4 @@ class Finalize {
         for(count=1; count < 300000; count++) ob.generator(count);
     }
 }
-
-
-// ----  rev[30-Jun-2025]  Book 129 ----
 
