@@ -1,52 +1,45 @@
 
 // jv_ch02_06_this                     2.8         132.3-134
 
-/*  -=-=-=-=-=-=-=-=-=-=-=      chapter name      -=-=-=-=-=-=-=-=-=-=-= 
+/*  -=-=-=-=-=-=-=-=-=-=-=      this      -=-=-=-=-=-=-=-=-=-=-= 
 
     The this reference (C/C++ this pointer, Recall ch10_09_1_this.cpp)
 
-When a method is called, it is automatically passed an "implicit argument" 
-    i.e. a reference to the invoking object (means the object on which the method is called). 
-    This reference is called "this". 
+    When a method is called, it is automatically passed an "implicit argument" 
+        i.e. a reference to the invoking object (means the object on which the method is called). 
+        This reference is called "this". 
 
 
+    Is Java's this Similar to C++'s this Pointer?
 
-Is Java's this Similar to C++'s this Pointer?
-Yes — conceptually they serve the same purpose:
-Both Java’s this and C++'s this pointer refer to the current instance of the class within its non-static methods.
-They’re used to:
+        Yes — Both Java's this and C++'s this pointer refer to-
+            "the current instance of the class" within its non-static methods.
 
-Access instance variables and methods of the current object.
-
-Resolve naming conflicts between local variables and instance variables.
-
-Pass the current object as a parameter to other methods or constructors (possible in both languages).
+        They're used to:
+            Access instance variables and methods of the "current object".
+            Resolve "naming conflicts" between local variables and instance variables.
+            Pass the current object as a parameter to other methods or constructors.
 
 
+        C++ this	
+            Type:       Pointer (ClassName* this)	
+            Syntax:     this->member or this->method()	
+            Null Safety:    Can be nullptr in some rare cases	
+            Usage in Static Context:    Not allowed (no object exists)	
+            Memory Model:   "Explicitly" points to object's memory	
 
 
-
-C++ this	
-Type	Pointer (ClassName* this)	
-Syntax	this->member or this->method()	
-Null Safety	Can be nullptr in some rare cases	
-Usage in Static Context	Not allowed (no object exists)	
-Memory Model	Explicitly points to object's memory	
-
-
-Java this
-Type	:       Reference (not a pointer)
-Syntax	:       this.member or this.method()
-Null Safety	:       Never null — always valid inside a method
-Usage in Static Context	:       Same — can’t use this in static methods
-Memory Model	:       Implicit reference to the object
-
-
-
-To understand this, first consider a program that creates a class called Pwr that computes the result of a number raised to some integer power:
+        Java this
+            Type:       Reference (not a pointer)
+            Syntax:     this.member or this.method()
+            Null Safety:    Never null — always valid inside a method
+            Usage in Static Context:       can't use this in static methods
+            Memory Model:       "Implicit" reference to the object
 
 */
 
+// --------  rev[24-Jul-2025]  --------
+/* Example 1:  To understand this, first consider a program that creates a class called Pwr that computes the result of a number raised to some integer power:*/
 
 class Pwr {double b;
 int e;
