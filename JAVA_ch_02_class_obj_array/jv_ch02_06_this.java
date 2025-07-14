@@ -1,11 +1,13 @@
 
 // jv_ch02_06_this                     2.8         132.3-134
 
-/* -=-=-=-=-=-=-=-=-=-=-=      chapter name      -=-=-=-=-=-=-=-=-=-=-= 
+/*  -=-=-=-=-=-=-=-=-=-=-=      chapter name      -=-=-=-=-=-=-=-=-=-=-= 
 
-2.8 The this reference (C/C++ this pointer, Recall C/C++ 10.8)
+    The this reference (C/C++ this pointer, Recall ch10_09_1_this.cpp)
 
-When a method is called, it is automatically passed an implicit argument that is a reference to the invoking object (that is, the object on which the method is called). This reference is called this.  
+When a method is called, it is automatically passed an "implicit argument" 
+    i.e. a reference to the invoking object (means the object on which the method is called). 
+    This reference is called "this". 
 
 
 
