@@ -38,31 +38,47 @@
 
 */
 
+
+
+
+/* Example 1:  To understand "this", first consider a program that creates a class called "Pwr" 
+                that computes the result of a number raised to some integer power.
+*/
+
+class Pwr {
+    double b;
+    int e;
+    double val;
+
+    Pwr(double base, int exp) { 
+        b = base;
+        e = exp;
+        val = 1;
+
+        if(exp==0) return;
+        for( ; exp>0; exp--) val = val * base;
+    }
+    
+    double get_pwr() { 
+        return val; 
+    }
+}
+
+
+class DemoPwr { 
+    public static void main(String args[]) {
+        Pwr x = new Pwr(4.0, 2);
+        Pwr y = new Pwr(2.5, 1);
+        Pwr z = new Pwr(5.7, 0);
+
+        System.out.println(x.b + " exp " + x.e + " is " + x.get_pwr());
+        System.out.println(y.b + " exp " + y.e + " is " + y.get_pwr());
+        System.out.println(z.b + " exp " + z.e +" is " + z.get_pwr());
+    }
+}
+
+
 // --------  rev[24-Jul-2025]  --------
-/* Example 1:  To understand this, first consider a program that creates a class called Pwr that computes the result of a number raised to some integer power:*/
-
-class Pwr {double b;
-int e;
-double val;
-
-Pwr(double base, int exp) { b = base;
-e = exp;
-val = 1;
-if(exp==0) return;
-for( ; exp>0; exp--) val = val * base;}
-double get_pwr() { return val; }
-}	
-class DemoPwr { public static void main(String args[]) {
-Pwr x = new Pwr(4.0, 2);
-Pwr y = new Pwr(2.5, 1);
-Pwr z = new Pwr(5.7, 0);
-
-System.out.println(x.b + " exp " + x.e + " is " + x.get_pwr());
-System.out.println(y.b + " exp " + y.e + " is " + y.get_pwr());
-System.out.println(z.b + " exp " + z.e +" is " + z.get_pwr());
-}}
-
-
 
 /* 
 
