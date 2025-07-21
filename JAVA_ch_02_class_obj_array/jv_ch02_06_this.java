@@ -5,9 +5,12 @@
 
     The this reference (C/C++ this pointer, Recall ch10_09_1_this.cpp)
 
-    When a method is called, it is automatically passed an "implicit argument" 
-        i.e. a reference to the invoking object (means the object on which the method is called). 
+    When a method is called, Java automatically passes a reference to the invoking object.
+        That method automatically passed an "implicit argument"  i.e. a reference to the invoking object 
+        (the object on which the method is called). 
         This reference is called "this". 
+
+    "this" lets you "explicitly refer to the current object" inside its class’s methods.
 
 
     Is Java's this Similar to C++'s this Pointer?
@@ -78,9 +81,44 @@ class DemoPwr {
 }
 
 
+
+
+/*  ----------------    Accessing Members with / without this    ----------------
+    Inside a method, instance variables can be accessed directly:
+
+                    return val;
+
+    Or using this:
+
+                    return this.val;
+
+    Both work the same — this.val refers to the calling object’s val.
+
+
+    ----------------    When this is Necessary    ----------------
+    If "method parameters have the same names as instance variables", parameters hide the instance variables.
+
+                    Pwr(double b, int e) {
+                        this.b = b;  // 'this.b' refers to instance variable, 'b' is the parameter
+                        this.e = e;
+                    }
+
+        Without "this", you’d only be referring to the 'parameters', not the 'instance variables'.
+
+*/
+
+
+
+
+
+
+
 // --------  rev[24-Jul-2025]  --------
 
 /* 
+
+
+
 
 As you know, within a method, the other members of a class can be accessed directly,
 without any object or class qualification. Thus, inside get_pwr( ), the statement
@@ -122,10 +160,14 @@ variables, thus hiding them. However, this is used to “uncover” the instance
 
 
 
-	Within a method, the other members of a class can be accessed directly, without any object or class qualification. Thus, inside get_pwr( ), the statement return val; means that the copy of val associated with the invoking object will be returned. 
-	However, the same statement can also be written like this:  return this.val;
-	Here, this refers to the object on which get_pwr() was called. Thus, this.val refers to that object’s copy of val. Writing the statement without using this is really just shorthand.
-	Here is the entire Pwr class 
+Within a method, the other members of a class can be accessed directly, without any object or class qualification. Thus, inside get_pwr( ), the statement return val; means that the copy of val associated with the invoking object will be returned. 
+
+However, the same statement can also be written like this:  return this.val;
+
+Here, this refers to the object on which get_pwr() was called. Thus, this.val refers to that object’s copy of val. Writing the statement without using this is really just shorthand.
+
+Here is the entire Pwr class 
+
 written using the this reference:	
 class Pwr { double b, val; int e;
 Pwr(double base, int exp) { this.b = base; this.e = exp; this.val = 1;
@@ -134,10 +176,14 @@ for( ; exp>0; exp--) this.val = this.val * base;
 }
 double get_pwr() { return this.val; }
 }
-	However, this has some important uses. For example, the Java syntax permits the name of a parameter or a local variable to be the same as the name of an instance variable. When this happens, the local name hides the instance variable. You can gain access to the hidden instance variable by referring to it through this. 
+
+
+However, this has some important uses. For example, the Java syntax permits the name of a parameter or a local variable to be the same as the name of an instance variable. When this happens, the local name hides the instance variable. You can gain access to the hidden instance variable by referring to it through this. 
 For Example:  Syntactically valid way to write the Pwr() constructor.	      Pwr(double b, int e) { 	this.b = b;  this.e = e;  val = 1;
 			if(e==0) return;
 			for( ; e>0; e--) val = val * b; }
+
+
 	In this version, the names of the parameters are the same as the names of the instance variables, thus hiding them. However, this is used to “uncover” the instance variables.
 
 
@@ -145,73 +191,6 @@ For Example:  Syntactically valid way to write the Pwr() constructor.	      Pwr(
 
 
 
-
-Sure — here’s a clean, pointwise simplified version without losing context:
-
-📖 2.8 The this Reference (like C/C++'s this pointer)
-Concept:
-
-When a method is called, Java automatically passes a reference to the invoking object.
-
-This reference is called this.
-
-this lets you explicitly refer to the current object inside its class’s methods.
-
-📌 Example Program: Pwr Class
-Class Pwr
-
-Variables: b (base), e (exponent), val (result).
-
-Constructor initializes these and computes base^exponent.
-
-get_pwr() returns the computed value.
-
-Usage
-
-java
-Copy
-Edit
-Pwr x = new Pwr(4.0, 2);
-System.out.println(x.get_pwr());
-📌 Accessing Members with and without this
-Inside a method, instance variables can be accessed directly:
-
-java
-Copy
-Edit
-return val;
-Or using this:
-
-java
-Copy
-Edit
-return this.val;
-Both work the same — this.val refers to the calling object’s val.
-
-📌 When this is Necessary
-If method parameters have the same names as instance variables, parameters hide the instance variables.
-
-Example:
-
-java
-Copy
-Edit
-Pwr(double b, int e) {
-    this.b = b;  // 'this.b' refers to instance variable, 'b' is the parameter
-    this.e = e;
-}
-Without this, you’d only be referring to the parameters, not the instance variables.
-
-📌 Summary
-this refers to the current object.
-
-Useful for resolving naming conflicts between instance variables and parameters.
-
-Can access any member (variable or method) of the calling object.
-
-Mostly optional unless names clash.
-
-Would you like me to rewrite the code example in a cleaner form too?
 
 
 */
