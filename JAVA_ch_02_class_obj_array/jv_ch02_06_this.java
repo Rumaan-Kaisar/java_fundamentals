@@ -105,7 +105,52 @@ class DemoPwr {
 
         Without "this", you’d only be referring to the 'parameters', not the 'instance variables'.
 
+
+    Example:
+        Within a method, the other members of a class can be accessed directly, without any object or class qualification. 
+        Thus, in the above example, inside get_pwr(), the statement 
+
+                    return val;         // without "this"
+
+        means that the "copy of val" associated with the invoking object will be returned. 
+
+
+        However, the same statement can also be written like this:  
+
+                    return this.val;    // with "this"
+
+        Here, "this" refers to the object on which get_pwr() was called. Thus, "this.val" refers to that "object’s copy of val". 
+        Say, if get_pwr() had been invoked on x, then "this" in the preceding statement would have been referring to x.
+            i.e. if x.get_pwr() is called, then "this.val" means "x.val".
+
+
+    NOTE: Writing the statement without using this is really just "shorthand".
+        So, writing "val" alone is just shorthand for "this.val" inside instance methods.
+        i.e. "this" implicitly applied.
+        Most programmers omit "this" unless needed for clarity or disambiguation.
 */
+
+
+/* Example 2: Here is the "entire Pwr class" from previous example written using the "this" reference. */
+
+class Pwr {
+    double b;
+    int e;
+    double val;
+
+    Pwr(double base, int exp) { 
+        this.b = base;
+        this.e = exp;
+        this.val = 1;
+
+        if(exp==0) return;
+        for( ; exp>0; exp--) this.val = this.val * base;
+    }
+    
+    double get_pwr() { 
+        return this.val; 
+    }
+}
 
 
 
@@ -116,21 +161,6 @@ class DemoPwr {
 // --------  rev[24-Jul-2025]  --------
 
 /* 
-
-
-
-
-As you know, within a method, the other members of a class can be accessed directly,
-without any object or class qualification. Thus, inside get_pwr( ), the statement
-return val;
-means that the copy of val associated with the invoking object will be returned. However, the
-same statement can also be written like this:
-return this.val;
-Here, this refers to the object on which get_pwr( ) was called. Thus, this.val refers to that
-object’s copy of val. For example, if get_pwr( ) had been invoked on x, then this in the
-preceding statement would have been referring to x. Writing the statement without using this
-is really just shorthand.
-
 
 
 
@@ -151,33 +181,6 @@ In this version, the names of the parameters are the same as the names of the in
 variables, thus hiding them. However, this is used to “uncover” the instance variables
 
 
-Example:
-
-Within a method, the other members of a class can be accessed directly, without any object or class qualification. 
-Thus, in the above example, inside get_pwr(), the statement 
-return val;         // without "this"
-means that the "copy of val" associated with the invoking object will be returned. 
-
-
-However, the same statement can also be written like this:  
-return this.val;    // with "this"
-Here, "this" refers to the object on which get_pwr() was called. Thus, "this.val" refers to that "object’s copy of val". 
-
-NOTE: Writing the statement without using this is really just "shorthand".
-        So, writing "val" alone is just shorthand for "this.val" inside instance methods.
-        i.e. "this" implicitly applied.
-
-
-Here is the entire Pwr class 
-
-written using the this reference:	
-class Pwr { double b, val; int e;
-Pwr(double base, int exp) { this.b = base; this.e = exp; this.val = 1;
-if(exp==0) return;
-for( ; exp>0; exp--) this.val = this.val * base;
-}
-double get_pwr() { return this.val; }
-}
 
 
 However, this has some important uses. For example, the Java syntax permits the name of a parameter or a local variable to be the same as the name of an instance variable. When this happens, the local name hides the instance variable. You can gain access to the hidden instance variable by referring to it through this. 
@@ -194,26 +197,7 @@ In this version, the names of the parameters are the same as the names of the in
 
 Here’s a simplified, mid-ground and well-organized pointwise version:
 
-🔹 Purpose of this in Java
-Implicit Reference to Current Object:
 
-Inside any non-static method, you can directly access instance variables.
-
-For example, return val; refers to the val belonging to the object that called the method.
-
-Using this Explicitly:
-
-The same expression can be written as return this.val;
-
-Here, this explicitly refers to the object invoking the method.
-
-So, if x.get_pwr() is called, then this.val means x.val.
-
-Shorthand Notation:
-
-
-
-Most programmers omit this unless needed for clarity or disambiguation.
 
 🔹 When this Becomes Necessary
 Name Conflicts Between Parameters and Instance Variables:
