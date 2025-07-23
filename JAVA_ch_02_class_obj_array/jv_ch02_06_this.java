@@ -151,12 +151,22 @@ In this version, the names of the parameters are the same as the names of the in
 variables, thus hiding them. However, this is used to “uncover” the instance variables
 
 
+Example:
 
-Within a method, the other members of a class can be accessed directly, without any object or class qualification. Thus, inside get_pwr( ), the statement return val; means that the copy of val associated with the invoking object will be returned. 
+Within a method, the other members of a class can be accessed directly, without any object or class qualification. 
+Thus, in the above example, inside get_pwr(), the statement 
+return val;         // without "this"
+means that the "copy of val" associated with the invoking object will be returned. 
 
-However, the same statement can also be written like this:  return this.val;
 
-Here, this refers to the object on which get_pwr() was called. Thus, this.val refers to that object’s copy of val. Writing the statement without using this is really just shorthand.
+However, the same statement can also be written like this:  
+return this.val;    // with "this"
+Here, "this" refers to the object on which get_pwr() was called. Thus, "this.val" refers to that "object’s copy of val". 
+
+NOTE: Writing the statement without using this is really just "shorthand".
+        So, writing "val" alone is just shorthand for "this.val" inside instance methods.
+        i.e. "this" implicitly applied.
+
 
 Here is the entire Pwr class 
 
@@ -201,7 +211,7 @@ So, if x.get_pwr() is called, then this.val means x.val.
 
 Shorthand Notation:
 
-Writing val alone is just shorthand for this.val inside instance methods.
+
 
 Most programmers omit this unless needed for clarity or disambiguation.
 
