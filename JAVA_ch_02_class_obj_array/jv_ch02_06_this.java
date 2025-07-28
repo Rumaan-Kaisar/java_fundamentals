@@ -93,6 +93,7 @@ class DemoPwr {
                     return this.val;
 
     Both work the same — this.val refers to the calling object’s val.
+        "this" refers to the current object.
 
 
     ----------------    When this is Necessary    ----------------
@@ -124,14 +125,17 @@ class DemoPwr {
             i.e. if x.get_pwr() is called, then "this.val" means "x.val".
 
 
-    NOTE: Writing the statement without using this is really just "shorthand".
+    NOTE: 
+        Writing the statement without using this is really just "shorthand".
         So, writing "val" alone is just shorthand for "this.val" inside instance methods.
-        i.e. "this" implicitly applied.
+            i.e. "this" implicitly applied.
         Most programmers omit "this" unless needed for clarity or disambiguation.
 */
 
 
-/* Example 2: Here is the "entire Pwr class" from previous example written using the "this" reference. */
+/* Example 2: Here is the "entire Pwr class" from previous example written using the "this" reference. 
+                In this version, "this" is used consistently, even when not strictly necessary.
+*/
 
 class Pwr {
     double b;
@@ -160,16 +164,16 @@ class Pwr {
 
 // --------  rev[24-Jul-2025]  --------
 
-/* 
+/* Actually, no Java programmer would write Pwr as shown above using "this" 
+    because nothing is gained, and the "standard form" is easier. 
 
-
-
-Actually, no Java programmer would write Pwr as just shown because nothing is gained,
-and the standard form is easier. However, this has some important uses. For example, the
+However, "this" has some important uses. For example, the
 Java syntax permits the name of a parameter or a local variable to be the same as the name of
 an instance variable. When this happens, the local name hides the instance variable. You can134 Java: A Beginner’s Guide
 gain access to the hidden instance variable by referring to it through this. For example, the
 following is a syntactically valid way to write the Pwr( ) constructor.
+
+
 Pwr(double b, int e) {
 this.b = b; // This refers to the b instance variable, not the parameter.
 this.e = e;
@@ -183,7 +187,7 @@ variables, thus hiding them. However, this is used to “uncover” the instance
 
 
 
-However, this has some important uses. For example, the Java syntax permits the name of a parameter or a local variable to be the same as the name of an instance variable. When this happens, the local name hides the instance variable. You can gain access to the hidden instance variable by referring to it through this. 
+However, "this" has some important uses. For example, the Java syntax permits the name of a parameter or a local variable to be the same as the name of an instance variable. When this happens, the local name hides the instance variable. You can gain access to the hidden instance variable by referring to it through this. 
 For Example:  Syntactically valid way to write the Pwr() constructor.	      Pwr(double b, int e) { 	this.b = b;  this.e = e;  val = 1;
 			if(e==0) return;
 			for( ; e>0; e--) val = val * b; }
@@ -199,7 +203,7 @@ Here’s a simplified, mid-ground and well-organized pointwise version:
 
 
 
-🔹 When this Becomes Necessary
+When "this" Becomes Necessary:
 Name Conflicts Between Parameters and Instance Variables:
 
 Java allows method parameters to have the same names as instance variables.
@@ -221,38 +225,25 @@ Pwr(double b, int e) {
     if (e == 0) return;
     for (; e > 0; e--) val *= b;
 }
-🔹 Example: Entire Pwr Class with this
-java
-Copy code
-class Pwr {
-    double b, val;
-    int e;
 
-    Pwr(double base, int exp) {
-        this.b = base;
-        this.e = exp;
-        this.val = 1;
-        if (exp == 0) return;
-        for (; exp > 0; exp--) this.val *= base;
-    }
 
-    double get_pwr() {
-        return this.val;
-    }
-}
-In this version, this is used consistently, even when not strictly necessary.
+
+
+
 
 It improves clarity, especially when parameters or local variables share names with instance variables.
 
 ✅ Summary
-this refers to the current object.
 
-It's optional unless there’s a naming conflict.
+
+It's optional unless there's a naming conflict.
 
 It helps access hidden instance variables when parameter names are the same.
 
-Let me know if you’d like a side-by-side comparison with C++'s this pointer.
 
+Secret Level (Amazon Prime Video)
+Eyes of Wakanda 
+Star Wars: Tales Of The Underworld
 */
 
 
