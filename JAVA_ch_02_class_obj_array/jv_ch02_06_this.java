@@ -162,16 +162,26 @@ class Pwr {
 
 
 
-// --------  rev[24-Jul-2025]  --------
+// 
 
-/* Actually, no Java programmer would write Pwr as shown above using "this" 
-    because nothing is gained, and the "standard form" is easier. 
+/* ----------------  Using this to Avoid Name Conflicts  ----------------
+    Actually, no Java programmer would write Pwr as shown above using "this" 
+        because nothing is gained, and the "standard form" is easier. 
 
-However, "this" has some important uses. For example, the
-Java syntax permits the name of a parameter or a local variable to be the same as the name of
-an instance variable. When this happens, the local name hides the instance variable. You can134 Java: A Beginner’s Guide
-gain access to the hidden instance variable by referring to it through this. For example, the
+    Using "this" to Avoid Name Conflicts in Java:
+        Sometimes, a method or constructor might use "parameter or a local variable names" that 
+            are the same as "instance variable names". 
+
+        When this happens, the parameter hides (or "shadows") the instance variable.
+        We can gain access to the "hidden instance variable" by referring to it through "this".
+
+
+
+// rev[28-Jul-2025]
+
+ For example, the
 following is a syntactically valid way to write the Pwr( ) constructor.
+
 
 
 Pwr(double b, int e) {
@@ -183,6 +193,37 @@ for( ; e>0; e--) val = val * b;
 }
 In this version, the names of the parameters are the same as the names of the instance
 variables, thus hiding them. However, this is used to “uncover” the instance variables
+
+
+
+
+
+Example:
+java
+Copy
+Edit
+Pwr(double b, int e) {
+    this.b = b; // 'this.b' means the instance variable, 'b' alone means the parameter
+    this.e = e;
+    val = 1;
+    if(e == 0) return;
+    for(; e > 0; e--) val = val * b;
+}
+In this code:
+
+this.b refers to the instance variable b
+
+b by itself refers to the parameter
+
+Without this, Java would only see the parameter and ignore the instance variable
+
+So, this helps Java tell the difference when both names are the same.
+
+
+
+
+
+
 
 
 
