@@ -133,6 +133,8 @@ class DemoPwr {
 */
 
 
+
+
 /* Example 2: Here is the "entire Pwr class" from previous example written using the "this" reference. 
                 In this version, "this" is used consistently, even when not strictly necessary.
 */
@@ -159,11 +161,6 @@ class Pwr {
 
 
 
-
-
-
-// 
-
 /* ----------------  Using this to Avoid Name Conflicts  ----------------
     Actually, no Java programmer would write Pwr as shown above using "this" 
         because nothing is gained, and the "standard form" is easier. 
@@ -175,47 +172,33 @@ class Pwr {
         When this happens, the parameter hides (or "shadows") the instance variable.
         We can gain access to the "hidden instance variable" by referring to it through "this".
 
+        For example, the following is a syntactically valid way to write the Pwr() constructor.
 
 
-// rev[28-Jul-2025]
+            Pwr(double b, int e) {
+                this.b = b;     // This 'b' in "this.b" refers to the b instance variable, not the parameter.
+                this.e = e;
 
- For example, the
-following is a syntactically valid way to write the Pwr( ) constructor.
+                val = 1;
+                if(e==0) return;
+
+                for( ; e>0; e--) val = val * b;
+            }
 
 
-
-Pwr(double b, int e) {
-this.b = b; // This refers to the b instance variable, not the parameter.
-this.e = e;
-val = 1;
-if(e==0) return;
-for( ; e>0; e--) val = val * b;
-}
-In this version, the names of the parameters are the same as the names of the instance
-variables, thus hiding them. However, this is used to “uncover” the instance variables
-
+        Notice, "parameters" and "instance variables" have the same names, the parameters hide the instance variables. 
+        Use 'this' to access the hidden instance variables.
 
 
 
+// --------  rev[31-Jul-2025]  --------
 
-Example:
-java
-Copy
-Edit
-Pwr(double b, int e) {
-    this.b = b; // 'this.b' means the instance variable, 'b' alone means the parameter
-    this.e = e;
-    val = 1;
-    if(e == 0) return;
-    for(; e > 0; e--) val = val * b;
-}
+
 In this code:
+    'this.b' refers to the instance variable 'b'
+    'b' by itself refers to the parameter
 
-this.b refers to the instance variable b
-
-b by itself refers to the parameter
-
-Without this, Java would only see the parameter and ignore the instance variable
+Without "this", Java would only see the parameter and ignore the instance variable
 
 So, this helps Java tell the difference when both names are the same.
 
