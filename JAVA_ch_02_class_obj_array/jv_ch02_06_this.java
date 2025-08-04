@@ -1,6 +1,4 @@
 
-// jv_ch02_06_this                     2.8         132.3-134
-
 /*  -=-=-=-=-=-=-=-=-=-=-=      this      -=-=-=-=-=-=-=-=-=-=-= 
 
     The this reference (C/C++ this pointer, Recall ch10_09_1_this.cpp)
@@ -200,9 +198,5 @@ class Pwr {
     So, using "this" is optional unless there's a naming conflict.
 
 */
-
-
-// NXT: Chapter 4 Self Test
-
 
 
