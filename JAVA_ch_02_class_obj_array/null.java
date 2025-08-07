@@ -1,22 +1,25 @@
 
 // ----------------    self test    ----------------
 
+/* Example 1:   What is the difference between a "class" and an "object"?
+                How is a class defined?
+                What does each object have its own copy of?
+
+            ans:
+                A class is a logical abstraction that describes the "form and behavior" of an object. 
+                An object is a "physical instance" of the class.
+
+                A class is defined by using the keyword "class". 
+                Inside the class statement, you specify the code and data that comprise the class.
+
+                Each object of a class has its own copy of the class's instance variables.
+*/
+
+
 /*  
 
 
 
-1. What is the difference between a class and an object?
-A class is a logical abstraction that describes the form and behavior of an object. An object is a
-physical instance of the class.
-
-
-2. How is a class defined?
-A class is defined by using the keyword class. Inside the class statement, you specify the code and
-data that comprise the class.Appendix A: Answers to Self Tests 623
-
-
-3. What does each object have its own copy of?
-Each object of a class has its own copy of the class’ instance variables.
 
 
 4. Using two separate statements, show how to declare an object called counter of a class
