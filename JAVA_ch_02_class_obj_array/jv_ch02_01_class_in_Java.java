@@ -391,3 +391,20 @@ class TwoVehicles {
                 Each object of a class has its own copy of the class's instance variables.
 */
 
+
+
+
+/* Example 4: How to declare an object called "counter" of class "MyCounter" 
+                using two separate statements?
+            
+            What does new do?
+
+            ans:
+                MyCounter counter;              // Declare object reference
+                counter = new MyCounter();      // Create object using new
+
+
+                The "new" operator allocates memory for an object and 
+                    it Calls the constructor to initialize object.
+*/
+
