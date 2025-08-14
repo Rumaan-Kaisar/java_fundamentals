@@ -37,6 +37,9 @@
             Usage in Static Context:       can't use this in static methods
             Memory Model:       "Implicit" reference to the object
 
+            What is this?
+                It is a reference to the current object (the one calling the method).
+                It is automatically passed to a method.
 */
 
 
@@ -198,5 +201,6 @@ class Pwr {
     So, using "this" is optional unless there's a naming conflict.
 
 */
+
 
 
