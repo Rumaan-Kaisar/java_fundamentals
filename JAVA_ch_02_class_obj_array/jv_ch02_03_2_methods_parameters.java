@@ -287,3 +287,18 @@ class HelpClassDemo {
 }
 
 
+
+
+/*  Example 5:  [a] If a method returns no value, what must its return type be?
+                    ans: void
+
+                [b] How must a method return if it returns a value?
+                    ans: It must use a return statement and pass back the return value in the process.
+
+                [a] How to declare a method myMeth() that returns a "double" and takes two int parameters a and b?
+                    ans:
+                            double myMeth(int a, int b) {
+                                // method body
+                            }
+*/
+
