@@ -300,3 +300,13 @@ class VehConsDemo {
 }
 
 
+
+
+/*  Example 4:  What name does a constructor have?
+                Can a constructor have one or more parameters?
+
+            ans:
+                A constructor have the same name as its class.
+                Yes, it can have any number of parameters. 
+*/
+
