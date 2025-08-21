@@ -139,3 +139,16 @@ class Finalize {
     }
 }
 
+
+
+
+/*  Example 2:  What is garbage collection?
+                What is finalize()?
+
+            ans:
+                Garbage collection is a process that automatically removes 
+                unused objects so their memory can be reused.
+
+                Any objects finalize() method is called just before an object being recycled.
+*/
+
