@@ -9,16 +9,14 @@
         2. Unused arrays are automatically cleaned up by garbage collection.
 
     
-    
-
-
     One-Dimensional Arrays:
+        To declare a one-dimensional array in Java we use the similar "object-declaration-form". General form:
 
+                type array-name[ ] = new type[size];
 
+            "type" declares the element type of the array.  
+            (The "element type" is also commonly referred to as the "base type".) 
 
-	To declare a one-dimensional array in Java we the similar object-declaration-form. General form:
-type array-name[ ] = new type[size];
-	Here, type declares the element type of the array.  (The element type is also commonly referred to as the base type.) 
 	The number of elements that the array will hold is determined by size. 		Since arrays are implemented as objects, they are dynamically allocated using the new operator. The creation of an array is a two-step process. 
 	Declare an array reference variable. 
 	Allocate memory for the array, assigning a reference to that memory to the array variable. 
