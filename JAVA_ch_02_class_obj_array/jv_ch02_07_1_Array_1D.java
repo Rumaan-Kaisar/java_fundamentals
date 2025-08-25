@@ -1,10 +1,21 @@
 
-// jv_ch02_07_1_Array_1D               2.9         136-142
+// jv_ch02_07_1_Array_1D               2.9         136-141
 
-/* -=-=-=-=-=-=-=-=-=-=-=      Array 1D      -=-=-=-=-=-=-=-=-=-=-= 
+/*  -=-=-=-=-=-=-=-=-=-=-=      Array 1D      -=-=-=-=-=-=-=-=-=-=-= 
 
-2.9 Arrays : One-Dimensional Arrays 
-Although arrays in Java can be used just like arrays in other programming languages, they have one special attribute: they are implemented as objects. By implementing arrays as objects, several important advantages are gained, not the least of which is that unused arrays can be garbage collected.
+    In Java, arrays work like in other languages, but with one key difference: Arrays are implemented as objects in Java.
+    Because arrays are objects:
+        1. They have useful built-in features (like knowing their length).
+        2. Unused arrays are automatically cleaned up by garbage collection.
+
+    
+    
+
+
+    One-Dimensional Arrays:
+
+
+
 	To declare a one-dimensional array in Java we the similar object-declaration-form. General form:
 type array-name[ ] = new type[size];
 	Here, type declares the element type of the array.  (The element type is also commonly referred to as the base type.) 
@@ -23,7 +34,7 @@ int sample[] = new int[10];
 
 class ArrayErr{ public static void main(String args[]){ int sample[] = new int[10];
   int i;
-  for(i = 0; i < 100; i = i+1) sample[i] = i; /* generate an array overrun */  }}
+  for(i = 0; i < 100; i = i+1) sample[i] = i; // generate an array overrun  }}
 	As soon as i reaches 10, an ArrayIndexOutOfBoundsException is generated and the program is terminated.
 	Sorting an Array: Bubble sort is similar to C/C++ 4.1 sorting example.
 	There are a number of different sorting algorithms. There are the quick sort, the shaker sort, and the shell sort, to name just three. However, the best known, simplest, and easiest to understand is called the Bubble sort. 
