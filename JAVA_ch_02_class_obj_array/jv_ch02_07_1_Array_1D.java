@@ -17,9 +17,20 @@
             "type" declares the element type of the array.  
             (The "element type" is also commonly referred to as the "base type".) 
 
-	The number of elements that the array will hold is determined by size. 		Since arrays are implemented as objects, they are dynamically allocated using the new operator. The creation of an array is a two-step process. 
-	Declare an array reference variable. 
-	Allocate memory for the array, assigning a reference to that memory to the array variable. 
+            "size" is the number of elements in the array.
+
+
+    Creation process:
+        Since arrays are implemented as objects, they are dynamically allocated using "new"
+        Array creation is a two-step process:
+            1. Declare an "array reference variable".
+            2. Allocate memory with "new" (assigning a reference to that memory to the array variable.)
+
+
+
+
+
+
 	To creates an int array of 10 elements and links it to an array reference variable named sample:
 int sample[] = new int[10];
 
@@ -56,16 +67,8 @@ General form:
 
 
 
-type → element type (base type).
 
-"size" is the number of elements in the array.
 
-Arrays are dynamically allocated using new.
-Array creation is a two-step process:
-
-Declare an array reference variable.
-
-Allocate memory with new.
 
 Example:
 
