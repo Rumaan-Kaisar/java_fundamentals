@@ -26,13 +26,10 @@
             1. Declare an "array reference variable".
             2. Allocate memory with "new" (assigning a reference to that memory to the array variable.)
 
+        For example following creates an "int array of 10 element" and
+            links to a array referance variable named "sample"
 
-
-
-
-
-	To creates an int array of 10 elements and links it to an array reference variable named sample:
-int sample[] = new int[10];
+                int sample[] = new int[10];
 
 
 
