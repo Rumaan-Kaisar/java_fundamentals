@@ -25,21 +25,29 @@
         Array creation is a two-step process:
             1. Declare an "array reference variable".
             2. Allocate memory with "new" (assigning a reference to that memory to the array variable.)
-
+    
+    Example:
         For example following creates an "int array of 10 element" and
             links to a array referance variable named "sample"
 
                 int sample[] = new int[10];
 
+        Just like an object declaration "sample" holds a reference to the memory allocated by "new".
+        So this can be split into:
+
+                int sample[];           // declaration (reference only)
+                sample = new int[10];   // memory allocation
+
+            At first, sample refers to nothing. 
+            After allocation, it points to the array in memory.
 
 
 
 
-	This declaration works just like an object declaration. The sample variable holds a reference to the memory allocated by new. Hence we can break down this statement in two parts: 	
-        int sample[];
-        sample = new int[10]; 
-	In this case, when sample is first created, it refers to no physical object. 
-	It is only after the second statement executes that sample is linked with an array.	
+// ----  rev[28-aug-2025]  ----
+// add prog from 137.7
+
+
 	Array initialization:  Similar to C/C++ array initialization. Recall C/C++ 4.4
 	Array Boundaries :  Array boundaries are strictly enforced in Java; it's a run-time error to overrun or underrun the end of an array.
 
@@ -60,25 +68,14 @@ Here’s the simplified and pointwise version of your text:
 
 🔹 One-Dimensional Arrays
 
-General form:
 
 
 
 
 
 
-Example:
-
-int sample[] = new int[10];
 
 
-This can be split into:
-
-int sample[];        // declaration (reference only)
-sample = new int[10]; // memory allocation
-
-
-👉 At first, sample refers to nothing. After allocation, it points to the array in memory.
 
 🔹 Array Initialization
 
