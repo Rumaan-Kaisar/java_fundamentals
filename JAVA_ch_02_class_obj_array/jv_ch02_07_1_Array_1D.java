@@ -42,6 +42,15 @@
             After allocation, it points to the array in memory.
 
 
+        Note:
+            Each element in an array is accessed using an index.
+            In Java, array indexing starts at 0.
+            So, for an array of size 10:
+
+                First element:  sample[0]
+                Last element:   sample[9]
+
+            A program can fill sample with numbers 0 to 9 using a loop.
 
 
 // ----  rev[28-aug-2025]  ----
