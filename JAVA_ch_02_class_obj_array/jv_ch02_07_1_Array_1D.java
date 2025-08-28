@@ -12,7 +12,7 @@
     One-Dimensional Arrays:
         To declare a one-dimensional array in Java we use the similar "object-declaration-form". General form:
 
-                type array-name[ ] = new type[size];
+                type arrayName[] = new type[size];
 
             "type" declares the element type of the array.  
             (The "element type" is also commonly referred to as the "base type".) 
@@ -22,6 +22,11 @@
 	Allocate memory for the array, assigning a reference to that memory to the array variable. 
 	To creates an int array of 10 elements and links it to an array reference variable named sample:
 int sample[] = new int[10];
+
+
+
+
+
 	This declaration works just like an object declaration. The sample variable holds a reference to the memory allocated by new. Hence we can break down this statement in two parts: 	
         int sample[];
         sample = new int[10]; 
@@ -43,27 +48,17 @@ class ArrayErr{ public static void main(String args[]){ int sample[] = new int[1
 
 Here’s the simplified and pointwise version of your text:
 
-🔹 Arrays in Java
 
-Arrays in Java work like arrays in other languages, but with one key difference:
-👉 Arrays are objects in Java.
-
-Advantages of arrays as objects:
-
-They have built-in features (e.g., .length to find size).
-
-Unused arrays are cleaned automatically by garbage collection.
 
 🔹 One-Dimensional Arrays
 
 General form:
 
-type arrayName[] = new type[size];
 
 
 type → element type (base type).
 
-size → number of elements in the array.
+"size" is the number of elements in the array.
 
 Arrays are dynamically allocated using new.
 Array creation is a two-step process:
