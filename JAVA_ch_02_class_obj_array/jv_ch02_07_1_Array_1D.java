@@ -53,7 +53,7 @@
             A program can fill sample with numbers 0 to 9 using a loop.
 
 
-// ----  rev[28-aug-2025]  ----
+// ----  rev[01-Sep-2025]  ----
 // add prog from 137.7
 
 
@@ -75,18 +75,8 @@ Here’s the simplified and pointwise version of your text:
 
 
 
-🔹 One-Dimensional Arrays
 
-
-
-
-
-
-
-
-
-
-🔹 Array Initialization
+--------  Array Initialization  --------
 
 Similar to C/C++ array initialization.
 
@@ -124,42 +114,18 @@ Would you like me to also prepare a side-by-side comparison with C/C++ arrays fo
 
 
 ----  Qwen  ----
-Here is a simplified, pointwise summary of the given Java arrays content:
 
-Arrays in Java are objects, unlike in some other languages.
-Because arrays are objects:
-They have built-in properties, like length (to get size).
-Unused arrays are automatically removed by garbage collection.
-One-dimensional array declaration syntax:
-java
-
-
-1
-type array-name[] = new type[size];
-type: data type of elements (e.g., int, char) — also called base/element type.
-size: number of elements the array can hold (set at runtime).
-Arrays are dynamically allocated using the new operator.
-Creating an array involves two steps:
-Declare an array reference variable:
-java
-
-
-1
-int sample[];
-Allocate memory and assign it to the variable:
-java
-
-
-1
-sample = new int[10];
-Example combining both steps:
-java
 
 
 1
 int sample[] = new int[10];
+
 sample holds a reference to the allocated memory.
 Before allocation, sample is null (points to no object).
+
+
+
+
 Array initialization works similarly to C/C++:
 Can initialize values at declaration time.
 Example:
@@ -189,3 +155,22 @@ Quick Sort is one of the best general-purpose sorting algorithms.
 
 
 */
+
+
+. For example, the
+following program loads sample with the numbers 0 through 9:
+// Demonstrate a one-dimensional array.
+class ArrayDemo {
+public static void main(String args[]) {
+int sample[] = new int[10];
+int i;
+for(i = 0; i < 10; i = i+1)
+sample[i] = i;
+for(i = 0; i < 10; i = i+1)
+Arrays are indexed from zero.
+138
+Java: A Beginner’s Guide
+System.out.println("This is sample[" + i + "]: " +
+sample[i]);
+}
+}
