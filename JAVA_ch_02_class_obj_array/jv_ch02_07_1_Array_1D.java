@@ -53,11 +53,36 @@
             A program can fill sample with numbers 0 to 9 using a loop.
 
 
+
+    --------  Array Initialization  --------
+    Similar to C/C++ array initialization. Recall "C_Ch4_1_3_initialize_array.c"
+    We can initialize values at declaration time.
+    Example:
+                int nums[] = {1, 2, 3, 4, 5};
+
+
+    Array Boundaries:
+        Java strictly enforces array bounds.
+        Accessing beyond the array size raise "runtime error" ArrayIndexOutOfBoundsException
+
+        Example of array overrun (Error):
+
+                int sample[] = new int[10];
+
+                // Error at i=10
+                for(int i=0; i<100; i++) sample[i] = i;
+
+            When i reaches 10, program throws "ArrayIndexOutOfBoundsException" and stops.
+            Loop runs to 99, but array has only 10 elements 
+
+
+
+
+
+
 // ----  rev[01-Sep-2025]  ----
 // add prog from 137.7
 
-
-	Array initialization:  Similar to C/C++ array initialization. Recall C/C++ 4.4
 	Array Boundaries :  Array boundaries are strictly enforced in Java; it's a run-time error to overrun or underrun the end of an array.
 
 class ArrayErr{ public static void main(String args[]){ int sample[] = new int[10];
@@ -74,29 +99,6 @@ class ArrayErr{ public static void main(String args[]){ int sample[] = new int[1
 Here’s the simplified and pointwise version of your text:
 
 
-
-
---------  Array Initialization  --------
-
-Similar to C/C++ array initialization.
-
-Example:
-
-int nums[] = {1, 2, 3, 4, 5};
-
-🔹 Array Boundaries
-
-Java strictly enforces array bounds.
-
-Accessing beyond the array size → runtime error.
-
-Example (Error):
-
-int sample[] = new int[10];
-for(int i=0; i<100; i++) sample[i] = i;
-
-
-👉 When i reaches 10, program throws ArrayIndexOutOfBoundsException and stops.
 
 🔹 Sorting an Array
 
@@ -117,35 +119,7 @@ Would you like me to also prepare a side-by-side comparison with C/C++ arrays fo
 
 
 
-1
-int sample[] = new int[10];
 
-sample holds a reference to the allocated memory.
-Before allocation, sample is null (points to no object).
-
-
-
-
-Array initialization works similarly to C/C++:
-Can initialize values at declaration time.
-Example:
-java
-
-
-1
-int arr[] = {1, 2, 3};
-Array boundaries are strictly enforced in Java:
-Accessing index outside bounds causes ArrayIndexOutOfBoundsException.
-This is a runtime error and stops the program.
-Example of array overrun:
-java
-
-
-1
-2
-int sample[] = new int[10];
-for(int i = 0; i < 100; i++) sample[i] = i; // Error at i=10
-Loop runs to 99, but array has only 10 elements → error when i >= 10.
 Sorting arrays:
 Bubble Sort is simple and easy to understand, good for small arrays.
 Not efficient for large datasets.
@@ -157,20 +131,19 @@ Quick Sort is one of the best general-purpose sorting algorithms.
 */
 
 
-. For example, the
-following program loads sample with the numbers 0 through 9:
-// Demonstrate a one-dimensional array.
+
+/* Example 1: Following program loads sample with the numbers 0 through 9, using array 
+                notice array index begin from 0
+*/
+
 class ArrayDemo {
-public static void main(String args[]) {
-int sample[] = new int[10];
-int i;
-for(i = 0; i < 10; i = i+1)
-sample[i] = i;
-for(i = 0; i < 10; i = i+1)
-Arrays are indexed from zero.
-138
-Java: A Beginner’s Guide
-System.out.println("This is sample[" + i + "]: " +
-sample[i]);
+    public static void main(String args[]) {
+        int sample[] = new int[10]; // array declaration and memory allocation
+        int i;
+
+        for(i = 0; i < 10; i = i+1) sample[i] = i;  // putting values to the array
+        for(i = 0; i < 10; i = i+1) System.out.println("This is sample[" + i + "]: " + sample[i]);
+    }
 }
-}
+
+
