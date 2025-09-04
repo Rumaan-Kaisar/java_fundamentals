@@ -89,14 +89,7 @@ initializers that you specify. There is no need to explicitly use the new operat
 
 
 // ----  rev[01-Sep-2025]  ----
-// add prog from 137.7
 
-	Array Boundaries :  Array boundaries are strictly enforced in Java; it's a run-time error to overrun or underrun the end of an array.
-
-class ArrayErr{ public static void main(String args[]){ int sample[] = new int[10];
-  int i;
-  for(i = 0; i < 100; i = i+1) sample[i] = i; // generate an array overrun  }}
-	As soon as i reaches 10, an ArrayIndexOutOfBoundsException is generated and the program is terminated.
 	Sorting an Array: Bubble sort is similar to C/C++ 4.1 sorting example.
 	There are a number of different sorting algorithms. There are the quick sort, the shaker sort, and the shell sort, to name just three. However, the best known, simplest, and easiest to understand is called the Bubble sort. 
 	Although the Bubble sort is good for small arrays, it is not efficient when used on larger ones. The best general-purpose sorting algorithm is the Quicksort. 
@@ -133,6 +126,8 @@ Bubble Sort is simple and easy to understand, good for small arrays.
 Not efficient for large datasets.
 Other algorithms include Quick Sort, Shell Sort, Shaker Sort.
 Quick Sort is one of the best general-purpose sorting algorithms.
+
+
 ✅ Key takeaway: Java arrays are safe, object-based, and bounds-checked, with dynamic allocation and automatic memory management.
 
 
@@ -155,4 +150,40 @@ class ArrayDemo {
 }
 
 
+
+
+/* Example 2: Following program finds the minimum and maximum values stored in the "nums" array 
+                by cycling through the array using a for loop.
+
+            Note:
+                The nums array was given values by hand, using 10 separate assignment statements. 
+                However we can initialize it.
+*/
+
+class MinMax {
+    public static void main(String args[]) {
+        int nums[] = new int[10];
+        int min, max;
+
+        nums[0] = 99;
+        nums[1] = -10;
+        nums[2] = 100123;
+        nums[3] = 18;
+        nums[4] = -978;
+        nums[5] = 5623;
+        nums[6] = 463;
+        nums[7] = -9;
+        nums[8] = 287;
+        nums[9] = 49;
+
+        min = max = nums[0];
+
+        for(int i=1; i<10; i++) {
+            if(nums[i] < min) min = nums[i];
+            if(nums[i] > max) max = nums[i];
+        }
+    
+        System.out.println("min and max: " + min + " " + max);
+    }
+}
 
