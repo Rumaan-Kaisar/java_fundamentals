@@ -60,7 +60,15 @@
     Example:
                 int nums[] = {1, 2, 3, 4, 5};
 
+Arrays can be initialized when they are created. The general form for initializing a onedimensional array is shown here:
+type array-name[ ] = { val1, val2, val3, ... , valN };
+Here, the initial values are specified by val1 through valN. They are assigned in sequence,
+left to right, in index order. Java automatically allocates an array large enough to hold the
+initializers that you specify. There is no need to explicitly use the new operator.
 
+
+
+--------  Array Boundaries  --------
     Array Boundaries:
         Java strictly enforces array bounds.
         Accessing beyond the array size raise "runtime error" ArrayIndexOutOfBoundsException
@@ -69,7 +77,7 @@
 
                 int sample[] = new int[10];
 
-                // Error at i=10
+                // Error at i=10. 
                 for(int i=0; i<100; i++) sample[i] = i;
 
             When i reaches 10, program throws "ArrayIndexOutOfBoundsException" and stops.
@@ -145,5 +153,6 @@ class ArrayDemo {
         for(i = 0; i < 10; i = i+1) System.out.println("This is sample[" + i + "]: " + sample[i]);
     }
 }
+
 
 
