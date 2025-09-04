@@ -57,14 +57,18 @@
     --------  Array Initialization  --------
     Similar to C/C++ array initialization. Recall "C_Ch4_1_3_initialize_array.c"
     We can initialize values at declaration time.
+    The general form for initializing a 1D array:
+                
+                type array-name[ ] = { val1, val2, val3, ... , valN };
+
+        val1 through valN, are assigned in sequence, left to right, in index order. 
+
+    No "new" needed:
+        Java automatically allocates an array large enough to hold the specified initializers. 
+        There is no need to explicitly use the "new" operator.
+
     Example:
                 int nums[] = {1, 2, 3, 4, 5};
-
-Arrays can be initialized when they are created. The general form for initializing a onedimensional array is shown here:
-type array-name[ ] = { val1, val2, val3, ... , valN };
-Here, the initial values are specified by val1 through valN. They are assigned in sequence,
-left to right, in index order. Java automatically allocates an array large enough to hold the
-initializers that you specify. There is no need to explicitly use the new operator.
 
 
 
@@ -88,7 +92,7 @@ initializers that you specify. There is no need to explicitly use the new operat
 
 
 
-// ----  rev[01-Sep-2025]  ----
+// ----  rev[04-Sep-2025] 139.7  ----
 
 	Sorting an Array: Bubble sort is similar to C/C++ 4.1 sorting example.
 	There are a number of different sorting algorithms. There are the quick sort, the shaker sort, and the shell sort, to name just three. However, the best known, simplest, and easiest to understand is called the Bubble sort. 
@@ -186,4 +190,42 @@ class MinMax {
         System.out.println("min and max: " + min + " " + max);
     }
 }
+
+
+
+
+here is a better way to write the MinMax program:
+// Use array initializers.
+class MinMax2 {
+public static void main(String args[]) {
+int nums[] = { 99, -10, 100123, 18, -978,
+5623, 463, -9, 287, 49 };
+int min, max;
+min = max = nums[0];
+for(int i=1; i < 10; i++) {
+if(nums[i] < min) min = nums[i];
+if(nums[i] > max) max = nums[i];
+}
+System.out.println("Min and max: " + min + " " + max);
+}
+}
+Array boundaries are strictly enforced in Java; it is a run-time error to overrun or underrun
+the end of an array. If you want to confirm this for yourself, try the following program that
+purposely overruns an array:
+// Demonstrate an array overrun.
+class ArrayErr {
+public static void main(String args[]) {
+int sample[] = new int[10];
+int i;
+Array initializers140 Java: A Beginner’s Guide
+Try This 5-1
+Bubble.java
+// generate an array overrun
+for(i = 0; i < 100; i = i+1)
+sample[i] = i;
+}
+}
+As soon as i reaches 10, an ArrayIndexOutOfBoundsException is generated and the
+program is terminate
+
 
