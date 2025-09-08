@@ -192,41 +192,44 @@ class MinMax {
     }
 }
 
+// ----  Improved Version  ----
+// here is a better way to write the MinMax program: now using array initializers.
+
+class MinMax {
+    public static void main(String args[]) {
+        int nums[] = { 99, -10, 100123, 18, -978, 5623, 463, -9, 287, 49 };
+        int min, max;
+
+        min = max = nums[0];
+
+        for(int i=1; i<10; i++) {
+            if(nums[i] < min) min = nums[i];
+            if(nums[i] > max) max = nums[i];
+        }
+    
+        System.out.println("min and max: " + min + " " + max);
+    }
+}
 
 
-here is a better way to write the MinMax program:
-// Use array initializers.
-class MinMax2 {
-public static void main(String args[]) {
-int nums[] = { 99, -10, 100123, 18, -978,
-5623, 463, -9, 287, 49 };
-int min, max;
-min = max = nums[0];
-for(int i=1; i < 10; i++) {
-if(nums[i] < min) min = nums[i];
-if(nums[i] > max) max = nums[i];
-}
-System.out.println("Min and max: " + min + " " + max);
-}
-}
-Array boundaries are strictly enforced in Java; it is a run-time error to overrun or underrun
-the end of an array. If you want to confirm this for yourself, try the following program that
-purposely overruns an array:
-// Demonstrate an array overrun.
+
+
+/* Example 3: (overrun) Try the following program that purposely overruns an array.
+                Notice the "ArrayIndexOutOfBoundsException" error. 
+
+                As soon as i reaches 10, an ArrayIndexOutOfBoundsException is generated 
+                    and the program is terminate
+*/
+
 class ArrayErr {
-public static void main(String args[]) {
-int sample[] = new int[10];
-int i;
-Array initializers140 Java: A Beginner’s Guide
-Try This 5-1
-Bubble.java
-// generate an array overrun
-for(i = 0; i < 100; i = i+1)
-sample[i] = i;
+    public static void main(String args[]) {
+        int sample[] = new int[10];
+        int i;
+
+        // generate an array overrun
+        for(i = 0; i < 100; i = i+1) sample[i] = i;
+    }
 }
-}
-As soon as i reaches 10, an ArrayIndexOutOfBoundsException is generated and the
-program is terminate
 
 
 
