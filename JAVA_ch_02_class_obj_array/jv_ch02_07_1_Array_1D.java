@@ -75,7 +75,8 @@
 --------  Array Boundaries  --------
     Array Boundaries:
         Java strictly enforces array bounds.
-        Accessing beyond the array size raise "runtime error" ArrayIndexOutOfBoundsException
+        Accessing beyond the array size (overrun or underrun the end of an array) raise "runtime error" 
+            i.e. ArrayIndexOutOfBoundsException
 
         Example of array overrun (Error):
 
@@ -193,7 +194,6 @@ class MinMax {
 
 
 
-
 here is a better way to write the MinMax program:
 // Use array initializers.
 class MinMax2 {
@@ -227,5 +227,6 @@ sample[i] = i;
 }
 As soon as i reaches 10, an ArrayIndexOutOfBoundsException is generated and the
 program is terminate
+
 
 
