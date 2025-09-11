@@ -87,51 +87,6 @@
 
             When i reaches 10, program throws "ArrayIndexOutOfBoundsException" and stops.
             Loop runs to 99, but array has only 10 elements 
-
-
-
-
-
-
-// ----  rev[11-Sep-2025] 139.7  ----
-
-
-----  GPT  ----
-
-Here’s the simplified and pointwise version of your text:
-
-
-
-🔹 Sorting an Array
-
-Bubble Sort → simple and easy, good for small arrays.
-
-Quicksort → faster and better for large arrays.
-
-Other algorithms: Shaker Sort, Shell Sort, etc.
-
-✅ This gives a step-by-step clear structure for Java arrays, their creation, initialization, boundaries, and sorting.
-
-Would you like me to also prepare a side-by-side comparison with C/C++ arrays for even easier understanding?
-
-
-
-
-----  Qwen  ----
-
-
-
-
-Sorting arrays:
-Bubble Sort is simple and easy to understand, good for small arrays.
-Not efficient for large datasets.
-Other algorithms include Quick Sort, Shell Sort, Shaker Sort.
-Quick Sort is one of the best general-purpose sorting algorithms.
-
-
-✅ Key takeaway: Java arrays are safe, object-based, and bounds-checked, with dynamic allocation and automatic memory management.
-
-
 */
 
 
@@ -227,6 +182,15 @@ class ArrayErr {
         for(i = 0; i < 100; i = i+1) sample[i] = i;
     }
 }
+
+
+
+
+
+
+
+// ----  rev[11-Sep-2025] 139.7  ----
+
 
 
 
