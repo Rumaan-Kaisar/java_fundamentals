@@ -93,11 +93,7 @@
 
 
 
-// ----  rev[04-Sep-2025] 139.7  ----
-
-	Sorting an Array: Bubble sort is similar to C/C++ 4.1 sorting example.
-	There are a number of different sorting algorithms. There are the quick sort, the shaker sort, and the shell sort, to name just three. However, the best known, simplest, and easiest to understand is called the Bubble sort. 
-	Although the Bubble sort is good for small arrays, it is not efficient when used on larger ones. The best general-purpose sorting algorithm is the Quicksort. 
+// ----  rev[11-Sep-2025] 139.7  ----
 
 
 ----  GPT  ----
@@ -192,6 +188,7 @@ class MinMax {
     }
 }
 
+
 // ----  Improved Version  ----
 // here is a better way to write the MinMax program: now using array initializers.
 
@@ -232,4 +229,19 @@ class ArrayErr {
 }
 
 
+
+/* Example 2: Sorting an Array: Bubble sort is similar to C/C++ C_Ch4_1_1_1D_array.c sorting example.
+
+                There are a number of different sorting algorithms like:
+                        quick sort, 
+                        shaker sort, and  
+                        shell sort, 
+                    to name just three. 
+
+                However, the best known, simplest, and easiest to understand is called the Bubble sort.
+
+                Although the Bubble sort is good for small arrays, it is not efficient when used on larger ones. 
+                The best general-purpose sorting algorithm is the "Quicksort". 
+
+*/
 
