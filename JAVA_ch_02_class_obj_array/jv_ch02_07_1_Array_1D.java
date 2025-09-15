@@ -194,7 +194,7 @@ class ArrayErr {
 
 
 
-/* Example 2: Sorting an Array: Bubble sort is similar to C/C++ C_Ch4_1_1_1D_array.c sorting example.
+/* Example 4: Sorting an Array: Bubble sort is similar to C/C++ C_Ch4_1_1_1D_array.c sorting example.
 
                 There are a number of different sorting algorithms like:
                         quick sort, 
@@ -207,5 +207,45 @@ class ArrayErr {
                 Although the Bubble sort is good for small arrays, it is not efficient when used on larger ones. 
                 The best general-purpose sorting algorithm is the "Quicksort". 
 
+
+
+Bubble sort works by repeatedly comparing adjacent elements in an array.
+
+If two elements are out of order, they are swapped.
+
+With each pass:
+
+Smaller values "bubble" to the front.
+
+Larger values "sink" to the back.
+
+The process repeats until the whole array is sorted.
+
+It requires (number of elements – 1) passes in the worst case.
+
+Core logic (Java code):
+
+for(a = 1; a < size; a++)
+    for(b = size - 1; b >= a; b--) {
+        if(nums[b - 1] > nums[b]) {  // out of order
+            t = nums[b - 1];
+            nums[b - 1] = nums[b];
+            nums[b] = t;
+        }
+    }
+
+
+Outer loop → runs multiple passes.
+
+Inner loop → compares and swaps adjacent elements.
+
+After each pass, the next smallest element is placed in its correct position.
 */
 
+
+
+/*  
+
+
+
+*/
