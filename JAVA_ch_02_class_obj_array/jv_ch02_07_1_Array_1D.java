@@ -208,38 +208,34 @@ class ArrayErr {
                 The best general-purpose sorting algorithm is the "Quicksort". 
 
 
+                How "Bubble sort" works?
+                    Bubble sort works by "repeatedly comparing adjacent elements" in an array.
+                    If two elements are out of order, they are swapped.
 
-Bubble sort works by repeatedly comparing adjacent elements in an array.
+                    With each pass:
+                        Smaller values "bubble" to the front.
+                        Larger values "sink" to the back.
 
-If two elements are out of order, they are swapped.
-
-With each pass:
-
-Smaller values "bubble" to the front.
-
-Larger values "sink" to the back.
-
-The process repeats until the whole array is sorted.
-
-It requires (number of elements – 1) passes in the worst case.
-
-Core logic (Java code):
-
-for(a = 1; a < size; a++)
-    for(b = size - 1; b >= a; b--) {
-        if(nums[b - 1] > nums[b]) {  // out of order
-            t = nums[b - 1];
-            nums[b - 1] = nums[b];
-            nums[b] = t;
-        }
-    }
+                    The process repeats until the whole array is sorted.
+                    It requires (number of elements – 1) passes in the "worst case".
 
 
-Outer loop → runs multiple passes.
+                Core logic:
 
-Inner loop → compares and swaps adjacent elements.
+                        for(a = 1; a < size; a++)
+                            for(b = size - 1; b >= a; b--) {
+                                // if two values out of order we swap those
+                                if(nums[b - 1] > nums[b]) {
+                                    t = nums[b - 1];
+                                    nums[b - 1] = nums[b];
+                                    nums[b] = t;
+                                }
+                            }
 
-After each pass, the next smallest element is placed in its correct position.
+                    Outer loop: runs multiple passes.
+                    Inner loop: compares and swaps adjacent elements.
+
+                    After each pass, the next smallest element is placed in its correct position.
 */
 
 
