@@ -1,6 +1,4 @@
 
-// jv_ch02_07_1_Array_1D               2.9         136-141
-
 /*  -=-=-=-=-=-=-=-=-=-=-=      Array 1D      -=-=-=-=-=-=-=-=-=-=-= 
 
     In Java, arrays work like in other languages, but with one key difference: Arrays are implemented as objects in Java.
@@ -238,10 +236,41 @@ class ArrayErr {
                     After each pass, the next smallest element is placed in its correct position.
 */
 
+class BblSrt {
+    public static void main(String args[]) {
+        int nums[] = { 99, -10, 100123, 18, -978, 5623, 463, -9, 287, 49 };
+        int a, b, t;
+        int size;
 
+        size = 10; // number of elements to sort
 
-/*  
+        // display original array
+        System.out.print("Original array is:");
+        for(int i=0; i < size; i++)
+        System.out.print(" " + nums[i]);
+        System.out.println();
 
+        // Bubble sort mechanism
+        for(a=1; a < size; a++)
+            for(b=size-1; b >= a; b--) {
+                if(nums[b-1] > nums[b]) { 
+                    // if out of order exchange elements
+                    t = nums[b-1];
+                    nums[b-1] = nums[b];
+                    nums[b] = t;
+                }
+            }
 
+        // display sorted array
+        System.out.print("Sorted array is:");
+        for(int i=0; i < size; i++) System.out.print(" " + nums[i]);
 
+        System.out.println();
+    }
+}
+
+/* Output:
+        Original:    99 -10 100123 18 -978 5623 463 -9 287 49
+        Sorted:      -978 -10 -9 18 49 99 287 463 5623 10012 
 */
+
