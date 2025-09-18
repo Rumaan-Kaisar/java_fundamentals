@@ -1,7 +1,11 @@
 
 // jv_ch02_07_2_MultiD_irregular       2.10        142-145.9
 
-/* -=-=-=-=-=-=-=-=-=-=-=      chapter name      -=-=-=-=-=-=-=-=-=-=-= 
+/* -=-=-=-=-=-=-=-=-=-=-=      multi-dimensional, irregular array      -=-=-=-=-=-=-=-=-=-=-= 
+    Similar tyo C/C++ Java also support multi-dimensional array.
+    Java also support multi-dimensional irregular array (also referred to as a jagged array)
+
+
 
 2.10 Multidimensional Arrays
 	Two-Dimensional Arrays: A two-dimensional array is a list of one-dimensional arrays. Eg: A 2-D integer array abs of size 10, 20:
