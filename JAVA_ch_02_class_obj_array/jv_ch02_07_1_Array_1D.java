@@ -184,14 +184,6 @@ class ArrayErr {
 
 
 
-
-
-
-// ----  rev[11-Sep-2025] 139.7  ----
-
-
-
-
 /* Example 4: Sorting an Array: Bubble sort is similar to C/C++ C_Ch4_1_1_1D_array.c sorting example.
 
                 There are a number of different sorting algorithms like:
