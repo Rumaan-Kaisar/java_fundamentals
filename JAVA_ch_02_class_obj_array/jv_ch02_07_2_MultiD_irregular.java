@@ -5,7 +5,20 @@
     Similar tyo C/C++ Java also support multi-dimensional array.
     Java also support multi-dimensional irregular array (also referred to as a jagged array)
 
-// ----  rev[18-Sep-2025]  ----
+    Jagged (or Ragged) array:
+        A jagged array, also known as a ragged array or irregular array is an "array of arrays" 
+        of which the member arrays can be of different lengths, 
+        producing rows of jagged edges when visualized as output.
+
+        "Ragged array" and "jagged array" are two different names for the same data structure: 
+            an array of arrays where the inner arrays can have different lengths.
+            creating a non-uniform, or "ragged," appearance when visualized.
+
+
+
+
+
+// ----  rev[22-Sep-2025]  ----
 
 2.10 Multidimensional Arrays
 
@@ -108,6 +121,11 @@ for(int t=0; t<3; t++) {
 
 table[0][0] = 1, table[0][1] = 2, …, table[2][3] = 12.
 
+
+
+
+
+
 2. Irregular (Ragged) Arrays
 
 In Java, you can create arrays where rows have different lengths.
@@ -129,6 +147,11 @@ In Java → leftmost dimension is fixed first.
 
 In C++ → last dimension is usually fixed first.
 
+
+
+
+
+
 3. Arrays with 3 or More Dimensions
 
 General form:
@@ -139,6 +162,10 @@ type name[][]...[] = new type[size1][size2]...[sizeN];
 Example:
 
 int multidim[][][] = new int[4][10][3];  // 3D array
+
+
+
+
 
 4. Initializing Multidimensional Arrays
 
@@ -153,6 +180,11 @@ int sqrs[][] = {
 
 
 Each inner block { ... } represents a row.
+
+
+
+
+
 
 5. Alternative Array Declaration Syntax
 
@@ -172,6 +204,11 @@ int[] nums, nums2, nums3;   // easier than int nums[], nums2[], nums3[];
 Declaring return type of a method:
 
 int[] someMeth() { ... }  // returns int array
+
+
+
+
+
 
 
 ✅ Summary:
@@ -197,6 +234,10 @@ Would you like me to also add a simple diagram (like showing rows and columns in
 Here is a clear, simplified, and pointwise explanation of the topic "Multidimensional Arrays in Java":
 
 🔹 2.10 Multidimensional Arrays – Simplified
+
+
+
+
 ✅ Two-Dimensional Arrays (2D)
 A 2D array is an array of one-dimensional arrays.
 Think of it as a table with rows and columns.
@@ -241,6 +282,11 @@ for (int t = 0; t < 3; t++) {
     System.out.println();
 }
 table[0][0] = 1, table[0][1] = 2, ..., table[2][3] = 12
+
+
+
+
+
 ✅ Irregular (Ragged) Arrays
 In Java, multidimensional arrays can be irregular — meaning each row can have a different length.
 This is possible because a 2D array is actually an array of arrays, and each sub-array can be created separately.
@@ -269,6 +315,10 @@ Useful when you need a large 2D structure but only some parts are used (e.g., sp
 Saves memory by allocating only what you need.
 ⚠️ Note: This is different from C/C++, where multidimensional arrays are often fixed-size or declared differently. 
 
+
+
+
+
 ✅ Arrays with Three or More Dimensions
 Java supports arrays with any number of dimensions.
 General syntax:
@@ -284,6 +334,11 @@ java
 1
 int multidim[][][] = new int[4][10][3];
 Can think of it as 4 layers, each with 10 rows and 3 columns.
+
+
+
+
+
 ✅ Initializing Multidimensional Arrays
 You can initialize a 2D array at the time of declaration using nested braces.
 Syntax:
@@ -307,6 +362,11 @@ Each inner {} represents one row.
 Commas separate rows.
 Semicolon after the final }.
 Java uses extra curly braces compared to C/C++, making initialization clearer and safer.
+
+
+
+
+
 ✅ Alternative Array Declaration Syntax
 There are two ways to declare arrays in Java:
 type arrayName[][];
@@ -338,6 +398,11 @@ java
 int[] getArray() {
     return new int[5];
 }
+
+
+
+
+
 ✅ Summary (Key Points)
 2D Arrays
 Arrays of arrays; declared as
