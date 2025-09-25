@@ -16,89 +16,23 @@
 
 
 
+    Two-Dimensional Arrays (2D):
+        A 2D array is a list of one-dimensional arrays.
+
+        Syntax:
+                    int arr[][] = new int[rows][cols];
+
+            Example:
+                    int abs[][] = new int[10][20];  // 10 rows, 20 columns
+
+                It creates a 2-D integer array named "abs" of size 10, 20
 
 
+        Accessing elements:
+            since arrays use zero-based indexing, to get the element from 3rd row, 5th column
 
+                    abs[2][4]  // Accesses element at row 3, column 5
 
-
-
-	Example: A two-dimensional array table is loaded with the numbers 1 through 12.
-int t, i;
-table[][] = new int[3][4];  // declaration of the array 
-for(t=0; t < 3; ++t) {        for(i=0; i < 4; ++i){	 table[t][i] = (t*4)+i+1;
-System.out.print(table[t][i] + " "); }
-System.out.println(); }
-table[0][0] will have the value 1, table[0][1] the value 2, table[0][2] the value 3, and so on. The value of table[2][3] will be 12. 
-
-
-1. Two-Dimensional Arrays
-
-A 2-D array is an array of arrays.
-
-Example:
-
-int abs[][] = new int[10][20];   // 10 rows, 20 columns
-int x = abs[3][5];               // access element at row 3, column 5
-
-
-Example program filling a 3×4 table:
-
-int table[][] = new int[3][4];
-for(int t=0; t<3; t++) {
-    for(int i=0; i<4; i++) {
-        table[t][i] = (t*4) + i + 1;
-        System.out.print(table[t][i] + " ");
-    }
-    System.out.println();
-}
-
-
-table[0][0] = 1, table[0][1] = 2, …, table[2][3] = 12.
-
-
-
-
-Two-Dimensional Arrays (2D):
-    A 2D array is a list of one-dimensional arrays.
-
-    Syntax:
-                int arr[][] = new int[rows][cols];
-
-        Example:
-                int abs[][] = new int[10][20];  // 10 rows, 20 columns
-
-            It creates a 2-D integer array named "abs" of size 10, 20
-
-
-    Accessing elements:
-        since arrays use zero-based indexing, to get the element from 3rd row, 5th column
-
-                abs[2][4]  // Accesses element at row 3, column 5
-
-
-Example: Fill a 3×4 table with numbers 1 to 12
-java
-
-
-1
-2
-3
-4
-5
-6
-7
-8
-⌄
-⌄
-int table[][] = new int[3][4];
-for (int t = 0; t < 3; t++) {
-    for (int i = 0; i < 4; i++) {
-        table[t][i] = t * 4 + i + 1;
-        System.out.print(table[t][i] + " ");
-    }
-    System.out.println();
-}
-table[0][0] = 1, table[0][1] = 2, ..., table[2][3] = 12
 
 
 
@@ -449,3 +383,31 @@ is preferred
 
 
 */
+
+
+
+
+
+/* Example 1: A two-dimensional array table is loaded with the numbers 1 through 12. */
+
+class TwoDArrayExample {
+    public static void main(String[] args) {
+        int t, i;
+        int table[][] = new int[3][4];   // declaration & allocation of 2D array
+
+        for (t = 0; t < 3; t++) {       // loop through rows
+            for (i = 0; i < 4; i++) {   // loop through columns
+                table[t][i] = (t*4) + i + 1; // calculate value
+                System.out.print(table[t][i] + "\t");
+            }
+            System.out.println();  // move to next row
+        }
+
+        // Example values:
+            // table[0][0] = 1
+            // table[0][1] = 2
+            // ...
+            // table[2][3] = 12
+    }
+}
+
