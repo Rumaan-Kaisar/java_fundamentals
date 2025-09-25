@@ -66,6 +66,71 @@ var_ary[3] = new int[4];         // specifying 4th  row of length  4
 
 	The use of irregular (or ragged) multidimensional arrays can be used effectively in some situations. For example, if you need a very large two-dimensional array that is sparsely populated (that is, one in which not all of the elements will be used), an irregular array might be a perfect solution.
 
+
+-------------------------------------------------------------------
+
+----  GPT ----
+
+2. Irregular (Ragged) Arrays
+
+In Java, you can create arrays where rows have different lengths.
+
+Example:
+
+int var_ary[][] = new int[4][]; // 4 rows, no column size yet
+var_ary[0] = new int[10];  // row 0 → 10 columns
+var_ary[1] = new int[15];  // row 1 → 15 columns
+var_ary[2] = new int[3];   // row 2 → 3 columns
+var_ary[3] = new int[4];   // row 3 → 4 columns
+
+
+Useful for sparse data where not all rows need the same number of elements.
+
+Different from C++:
+
+In Java → leftmost dimension is fixed first.
+
+In C++ → last dimension is usually fixed first.
+
+
+
+
+---- Qwen ----
+
+
+✅ Irregular (Ragged) Arrays
+In Java, multidimensional arrays can be irregular — meaning each row can have a different length.
+This is possible because a 2D array is actually an array of arrays, and each sub-array can be created separately.
+Regular 2D Array (fixed size):
+java
+
+
+1
+int table[][] = new int[3][4];  // All 3 rows have 4 columns
+Irregular Array (different row lengths):
+java
+
+
+1
+2
+3
+4
+5
+int var_ary[][] = new int[4][];     // 4 rows, but column sizes not set yet
+var_ary[0] = new int[10];           // Row 0: 10 elements
+var_ary[1] = new int[15];           // Row 1: 15 elements
+var_ary[2] = new int[3];            // Row 2: 3 elements
+var_ary[3] = new int[4];            // Row 3: 4 elements
+Why use irregular arrays?
+Useful when you need a large 2D structure but only some parts are used (e.g., sparse data).
+Saves memory by allocating only what you need.
+⚠️ Note: This is different from C/C++, where multidimensional arrays are often fixed-size or declared differently. 
+
+
+
+
+--------------------------------------------------------------------
+
 	Arrays of Three or More Dimensions: Here is the general form of a multidimensional array declaration:
 type name[ ][ ]...[ ] = new type[size1][size2]...[sizeN];
 For example, the following declaration creates a 4 × 10 × 3 three-dimensional integer array.
@@ -109,27 +174,6 @@ Here’s a simplified and organized (pointwise) version of your notes on Multidi
 
 
 
-
-2. Irregular (Ragged) Arrays
-
-In Java, you can create arrays where rows have different lengths.
-
-Example:
-
-int var_ary[][] = new int[4][]; // 4 rows, no column size yet
-var_ary[0] = new int[10];  // row 0 → 10 columns
-var_ary[1] = new int[15];  // row 1 → 15 columns
-var_ary[2] = new int[3];   // row 2 → 3 columns
-var_ary[3] = new int[4];   // row 3 → 4 columns
-
-
-Useful for sparse data where not all rows need the same number of elements.
-
-Different from C++:
-
-In Java → leftmost dimension is fixed first.
-
-In C++ → last dimension is usually fixed first.
 
 
 
@@ -224,35 +268,6 @@ Here is a clear, simplified, and pointwise explanation of the topic "Multidimens
 
 
 
-
-
-✅ Irregular (Ragged) Arrays
-In Java, multidimensional arrays can be irregular — meaning each row can have a different length.
-This is possible because a 2D array is actually an array of arrays, and each sub-array can be created separately.
-Regular 2D Array (fixed size):
-java
-
-
-1
-int table[][] = new int[3][4];  // All 3 rows have 4 columns
-Irregular Array (different row lengths):
-java
-
-
-1
-2
-3
-4
-5
-int var_ary[][] = new int[4][];     // 4 rows, but column sizes not set yet
-var_ary[0] = new int[10];           // Row 0: 10 elements
-var_ary[1] = new int[15];           // Row 1: 15 elements
-var_ary[2] = new int[3];            // Row 2: 3 elements
-var_ary[3] = new int[4];            // Row 3: 4 elements
-Why use irregular arrays?
-Useful when you need a large 2D structure but only some parts are used (e.g., sparse data).
-Saves memory by allocating only what you need.
-⚠️ Note: This is different from C/C++, where multidimensional arrays are often fixed-size or declared differently. 
 
 
 
