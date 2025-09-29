@@ -39,13 +39,13 @@
 
 
 
-// ----  rev[25-Sep-2025]  ----
+// ----  rev[29-Sep-2025]  ----
 
 Irregular Arrays:
     Irregular Arrays are more like C++'s multidimensional-unsized-arrays 
     (Recall C/C++ C_Ch4_1_3_initialize_array.c) but they are not same. 
 
-In Java, you can create arrays where rows have different lengths.
+In Java, you can create arrays where "rows have different lengths".
 
 In Irregular array the leftmost-dimension [] is fixed, not-empty and 
 other [] are empty (means rows fixed and columns vary). 
@@ -58,6 +58,21 @@ Example 1:
         But the columns in each rows varies
 
 
+Example 2:
+
+    Regular 2D Array (fixed size):
+
+            int table[][] = new int[3][4];  // All 3 rows have 4 columns
+
+    Irregular Array (different row lengths):
+
+            int var_ary[][] = new int[4][]; // 4 rows, no column size yet
+
+            var_ary[0] = new int[10];  // row 0 has 10 columns
+            var_ary[1] = new int[15];  // row 1 has 15 columns
+            var_ary[2] = new int[3];   // row 2 has 3 columns
+            var_ary[3] = new int[4];   // row 3 has 4 columns
+
 In C++'s multidimensional-unsized-array the leftmost-dimension [] is unfixed, empty while other [] are filled with fixed values (Eg: columns fixed and rows vary). 	Irregular Arrays	multidimensional-
 unsized-arrays
 	1 1 2 3 5
@@ -67,6 +82,17 @@ unsized-arrays
 3 5 8
 9 1 4
 . . .
+
+
+
+
+
+Why use irregular arrays?
+Useful when you need a large 2D structure but only some parts are used (e.g., sparse data).
+Saves memory by allocating only what you need.
+⚠️ Note: This is different from C/C++, where multidimensional arrays are often fixed-size or declared differently. 
+
+----------------------------
 
 
 
@@ -96,13 +122,7 @@ var_ary[3] = new int[4];         // specifying 4th  row of length  4
 
 
 
-Example 2:
 
-int var_ary[][] = new int[4][]; // 4 rows, no column size yet
-var_ary[0] = new int[10];  // row 0 has 10 columns
-var_ary[1] = new int[15];  // row 1 has 15 columns
-var_ary[2] = new int[3];   // row 2 has 3 columns
-var_ary[3] = new int[4];   // row 3 has 4 columns
 
 
 Useful for sparse data where not all rows need the same number of elements.
@@ -120,32 +140,8 @@ In C++ → last dimension is usually fixed first.
 
 
 ✅ Irregular (Ragged) Arrays
-In Java, multidimensional arrays can be irregular — meaning each row can have a different length.
-This is possible because a 2D array is actually an array of arrays, and each sub-array can be created separately.
-Regular 2D Array (fixed size):
-java
 
 
-1
-int table[][] = new int[3][4];  // All 3 rows have 4 columns
-Irregular Array (different row lengths):
-java
-
-
-1
-2
-3
-4
-5
-int var_ary[][] = new int[4][];     // 4 rows, but column sizes not set yet
-var_ary[0] = new int[10];           // Row 0: 10 elements
-var_ary[1] = new int[15];           // Row 1: 15 elements
-var_ary[2] = new int[3];            // Row 2: 3 elements
-var_ary[3] = new int[4];            // Row 3: 4 elements
-Why use irregular arrays?
-Useful when you need a large 2D structure but only some parts are used (e.g., sparse data).
-Saves memory by allocating only what you need.
-⚠️ Note: This is different from C/C++, where multidimensional arrays are often fixed-size or declared differently. 
 
 
 
