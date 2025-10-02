@@ -35,53 +35,55 @@
 
 
 
+    Irregular Arrays:
+        Irregular Arrays are more like C++'s multidimensional-unsized-arrays 
+        (Recall C/C++ C_Ch4_1_3_initialize_array.c) but they are not same. 
+
+        In Java, you can create arrays where "rows have different lengths".
+
+        In Irregular array the leftmost-dimension [] is fixed, not-empty and 
+        other [] are empty (means rows fixed and columns vary). 
+
+        Example 1:
+                        int riders[][] = new int[7][];
+
+            Notice leftmost-dimension is fixed: [7]
+                It means it has fixed 7 rows
+                But the columns in each rows varies
 
 
+        Example 2: 
+            Regular 2D Array (fixed size):
 
+                    int table[][] = new int[3][4];  // All 3 rows have 4 columns
 
-// ----  rev[29-Sep-2025]  ----
+            Irregular Array (different row lengths):
 
-Irregular Arrays:
-    Irregular Arrays are more like C++'s multidimensional-unsized-arrays 
-    (Recall C/C++ C_Ch4_1_3_initialize_array.c) but they are not same. 
+                    int var_ary[][] = new int[4][]; // 4 rows, no column size yet
 
-In Java, you can create arrays where "rows have different lengths".
+                    var_ary[0] = new int[10];  // row 0 has 10 columns
+                    var_ary[1] = new int[15];  // row 1 has 15 columns
+                    var_ary[2] = new int[3];   // row 2 has 3 columns
+                    var_ary[3] = new int[4];   // row 3 has 4 columns
 
-In Irregular array the leftmost-dimension [] is fixed, not-empty and 
-other [] are empty (means rows fixed and columns vary). 
+    C++ vs Java:
+        In C++'s multidimensional-unsized-array the leftmost-dimension [] is unfixed, 
+        (empty while other [] are filled with fixed values. Eg: columns fixed and rows vary).
+    
+        In Java jagged arrays, leftmost dimension is fixed (rows fixed), inner dimensions (columns) may vary.
+        In C++ unsized multidimensional arrays, leftmost dimension can be omitted, but the rightmost (e.g., columns) must be fixed.
+    
+        Irregular Arrays:
+            1 1 2 3 5
+            1 1 
+            1 3 2 1
+            3 4 5 5 8 9 1 4 4
 
-Example 1:
-                int riders[][] = new int[7][];
-
-    Notice leftmost-dimension is fixed: [7]
-        It means it has fixed 7 rows
-        But the columns in each rows varies
-
-
-Example 2:
-
-    Regular 2D Array (fixed size):
-
-            int table[][] = new int[3][4];  // All 3 rows have 4 columns
-
-    Irregular Array (different row lengths):
-
-            int var_ary[][] = new int[4][]; // 4 rows, no column size yet
-
-            var_ary[0] = new int[10];  // row 0 has 10 columns
-            var_ary[1] = new int[15];  // row 1 has 15 columns
-            var_ary[2] = new int[3];   // row 2 has 3 columns
-            var_ary[3] = new int[4];   // row 3 has 4 columns
-
-In C++'s multidimensional-unsized-array the leftmost-dimension [] is unfixed, empty while other [] are filled with fixed values (Eg: columns fixed and rows vary). 	Irregular Arrays	multidimensional-
-unsized-arrays
-	1 1 2 3 5
-1 1 
-1 3 2 1
-3 4 5 5 8 9 1 4 4	1 1 2 
-3 5 8
-9 1 4
-. . .
+        multidimensional-unsized-arrays:
+            1 1 2 
+            3 5 8
+            9 1 4
+            . . .
 
 
 
