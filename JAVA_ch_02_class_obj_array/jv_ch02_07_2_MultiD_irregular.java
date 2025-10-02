@@ -16,55 +16,58 @@
 
 
 
-    Two-Dimensional Arrays (2D):
-        A 2D array is a list of one-dimensional arrays.
+    --------  Two-Dimensional Arrays (2D)  --------
+    A 2D array is a list of one-dimensional arrays.
 
-        Syntax:
-                    int arr[][] = new int[rows][cols];
+    Syntax:
+                int arr[][] = new int[rows][cols];
 
-            Example:
-                    int abs[][] = new int[10][20];  // 10 rows, 20 columns
+        Example:
+                int abs[][] = new int[10][20];  // 10 rows, 20 columns
 
-                It creates a 2-D integer array named "abs" of size 10, 20
-
-
-        Accessing elements:
-            since arrays use zero-based indexing, to get the element from 3rd row, 5th column
-
-                    abs[2][4]  // Accesses element at row 3, column 5
+            It creates a 2-D integer array named "abs" of size 10, 20
 
 
+    Accessing elements:
+        since arrays use zero-based indexing, to get the element from 3rd row, 5th column
 
-    Irregular Arrays:
-        Irregular Arrays are more like C++'s multidimensional-unsized-arrays 
-        (Recall C/C++ C_Ch4_1_3_initialize_array.c) but they are not same. 
-
-        In Java, you can create arrays where "rows have different lengths".
-
-        In Irregular array the leftmost-dimension [] is fixed, not-empty and 
-        other [] are empty (means rows fixed and columns vary). 
-
-        Example 1:
-                        int riders[][] = new int[7][];
-
-            Notice leftmost-dimension is fixed: [7]
-                It means it has fixed 7 rows
-                But the columns in each rows varies
+                abs[2][4]  // Accesses element at row 3, column 5
 
 
-        Example 2: 
-            Regular 2D Array (fixed size):
 
-                    int table[][] = new int[3][4];  // All 3 rows have 4 columns
+    --------  Irregular Arrays  --------
+    Irregular Arrays are more like C++'s multidimensional-unsized-arrays 
+    (Recall C/C++ C_Ch4_1_3_initialize_array.c) but they are not same. 
 
-            Irregular Array (different row lengths):
+    In Java, you can create arrays where "rows have different lengths".
 
-                    int var_ary[][] = new int[4][]; // 4 rows, no column size yet
+    In Irregular array the leftmost-dimension [] is fixed, not-empty and 
+    other [] are empty (means rows fixed and columns vary). 
 
-                    var_ary[0] = new int[10];  // row 0 has 10 columns
-                    var_ary[1] = new int[15];  // row 1 has 15 columns
-                    var_ary[2] = new int[3];   // row 2 has 3 columns
-                    var_ary[3] = new int[4];   // row 3 has 4 columns
+    In Java : leftmost dimension is fixed first.
+    In C++  : last dimension is usually fixed first.
+
+    Example 1:
+                    int riders[][] = new int[7][];
+
+        Notice leftmost-dimension is fixed: [7]
+            It means it has fixed 7 rows
+            But the columns in each rows varies
+
+
+    Example 2: 
+        Regular 2D Array (fixed size):
+
+                int table[][] = new int[3][4];  // All 3 rows have 4 columns
+
+        Irregular Array (different row lengths):
+
+                int var_ary[][] = new int[4][]; // 4 rows, no column size yet
+
+                var_ary[0] = new int[10];  // row 0 has 10 columns
+                var_ary[1] = new int[15];  // row 1 has 15 columns
+                var_ary[2] = new int[3];   // row 2 has 3 columns
+                var_ary[3] = new int[4];   // row 3 has 4 columns
 
     C++ vs Java:
         In C++'s multidimensional-unsized-array the leftmost-dimension [] is unfixed, 
@@ -86,13 +89,10 @@
             . . .
 
 
+    Why use irregular arrays?
+        Useful when you need a large 2D structure but only some parts are used (e.g., sparse data).
+        Saves memory by allocating only what you need.
 
-
-
-Why use irregular arrays?
-Useful when you need a large 2D structure but only some parts are used (e.g., sparse data).
-Saves memory by allocating only what you need.
-⚠️ Note: This is different from C/C++, where multidimensional arrays are often fixed-size or declared differently. 
 
 ----------------------------
 
@@ -118,42 +118,56 @@ var_ary[3] = new int[4];         // specifying 4th  row of length  4
 
 -------------------------------------------------------------------
 
-----  GPT ----
+--------  Arrays of Three or More Dimensions  --------
 
-2. Irregular (Ragged) Arrays
-
-
-
-
-
-
-Useful for sparse data where not all rows need the same number of elements.
-
-Different from C++:
-
-In Java → leftmost dimension is fixed first.
-
-In C++ → last dimension is usually fixed first.
+Here is the general form of a multidimensional array declaration:
+type name[ ][ ]...[ ] = new type[size1][size2]...[sizeN];
+For example, the following declaration creates a 4 × 10 × 3 three-dimensional integer array.
+int multidim[][][] = new int[4][10][3];
 
 
+----  GPT  ----
+
+3. Arrays with 3 or More Dimensions
+
+General form:
+
+type name[][]...[] = new type[size1][size2]...[sizeN];
 
 
----- Qwen ----
+Example:
 
-
-✅ Irregular (Ragged) Arrays
+int multidim[][][] = new int[4][10][3];  // 3D array
 
 
 
 
+----  Qwen  ----
+
+
+✅ Arrays with Three or More Dimensions
+Java supports arrays with any number of dimensions.
+General syntax:
+java
+
+
+1
+type[][]...[] arrayName = new type[size1][size2]...[sizeN];
+Example – 3D array (4 × 10 × 3):
+java
+
+
+1
+int multidim[][][] = new int[4][10][3];
+Can think of it as 4 layers, each with 10 rows and 3 columns.
 
 
 --------------------------------------------------------------------
 
-	Arrays of Three or More Dimensions: Here is the general form of a multidimensional array declaration:
-type name[ ][ ]...[ ] = new type[size1][size2]...[sizeN];
-For example, the following declaration creates a 4 × 10 × 3 three-dimensional integer array.
-int multidim[][][] = new int[4][10][3];
+
+
+
+
 
 	Initializing Multidimensional Arrays: A multidimensional array can be initialized by enclosing each dimension’s initializer list within its own set of curly braces (it is different form C/C++'s array initialization, extra curly braces not used. Recall C/C++ 4.4). For example, the general form of array initialization for a two-dimensional array is shown here:
 	type-specifier array_name[ ] [ ] = { 	{ val, val, val, ..., val },
@@ -186,32 +200,6 @@ This declares that someMeth() returns an array of type int.
 
 ----------------  GPT  ----------------
 Here’s a simplified and organized (pointwise) version of your notes on Multidimensional Arrays in Java:
-
-2.10 Multidimensional Arrays
-
-
-
-
-
-
-
-
-
-
-
-3. Arrays with 3 or More Dimensions
-
-General form:
-
-type name[][]...[] = new type[size1][size2]...[sizeN];
-
-
-Example:
-
-int multidim[][][] = new int[4][10][3];  // 3D array
-
-
-
 
 
 4. Initializing Multidimensional Arrays
@@ -279,37 +267,6 @@ Would you like me to also add a simple diagram (like showing rows and columns in
 
 ----------------  Qwen  ----------------
 Here is a clear, simplified, and pointwise explanation of the topic "Multidimensional Arrays in Java":
-
-🔹 2.10 Multidimensional Arrays – Simplified
-
-
-
-
-
-
-
-
-
-
-
-✅ Arrays with Three or More Dimensions
-Java supports arrays with any number of dimensions.
-General syntax:
-java
-
-
-1
-type[][]...[] arrayName = new type[size1][size2]...[sizeN];
-Example – 3D array (4 × 10 × 3):
-java
-
-
-1
-int multidim[][][] = new int[4][10][3];
-Can think of it as 4 layers, each with 10 rows and 3 columns.
-
-
-
 
 
 ✅ Initializing Multidimensional Arrays
