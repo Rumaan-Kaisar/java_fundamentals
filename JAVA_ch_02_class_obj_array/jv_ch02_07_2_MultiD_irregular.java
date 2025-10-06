@@ -93,6 +93,8 @@
         Useful when you need a large 2D structure but only some parts are used (e.g., sparse data).
         Saves memory by allocating only what you need.
 
+        For example, if you need a very large two-dimensional array that is sparsely populated 
+        (that is, one in which not all of the elements will be used), an irregular array might be a perfect solution.
 
 
     --------  Arrays of Three or More Dimensions  --------
@@ -124,16 +126,19 @@
                 table[1] = new int[4];
                 table[2] = new int[4];
 
+            So separate specification is not useful when we deal with "regular array" (row and columns are fixed).  
+        
+        Separate specification of dimension sizes of an array is very helpful for "irregular array". 
+        For example:
+
+                int var_ary[][] = new int[4][];
+
+                var_ary[0] = new int[10];       // specifying first row of length  10 
+                var_ary[1] = new int[15];       // specifying 2nd row of length  15 
+                var_ary[2] = new int[3];         // specifying 3rd  row of length  3 
+                var_ary[3] = new int[4];         // specifying 4th  row of length  4 
 
 
-	But separate specification is not useful when we deal with regular array (row and columns are fixed).  
-Separate specification of dimension sizes of an array is very helpful for irregular array. For example:	int var_ary[][] = new int[4][];
-var_ary[0] = new int[10];       // specifying first row of length  10 
-var_ary[1] = new int[15];       // specifying 2nd row of length  15 
-var_ary[2] = new int[3];         // specifying 3rd  row of length  3 
-var_ary[3] = new int[4];         // specifying 4th  row of length  4 
-
-	The use of irregular (or ragged) multidimensional arrays can be used effectively in some situations. For example, if you need a very large two-dimensional array that is sparsely populated (that is, one in which not all of the elements will be used), an irregular array might be a perfect solution.
 
 
 -------------------------------------------------------------------
