@@ -107,20 +107,24 @@
         Can think of it as 4 layers, each with 10 rows and 3 columns.
 
 
+    Allocation style:
+        When we allocate memory for a multidimensional array, we usually specify the both dimensions at the same time.
+        For example:
+                int table[][] = new int[3][4]
+
+        However we can specify only the memory for the first (leftmost) dimension 
+            and allocate the remaining dimensions separately.
+     
+        Since multidimensional arrays are implemented as "arrays of arrays", the length of each array is under our control. 
+        Considering previous statement we can write it as:
+        
+                int table[][] = new int[3][];
+
+                table[0] = new int[4];
+                table[1] = new int[4];
+                table[2] = new int[4];
 
 
-----------------------------
-
-
-
-
-
-	When we allocate memory for a multidimensional array, we usually specify the both dimensions at the same time. For example:
-int table[][] = new int[3][4]
-	However we can specify only the memory for the first (leftmost) 	dimension and allocate the remaining dimensions separately. Since 	multidimensional arrays are implemented as arrays of arrays, the length 	of each array is under our control. Consider previous statement:		int table[][] = new int[3][];
-	table[0] = new int[4];
-	table[1] = new int[4];
-	table[2] = new int[4];
 
 	But separate specification is not useful when we deal with regular array (row and columns are fixed).  
 Separate specification of dimension sizes of an array is very helpful for irregular array. For example:	int var_ary[][] = new int[4][];
@@ -189,6 +193,31 @@ Each inner block { ... } represents a row.
 
 
 
+✅ Initializing Multidimensional Arrays
+You can initialize a 2D array at the time of declaration using nested braces.
+Syntax:
+java
+
+
+1
+2
+3
+4
+5
+6
+⌄
+int sqrs[][] = {
+    {1, 1},
+    {2, 4},
+    {3, 9},
+    {4, 16}
+};
+Each inner {} represents one row.
+Commas separate rows.
+Semicolon after the final }.
+Java uses extra curly braces compared to C/C++, making initialization clearer and safer.
+
+
 
 
 
@@ -238,31 +267,6 @@ Would you like me to also add a simple diagram (like showing rows and columns in
 
 ----------------  Qwen  ----------------
 Here is a clear, simplified, and pointwise explanation of the topic "Multidimensional Arrays in Java":
-
-
-✅ Initializing Multidimensional Arrays
-You can initialize a 2D array at the time of declaration using nested braces.
-Syntax:
-java
-
-
-1
-2
-3
-4
-5
-6
-⌄
-int sqrs[][] = {
-    {1, 1},
-    {2, 4},
-    {3, 9},
-    {4, 16}
-};
-Each inner {} represents one row.
-Commas separate rows.
-Semicolon after the final }.
-Java uses extra curly braces compared to C/C++, making initialization clearer and safer.
 
 
 
