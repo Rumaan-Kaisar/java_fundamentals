@@ -94,6 +94,21 @@
         Saves memory by allocating only what you need.
 
 
+
+    --------  Arrays of Three or More Dimensions  --------
+    Here is the general form of a multidimensional array declaration:
+
+                type name[ ][ ]...[ ] = new type[size1][size2]...[sizeN];
+
+        For example, the following declaration creates a 4 x 10 x 3 three-dimensional integer array.
+
+                int multidim[][][] = new int[4][10][3];  // 3D array
+
+        Can think of it as 4 layers, each with 10 rows and 3 columns.
+
+
+
+
 ----------------------------
 
 
@@ -107,7 +122,8 @@ int table[][] = new int[3][4]
 	table[1] = new int[4];
 	table[2] = new int[4];
 
-	But separate specification is not useful when we deal with regular array (row and columns are fixed).  Separate specification of dimension sizes of an array is very helpful for irregular array. For example:	int var_ary[][] = new int[4][];
+	But separate specification is not useful when we deal with regular array (row and columns are fixed).  
+Separate specification of dimension sizes of an array is very helpful for irregular array. For example:	int var_ary[][] = new int[4][];
 var_ary[0] = new int[10];       // specifying first row of length  10 
 var_ary[1] = new int[15];       // specifying 2nd row of length  15 
 var_ary[2] = new int[3];         // specifying 3rd  row of length  3 
@@ -118,55 +134,10 @@ var_ary[3] = new int[4];         // specifying 4th  row of length  4
 
 -------------------------------------------------------------------
 
---------  Arrays of Three or More Dimensions  --------
-
-Here is the general form of a multidimensional array declaration:
-type name[ ][ ]...[ ] = new type[size1][size2]...[sizeN];
-For example, the following declaration creates a 4 × 10 × 3 three-dimensional integer array.
-int multidim[][][] = new int[4][10][3];
-
-
-----  GPT  ----
-
-3. Arrays with 3 or More Dimensions
-
-General form:
-
-type name[][]...[] = new type[size1][size2]...[sizeN];
-
-
-Example:
-
-int multidim[][][] = new int[4][10][3];  // 3D array
-
-
-
-
 ----  Qwen  ----
 
 
-✅ Arrays with Three or More Dimensions
-Java supports arrays with any number of dimensions.
-General syntax:
-java
-
-
-1
-type[][]...[] arrayName = new type[size1][size2]...[sizeN];
-Example – 3D array (4 × 10 × 3):
-java
-
-
-1
-int multidim[][][] = new int[4][10][3];
-Can think of it as 4 layers, each with 10 rows and 3 columns.
-
-
 --------------------------------------------------------------------
-
-
-
-
 
 
 	Initializing Multidimensional Arrays: A multidimensional array can be initialized by enclosing each dimension’s initializer list within its own set of curly braces (it is different form C/C++'s array initialization, extra curly braces not used. Recall C/C++ 4.4). For example, the general form of array initialization for a two-dimensional array is shown here:
