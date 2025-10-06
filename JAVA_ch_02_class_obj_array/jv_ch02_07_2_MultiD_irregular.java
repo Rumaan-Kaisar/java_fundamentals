@@ -148,6 +148,7 @@
 
 --------------------------------------------------------------------
 
+    --------  Initializing Multidimensional Arrays  --------
 
 	Initializing Multidimensional Arrays: A multidimensional array can be initialized by enclosing each dimension’s initializer list within its own set of curly braces (it is different form C/C++'s array initialization, extra curly braces not used. Recall C/C++ 4.4). For example, the general form of array initialization for a two-dimensional array is shown here:
 	type-specifier array_name[ ] [ ] = { 	{ val, val, val, ..., val },
@@ -163,25 +164,8 @@
 
 	Notice that commas separate the initializer blocks and that a semicolon follows the closing }.
 
-	Alternative Array Declaration Syntax: There is a second form that can be used to declare an array:   type[] var-name;  
-Here, []  follow the type specifier, not the name of the array variable. For example, following two declarations are equivalent:
-char table[][] = new char[3][4];
-char[][] table = new char[3][4];
 
-	This alternative declaration form useful when we declare several arrays at the same time. For example, to create three arrays:
-int[] nums, nums2, nums3;    is more easier than      int nums[], nums2[], nums3[];
-
-	The alternative declaration form is also useful when specifying an array as a return type for a method. For example,
-int[] someMeth( ) { ... }
-This declares that someMeth() returns an array of type int.
-
-
-
-
-----------------  GPT  ----------------
-Here’s a simplified and organized (pointwise) version of your notes on Multidimensional Arrays in Java:
-
-
+---- GPT
 4. Initializing Multidimensional Arrays
 
 Arrays can be initialized with nested braces:
@@ -196,7 +180,7 @@ int sqrs[][] = {
 
 Each inner block { ... } represents a row.
 
-
+---- Qwen
 
 ✅ Initializing Multidimensional Arrays
 You can initialize a 2D array at the time of declaration using nested braces.
@@ -221,6 +205,31 @@ Each inner {} represents one row.
 Commas separate rows.
 Semicolon after the final }.
 Java uses extra curly braces compared to C/C++, making initialization clearer and safer.
+
+
+
+
+    --------  Alternative Array Declaration Syntax  --------
+
+
+	Alternative Array Declaration Syntax: There is a second form that can be used to declare an array:   type[] var-name;  
+Here, []  follow the type specifier, not the name of the array variable. For example, following two declarations are equivalent:
+char table[][] = new char[3][4];
+char[][] table = new char[3][4];
+
+	This alternative declaration form useful when we declare several arrays at the same time. For example, to create three arrays:
+int[] nums, nums2, nums3;    is more easier than      int nums[], nums2[], nums3[];
+
+	The alternative declaration form is also useful when specifying an array as a return type for a method. For example,
+int[] someMeth( ) { ... }
+This declares that someMeth() returns an array of type int.
+
+
+
+
+----------------  GPT  ----------------
+Here’s a simplified and organized (pointwise) version of your notes on Multidimensional Arrays in Java:
+
 
 
 
