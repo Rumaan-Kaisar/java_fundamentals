@@ -149,8 +149,33 @@
 --------------------------------------------------------------------
 
     --------  Initializing Multidimensional Arrays  --------
+    A multidimensional array can be initialized by enclosing "each" dimension's initializer list 
+        within its own set of curly braces 
 
-	Initializing Multidimensional Arrays: A multidimensional array can be initialized by enclosing each dimension’s initializer list within its own set of curly braces (it is different form C/C++'s array initialization, extra curly braces not used. Recall C/C++ 4.4). For example, the general form of array initialization for a two-dimensional array is shown here:
+    It is different form C/C++'s array initialization, where extra curly braces not required. 
+        (Recall C_Ch4_1_3_initialize_array.c).)
+        C++ allows flattened initializers without nested braces, 
+        while Java requires nested braces for multi-dimensional arrays.
+
+        C++ (More Flexible):
+        
+            // Allowed - flattened initializer
+            int arr[2][3] = {1,2,3,4,5,6}; 
+
+            // Also allowed - nested braces  
+            int arr[2][3] = {{1,2,3}, {4,5,6}};
+
+
+        Java (Strict - Nested Braces Required):
+
+            // COMPILE ERROR - no nested braces
+            int[][] arr = {1,2,3,4,5,6};  
+
+            // Required syntax - nested braces
+            int[][] arr = {{1,2,3}, {4,5,6}};
+
+
+ For example, the general form of array initialization for a two-dimensional array is shown here:
 	type-specifier array_name[ ] [ ] = { 	{ val, val, val, ..., val },
 	{ val, val, val, ..., val },
 	        . .  . .  . .  . .  . .
