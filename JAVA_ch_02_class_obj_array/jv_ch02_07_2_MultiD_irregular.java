@@ -154,8 +154,8 @@
 
     It is different form C/C++'s array initialization, where extra curly braces not required. 
         (Recall C_Ch4_1_3_initialize_array.c).)
-        C++ allows flattened initializers without nested braces, 
-        while Java requires nested braces for multi-dimensional arrays.
+        C++ allows flattened initializers without NESTED BRACES, 
+        while Java requires "NESTED BRACES" for multi-dimensional arrays.
 
         C++ (More Flexible):
         
@@ -175,63 +175,44 @@
             int[][] arr = {{1,2,3}, {4,5,6}};
 
 
- For example, the general form of array initialization for a two-dimensional array is shown here:
-	type-specifier array_name[ ] [ ] = { 	{ val, val, val, ..., val },
-	{ val, val, val, ..., val },
-	        . .  . .  . .  . .  . .
-	       				{ val, val, val, ..., val }    };	Eg: Array sqrs with the numbers 1 through 4 and their squares:	int sqrs[][] = {   { 1, 1 },
-	             { 2, 4 },
-	             { 3, 9 },
-	             { 4, 16 }  }
+    The GENERAL FORM of array initialization for a two-dimensional array in Java:
+
+            type-specifier array_name[][] = {
+                { val, val, val, ..., val },
+                { val, val, val, ..., val },
+                    . .  . .  . .  . .  . .
+                { val, val, val, ..., val }
+            };
+
+        "val" indicates an initialization value. 
+        Each inner block "{}" designates a row. 
+        Within each row, the first value will be stored in the first position of the subarray, 
+            the second value in the second position, and so on. 
+
+        Notice that commas separate the "initializer blocks" and that a "semicolon" follows the closing '}'.
+
+        Eg: Array sqrs with the numbers 1 through 4 and their squares:
+            
+            int sqrs[][] = {
+                { 1, 1 },
+                { 2, 4 },
+                { 3, 9 },
+                { 4, 16 }  
+            }
+
+        Java's use of extra curly braces compared to C/C++, making initialization clearer and safer.
 
 
-	Here, val indicates an initialization value. Each inner block designates a row. Within each row, the first value will be stored in the first position of the subarray, the second value in the second position, and so on. 
-
-	Notice that commas separate the initializer blocks and that a semicolon follows the closing }.
 
 
 ---- GPT
-4. Initializing Multidimensional Arrays
-
-Arrays can be initialized with nested braces:
-
-int sqrs[][] = {
-    { 1, 1 },
-    { 2, 4 },
-    { 3, 9 },
-    { 4, 16 }
-};
-
-
-Each inner block { ... } represents a row.
 
 ---- Qwen
 
-✅ Initializing Multidimensional Arrays
-You can initialize a 2D array at the time of declaration using nested braces.
-Syntax:
-java
 
 
-1
-2
-3
-4
-5
-6
-⌄
-int sqrs[][] = {
-    {1, 1},
-    {2, 4},
-    {3, 9},
-    {4, 16}
-};
-Each inner {} represents one row.
-Commas separate rows.
-Semicolon after the final }.
-Java uses extra curly braces compared to C/C++, making initialization clearer and safer.
 
-
+// ----  rev[09-Oct-2025]  ----
 
 
     --------  Alternative Array Declaration Syntax  --------
@@ -282,28 +263,6 @@ int[] someMeth() { ... }  // returns int array
 
 
 
-
-
-
-✅ Summary:
-
-Java arrays are objects → support garbage collection.
-
-2D arrays = arrays of arrays.
-
-Ragged arrays allow variable row sizes.
-
-Java supports any dimension of arrays.
-
-Nested braces are used for initialization.
-
-Alternative declaration (type[] name) is often more convenient.
-
-Would you like me to also add a simple diagram (like showing rows and columns in a ragged array vs. regular 2D array) to make it more visual?
-
-
-
-
 ----------------  Qwen  ----------------
 Here is a clear, simplified, and pointwise explanation of the topic "Multidimensional Arrays in Java":
 
@@ -347,39 +306,31 @@ int[] getArray() {
 
 
 
-✅ Summary (Key Points)
-2D Arrays
-Arrays of arrays; declared as
-new int[rows][cols]
-Element Access
-Use
-arr[i][j]
-for row
-i
-, column
-j
-Irregular Arrays
-Rows can have different lengths — useful for saving memory
-Memory Allocation
-Can allocate rows individually:
-arr[0] = new int[5];
-3D+ Arrays
-Supported:
-int[][][] arr = new int[a][b][c];
-Initialization
-Use nested
-{}
-blocks for clarity
-Declaration Forms
-Both
-int[][] arr
-and
-int arr[][]
-work, but
-int[][] arr
-is preferred
+--------  Summary (Key Points)  --------
+2D Arrays: 
+    Arrays of arrays; declared as
+        new int[rows][cols]
+    Element Access
+        arr[i][j]
+for row i, column j
 
-💡 Tip: Use ragged arrays when dealing with uneven data (like student records with different subject counts), and regular arrays for structured grids (like matrices).
+Irregular Arrays:
+    Rows can have different lengths — useful for saving memory
+
+Memory Allocation:
+    Can allocate rows individually:
+    arr[0] = new int[5];
+
+3D+ Arrays:
+    int[][][] arr = new int[a][b][c];
+
+Initialization:
+    Use nested {} blocks for clarity
+
+Declaration Forms:
+    Both "int[][] arr" and "int arr[][]" work, but "int[][] arr" is preferred
+
+
 
 
 
