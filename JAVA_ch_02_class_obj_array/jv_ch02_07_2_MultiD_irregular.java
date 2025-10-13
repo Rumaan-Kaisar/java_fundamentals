@@ -16,7 +16,9 @@
 
 
 
+    
     --------  Two-Dimensional Arrays (2D)  --------
+
     A 2D array is a list of one-dimensional arrays.
 
     Syntax:
@@ -35,7 +37,9 @@
 
 
 
+    
     --------  Irregular Arrays  --------
+
     Irregular Arrays are more like C++'s multidimensional-unsized-arrays 
     (Recall C/C++ C_Ch4_1_3_initialize_array.c) but they are not same. 
 
@@ -97,7 +101,10 @@
         (that is, one in which not all of the elements will be used), an irregular array might be a perfect solution.
 
 
+    
+
     --------  Arrays of Three or More Dimensions  --------
+
     Here is the general form of a multidimensional array declaration:
 
                 type name[ ][ ]...[ ] = new type[size1][size2]...[sizeN];
@@ -140,15 +147,9 @@
 
 
 
-
--------------------------------------------------------------------
-
-----  Qwen  ----
-
-
---------------------------------------------------------------------
-
+    
     --------  Initializing Multidimensional Arrays  --------
+
     A multidimensional array can be initialized by enclosing "each" dimension's initializer list 
         within its own set of curly braces 
 
@@ -204,18 +205,9 @@
 
 
 
-
----- GPT
-
----- Qwen
-
-
-
-
-// ----  rev[13-Oct-2025]  ----
-
-
+    
     --------  Alternative Array Declaration Syntax  --------
+
     There is a second FORM that can be used to declare an array:
 
             type[] var-name;
@@ -223,52 +215,28 @@
         Here, []  follow the type specifier, not the name of the array variable. 
         For example, following two declarations are equivalent:
 
-            char table[][] = new char[3][4];
-            char[][] table = new char[3][4];
+            char table[][] = new char[3][4];    // traditional
+            char[][] table = new char[3][4];    // alternative
 
-        USEFUL when declaring several arrays at the same time.
+
+    Usage:
+        USEFUL when declaring multiple arrays at the same time.
         For example, to create three arrays:
 
-            int[] nums, nums2, nums3;   // more easier than
+            int[] nums, nums2, nums3;   // more easier than below
             int nums[], nums2[], nums3[];
 
     
-    This FORM is also useful when "specifying an array as a return type" for a method.
-    For example,
+        This FORM is also useful when "specifying an array as a return type" for a method.
+        For example,
 
-            int[] someMeth( ) { ... }
+            int[] someMeth() { ... }   // returns int array
 
         This declares that someMeth() returns an array of type "int".
 
 
 
-
-----------------  GPT  ----------------
-Here’s a simplified and organized (pointwise) version of your notes on Multidimensional Arrays in Java:
-
-
-
-
-
-
-5. Alternative Array Declaration Syntax
-
-Two equivalent ways to declare arrays:
-
-char table[][] = new char[3][4];   // traditional
-char[][] table = new char[3][4];   // alternative
-
-
-Alternative form is useful when:
-
-Declaring multiple arrays:
-
-int[] nums, nums2, nums3;   // easier than int nums[], nums2[], nums3[];
-
-
-Declaring return type of a method:
-
-int[] someMeth() { ... }  // returns int array
+// ----  rev[13-Oct-2025]  ----
 
 
 
@@ -277,40 +245,6 @@ int[] someMeth() { ... }  // returns int array
 Here is a clear, simplified, and pointwise explanation of the topic "Multidimensional Arrays in Java":
 
 
-
-
-
-✅ Alternative Array Declaration Syntax
-There are two ways to declare arrays in Java:
-type arrayName[][];
-Example: int table[][] = new int[3][4];
-type[][] arrayName; ← Preferred alternative
-Example: int[][] table = new int[3][4];
-Advantages of the second form:
-Better readability — clearly shows that the variable holds an array.
-Easier when declaring multiple arrays:
-java
-
-
-1
-int[] nums, nums2, nums3;  // All are int arrays
-vs.
-java
-
-
-1
-int nums[], nums2[], nums3[];  // More verbose
-Essential when defining methods that return arrays:
-java
-
-
-1
-2
-3
-⌄
-int[] getArray() {
-    return new int[5];
-}
 
 
 
