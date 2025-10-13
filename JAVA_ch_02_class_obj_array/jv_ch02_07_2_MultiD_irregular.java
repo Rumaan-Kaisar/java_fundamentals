@@ -212,23 +212,33 @@
 
 
 
-// ----  rev[09-Oct-2025]  ----
+// ----  rev[13-Oct-2025]  ----
 
 
     --------  Alternative Array Declaration Syntax  --------
+    There is a second FORM that can be used to declare an array:
 
+            type[] var-name;
+    
+        Here, []  follow the type specifier, not the name of the array variable. 
+        For example, following two declarations are equivalent:
 
-	Alternative Array Declaration Syntax: There is a second form that can be used to declare an array:   type[] var-name;  
-Here, []  follow the type specifier, not the name of the array variable. For example, following two declarations are equivalent:
-char table[][] = new char[3][4];
-char[][] table = new char[3][4];
+            char table[][] = new char[3][4];
+            char[][] table = new char[3][4];
 
-	This alternative declaration form useful when we declare several arrays at the same time. For example, to create three arrays:
-int[] nums, nums2, nums3;    is more easier than      int nums[], nums2[], nums3[];
+        USEFUL when declaring several arrays at the same time.
+        For example, to create three arrays:
 
-	The alternative declaration form is also useful when specifying an array as a return type for a method. For example,
-int[] someMeth( ) { ... }
-This declares that someMeth() returns an array of type int.
+            int[] nums, nums2, nums3;   // more easier than
+            int nums[], nums2[], nums3[];
+
+    
+    This FORM is also useful when "specifying an array as a return type" for a method.
+    For example,
+
+            int[] someMeth( ) { ... }
+
+        This declares that someMeth() returns an array of type "int".
 
 
 
