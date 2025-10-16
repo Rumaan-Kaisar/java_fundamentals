@@ -236,54 +236,31 @@
 
 
 
-// ----  rev[13-Oct-2025]  ----
+    --------  Summary (Key Points)  --------
+    2D Arrays: 
+        Arrays of arrays; declared as
+            new int[rows][cols]
+        Element Access
+            arr[i][j]
+    for row i, column j
 
+    Irregular Arrays:
+        Rows can have different lengths — useful for saving memory
 
+    Memory Allocation:
+        Can allocate rows individually:
+        arr[0] = new int[5];
 
+    3D+ Arrays:
+        int[][][] arr = new int[a][b][c];
 
-----------------  Qwen  ----------------
-Here is a clear, simplified, and pointwise explanation of the topic "Multidimensional Arrays in Java":
+    Initialization:
+        Use nested {} blocks for clarity
 
-
-
-
-
-
-
---------  Summary (Key Points)  --------
-2D Arrays: 
-    Arrays of arrays; declared as
-        new int[rows][cols]
-    Element Access
-        arr[i][j]
-for row i, column j
-
-Irregular Arrays:
-    Rows can have different lengths — useful for saving memory
-
-Memory Allocation:
-    Can allocate rows individually:
-    arr[0] = new int[5];
-
-3D+ Arrays:
-    int[][][] arr = new int[a][b][c];
-
-Initialization:
-    Use nested {} blocks for clarity
-
-Declaration Forms:
-    Both "int[][] arr" and "int arr[][]" work, but "int[][] arr" is preferred
-
-
-
-
-
-
-
-
+    Declaration Forms:
+        Both "int[][] arr" and "int arr[][]" work, but "int[][] arr" is preferred
 
 */
-
 
 
 
