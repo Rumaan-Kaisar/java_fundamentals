@@ -1,5 +1,4 @@
 
-// jv_ch02_07_2_MultiD_irregular       2.10        142-145.9
 
 /* -=-=-=-=-=-=-=-=-=-=-=      multi-dimensional, irregular array      -=-=-=-=-=-=-=-=-=-=-= 
     Similar tyo C/C++ Java also support multi-dimensional array.
@@ -336,7 +335,7 @@ class Ragged {
 }
 
 
-// ----  rev[16-Oct-2025]  BOK:144  ----
+
 
 /* Example 3: Following initializes an array called sqrs with 1 through 10 and their squares. */
 
