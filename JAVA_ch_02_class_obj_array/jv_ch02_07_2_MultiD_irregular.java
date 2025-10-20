@@ -186,7 +186,7 @@
             };
 
         "val" indicates an initialization value. 
-        Each inner block "{}" designates a row. 
+        Each inner block "{}" makes a row. 
         Within each row, the first value will be stored in the first position of the subarray, 
             the second value in the second position, and so on. 
 
@@ -337,4 +337,29 @@ class Ragged {
 
 
 // ----  rev[16-Oct-2025]  BOK:144  ----
+
+/* Example 3: Following initializes an array called sqrs with 1 through 10 and their squares. */
+
+class Squares {
+    public static void main(String args[]) {
+        int i, j;
+        int sqrs[][] = {
+            { 1, 1 },
+            { 2, 4 },
+            { 3, 9 },
+            { 4, 16 },
+            { 5, 25 },
+            { 6, 36 },
+            { 7, 49 },
+            { 8, 64 },
+            { 9, 81 },
+            { 10, 100 }
+        };
+
+        for(i=0; i < 10; i++) {
+            for(j=0; j < 2; j++) System.out.print(sqrs[i][j] + " ");
+            System.out.println();
+        }
+    }
+}
 
