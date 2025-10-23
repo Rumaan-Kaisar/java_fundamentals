@@ -3,18 +3,61 @@
 
 /* -=-=-=-=-=-=-=-=-=-=-=      Array (advanced)      -=-=-=-=-=-=-=-=-=-=-= 
 
-2.11 Array (advanced)
-	Assigning Array References (more like assigning pointers of C/C++: copying address): As with other objects, when you assign one array reference variable to another, you are simply changing what object that variable refers to. You are not causing a copy of the array to be made, nor are you causing the contents of one array to be copied to the other. (i.e. same object with two different names, "not two different objects with equal values". The object can be modified via both of the names.) For example,
+    Assigning Array References:
+        (more like assigning pointers of C/C++: copying address)
+        Assigning one array to another in Java is like copying a pointer (address) in C/C++, not like copying the array itself.
 
-           int nums1[] = new int[10];
-           int nums2[] = new int[10];
-           for(i=0; i < 10; i++) nums1[i] = i; 	//putting values to nums1 
-           for(i=0; i < 10; i++) nums2[i] = -i; 	//putting values to nums2
-	Output :
+                // CPP
+                int arr1[3] = {1, 2, 3};
+                int* arr2 = arr1; // arr2 points to arr1
+                arr2[0] = 99;
+                cout << arr1[0]; // prints 99
+
+                // JAVA
+                int arr1[] = {1, 2, 3};
+                int arr2[] = arr1; // arr2 refers to arr1
+                arr2[0] = 99;
+                System.out.println(arr1[0]); // prints 99
+
+
+        Java’s "array references" behave like C++ pointers that point to arrays.
+        In Java, assigning one array to another does not copy the array — it only copies the reference (address).
+        This means "both variables will refer to the same array object" in memory.
+        Any change made through one reference will also affect the other.
+
+        The difference is:
+            Java automatically handles memory and safety (no pointer arithmetic, no manual free/delete).
+            C/C++ gives direct memory control, but with risk of errors.
+
+        (i.e. same object with two different names, "not two different objects with equal values". 
+        The object can be modified via both of the names.)
+
+
+        To illustrate this, consider following examples.
+*/
+
+// rev[23-Oct-2025] rev book
+
+
+/* Example 1: */
+
+
+/*  
+
+                int nums1[] = new int[10];
+                int nums2[] = new int[10];
+
+                for(i=0; i < 10; i++) nums1[i] = i;      // putting values to nums1 
+                for(i=0; i < 10; i++) nums2[i] = -i;     // putting values to nums2
+
+    
+    Output :
 Here is nums1: 0 1 2 3 4 5 6 7 8 9
 Here is nums2: 0 -1 -2 -3 -4 -5 -6 -7 -8 -9
 Here is nums2 after assignment: 0 1 2 3 4 5 6 7 8 9
 nums1 after change through nums2: 0 1 2 99 4 5 6 7 8 9
+
+
            System.out.print("Here is nums1: "); for(i=0; i < 10; i++) System.out.print(nums1[i] + " "); System.out.println();
            System.out.print("Here is nums2: "); for(i=0; i < 10; i++) System.out.print(nums2[i] + " "); System.out.println();
 
@@ -24,7 +67,13 @@ nums1 after change through nums2: 0 1 2 99 4 5 6 7 8 9
            nums2[3] = 99; 			// operating on nums1 array through nums2
            System.out.print("nums1 after change through nums2: "); for(i=0; i < 10; i++) System.out.print(nums1[i] + " "); System.out.println();
 	As the output shows, after the assignment of nums1 to nums2, both array reference variables refer to the same object.
-	Using the length Member (instance member of an array object): Because arrays are implemented as objects, each array has associated with it a length instance variable that contains the number of elements that the array can hold. (In other words, length contains the size of the array.) Here is a program that demonstrates this property:
+	Using the length Member (instance member of an array object): Because arrays are implemented as objects, each array has associated with it a length instance variable that contains the number of elements that the array can hold. (In other words, length contains the size of the array.) 
+
+
+
+Here is a program that demonstrates this property:
+
+
 
 int list[] = new int[10];
 int nums[] = { 1, 2, 3 };
@@ -79,11 +128,7 @@ for(i=0; i < nums1.length; i++) nums1[i] = i;
 2.11 Array (Advanced)
 1. Assigning Array References
 
-In Java, assigning one array to another does not copy the array — it only copies the reference (address).
 
-This means both variables will refer to the same array object in memory.
-
-Any change made through one reference will also affect the other.
 
 Example:
 
