@@ -47,14 +47,14 @@
                 Consider the following program.
 
 
-The output from the program is shown here:
-Here is nums1: 0 1 2 3 4 5 6 7 8 9
-Here is nums2: 0 -1 -2 -3 -4 -5 -6 -7 -8 -9
-Here is nums2 after assignment: 0 1 2 3 4 5 6 7 8 9
-Here is nums1 after change through nums2: 0 1 2 99 4 5 6 7 8 9
-As the output shows, after the assignment of nums1 to nums2, both array reference variables
-refer to the same object.
+                OUTPUT would be:
+                    Here is nums1: 0 1 2 3 4 5 6 7 8 9
+                    Here is nums2: 0 -1 -2 -3 -4 -5 -6 -7 -8 -9
+                    Here is nums2 after assignment: 0 1 2 3 4 5 6 7 8 9
+                    Here is nums1 after change through nums2: 0 1 2 99 4 5 6 7 8 9
 
+                Notice: 
+                    after the assignment of nums1 to nums2, both array reference variables refer to the same object.
 */
 
 
