@@ -20,8 +20,8 @@
                 System.out.println(arr1[0]); // prints 99
 
 
-        Java’s "array references" behave like C++ pointers that point to arrays.
-        In Java, assigning one array to another does not copy the array — it only copies the reference (address).
+        Java's "array references" behave like C++ pointers that point to arrays.
+        In Java, assigning one array to another does not copy the array - it only copies the reference (address).
         This means "both variables will refer to the same array object" in memory.
         Any change made through one reference will also affect the other.
 
@@ -36,10 +36,10 @@
         To illustrate this, consider following examples.
 */
 
-// rev[23-Oct-2025] rev book
 
 
-/* Example 1: When one "array reference is assigned to another", only the reference (or address) is copied — 
+
+/* Example 1: When one "array reference is assigned to another", only the reference (or address) is copied - 
                 not the actual array or its contents. Both variables then refer to the same array object.
 
                 You are simply changing what object that variable refers to.
@@ -57,40 +57,42 @@
                     after the assignment of nums1 to nums2, both array reference variables refer to the same object.
 */
 
-
 // Assigning array reference variables.
 class AssignARef {
-public static void main(String args[]) {
-int i;
-int nums1[] = new int[10];
-int nums2[] = new int[10];
-for(i=0; i < 10; i++)
-nums1[i] = i;
-for(i=0; i < 10; i++)
-nums2[i] = -i;Chapter 5: More Data Types and Operators 147
-System.out.print("Here is nums1: ");
-for(i=0; i < 10; i++)
-System.out.print(nums1[i] + " ");
-System.out.println();
-System.out.print("Here is nums2: ");
-for(i=0; i < 10; i++)
-System.out.print(nums2[i] + " ");
-System.out.println();
-nums2 = nums1; // now nums2 refers to nums1
-System.out.print("Here is nums2 after assignment: ");
-for(i=0; i < 10; i++)
-System.out.print(nums2[i] + " ");
-System.out.println();
-// now operate on nums1 array through nums2
-nums2[3] = 99;
-System.out.print("Here is nums1 after change through nums2: ");
-for(i=0; i < 10; i++)
-System.out.print(nums1[i] + " ");
-System.out.println();
-}
+    public static void main(String args[]) {
+        int i;
+        int nums1[] = new int[10];
+        int nums2[] = new int[10];
+
+        for(i=0; i < 10; i++) nums1[i] = i;
+        for(i=0; i < 10; i++) nums2[i] = -i;
+
+        System.out.print("Here is nums1: ");
+        for(i=0; i < 10; i++) System.out.print(nums1[i] + " ");
+        System.out.println();
+
+        System.out.print("Here is nums2: ");
+        for(i=0; i < 10; i++) System.out.print(nums2[i] + " ");
+        System.out.println();
+
+        nums2 = nums1; // now nums2 refers to nums1
+
+        System.out.print("Here is nums2 after assignment: ");
+        for(i=0; i < 10; i++) System.out.print(nums2[i] + " ");
+        System.out.println();
+
+        // now operate on nums1 array through nums2
+        nums2[3] = 99;
+
+        System.out.print("Here is nums1 after change through nums2: ");
+        for(i=0; i < 10; i++) System.out.print(nums1[i] + " ");
+        System.out.println();
+    }
 }
 
 
+
+// ----  rev[03-Nov-2025] rev book  ----
 
 /*  
 
