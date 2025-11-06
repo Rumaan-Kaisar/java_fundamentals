@@ -92,22 +92,36 @@ class AssignARef {
 
 
 
+
+/*  --------  Using the "length" Member  --------
+    length: 
+        it is a instance member of an array object.
+        length contains the size of the array.
+        It is final (cannot be changed).
+
+    Every array in Java has a built-in instance variable called "length".
+    Because, the arrays are objects in java.
+    "length" stores the "number of elements" the array can hold.
+*/
+
+
+
+
+
+
+/* 
+
+
+
+
+
+Following program demonstrates this property: */
+
+
+
 // ----  rev[03-Nov-2025] rev book  ----
 
 /*  
-
-
-
-
-
-
-
-	Using the length Member (instance member of an array object): Because arrays are implemented as objects, each array has associated with it a length instance variable that contains the number of elements that the array can hold. (In other words, length contains the size of the array.) 
-
-
-
-Here is a program that demonstrates this property:
-
 
 
 int list[] = new int[10];
@@ -137,6 +151,9 @@ System.out.println();
 	      length of table[1] is 2
 	      length of table[2] is 4
 	      Here is list: 0 1 4 9 16 25 36 49 64 81
+
+
+          
 	Pay special attention to the way length is used with the two-dimensional array table. Since a two-dimensional array is an array of arrays. 
 	Thus, when " table.length " is used, it obtains the number of arrays stored in table, which is 3 in this case. 
 	To obtain the length of any individual array in table, you will use an expression such as this, " table[0].length " which, in this case, obtains the length of the first array.
@@ -160,58 +177,8 @@ for(i=0; i < nums1.length; i++) nums1[i] = i;
 
 ----  GPT  ----
 
-2.11 Array (Advanced)
-1. Assigning Array References
 
-
-
-Example:
-
-int nums1[] = new int[10];
-int nums2[] = new int[10];
-
-for(int i = 0; i < 10; i++) nums1[i] = i;
-for(int i = 0; i < 10; i++) nums2[i] = -i;
-
-System.out.print("Here is nums1: ");
-for(int i = 0; i < 10; i++) System.out.print(nums1[i] + " ");
-System.out.println();
-
-System.out.print("Here is nums2: ");
-for(int i = 0; i < 10; i++) System.out.print(nums2[i] + " ");
-System.out.println();
-
-nums2 = nums1; // nums2 now refers to the same object as nums1
-
-System.out.print("Here is nums2 after assignment: ");
-for(int i = 0; i < 10; i++) System.out.print(nums2[i] + " ");
-System.out.println();
-
-nums2[3] = 99; // modify nums1 through nums2
-
-System.out.print("nums1 after change through nums2: ");
-for(int i = 0; i < 10; i++) System.out.print(nums1[i] + " ");
-System.out.println();
-
-
-Output (simplified):
-
-Here is nums1: 0 1 2 3 4 5 6 7 8 9
-Here is nums2: 0 -1 -2 -3 -4 -5 -6 -7 -8 -9
-Here is nums2 after assignment: 0 1 2 3 4 5 6 7 8 9
-nums1 after change through nums2: 0 1 2 99 4 5 6 7 8 9
-
-
-Key Point:
-✅ After assignment (nums2 = nums1;), both nums1 and nums2 refer to the same array object.
-
-2. Using the length Member
-
-Every array in Java has a built-in instance variable called length.
-
-length stores the number of elements the array can hold.
-
-It is final (cannot be changed).
+    
 
 Example:
 
@@ -263,6 +230,12 @@ Key Points:
 ✅ length gives the total number of elements the array can hold, not how many are actually used.
 
 ✅ length helps avoid array overrun errors (runtime exceptions).
+
+
+
+
+
+
 
 3. Example — Copying Arrays Safely
 
