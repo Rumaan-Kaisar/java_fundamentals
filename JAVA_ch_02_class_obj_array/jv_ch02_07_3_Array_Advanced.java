@@ -155,6 +155,26 @@ class LengthDemo {
 
 // ----  rev[06-Nov-2025] rev book  ----
 
+/* Example 3: Use "length" member-variable to help copy an array. */
+
+class ACopy {
+    public static void main(String args[]) {
+        int i;
+        int nums1[] = new int[10];
+        int nums2[] = new int[10];
+
+        // notice the use of "length"
+        for(i=0; i < nums1.length; i++) nums1[i] = i;     // putting values to nums1
+
+        // copy nums1 to nums2
+        if(nums2.length >= nums1.length) {    // Use length to compare array sizes
+            for(i = 0; i < nums1.length; i++) nums2[i] = nums1[i];
+        }
+
+        for(i=0; i < nums2.length; i++) System.out.print(nums2[i] + " ");
+    }
+}
+
 /*  
 
 ---------------------------------
@@ -177,23 +197,7 @@ of array operations easier—and safer—to perform. For example, the following 
 length to copy one array to another while preventing an array overrun and its attendant runtime exception.
 
 
-// Use length variable to help copy an array.
-class ACopy {
-public static void main(String args[]) {
-int i;
-int nums1[] = new int[10];
-int nums2[] = new int[10];
-for(i=0; i < nums1.length; i++)
-nums1[i] = i;
 
-// copy nums1 to nums2
-if(nums2.length >= nums1.length)    // Use length to compare array sizes
-for(i = 0; i < nums1.length; i++)
-nums2[i] = nums1[i];
-for(i=0; i < nums2.length; i++)
-System.out.print(nums2[i] + " ");
-}
-}
 
 
 
