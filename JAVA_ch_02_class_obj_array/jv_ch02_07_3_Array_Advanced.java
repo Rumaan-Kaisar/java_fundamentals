@@ -176,6 +176,27 @@ The inclusion of the length member simplifies many algorithms by making certain 
 of array operations easier—and safer—to perform. For example, the following program uses
 length to copy one array to another while preventing an array overrun and its attendant runtime exception.
 
+
+// Use length variable to help copy an array.
+class ACopy {
+public static void main(String args[]) {
+int i;
+int nums1[] = new int[10];
+int nums2[] = new int[10];
+for(i=0; i < nums1.length; i++)
+nums1[i] = i;
+
+// copy nums1 to nums2
+if(nums2.length >= nums1.length)    // Use length to compare array sizes
+for(i = 0; i < nums1.length; i++)
+nums2[i] = nums1[i];
+for(i=0; i < nums2.length; i++)
+System.out.print(nums2[i] + " ");
+}
+}
+
+
+
 Here, length helps perform two important functions. First, it is used to confirm that the
 target array is large enough to hold the contents of the source array. Second, it provides the
 termination condition of the for loop that performs the copy. Of course, in this simple example,
