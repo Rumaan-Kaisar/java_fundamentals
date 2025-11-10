@@ -106,6 +106,7 @@ class AssignARef {
 
 
 
+
 /* Example 2: Following program demonstrates the use of "length" array member. */
 
 class LengthDemo {
@@ -139,7 +140,7 @@ class LengthDemo {
 
 
 
-
+// ---- rev[10-Nov-2025] ----
 
 
 /* 
@@ -156,36 +157,32 @@ class LengthDemo {
 
 /*  
 
+---------------------------------
 
-int list[] = new int[10];
-int nums[] = { 1, 2, 3 };
-int table[][] = {  	{1, 2, 3},
-		{4, 5},
-		{6, 7, 8, 9} };             // a variable-length table
+Pay special attention to the way length is used with the two-dimensional array table. As
+explained, a two-dimensional array is an array of arrays. Thus, when the expression
+table.length
+is used, it obtains the number of arrays stored in table, which is 3 in this case. To obtain the
+length of any individual array in table, you will use an expression such as this,
+table[0].length
+which, in this case, obtains the length of the first array.
+One other thing to notice in LengthDemo is the way that list.length is used by the for
+loops to govern the number of iterations that take place. Since each array carries with it its
+own length, you can use this information rather than manually keeping track of an array’s size.
 
-System.out.println("length of list is " + list.length);
-System.out.println("length of nums is " + nums.length);
-System.out.println("length of table is " + table.length);
-System.out.println("length of table[0] is " + table[0].length);
-System.out.println("length of table[1] is " + table[1].length);
-System.out.println("length of table[2] is " + table[2].length);
-System.out.println();	// use length to initialize list
-for(int i=0; i < list.length; i++) list[i] = i * i;
-System.out.print("Here is list: ");
+Keep in mind that the value of length has nothing to do with the number of elements that are
+actually in use. It contains the number of elements that the array is capable of holding.
+The inclusion of the length member simplifies many algorithms by making certain types
+of array operations easier—and safer—to perform. For example, the following program uses
+length to copy one array to another while preventing an array overrun and its attendant runtime exception.
 
-// now use length to display list
-for(int i=0; i < list.length; i++) System.out.print(list[i] + " ");
-System.out.println();
+Here, length helps perform two important functions. First, it is used to confirm that the
+target array is large enough to hold the contents of the source array. Second, it provides the
+termination condition of the for loop that performs the copy. Of course, in this simple example,
+the sizes of the arrays are easily known, but this same approach can be applied to a wide range
+of more challenging situations.
 
-	Output:  length of list is 10
-	      length of nums is 3
-	      length of table is 3
-	      length of table[0] is 3
-	      length of table[1] is 2
-	      length of table[2] is 4
-	      Here is list: 0 1 4 9 16 25 36 49 64 81
-
-
+---------------------------------
 
 	Pay special attention to the way length is used with the two-dimensional array table. Since a two-dimensional array is an array of arrays. 
 	Thus, when " table.length " is used, it obtains the number of arrays stored in table, which is 3 in this case. 
