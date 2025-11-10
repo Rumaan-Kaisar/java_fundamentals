@@ -127,26 +127,18 @@ class LengthDemo {
         System.out.println("length of table[2] is " + table[2].length);
         System.out.println();
 
-// use length to initialize list
-for(int i=0; i < list.length; i++)
-list[i] = i * i;
-System.out.print("Here is list: ");
-// now use length to display list
-for(int i=0; i < list.length; i++)
-System.out.print(list[i] + " ");
-System.out.println();
-}
+        // use length to initialize list
+        for(int i=0; i < list.length; i++) list[i] = i*i;
+        System.out.print("Here is list: ");
+
+        // now use length to display list
+        for(int i=0; i < list.length; i++) System.out.print(list[i] + " ");
+        System.out.println();
+    }
 }
 
 
-This program displays the following output:
-length of list is 10
-length of nums is 3
-length of table is 3
-length of table[0] is 3
-length of table[1] is 2
-length of table[2] is 4
-Here is list: 0 1 4 9 16 25 36 49 64 81
+
 
 
 
