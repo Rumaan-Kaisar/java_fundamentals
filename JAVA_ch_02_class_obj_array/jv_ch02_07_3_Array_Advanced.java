@@ -106,8 +106,65 @@ class AssignARef {
 
 
 
+// ---- rev[10-Nov-2025] ----
 
-/* Example 2: Following program demonstrates the use of "length" array member. */
+
+/* Example 2: Following program demonstrates the use of "length" array member. 
+
+
+Pay special attention to the way length is used with the two-dimensional array table. As
+explained, a two-dimensional array is an array of arrays. Thus, when the expression
+table.length
+is used, it obtains the number of arrays stored in table, which is 3 in this case. To obtain the
+length of any individual array in table, you will use an expression such as this,
+table[0].length
+which, in this case, obtains the length of the first array.
+One other thing to notice in LengthDemo is the way that list.length is used by the for
+loops to govern the number of iterations that take place. Since each array carries with it its
+own length, you can use this information rather than manually keeping track of an array’s size.
+
+Keep in mind that the value of length has nothing to do with the number of elements that are
+actually in use. It contains the number of elements that the array is capable of holding.
+The inclusion of the length member simplifies many algorithms by making certain types
+of array operations easier—and safer—to perform. For example, the following program uses
+length to copy one array to another while preventing an array overrun and its attendant runtime exception.
+
+
+
+----------------------------------------------------------
+
+
+	Pay special attention to the way length is used with the two-dimensional array table. Since a two-dimensional array is an array of arrays. 
+	Thus, when " table.length " is used, it obtains the number of arrays stored in table, which is 3 in this case. 
+	To obtain the length of any individual array in table, you will use an expression such as this, " table[0].length " which, in this case, obtains the length of the first array.
+	Also notice that list.length is used by the for loops to govern the number of iterations that take place. Since each array carries with it its own length, you can use this information rather than manually keeping track of an array’s size.
+
+	Keep in mind that the value of length has nothing to do with the number of elements that are actually in use. It contains the number of elements that the array is capable of holding.
+
+----------------------------------------------------------
+
+In Java, a two-dimensional array is an array of arrays.
+
+
+Using table.length gives the number of rows (arrays) in table.
+→ Example: If table has 3 rows, table.length = 3.
+
+
+Using table[0].length gives the number of columns in the first row.
+
+
+The length variable of an array is often used in for-loops to control iteration instead of manually tracking size.
+
+
+length shows how many elements the array can hold, not how many are currently used.
+
+
+Using length makes array operations simpler and safer — for example, when copying one array to another, it helps prevent array index out-of-bounds errors.
+
+
+
+
+*/
 
 class LengthDemo {
     public static void main(String args[]) {
@@ -140,7 +197,6 @@ class LengthDemo {
 
 
 
-// ---- rev[10-Nov-2025] ----
 
 
 /* 
@@ -179,24 +235,6 @@ class ACopy {
 
 ---------------------------------
 
-Pay special attention to the way length is used with the two-dimensional array table. As
-explained, a two-dimensional array is an array of arrays. Thus, when the expression
-table.length
-is used, it obtains the number of arrays stored in table, which is 3 in this case. To obtain the
-length of any individual array in table, you will use an expression such as this,
-table[0].length
-which, in this case, obtains the length of the first array.
-One other thing to notice in LengthDemo is the way that list.length is used by the for
-loops to govern the number of iterations that take place. Since each array carries with it its
-own length, you can use this information rather than manually keeping track of an array’s size.
-
-Keep in mind that the value of length has nothing to do with the number of elements that are
-actually in use. It contains the number of elements that the array is capable of holding.
-The inclusion of the length member simplifies many algorithms by making certain types
-of array operations easier—and safer—to perform. For example, the following program uses
-length to copy one array to another while preventing an array overrun and its attendant runtime exception.
-
-
 
 
 
@@ -209,11 +247,6 @@ of more challenging situations.
 
 ---------------------------------
 
-	Pay special attention to the way length is used with the two-dimensional array table. Since a two-dimensional array is an array of arrays. 
-	Thus, when " table.length " is used, it obtains the number of arrays stored in table, which is 3 in this case. 
-	To obtain the length of any individual array in table, you will use an expression such as this, " table[0].length " which, in this case, obtains the length of the first array.
-	Also notice that list.length is used by the for loops to govern the number of iterations that take place. Since each array carries with it its own length, you can use this information rather than manually keeping track of an array’s size.
-	Keep in mind that the value of length has nothing to do with the number of elements that are actually in use. It contains the number of elements that the array is capable of holding.
 	length simplifies many algorithms by making certain types of array operations easier—and safer—to perform. For example, the following uses length to copy one array to another while preventing an array overrun and its attendant run-time exception.
 
 class ACopy { public static void main(String args[]) {	 int i;
