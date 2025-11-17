@@ -168,9 +168,7 @@ class LengthDemo {
 // ----  rev[13-Nov-2025] rev book  ----
 
 /* Example 3: Use "length" member-variable to help copy an array. 
-
-Using length makes array operations simpler and safer — for example, when copying one array to another, it helps prevent array index out-of-bounds errors.
-
+                when copying one array to another, "length" helps prevent array index out-of-bounds errors.
 */
 
 class ACopy {
@@ -197,13 +195,15 @@ class ACopy {
 
 
 
-
+He
 
 Here, length helps perform two important functions. First, it is used to confirm that the
-target array is large enough to hold the contents of the source array. Second, it provides the
-termination condition of the for loop that performs the copy. Of course, in this simple example,
-the sizes of the arrays are easily known, but this same approach can be applied to a wide range
-of more challenging situations.
+target array is large enough to hold the contents of the source array. 
+
+Second, it provides the
+termination condition of the for loop that performs the copy. 
+
+
 
 ---------------------------------
 
