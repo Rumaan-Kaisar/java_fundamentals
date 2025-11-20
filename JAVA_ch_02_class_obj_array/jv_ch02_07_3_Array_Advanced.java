@@ -167,6 +167,8 @@ class LengthDemo {
                 Here "length" is doing 2 things:
                     It is used to confirm that the target array is large enough to hold the contents of the source array. 
                     It provides the termination condition of the for loop that performs the copy. 
+
+                Preventing an array overrun and its attendant run-time exception.
 */
 
 class ACopy {
@@ -178,7 +180,7 @@ class ACopy {
         // notice the use of "length"
         for(i=0; i < nums1.length; i++) nums1[i] = i;     // putting values to nums1
 
-        // copy nums1 to nums2
+        // compare array size using length and  copy nums1 to nums2 
         if(nums2.length >= nums1.length) {    // Use length to compare array sizes
             for(i = 0; i < nums1.length; i++) nums2[i] = nums1[i];
         }
@@ -204,21 +206,6 @@ class ACopy {
 
 
 ---------------------------------
-
-	length simplifies many algorithms by making certain types of array operations easier—and safer—to perform. For example, the following uses length to copy one array to another while preventing an array overrun and its attendant run-time exception.
-
-class ACopy { public static void main(String args[]) {	 int i;
-int nums1[] = new int[10];
-int nums2[] = new int[10];
-for(i=0; i < nums1.length; i++) nums1[i] = i;
-
-// compare array size using length and  copy nums1 to nums2 
-			if(nums2.length >= nums1.length) for(i = 0; i < nums1.length; i++) nums2[i] = nums1[i];
-			for(i=0; i < nums2.length; i++) System.out.print(nums2[i] + " ");	      }}
-
-	Here, length helps perform two important functions.		First, it is used to confirm that the target array is large enough to hold the contents of the source array.
-		Second, it provides the termination condition of the for loop that performs the copy. 
-
 
 
 ----  GPT  ----
