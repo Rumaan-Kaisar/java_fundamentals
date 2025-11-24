@@ -17,7 +17,100 @@ A data structure is a means of organizing data. The simplest data structure is t
 	Although there are other ways to support a queue, the method we will use is based upon an array. That is, an array will provide the storage for the items put into the queue. 
 	This array will be accessed through two indices. The put index determines where the next element of data will be stored. The get index indicates at what location the next element of data will be obtained. Keep in mind that the get operation is consumptive, and it is not possible to retrieve the same element twice. 
 	First create the Queue class. The constructor for the Queue class creates a queue of a given size ( Notice that the put and get indices are initially set to zero). 
- */class Queue{
+
+
+Data Structure: Stack & Queue Using Arrays (Simplified Points)
+
+
+1. Data structures & arrays
+
+A data structure organizes data efficiently.
+
+The simplest one is an array, which stores elements linearly and allows random access.
+
+More advanced structures like stacks and queues are often built on top of arrays.
+
+
+
+2. Stack
+
+A stack follows FILO (First-In, Last-Out) order.
+
+Like plates stacked on a table—the last plate placed is the first removed.
+
+
+
+3. Queue
+
+A queue follows FIFO (First-In, First-Out) order.
+
+Like a waiting line at a bank—the first person in line gets served first.
+
+
+
+4. Why stacks & queues matter
+
+They combine data storage + operations into one unit.
+
+They act as data engines:
+The structure itself handles storing and retrieving items, so the program doesn't manage it manually.
+
+
+
+5. Basic queue operations
+
+put() → adds an element to the end of the queue.
+
+get() → removes the next element from the front of the queue.
+
+
+
+6. Types of queues
+
+Circular queue: reuses empty positions when elements are removed.
+
+Noncircular queue: does not reuse freed space and eventually becomes full.
+
+
+
+7. Queue behavior
+
+Queue operations are consumptive → once an element is removed, it cannot be retrieved again.
+
+A queue can become:
+
+Full → no more space to add items.
+
+Empty → all items removed.
+
+
+
+8. Queue implementation using an array
+
+We use an array to store the queue elements.
+
+Two indices control access:
+
+put index: where the next item is stored.
+
+get index: where the next item is retrieved.
+
+Because get is consumptive, you never access the same element twice.
+
+
+
+9. Creating the Queue class
+
+The constructor creates an array of a chosen size.
+
+put = 0, get = 0 initially.
+
+This simple version is noncircular, but converting to circular is easy later.
+
+
+*/
+ 
+ class Queue{
         char q[]; 			         // this array holds the queue
         int putloc, getloc; 		         // the put and get indices
         Queue(int size) { q = new char[size];   // allocate memory for queue
@@ -61,6 +154,8 @@ System.out.print("Contents of smallQ: ");
 for(i=0; i < 5; i++) { ch = smallQ.get();
 		if(ch != (char) 0) System.out.print(ch);}
 }}
+
+
 Output:	Using bigQ to store the alphabet.
 		Contents of bigQ: ABCDEFGHIJKLMNOPQRSTUVWXYZ
 
