@@ -3,23 +3,19 @@
 
 // ----  rev[17-Nov-2025] rev book  ----
 
-/* -=-=-=-=-=-=-=-=-=-=-=      chapter name      -=-=-=-=-=-=-=-=-=-=-= */
-/* 
+/* -=-=-=-=-=-=-=-=-=-=-=      chapter name      -=-=-=-=-=-=-=-=-=-=-= 
 
-2.12 Data structure "stack" and "queue" with array
-A data structure is a means of organizing data. The simplest data structure is the array, which is a linear list that supports random access to its elements. Arrays are often used as the underpinning for more sophisticated data structures, such as stacks and queues.
+    Data structure: "stack" and "queue" with array
 
-
-1. Data structures & arrays
-
-A data structure organizes data efficiently.
-The simplest one is an array, which stores elements linearly and allows random access.
-More advanced structures like stacks and queues are often built on top of arrays.
+    Data structures & arrays:
+        A data structure organizes data efficiently.
+        The simplest one is an "array", which stores elements "linearly" and allows "random access".
+        More advanced structures like "stacks" and "queues" are often built on top of arrays.
 
 
 
 
-A stack is a list in which elements can be accessed in first-in, last-out (FILO) order only. Like a stack of plates on a table
+
 
 
 2. Stack
@@ -27,16 +23,20 @@ More advanced structures like stacks and queues are often built on top of arrays
 A stack follows FILO (First-In, Last-Out) order.
 Like plates stacked on a table—the last plate placed is the first removed.
 
+A stack is a list in which elements can be accessed in first-in, last-out (FILO) order only. Like a stack of plates on a table
 
 
-A queue is a list in which elements can be accessed in first-in, first-out (FIFO) order only. Like a line at a bank.
+
+
+
+
 
 3. Queue
 
 A queue follows FIFO (First-In, First-Out) order.
 Like a waiting line at a bank—the first person in line gets served first.
 
-
+A queue is a list in which elements can be accessed in first-in, first-out (FIFO) order only. Like a line at a bank.
 
 stacks and queues are data engines: What makes data structures such as stacks and queues interesting is that they combine storage for information with the methods that access that information. Thus, stacks and queues are data engines in which storage and retrieval are provided by the data structure itself, not manually by your program.
 
