@@ -13,39 +13,28 @@
         More advanced structures like "stacks" and "queues" are often built on top of arrays.
 
 
+    Stack:
+        A stack is a list which elements can be accessed in FILO (First-In, Last-Out) order.
+        Like plates stacked on a table—the last plate placed is the first removed.
+
+        
+    Queue:
+        A queue follows FIFO (First-In, First-Out) order.
+        Like a waiting line at a bank—the first person in line gets served first.
 
 
-
-
-
-2. Stack
-
-A stack follows FILO (First-In, Last-Out) order.
-Like plates stacked on a table—the last plate placed is the first removed.
-
-A stack is a list in which elements can be accessed in first-in, last-out (FILO) order only. Like a stack of plates on a table
-
-
-
-
-
-
-
-3. Queue
-
-A queue follows FIFO (First-In, First-Out) order.
-Like a waiting line at a bank—the first person in line gets served first.
-
-A queue is a list in which elements can be accessed in first-in, first-out (FIFO) order only. Like a line at a bank.
-
-stacks and queues are data engines: What makes data structures such as stacks and queues interesting is that they combine storage for information with the methods that access that information. Thus, stacks and queues are data engines in which storage and retrieval are provided by the data structure itself, not manually by your program.
-
+// rev[01-Dec-2025]
 
 4. Why stacks & queues matter
 
 They combine data storage + operations into one unit.
 They act as data engines:
 The structure itself handles storing and retrieving items, so the program doesn't manage it manually.
+
+
+stacks and queues are data engines: What makes data structures such as stacks and queues interesting is that they combine storage for information with the methods that access that information. Thus, stacks and queues are data engines in which storage and retrieval are provided by the data structure itself, not manually by your program.
+
+
 
 
 
