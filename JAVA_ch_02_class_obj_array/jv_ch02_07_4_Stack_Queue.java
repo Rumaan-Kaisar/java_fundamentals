@@ -25,14 +25,17 @@
 
 // rev[01-Dec-2025]
 
-4. Why stacks & queues matter
+    Why stacks & queues matter:
 
 They combine data storage + operations into one unit.
 They act as data engines:
 The structure itself handles storing and retrieving items, so the program doesn't manage it manually.
 
 
-stacks and queues are data engines: What makes data structures such as stacks and queues interesting is that they combine storage for information with the methods that access that information. Thus, stacks and queues are data engines in which storage and retrieval are provided by the data structure itself, not manually by your program.
+i.e. they combine storage for information with the methods that access that information.
+
+
+ Thus, stacks and queues are data engines in which storage and retrieval are provided by the data structure itself, not manually by your program.
 
 
 
