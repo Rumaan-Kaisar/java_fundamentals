@@ -23,31 +23,27 @@
         Like a waiting line at a bank—the first person in line gets served first.
 
 
-// rev[01-Dec-2025]
-
     Why stacks & queues matter:
+        They combine storage for information with the methods that access that information.
+        i.e. they combine data storage + operations into one unit.
 
-They combine data storage + operations into one unit.
-They act as data engines:
-The structure itself handles storing and retrieving items, so the program doesn't manage it manually.
-
-
-i.e. they combine storage for information with the methods that access that information.
-
-
- Thus, stacks and queues are data engines in which storage and retrieval are provided by the data structure itself, not manually by your program.
+        They act as data engines:
+            The structure itself handles STORING and RETRIEVING items, so the program doesn't manage it manually.
 
 
 
+// rev[04-Dec-2025]
 
-
-Queue class: In general, queues support two basic operations: put and get. Each put operation places a new element on the end of the queue. Each get operation retrieves the next element from the front of the queue. 
+    --------  Queue class  --------
+    In general, queues support two basic operations: put and get.
+        put(): Each put operation places a new element on the end of the queue.
+        get(): Each get operation retrieves the next element from the front of the queue.
 
 
 5. Basic queue operations
 
-put() → adds an element to the end of the queue.
-get() → removes the next element from the front of the queue.
+ adds an element to the end of the queue.
+ removes the next element from the front of the queue.
 
 
 
