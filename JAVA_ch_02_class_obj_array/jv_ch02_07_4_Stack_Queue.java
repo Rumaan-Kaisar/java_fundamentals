@@ -32,29 +32,23 @@
 
 
 
-// rev[04-Dec-2025]
-
     --------  Queue class  --------
     In general, queues support two basic operations: put and get.
         put(): Each put operation places a new element on the end of the queue.
         get(): Each get operation retrieves the next element from the front of the queue.
 
 
-5. Basic queue operations
+    Types of queues:
+        There are two basic types of queues
 
- adds an element to the end of the queue.
- removes the next element from the front of the queue.
+        Circular queue: 
+            reuses empty positions in the underlying array, when elements are removed.
+
+        Noncircular queue: 
+            does not reuse freed space and eventually becomes exhausted.
 
 
-
-There are two basic types of queues—circular and noncircular. A circular queue reuses locations in the underlying array when elements are removed. A noncircular queue does not reuse locations and eventually becomes exhausted.
-
-
-6. Types of queues
-
-Circular queue: reuses empty positions when elements are removed.
-Noncircular queue: does not reuse freed space and eventually becomes full.
-
+// rev[08-Dec-2025]
 
 
 Queue operations are consumptive: once an element has been retrieved, it cannot be retrieved again. The queue can also become full, if there is no space available to store an item, and it can become empty, if all of the elements have been removed.
