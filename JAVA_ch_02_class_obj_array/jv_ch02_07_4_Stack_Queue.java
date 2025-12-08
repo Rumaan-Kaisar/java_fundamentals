@@ -48,19 +48,23 @@
             does not reuse freed space and eventually becomes exhausted.
 
 
+    ----  Queue behavior  ----
+
+    Queue operations are CONSUMPTIVE:
+        once an element is "removed", it cannot be "retrieved" again.
+
+    A queue can become:
+        Full: no more space to add items.
+        Empty: all items removed.
+
+
 // rev[08-Dec-2025]
 
 
-Queue operations are consumptive: once an element has been retrieved, it cannot be retrieved again. The queue can also become full, if there is no space available to store an item, and it can become empty, if all of the elements have been removed.
-Example: For the sake of simplicity, we now consider a noncircular queue, but it can easily transform it into a circular queue.
+*/
 
-7. Queue behavior
 
-Queue operations are consumptive → once an element is removed, it cannot be retrieved again.
-
-A queue can become:
-Full → no more space to add items.
-Empty → all items removed.
+/* Example 1: For the sake of simplicity, we now consider a non-circular queue, but it can easily transform it into a circular queue.
 
 
 
@@ -91,19 +95,10 @@ This simple version is noncircular, but converting to circular is easy later.
 
 
 
-
-
-
-
-
-
-
-
-
-
 */
- 
- class Queue{
+
+
+class Queue{
         char q[];          // this array holds the queue
         int putloc, getloc;          // the put and get indices
         Queue(int size) { q = new char[size];   // allocate memory for queue
