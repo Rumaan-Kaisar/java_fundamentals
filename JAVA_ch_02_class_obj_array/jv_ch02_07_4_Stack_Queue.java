@@ -56,31 +56,26 @@
     A queue can become:
         Full: no more space to add items.
         Empty: all items removed.
-
-
-// rev[08-Dec-2025]
-
-
 */
 
 
-/* Example 1: For the sake of simplicity, we now consider a non-circular queue, but it can easily transform it into a circular queue.
+/* Example 1: For the sake of simplicity, we now consider a "non-circular queue", 
+                but it can easily transform it into a circular queue.
+
+                the method we will use is based upon an array. 
+                That is, an array will provide the storage for the items put into the queue. 
+
+                (Also there are other ways to support a queue).
+
+                Two indices control access:
+                    put index: determines location where the next item will be stored.
+                    get index: determines location where the next item will be retrieved.
+
+                Because get is "CONSUMPTIVE", you never access the same element twice.
 
 
 
-Although there are other ways to support a queue, the method we will use is based upon an array. That is, an array will provide the storage for the items put into the queue. 
 
-8. Queue implementation using an array
-
-We use an array to store the queue elements.
-Two indices control access:
-put index: where the next item is stored.
-get index: where the next item is retrieved.
-Because get is consumptive, you never access the same element twice.
-
-
-
-This array will be accessed through two indices. The put index determines where the next element of data will be stored. The get index indicates at what location the next element of data will be obtained. Keep in mind that the get operation is consumptive, and it is not possible to retrieve the same element twice. 
 
 
 First create the Queue class. The constructor for the Queue class creates a queue of a given size ( Notice that the put and get indices are initially set to zero). 
