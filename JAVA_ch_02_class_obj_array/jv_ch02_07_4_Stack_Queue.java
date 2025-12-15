@@ -79,27 +79,43 @@
             Creating the Queue class:
                 The constructor for the Queue class creates a queue of a given size 
                 (Notice that the put and get indices are initially set to zero).
+            
+            [   Recall Cpp, ch10_01_1_class_intro.cpp, Example 11. 
+                ch10_01_2_constructor_destructor.cpp, Example 6, 
+                ch10_06_1_assign_obj.cpp, Example 6
+            ]
 */
 
 
 class Queue{
-        char q[];          // this array holds the queue
-        int putloc, getloc;          // the put and get indices
-        Queue(int size) { q = new char[size];   // allocate memory for queue
-      putloc = getloc = 0; }
+    char q[];               // this array holds the queue
+    int putloc, getloc;     // the put and get indices
 
-// put a character into the queue
-        void put(char ch) { 
-                if(putloc==q.length){ System.out.println(" – Queue is full.");
-                        return; }
-                q[putloc++] = ch; }
+    Queue(int size) { 
+        q = new char[size];   // allocate memory for queue
+        putloc = getloc = 0;  // put and get initialized to 0
+    }
+
+
+// Rev[15-Dec-2025]
+
+    // put a character into the queue
+    void put(char ch) { 
+        if(putloc==q.length){ 
+            System.out.println(" – Queue is full.");
+                return; }
+        q[putloc++] = ch; }
+
 
 // get a character from the queue
         char get(){ 
                 if(getloc == putloc){System.out.println(" – Queue is empty.");
  return (char) 0; }
                 return q[getloc++]; }
-}// Demonstrate the Queue class.
+}
+
+
+// Demonstrate the Queue class.
 class QDemo { public static void main(String args[]) {
            Queue bigQ = new Queue(100);
            Queue smallQ = new Queue(4);
@@ -127,7 +143,7 @@ for(i=0; i < 5; i++) { ch = smallQ.get();
 if(ch != (char) 0) System.out.print(ch);}
 }}
 
-
+/* 
 Output:Using bigQ to store the alphabet.
 Contents of bigQ: ABCDEFGHIJKLMNOPQRSTUVWXYZ
 
@@ -140,3 +156,4 @@ Attempting to store W
 Attempting to store V – Queue is full.
 Contents of smallQ: ZYXW – Queue is empty.
 
+ */
