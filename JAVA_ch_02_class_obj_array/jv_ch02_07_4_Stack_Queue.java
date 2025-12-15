@@ -59,6 +59,8 @@
 */
 
 
+
+
 /* Example 1: For the sake of simplicity, we now consider a "non-circular queue", 
                 but it can easily transform it into a circular queue.
 
@@ -74,22 +76,9 @@
                 Because get is "CONSUMPTIVE", you never access the same element twice.
 
 
-
-
-
-
-First create the Queue class. The constructor for the Queue class creates a queue of a given size ( Notice that the put and get indices are initially set to zero). 
-
-
-9. Creating the Queue class
-
-The constructor creates an array of a chosen size.
-put = 0, get = 0 initially.
-This simple version is noncircular, but converting to circular is easy later.
-
-
-
-
+            Creating the Queue class:
+                The constructor for the Queue class creates a queue of a given size 
+                (Notice that the put and get indices are initially set to zero).
 */
 
 
