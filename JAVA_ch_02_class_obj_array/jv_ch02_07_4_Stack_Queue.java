@@ -96,18 +96,19 @@ class Queue{
         putloc = getloc = 0;  // put and get initialized to 0
     }
 
-
-// Rev[15-Dec-2025]
-
     // put a character into the queue
     void put(char ch) { 
         if(putloc==q.length){ 
-            System.out.println(" – Queue is full.");
-                return; }
-        q[putloc++] = ch; }
+            System.out.println(" - Queue is full.");
+            return; 
+        }
 
+        q[putloc++] = ch; 
+    }
 
-// get a character from the queue
+// Rev[15-Dec-2025]
+
+    // get a character from the queue
         char get(){ 
                 if(getloc == putloc){System.out.println(" – Queue is empty.");
  return (char) 0; }
