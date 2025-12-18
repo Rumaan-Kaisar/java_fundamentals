@@ -102,26 +102,31 @@ class Queue{
             System.out.println(" - Queue is full.");
             return; 
         }
-
         q[putloc++] = ch; 
     }
 
-// Rev[15-Dec-2025]
-
     // get a character from the queue
-        char get(){ 
-                if(getloc == putloc){System.out.println(" – Queue is empty.");
- return (char) 0; }
-                return q[getloc++]; }
+    char get(){ 
+        if(getloc == putloc){ 
+            System.out.println(" - Queue is empty.");
+            return (char) 0; 
+        }
+        return q[getloc++]; }
 }
 
 
+// ----  Rev[15-Dec-2025]  ----
+
 // Demonstrate the Queue class.
-class QDemo { public static void main(String args[]) {
-           Queue bigQ = new Queue(100);
-           Queue smallQ = new Queue(4);
-           char ch;
-           int i;
+class QDemo { 
+    public static void main(String args[]) {
+        Queue bigQ = new Queue(100);
+        Queue smallQ = new Queue(4);
+        char ch;
+        int i;
+
+
+
 
 System.out.println("Using bigQ to store the alphabet.");
 for(i=0; i < 26; i++) bigQ.put((char) ('A' + i));         // put numbers 
@@ -144,6 +149,7 @@ for(i=0; i < 5; i++) { ch = smallQ.get();
 if(ch != (char) 0) System.out.print(ch);}
 }}
 
+
 /* 
 Output:Using bigQ to store the alphabet.
 Contents of bigQ: ABCDEFGHIJKLMNOPQRSTUVWXYZ
@@ -157,4 +163,6 @@ Attempting to store W
 Attempting to store V – Queue is full.
 Contents of smallQ: ZYXW – Queue is empty.
 
- */
+*/
+
+
