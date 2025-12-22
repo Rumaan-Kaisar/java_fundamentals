@@ -115,8 +115,6 @@ class Queue{
 }
 
 
-// ----  Rev[15-Dec-2025]  ----
-
 // Demonstrate the Queue class.
 class QDemo { 
     public static void main(String args[]) {
@@ -140,17 +138,28 @@ class QDemo {
         for(i=0; i < 5; i++) { 
            System.out.print("Attempt to store " + (char)('Z' - i));
            smallQ.put((char)('Z' - i));
-           System.out.println();   }
-System.out.println();
+           System.out.println();   
+        }
+        System.out.println();
 
-// more errors on smallQ
-System.out.print("Contents of smallQ: ");
-for(i=0; i < 5; i++) { ch = smallQ.get();
-if(ch != (char) 0) System.out.print(ch);}
-}}
+
+    // ----  Rev[22-Dec-2025]  ----
+
+        // more errors on smallQ
+        System.out.print("Contents of smallQ: ");
+        for(i=0; i < 5; i++) { 
+            ch = smallQ.get();
+            if(ch != (char) 0) System.out.print(ch);
+        }
+    }
+}
 
 
 /* 
+
+GPT: Explain the code
+
+
 Output:Using bigQ to store the alphabet.
 Contents of bigQ: ABCDEFGHIJKLMNOPQRSTUVWXYZ
 
