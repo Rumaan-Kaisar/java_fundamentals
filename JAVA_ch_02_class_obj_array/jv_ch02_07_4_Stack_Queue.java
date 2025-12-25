@@ -142,9 +142,6 @@ class QDemo {
         }
         System.out.println();
 
-
-    // ----  Rev[22-Dec-2025]  ----
-
         // more errors on smallQ
         System.out.print("Contents of smallQ: ");
         for(i=0; i < 5; i++) { 
@@ -157,20 +154,26 @@ class QDemo {
 
 /* 
 
+----  Explanation  ----
+
 GPT: Explain the code
 
 
-Output:Using bigQ to store the alphabet.
+Output:
+
+Using bigQ to store the alphabet.
 Contents of bigQ: ABCDEFGHIJKLMNOPQRSTUVWXYZ
 
 Using smallQ to generate errors.
+Attempt to store Z
+Attempt to store Y
+Attempt to store X
+Attempt to store W
+Attempt to store V - Queue is full.
 
-Attempting to store Z
-Attempting to store Y
-Attempting to store X
-Attempting to store W
-Attempting to store V – Queue is full.
-Contents of smallQ: ZYXW – Queue is empty.
+
+Contents of smallQ: ZYXW - Queue is empty.
+
 
 */
 
