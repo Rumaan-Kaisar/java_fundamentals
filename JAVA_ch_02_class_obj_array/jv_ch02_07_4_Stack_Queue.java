@@ -175,69 +175,41 @@ Queue data members:
 
 
 Constructor:
-
         Queue(int size)
-
     Creates a queue of given size.
     Allocates array memory.
     Initializes putloc and getloc to 0.
 
 
+put(char ch):
+    Adds a character to the queue.
+    If putloc == q.length → queue is full.
+    Otherwise:
+        Store character at q[putloc]
+        Increment putloc
 
 
-put(char ch)
-
-Adds a character to the queue.
-
-If putloc == q.length → queue is full.
-
-Otherwise:
-
-Store character at q[putloc]
-
-Increment putloc
-
-
-
-
-get()
-
-Removes and returns a character from the queue.
-
-If getloc == putloc → queue is empty.
-
-Otherwise:
-
-Return q[getloc]
-
-Increment getloc
+get():
+    Removes and returns a character from the queue.
+    If getloc == putloc → queue is empty.
+    Otherwise:
+        Return q[getloc]
+        Increment getloc
 
 
 
+--------    QDemo class (testing the queue)    --------
+bigQ:
+    Size: 100
+    Stores letters A to Z
+    Retrieves and prints all letters correctly.
 
-QDemo class (testing the queue)
-bigQ
-
-Size: 100
-
-Stores letters A to Z
-
-Retrieves and prints all letters correctly.
-
-
-
-
-smallQ
-
-Size: 4
-
-Tries to store 5 characters
-
-Last insertion fails → queue full error
-
-Tries to read 5 characters
-
-Last read fails → queue empty error
+smallQ:
+    Size: 4
+    Tries to store 5 characters
+    Last insertion fails → queue full error
+    Tries to read 5 characters
+    Last read fails → queue empty error
 
 
 
