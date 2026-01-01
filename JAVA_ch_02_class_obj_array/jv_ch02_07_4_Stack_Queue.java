@@ -1,4 +1,4 @@
-
+ 
 // 149.7 - 153.5
 
 // ----  rev[17-Nov-2025] rev book  ----
@@ -163,35 +163,24 @@ Here is a minimal, simplified explanation, step-by-step, without extra theory:
 
 
 
-Queue class (what it does)
-
-Implements a non-circular queue using a char array.
-
-Uses FIFO (First-In, First-Out) order.
+Queue class (what it does):
+    Implements a non-circular queue using a char array.
+    Uses FIFO (First-In, First-Out) order.
 
 
+Queue data members:
+    char q[]    →   stores queue elements.
+    putloc      →   index where the next item is inserted.
+    getloc      →   index from where the next item is removed.
 
 
-Queue data members
+Constructor:
 
-char q[] → stores queue elements.
+        Queue(int size)
 
-putloc → index where the next item is inserted.
-
-getloc → index from where the next item is removed.
-
-
-
-
-Constructor
-Queue(int size)
-
-
-Creates a queue of given size.
-
-Allocates array memory.
-
-Initializes putloc and getloc to 0.
+    Creates a queue of given size.
+    Allocates array memory.
+    Initializes putloc and getloc to 0.
 
 
 
