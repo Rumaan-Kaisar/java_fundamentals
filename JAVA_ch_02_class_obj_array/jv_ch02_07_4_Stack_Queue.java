@@ -84,6 +84,12 @@
                 ch10_01_2_constructor_destructor.cpp, Example 6, 
                 ch10_06_1_assign_obj.cpp, Example 6
             ]
+
+
+            Key idea
+                Queue uses an array + two indices
+                Elements are added at the end and removed from the front
+                Once removed, elements cannot be accessed again
 */
 
 
@@ -150,6 +156,7 @@ class QDemo {
         }
     }
 }
+
 
 
 /* 
@@ -245,5 +252,6 @@ Contents of smallQ: ZYXW - Queue is empty.
 
 
 */
+
 
 
