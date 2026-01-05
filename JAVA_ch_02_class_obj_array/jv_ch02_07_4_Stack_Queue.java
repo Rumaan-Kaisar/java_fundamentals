@@ -1,7 +1,7 @@
  
 // 149.7 - 153.5
 
-// ----  rev[17-Nov-2025] rev book  ----
+// ----  rev[05-Jan-2026] rev book  ----
 
 /* -=-=-=-=-=-=-=-=-=-=-=      chapter name      -=-=-=-=-=-=-=-=-=-=-= 
 
@@ -159,99 +159,72 @@ class QDemo {
 
 
 
-/* 
+/*  ----  Explanation  ----
 
-----  Explanation  ----
-
-GPT: Explain the code
-
-Here is a minimal, simplified explanation, step-by-step, without extra theory:
+    Queue class (what it does):
+        Implements a non-circular queue using a char array.
+        Uses FIFO (First-In, First-Out) order.
 
 
+    Queue data members:
+        char q[]    →   stores queue elements.
+        putloc      →   index where the next item is inserted.
+        getloc      →   index from where the next item is removed.
 
 
-Queue class (what it does):
-    Implements a non-circular queue using a char array.
-    Uses FIFO (First-In, First-Out) order.
+    Constructor:
+            Queue(int size)
+        Creates a queue of given size.
+        Allocates array memory.
+        Initializes putloc and getloc to 0.
 
 
-Queue data members:
-    char q[]    →   stores queue elements.
-    putloc      →   index where the next item is inserted.
-    getloc      →   index from where the next item is removed.
+    put(char ch):
+        Adds a character to the queue.
+        If putloc == q.length → queue is full.
+        Otherwise:
+            Store character at q[putloc]
+            Increment putloc
 
 
-Constructor:
-        Queue(int size)
-    Creates a queue of given size.
-    Allocates array memory.
-    Initializes putloc and getloc to 0.
-
-
-put(char ch):
-    Adds a character to the queue.
-    If putloc == q.length → queue is full.
-    Otherwise:
-        Store character at q[putloc]
-        Increment putloc
-
-
-get():
-    Removes and returns a character from the queue.
-    If getloc == putloc → queue is empty.
-    Otherwise:
-        Return q[getloc]
-        Increment getloc
+    get():
+        Removes and returns a character from the queue.
+        If getloc == putloc → queue is empty.
+        Otherwise:
+            Return q[getloc]
+            Increment getloc
 
 
 
---------    QDemo class (testing the queue)    --------
-bigQ:
-    Size: 100
-    Stores letters A to Z
-    Retrieves and prints all letters correctly.
+    --------    QDemo class (testing the queue)    --------
+    bigQ:
+        Size: 100
+        Stores letters A to Z
+        Retrieves and prints all letters correctly.
 
-smallQ:
-    Size: 4
-    Tries to store 5 characters
-    Last insertion fails → queue full error
-    Tries to read 5 characters
-    Last read fails → queue empty error
-
-
-
-
-Key idea
-
-Queue uses an array + two indices
-
-Elements are added at the end and removed from the front
-
-Once removed, elements cannot be accessed again
-
-If you want, this can be compared directly with a C++ queue using arrays for clearer understanding.
+    smallQ:
+        Size: 4
+        Tries to store 5 characters
+        Last insertion fails → queue full error
+        Tries to read 5 characters
+        Last read fails → queue empty error
 
 
 
+    ----  Output  ----
+
+    Using bigQ to store the alphabet.
+    Contents of bigQ: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+    Using smallQ to generate errors.
+    Attempt to store Z
+    Attempt to store Y
+    Attempt to store X
+    Attempt to store W
+    Attempt to store V - Queue is full.
 
 
-Output:
-
-Using bigQ to store the alphabet.
-Contents of bigQ: ABCDEFGHIJKLMNOPQRSTUVWXYZ
-
-Using smallQ to generate errors.
-Attempt to store Z
-Attempt to store Y
-Attempt to store X
-Attempt to store W
-Attempt to store V - Queue is full.
-
-
-Contents of smallQ: ZYXW - Queue is empty.
-
-
+    Contents of smallQ: ZYXW - Queue is empty.
 */
-
 
 
