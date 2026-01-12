@@ -24,11 +24,16 @@ for(int x : nums){ 	system.out.println("value : "+ x);
 		sum += x;    }
 	Enhanced for with break: It is possible to terminate the Enhanced for loop early by using a break statement. For example, 
 for(int x : nums) {	System.out.println("Value is: " + x); sum += x;
-if(x == 5) break; /* stop the loop when 5 is obtained */ }
+if(x == 5) break; // stop the loop when 5 is obtained 
+}
+
 	Enhanced for's iteration variable "itr-var" is "read-only":  For-each style for loop's iteration variable is “read-only” as it relates to the underlying array. An assignment to the iteration variable has no effect on the underlying array. In other words, you can’t change the contents of the array by assigning the iteration variable a new value. For example, 
 int nums[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 for(int x : nums) {	System.out.print(x + " ");
-x = x * 10; /* no effect on nums */ }
+x = x * 10; // no effect on nums 
+}
+
+
 The for loop increases the value of the iteration variable by a factor of 1, which has no effect on the underlying array nums.
 	Enhanced for with  Multidimensional Arrays: Since in Java, multidimensional arrays consist of arrays of arrays, each iteration obtains the next array, not an individual element. Furthermore, the iteration variable (itr-var) in the enhanced for loop must be compatible with the type of array being obtained. For example, in the case of a two-dimensional array, the iteration variable must be a reference to a one-dimensional array. Consider following uses nested for loops to obtain the elements of a two-dimensional array in row order, from first to last.
 
@@ -37,7 +42,7 @@ int nums[][] = new int[3][5];
 // give nums some values
 for(int i = 0; i<3; i++) for(int j=0; j<5; j++) nums[i][j] = (i+1)*(j+1);
 // Use for-each for loop to display and sum the values.
-for(int x[] : nums){ 	/*  compatible type of one-dimensional array */
+for(int x[] : nums){ 	//  compatible type of one-dimensional array
 for(int y : x) { System.out.println("Value is: " + y);
     sum += y; }
 }	
