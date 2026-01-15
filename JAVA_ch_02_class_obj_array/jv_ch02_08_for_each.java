@@ -5,30 +5,43 @@
         The "Enhanced FOR loop" or "for-each loop" Designed to traverse arrays or collections 
         from start to finish without manual indexing.
 
+        The loop automatically:
+            Starts at index 0
+            Goes up to the last element
+            Moves one by one (sequential order)
+
+
         The general form:
 
-                for(type itr-var : collection) statement-block
+                for (type itr_var : collection) {
+                    statement-block
+                }
+
+
+            type:       Data type of each element in the array (e.g., int, String)
+
+            itr_var:    iteration variable that holds one element at a time.
+                        (an iteration variable is a temporary variable)
+
+            collection: The array (or other data structures) you want to loop through
+
+
+        Each time the loop runs, it takes the next element from the array 
+            and puts it in itr_var, one by one — like a stream.
+
+        The loop continues until all elements are processed. 
+            For an array with N elements, it goes from 0 to N–1.
+
+        The itr_var type must match (or be compatible with) the type of elements in the array.
+            For example, if the array is int[], then the loop variable itr_var should be int.
+
 
 
 2.13 
 
 For-Each Style for Loop
 
-
-
-
-
-
-
-
-
-
-	Here, type specifies the type, and itr-var as iteration variable that will receive the elements from a collection, one at a time, from beginning to end. The collection being cycled through is specified by collection. 
-
-
-	With each iteration of the loop, the next element in the collection is retrieved and stored in itr-var. Like a stream.
-	The loop repeats until all elements in the collection have been obtained. For an array of size N, it loops from 0 to N–1.
-	Because the itr-var receives/streams values from the collection, type must be the same as (or compatible with) the elements stored in the collection. (Eg: For arrays, type must be compatible with the element type of the array)
+----  rev[15-Jan-2026]  ----
 
 [There are various types of collections  that can be used with the for, but the only type used in here is the array.  One of the most important uses of the for-each style for is to cycle through the contents of a collection defined by the Collections Framework. The Collections Framework is a set of classes that implement various data structures, such as lists, vectors, sets, and maps.]
 	Example: To understand enhanced for we compare it with traditional for 
@@ -116,24 +129,10 @@ Here is a clear, simplified, and pointwise explanation of the "For-Each Style fo
 
 
 ✅ Syntax
-java
-123
-for (type variable : array) {
-    // block of code
-}
-type: Data type of each element in the array (e.g., int, String)
-variable: A temporary variable that holds one element at a time
-array: The array you want to loop through
 
 
 
 
-
-🔁 The loop automatically:
-
-Starts at index 0
-Goes up to the last element
-Moves one by one (sequential order)
 
 
 
