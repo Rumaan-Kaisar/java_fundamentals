@@ -1,19 +1,26 @@
 
 /*  -=-=-=-=-=-=-=-=-=-=-=      Enhanced FOR      -=-=-=-=-=-=-=-=-=-=-= 
 
+    For-Each Loop (Enhanced for Loop)
+        The "Enhanced FOR loop" or "for-each loop" Designed to traverse arrays or collections 
+        from start to finish without manual indexing.
+
+        The general form:
+
+                for(type itr-var : collection) statement-block
+
+
 2.13 
 
 For-Each Style for Loop
 
 
-It is so common where each element in an array must be examined, from start to finish. 
-Because such “start to finish” operations are so common, Java defines Enhanced for loop that streamlines this operation.
 
 
-	Enhanced for implements a “for-each” style loop. A for-each loop cycles through a collection of objects, such as an array, in strictly sequential fashion, from start to finish. In early, Java didn’t support this Enhanced for .However, JDK 5 does support.
 
 
-	The general form of the for-each style for is, 	for(type itr-var : collection) statement-block
+
+
 
 
 	Here, type specifies the type, and itr-var as iteration variable that will receive the elements from a collection, one at a time, from beginning to end. The collection being cycled through is specified by collection. 
@@ -90,12 +97,23 @@ if(found) System.out.println("Value found!");
 
 Here is a clear, simplified, and pointwise explanation of the "For-Each Style for Loop" (Enhanced for Loop) in Java:
 
-🔁 For-Each Loop (Enhanced for Loop) – Simplified
+🔁 
+
+
+
+
+
 ✅ What is the For-Each Loop?
-A special version of the for loop introduced in Java 5 (JDK 5).
-Also called the enhanced for loop or for-each loop.
-Designed to traverse arrays or collections from start to finish without manual indexing.
-🎯 Purpose: Make it easier and safer to go through all elements in an array.
+
+
+
+
+
+
+
+
+
+
 
 ✅ Syntax
 java
@@ -106,11 +124,20 @@ for (type variable : array) {
 type: Data type of each element in the array (e.g., int, String)
 variable: A temporary variable that holds one element at a time
 array: The array you want to loop through
+
+
+
+
+
 🔁 The loop automatically:
 
 Starts at index 0
 Goes up to the last element
 Moves one by one (sequential order)
+
+
+
+
 ✅ Example: Traditional vs Enhanced for
 Traditional for loop:
 
@@ -132,23 +159,42 @@ for (int x : nums) {
     System.out.println("Value: " + x);
     sum += x;
 }
+
+
+
 ✅ No need to:
 
 Use index i
 Write loop condition
 Increment counter
 Access nums[i]
+
+
+
 ➡️ Cleaner, less error-prone code.
+
+
 
 ✅ Key Features & Rules
 Feature
 Explanation
+
+
 🔍 Read-only variable
 You cannot modify the original array using the iteration variable. <br>Example:<br>for (int x : nums) { x = x * 10; } // ❌ No effect on nums
+
+
 ✅ Prevents boundary errors
 No risk of going out of bounds (like i > length) — handled automatically.
+
+
+
 💡 Useful for simple traversal
 Ideal when you just need to read every element once in order.
+
+
+
+
 ✅ Using break in Enhanced for
 You can exit early using break.
 Useful for searching.
@@ -167,7 +213,11 @@ for (int x : nums) {
     }
 }
 
+
+
 ✅ Perfect for searching unsorted data.
+
+
 
 ✅ For-Each with Multidimensional Arrays
 In Java, 2D arrays are arrays of arrays.
@@ -195,6 +245,9 @@ for (int[] row : nums) {         // row is a 1D array
 
 row → reference to a int[] (a full row)
 element → individual integer (int)
+
+
+
 ✅ Common Uses of Enhanced for Loop
 ✔️ Printing all elements
 ✔️ Calculating sum, average, min, max
@@ -207,6 +260,9 @@ element → individual integer (int)
 You need the index (i, j)
 You want to modify array elements
 You need to skip items or loop backward
+
+
+
 ✅ Summary (Key Points)
 Point
 Description
