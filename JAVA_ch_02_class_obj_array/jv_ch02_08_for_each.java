@@ -39,17 +39,37 @@
 
 2.13 
 
+The enhanced for loop (or "for-each" loop) can work with many types of data collections — not just arrays.
+In this lesson, we're only using it with arrays, but later you can also use it with more advanced data structures like lists, sets, queues, and maps.
+These structures are part of Java’s Collections Framework — a built-in set of tools for storing and managing groups of data.
+Examples:
+List<String> – a flexible list of strings
+Set<Integer> – a collection with no duplicate values
+Map<String, Integer> – stores key-value pairs (like a dictionary)
+One of the most common uses of the for-each loop is to easily go through all items in these collections — just like with arrays.
+
+
 For-Each Style for Loop
 
 ----  rev[15-Jan-2026]  ----
 
-[There are various types of collections  that can be used with the for, but the only type used in here is the array.  One of the most important uses of the for-each style for is to cycle through the contents of a collection defined by the Collections Framework. The Collections Framework is a set of classes that implement various data structures, such as lists, vectors, sets, and maps.]
+[There are various types of collections  that can be used with the for, but the only type used in here is the array.  
+One of the most important uses of the for-each style for is to cycle through the contents of a collection defined by the Collections Framework. 
+The Collections Framework is a set of classes that implement various data structures, such as lists, vectors, sets, and maps.]
+
 	Example: To understand enhanced for we compare it with traditional for 
 	The entire array is read in strictly sequential order, by manually indexing the nums array by i, the loop control variable.
-	Furthermore, the starting and ending value for the loop control variable, and its increment, must be explicitly specified.		The for-each style for automatically cycles through an array in sequence from the lowest index to the highest. There is no need of any starting or ending value, loop counter, manually indexing array. Instead of loop control variable we use iterator variable, which directly access the array data (and streamlined). It obtain one element at a time, in sequence, from beginning to end. 
+
+	Furthermore, the starting and ending value for the loop control variable, and its increment, must be explicitly specified.	
+
+
+	The for-each style for automatically cycles through an array in sequence from the lowest index to the highest. There is no need of any starting or ending value, loop counter, manually indexing array. Instead of loop control variable we use iterator variable, which directly access the array data (and streamlined). It obtain one element at a time, in sequence, from beginning to end. 
 
 
 	With each pass through the loop, x is automatically given a value equal to the next element in nums. Thus, on the first iteration, x contains 19, on the second iteration, x contains 25, and so on. Not only is the syntax streamlined, it also prevents boundary errors.
+
+
+
 int nums[] = { 19, 25, 33, 42, 5, 6, 7, 8, 9, 10 };
 int sum = 0;
 for(int i=0; i < 10; i++){ 	system.out.println("value : "+ nums[i]);     
@@ -109,32 +129,6 @@ if(found) System.out.println("Value found!");
 
 
 Here is a clear, simplified, and pointwise explanation of the "For-Each Style for Loop" (Enhanced for Loop) in Java:
-
-🔁 
-
-
-
-
-
-✅ What is the For-Each Loop?
-
-
-
-
-
-
-
-
-
-
-
-✅ Syntax
-
-
-
-
-
-
 
 
 ✅ Example: Traditional vs Enhanced for
