@@ -1,4 +1,6 @@
 
+// 2.13 
+
 /*  -=-=-=-=-=-=-=-=-=-=-=      Enhanced FOR      -=-=-=-=-=-=-=-=-=-=-= 
 
     For-Each Loop (Enhanced for Loop)
@@ -36,26 +38,52 @@
             For example, if the array is int[], then the loop variable itr_var should be int.
 
 
+    Note: 
+        The enhanced for loop (or "for-each" loop) can work with many types of "data collections" — not just arrays.
+        In this section, we're only using it with arrays, 
+            but we can also use it with more advanced data structures like: 
+                lists, 
+                sets, 
+                queues, and 
+                maps.
 
-2.13 
+        These structures are part of Java's "Collections Framework" - a built-in set of tools for storing and managing groups of data.
 
-The enhanced for loop (or "for-each" loop) can work with many types of data collections — not just arrays.
-In this lesson, we're only using it with arrays, but later you can also use it with more advanced data structures like lists, sets, queues, and maps.
-These structures are part of Java’s Collections Framework — a built-in set of tools for storing and managing groups of data.
-Examples:
-List<String> – a flexible list of strings
-Set<Integer> – a collection with no duplicate values
-Map<String, Integer> – stores key-value pairs (like a dictionary)
-One of the most common uses of the for-each loop is to easily go through all items in these collections — just like with arrays.
+        Common uses of the for-each loop is to easily go through all items in these collections - just like with arrays.
+*/
 
+
+/*  Example 1: */
+
+Traditional for loop:
+
+java
+123456
+int nums[] = {19, 25, 33, 42, 5, 6, 7, 8, 9, 10};
+int sum = 0;
+for (int i = 0; i < nums.length; i++) {
+    System.out.println("Value: " + nums[i]);
+    sum += nums[i];
+}
+Enhanced for loop (simpler):
+
+java
+123456
+int nums[] = {19, 25, 33, 42, 5, 6, 7, 8, 9, 10};
+int sum = 0;
+for (int x : nums) {
+    System.out.println("Value: " + x);
+    sum += x;
+}
+
+
+
+/*  
 
 For-Each Style for Loop
 
 ----  rev[15-Jan-2026]  ----
 
-[There are various types of collections  that can be used with the for, but the only type used in here is the array.  
-One of the most important uses of the for-each style for is to cycle through the contents of a collection defined by the Collections Framework. 
-The Collections Framework is a set of classes that implement various data structures, such as lists, vectors, sets, and maps.]
 
 	Example: To understand enhanced for we compare it with traditional for 
 	The entire array is read in strictly sequential order, by manually indexing the nums array by i, the loop control variable.
