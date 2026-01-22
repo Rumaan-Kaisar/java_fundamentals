@@ -53,7 +53,34 @@
 */
 
 
-/*  Example 1: Traditional vs Enhanced for */
+/*  Example 1: Traditional vs Enhanced for 
+
+                Traditional for loop (manual indexing):
+                    The array is read sequentially using an index variable (e.g., i).
+
+                    The loop must explicitly specify:
+                        Starting index
+                        Ending index
+                        Increment value
+                    
+                    Elements are accessed manually, like nums[i].
+                    Requires care to avoid out-of-bounds errors.
+
+
+                For-each loop (enhanced for loop):
+                    Automatically goes through the array from first element to last.
+                    No index (loop counter), no start/end values, no manual indexing needed.
+                    
+                    Uses an iterator variable (e.g., x) instead of a loop counter.
+                        The iterator directly holds one array element at a time.
+                        On each loop pass, x gets the next value in the array.
+                        Thus, 
+                            on the first iteration, x contains 19, 
+                            on the second iteration, x contains 25, and so on.
+                    
+                    Syntax is simpler and safer.
+                    Helps prevent boundary errors.
+*/
 
 // Traditional for loop:
 
@@ -86,15 +113,6 @@ For-Each Style for Loop
 
 
 
-The entire array is read in strictly sequential order, by manually indexing the nums array by i, the loop control variable.
-
-Furthermore, the starting and ending value for the loop control variable, and its increment, must be explicitly specified.	
-
-
-The for-each style for automatically cycles through an array in sequence from the lowest index to the highest. There is no need of any starting or ending value, loop counter, manually indexing array. Instead of loop control variable we use iterator variable, which directly access the array data (and streamlined). It obtain one element at a time, in sequence, from beginning to end. 
-
-
-	With each pass through the loop, x is automatically given a value equal to the next element in nums. Thus, on the first iteration, x contains 19, on the second iteration, x contains 25, and so on. Not only is the syntax streamlined, it also prevents boundary errors.
 
 
 
