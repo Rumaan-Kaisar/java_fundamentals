@@ -53,25 +53,25 @@
 */
 
 
-/*  Example 1: */
+/*  Example 1: Traditional vs Enhanced for */
 
-Traditional for loop:
+// Traditional for loop:
 
-java
-123456
 int nums[] = {19, 25, 33, 42, 5, 6, 7, 8, 9, 10};
 int sum = 0;
-for (int i = 0; i < nums.length; i++) {
+
+for(int i = 0; i < nums.length; i++) {
     System.out.println("Value: " + nums[i]);
     sum += nums[i];
 }
-Enhanced for loop (simpler):
 
-java
-123456
+
+// Enhanced for loop (simpler):
+
 int nums[] = {19, 25, 33, 42, 5, 6, 7, 8, 9, 10};
 int sum = 0;
-for (int x : nums) {
+
+for(int x : nums) {
     System.out.println("Value: " + x);
     sum += x;
 }
@@ -85,13 +85,13 @@ For-Each Style for Loop
 ----  rev[15-Jan-2026]  ----
 
 
-	Example: To understand enhanced for we compare it with traditional for 
-	The entire array is read in strictly sequential order, by manually indexing the nums array by i, the loop control variable.
 
-	Furthermore, the starting and ending value for the loop control variable, and its increment, must be explicitly specified.	
+The entire array is read in strictly sequential order, by manually indexing the nums array by i, the loop control variable.
+
+Furthermore, the starting and ending value for the loop control variable, and its increment, must be explicitly specified.	
 
 
-	The for-each style for automatically cycles through an array in sequence from the lowest index to the highest. There is no need of any starting or ending value, loop counter, manually indexing array. Instead of loop control variable we use iterator variable, which directly access the array data (and streamlined). It obtain one element at a time, in sequence, from beginning to end. 
+The for-each style for automatically cycles through an array in sequence from the lowest index to the highest. There is no need of any starting or ending value, loop counter, manually indexing array. Instead of loop control variable we use iterator variable, which directly access the array data (and streamlined). It obtain one element at a time, in sequence, from beginning to end. 
 
 
 	With each pass through the loop, x is automatically given a value equal to the next element in nums. Thus, on the first iteration, x contains 19, on the second iteration, x contains 25, and so on. Not only is the syntax streamlined, it also prevents boundary errors.
@@ -159,27 +159,11 @@ if(found) System.out.println("Value found!");
 Here is a clear, simplified, and pointwise explanation of the "For-Each Style for Loop" (Enhanced for Loop) in Java:
 
 
-✅ Example: Traditional vs Enhanced for
-Traditional for loop:
+✅ Example: 
 
-java
-123456
-int nums[] = {19, 25, 33, 42, 5, 6, 7, 8, 9, 10};
-int sum = 0;
-for (int i = 0; i < nums.length; i++) {
-    System.out.println("Value: " + nums[i]);
-    sum += nums[i];
-}
-Enhanced for loop (simpler):
 
-java
-123456
-int nums[] = {19, 25, 33, 42, 5, 6, 7, 8, 9, 10};
-int sum = 0;
-for (int x : nums) {
-    System.out.println("Value: " + x);
-    sum += x;
-}
+
+
 
 
 
