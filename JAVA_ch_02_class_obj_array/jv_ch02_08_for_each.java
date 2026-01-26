@@ -109,20 +109,7 @@ for(int x : nums) {
 
 For-Each Style for Loop
 
-----  rev[15-Jan-2026]  ----
-
-
-
-
-
-
-int nums[] = { 19, 25, 33, 42, 5, 6, 7, 8, 9, 10 };
-int sum = 0;
-for(int i=0; i < 10; i++){ 	system.out.println("value : "+ nums[i]);     
-			sum += nums[i];    }	int nums[] = { 19, 25, 33, 42, 5, 6, 7, 8, 9, 10 };
-int sum = 0;
-for(int x : nums){ 	system.out.println("value : "+ x);
-		sum += x;    }
+----  rev[22-Jan-2026]  ----
 
 
 	Enhanced for with break: It is possible to terminate the Enhanced for loop early by using a break statement. For example, 
