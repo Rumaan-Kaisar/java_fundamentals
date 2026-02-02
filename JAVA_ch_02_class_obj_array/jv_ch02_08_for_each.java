@@ -46,6 +46,7 @@
             For example, if the array is int[], then the loop variable itr_var should be int.
 
 
+
     Note: 
         The enhanced for loop (or "for-each" loop) can work with many types of "data collections" — not just arrays.
         In this section, we're only using it with arrays, 
@@ -58,7 +59,27 @@
         These structures are part of Java's "Collections Framework" - a built-in set of tools for storing and managing groups of data.
 
         Common uses of the for-each loop is to easily go through all items in these collections - just like with arrays.
+
+
+
+    --------  Properties  --------
+
+    Read-only variable:
+        Enhanced for's iteration variable "itr-var" is "read-only".
+        You cannot modify the original array using the iteration variable through assignment.
+        
+        Example:
+                for(int x : nums) { x = x * 10; }      // No effect on nums
+
+
+    Prevents boundary errors:
+        No risk of going out of bounds (like i > length) — handled automatically.
+
+
+    Useful for simple traversal:
+        Ideal when you just need to read every element once in order.
 */
+
 
 
 /*  Example 1: Traditional vs Enhanced for 
@@ -115,30 +136,28 @@ for(int x : nums) {
 
 /*  
 
+
+
+
 For-Each Style for Loop
 
-----  rev[26-Jan-2026]  ----
+----  rev[02-Feb-2026]  ----
 
 
-    ----  Enhanced for with break  ----
+    ----  Enhanced for with "break"  ----
 
-: It is possible to terminate the Enhanced for loop early by using a break statement. 
+    It is possible to terminate the Enhanced for loop early by using a break statement. 
+    For example,
 
-For example, 
-for(int x : nums) {	System.out.println("Value is: " + x); sum += x;
-if(x == 5) break; // stop the loop when 5 is obtained 
-}
+        for(int x : nums) {
+            System.out.println("Value is: " + x);
+            sum += x;
+            if(x == 5) break;   // stop the loop when 5 is obtained
+        }
 
 
 
-	Enhanced for's iteration variable "itr-var" is "read-only":  For-each style for loop's iteration variable is “read-only” as it relates to the underlying array. An assignment to the iteration variable has no effect on the underlying array. In other words, you can’t change the contents of the array by assigning the iteration variable a new value. For example, 
-int nums[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-for(int x : nums) {	System.out.print(x + " ");
-x = x * 10; // no effect on nums 
-}
-
-The for loop increases the value of the iteration variable by a factor of 1, which has no effect on the underlying array nums.
-
+	
 
 
 	Enhanced for with  Multidimensional Arrays: Since in Java, multidimensional arrays consist of arrays of arrays, each iteration obtains the next array, not an individual element. Furthermore, the iteration variable (itr-var) in the enhanced for loop must be compatible with the type of array being obtained. For example, in the case of a two-dimensional array, the iteration variable must be a reference to a one-dimensional array. Consider following uses nested for loops to obtain the elements of a two-dimensional array in row order, from first to last.
@@ -179,32 +198,6 @@ if(found) System.out.println("Value found!");
 
 
 Here is a clear, simplified, and pointwise explanation of the "For-Each Style for Loop" (Enhanced for Loop) in Java:
-
-
-✅ Example: 
-
-
-
-➡️ Cleaner, less error-prone code.
-
-
-
-✅ Key Features & Rules
-Feature
-Explanation
-
-
-🔍 Read-only variable
-You cannot modify the original array using the iteration variable. <br>Example:<br>for (int x : nums) { x = x * 10; } // ❌ No effect on nums
-
-
-✅ Prevents boundary errors
-No risk of going out of bounds (like i > length) — handled automatically.
-
-
-
-💡 Useful for simple traversal
-Ideal when you just need to read every element once in order.
 
 
 
