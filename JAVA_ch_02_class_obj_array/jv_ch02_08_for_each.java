@@ -157,10 +157,31 @@ For-Each Style for Loop
 
 
 
-	
+    ----  Enhanced for with  Multidimensional Arrays  ----
+
+    In Java, 2D arrays are arrays of arrays.
+
+    So, when using enhanced for:
+        Outer loop: Gets each row (which is a 1D array)
+        Inner loop: Loops through elements in that row
+
+    Note: 
+        The iteration variable (itr-var) must be compatible with the type of array being obtained.
 
 
-	Enhanced for with  Multidimensional Arrays: Since in Java, multidimensional arrays consist of arrays of arrays, each iteration obtains the next array, not an individual element. Furthermore, the iteration variable (itr-var) in the enhanced for loop must be compatible with the type of array being obtained. For example, in the case of a two-dimensional array, the iteration variable must be a reference to a one-dimensional array. Consider following uses nested for loops to obtain the elements of a two-dimensional array in row order, from first to last.
+
+ 
+ 
+ 
+ Furthermore, 
+ 
+  
+ 
+
+
+ For example, in the case of a two-dimensional array, the iteration variable must be a reference to a one-dimensional array. 
+ 
+ Consider following uses nested for loops to obtain the elements of a two-dimensional array in row order, from first to last.
 
 int sum = 0;
 int nums[][] = new int[3][5];
@@ -209,6 +230,8 @@ Example: Search for a value
 
 java
 12345678910111213
+
+
 int nums[] = {6, 8, 3, 7, 5, 6, 1, 4};
 int val = 5;
 boolean found = false;
@@ -227,12 +250,8 @@ for (int x : nums) {
 
 
 ✅ For-Each with Multidimensional Arrays
-In Java, 2D arrays are arrays of arrays.
 
-So, when using enhanced for:
 
-Outer loop: Gets each row (which is a 1D array)
-Inner loop: Loops through elements in that row
 Example:
 
 java
@@ -308,3 +327,5 @@ sum += x;
 System.out.println("Summation: " + sum);
 }
 }
+
+
