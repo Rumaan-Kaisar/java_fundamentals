@@ -168,37 +168,45 @@ For-Each Style for Loop
     Note: 
         The iteration variable (itr-var) must be compatible with the type of array being obtained.
 
-
-
+        For example, in the case of a two-dimensional array, 
+            the iteration variable must be a "reference" to a one-dimensional array. 
  
- 
- 
- Furthermore, 
- 
-  
- 
+    Example:
+        Following uses nested for-each loops to obtain the elements of a 
+        two-dimensional array in row order, from first to last.
+
+                int sum = 0;
+                int nums[][] = new int[3][5];
+
+                // give nums some values
+                for(int i = 0; i<3; i++) 
+                    for(int j=0; j<5; j++) nums[i][j] = (i+1)*(j+1);
+
+                // Use for-each for loop to display and sum the values.
+                //  notice the compatible type used for one-dimensional array
+                for(int x[] : nums) {
+                    for(int y : x) { 
+                        System.out.println("Value is: " + y);
+                        sum += y;
+                    }
+                }	
 
 
- For example, in the case of a two-dimensional array, the iteration variable must be a reference to a one-dimensional array. 
- 
- Consider following uses nested for loops to obtain the elements of a two-dimensional array in row order, from first to last.
+        Notice how x is declared:
 
-int sum = 0;
-int nums[][] = new int[3][5];
-// give nums some values
-for(int i = 0; i<3; i++) for(int j=0; j<5; j++) nums[i][j] = (i+1)*(j+1);
-// Use for-each for loop to display and sum the values.
-for(int x[] : nums){ 	//  compatible type of one-dimensional array
-for(int y : x) { System.out.println("Value is: " + y);
-    sum += y; }
-}	
+                row:        reference to a int[] (a full row)
+                element:    individual integer (int)
+
+            "for(int x[] : nums) {"
+                It is a reference to a one-dimensional array of integers
+                Each iteration of the FOR obtains the next array in nums, beginning with the array specified by nums[0]. 
+
+            The inner for loop then cycles through each of these arrays, 
+                displaying the values of each element.
 
 
 
-	Notice how x is declared, "for(int x[] : nums) {" . It is a reference to a one-dimensional array of integers: each iteration of the for obtains the next array in nums, beginning with the array specified by nums[0]. 
 
-
-	The inner for loop then cycles through each of these arrays, displaying the values of each element.
 
 
 	Searching value with Enhanced for and other usage :  Enhanced for can be used to search an unsorted array for a value. 
@@ -213,6 +221,9 @@ if(found) System.out.println("Value found!");
 
 
 	Other usage of for-each style loops include computing an average, finding the minimum or maximum of a set, looking for duplicates, and so on.
+
+
+
 
 
 ------------------------------------------------
@@ -269,8 +280,7 @@ for (int[] row : nums) {         // row is a 1D array
 
 📌 Note:
 
-row → reference to a int[] (a full row)
-element → individual integer (int)
+
 
 
 
