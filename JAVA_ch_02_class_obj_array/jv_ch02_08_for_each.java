@@ -134,17 +134,7 @@ for(int x : nums) {
 
 
 
-/*  
-
-
-
-
-For-Each Style for Loop
-
-----  rev[02-Feb-2026]  ----
-
-
-    ----  Enhanced for with "break"  ----
+/*  ----  Enhanced for with "break"  ----
 
     It is possible to terminate the Enhanced for loop early by using a break statement. 
     For example,
@@ -206,18 +196,28 @@ For-Each Style for Loop
 
 
 
+    ----  rev[12-Feb-2026]  ----
 
+    ----  Searching and other usage of FOR-each  ----
 
+    Searching:
+        Enhanced for can be used to search an unsorted array for a value. 
 
-	Searching value with Enhanced for and other usage :  Enhanced for can be used to search an unsorted array for a value. 
-int nums[] = { 6, 8, 3, 7, 5, 6, 1, 4 };
-int val = 5;
-boolean found = false;	// Use for-each style for to search nums for val.
-for(int x : nums) { if(x == val) { found = true; break;}  }
-if(found) System.out.println("Value found!");
+                int nums[] = { 6, 8, 3, 7, 5, 6, 1, 4 };
+                int val = 5;
+                boolean found = false;  // Use for-each style for to search nums for val.
 
+                for(int x : nums) {
+                    if(x == val) {
+                        found = true;
+                        break;
+                    }
+                }
 
-	Enhanced for is perfect here because searching an unsorted array involves examining each element in sequence. (Of course, if the array were sorted, a binary search could be used, which would require a different style loop.) 
+                if(found) System.out.println("Value found!");
+
+        The for-each loop is ideal here because "searching an unsorted array" requires checking each element one by one.
+        If the array were sorted, a faster "binary search" could be used instead — but that needs a different loop structure.
 
 
 	Other usage of for-each style loops include computing an average, finding the minimum or maximum of a set, looking for duplicates, and so on.
