@@ -203,12 +203,12 @@ for(int x : nums) {
 
                 int nums[] = { 6, 8, 3, 7, 5, 6, 1, 4 };
                 int val = 5;
-                boolean found = false;  // Use for-each style for to search nums for val.
+                boolean found = false;      // Use for-each style for to search nums for val.
 
                 for(int x : nums) {
                     if(x == val) {
                         found = true;
-                        break;
+                        break;      // Stop as soon as value is found
                     }
                 }
 
@@ -218,10 +218,18 @@ for(int x : nums) {
         If the array were sorted, a faster "binary search" could be used instead — but that needs a different loop structure.
 
 
-    Other usage of FOR-each style loops include 
-        Computing an average, 
-        Finding the minimum or maximum of a set, 
-        Looking for duplicates, and so on.
+    Common usage of FOR-each:
+        Printing all elements
+        Computing average, minimum or maximum of a set, 
+        Searching for a value
+        Checking duplicates
+        Processing each item in order
+
+
+    NOT SUITABLE when:
+        You need the index (i, j)
+        You want to modify array elements
+        You need to skip items or loop backward
 
 
     ----  rev[16-Feb-2026]  ----
@@ -236,70 +244,21 @@ Here is a clear, simplified, and pointwise explanation of the "For-Each Style fo
 
 
 
-✅ Using break in Enhanced for
-You can exit early using break.
-Useful for searching.
-
 
 Example: Search for a value
 
-java
-12345678910111213
-
-
-int nums[] = {6, 8, 3, 7, 5, 6, 1, 4};
-int val = 5;
-boolean found = false;
-
-for (int x : nums) {
-    if (x == val) {
-        found = true;
-        break; // Stop as soon as value is found
-    }
-}
 
 
 
-✅ Perfect for searching unsorted data.
-
-
-
-✅ For-Each with Multidimensional Arrays
-
-
-Example:
-
-java
-123456789101112131415
-int nums[][] = new int[3][5];
-
-// Fill array
-for (int i = 0; i < 3; i++)
-    for (int j = 0; j < 5; j++)
-        nums[i][j] = (i+1) * (j+1);
-
-// Display and sum using enhanced for
-int sum = 0;
-for (int[] row : nums) {         // row is a 1D array
-
-📌 Note:
+Common Uses of Enhanced for Loop:
 
 
 
 
 
-✅ Common Uses of Enhanced for Loop
-✔️ Printing all elements
-✔️ Calculating sum, average, min, max
-✔️ Searching for a value
-✔️ Checking duplicates
-✔️ Processing each item in order
 
-🚫 Not suitable when:
 
-You need the index (i, j)
-You want to modify array elements
-You need to skip items or loop backward
+
 
 
 
@@ -320,7 +279,12 @@ Use nested loops for 2D+
 To stop early (e.g., search)
 📌 Best for reading
 Not for updating array values
-💡 Tip: Use the enhanced for loop whenever you just need to look at each element once, especially in arrays and lists. It makes your code cleaner and less error-prone!
+
+
+Tip:
+    Use the enhanced for loop whenever you just need to look at each element once, especially in arrays and lists. 
+
+It makes your code cleaner and less error-prone!
 
 
 */
