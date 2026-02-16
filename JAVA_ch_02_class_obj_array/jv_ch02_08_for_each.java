@@ -196,8 +196,6 @@ for(int x : nums) {
 
 
 
-    ----  rev[12-Feb-2026]  ----
-
     ----  Searching and other usage of FOR-each  ----
 
     Searching:
@@ -220,9 +218,13 @@ for(int x : nums) {
         If the array were sorted, a faster "binary search" could be used instead — but that needs a different loop structure.
 
 
-	Other usage of for-each style loops include computing an average, finding the minimum or maximum of a set, looking for duplicates, and so on.
+    Other usage of FOR-each style loops include 
+        Computing an average, 
+        Finding the minimum or maximum of a set, 
+        Looking for duplicates, and so on.
 
 
+    ----  rev[16-Feb-2026]  ----
 
 
 
@@ -237,6 +239,8 @@ Here is a clear, simplified, and pointwise explanation of the "For-Each Style fo
 ✅ Using break in Enhanced for
 You can exit early using break.
 Useful for searching.
+
+
 Example: Search for a value
 
 java
