@@ -239,46 +239,10 @@ for(int x : nums) {
 ------------------------------------------------
 
 
-Here is a clear, simplified, and pointwise explanation of the "For-Each Style for Loop" (Enhanced for Loop) in Java:
 
 
 
 
-
-Example: Search for a value
-
-
-
-
-Common Uses of Enhanced for Loop:
-
-
-
-
-
-
-
-
-
-
-
-✅ Summary (Key Points)
-Point
-Description
-📌 Simpler syntax
-for (type var : array)
-📌 Automatic iteration
-From first to last element
-📌 Read-only access
-Changing var doesn’t affect the array
-📌 Safe
-No index-out-of-bounds errors
-📌 Works with 1D and multi-D arrays
-Use nested loops for 2D+
-📌 Can use break
-To stop early (e.g., search)
-📌 Best for reading
-Not for updating array values
 
 
 Tip:
