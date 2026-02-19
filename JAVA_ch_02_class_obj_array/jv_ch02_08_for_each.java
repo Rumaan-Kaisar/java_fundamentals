@@ -232,23 +232,13 @@ for(int x : nums) {
         You need to skip items or loop backward
 
 
-    ----  rev[16-Feb-2026]  ----
-
-
-
-------------------------------------------------
-
-
-
-
-
-
-
 
 Tip:
-    Use the enhanced for loop whenever you just need to look at each element once, especially in arrays and lists. 
+    Use the enhanced for loop whenever you just need to look at each element once, 
+    especially in arrays and lists. 
 
-It makes your code cleaner and less error-prone!
+
+    ----  rev[19-Feb-2026]  ----
 
 
 */
