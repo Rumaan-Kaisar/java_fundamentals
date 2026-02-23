@@ -232,32 +232,29 @@ for(int x : nums) {
         You need to skip items or loop backward
 
 
-
 Tip:
     Use the enhanced for loop whenever you just need to look at each element once, 
     especially in arrays and lists. 
 
-
-    ----  rev[19-Feb-2026]  ----
-
-
 */
 
 
-/* Example 2: Here is an entire program that demonstrates the for-each version of the for just described: */
 
-// Use a for-each style for loop.
+
+/* Example 2: Following program demonstrates the FOR-Each version of the FOR */
+
 class ForEach {
-public static void main(String args[]) {
-int nums[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-int sum = 0;
-// Use for-each style for to display and sum the values.
-for(int x : nums) {
-System.out.println("Value is: " + x);
-sum += x;
-}
-System.out.println("Summation: " + sum);
-}
+    public static void main(String args[]) {
+        int nums[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        int sum = 0;
+
+        // Use FOR-Each style to display and sum the values.
+        for(int x : nums) {
+            System.out.println("Value is: " + x);
+            sum += x;
+        }
+        System.out.println("Summation: " + sum);
+    }
 }
 
 
