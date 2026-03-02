@@ -1,5 +1,5 @@
 
-// 2.13 
+// 2.13 :: 153.7-158.9
 
 /*  -=-=-=-=-=-=-=-=-=-=-=      Enhanced FOR      -=-=-=-=-=-=-=-=-=-=-= 
 
@@ -258,3 +258,53 @@ class ForEach {
 }
 
 
+ Example 3: An assignment to the iteration
+variable has no effect on the underlying array. In other words, you can’t change the contents of
+the array by assigning the iteration variable a new value. For example, consider this program:
+// The for-each loop is essentially read-only.
+class NoChange {
+public static void main(String args[]) {
+int nums[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+for(int x : nums) {
+System.out.print(x + " ");
+x = x * 10; // no effect on nums, This does not change "nums" array
+}
+System.out.println();
+for(int x : nums)
+System.out.print(x + " ");
+System.out.println();
+}
+}
+
+
+Example 4: In general, when using the for-each for to iterate over an array
+of N dimensions, the objects obtained will be arrays of N–1 dimensions. To understand the
+implications of this, consider the following program. It uses nested for loops to obtain the
+elements of a two-dimensional array in row order, from first to last.
+// Use for-each style for on a two-dimensional array.
+class ForEach2 {
+public static void main(String args[]) {
+int sum = 0;
+int nums[][] = new int[3][5];
+// give nums some values
+for(int i = 0; i < 3; i++)
+for(int j=0; j < 5; j++)
+nums[i][j] = (i+1)*(j+1);
+// Use for-each for loop to display and sum the values.
+for(int x[] : nums) {
+for(int y : x) {
+System.out.println("Value is: " + y);
+sum += y;
+}
+}
+System.out.println("Summation: " + sum);
+}
+}
+
+
+In the program, pay special attention to this line:
+for(int x[] : nums) {
+Notice how x is declared. It is a reference to a one-dimensional array of integers. This is
+necessary because each iteration of the for obtains the next array in nums, beginning with
+the array specified by nums[0]. The inner for loop then cycles through each of these arrays,
+displaying the values of each element
