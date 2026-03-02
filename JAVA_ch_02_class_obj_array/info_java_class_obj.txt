@@ -1,6 +1,8 @@
 
 -=-=-=-=-=-=-=-         Class, Objects        -=-=-=-=-=-=-=-
 
+Book: ch4 + ch5
+
 
 2.1 Class in java
 2.2 Reference Variables and Assignment
@@ -42,4 +44,29 @@ jv_ch02_09_1_strings
 jv_ch02_09_2_strAdv_imutble_cmd
 jv_ch02_10_bitwise_operators
 jv_ch02_11_ternary_operator
+
+
+
+--------   NEXT   --------
+
+    Goes to                         CODEX,      Book-pg,  
+
+jv_ch02_01_class_in_Java            2.1         104-108.9
+jv_ch02_02_reference_assignment     2.2         108.9-110.3
+jv_ch02_03_1_methods_return         2.3         110.3-115.9
+jv_ch02_03_2_methods_parameters     2.4         115.9-124.7
+jv_ch02_04_constructor_new          2.5+2.6     124.7-128.5
+jv_ch02_05_garbage_finalize         2.7         128.5-132.3
+jv_ch02_06_this                     2.8         132.3-134
+jv_ch02_07_1_Array_1D               2.9         136-142
+jv_ch02_07_2_MultiD_irregular       2.10        142-145.9
+jv_ch02_07_3_Array_Advanced         2.11        145.9-149.7
+jv_ch02_07_4_Stack_Queue            2.12        149.7-153.7 + codex
+jv_ch02_08_for_each                 2.13        153.7-158.9
+jv_ch02_09_1_strings                2.14        158.9-162.9
+jv_ch02_09_2_strAdv_imutble_cmd     2.15+2.16   162.9-166.5
+jv_ch02_10_bitwise_operators        2.17        166.5-176.8
+jv_ch02_11_ternary_operator         2.18        176.8-179
+
+
 
