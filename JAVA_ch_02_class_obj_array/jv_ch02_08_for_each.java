@@ -258,9 +258,9 @@ class ForEach {
 }
 
 
- Example 3: An assignment to the iteration
+ /* Example 3: An assignment to the iteration
 variable has no effect on the underlying array. In other words, you can’t change the contents of
-the array by assigning the iteration variable a new value. For example, consider this program:
+the array by assigning the iteration variable a new value. For example, consider this program: */
 // The for-each loop is essentially read-only.
 class NoChange {
 public static void main(String args[]) {
@@ -277,10 +277,10 @@ System.out.println();
 }
 
 
-Example 4: In general, when using the for-each for to iterate over an array
+/* Example 4: In general, when using the for-each for to iterate over an array
 of N dimensions, the objects obtained will be arrays of N–1 dimensions. To understand the
 implications of this, consider the following program. It uses nested for loops to obtain the
-elements of a two-dimensional array in row order, from first to last.
+elements of a two-dimensional array in row order, from first to last. */
 // Use for-each style for on a two-dimensional array.
 class ForEach2 {
 public static void main(String args[]) {
@@ -308,3 +308,28 @@ Notice how x is declared. It is a reference to a one-dimensional array of intege
 necessary because each iteration of the for obtains the next array in nums, beginning with
 the array specified by nums[0]. The inner for loop then cycles through each of these arrays,
 displaying the values of each element
+
+
+/* Example 5: One of the most common is searching. For example, the following
+program uses a for loop to search an unsorted array for a value. It stops if the value is found. */
+// Search an array using for-each style for.
+class Search {
+public static void main(String args[]) {
+int nums[] = { 6, 8, 3, 7, 5, 6, 1, 4 };
+int val = 5;
+boolean found = false;
+// Use for-each style for to search nums for val.
+for(int x : nums) {
+if(x == val) {
+found = true;
+break;
+}
+}
+if(found)
+System.out.println("Value found!");
+}
+}
+The for-each style for is an excellent choice in this application because searching an
+unsorted array involves examining each element in sequence. (Of course, if the array were
+sorted, a binary search could be used, which would require a different style loop.
+
