@@ -232,13 +232,13 @@ for(int x : nums) {
         You need to skip items or loop backward
 
 
-Tip:
-    Use the enhanced for loop whenever you just need to look at each element once, 
-    especially in arrays and lists. 
-
+    Tip:
+        Use the enhanced for loop whenever you just need to look at each element once, 
+        especially in arrays and lists.
 */
 
 
+// ----  rev[05-Mar-2026]  ----
 
 
 /* Example 2: Following program demonstrates the FOR-Each version of the FOR */
@@ -258,23 +258,29 @@ class ForEach {
 }
 
 
- /* Example 3: An assignment to the iteration
-variable has no effect on the underlying array. In other words, you can’t change the contents of
-the array by assigning the iteration variable a new value. For example, consider this program: */
-// The for-each loop is essentially read-only.
+
+
+/* Example 3: The for-each loop is essentially read-only.
+                You can’t change the contents of the array by assigning the 
+                "iteration variable" a "new value". Consider following program.
+*/
+
 class NoChange {
-public static void main(String args[]) {
-int nums[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-for(int x : nums) {
-System.out.print(x + " ");
-x = x * 10; // no effect on nums, This does not change "nums" array
+    public static void main(String args[]) {
+        int nums[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+        for(int x : nums) {
+            System.out.print(x + " ");
+            x = x * 10;     // it does not change "nums" array
+        }
+        System.out.println();
+
+        for(int x : nums) System.out.print(x + " ");
+        System.out.println();
+    }
 }
-System.out.println();
-for(int x : nums)
-System.out.print(x + " ");
-System.out.println();
-}
-}
+
+
 
 
 /* Example 4: In general, when using the for-each for to iterate over an array
