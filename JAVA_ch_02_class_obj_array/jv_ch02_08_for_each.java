@@ -284,27 +284,32 @@ class NoChange {
 
 
 /* Example 4: In general, when using the for-each for to iterate over an array
-of N dimensions, the objects obtained will be arrays of N–1 dimensions. To understand the
-implications of this, consider the following program. It uses nested for loops to obtain the
-elements of a two-dimensional array in row order, from first to last. */
-// Use for-each style for on a two-dimensional array.
+                When using a for-each loop on a multi-dimensional array of N dimensions, 
+                the objects obtained will be arrays of N–1 dimensions.
+
+                The following program demonstrates this by using nested loops 
+                    to iterate through a 2D array row by row.
+*/
+
 class ForEach2 {
-public static void main(String args[]) {
-int sum = 0;
-int nums[][] = new int[3][5];
-// give nums some values
-for(int i = 0; i < 3; i++)
-for(int j=0; j < 5; j++)
-nums[i][j] = (i+1)*(j+1);
-// Use for-each for loop to display and sum the values.
-for(int x[] : nums) {
-for(int y : x) {
-System.out.println("Value is: " + y);
-sum += y;
-}
-}
-System.out.println("Summation: " + sum);
-}
+    public static void main(String args[]) {
+        int sum = 0;
+        int nums[][] = new int[3][5];
+
+        // give nums some values
+        for(int i=0; i<3; i++)
+            for(int j=0; j<5; j++) nums[i][j] = (i+1)*(j+1);
+
+        // Use for-each for loop to display and sum the values.
+        for(int x[] : nums) {
+            for(int y : x) {
+                System.out.println("Value is: " + y);
+                sum += y;
+            }
+        }
+
+        System.out.println("Summation: " + sum);
+    }
 }
 
 
@@ -314,6 +319,14 @@ Notice how x is declared. It is a reference to a one-dimensional array of intege
 necessary because each iteration of the for obtains the next array in nums, beginning with
 the array specified by nums[0]. The inner for loop then cycles through each of these arrays,
 displaying the values of each element
+
+
+
+Notice the line for(int x[] : nums). Since each iteration retrieves a sub-array from nums, 
+x is declared as a 1D integer array. The inner loop then cycles through x to display its elements.
+
+
+
 
 
 /* Example 5: One of the most common is searching. For example, the following
