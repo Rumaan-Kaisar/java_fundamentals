@@ -318,14 +318,10 @@ for(int x[] : nums) {
 
 
 Notice how x is declared in the line "for(int x[] : nums)".
-
-
- It is a reference to a one-dimensional array of integers. This is
-necessary because each iteration of the for obtains the next array in nums, beginning with
-the array specified by nums[0]. 
-
+    It is a reference to a one-dimensional array of integers.
+ 
 The inner for loop then cycles through each of these arrays "x",
-displaying the values of each element
+    displaying the values of each element
 
 
 
