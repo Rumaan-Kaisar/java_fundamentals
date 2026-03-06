@@ -289,6 +289,16 @@ class NoChange {
 
                 The following program demonstrates this by using nested loops 
                     to iterate through a 2D array row by row.
+
+
+                Notice how x is declared in the line "for(int x[] : nums)".
+                    It is a reference to a one-dimensional array of integers.
+                
+                Since each iteration retrieves a sub-array from nums, 
+                    x is declared as a 1D integer array. 
+
+                The inner for loop then cycles through each of these arrays "x",
+                    displaying the values of each element
 */
 
 class ForEach2 {
@@ -313,22 +323,8 @@ class ForEach2 {
 }
 
 
-In the program, pay special attention to this line:
-for(int x[] : nums) {
 
 
-Notice how x is declared in the line "for(int x[] : nums)".
-    It is a reference to a one-dimensional array of integers.
- 
-The inner for loop then cycles through each of these arrays "x",
-    displaying the values of each element
-
-
-
-Since each iteration retrieves a sub-array from nums, 
-    x is declared as a 1D integer array. 
-
-The inner loop then cycles through x to display its elements.
 
 
 
