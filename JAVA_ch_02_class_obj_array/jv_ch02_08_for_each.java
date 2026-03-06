@@ -315,15 +315,24 @@ class ForEach2 {
 
 In the program, pay special attention to this line:
 for(int x[] : nums) {
-Notice how x is declared. It is a reference to a one-dimensional array of integers. This is
+
+
+Notice how x is declared in the line "for(int x[] : nums)".
+
+
+ It is a reference to a one-dimensional array of integers. This is
 necessary because each iteration of the for obtains the next array in nums, beginning with
-the array specified by nums[0]. The inner for loop then cycles through each of these arrays,
+the array specified by nums[0]. 
+
+The inner for loop then cycles through each of these arrays "x",
 displaying the values of each element
 
 
 
-Notice the line for(int x[] : nums). Since each iteration retrieves a sub-array from nums, 
-x is declared as a 1D integer array. The inner loop then cycles through x to display its elements.
+Since each iteration retrieves a sub-array from nums, 
+    x is declared as a 1D integer array. 
+
+The inner loop then cycles through x to display its elements.
 
 
 
@@ -351,4 +360,3 @@ System.out.println("Value found!");
 The for-each style for is an excellent choice in this application because searching an
 unsorted array involves examining each element in sequence. (Of course, if the array were
 sorted, a binary search could be used, which would require a different style loop.
-
