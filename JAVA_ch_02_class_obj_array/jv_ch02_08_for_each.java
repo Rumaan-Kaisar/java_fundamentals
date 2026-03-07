@@ -325,14 +325,10 @@ class ForEach2 {
 
 
 
+/* Example 5: following program uses a for-each loop to search an unsorted array for a value. 
+                It stops if the value is found.
+*/
 
-
-
-
-
-/* Example 5: One of the most common is searching. For example, the following
-program uses a for loop to search an unsorted array for a value. It stops if the value is found. */
-// Search an array using for-each style for.
 class Search {
 public static void main(String args[]) {
 int nums[] = { 6, 8, 3, 7, 5, 6, 1, 4 };
