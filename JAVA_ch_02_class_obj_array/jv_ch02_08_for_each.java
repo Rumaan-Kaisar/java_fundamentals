@@ -349,3 +349,7 @@ System.out.println("Value found!");
 The for-each style for is an excellent choice in this application because searching an
 unsorted array involves examining each element in sequence. (Of course, if the array were
 sorted, a binary search could be used, which would require a different style loop.
+
+
+The for-each loop is perfect for searching an unsorted array because it checks each element one by one in order.
+But if the array was sorted, we could use a faster method called binary search — which needs a different kind of loop.
