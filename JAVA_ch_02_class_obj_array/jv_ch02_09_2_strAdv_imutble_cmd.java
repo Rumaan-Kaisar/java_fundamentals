@@ -1,7 +1,7 @@
 
 // jv_ch02_09_2_strAdv_imutble_cmd     2.15+2.16   162.9-166.5
 
-/* -=-=-=-=-=-=-=-=-=-=-=      chapter name      -=-=-=-=-=-=-=-=-=-=-=
+/* -=-=-=-=-=-=-=-=-=-=-=      Strings: Immutability and others      -=-=-=-=-=-=-=-=-=-=-=
 
 2.15 Strings Are Immutable
 In Java (C#, python also) the contents of a String object are immutable. That is, once created, the character sequence that makes up the string cannot be altered. 
