@@ -1,10 +1,9 @@
 
-/* -=-=-=-=-=-=-=-=-=-=-=      chapter name      -=-=-=-=-=-=-=-=-=-=-= */
-
 // jv_ch02_09_1_strings                2.14        158.9-162.9
 
 
-2.14 Strings
+/* -=-=-=-=-=-=-=-=-=-=-=      Strings      -=-=-=-=-=-=-=-=-=-=-=
+
 String defines and supports character strings. In Java, strings are objects. Constructing String is similar to constructing any other type of object: by using new and calling the String constructor. For example:
 String str = new String("Hello");
 	You can also construct a String from another String. Eg: Consider previous str,  String str2 = new String(str);
@@ -45,3 +44,5 @@ Original array:
 This is a test.
 Modified array:
 This was a test, too!
+
+*/
