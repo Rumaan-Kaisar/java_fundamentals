@@ -1,7 +1,8 @@
 
-/* -=-=-=-=-=-=-=-=-=-=-=      chapter name      -=-=-=-=-=-=-=-=-=-=-= */
-
 // jv_ch02_10_bitwise_operators        2.17        166.5-176.8
+
+/* -=-=-=-=-=-=-=-=-=-=-=      Bitwise Operators      -=-=-=-=-=-=-=-=-=-=-=
+
 
 
 2.17 Bitwise Operators (Recall C/C++ 7.7)
@@ -76,11 +77,11 @@ Each left shift causes all bits within the specified value to be shifted left on
 class ShiftDemo { public static void main(String args[]) {	int val = 1;
 for(int i = 0; i < 8; i++) {	for(int t=128; t > 0; t = t/2) {          if((val & t) != 0) System.out.print("1 ");
           else System.out.print("0 ");  }   System.out.println();
-val = val << 1; }  System.out.println();	/* left shift */  
+val = val << 1; }  System.out.println();	// left shift
 val = 128;
 for(int i = 0; i < 8; i++) {	for(int t=128; t > 0; t = t/2) {           if((val & t) != 0) System.out.print("1 ");
           else System.out.print("0 "); }System.out.println();
-val = val >> 1;} 	}}			/* right shift */ 
+val = val >> 1;} 	}}			// right shift
 	Be careful when shifting byte and short values because Java will automatically promote these types to int when evaluating an expression. For example, if you right shift a byte value, it will first be promoted to int and then shifted. The result of the shift will also be of type int. Often this conversion is of no consequence. 
 	If you shift a negative byte or short value, it will be sign-extended when it is promoted to int. Thus, the high-order bits of the resulting integer value will be filled with ones. This is fine when performing a normal right shift. But when you perform a zero-fill right shift, there are 24 ones to be shifted before the byte value begins to see zeros.
 	Bitwise Shorthand Assignments: All of the binary bitwise operators have a shorthand form that combines an assignment with the bitwise operation. For example, the following two statements both assign to x the outcome of an XOR of x with the value 127.
@@ -89,3 +90,4 @@ The bitwise shift operators can be used to perform very fast multiplication or d
 	A shift left doubles a value.		A shift right halves it.
 
 
+ */
