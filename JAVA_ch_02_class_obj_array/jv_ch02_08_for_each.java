@@ -238,7 +238,6 @@ for(int x : nums) {
 */
 
 
-// ----  rev[05-Mar-2026]  ----
 
 
 /* Example 2: Following program demonstrates the FOR-Each version of the FOR */
@@ -270,8 +269,9 @@ class NoChange {
         int nums[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
         for(int x : nums) {
-            System.out.print(x + " ");
+            System.out.print(x + " : ");
             x = x * 10;     // it does not change "nums" array
+            System.out.print(x + ", ");     // print the change inside the loop
         }
         System.out.println();
 
@@ -341,16 +341,15 @@ class Search {
         int val = 5;
         boolean found = false;
 
-// Use for-each loop to search "nums" for "val".
-for(int x : nums) {
-if(x == val) {
-found = true;
-break;
-}
-}
-if(found)
-System.out.println("Value found!");
-}
+        // Use for-each loop to search "nums" for "val".
+        for(int x : nums) {
+            if(x == val) {
+                found = true;
+                break;
+            }
+        }
+        if(found) System.out.println("Value found!");
+    }
 }
 
 
