@@ -299,6 +299,14 @@ class NoChange {
 
                 The inner for loop then cycles through each of these arrays "x",
                     displaying the values of each element
+
+
+                The resulting 2D array looks like this:
+
+                        Col 0   Col 1   Col 2   Col 3   Col 4
+                Row 0   1       2       3       4       5
+                Row 1   2       4       6       8       10
+                Row 2   3       6       9       12      15
 */
 
 class ForEach2 {
