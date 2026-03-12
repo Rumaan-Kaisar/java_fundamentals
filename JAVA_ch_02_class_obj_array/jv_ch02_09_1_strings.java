@@ -4,8 +4,17 @@
 
 /* -=-=-=-=-=-=-=-=-=-=-=      Strings      -=-=-=-=-=-=-=-=-=-=-=
 
-String defines and supports character strings. In Java, strings are objects. Constructing String is similar to constructing any other type of object: by using new and calling the String constructor. For example:
-String str = new String("Hello");
+    In Java, strings are objects.
+    The "String" type objects defines and supports character strings.  
+
+    Constructing String:
+        similar to constructing any other type of object:
+        by using "new" and calling the "String" constructor. 
+        
+        For example:
+                    String str = new String("Hello");
+
+
 	You can also construct a String from another String. Eg: Consider previous str,  String str2 = new String(str);
 	Another easy way to create a String is:   String str = "Hello";     str is initialized to the character sequence " Hello "
 	String object can be used anywhere that a quoted string is allowed. Eg: String object as an argument to println()
@@ -50,7 +59,8 @@ This was a test, too!
 --------  Qwen  --------
 
 Java Strings - Organized Notes
-Source: jv_ch02_09_1_strings | Section 2.14 | Pages 158.9-162.9
+
+
 🔹 Introduction to Strings
 String defines and supports character sequences in Java
 Strings are objects in Java (not primitive types)
