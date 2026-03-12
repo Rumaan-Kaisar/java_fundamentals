@@ -116,6 +116,7 @@ Returns index of last occurrence of substring; -1 if not found
 Code Examples:
 java
 12345678910111213141516171819202122232425
+
 String str1 = "Hello.";
 String str2 = new String(str1);
 String str3 = "You there !!";
@@ -127,6 +128,23 @@ if(str1.equals(str3)) System.out.println("str1 = str3");  // ✗ Skipped
 // length()
 System.out.println("Length of str1: " + str1.length());  // Output: 6
 
+
+// charAt() - print one char at a time
+for(int i=0; i < str1.length(); i++)
+    System.out.print(str1.charAt(i));  // Output: Hello.
+
+// compareTo()
+int result = str1.compareTo(str3);
+if(result == 0) System.out.println("str1 = str3");
+else if(result < 0) System.out.println("str1 < str3");
+else System.out.println("str1 > str3");
+
+// indexOf() / lastIndexOf()
+String str2 = "One Two Three One";
+int idx = str2.indexOf("One");        // 0
+int idxLast = str2.lastIndexOf("One"); // 14
+
+
 🔹 String Concatenation
 Use the + operator to join strings:
 java
@@ -137,16 +155,22 @@ String str3 = "Three";
 String str4 = str1 + str2 + str3;  // "OneTwoThree"
 Works with literals, variables, and expressions
 Automatically converts non-string operands to strings during concatenation
+
+
 🔹 ⚠️ Critical: == vs equals()
 Operator/Method
 What It Compares
 Use Case
+
 ==
 Reference equality (memory address)
 Checks if two references point to the same object
+
 equals()
 Content equality (character sequence)
 Checks if two strings have the same characters
+
+
 java
 1234567
 String a = new String("Hello");
@@ -156,15 +180,19 @@ String c = a;
 a == b      // false (different objects)
 a.equals(b) // true  (same content)
 a == c      // true  (same reference)
+
 ✅ Always use equals() to compare String content
+
+
 🔹 Arrays of Strings
 Strings can be stored in arrays like any other data type
 Declaration & Initialization:
-java
-1
+
+String strs[] = { "This", "is", "a", "test." };
+
+
 Iterating & Modifying:
-java
-12345678910111213
+
 // Print original array
 System.out.println("Original array: ");
 for(String s : strs) System.out.print(s + " ");
@@ -175,6 +203,10 @@ strs[1] = "was";
 strs[3] = "test, too!";
 
 // Print modified array
+System.out.println("Modified array:");
+for(String s : strs) System.out.print(s + " ");
+// Output: This was a test, too!
+
 
 🔹 Quick Reference Summary
 ✅ Creating Strings: Use literals ("text") for simplicity; new String() when explicit object creation needed
@@ -182,13 +214,8 @@ strs[3] = "test, too!";
 ✅ Common Methods: length(), charAt(), indexOf(), compareTo(), equals()
 ✅ Concatenation: Use + operator
 ✅ Arrays: String[] arr = {...}; access/modify via index
+
 💡 Pro Tip: Strings are immutable in Java — any operation that appears to modify a string actually creates a new String object.
-
-
-
-
-
-
 
 
 
