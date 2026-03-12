@@ -1,6 +1,4 @@
 
-// 2.13 :: 153.7-158.9
-
 /*  -=-=-=-=-=-=-=-=-=-=-=      Enhanced FOR      -=-=-=-=-=-=-=-=-=-=-= 
 
     For-Each Loop (Enhanced for Loop)
@@ -359,6 +357,7 @@ class Search {
         if(found) System.out.println("Value found!");
     }
 }
+
 
 
 
