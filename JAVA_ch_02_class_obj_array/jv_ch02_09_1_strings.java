@@ -4,8 +4,13 @@
 
 /* -=-=-=-=-=-=-=-=-=-=-=      Strings      -=-=-=-=-=-=-=-=-=-=-=
 
-    In Java, strings are objects.
+    In Java, strings are objects of "String" class (not primitive types)
     The "String" type objects defines and supports character strings.  
+
+		java.lang.String
+
+	String defines and supports character sequences in Java
+	Part of the java.lang package (automatically imported)
 
     Constructing String:
         similar to constructing any other type of object:
@@ -62,9 +67,8 @@ Java Strings - Organized Notes
 
 
 🔹 Introduction to Strings
-String defines and supports character sequences in Java
-Strings are objects in Java (not primitive types)
-Part of the java.lang package (automatically imported)
+
+
 
 
 🔹 Creating/Constructing Strings
