@@ -7,21 +7,35 @@
     In Java, strings are objects of "String" class (not primitive types)
     The "String" type objects defines and supports character strings.  
 
-		java.lang.String
+        java.lang.String
 
-	String defines and supports character sequences in Java
-	Part of the java.lang package (automatically imported)
+    String defines and supports character sequences in Java
+    Part of the java.lang package (automatically imported)
 
     Constructing String:
-        similar to constructing any other type of object:
-        by using "new" and calling the "String" constructor. 
-        
-        For example:
-                    String str = new String("Hello");
+        Method 1:
+            similar to constructing any other type of object:
+            by using "new" and calling the "String" constructor. 
+
+            For example:
+                        String str = new String("Hello");
+
+        Method 2:
+            You can also construct a String from another String.
+            Eg: Consider previous str,  
+
+                        String str2 = new String(str);
+
+        Method 2:
+            Another easy way to create a String is just assigning a String literal to a variable
+
+                        String str = "Hello";     
+
+            In this case, "str" is initialized to the character sequence "Hello"
+
+            ----  rev[16-Mar-2026]  ----
 
 
-	You can also construct a String from another String. Eg: Consider previous str,  String str2 = new String(str);
-	Another easy way to create a String is:   String str = "Hello";     str is initialized to the character sequence " Hello "
 	String object can be used anywhere that a quoted string is allowed. Eg: String object as an argument to println()
 String str1 = new String("Java strings are objects.");
 System.out.println(str1);
@@ -66,25 +80,10 @@ This was a test, too!
 Java Strings - Organized Notes
 
 
-🔹 Introduction to Strings
-
-
-
 
 🔹 Creating/Constructing Strings
-Method 1: Using new keyword with constructor
-java
-1
-String str = new String("Hello");
 
-Method 2: From another String object
-java
-1
-String str2 = new String(str);  // copies character sequence from str
 
-Method 3: String literal (recommended & simpler)
-java
-1
 ✅ String objects can be used anywhere a quoted string literal is allowed
 ✅ Example: Passing String object as argument to println()
 java
