@@ -26,19 +26,30 @@
 
                         String str2 = new String(str);
 
-        Method 2:
+        Method 3:
             Another easy way to create a String is just assigning a String literal to a variable
 
                         String str = "Hello";     
 
             In this case, "str" is initialized to the character sequence "Hello"
 
-            ----  rev[16-Mar-2026]  ----
+    
+    String objects can be used anywhere a "quoted string literal" is allowed
+    Example: Passing String object as argument to println()
+
+            String str1 = new String("Java strings are objects.");
+            System.out.println(str1);
 
 
-	String object can be used anywhere that a quoted string is allowed. Eg: String object as an argument to println()
-String str1 = new String("Java strings are objects.");
-System.out.println(str1);
+    ----  rev[17-Mar-2026]  ----
+
+
+
+
+
+
+
+
 	6 methods to operate on strings: The String class contains several methods that operate on strings. The general forms for a few:
 Names of Method	Description	String str1 = "Hello.";     String str2 = new String(str1);      String str3 = "You there !!";
 boolean equals(str)	Returns true if the invoking string contains the same character sequence as str.	if(str1.equals(str2)) System.out.println("str1 = str2"); else return;
@@ -84,8 +95,7 @@ Java Strings - Organized Notes
 🔹 Creating/Constructing Strings
 
 
-✅ String objects can be used anywhere a quoted string literal is allowed
-✅ Example: Passing String object as argument to println()
+
 java
 12
 String str1 = new String("Java strings are objects.");
