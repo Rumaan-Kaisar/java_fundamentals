@@ -41,6 +41,8 @@
             System.out.println(str1);
 
 
+    ----------------    String Methods    ----------------
+
     ----  rev[17-Mar-2026]  ----
 
 
@@ -51,26 +53,45 @@
 
 
 	6 methods to operate on strings: The String class contains several methods that operate on strings. The general forms for a few:
-Names of Method	Description	String str1 = "Hello.";     String str2 = new String(str1);      String str3 = "You there !!";
+Names of Method	Description	
+
+String str1 = "Hello.";
+String str2 = new String(str1);
+String str3 = "You there !!";
+
+
+
 boolean equals(str)	Returns true if the invoking string contains the same character sequence as str.	if(str1.equals(str2)) System.out.println("str1 = str2"); else return;
 if(str1.equals(str3)) System.out.println("str1 = str3"); else return;
 [str1.equals(str2) returns true, str1.equals(str3) returns false]
+
+
 int length( )	Obtains the length of a string.	System.out.println("Length of str1: " + str1.length());
+
+
 char charAt(index)	Obtains the character at the index specified by index.	// display str1, one char at a time.
 for(int i=0; i < str1.length(); i++)  System.out.print(str1.charAt(i));
+
+
 int compareTo(str)	-ve if invoking string < str, 
 +ve if invoking string >  str, 
 0 if invoking string =  str, 	int result = str1.compareTo(str3);
 	if(result == 0) 	System.out.println("str1 = str3 ");
 	else if(result < 0) 	System.out.println("str1 < str3");
 	else 		System.out.println("str1 > str3");
+
+
 int indexOf(str)	Searches the invoking string for the substring specified by str. Returns the index of the first match or –1 on failure.	
 	str2 = "One Two Three One";		// assign a new string to str2
 idx = str2.indexOf("One");
 System.out.println("Index of first occurrence of One: " + idx);
 idx = str2.lastIndexOf("One");
 System.out.println("Index of last occurrence of One: " + idx);
+
+
 int lastIndexOf(str)	Searches the invoking string for the substring specified by str. Returns the index of the last match or –1 on failure.	
+
+
 	You can concatenate (join together) two strings using the + operator. For example,	String str1 = "One";          String str2 = "Two";          String str3 = "Three";     
 String str4 = str1 + str2 + str3; //initializes str4 with the string "OneTwoThree".
 
@@ -92,17 +113,9 @@ Java Strings - Organized Notes
 
 
 
-🔹 Creating/Constructing Strings
 
 
 
-java
-12
-String str1 = new String("Java strings are objects.");
-System.out.println(str1);  // Output: Java strings are objects.
-
-
-🔹 Essential String Methods
 Method
 Description
 Example & Output
