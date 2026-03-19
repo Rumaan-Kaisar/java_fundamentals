@@ -80,12 +80,16 @@
             System.out.println("Length of str1: " + str1.length());
 
 
-    ----  rev[19-Mar-2026]  ----
+    char charAt(int index)::
+        Obtains the character at the index specified by "index".
 
+            str1.charAt(0) // 'H' for "Hello."
 
-char charAt(index)	Obtains the character at the index specified by index.	// display str1, one char at a time.
-for(int i=0; i < str1.length(); i++)  System.out.print(str1.charAt(i));
+        For example:
+            // display str1's one char at a time.
+            for(int i=0; i < str1.length(); i++)  System.out.print(str1.charAt(i));
 
+----  rev[19-Mar-2026]  ----
 
 int compareTo(str)	-ve if invoking string < str, 
 +ve if invoking string >  str, 
@@ -126,9 +130,9 @@ This was a test, too!
 Java Strings - Organized Notes
 
 
-char charAt(int index):
-Returns character at specified index (0-based)
-str1.charAt(0) → 'H' for "Hello."
+
+
+
 
 int compareTo(String str)
 Compares lexicographically:
