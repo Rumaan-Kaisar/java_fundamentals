@@ -52,27 +52,24 @@
         String str2 = new String(str1);
         String str3 = "You there !!";
 
-    ----  rev[17-Mar-2026]  ----
+    boolean equals(String str):
+        Returns true if the "invoking string" contains the same character sequence as "str".
 
-Names of Method	Description	
+            str1.equals(str2)   //true if same content
 
-boolean equals(str)	
+        For example:
 
-Returns true if the "invoking string" contains the same character sequence as "str".	
-
-boolean equals(String str):
-
-str1.equals(str2) → true if same content
-
-
-
-if(str1.equals(str2)) System.out.println("str1 = str2"); else return;
-if(str1.equals(str3)) System.out.println("str1 = str3"); else return;
-[str1.equals(str2) returns true, str1.equals(str3) returns false]
+            if(str1.equals(str2)) System.out.println("str1 = str2"); 
+            else return;
+            if(str1.equals(str3)) System.out.println("str1 = str3"); 
+            else return;
+        
+        Output:
+            str1.equals(str2) returns true, 
+            str1.equals(str3) returns false
 
 
-
-
+    ----  rev[19-Mar-2026]  ----
 
 int length( )	Obtains the length of a string.	System.out.println("Length of str1: " + str1.length());
 
