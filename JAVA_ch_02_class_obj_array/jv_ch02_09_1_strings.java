@@ -52,6 +52,7 @@
         String str2 = new String(str1);
         String str3 = "You there !!";
 
+
     boolean equals(String str):
         Returns true if the "invoking string" contains the same character sequence as "str".
 
@@ -69,9 +70,17 @@
             str1.equals(str3) returns false
 
 
-    ----  rev[19-Mar-2026]  ----
+    int length():
+        Obtains the length of a string (number of characters).
 
-int length( )	Obtains the length of a string.	System.out.println("Length of str1: " + str1.length());
+            str1.length() // 6 for "Hello."
+
+        For example:
+
+            System.out.println("Length of str1: " + str1.length());
+
+
+    ----  rev[19-Mar-2026]  ----
 
 
 char charAt(index)	Obtains the character at the index specified by index.	// display str1, one char at a time.
@@ -117,21 +126,7 @@ This was a test, too!
 Java Strings - Organized Notes
 
 
-
-
-
-
-Method
-Description
-Example & Output
-
-
-
-int length()
-Returns number of characters in string
-str1.length() → 6 for "Hello."
-
-char charAt(int index)
+char charAt(int index):
 Returns character at specified index (0-based)
 str1.charAt(0) → 'H' for "Hello."
 
