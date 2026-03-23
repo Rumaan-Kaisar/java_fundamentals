@@ -80,7 +80,7 @@
             System.out.println("Length of str1: " + str1.length());
 
 
-    char charAt(int index)::
+    char charAt(int index):
         Obtains the character at the index specified by "index".
 
             str1.charAt(0) // 'H' for "Hello."
@@ -89,12 +89,22 @@
             // display str1's one char at a time.
             for(int i=0; i < str1.length(); i++)  System.out.print(str1.charAt(i));
 
+
+
 ----  rev[19-Mar-2026]  ----
 
-int compareTo(str)	-ve if invoking string < str, 
-+ve if invoking string >  str, 
-0 if invoking string =  str, 	int result = str1.compareTo(str3);
-	if(result == 0) 	System.out.println("str1 = str3 ");
+    int compareTo(String str):
+        Compares the strings lexicographically.
+
+        Negative:   invoking string < str
+        Positive:   invoking string > str
+        Zero:       strings equal
+
+            str1.compareTo(str3)  // comparison result is -ve
+	
+
+ 	int result = str1.compareTo(str3);
+	if(result == 0) 	System.out.println("str1 = str3");
 	else if(result < 0) 	System.out.println("str1 < str3");
 	else 		System.out.println("str1 > str3");
 
@@ -135,11 +145,11 @@ Java Strings - Organized Notes
 
 
 int compareTo(String str)
-Compares lexicographically:
-• Negative: invoking string < str
-• Positive: invoking string > str
-• Zero: strings equal
-str1.compareTo(str3) → comparison result
+
+
+
+
+
 
 int indexOf(String str)
 Returns index of first occurrence of substring; -1 if not found
