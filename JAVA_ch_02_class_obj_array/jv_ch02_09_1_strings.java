@@ -110,15 +110,23 @@
                 System.out.println("str1 > str3");
 
 
-----  rev[23-Mar-2026]  ----
+    int indexOf(String str):
+        Searches the invoking string for the substring specified by str. 
+        Returns the index of the first match or –1 on failure. 
+
+            "One Two Three One".indexOf("One")  // 0
+
+        For example:
+            str2 = "One Two Three One";     // assign a new string to str2
+
+            idx = str2.indexOf("One");
+            System.out.println("Index of first occurrence of One: " + idx);
+
+            idx = str2.lastIndexOf("One");
+            System.out.println("Index of last occurrence of One: " + idx);
 
 
-int indexOf(str)    Searches the invoking string for the substring specified by str. Returns the index of the first match or –1 on failure. 
-    str2 = "One Two Three One";     // assign a new string to str2
-idx = str2.indexOf("One");
-System.out.println("Index of first occurrence of One: " + idx);
-idx = str2.lastIndexOf("One");
-System.out.println("Index of last occurrence of One: " + idx);
+----  rev[26-Mar-2026]  ----
 
 
 int lastIndexOf(str)    
@@ -149,9 +157,8 @@ Java Strings - Organized Notes
 
 
 
-int indexOf(String str)
 Returns index of first occurrence of substring; -1 if not found
-"One Two Three One".indexOf("One") → 0
+
 
 int lastIndexOf(String str)
 Returns index of last occurrence of substring; -1 if not found
