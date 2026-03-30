@@ -111,7 +111,7 @@
 
 
     int indexOf(String str):
-        Searches the invoking string for the substring specified by str. 
+        Searches the invoking string for the substring specified by "str". 
         Returns the index of the first match or –1 on failure. 
 
             "One Two Three One".indexOf("One")  // 0
@@ -126,19 +126,27 @@
             System.out.println("Index of last occurrence of One: " + idx);
 
 
-----  rev[26-Mar-2026]  ----
+----  rev[30-Mar-2026]  ----
 
 
-int lastIndexOf(str)    
-Searches the invoking string for the substring specified by str. 
-Returns the index of the last match or –1 on failure.  
+    int lastIndexOf(String str):
+        Searches the invoking string for the substring specified by "str". 
+        Returns the "index of the last match" or –1 on failure. 
 
+            "One Two Three One".lastIndexOf("One")  // 14
+
+
+----------------    String Concatenation    ----------------
 
 
    You can concatenate (join together) two strings using the + operator. For example,  String str1 = "One";          String str2 = "Two";          String str3 = "Three";     
 String str4 = str1 + str2 + str3; //initializes str4 with the string "OneTwoThree".
 
 Note:   Why don’t use == instead of equals():  equals() compares the character sequences of two String objects for equality. Applying the == to two String references simply determines whether the two references refer to the same object.
+
+
+----------------    Arrays of Strings    ----------------
+
    Arrays of Strings: Like any other data type, strings can be assembled into arrays. For example: String strs[] = { "This", "is", "a", "test." };    System.out.println("Original array: ");
 for(String s : strs) System.out.print(s + " ");     System.out.println("\n");
 strs[1] = "was";    strs[3] = "test, too!";         // change a string
@@ -157,12 +165,14 @@ Java Strings - Organized Notes
 
 
 
-Returns index of first occurrence of substring; -1 if not found
 
 
-int lastIndexOf(String str)
-Returns index of last occurrence of substring; -1 if not found
-"One Two Three One".lastIndexOf("One") → 14
+
+
+
+
+
+
 
 
 
@@ -196,6 +206,8 @@ else System.out.println("str1 > str3");
 String str2 = "One Two Three One";
 int idx = str2.indexOf("One");        // 0
 int idxLast = str2.lastIndexOf("One"); // 14
+
+
 
 
 🔹 String Concatenation
