@@ -70,6 +70,11 @@
             str1.equals(str2) returns true, 
             str1.equals(str3) returns false
 
+        Why don’t use == instead of equals():
+            equals() "compares the character sequences" of two String objects for equality. 
+            Applying the == to two String references simply determines 
+                whether the two references refer to the "same object".
+
 
     int length():
         Obtains the length of a string (number of characters).
@@ -139,6 +144,9 @@
 ----------------    String Concatenation    ----------------
 
 You can concatenate (join together) two strings using the + operator.
+Works with literals, variables, and expressions
+Automatically converts "non-string" operands to strings during concatenation
+
 For example:
             String str1 = "One";
             String str2 = "Two";
@@ -147,7 +155,7 @@ For example:
             //initializes str4 with the string "OneTwoThree".
             String str4 = str1 + str2 + str3;   
 
-Note:   Why don’t use == instead of equals():  equals() compares the character sequences of two String objects for equality. Applying the == to two String references simply determines whether the two references refer to the same object.
+
 
 
 ----------------    Arrays of Strings    ----------------
@@ -216,18 +224,11 @@ int idxLast = str2.lastIndexOf("One"); // 14
 
 
 🔹 String Concatenation
-Use the + operator to join strings:
-java
-1234
-String str1 = "One";
-String str2 = "Two";
-String str3 = "Three";
-String str4 = str1 + str2 + str3;  // "OneTwoThree"
-Works with literals, variables, and expressions
-Automatically converts non-string operands to strings during concatenation
 
 
-🔹 ⚠️ Critical: == vs equals()
+
+
+== vs equals()
 Operator/Method
 What It Compares
 Use Case
