@@ -41,6 +41,7 @@
             System.out.println(str1);
 
 
+
     ----------------    String Methods    ----------------
 
     The String class contains several methods that operate on strings. 
@@ -126,9 +127,6 @@
             System.out.println("Index of last occurrence of One: " + idx);
 
 
-----  rev[30-Mar-2026]  ----
-
-
     int lastIndexOf(String str):
         Searches the invoking string for the substring specified by "str". 
         Returns the "index of the last match" or –1 on failure. 
@@ -136,11 +134,18 @@
             "One Two Three One".lastIndexOf("One")  // 14
 
 
+----  rev[07-Apr-2026]  ----
+
 ----------------    String Concatenation    ----------------
 
-
-   You can concatenate (join together) two strings using the + operator. For example,  String str1 = "One";          String str2 = "Two";          String str3 = "Three";     
-String str4 = str1 + str2 + str3; //initializes str4 with the string "OneTwoThree".
+You can concatenate (join together) two strings using the + operator.
+For example:
+            String str1 = "One";
+            String str2 = "Two";
+            String str3 = "Three";
+            
+            //initializes str4 with the string "OneTwoThree".
+            String str4 = str1 + str2 + str3;   
 
 Note:   Why don’t use == instead of equals():  equals() compares the character sequences of two String objects for equality. Applying the == to two String references simply determines whether the two references refer to the same object.
 
