@@ -75,6 +75,18 @@
             Applying the == to two String references simply determines 
                 whether the two references refer to the "same object".
 
+            Example: "Same object" vs "same content"
+
+                String a = new String("Hello");
+                String b = new String("Hello");
+                String c = a;
+
+                a == b      // false (different objects)
+                a.equals(b) // true  (same content)
+                a == c      // true  (same reference)
+
+            Always use equals() to compare String content
+
 
     int length():
         Obtains the length of a string (number of characters).
@@ -227,15 +239,6 @@ int idxLast = str2.lastIndexOf("One"); // 14
 
 
 
-String a = new String("Hello");
-String b = new String("Hello");
-String c = a;
-
-a == b      // false (different objects)
-a.equals(b) // true  (same content)
-a == c      // true  (same reference)
-
-✅ Always use equals() to compare String content
 
 
 🔹 Arrays of Strings
