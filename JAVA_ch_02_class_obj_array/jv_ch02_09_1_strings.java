@@ -139,24 +139,23 @@
             "One Two Three One".lastIndexOf("One")  // 14
 
 
+
+    ----------------    String Concatenation    ----------------
+
+    You can concatenate (join together) two strings using the + operator.
+    Works with literals, variables, and expressions
+    Automatically converts "non-string" operands to strings during concatenation
+
+    For example:
+                String str1 = "One";
+                String str2 = "Two";
+                String str3 = "Three";
+                
+                //initializes str4 with the string "OneTwoThree".
+                String str4 = str1 + str2 + str3;   
+
+
 ----  rev[07-Apr-2026]  ----
-
-----------------    String Concatenation    ----------------
-
-You can concatenate (join together) two strings using the + operator.
-Works with literals, variables, and expressions
-Automatically converts "non-string" operands to strings during concatenation
-
-For example:
-            String str1 = "One";
-            String str2 = "Two";
-            String str3 = "Three";
-            
-            //initializes str4 with the string "OneTwoThree".
-            String str4 = str1 + str2 + str3;   
-
-
-
 
 ----------------    Arrays of Strings    ----------------
 
@@ -228,22 +227,6 @@ int idxLast = str2.lastIndexOf("One"); // 14
 
 
 
-== vs equals()
-Operator/Method
-What It Compares
-Use Case
-
-==
-Reference equality (memory address)
-Checks if two references point to the same object
-
-equals()
-Content equality (character sequence)
-Checks if two strings have the same characters
-
-
-java
-1234567
 String a = new String("Hello");
 String b = new String("Hello");
 String c = a;
@@ -291,3 +274,21 @@ for(String s : strs) System.out.print(s + " ");
 
 
 */
+
+/* Example 1: string comparison vs referance. "Same object" vs "same content" */
+
+public class StringComparison {
+    public static void main(String[] args) {
+        // Creating two different objects with the same content
+        String a = new String("Hello");
+        String b = new String("Hello");
+        
+        // Assigning the reference of 'a' to 'c'
+        String c = a;
+
+        // Comparisons
+        System.out.println("a == b: " + (a == b));      // false (different objects)
+        System.out.println("a.equals(b): " + a.equals(b)); // true  (same content)
+        System.out.println("a == c: " + (a == c));      // true  (same reference)
+    }
+}
