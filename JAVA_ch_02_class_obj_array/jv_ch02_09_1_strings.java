@@ -171,8 +171,23 @@
 
 ----------------    Arrays of Strings    ----------------
 
-   Arrays of Strings: Like any other data type, strings can be assembled into arrays. For example: String strs[] = { "This", "is", "a", "test." };    System.out.println("Original array: ");
-for(String s : strs) System.out.print(s + " ");     System.out.println("\n");
+Strings can be stored in arrays like any other data type.
+For example:
+
+            // Declaration & Initialization
+            String strs[] = { "This", "is", "a", "test." };
+
+            // Print original array
+            System.out.println("Original array: ");
+            for(String s : strs) System.out.print(s + " ");
+
+            System.out.println("\n");
+
+// Modify elements: change a string
+strs[1] = "was";
+strs[3] = "test, too!";
+
+
 strs[1] = "was";    strs[3] = "test, too!";         // change a string
 System.out.println("Modified array:"); for(String s : strs) System.out.print(s +" ");   output:
 Original array:
@@ -242,22 +257,15 @@ int idxLast = str2.lastIndexOf("One"); // 14
 
 
 🔹 Arrays of Strings
-Strings can be stored in arrays like any other data type
-Declaration & Initialization:
-
-String strs[] = { "This", "is", "a", "test." };
 
 
-Iterating & Modifying:
 
-// Print original array
-System.out.println("Original array: ");
-for(String s : strs) System.out.print(s + " ");
-// Output: This is a test.
 
-// Modify elements
-strs[1] = "was";
-strs[3] = "test, too!";
+
+
+
+
+
 
 // Print modified array
 System.out.println("Modified array:");
