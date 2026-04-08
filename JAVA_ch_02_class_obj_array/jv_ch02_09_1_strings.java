@@ -261,5 +261,42 @@ class ArrayTest {
 }
 
 
-----  rev[08-Apr-2026] : NXT >> rev Book  ----
+
+
+/* Example 3: String methods demo */
+
+class StringMethodsDemo {
+    public static void main(String[] args) {
+        String str1 = "Hello.";
+        String str2 = new String(str1);
+        String str3 = "You there !!";
+
+        // equals()
+        if(str1.equals(str2)) System.out.println("str1 = str2");  // ✓ Executed
+        if(str1.equals(str3)) System.out.println("str1 = str3");  // ✗ Skipped
+
+        // length()
+        System.out.println("Length of str1: " + str1.length());  // Output: 6
+
+        // charAt() - print one char at a time
+        for(int i=0; i < str1.length(); i++)
+            System.out.print(str1.charAt(i));  // Output: Hello.
+
+        // compareTo()
+        int result = str1.compareTo(str3);
+        if(result == 0) System.out.println("str1 = str3");
+        else if(result < 0) System.out.println("str1 < str3");
+        else System.out.println("str1 > str3");
+
+        // indexOf() / lastIndexOf()
+        str2 = "One Two Three One";
+        int idx = str2.indexOf("One");        // 0
+        int idxLast = str2.lastIndexOf("One"); // 14
+        System.out.println(idx + "," + idxLast);
+    }
+}
+
+
+
+// ----  rev[08-Apr-2026] : NXT >> rev Book  ----
 
