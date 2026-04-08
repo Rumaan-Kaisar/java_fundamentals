@@ -198,82 +198,19 @@
             This was a test, too!
 
 
+    Tips:
+        Use "literals" ("text") for simplicity; 
+        Use "new String()" when explicit object creation needed
+        Common Methods: length(), charAt(), indexOf(), compareTo(), equals()
+        Always use .equals() for content, never ==
 
-
-----  rev[08-Apr-2026]  ----
-
---------  Qwen  --------
-
-Java Strings - Organized Notes
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Code Examples:
-java
-12345678910111213141516171819202122232425
-
-String str1 = "Hello.";
-String str2 = new String(str1);
-String str3 = "You there !!";
-
-// equals()
-if(str1.equals(str2)) System.out.println("str1 = str2");  // ✓ Executed
-if(str1.equals(str3)) System.out.println("str1 = str3");  // ✗ Skipped
-
-// length()
-System.out.println("Length of str1: " + str1.length());  // Output: 6
-
-
-// charAt() - print one char at a time
-for(int i=0; i < str1.length(); i++)
-    System.out.print(str1.charAt(i));  // Output: Hello.
-
-// compareTo()
-int result = str1.compareTo(str3);
-if(result == 0) System.out.println("str1 = str3");
-else if(result < 0) System.out.println("str1 < str3");
-else System.out.println("str1 > str3");
-
-// indexOf() / lastIndexOf()
-String str2 = "One Two Three One";
-int idx = str2.indexOf("One");        // 0
-int idxLast = str2.lastIndexOf("One"); // 14
-
-
-
-
-
-
-
-
-
-
-
-
-🔹 Quick Reference Summary
-✅ Creating Strings: Use literals ("text") for simplicity; new String() when explicit object creation needed
-✅ Comparing: Always use .equals() for content, never ==
-✅ Common Methods: length(), charAt(), indexOf(), compareTo(), equals()
-✅ Concatenation: Use + operator
-✅ Arrays: String[] arr = {...}; access/modify via index
-
-💡 Pro Tip: Strings are immutable in Java — any operation that appears to modify a string actually creates a new String object.
-
-
-
+        Strings are immutable in Java:
+            any operation that appears to modify a string 
+            actually creates a new String object.
 */
+
+
+
 
 /* Example 1: string comparison vs referance. "Same object" vs "same content" */
 
@@ -292,6 +229,8 @@ class StringComparison {
         System.out.println("a == c: " + (a == c));      // true  (same reference)
     }
 }
+
+
 
 
 /* Example 2: array of strings and usage of FOR-each */
@@ -320,4 +259,7 @@ class ArrayTest {
         }
     }
 }
+
+
+----  rev[08-Apr-2026] : NXT >> rev Book  ----
 
