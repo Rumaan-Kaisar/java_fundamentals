@@ -5,9 +5,11 @@
 
     The "?" is called a TERNARY operator because it requires "three operands".
     It is similar to C/C++'s "?" operator.
-    
+
     General form:
                     Exp1 ? Exp2 : Exp3;
+            which is
+                    condition ? value_If_True : value_If_False
 
         where "Exp1" is a boolean expression, and 
         Exp2 and Exp3 are expressions of any type "other than void".
@@ -15,7 +17,16 @@
         Notice the use and placement of the colon ":"
 
 
-   The value of a ? expression is determined like this: Exp1 is evaluated. If it is true, then Exp2 is evaluated and becomes the value of the entire ? expression. If Exp1 is false, then Exp3 is evaluated and its value becomes the value of the expression. 
+    How the value of a ? expression is determined:
+        The ternary operator (condition ? value_If_True : value_If_False) evaluates "condition" first. 
+        If true, it returns value_If_True; if false, it returns value_If_False.
+
+        i.e. Exp1 is evaluated first. If it is True, then Exp2 is evaluated and becomes the value of the entire "? expression". 
+        If Exp1 is False, then Exp3 is evaluated and its value becomes the value of the expression.
+
+
+    ----  rev[09-Apr-2026]  ----
+
    Example, Prevent a division by zero using the ?,    if(i != 0 ? true : false) System.out.println("100 / " + i + " is " + 100 / i);
    If i=0, then the outcome of the if is false, the division by zero is prevented, and no result is displayed. Otherwise, the division performed.
 
