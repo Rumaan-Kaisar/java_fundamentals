@@ -167,35 +167,40 @@
                 String str4 = str1 + str2 + str3;   
 
 
-----  rev[07-Apr-2026]  ----
 
-----------------    Arrays of Strings    ----------------
+    ----------------    Arrays of Strings    ----------------
 
-Strings can be stored in arrays like any other data type.
-For example:
+    Strings can be stored in arrays like any other data type.
+    For example:
 
-            // Declaration & Initialization
-            String strs[] = { "This", "is", "a", "test." };
+                // Declaration & Initialization
+                String strs[] = { "This", "is", "a", "test." };
 
-            // Print original array
-            System.out.println("Original array: ");
-            for(String s : strs) System.out.print(s + " ");
+                // Print original array
+                System.out.println("Original array: ");
+                for(String s : strs) System.out.print(s + " ");
 
-            System.out.println("\n");
+                System.out.println("\n");
 
-// Modify elements: change a string
-strs[1] = "was";
-strs[3] = "test, too!";
+                // Modify elements: change a string
+                strs[1] = "was";
+                strs[3] = "test, too!";
 
-
-strs[1] = "was";    strs[3] = "test, too!";         // change a string
-System.out.println("Modified array:"); for(String s : strs) System.out.print(s +" ");   output:
-Original array:
-This is a test.
-Modified array:
-This was a test, too!
+                // Print modified array
+                System.out.println("Modified array:");
+                for(String s : strs) System.out.print(s + " ");
 
 
+        output:
+            Original array:
+            This is a test.
+            Modified array:
+            This was a test, too!
+
+
+
+
+----  rev[08-Apr-2026]  ----
 
 --------  Qwen  --------
 
@@ -249,28 +254,12 @@ int idxLast = str2.lastIndexOf("One"); // 14
 
 
 
-🔹 String Concatenation
 
 
 
 
 
 
-🔹 Arrays of Strings
-
-
-
-
-
-
-
-
-
-
-// Print modified array
-System.out.println("Modified array:");
-for(String s : strs) System.out.print(s + " ");
-// Output: This was a test, too!
 
 
 🔹 Quick Reference Summary
@@ -288,7 +277,7 @@ for(String s : strs) System.out.print(s + " ");
 
 /* Example 1: string comparison vs referance. "Same object" vs "same content" */
 
-public class StringComparison {
+class StringComparison {
     public static void main(String[] args) {
         // Creating two different objects with the same content
         String a = new String("Hello");
