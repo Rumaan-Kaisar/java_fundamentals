@@ -292,3 +292,32 @@ class StringComparison {
         System.out.println("a == c: " + (a == c));      // true  (same reference)
     }
 }
+
+
+/* Example 2: array of strings and usage of FOR-each */
+
+class ArrayTest {
+    public static void main(String[] args) {
+        // Declaration & Initialization
+        String strs[] = { "This", "is", "a", "test." };
+
+        // Print original array
+        System.out.println("Original array: ");
+        for(String s : strs) {
+            System.out.print(s + " ");
+        }
+
+        System.out.println("\n");
+
+        // Modify elements: change a string
+        strs[1] = "was";
+        strs[3] = "test, too!";
+
+        // Print modified array
+        System.out.println("Modified array:");
+        for(String s : strs) {
+            System.out.print(s + " ");
+        }
+    }
+}
+
