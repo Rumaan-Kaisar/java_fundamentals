@@ -27,8 +27,8 @@
     Example:
         Prevent a "division by zero" using the ?
         
-            if(i != 0 ? true : false) System.out.println("100 / " + i + " is " + 100 / i);
+                if(i != 0 ? true : false) System.out.println("100 / " + i + " is " + 100 / i);
 
-   If i=0, then the outcome of the "if" is false, the division by zero is prevented, and no result is displayed. Otherwise, the division performed.
-
+            If i=0, then the outcome of the "if" is false, the "division by zero" is prevented, and no result is displayed. 
+            Otherwise, the division performed.
 */
