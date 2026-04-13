@@ -24,10 +24,11 @@
         i.e. Exp1 is evaluated first. If it is True, then Exp2 is evaluated and becomes the value of the entire "? expression". 
         If Exp1 is False, then Exp3 is evaluated and its value becomes the value of the expression.
 
+    Example:
+        Prevent a "division by zero" using the ?
+        
+            if(i != 0 ? true : false) System.out.println("100 / " + i + " is " + 100 / i);
 
-    ----  rev[09-Apr-2026]  ----
-
-   Example, Prevent a division by zero using the ?,    if(i != 0 ? true : false) System.out.println("100 / " + i + " is " + 100 / i);
-   If i=0, then the outcome of the if is false, the division by zero is prevented, and no result is displayed. Otherwise, the division performed.
+   If i=0, then the outcome of the "if" is false, the division by zero is prevented, and no result is displayed. Otherwise, the division performed.
 
 */
