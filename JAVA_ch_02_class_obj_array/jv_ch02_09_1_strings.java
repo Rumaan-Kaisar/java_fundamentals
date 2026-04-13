@@ -297,6 +297,3 @@ class StringMethodsDemo {
 }
 
 
-
-// ----  rev[08-Apr-2026] : NXT >> rev Book  ----
-
