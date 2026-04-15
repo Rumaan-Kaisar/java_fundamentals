@@ -3,9 +3,17 @@
 
 /* -=-=-=-=-=-=-=-=-=-=-=      Strings: Immutability and others      -=-=-=-=-=-=-=-=-=-=-=
 
-2.15 Strings Are Immutable
+    ----  rev[16-apr-2026]  ----
+
+Strings Are Immutable:
+
+
 In Java (C#, python also) the contents of a String object are immutable. That is, once created, the character sequence that makes up the string cannot be altered. 
 	When you need a string that is a variation on one that already exists, simply create a new string that contains the desired changes. Since unused String objects are automatically garbage collected, so it's not a headache.
+
+
+
+
 	However, that String reference variables may, of course, change the object to which they refer. It is just that the contents of a specific String object cannot be changed after it is created.
 	substring(): The substring() method returns a new string that contains a specified portion of the invoking string. 
 String substring(int startIndex, int endIndex)
