@@ -3,23 +3,31 @@
 
 /* -=-=-=-=-=-=-=-=-=-=-=      Strings: Immutability and others      -=-=-=-=-=-=-=-=-=-=-=
 
-    ----  rev[16-apr-2026]  ----
 
     Strings Are Immutable:
         In Java (C#, python also) the contents of a String object are immutable. 
         That is, once created, a "String" object's content *"cannot be changed"
 
-Any "modification" (concatenation, substring, etc.) creates a "new String object".
-- The original String remains untouched in memory.
-
-	When you need a string that is a variation on one that already exists, simply create a new string that contains the desired changes.
-
- Since unused String objects are automatically garbage collected, so it's not a headache.
+        Any "modification" (concatenation, substring, etc.) creates a "new String object".
+            The original String remains untouched in memory.
+        Since unused String objects are automatically garbage collected, so it's not a headache.
 
 
+    A "Reference Variables" is not the "Object Content":
+        String reference variables can change the object to which they refer.
+            i.e. a reference variables like "s" below can point to "different objects".
+
+                String s = "Hello";     
+                s = s + " World";       // s now points to a NEW object "Hello World"
+                // The original "Hello" object still exists (until GC collects it)
+
+        It is the *content* of any single String object that "cannot" be changed.
 
 
-	However, that String reference variables may, of course, change the object to which they refer. It is just that the contents of a specific String object cannot be changed after it is created.
+    ----  rev[16-apr-2026]  ----
+
+
+
 	substring(): The substring() method returns a new string that contains a specified portion of the invoking string. 
 String substring(int startIndex, int endIndex)
 	Here, startIndex specifies the beginning index, and endIndex specifies the stopping point. 
@@ -148,14 +156,7 @@ Mary: 555-8976
 
 
 
-### 🔁 Reference Variables ≠ Object Content
-```java
-String s = "Hello";
-s = s + " World";  // s now points to a NEW object "Hello World"
-                   // The original "Hello" object still exists (until GC collects it)
-```
-- ✅ Reference variables *can* point to different objects.
-- ❌ The *content* of any single String object *cannot* change.
+
 
 ### 🔍 `substring()` Example — Proof of Immutability
 ```java
