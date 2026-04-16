@@ -5,11 +5,16 @@
 
     ----  rev[16-apr-2026]  ----
 
-Strings Are Immutable:
+    Strings Are Immutable:
+        In Java (C#, python also) the contents of a String object are immutable. 
+        That is, once created, a "String" object's content *"cannot be changed"
 
+Any "modification" (concatenation, substring, etc.) creates a "new String object".
+- The original String remains untouched in memory.
 
-In Java (C#, python also) the contents of a String object are immutable. That is, once created, the character sequence that makes up the string cannot be altered. 
-	When you need a string that is a variation on one that already exists, simply create a new string that contains the desired changes. Since unused String objects are automatically garbage collected, so it's not a headache.
+	When you need a string that is a variation on one that already exists, simply create a new string that contains the desired changes.
+
+ Since unused String objects are automatically garbage collected, so it's not a headache.
 
 
 
@@ -140,14 +145,8 @@ Mary: 555-8976
 
 # 📝 Strings: Immutability & Usage — Simplified Pointwise
 
----
 
-## 🔒 2.15 Strings Are Immutable
 
-### ✅ Core Concept (Java, C#, Python, JavaScript, Go)
-- **Immutable** = Once created, a `String` object's content **cannot be changed**.
-- Any "modification" (concatenation, substring, etc.) → **creates a new String object**.
-- The original String remains untouched in memory.
 
 ### 🔁 Reference Variables ≠ Object Content
 ```java
