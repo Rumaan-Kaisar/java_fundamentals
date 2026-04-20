@@ -28,9 +28,13 @@
 
 
 
-	substring(): The substring() method returns a new string that contains a specified portion of the invoking string. 
+substring():
+The substring() method returns a new string that contains a specified portion of the invoking string. 
 String substring(int startIndex, int endIndex)
 	Here, startIndex specifies the beginning index, and endIndex specifies the stopping point. 
+
+
+
 	Example: Now we demonstrate immutability of strings "contents of a specific String object cannot be changed after it is created " 
 When we using substring() a new String object is manufactured that contains the substring, the original string is unaltered, and the rule of immutability remains intact. Here is the program that demonstrates substring( ) and the principle of immutable strings:
 
