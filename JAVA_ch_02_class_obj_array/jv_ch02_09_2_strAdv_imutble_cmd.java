@@ -24,18 +24,35 @@
         It is the *content* of any single String object that "cannot" be changed.
 
 
-    ----  rev[16-apr-2026]  ----
+    substring():
+        It returns a new string that contains a specified portion of the invoking string. 
+
+                String substring(int startIndex, int endIndex)
+
+        "startIndex" specifies the beginning index, and 
+        "endIndex" specifies the stopping point. 
+
+*/
 
 
+class SubStrDemo {
+public static void main(String args[]) {
+String orgstr = "Java makes the Web move.";
+// construct a substring
+String substr = orgstr.substring(5, 18); // This creates a new string that contains the desired substring.
+System.out.println("orgstr: " + orgstr);
+System.out.println("substr: " + substr);
+}
+}
 
-substring():
-The substring() method returns a new string that contains a specified portion of the invoking string. 
-String substring(int startIndex, int endIndex)
-	Here, startIndex specifies the beginning index, and endIndex specifies the stopping point. 
+/*  
+
+----  rev[20-Apr-2026]  ----
+
+Example 1: Folowing program demonstrate immutability of strings:
+                "contents of a specific String object cannot be changed after it is created"
 
 
-
-	Example: Now we demonstrate immutability of strings "contents of a specific String object cannot be changed after it is created " 
 When we using substring() a new String object is manufactured that contains the substring, the original string is unaltered, and the rule of immutability remains intact. Here is the program that demonstrates substring( ) and the principle of immutable strings:
 
 String orgstr = "Java makes the Web move.";
@@ -48,6 +65,8 @@ System.out.println("substr: " + substr);	Output:	orgstr: Java makes the Web move
 As you can see, the original string orgstr is unchanged, and substr contains the substring.
 	StringBuffer: Java offers a class called StringBuffer, which creates string objects that can be changed. For example, in addition to the charAt() (which obtains the character at a specific location), StringBuffer defines setCharAt(), which sets a character within the string. Java also supplies StringBuilder, which is related to StringBuffer, and also supports strings that can be changed. 
 	For general purpose use String, not StringBuffer or StringBuilder.
+
+
 
 Notes
 [1]	Mutable arrays: Once you have created an array of values, you can always change any one of the entries. Why? Because immutability could get costly as any change to an immutable array would need to be implemented as a copy (garbage collector take care of it).
@@ -162,7 +181,7 @@ Mary: 555-8976
 
 
 
-### 🔍 `substring()` Example — Proof of Immutability
+Example 1:  Proof of Immutability
 ```java
 String orgstr = "Java makes the Web move.";
 String substr = orgstr.substring(5, 18);  // "makes the Web"
