@@ -122,8 +122,16 @@ Output:
 	Why string objects are immutable in java?
 Because java uses the concept of string literal. Suppose there are 5 reference variables, all refers to one object "sachin". If one reference variable changes the value of the object, it will be affected to all the reference variables. That is why string objects are immutable in java.
 
+
+
+
+
+
+
 2.16 Strings to control SWITCH and Command-Line arguments 
 We can use a String to control a switch. For example, using a string-based switch is an improvement over using the equivalent sequence of if/else statements. 
+
+
 	However, switching on strings can be less efficient than switching on integers. Therefore, it is best to switch on strings only in cases in which the controlling data is already in string form.  Don’t use strings in a switch unnecessarily.
 
 String command = "cancel";
@@ -197,7 +205,7 @@ System.out.println(substr);  // → "makes the Web" (NEW object)
 | `StringBuilder` | Mutable strings, modern single-threaded code | ❌ No (faster) |
 | `String` | **Default choice** for almost everything | N/A (immutable) |
 
-> 💡 **Rule of thumb**: Use `String` unless you're doing heavy string building in loops → then use `StringBuilder`.
+> Rule of thumb: Use `String` unless you're doing heavy string building in loops → then use `StringBuilder`.
 
 ---
 
