@@ -31,7 +31,25 @@
 
         "startIndex" specifies the beginning index, and 
         "endIndex" specifies the stopping point. 
+*/
 
+
+
+
+/*  Example 1: Folowing program demonstrate immutability of strings:
+                "contents of a specific String object cannot be changed after it is created"
+
+                When we using substring() a new "String object" is manufactured that contains the substring.
+                The original string is unaltered, and the rule of immutability remains intact. 
+
+                This program also demonstrates substring().
+
+            Output:
+                orgstr: Gimme a break
+                substr:  a br
+
+            As you can see, the original string "orgstr" is unchanged, 
+                and "substr" contains the substring.
 */
 
 class SubStrDemo {
@@ -48,31 +66,14 @@ class SubStrDemo {
 
 
 
+
 /*  
 
 ----  rev[270-Apr-2026]  ----
 
-Example 1: Folowing program demonstrate immutability of strings:
-                "contents of a specific String object cannot be changed after it is created"
-
-                When we using substring() a new "String object" is manufactured that contains the substring.
-                The original string is unaltered, and the rule of immutability remains intact. 
-
-                This program also demonstrates substring().
-
-
-
-
-
-            Output:
-                orgstr: Gimme a break
-                substr:  a br
-
-
-
-
-As you can see, the original string orgstr is unchanged, and substr contains the substring.
 	StringBuffer: Java offers a class called StringBuffer, which creates string objects that can be changed. For example, in addition to the charAt() (which obtains the character at a specific location), StringBuffer defines setCharAt(), which sets a character within the string. Java also supplies StringBuilder, which is related to StringBuffer, and also supports strings that can be changed. 
+
+
 	For general purpose use String, not StringBuffer or StringBuilder.
 
 
@@ -196,16 +197,6 @@ Mary: 555-8976
 
 
 
-
-
-Example 1:  Proof of Immutability
-```java
-String orgstr = "Java makes the Web move.";
-String substr = orgstr.substring(5, 18);  // "makes the Web"
-
-System.out.println(orgstr);  // → "Java makes the Web move." (UNCHANGED)
-System.out.println(substr);  // → "makes the Web" (NEW object)
-```
 
 ### 🛠️ Need Mutable Strings? Use:
 | Class | Use Case | Thread-Safe? |
