@@ -34,33 +34,42 @@
 
 */
 
-
 class SubStrDemo {
-public static void main(String args[]) {
-String orgstr = "Java makes the Web move.";
-// construct a substring
-String substr = orgstr.substring(5, 18); // This creates a new string that contains the desired substring.
-System.out.println("orgstr: " + orgstr);
-System.out.println("substr: " + substr);
+    public static void main(String args[]) {
+        String orgstr = "Gimme a break";
+        
+        // construct a substring
+        String substr = orgstr.substring(5, 10); // This creates a new string that contains the desired substring.
+
+        System.out.println("orgstr: " + orgstr);
+        System.out.println("substr: " + substr);
+    }
 }
-}
+
+
 
 /*  
 
-----  rev[20-Apr-2026]  ----
+----  rev[270-Apr-2026]  ----
 
 Example 1: Folowing program demonstrate immutability of strings:
                 "contents of a specific String object cannot be changed after it is created"
 
+                When we using substring() a new "String object" is manufactured that contains the substring.
+                The original string is unaltered, and the rule of immutability remains intact. 
 
-When we using substring() a new String object is manufactured that contains the substring, the original string is unaltered, and the rule of immutability remains intact. Here is the program that demonstrates substring( ) and the principle of immutable strings:
+                This program also demonstrates substring().
 
-String orgstr = "Java makes the Web move.";
-// construct a substring
-String substr = orgstr.substring(5, 18);
-System.out.println("orgstr: " + orgstr);
-System.out.println("substr: " + substr);	Output:	orgstr: Java makes the Web move.
-		substr: makes the Web
+
+
+
+
+            Output:
+                orgstr: Gimme a break
+                substr:  a br
+
+
+
 
 As you can see, the original string orgstr is unchanged, and substr contains the substring.
 	StringBuffer: Java offers a class called StringBuffer, which creates string objects that can be changed. For example, in addition to the charAt() (which obtains the character at a specific location), StringBuffer defines setCharAt(), which sets a character within the string. Java also supplies StringBuilder, which is related to StringBuffer, and also supports strings that can be changed. 
