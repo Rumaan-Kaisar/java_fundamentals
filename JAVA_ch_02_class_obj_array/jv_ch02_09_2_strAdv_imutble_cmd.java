@@ -67,16 +67,22 @@ class SubStrDemo {
 
 
 
-/*  
+/*  ----------------    Mutable Strings    ----------------
 
-----  rev[270-Apr-2026]  ----
+    StringBuffer:
+        Java offers a class called StringBuffer, which creates string objects that can be changed.
+        
+        For example, in addition to the charAt() (which obtains the character at a specific location), 
+        StringBuffer defines setCharAt(), which "sets a character" within the string. 
+        
+        Java also supplies StringBuilder, which is related to StringBuffer, 
+            and also supports strings that can be changed. 
 
-	StringBuffer: Java offers a class called StringBuffer, which creates string objects that can be changed. For example, in addition to the charAt() (which obtains the character at a specific location), StringBuffer defines setCharAt(), which sets a character within the string. Java also supplies StringBuilder, which is related to StringBuffer, and also supports strings that can be changed. 
+
+        NOTE: For general purpose use String, not StringBuffer or StringBuilder.
 
 
-	For general purpose use String, not StringBuffer or StringBuilder.
-
-
+    ----  rev[30-Apr-2026]  ----
 
 Notes
 [1]	Mutable arrays: Once you have created an array of values, you can always change any one of the entries. Why? Because immutability could get costly as any change to an immutable array would need to be implemented as a copy (garbage collector take care of it).
@@ -198,7 +204,7 @@ Mary: 555-8976
 
 
 
-### 🛠️ Need Mutable Strings? Use:
+### 🛠️ Need ? Use:
 | Class | Use Case | Thread-Safe? |
 |-------|----------|--------------|
 | `StringBuffer` | Mutable strings, legacy code | ✅ Yes |
