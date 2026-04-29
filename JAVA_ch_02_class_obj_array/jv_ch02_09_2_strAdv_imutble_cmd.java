@@ -79,8 +79,9 @@ class SubStrDemo {
             and also supports strings that can be changed. 
 
 
-        NOTE: For general purpose use String, not StringBuffer or StringBuilder.
-
+        NOTE: 
+            For general purpose use String, not StringBuffer or StringBuilder.
+            If you're doing heavy string building in loops, then use StringBuilder.
 
     ----  rev[30-Apr-2026]  ----
 
@@ -200,19 +201,6 @@ Mary: 555-8976
 
 # 📝 Strings: Immutability & Usage — Simplified Pointwise
 
-
-
-
-
-### 🛠️ Need ? Use:
-| Class | Use Case | Thread-Safe? |
-|-------|----------|--------------|
-| `StringBuffer` | Mutable strings, legacy code | ✅ Yes |
-| `StringBuilder` | Mutable strings, modern single-threaded code | ❌ No (faster) |
-| `String` | **Default choice** for almost everything | N/A (immutable) |
-
-> Rule of thumb: Use `String` unless you're doing heavy string building in loops → then use `StringBuilder`.
-
 ---
 
 ## 🌍 Cross-Language String Mutability Cheat Sheet
@@ -223,6 +211,8 @@ Mary: 555-8976
 | **Ruby, PHP, Swift** | ✅ Mutable | ✅ (`let` in Swift) | Swift: `let` = immutable |
 | **C** | ✅ (via `char*`) | ⚠️ Weak (`const` castable) | No real string type |
 | **C++** | ✅ (`std::string`) | ✅ (`const std::string`) | Mutable by default |
+
+
 
 ### ❓ Why Immutable Strings?
 - **Safety**: Prevent accidental changes when multiple references point to same literal.
