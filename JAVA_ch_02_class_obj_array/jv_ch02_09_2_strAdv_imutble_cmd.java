@@ -67,23 +67,33 @@ class SubStrDemo {
 
 
 
-/*  ----------------    Mutable Strings    ----------------
+/*  --------  Mutable Strings  --------
 
     StringBuffer:
-        Java offers a class called StringBuffer, which creates string objects that can be changed.
-        
-        For example, in addition to the charAt() (which obtains the character at a specific location), 
-        StringBuffer defines setCharAt(), which "sets a character" within the string. 
-        
-        Java also supplies StringBuilder, which is related to StringBuffer, 
-            and also supports strings that can be changed. 
+        StringBuffer is a Java class used to create modifiable (changeable) strings.
+
+        It includes charAt() to get a character at a specific position.
+        It also has setCharAt() to change a character in the string.
 
 
-        NOTE: 
-            For general purpose use String, not StringBuffer or StringBuilder.
-            If you're doing heavy string building in loops, then use StringBuilder.
+    StringBuilder:
+        Java provides StringBuilder, which is similar to StringBuffer.
+        StringBuilder also allows strings to be modified.
 
-    ----  rev[30-Apr-2026]  ----
+
+    ----  rev[04-May-2026]  ----
+
+
+
+
+
+
+
+
+Rule of thumb:
+    For general purpose use "String", not "StringBuffer" or "StringBuilder".
+
+
 
 Notes
 [1]	Mutable arrays: Once you have created an array of values, you can always change any one of the entries. Why? Because immutability could get costly as any change to an immutable array would need to be implemented as a copy (garbage collector take care of it).
@@ -201,6 +211,7 @@ Mary: 555-8976
 
 # 📝 Strings: Immutability & Usage — Simplified Pointwise
 
+
 ---
 
 ## 🌍 Cross-Language String Mutability Cheat Sheet
@@ -211,8 +222,6 @@ Mary: 555-8976
 | **Ruby, PHP, Swift** | ✅ Mutable | ✅ (`let` in Swift) | Swift: `let` = immutable |
 | **C** | ✅ (via `char*`) | ⚠️ Weak (`const` castable) | No real string type |
 | **C++** | ✅ (`std::string`) | ✅ (`const std::string`) | Mutable by default |
-
-
 
 ### ❓ Why Immutable Strings?
 - **Safety**: Prevent accidental changes when multiple references point to same literal.
