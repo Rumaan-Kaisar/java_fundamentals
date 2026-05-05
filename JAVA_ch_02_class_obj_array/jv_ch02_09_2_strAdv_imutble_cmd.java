@@ -75,28 +75,34 @@ class SubStrDemo {
         It includes charAt() to get a character at a specific position.
         It also has setCharAt() to change a character in the string.
 
-
     StringBuilder:
         Java provides StringBuilder, which is similar to StringBuffer.
         StringBuilder also allows strings to be modified.
 
+    Rule of thumb:
+        For general purpose use "String", not "StringBuffer" or "StringBuilder".
 
-    ----  rev[04-May-2026]  ----
+    
+
+    --------   Cross-Language String Mutability    --------
+
+    Java, C#, Python, JS, Go        Immutable. Any modification creates a new object
+    
+    Ruby, PHP, Swift                Mutable. Swift uses `let` to enforce immutability
+
+    C                               Mutable (via `char*`)
+                                    No native string type; uses null-terminated character arrays
+
+    C++                             Mutable (`std::string`). Strings are mutable by default
 
 
 
-
-
-
-
-
-Rule of thumb:
-    For general purpose use "String", not "StringBuffer" or "StringBuilder".
-
-
+----  rev[05-May-2026]  ----
 
 Notes
 [1]	Mutable arrays: Once you have created an array of values, you can always change any one of the entries. Why? Because immutability could get costly as any change to an immutable array would need to be implemented as a copy (garbage collector take care of it).
+
+
 	The most important non-numeric type is the string. A string can be viewed as an array of characters so it would not be unreasonable to make it mutable, but strings are also viewed as primitive values (e.g., we don’t think of “Daniel” as an array of 6 characters). Consequently, some languages have immutable strings, others have mutable strings. 
 	In Java, C#, JavaScript, Python and Go, strings are immutable. Furthermore, Java, C#, JavaScript and Go have the notion of a constant: a “variable” that cannot be reassigned. 
 	In Ruby and PHP, strings are mutable.
@@ -133,6 +139,8 @@ In C++, something doesn't point to something else if it's not declared with * or
 	v.push_back(&s);
 
 See? Now you've pushed the same pointer into the vector four times, and changes made to any of the elements will be reflected in all the other elements. Or more accurately, changes to the object which any of the elements point to will be reflected in the object which all the other elements point to.
+
+
 [2]	Immutable String in Java: In java, string objects are immutable. Immutable simply means unmodifiable or unchangeable. Once string object is created its data or state can't be changed but a new string object is created. Example given below:
 
 	String s="Sachin";  
@@ -214,7 +222,7 @@ Mary: 555-8976
 
 ---
 
-## 🌍 Cross-Language String Mutability Cheat Sheet
+## 🌍  Cheat Sheet
 
 | Language | Strings Mutable? | Constants Supported? | Notes |
 |----------|------------------|---------------------|-------|
