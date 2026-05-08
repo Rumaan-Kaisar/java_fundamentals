@@ -31,6 +31,20 @@
 
         "startIndex" specifies the beginning index, and 
         "endIndex" specifies the stopping point. 
+
+
+
+    --------  Why Immutable Strings?  --------
+
+    Safety:
+        Prevent accidental changes when multiple references point to same literal.
+
+    Optimization:
+        String pooling, hash caching, thread-safety.
+
+    Predictability:
+        Strings behave like primitive values 
+        (e.g., `"Daniel"` isn't thought of as `['D','a',...]`).
 */
 
 
@@ -86,9 +100,15 @@ class SubStrDemo {
 
     --------   Cross-Language String Mutability    --------
 
+    The most important non-numeric type is the string. 
+    Since a string can be seen as both an array of characters and a primitive value, 
+        some languages make strings mutable while others make them immutable.
+
+
     Java, C#, Python, JS, Go        Immutable. Any modification creates a new object
     
-    Ruby, PHP, Swift                Mutable. Swift uses `let` to enforce immutability
+    Ruby, PHP, Swift                Mutable. 
+                                    Swift uses `let` (to be a constant) to enforce immutability 
 
     C                               Mutable (via `char*`)
                                     No native string type; uses null-terminated character arrays
@@ -96,20 +116,28 @@ class SubStrDemo {
     C++                             Mutable (`std::string`). Strings are mutable by default
 
 
+    In both C and C++, string constants (declared with the const qualifier) are immutable, 
+        but you can easily “cast away” the const qualifier, 
+        so the immutability is weakly enforced.
 
-----  rev[05-May-2026]  ----
+
+
+----  rev[09-May-2026]  ----
 
 Notes
 [1]	Mutable arrays: Once you have created an array of values, you can always change any one of the entries. Why? Because immutability could get costly as any change to an immutable array would need to be implemented as a copy (garbage collector take care of it).
 
 
-	The most important non-numeric type is the string. A string can be viewed as an array of characters so it would not be unreasonable to make it mutable, but strings are also viewed as primitive values (e.g., we don’t think of “Daniel” as an array of 6 characters). Consequently, some languages have immutable strings, others have mutable strings. 
+
+> ⚠️ **Arrays are mutable** because copying entire arrays on every change would be expensive. Strings are treated as *values*, not data structures.
 
 
 
-	The C language does not really have string objects per se. However, we commonly represent strings as a pointer char *. In general, C strings are mutable. The C++ language has its own string class. It is mutable.
-	In both C and C++, string constants (declared with the const qualifier) are immutable, but you can easily “cast away” the const qualifier, so the immutability is weakly enforced.
-	In Swift, strings are mutable. However, if you declare a string to be a constant (keyword let), then it is immutable.
+
+
+
+
+
 
 I'm new to C++ coming from a background of C#, and am trying to understand how the string class in C++ works. I've read that strings are mutable in C++, but following doesn’t work like that
 //Declaration for the string data
@@ -222,14 +250,6 @@ Mary: 555-8976
 
 
 ---
-
-
-### ❓ Why Immutable Strings?
-- **Safety**: Prevent accidental changes when multiple references point to same literal.
-- **Optimization**: String pooling, hash caching, thread-safety.
-- **Predictability**: Strings behave like primitive values (e.g., `"Daniel"` isn't thought of as `['D','a',...]`).
-
-> ⚠️ **Arrays are mutable** because copying entire arrays on every change would be expensive. Strings are treated as *values*, not data structures.
 
 ---
 
