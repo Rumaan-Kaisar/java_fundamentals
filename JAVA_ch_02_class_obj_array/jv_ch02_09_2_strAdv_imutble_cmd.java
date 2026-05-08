@@ -104,8 +104,9 @@ Notes
 
 
 	The most important non-numeric type is the string. A string can be viewed as an array of characters so it would not be unreasonable to make it mutable, but strings are also viewed as primitive values (e.g., we don’t think of “Daniel” as an array of 6 characters). Consequently, some languages have immutable strings, others have mutable strings. 
-	In Java, C#, JavaScript, Python and Go, strings are immutable. Furthermore, Java, C#, JavaScript and Go have the notion of a constant: a “variable” that cannot be reassigned. 
-	In Ruby and PHP, strings are mutable.
+
+
+
 	The C language does not really have string objects per se. However, we commonly represent strings as a pointer char *. In general, C strings are mutable. The C++ language has its own string class. It is mutable.
 	In both C and C++, string constants (declared with the const qualifier) are immutable, but you can easily “cast away” the const qualifier, so the immutability is weakly enforced.
 	In Swift, strings are mutable. However, if you declare a string to be a constant (keyword let), then it is immutable.
@@ -222,14 +223,6 @@ Mary: 555-8976
 
 ---
 
-## 🌍  Cheat Sheet
-
-| Language | Strings Mutable? | Constants Supported? | Notes |
-|----------|------------------|---------------------|-------|
-| **Java, C#, Python, JS, Go** | ❌ Immutable | ✅ (`final`, `const`, etc.) | New object on "change" |
-| **Ruby, PHP, Swift** | ✅ Mutable | ✅ (`let` in Swift) | Swift: `let` = immutable |
-| **C** | ✅ (via `char*`) | ⚠️ Weak (`const` castable) | No real string type |
-| **C++** | ✅ (`std::string`) | ✅ (`const std::string`) | Mutable by default |
 
 ### ❓ Why Immutable Strings?
 - **Safety**: Prevent accidental changes when multiple references point to same literal.
