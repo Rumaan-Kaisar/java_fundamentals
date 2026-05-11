@@ -121,32 +121,19 @@ class SubStrDemo {
         so the immutability is weakly enforced.
 
 
-
-----  rev[09-May-2026]  ----
-
-
-
-
     --------  Arrays are mutable  --------
 
+    Once you have created an array of values, you can "always change" any one of the entries. 
 
-Once you have created an array of values, you can always change any one of the entries. 
-
-Why? 
-“Immutable arrays are expensive because every change requires creating a copy of the array.
-
-It is too costly to make "immutable array" Because t oachibve immutability any change to this kind of array would need to be implemented as a copy.
+    Why? 
+        Immutable arrays are too costly because every change requires creating a copy of the array.
+        On the other hand "Strings" are treated as "values", not data structures.
 
 
 
-> ⚠️ **Arrays are mutable** because copying entire arrays on every change would be expensive. 
+    --------  Immutable Strings in C++ and Java  --------
 
-Strings are treated as *values*, not data structures.
-
-
-
-
-
+----  rev[09-May-2026]  ----
 
 
 
@@ -195,6 +182,8 @@ System.out.println(s);
 
 Output:  
           Sachin Tendulkar		In such case, s points to the "Sachin Tendulkar". Please notice that still sachin object is not modified.
+
+
 	Why string objects are immutable in java?
 Because java uses the concept of string literal. Suppose there are 5 reference variables, all refers to one object "sachin". If one reference variable changes the value of the object, it will be affected to all the reference variables. That is why string objects are immutable in java.
 
