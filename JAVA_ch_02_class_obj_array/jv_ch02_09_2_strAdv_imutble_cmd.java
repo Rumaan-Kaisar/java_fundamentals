@@ -138,21 +138,29 @@ class SubStrDemo {
 
 
 
-I'm new to C++ coming from a background of C#, and am trying to understand how the string class in C++ works. I've read that strings are mutable in C++, but following doesn’t work like that
-//Declaration for the string data
-std::string strData = "One";
-//Declaration for C++ vector
-std:: vector <std::string> str_Vector;
+C++ Confusion: 
+    I've read that strings are "mutable" in C++, but following doesn’t work like that
 
-	str_Vector.push_back(strData);
-	strData = "Two";
-	str_Vector.push_back(strData);
-	strData = "Three";
-	str_Vector.push_back(strData);
-	strData = "Four";
-	str_Vector.push_back(strData);
+            // Declaration for the string data
+            std::string strData = "One";
 
-I am wondering why str_Vector does not become "Four", "Four", "Four", "Four"? If strings are mutable in C++ and if str_Vector stores by reference (both assumptions I've made which could very well be false), then it seems to me that we just added the pointer to strData four times, and that modifying strData should also implicitly modify str_Vector.	That's the problem with Java and C#. The differences between object and pointer are muddled beyond all recognition.
+            // Declaration for C++ vector
+            std::vector <std::string> str_Vector;
+
+	        str_Vector.push_back(strData);
+	
+            strData = "Two";
+            str_Vector.push_back(strData);
+            
+            strData = "Three";
+            str_Vector.push_back(strData);
+            
+            strData = "Four";
+            str_Vector.push_back(strData);
+
+    I am wondering why str_Vector does not become "Four", "Four", "Four", "Four"? 
+
+If strings are mutable in C++ and if str_Vector stores by reference (both assumptions I've made which could very well be false), then it seems to me that we just added the pointer to strData four times, and that modifying strData should also implicitly modify str_Vector.	That's the problem with Java and C#. The differences between object and pointer are muddled beyond all recognition.
 
 In C++, something doesn't point to something else if it's not declared with * or &. For the code to behave as you expect it, it would have to look like this:
 
