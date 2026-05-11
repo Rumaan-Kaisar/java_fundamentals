@@ -124,12 +124,24 @@ class SubStrDemo {
 
 ----  rev[09-May-2026]  ----
 
-Notes
-[1]	Mutable arrays: Once you have created an array of values, you can always change any one of the entries. Why? Because immutability could get costly as any change to an immutable array would need to be implemented as a copy (garbage collector take care of it).
 
 
 
-> ⚠️ **Arrays are mutable** because copying entire arrays on every change would be expensive. Strings are treated as *values*, not data structures.
+    --------  Arrays are mutable  --------
+
+
+Once you have created an array of values, you can always change any one of the entries. 
+
+Why? 
+“Immutable arrays are expensive because every change requires creating a copy of the array.
+
+It is too costly to make "immutable array" Because t oachibve immutability any change to this kind of array would need to be implemented as a copy.
+
+
+
+> ⚠️ **Arrays are mutable** because copying entire arrays on every change would be expensive. 
+
+Strings are treated as *values*, not data structures.
 
 
 
