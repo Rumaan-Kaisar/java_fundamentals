@@ -138,61 +138,71 @@ class SubStrDemo {
 
 
 
-C++ Confusion: 
-    I've read that strings are "mutable" in C++, but following doesn’t work like that
+    C++ Confusion: 
+        I've read that strings are "mutable" in C++, but following doesn’t work like that
 
-            // Declaration for the string data
-            std::string strData = "One";
+                // Declaration for the string data
+                std::string strData = "One";
 
-            // Declaration for C++ vector
-            std::vector <std::string> str_Vector;
+                // Declaration for C++ vector
+                std::vector <std::string> str_Vector;
 
-	        str_Vector.push_back(strData);
-	
-            strData = "Two";
-            str_Vector.push_back(strData);
-            
-            strData = "Three";
-            str_Vector.push_back(strData);
-            
-            strData = "Four";
-            str_Vector.push_back(strData);
+                str_Vector.push_back(strData);
+        
+                strData = "Two";
+                str_Vector.push_back(strData);
+                
+                strData = "Three";
+                str_Vector.push_back(strData);
+                
+                strData = "Four";
+                str_Vector.push_back(strData);
 
-    I am wondering why str_Vector does not become "Four", "Four", "Four", "Four"? 
+        I am wondering why str_Vector does not become "Four", "Four", "Four", "Four"? 
 
-If strings are mutable in C++ and if str_Vector stores by reference (both assumptions I've made which could very well be false), then it seems to me that we just added the pointer to strData four times, and that modifying strData should also implicitly modify str_Vector.	That's the problem with Java and C#. The differences between object and pointer are muddled beyond all recognition.
+        If strings are mutable in C++ and if "str_Vector" stores by reference (both assumptions I've made which could very well be false),
+            then it seems to me that we just added the "pointer" to strData four times, 
+            and that modifying strData should also implicitly modify str_Vector.
 
-In C++, something doesn't point to something else if it's not declared with * or &. For the code to behave as you expect it, it would have to look like this:
+        That's the problem with Java and C#. The differences between "object" and "pointer" are muddled beyond all recognition.
 
-	std::string s="One";
-	std::vector<std::string *> v;
-	v.push_back(&s);
-	s="Two";
-	v.push_back(&s);
-	s="Three";
-	v.push_back(&s);
-	s="Four";
-	v.push_back(&s);
+        In C++, something doesn't point to something else if it's not declared with * or &. 
+        For the code to behave as you expect it, it would have to look like this:
 
-See? Now you've pushed the same pointer into the vector four times, and changes made to any of the elements will be reflected in all the other elements. Or more accurately, changes to the object which any of the elements point to will be reflected in the object which all the other elements point to.
+    std::string s="One";
+    std::vector <std::string*> v;
+
+    v.push_back(&s);
+    s="Two";
+    v.push_back(&s);
+    s="Three";
+    v.push_back(&s);
+    s="Four";
+    v.push_back(&s);
+
+See? Now you've pushed the same pointer into the vector four times, 
+    and changes made to any of the elements will be reflected in all the other elements. 
+
+Or more accurately, changes to the object which any of the elements point to 
+    will be reflected in the object which all the other elements point to.
 
 
-[2]	Immutable String in Java: In java, string objects are immutable. Immutable simply means unmodifiable or unchangeable. Once string object is created its data or state can't be changed but a new string object is created. Example given below:
+[2] Immutable String in Java: In java, string objects are immutable. Immutable simply means unmodifiable or unchangeable. Once string object is created its data or state can't be changed but a new string object is created. Example given below:
 
-	String s="Sachin";  
-	s.concat(" Tendulkar"); 	//concat() method appends the string at the end  
-	System.out.println(s);  	//will print Sachin because strings are immutable objects  	Output:  
-	Sachin
+    String s="Sachin";  
+    s.concat(" Tendulkar");     //concat() method appends the string at the end  
+    System.out.println(s);      //will print Sachin because strings are immutable objects   Output:  
+    Sachin
 Here Sachin is not changed but a new object is created with sachintendulkar. That is why string is known as immutable. That two objects are created but s reference variable still refers to "Sachin" not to "Sachin Tendulkar". But if we explicitely assign it to the reference variable, it will refer to "Sachin Tendulkar" object. For example:
 String s="Sachin";  
 s=s.concat(" Tendulkar");  
 System.out.println(s);  
 
 Output:  
-          Sachin Tendulkar		In such case, s points to the "Sachin Tendulkar". Please notice that still sachin object is not modified.
+          Sachin Tendulkar     In such case, s points to the "Sachin Tendulkar". Please notice that still sachin object is not modified.
 
 
-	Why string objects are immutable in java?
+   Why string objects are immutable in java?
 Because java uses the concept of string literal. Suppose there are 5 reference variables, all refers to one object "sachin". If one reference variable changes the value of the object, it will be affected to all the reference variables. That is why string objects are immutable in java.
 
 
@@ -205,28 +215,28 @@ Because java uses the concept of string literal. Suppose there are 5 reference v
 We can use a String to control a switch. For example, using a string-based switch is an improvement over using the equivalent sequence of if/else statements. 
 
 
-	However, switching on strings can be less efficient than switching on integers. Therefore, it is best to switch on strings only in cases in which the controlling data is already in string form.  Don’t use strings in a switch unnecessarily.
+   However, switching on strings can be less efficient than switching on integers. Therefore, it is best to switch on strings only in cases in which the controlling data is already in string form.  Don’t use strings in a switch unnecessarily.
 
 String command = "cancel";
 
-switch(command) { 	case "connect": 	System.out.println("Connecting"); break;
-case "cancel": 	System.out.println("Canceling"); break;
-case "disconnect": 	System.out.println("Disconnecting"); break;
-default: 		System.out.println("Command Error!"); break;	}
-	The string contained in command (which is "cancel" in this program) is tested against the case constants. When a match is found (as it is in the second case), the code sequence associated with that sequence is executed.
-	Command-Line Arguments:  We noticed args[] parameter to main() that has been in every program. Many programs use command-line arguments. A command-line argument is the information that directly follows the program’s name on the command line when it is executed. 
-	To access the command-line arguments inside a Java program is quite easy—they are stored as strings in the String array passed to main(). For example, the following program displays all of the command-line arguments that it is called with:
+switch(command) {   case "connect":     System.out.println("Connecting"); break;
+case "cancel":  System.out.println("Canceling"); break;
+case "disconnect":  System.out.println("Disconnecting"); break;
+default:        System.out.println("Command Error!"); break;    }
+   The string contained in command (which is "cancel" in this program) is tested against the case constants. When a match is found (as it is in the second case), the code sequence associated with that sequence is executed.
+   Command-Line Arguments:  We noticed args[] parameter to main() that has been in every program. Many programs use command-line arguments. A command-line argument is the information that directly follows the program’s name on the command line when it is executed. 
+   To access the command-line arguments inside a Java program is quite easy—they are stored as strings in the String array passed to main(). For example, the following program displays all of the command-line arguments that it is called with:
 class CLDemo { public static void main(String args[]) {
 System.out.println("There are " + args.length + " command-line arguments.");
 System.out.println("They are: ");
 for(int i=0; i<args.length; i++) System.out.println("arg[" + i + "]: " + args[i]);
 }}
 If CLDemo is executed like, java CLDemo one two three 
-[passing " one two three " as command line arguments  during program execution (not in compilation)]	output: There are 3 command-line arguments.
-	           They are:
-	           arg[0]: one
-	           arg[1]: two
-	           arg[2]: three
+[passing " one two three " as command line arguments  during program execution (not in compilation)]    output: There are 3 command-line arguments.
+               They are:
+               arg[0]: one
+               arg[1]: two
+               arg[2]: three
 Notice that the first argument is stored at index 0, the second argument is stored at index 1, and so on.
 Another Example: Following takes one command-line argument that specifies a person’s name. It then searches through a two-dimensional array of strings for that name. If it finds a match, it displays that person’s telephone number.
 class Phone {
@@ -236,15 +246,15 @@ public static void main(String args[]) {
 { "Mary", "555-8976" },
 { "Jon", "555-1037" },
 { "Rachel", "555-1400" }   };
-       int i;	if(args.length != 1) System.out.println("Usage: java Phone <name>");
-else {	      //To use the program, one command-line argument must be present.
+       int i;   if(args.length != 1) System.out.println("Usage: java Phone <name>");
+else {        //To use the program, one command-line argument must be present.
         for(i=0; i<numbers.length; i++) { 
                 if(numbers[i][0].equals(args[0])) {
-	 System.out.println(numbers[i][0] + ": " + numbers[i][1]);
+     System.out.println(numbers[i][0] + ": " + numbers[i][1]);
                    break;  } }
         if(i == numbers.length) System.out.println("Name not found."); }
 }}
-	
+        
 sample run:
 java Phone Mary
 Mary: 555-8976
