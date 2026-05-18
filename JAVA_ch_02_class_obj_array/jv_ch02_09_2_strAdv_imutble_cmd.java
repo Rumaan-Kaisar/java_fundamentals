@@ -188,27 +188,158 @@ class SubStrDemo {
             will be reflected in the object which all the other elements point to.
 
 
+====================================================================================
+
     Immutable String in Java: 
         In java, string objects are immutable. 
         Immutable simply means unmodifiable or unchangeable. 
 
-Once string object is created its data or state can't be changed but a new string object is created. Example given below:
+        Once string object is created "its data or state can't be changed" but a new string object is created. 
+        For example:
 
     String s="Sachin";  
     s.concat(" Tendulkar");     //concat() method appends the string at the end  
     System.out.println(s);      //will print Sachin because strings are immutable objects   Output:  
     Sachin
-Here Sachin is not changed but a new object is created with sachintendulkar. That is why string is known as immutable. That two objects are created but s reference variable still refers to "Sachin" not to "Sachin Tendulkar". But if we explicitely assign it to the reference variable, it will refer to "Sachin Tendulkar" object. For example:
+
+Here Sachin is not changed but a new object is created with sachintendulkar. That is why string is known as immutable. 
+That two objects are created but s reference variable still refers to "Sachin" not to "Sachin Tendulkar". 
+But if we explicitely assign it to the reference variable, it will refer to "Sachin Tendulkar" object. For example:
+
 String s="Sachin";  
 s=s.concat(" Tendulkar");  
 System.out.println(s);  
 
 Output:  
-          Sachin Tendulkar     In such case, s points to the "Sachin Tendulkar". Please notice that still sachin object is not modified.
+          Sachin Tendulkar  
+          
+           In such case, s points to the "Sachin Tendulkar". Please notice that still sachin object is not modified.
 
 
    Why string objects are immutable in java?
 Because java uses the concept of string literal. Suppose there are 5 reference variables, all refers to one object "sachin". If one reference variable changes the value of the object, it will be affected to all the reference variables. That is why string objects are immutable in java.
+
+
+--------
+
+Nothing mysterious is happening—just object creation + reference reassignment. The confusion usually comes from mixing up the object with the variable pointing to it.
+
+Let’s walk through your exact example slowly.
+
+Step 1: Initial string
+String s = "Sachin";
+A String object "Sachin" is created.
+Variable s points to that object.
+Step 2: Calling concat without assignment
+s.concat(" Tendulkar");
+
+What actually happens:
+
+A new String object "Sachin Tendulkar" is created.
+But you don’t store its reference anywhere.
+
+So:
+
+"Sachin" → still exists and is unchanged
+"Sachin Tendulkar" → created temporarily, then becomes eligible for garbage collection
+
+That’s why:
+
+System.out.println(s);
+
+prints:
+
+Sachin
+Step 3: With reassignment
+s = s.concat(" Tendulkar");
+
+Now:
+
+"Sachin Tendulkar" is created
+s is updated to point to this new object
+
+
+--------  What happens to "Sachin"?  --------
+So the situation becomes:
+
+"Sachin" → still exists in memory (unchanged)
+"Sachin Tendulkar" → now referenced by s
+Where did the “immutable string” go?
+
+It never went anywhere.
+
+The original "Sachin" object is still intact
+It just might no longer be referenced by your variable
+
+If no variables reference it anymore, the Java Garbage Collector will eventually clean it up.
+You can’t get the original object back if nothing references it anymore and it has been garbage collected.
+In Java, an object stays alive only if something still references it.
+
+
+
+What happens to "Sachin"?
+    After this:
+
+    String s = "Sachin";
+    s = s.concat(" Tendulkar");
+    The original "Sachin" object:
+    Still exists in memory for some time
+    But no variable points to it anymore (in your code)
+
+    So from your program’s point of view:
+
+    It’s unreachable, therefore unusable.
+
+    Will it be deleted?
+
+    Yes—eventually.
+
+    Java’s Garbage Collector will remove it if and only if:
+
+    No references point to it
+    And it’s not being kept in the string pool
+
+
+What is case in C++?
+    It actually does happen in C++ too—just in a slightly different way, and that’s why it feels less obvious.
+
+    The core idea is the same across all languages:
+
+    If you lose all ways to reach an object, you can’t use it anymore.
+
+    But how that loss happens differs.
+
+    In C++ with std::string (your original case)
+    std::string s = "Sachin";
+    s = s + " Tendulkar";
+
+    What happens here:
+
+    "Sachin" exists inside s
+    Then s = s + " Tendulkar" creates a new string object
+    The old "Sachin" content inside s is replaced
+
+    But here’s the key difference from Java:
+
+    👉 In C++, the old memory is immediately destroyed (or reused)
+    👉 There is no separate object floating around
+
+    So:
+
+    You don’t have two independent objects like Java
+    You just replaced the contents of s
+
+
+
+
+====================================================================================
+
+
+
+
+
+
+
 
 
 
