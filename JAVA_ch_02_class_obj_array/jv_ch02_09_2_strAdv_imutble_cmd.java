@@ -160,6 +160,7 @@ class SubStrDemo {
 
         I am wondering why str_Vector does not become "Four", "Four", "Four", "Four"? 
 
+    ans:
         If strings are mutable in C++ and if "str_Vector" stores by reference (both assumptions I've made which could very well be false),
             then it seems to me that we just added the "pointer" to strData four times, 
             and that modifying strData should also implicitly modify str_Vector.
@@ -169,25 +170,29 @@ class SubStrDemo {
         In C++, something doesn't point to something else if it's not declared with * or &. 
         For the code to behave as you expect it, it would have to look like this:
 
-    std::string s="One";
-    std::vector <std::string*> v;
+                std::string s="One";
+                std::vector <std::string*> v;
 
-    v.push_back(&s);
-    s="Two";
-    v.push_back(&s);
-    s="Three";
-    v.push_back(&s);
-    s="Four";
-    v.push_back(&s);
+                v.push_back(&s);
+                s="Two";
+                v.push_back(&s);
+                s="Three";
+                v.push_back(&s);
+                s="Four";
+                v.push_back(&s);
 
-See? Now you've pushed the same pointer into the vector four times, 
-    and changes made to any of the elements will be reflected in all the other elements. 
+        See? Now you've pushed the same pointer into the vector four times, 
+            and changes made to any of the elements will be reflected in all the other elements. 
 
-Or more accurately, changes to the object which any of the elements point to 
-    will be reflected in the object which all the other elements point to.
+        Or more accurately, changes to the object which any of the elements point to 
+            will be reflected in the object which all the other elements point to.
 
 
-[2] Immutable String in Java: In java, string objects are immutable. Immutable simply means unmodifiable or unchangeable. Once string object is created its data or state can't be changed but a new string object is created. Example given below:
+    Immutable String in Java: 
+        In java, string objects are immutable. 
+        Immutable simply means unmodifiable or unchangeable. 
+
+Once string object is created its data or state can't be changed but a new string object is created. Example given below:
 
     String s="Sachin";  
     s.concat(" Tendulkar");     //concat() method appends the string at the end  
@@ -208,6 +213,94 @@ Because java uses the concept of string literal. Suppose there are 5 reference v
 
 
 
+---- gPT --
+yes—you can absolutely get the “all elements change together” behavior in both Java and C#, but not with strings the way you’re imagining. The key difference is that in those languages, strings are immutable, and variables hold references to objects, not the objects themselves.
+
+In your C++ example:
+
+std::vector<std::string> stores copies of strings.
+So each push_back captures the current value of strData.
+
+In your pointer version:
+
+std::vector<std::string*> stores addresses
+All entries point to the same std::string object → so changes affect all
+
+That logic is sound.
+
+--------
+
+In both Java and C#:
+
+Variables of class types store references (like pointers, but safer)
+BUT String is immutable
+
+So when you do this:
+
+String s = "One";
+List<String> list = new ArrayList<>();
+
+list.add(s);
+s = "Two";
+list.add(s);
+
+You are not modifying the same object.
+
+Instead:
+
+"One" stays unchanged
+s = "Two" makes s point to a new string object
+
+So the list becomes:
+
+["One", "Two", "Three", "Four"]
+
+—not four copies of "Four".
+
+
+
+--------
+
+How to get the "same reference" behavior
+
+To mimic your C++ pointer example, you need a mutable object.
+
+Java example:
+class Box {
+    String value;
+}
+
+Box box = new Box();
+box.value = "One";
+
+List<Box> list = new ArrayList<>();
+
+list.add(box);
+box.value = "Two";
+list.add(box);
+box.value = "Three";
+list.add(box);
+box.value = "Four";
+list.add(box);
+
+Now all elements refer to the same box object.
+
+Result:
+
+["Four", "Four", "Four", "Four"]
+
+
+--------
+
+Key idea (this is the real takeaway)
+C++ (without pointers): values are copied
+C++ (with pointers/references): shared object
+Java/C#:
+Always deal with references for objects
+But whether changes propagate depends on mutability, not “reference-ness”
+
+
+// -----------------  all codes at once   ------------------
 
 
 
