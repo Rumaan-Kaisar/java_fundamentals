@@ -303,6 +303,161 @@ But whether changes propagate depends on mutability, not “reference-ness”
 // -----------------  all codes at once   ------------------
 
 
+C++: Value vs Pointer Behavior
+1) Value semantics (what your original code does)
+
+Each element is a separate copy:
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+int main() {
+    std::string strData = "One";
+    std::vector<std::string> str_Vector;
+
+    str_Vector.push_back(strData);
+
+    strData = "Two";
+    str_Vector.push_back(strData);
+
+    strData = "Three";
+    str_Vector.push_back(strData);
+
+    strData = "Four";
+    str_Vector.push_back(strData);
+
+    for (const auto& s : str_Vector) {
+        std::cout << s << std::endl;
+    }
+
+    return 0;
+}
+
+Output:
+
+One
+Two
+Three
+Four
+2) Pointer semantics (shared object)
+
+All entries point to the same string:
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+int main() {
+    std::string s = "One";
+    std::vector<std::string*> v;
+
+    v.push_back(&s);
+
+    s = "Two";
+    v.push_back(&s);
+
+    s = "Three";
+    v.push_back(&s);
+
+    s = "Four";
+    v.push_back(&s);
+
+    for (auto ptr : v) {
+        std::cout << *ptr << std::endl;
+    }
+
+    return 0;
+}
+
+Output:
+
+Four
+Four
+Four
+Four
+
+
+------------------------------------------------------------
+
+Java: Immutable String vs Shared Mutable Object
+1) Using String (immutable)
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String s = "One";
+        List<String> list = new ArrayList<>();
+
+        list.add(s);
+
+        s = "Two";
+        list.add(s);
+
+        s = "Three";
+        list.add(s);
+
+        s = "Four";
+        list.add(s);
+
+        for (String str : list) {
+            System.out.println(str);
+        }
+    }
+}
+
+Output:
+
+One
+Two
+Three
+Four
+2) Using a mutable object (shared reference behavior)
+import java.util.*;
+
+class Box {
+    String value;
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Box box = new Box();
+        box.value = "One";
+
+        List<Box> list = new ArrayList<>();
+
+        list.add(box);
+
+        box.value = "Two";
+        list.add(box);
+
+        box.value = "Three";
+        list.add(box);
+
+        box.value = "Four";
+        list.add(box);
+
+        for (Box b : list) {
+            System.out.println(b.value);
+        }
+    }
+}
+
+Output:
+
+Four
+Four
+Four
+Four
+One-line intuition to keep in your head
+C++: copy unless you use pointers/references
+Java: reference always, but immutable objects don’t change
+
+------------------------------------------------------------
+
+
+
+
 
 2.16 Strings to control SWITCH and Command-Line arguments 
 We can use a String to control a switch. For example, using a string-based switch is an improvement over using the equivalent sequence of if/else statements. 
