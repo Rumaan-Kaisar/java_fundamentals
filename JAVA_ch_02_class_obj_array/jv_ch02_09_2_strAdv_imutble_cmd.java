@@ -133,7 +133,7 @@ class SubStrDemo {
 
     --------  Immutable Strings in C++ and Java  --------
 
-----  rev[09-May-2026]  ----
+----  rev[21-May-2026]  ----
 
 
 
@@ -742,16 +742,6 @@ if (args.length != 1) {
 
 ---
 
-## 🧠 Quick Recap
 
-| Concept | Takeaway |
-|---------|----------|
-| **String Immutability** | "Changes" create new objects; originals stay safe |
-| **Reference vs Value** | Variable can point elsewhere; object content is fixed |
-| **Mutable Alternative** | `StringBuilder` for efficient concatenation |
-| **C++ vs C#** | C++ copies by default; use `&`/`*` explicitly for references |
-| **String `switch`** | Valid in Java, but prefer when input is already String |
-| **Command-Line Args** | `args[]` is a `String[]`; index 0 = first argument |
-| **String Comparison** | Always use `.equals()`, never `==` (in Java) |
 
 */
