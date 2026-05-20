@@ -133,11 +133,6 @@ class SubStrDemo {
 
     --------  Immutable Strings in C++ and Java  --------
 
-----  rev[21-May-2026]  ----
-
-
-
-
     C++ Confusion: 
         I've read that strings are "mutable" in C++, but following doesn’t work like that
 
@@ -197,21 +192,25 @@ class SubStrDemo {
         Once string object is created "its data or state can't be changed" but a new string object is created. 
         For example:
 
-    String s="Sachin";  
-    s.concat(" Tendulkar");     //concat() method appends the string at the end  
-    System.out.println(s);      //will print Sachin because strings are immutable objects   Output:  
-    Sachin
+                String s="Sachin";  
+                s.concat(" Tendulkar");     //concat() method appends the string at the end  
+                System.out.println(s);      //will print Sachin because strings are immutable objects   
+    
+            Output:  
+                Sachin
 
-Here Sachin is not changed but a new object is created with sachintendulkar. That is why string is known as immutable. 
-That two objects are created but s reference variable still refers to "Sachin" not to "Sachin Tendulkar". 
-But if we explicitely assign it to the reference variable, it will refer to "Sachin Tendulkar" object. For example:
+            Here s = "Sachin" is not changed but a new object is created with "Sachin Tendulkar" (but not assigned to any variable). 
+            That is why string is known as immutable. 
+            That two objects are created but "s" reference variable still refers to "Sachin" not to "Sachin Tendulkar". 
+            But if we explicitely assign the new object s.concat(" Tendulkar") to the reference variable, 
+                it will refer to "Sachin Tendulkar" object. For example:
 
-String s="Sachin";  
-s=s.concat(" Tendulkar");  
-System.out.println(s);  
+                String s = "Sachin";  
+                s = s.concat(" Tendulkar");  
+                System.out.println(s);  
 
-Output:  
-          Sachin Tendulkar  
+            Output:  
+                Sachin Tendulkar  
           
            In such case, s points to the "Sachin Tendulkar". Please notice that still sachin object is not modified.
 
