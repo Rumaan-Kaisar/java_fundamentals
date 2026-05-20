@@ -183,7 +183,6 @@ class SubStrDemo {
             will be reflected in the object which all the other elements point to.
 
 
-====================================================================================
 
     Immutable String in Java: 
         In java, string objects are immutable. 
@@ -212,11 +211,22 @@ class SubStrDemo {
             Output:  
                 Sachin Tendulkar  
           
-           In such case, s points to the "Sachin Tendulkar". Please notice that still sachin object is not modified.
+            In such case, s points to the "Sachin Tendulkar". 
+                Please notice that still "Sachin" object is not modified.
+                It's not usable since no variable is using it, and goes to "Garbage Collector"
 
 
-   Why string objects are immutable in java?
-Because java uses the concept of string literal. Suppose there are 5 reference variables, all refers to one object "sachin". If one reference variable changes the value of the object, it will be affected to all the reference variables. That is why string objects are immutable in java.
+    Why string objects are immutable in java?
+        String objects are immutable in Java so they can be safely shared and reused. 
+        Since string literals are stored in a common pool, multiple references may point to the same object. 
+        If strings were mutable, a change through one reference would affect all others. 
+
+        To prevent this, Java makes strings immutable, ensuring safety, security, and efficient memory usage.
+
+
+
+====================================================================================
+
 
 
 --------
