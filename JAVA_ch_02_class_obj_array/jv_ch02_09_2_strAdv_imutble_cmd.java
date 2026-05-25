@@ -225,7 +225,7 @@ class SubStrDemo {
 
 
 
-====================================================================================
+    ====================================================================================
 
                 String s = "Sachin";  
                 s = s.concat(" Tendulkar");  
@@ -292,50 +292,26 @@ class SubStrDemo {
                 s = s.concat(" Tendulkar");
 
             Now:
-
-"Sachin Tendulkar" is created
-s is updated to point to this new object
-
-
---------  What happens to "Sachin"?  --------
-So the situation becomes:
-
-"Sachin" → still exists in memory (unchanged)
-"Sachin Tendulkar" → now referenced by s
-Where did the “immutable string” go?
-
-It never went anywhere.
-
-The original "Sachin" object is still intact
-It just might no longer be referenced by your variable
-
-If no variables reference it anymore, the Java Garbage Collector will eventually clean it up.
-You can’t get the original object back if nothing references it anymore and it has been garbage collected.
-In Java, an object stays alive only if something still references it.
+                "Sachin Tendulkar" is created
+                s is updated to point to this new object
 
 
+        --------  What happens to "Sachin"?  --------
 
-What happens to "Sachin"?
-    After this:
+        So the situation becomes:
+            "Sachin" --> still exists in memory (unchanged)
+            "Sachin Tendulkar" --> now referenced by s
 
-    String s = "Sachin";
-    s = s.concat(" Tendulkar");
-    The original "Sachin" object:
-    Still exists in memory for some time
-    But no variable points to it anymore (in your code)
+        Where did the “immutable string” go?
+            It never went anywhere.
 
-    So from your program’s point of view:
+            The original "Sachin" object is still intact
+            It just might no longer be referenced by your variable
 
-    It’s unreachable, therefore unusable.
+            If no variables reference it anymore, the "Java Garbage Collector" will eventually clean it up.
+            In Java, an object stays alive only if something still references it.
 
-    Will it be deleted?
 
-    Yes—eventually.
-
-    Java’s Garbage Collector will remove it if and only if:
-
-    No references point to it
-    And it’s not being kept in the string pool
 
 
 What is case in C++?
