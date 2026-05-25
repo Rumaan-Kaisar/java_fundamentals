@@ -231,46 +231,67 @@ class SubStrDemo {
                 s = s.concat(" Tendulkar");  
                 System.out.println(s); 
 
-In this case it looks like String is mutable, String s changes to new string.
-But actually s is just a referance variable, pointing two different String objects
-one is "Sachin" and other is "Sachin Tendulkar"
+    In this case it looks like String is mutable, String s changes to new string.
+
+    But actually s is just a referance variable, pointing two different String objects
+        one is "Sachin" and other is "Sachin Tendulkar"
+
+    Nothing mysterious is happening—just object creation + reference reassignment. 
+    The confusion usually comes from mixing up the object with the variable pointing to it.
 
 
---------
+    First consider the following Version:
 
-Nothing mysterious is happening—just object creation + reference reassignment. 
-The confusion usually comes from mixing up the object with the variable pointing to it.
+                String s="Sachin";  
+                s.concat(" Tendulkar");     //concat() method appends the string at the end  
+                System.out.println(s);      //will print Sachin because strings are immutable objects 
 
-Let’s walk through your exact example slowly.
+        Step 1: Initial string
+        
+                String s = "Sachin";
 
-Step 1: Initial string
-String s = "Sachin";
-A String object "Sachin" is created.
-Variable s points to that object.
-Step 2: Calling concat without assignment
-s.concat(" Tendulkar");
+            A String object "Sachin" is created.
+            Variable s points to that object.
 
-What actually happens:
 
-A new String object "Sachin Tendulkar" is created.
-But you don’t store its reference anywhere.
+        Step 2: Calling concat without assignment
 
-So:
+                s.concat(" Tendulkar");
 
-"Sachin" → still exists and is unchanged
-"Sachin Tendulkar" → created temporarily, then becomes eligible for garbage collection
+            What actually happens:
+                A new String object "Sachin Tendulkar" is created.
+                But you don’t store its reference anywhere.
 
-That’s why:
+            So:
+                "Sachin" --> still exists and is unchanged
+                "Sachin Tendulkar" --> created temporarily, then becomes eligible for "garbage collection"
 
-System.out.println(s);
+        That’s why:
+                System.out.println(s);
 
-prints:
+            prints "Sachin"
 
-Sachin
-Step 3: With reassignment
-s = s.concat(" Tendulkar");
 
-Now:
+
+    Now consider the assignment version:
+
+                String s = "Sachin";  
+                s = s.concat(" Tendulkar");  
+                System.out.println(s); 
+
+        Step 1: Initial string
+        
+                String s = "Sachin";
+
+            A String object "Sachin" is created.
+            Variable s points to that object.
+
+
+        Step 2: With reassignment
+
+                s = s.concat(" Tendulkar");
+
+            Now:
 
 "Sachin Tendulkar" is created
 s is updated to point to this new object
