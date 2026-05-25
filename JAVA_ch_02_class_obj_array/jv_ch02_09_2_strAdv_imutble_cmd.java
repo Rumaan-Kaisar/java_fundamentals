@@ -227,11 +227,19 @@ class SubStrDemo {
 
 ====================================================================================
 
+                String s = "Sachin";  
+                s = s.concat(" Tendulkar");  
+                System.out.println(s); 
+
+In this case it looks like String is mutable, String s changes to new string.
+But actually s is just a referance variable, pointing two different String objects
+one is "Sachin" and other is "Sachin Tendulkar"
 
 
 --------
 
-Nothing mysterious is happening—just object creation + reference reassignment. The confusion usually comes from mixing up the object with the variable pointing to it.
+Nothing mysterious is happening—just object creation + reference reassignment. 
+The confusion usually comes from mixing up the object with the variable pointing to it.
 
 Let’s walk through your exact example slowly.
 
@@ -354,7 +362,9 @@ What is case in C++?
 
 
 ---- gPT --
-yes—you can absolutely get the “all elements change together” behavior in both Java and C#, but not with strings the way you’re imagining. The key difference is that in those languages, strings are immutable, and variables hold references to objects, not the objects themselves.
+yes—you can absolutely get the “all elements change together” behavior in both Java and C#, 
+but not with strings the way you’re imagining. 
+The key difference is that in those languages, strings are immutable, and variables hold references to objects, not the objects themselves.
 
 In your C++ example:
 
