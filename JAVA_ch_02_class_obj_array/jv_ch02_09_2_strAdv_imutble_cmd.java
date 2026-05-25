@@ -312,37 +312,75 @@ class SubStrDemo {
             In Java, an object stays alive only if something still references it.
 
 
+    --------  What is case in C++?  --------
 
-
-What is case in C++?
-    It actually does happen in C++ too—just in a slightly different way, and that’s why it feels less obvious.
+    above thing actually does happen in C++ too—just in a slightly different way.
 
     The core idea is the same across all languages:
+        If you lose all ways to reach an object, you can’t use it anymore.
+        But how that loss happens differs.
 
-    If you lose all ways to reach an object, you can’t use it anymore.
-
-    But how that loss happens differs.
-
-    In C++ with std::string (your original case)
-    std::string s = "Sachin";
-    s = s + " Tendulkar";
+    In C++ with std::string:
+    
+                std::string s = "Sachin";
+                s = s + " Tendulkar";
 
     What happens here:
+        "Sachin" exists inside s
+        Then s = s + " Tendulkar" creates a new string object
+        The old "Sachin" content inside s is replaced
 
-    "Sachin" exists inside s
-    Then s = s + " Tendulkar" creates a new string object
-    The old "Sachin" content inside s is replaced
+        But here’s the key difference from Java:
+            👉 In C++, the old memory is immediately destroyed (or reused)
+            👉 There is no separate object floating around
 
-    But here’s the key difference from Java:
+        So:
+            You don’t have two independent objects like Java
+            You just replaced the contents of s
 
-    👉 In C++, the old memory is immediately destroyed (or reused)
-    👉 There is no separate object floating around
 
-    So:
+So why Strings in C++ said to be mutable
 
-    You don’t have two independent objects like Java
-    You just replaced the contents of s
+Java String immutability means the String object itself can never change.
+C++ std::string mutability means the same string object can change its contents.
 
+
+Java String is immutable
+String s = "Sachin";
+s.concat(" Tendulkar");
+
+The "Sachin" object can never be modified.
+
+Instead:
+
+s.concat(" Tendulkar");
+
+creates a new String object:
+
+"Sachin"            (unchanged)
+"Sachin Tendulkar"  (new object)
+
+The original "Sachin" object remains exactly as it was.
+
+C++ std::string is mutable
+std::string s = "Sachin";
+s += " Tendulkar";
+
+Here the string object stored in s is modified directly.
+
+Conceptually:
+
+Before:
+
+s -> "Sachin"
+
+After:
+
+s -> "Sachin Tendulkar"
+
+The same string object changes its contents.
+
+This is possible because std::string is mutable.
 
 
 
