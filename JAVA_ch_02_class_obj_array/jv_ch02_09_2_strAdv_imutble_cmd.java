@@ -339,52 +339,52 @@ class SubStrDemo {
             You just replaced the contents of s
 
 
-So why Strings in C++ said to be mutable
 
-Java String immutability means the String object itself can never change.
-C++ std::string mutability means the same string object can change its contents.
+    --------  So why Strings in C++ said to be mutable  --------
 
+    Java String immutability means the String object itself can never change.
 
-Java String is immutable
-String s = "Sachin";
-s.concat(" Tendulkar");
-
-The "Sachin" object can never be modified.
-
-Instead:
-
-s.concat(" Tendulkar");
-
-creates a new String object:
-
-"Sachin"            (unchanged)
-"Sachin Tendulkar"  (new object)
-
-The original "Sachin" object remains exactly as it was.
-
-C++ std::string is mutable
-std::string s = "Sachin";
-s += " Tendulkar";
-
-Here the string object stored in s is modified directly.
-
-Conceptually:
-
-Before:
-
-s -> "Sachin"
-
-After:
-
-s -> "Sachin Tendulkar"
-
-The same string object changes its contents.
-
-This is possible because std::string is mutable.
+    C++ std::string mutability means the same string object can change its contents.
+        although some expressions (such as s + "text") may create temporary string objects during evaluation.
 
 
+    Java String is immutable:
+                String s = "Sachin";
+                s.concat(" Tendulkar");
 
-====================================================================================
+        The "Sachin" object can never be modified.
+        Instead:
+
+                s.concat(" Tendulkar");
+
+            creates a new String object:
+            The original "Sachin" object remains exactly as it was.
+
+
+    C++ std::string is mutable:
+                std::string s = "Sachin";
+                s += " Tendulkar";
+
+        Here the string object stored in s is modified directly.
+
+        Before:
+                s -> "Sachin"
+
+        After:
+                s -> "Sachin Tendulkar"
+
+            The same string object changes its contents.
+            This is possible because std::string is mutable.
+
+
+    In short:
+        Java String objects never change; every modification creates a new String object.
+        
+        C++ std::string objects are mutable; 
+        many operations modify the existing string, 
+        although some expressions (such as s + "text") may create temporary string objects during evaluation.
+
+    ====================================================================================
 
 
 
