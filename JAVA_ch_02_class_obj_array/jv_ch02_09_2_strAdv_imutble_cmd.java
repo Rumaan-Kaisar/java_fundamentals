@@ -387,12 +387,10 @@ class SubStrDemo {
     ====================================================================================
 
 
+    ----------------    Strings to control SWITCH and Command-Line arguments    ----------------
 
-
-
-
-2.16 Strings to control SWITCH and Command-Line arguments 
-We can use a String to control a switch. For example, using a string-based switch is an improvement over using the equivalent sequence of if/else statements. 
+We can use a String to control a switch. 
+    For example, using a string-based switch is an improvement over using the equivalent sequence of if/else statements. 
 
 
    However, switching on strings can be less efficient than switching on integers. Therefore, it is best to switch on strings only in cases in which the controlling data is already in string form.  Don’t use strings in a switch unnecessarily.
@@ -403,8 +401,11 @@ switch(command) {   case "connect":     System.out.println("Connecting"); break;
 case "cancel":  System.out.println("Canceling"); break;
 case "disconnect":  System.out.println("Disconnecting"); break;
 default:        System.out.println("Command Error!"); break;    }
+
    The string contained in command (which is "cancel" in this program) is tested against the case constants. When a match is found (as it is in the second case), the code sequence associated with that sequence is executed.
+
    Command-Line Arguments:  We noticed args[] parameter to main() that has been in every program. Many programs use command-line arguments. A command-line argument is the information that directly follows the program’s name on the command line when it is executed. 
+
    To access the command-line arguments inside a Java program is quite easy—they are stored as strings in the String array passed to main(). For example, the following program displays all of the command-line arguments that it is called with:
 class CLDemo { public static void main(String args[]) {
 System.out.println("There are " + args.length + " command-line arguments.");
@@ -445,46 +446,156 @@ Mary: 555-8976
 
 // ----  qwen  ----
 
+
+# Strings to Control SWITCH and Command-Line Arguments
+
+---
+
+## 1. Using Strings in Switch Statements
+
+### ✅ Key Concepts
+- A `String` can be used to control a `switch` statement in Java.
+- String-based `switch` is often cleaner and more readable than equivalent `if/else` chains.
+
+### ⚠️ Performance Consideration
+- Switching on strings is **less efficient** than switching on integers.
+- **Best Practice**: Use string-based `switch` only when the controlling data is already in `String` form. Avoid unnecessary string switches.
+
+### 💻 Example: String Switch Statement
+```java
+String command = "cancel";
+
+switch(command) {
+    case "connect":
+        System.out.println("Connecting");
+        break;
+    case "cancel":
+        System.out.println("Canceling");
+        break;
+    case "disconnect":
+        System.out.println("Disconnecting");
+        break;
+    default:
+        System.out.println("Command Error!");
+        break;
+}
+```
+
+### 🔍 How It Works
+- The string value in `command` (e.g., `"cancel"`) is compared against each `case` constant.
+- When a match is found, the corresponding code block executes.
+- In the example above, `"cancel"` matches the second case → outputs: `Canceling`.
+
+---
+
+## 2. Command-Line Arguments in Java
+
+### ✅ What Are Command-Line Arguments?
+- Command-line arguments are inputs provided directly after the program name when executing a Java application.
+- Example: `java MyProgram arg1 arg2 arg3`
+
+### ✅ Accessing Arguments in Code
+- Arguments are passed to the `main()` method as a `String` array: `String args[]`
+- Each argument is stored as a string at sequential indices: `args[0]`, `args[1]`, etc.
+
+### 💻 Example 1: Display All Command-Line Arguments
+```java
+class CLDemo {
+    public static void main(String args[]) {
+        System.out.println("There are " + args.length + " command-line arguments.");
+        System.out.println("They are: ");
+        for(int i = 0; i < args.length; i++) {
+            System.out.println("arg[" + i + "]: " + args[i]);
+        }
+    }
+}
+```
+
+#### ▶️ Sample Execution
+```bash
+java CLDemo one two three
+```
+
+#### 📤 Output
+```
+There are 3 command-line arguments.
+They are: 
+arg[0]: one
+arg[1]: two
+arg[2]: three
+```
+
+> 📌 Note: The first argument is stored at index `0`, the second at index `1`, and so on.
+
+---
+
+### 💻 Example 2: Phone Lookup Using Command-Line Argument
+```java
+class Phone {
+    public static void main(String args[]) {
+        String numbers[][] = {
+            { "Tom", "555-3322" },
+            { "Mary", "555-8976" },
+            { "Jon", "555-1037" },
+            { "Rachel", "555-1400" }
+        };
+        
+        if(args.length != 1) {
+            System.out.println("Usage: java Phone <name>");
+        } else {
+            for(int i = 0; i < numbers.length; i++) {
+                if(numbers[i][0].equals(args[0])) {
+                    System.out.println(numbers[i][0] + ": " + numbers[i][1]);
+                    break;
+                }
+            }
+            if(i == numbers.length) {
+                System.out.println("Name not found.");
+            }
+        }
+    }
+}
+```
+
+#### ▶️ Sample Execution
+```bash
+java Phone Mary
+```
+
+#### 📤 Output
+```
+Mary: 555-8976
+```
+
+### 🔑 Key Takeaways
+- Always validate `args.length` before accessing command-line arguments to avoid `ArrayIndexOutOfBoundsException`.
+- Use `.equals()` for string comparison (not `==`).
+- Command-line arguments are always passed as `String` types—convert them if numeric operations are needed.
+
+---
+
+> ✅ **Best Practices Summary**
+> 1. Use string `switch` only when necessary for readability.
+> 2. Validate command-line argument count before use.
+> 3. Remember: `args[0]` is the first user-provided argument (not the program name).
+> 4. Keep code modular and add error handling for robust CLI programs.
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 📝 Strings: Immutability & Usage — Simplified Pointwise
 
 
 ---
-
----
-
-## 🤔 C++ Confusion Clarified (For C# Devs)
-
-### Your Code:
-```cpp
-std::string strData = "One";
-std::vector<std::string> str_Vector;
-
-str_Vector.push_back(strData);  // Copies "One"
-strData = "Two";                // strData now points to NEW string
-str_Vector.push_back(strData);  // Copies "Two"
-// ... etc
-```
-
-### ✅ What Actually Happens:
-- `push_back(strData)` → **copies the value**, not the reference.
-- Each vector element is an **independent `std::string` object**.
-- Changing `strData` later does **not** affect prior copies.
-
-### 🔁 To Get "Reference-Like" Behavior (Not Recommended):
-```cpp
-std::string strData = "One";
-std::vector<std::string*> str_Vector;  // Vector of POINTERS
-
-str_Vector.push_back(&strData);  // Store address
-strData = "Two";                 // Modifies the SAME object
-// Now all pointers in vector see "Two"
-```
-> ⚠️ Danger: Dangling pointers if `strData` goes out of scope. Prefer values unless you truly need shared mutation.
-
-### 🎯 Key C++ Mindset Shift:
-> **"If it's not `*` or `&`, it's a value copy."**  
-> C++ defaults to **value semantics**. C#/Java default to **reference semantics** for objects.
-
 ---
 
 ## 🔀 2.16 Strings in `switch` & Command-Line Args
