@@ -389,11 +389,15 @@ class SubStrDemo {
 
     ----------------    Strings to control SWITCH and Command-Line arguments    ----------------
 
-We can use a String to control a switch. 
-    For example, using a string-based switch is an improvement over using the equivalent sequence of if/else statements. 
+    Using Strings in Switch Statements:
+        A "String" can be used to control a "switch" statement in Java.
+        String-based "switch" is often cleaner and more readable than equivalent "if/else" chains.
 
+    However, switching on strings can be less efficient than switching on integers. 
+        Use "string-based switch" only when the controlling data is already in "String" form.
+        Avoid unnecessary string switches.
 
-   However, switching on strings can be less efficient than switching on integers. Therefore, it is best to switch on strings only in cases in which the controlling data is already in string form.  Don’t use strings in a switch unnecessarily.
+    Example:
 
 String command = "cancel";
 
@@ -451,15 +455,6 @@ Mary: 555-8976
 
 ---
 
-## 1. Using Strings in Switch Statements
-
-### ✅ Key Concepts
-- A `String` can be used to control a `switch` statement in Java.
-- String-based `switch` is often cleaner and more readable than equivalent `if/else` chains.
-
-### ⚠️ Performance Consideration
-- Switching on strings is **less efficient** than switching on integers.
-- **Best Practice**: Use string-based `switch` only when the controlling data is already in `String` form. Avoid unnecessary string switches.
 
 ### 💻 Example: String Switch Statement
 ```java
