@@ -417,8 +417,13 @@ class SubStrDemo {
                 }
 
 
+        How It Works:
+            - The string value in "command" (e.g., "cancel") is compared against each "case" constant.
+            - When a match is found, the corresponding code block executes.
+            - In the example above, "cancel" matches the second case --> outputs: "Canceling".
 
 
+    ----  rev[31-May-2026]  ----
 
 
 
@@ -482,11 +487,6 @@ Mary: 555-8976
 
 
 ```
-
-### 🔍 How It Works
-- The string value in `command` (e.g., `"cancel"`) is compared against each `case` constant.
-- When a match is found, the corresponding code block executes.
-- In the example above, `"cancel"` matches the second case → outputs: `Canceling`.
 
 ---
 
