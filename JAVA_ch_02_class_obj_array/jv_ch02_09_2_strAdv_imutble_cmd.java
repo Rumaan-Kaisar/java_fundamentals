@@ -387,6 +387,7 @@ class SubStrDemo {
     ====================================================================================
 
 
+
     ----------------    Strings to control SWITCH and Command-Line arguments    ----------------
 
     Using Strings in Switch Statements:
@@ -398,13 +399,32 @@ class SubStrDemo {
         Avoid unnecessary string switches.
 
     Example:
+                String command = "cancel";
 
-String command = "cancel";
+                switch(command) {
+                    case "connect":
+                        System.out.println("Connecting");
+                        break;
+                    case "cancel":
+                        System.out.println("Canceling");
+                        break;
+                    case "disconnect":
+                        System.out.println("Disconnecting");
+                        break;
+                    default:
+                        System.out.println("Command Error!");
+                        break;
+                }
 
-switch(command) {   case "connect":     System.out.println("Connecting"); break;
-case "cancel":  System.out.println("Canceling"); break;
-case "disconnect":  System.out.println("Disconnecting"); break;
-default:        System.out.println("Command Error!"); break;    }
+
+
+
+
+
+
+
+
+
 
    The string contained in command (which is "cancel" in this program) is tested against the case constants. When a match is found (as it is in the second case), the code sequence associated with that sequence is executed.
 
@@ -458,22 +478,9 @@ Mary: 555-8976
 
 ### 💻 Example: String Switch Statement
 ```java
-String command = "cancel";
 
-switch(command) {
-    case "connect":
-        System.out.println("Connecting");
-        break;
-    case "cancel":
-        System.out.println("Canceling");
-        break;
-    case "disconnect":
-        System.out.println("Disconnecting");
-        break;
-    default:
-        System.out.println("Command Error!");
-        break;
-}
+
+
 ```
 
 ### 🔍 How It Works
