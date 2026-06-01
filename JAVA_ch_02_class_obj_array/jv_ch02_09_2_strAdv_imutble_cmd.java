@@ -423,8 +423,6 @@ class SubStrDemo {
             - In the example above, "cancel" matches the second case --> outputs: "Canceling".
 
 
-    ----  rev[31-May-2026]  ----
-
     Command-Line Arguments in Java:
         Command-line arguments are inputs provided directly after the "program name" 
             when executing a Java application.
@@ -439,6 +437,11 @@ class SubStrDemo {
         Each argument is stored as a string at sequential indices: i.e.     args[0], args[1], etc.
 
 
+    --------  Popular online compiler that supports "Command line arguments"  --------
+    
+    OnlineGDB: 
+        https://www.onlinegdb.com/online_java_compiler
+        Look for "Command line arguments:" at the bottom.
 */
 
 
@@ -446,12 +449,24 @@ class SubStrDemo {
 
 /*  Example 2: (Command-Line Arguments demo) the following program 
                 displays all of the command-line arguments that it is called with.
+
+                If CLDemo is executed like- 
+                                java CLDemo one two three 
+
+                [i.e. passing " one two three " as CL args during program execution (not in compilation)]
+ 
+            output:
+                There are 3 command-line arguments.
+                They are:
+                arg[0]: one
+                arg[1]: two
+                arg[2]: three
 */
 class CLDemo {
     public static void main(String args[]) {
         System.out.println("There are " + args.length + " command-line arguments.");
         System.out.println("They are: ");
-        for(int i = 0; i < args.length; i++) {
+        for(int i=0; i < args.length; i++) {
             System.out.println("arg[" + i + "]: " + args[i]);
         }
     }
@@ -459,26 +474,16 @@ class CLDemo {
 
 
 
+
+
 /*  
 
 
+    ----  rev[01-Jun-2026]  ----
 
 
 
 
-class CLDemo { public static void main(String args[]) {
-System.out.println("There are " + args.length + " command-line arguments.");
-System.out.println("They are: ");
-for(int i=0; i<args.length; i++) System.out.println("arg[" + i + "]: " + args[i]);
-}}
-
-
-If CLDemo is executed like, java CLDemo one two three 
-[passing " one two three " as command line arguments  during program execution (not in compilation)]    output: There are 3 command-line arguments.
-               They are:
-               arg[0]: one
-               arg[1]: two
-               arg[2]: three
 
 
 Notice that the first argument is stored at index 0, the second argument is stored at index 1, and so on.
@@ -518,35 +523,6 @@ Mary: 555-8976
 ### 💻 Example: String Switch Statement
 ```java
 
-
-
-```
-
----
-
-## 2. 
-
-### ✅ What Are Command-Line Arguments?
-
-
-### 💻 Example 1: Display All Command-Line Arguments
-```java
-
-```
-
-#### ▶️ Sample Execution
-```bash
-java CLDemo one two three
-```
-
-#### 📤 Output
-```
-There are 3 command-line arguments.
-They are: 
-arg[0]: one
-arg[1]: two
-arg[2]: three
-```
 
 > 📌 Note: The first argument is stored at index `0`, the second at index `1`, and so on.
 
@@ -613,70 +589,3 @@ Mary: 555-8976
 
 
 
-
-
-# 📝 Strings: Immutability & Usage — Simplified Pointwise
-
-
----
----
-
-## 🔀 2.16 Strings in `switch` & Command-Line Args
-
-### ✅ String `switch` (Java 7+)
-```java
-String cmd = "cancel";
-switch(cmd) {
-    case "connect":    /* ... */ break;
-    case "cancel":     System.out.println("Canceling"); break;  // ✅ Matches
-    case "disconnect": /* ... */ break;
-    default:           System.out.println("Error!");
-}
-```
-- ✔️ Cleaner than long `if-else` chains.
-- ⚠️ Slightly slower than `int` switches → use only when input is already a `String`.
-
----
-
-## 💻 Command-Line Arguments (Java)
-
-### 📥 How `main(String[] args)` Works:
-```java
-class CLDemo {
-    public static void main(String[] args) {
-        System.out.println("Count: " + args.length);
-        for(int i = 0; i < args.length; i++) 
-            System.out.println("arg[" + i + "]: " + args[i]);
-    }
-}
-```
-**Run**: `java CLDemo one two three`  
-**Output**:
-```
-Count: 3
-arg[0]: one
-arg[1]: two
-arg[2]: three
-```
-
-### 🔍 Practical Example: Phone Lookup
-```java
-// Run: java Phone Mary
-if (args.length != 1) {
-    System.out.println("Usage: java Phone <name>");
-} else {
-    for (String[] entry : numbers) {
-        if (entry[0].equals(args[0])) {  // ✅ Use .equals() for String comparison!
-            System.out.println(entry[0] + ": " + entry[1]);
-            break;
-        }
-    }
-}
-```
-> ⚠️ **Never use `==` to compare String content in Java** → use `.equals()`.
-
----
-
-
-
-*/
