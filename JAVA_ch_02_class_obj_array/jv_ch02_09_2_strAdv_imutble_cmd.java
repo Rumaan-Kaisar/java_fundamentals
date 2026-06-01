@@ -439,21 +439,48 @@ class SubStrDemo {
         Each argument is stored as a string at sequential indices: i.e.     args[0], args[1], etc.
 
 
+*/
 
 
 
-For example, the following program displays all of the command-line arguments that it is called with:
+
+/*  Example 2: (Command-Line Arguments demo) the following program 
+                displays all of the command-line arguments that it is called with.
+*/
+class CLDemo {
+    public static void main(String args[]) {
+        System.out.println("There are " + args.length + " command-line arguments.");
+        System.out.println("They are: ");
+        for(int i = 0; i < args.length; i++) {
+            System.out.println("arg[" + i + "]: " + args[i]);
+        }
+    }
+}
+
+
+
+/*  
+
+
+
+
+
+
 class CLDemo { public static void main(String args[]) {
 System.out.println("There are " + args.length + " command-line arguments.");
 System.out.println("They are: ");
 for(int i=0; i<args.length; i++) System.out.println("arg[" + i + "]: " + args[i]);
 }}
+
+
 If CLDemo is executed like, java CLDemo one two three 
 [passing " one two three " as command line arguments  during program execution (not in compilation)]    output: There are 3 command-line arguments.
                They are:
                arg[0]: one
                arg[1]: two
                arg[2]: three
+
+
 Notice that the first argument is stored at index 0, the second argument is stored at index 1, and so on.
 Another Example: Following takes one command-line argument that specifies a person’s name. It then searches through a two-dimensional array of strings for that name. If it finds a match, it displays that person’s telephone number.
 class Phone {
@@ -504,15 +531,7 @@ Mary: 555-8976
 
 ### 💻 Example 1: Display All Command-Line Arguments
 ```java
-class CLDemo {
-    public static void main(String args[]) {
-        System.out.println("There are " + args.length + " command-line arguments.");
-        System.out.println("They are: ");
-        for(int i = 0; i < args.length; i++) {
-            System.out.println("arg[" + i + "]: " + args[i]);
-        }
-    }
-}
+
 ```
 
 #### ▶️ Sample Execution
