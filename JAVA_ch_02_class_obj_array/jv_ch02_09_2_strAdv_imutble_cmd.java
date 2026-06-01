@@ -426,7 +426,7 @@ class SubStrDemo {
     ----  rev[31-May-2026]  ----
 
     Command-Line Arguments in Java:
-        Command-line arguments are inputs provided directly after the program name 
+        Command-line arguments are inputs provided directly after the "program name" 
             when executing a Java application.
 
         Example: 
@@ -434,21 +434,10 @@ class SubStrDemo {
 
     Accessing CL args in Code:
         We've noticed args[] parameter to main() that has been in every program.
-- Arguments are passed to the `main()` method as a `String` array: `String args[]`
-- Each argument is stored as a string at sequential indices: `args[0]`, `args[1]`, etc.
+        
+        CL arguments are passed to the main() as a "String array": i.e      String args[]
+        Each argument is stored as a string at sequential indices: i.e.     args[0], args[1], etc.
 
-
-
-
-
-   Command-Line Arguments:  
-
-
-
-
- Many programs use command-line arguments. A command-line argument is the information that directly follows the program’s name on the command line when it is executed. 
-
-   To access the command-line arguments inside a Java program is quite easy—they are stored as strings in the String array passed to main(). 
 
 
 
