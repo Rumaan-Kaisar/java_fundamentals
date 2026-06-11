@@ -480,29 +480,57 @@ class CLDemo {
 
 
 
+/* Example 3: Phone Lookup Using Command-Line Argument.
+
+                It takes one command-line argument that specifies a person’s name. 
+                Then searches through a 2D array of strings for that name. 
+
+                If it finds a match, it displays that person's telephone number.
+*/
+
+class Phone {
+    public static void main(String args[]) {
+        String numbers[][] = {
+            { "Tom", "555-3322" },
+            { "Mary", "555-8976" },
+            { "Jon", "555-1037" },
+            { "Rachel", "555-1400" }
+        };
+        
+
+        int i;
+
+        if(args.length != 1) System.out.println("Usage: java Phone <name>");
+        else {
+            for(i = 0; i < numbers.length; i++) {
+                if(numbers[i][0].equals(args[0])) {
+                    System.out.println(numbers[i][0] + ": " + numbers[i][1]);
+                    break;
+                }
+            }
+            if(i == numbers.length) {
+                System.out.println("Name not found.");
+            }
+        }
+    }
+}
+
+
 
 /*  
-
-
-    ----  rev[11-Jun-2026]  ----
-
+----  rev[11-Jun-2026]  ----
 
 
 
+Another Example: 
 
 
 
 
 
-Another Example: Following takes one command-line argument that specifies a person’s name. It then searches through a two-dimensional array of strings for that name. If it finds a match, it displays that person’s telephone number.
 class Phone {
-public static void main(String args[]) {
-       String numbers[][] = {
-{ "Tom", "555-3322" },
-{ "Mary", "555-8976" },
-{ "Jon", "555-1037" },
-{ "Rachel", "555-1400" }   };
-       int i;   if(args.length != 1) System.out.println("Usage: java Phone <name>");
+
+          
 else {        //To use the program, one command-line argument must be present.
         for(i=0; i<numbers.length; i++) { 
                 if(numbers[i][0].equals(args[0])) {
@@ -535,32 +563,9 @@ Mary: 555-8976
 
 ---
 
-### 💻 Example 2: Phone Lookup Using Command-Line Argument
+### 💻 
 ```java
-class Phone {
-    public static void main(String args[]) {
-        String numbers[][] = {
-            { "Tom", "555-3322" },
-            { "Mary", "555-8976" },
-            { "Jon", "555-1037" },
-            { "Rachel", "555-1400" }
-        };
-        
-        if(args.length != 1) {
-            System.out.println("Usage: java Phone <name>");
-        } else {
-            for(int i = 0; i < numbers.length; i++) {
-                if(numbers[i][0].equals(args[0])) {
-                    System.out.println(numbers[i][0] + ": " + numbers[i][1]);
-                    break;
-                }
-            }
-            if(i == numbers.length) {
-                System.out.println("Name not found.");
-            }
-        }
-    }
-}
+
 ```
 
 #### ▶️ Sample Execution
