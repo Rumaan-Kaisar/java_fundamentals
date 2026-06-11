@@ -461,7 +461,12 @@ class SubStrDemo {
                 arg[0]: one
                 arg[1]: two
                 arg[2]: three
+
+            Notice that:
+                the first argument is stored at index 0, 
+                the second argument is stored at index 1, and so on.
 */
+
 class CLDemo {
     public static void main(String args[]) {
         System.out.println("There are " + args.length + " command-line arguments.");
@@ -479,14 +484,16 @@ class CLDemo {
 /*  
 
 
-    ----  rev[01-Jun-2026]  ----
+    ----  rev[11-Jun-2026]  ----
 
 
 
 
 
 
-Notice that the first argument is stored at index 0, the second argument is stored at index 1, and so on.
+
+
+
 Another Example: Following takes one command-line argument that specifies a person’s name. It then searches through a two-dimensional array of strings for that name. If it finds a match, it displays that person’s telephone number.
 class Phone {
 public static void main(String args[]) {
@@ -578,7 +585,6 @@ Mary: 555-8976
 > 2. Validate command-line argument count before use.
 > 3. Remember: `args[0]` is the first user-provided argument (not the program name).
 > 4. Keep code modular and add error handling for robust CLI programs.
-
 
 
 
