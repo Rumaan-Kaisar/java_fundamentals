@@ -515,26 +515,23 @@ class Phone {
 
 
 
-/*  
+/*  Note:
+        Always validate "args.length" before accessing command-line arguments to avoid
+            "ArrayIndexOutOfBoundsException"
 
-Note:
-- Always validate `args.length` before accessing command-line arguments to avoid `ArrayIndexOutOfBoundsException`.
-- Use `.equals()` for string comparison (not `==`).
-- Command-line arguments are always passed as `String` types—convert them if numeric operations are needed.
+        Use ".equals()" for string comparison (not "==").
 
----
+        Command-line arguments are always passed as "String" 
+            so types—convert them if numeric operations are needed.
 
-> ✅ **Best Practices Summary**
-> 1. Use string `switch` only when necessary for readability.
-> 2. Validate command-line argument count before use.
-> 3. Remember: `args[0]` is the first user-provided argument (not the program name).
-> 4. Keep code modular and add error handling for robust CLI programs.
+        Use "string switch" only when necessary for readability.
 
+        Remember: "args[0]" is the first user-provided argument (not the program name).
 */
 
 
 
-
+// ----  rev[11-Jun-2026] : Rev book ----
 
 
 
