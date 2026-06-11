@@ -516,64 +516,8 @@ class Phone {
 
 
 /*  
-----  rev[11-Jun-2026]  ----
 
-
-
-Another Example: 
-
-
-
-
-
-class Phone {
-
-          
-else {        
-        
-        if(i == numbers.length) System.out.println("Name not found."); }
-}}
-        
-sample run:
-java Phone Mary
-Mary: 555-8976
-
-
-
-
-
-// ----  qwen  ----
-
-
-# Strings to Control SWITCH and Command-Line Arguments
-
----
-
-
-### 💻 Example: String Switch Statement
-```java
-
-
-> 📌 Note: The first argument is stored at index `0`, the second at index `1`, and so on.
-
----
-
-### 💻 
-```java
-
-```
-
-#### ▶️ Sample Execution
-```bash
-java Phone Mary
-```
-
-#### 📤 Output
-```
-Mary: 555-8976
-```
-
-### 🔑 Key Takeaways
+Note:
 - Always validate `args.length` before accessing command-line arguments to avoid `ArrayIndexOutOfBoundsException`.
 - Use `.equals()` for string comparison (not `==`).
 - Command-line arguments are always passed as `String` types—convert them if numeric operations are needed.
@@ -585,6 +529,8 @@ Mary: 555-8976
 > 2. Validate command-line argument count before use.
 > 3. Remember: `args[0]` is the first user-provided argument (not the program name).
 > 4. Keep code modular and add error handling for robust CLI programs.
+
+*/
 
 
 
