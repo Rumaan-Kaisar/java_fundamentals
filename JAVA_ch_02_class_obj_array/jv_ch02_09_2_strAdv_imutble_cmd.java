@@ -1,6 +1,4 @@
 
-// jv_ch02_09_2_strAdv_imutble_cmd     2.15+2.16   162.9-166.5
-
 /* -=-=-=-=-=-=-=-=-=-=-=      Strings: Immutability and others      -=-=-=-=-=-=-=-=-=-=-=
 
 
