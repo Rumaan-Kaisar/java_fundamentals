@@ -3,6 +3,7 @@
 
 /* -=-=-=-=-=-=-=-=-=-=-=      Bitwise Operators      -=-=-=-=-=-=-=-=-=-=-=
 
+// ---- rev[12-Jun-2026] ----
 
 
 2.17 Bitwise Operators (Recall C/C++ 7.7)
