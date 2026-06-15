@@ -94,6 +94,176 @@ The bitwise shift operators can be used to perform very fast multiplication or d
 
 
 
+
+
+--------  Qwen  --------
+
+Here is the text organized into a clear, pointwise structure with properly formatted code snippets and corrected minor typographical errors (such as the XOR truth table) for better readability.
+
+# 2.17 Bitwise Operators (Recall C/C++ 7.7)
+
+## 1. Overview and Allowed Data Types
+*   **Purpose:** Bitwise operators are used to test, set, or shift the individual bits that make up a value.
+*   **Use Cases:** Crucial for systems-level programming tasks where status information from a device must be interrogated or constructed.
+*   **Allowed Types:** Can be used on `long`, `int`, `short`, `char`, or `byte`.
+*   **Disallowed Types:** Cannot be used on `boolean`, `float`, `double`, or class types.
+
+## 2. List of Bitwise Operators
+| Operator | Result / Name |
+| :--- | :--- |
+| `&` | Bitwise AND |
+| `\|` | Bitwise OR |
+| `^` | Bitwise XOR (Exclusive OR) |
+| `~` | One’s complement (Unary NOT) |
+| `<<` | Shift left |
+| `>>` | Shift right |
+| `>>>` | Unsigned shift right (Zero-fill right shift) |
+
+---
+
+## 3. Bitwise Logical Operators (`&`, `|`, `^`, `~`)
+
+### Basic Concepts
+*   Unlike Boolean logical operators, bitwise operators work on a **bit-by-bit basis**.
+*   **Bitwise AND (`&`):** Acts as a way to turn bits *off* (0 remains 0).
+*   **Bitwise OR (`|`):** Acts as a way to turn bits *on* (1 remains 1).
+*   **Bitwise NOT (`~`):** The unary one’s complement operator reverses the state of all bits in the operand (e.g., `1001 0110` becomes `0110 1001`).
+
+### Practical Example: Case Conversion (Using AND & OR)
+*   **Why the 6th bit?** In the ASCII/Unicode character set, a lowercase letter is exactly 32 greater in value than its uppercase equivalent. In binary, 32 is `100000` (only the 6th digit from the right is 1). Therefore, `a = A + 100000`.
+*   **Lowercase to Uppercase:** Turn *off* the 6th bit using AND with `65503` (binary `1111 1111 1101 1111`).
+*   **Uppercase to Lowercase:** Turn *on* the 6th bit using OR with `32` (binary `0000 0000 0010 0000`).
+
+```java
+// Lowercase to Uppercase
+char ch;
+for(int i = 0; i < 10; i++) { 
+    ch = (char) ('a' + i);
+    System.out.print(ch);
+    // Turns off the 6th bit
+    ch = (char) ((int) ch & 65503); 
+    System.out.print(ch + " ");  
+}
+// Output: aA bB cC dD eE fF gG hH iI jJ 
+
+// Uppercase to Lowercase
+for(int i = 0; i < 10; i++) {
+    ch = (char) ('A' + i);
+    System.out.print(ch);
+    // Turns on the 6th bit
+    ch = (char) ((int) ch | 32); 
+    System.out.print(ch + " ");  
+}
+// Output: Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj 
+```
+
+### Other Uses of Bitwise AND
+*   **Checking if a specific bit is on:** Use AND with a mask. For example, to check if bit 4 is set in a `status` variable, use `if((status & 8) != 0)`. (8 is used because its binary is `1000`, meaning only the 4th bit is on).
+*   **Displaying a byte in binary format:** Successively test each bit using a loop and bitwise AND.
+
+```java
+int t;
+byte val = 123;
+for(t = 128; t > 0; t = t / 2) { 
+    if((val & t) != 0) System.out.print("1 ");
+    else System.out.print("0 "); 
+}
+// Output: 0 1 1 1 1 0 1 1
+```
+
+### Practical Example: Simple Cipher (Using XOR)
+*   **XOR Logic:** Sets a bit on *if and only if* the bits being compared are different (i.e., `1^0=1`, `0^1=1`, `1^1=0`, `0^0=0`).
+*   **Reversibility:** If `X` is XORed with `Y`, and the result is XORed with `Y` again, the original `X` is produced: `(X ^ Y) ^ Y = X`.
+*   **Cipher Application:** Apply XOR with an integer key to encode (yielding ciphertext). Apply XOR with the same key again to decode (yielding plaintext). *(Note: This is a trivial cipher with no practical security value, but demonstrates the concept).*
+
+```java
+String msg = "This is a test";   
+String encmsg = "";   
+String decmsg = "";
+int key = 88;
+
+// Encode the message
+for(int i = 0; i < msg.length(); i++) {
+    encmsg = encmsg + (char)(msg.charAt(i) ^ key);
+}
+
+// Decode the message
+for(int i = 0; i < msg.length(); i++) {
+    decmsg = decmsg + (char)(encmsg.charAt(i) ^ key);
+}
+```
+
+---
+
+## 4. Shift Operators (`<<`, `>>`, `>>>`)
+
+### Definitions
+*   **Left Shift (`<<`):** Shifts all bits left by `num-bits`. A `0` is brought in on the right. *Effectively doubles the value.*
+*   **Right Shift (`>>`):** Shifts all bits right by `num-bits`. Preserves the sign bit (brings in a `1` on the left if negative, `0` if positive). *Effectively halves the value.*
+*   **Unsigned Right Shift (`>>>`):** Always brings in a `0` on the left (zero-fill right shift). Used for shifting bit patterns (like status codes) that do not represent signed integers.
+
+### Negative Numbers and Two's Complement
+*   Java (like C/C++) uses **Two's Complement** to represent negative values, *not* simple MSB (Most Significant Bit) representation.
+*   **Two's Complement Rule:** Reverse the bits (one's complement) and add 1. 
+    *   Example: Byte value `-1` is `1111 1111`. Right shifting `-1` will always produce `-1`.
+    *   Example: `-8` in an 8-bit field is `1111 1000`. Right shifting it (`-8 >> 1`) brings in a 1 on the left, resulting in `1111 1100`.
+
+### Important Caveats for Shifting
+*   **Lost Bits:** Bits shifted out are permanently lost. A shift is *not* a rotate; you cannot retrieve shifted-out bits.
+*   **Type Promotion:** Java automatically promotes `byte` and `short` to `int` before evaluating expressions. The result of the shift will also be an `int`.
+*   **Sign-Extension Issue:** If you shift a negative `byte` or `short`, it is sign-extended to `int` (filled with 24 ones). This is fine for `>>`, but problematic for `>>>` because you must shift through those 24 ones before the actual byte value begins to see zeros.
+
+### Shift Example Code
+```java
+class ShiftDemo { 
+    public static void main(String args[]) {  
+        int val = 1;
+        
+        // Left shift demo
+        for(int i = 0; i < 8; i++) {    
+            for(int t = 128; t > 0; t = t / 2) {          
+                if((val & t) != 0) System.out.print("1 ");
+                else System.out.print("0 ");  
+            }   
+            System.out.println();
+            val = val << 1; 
+        }  
+        System.out.println();    
+        
+        // Right shift demo
+        val = 128;
+        for(int i = 0; i < 8; i++) {    
+            for(int t = 128; t > 0; t = t / 2) {           
+                if((val & t) != 0) System.out.print("1 ");
+                else System.out.print("0 "); 
+            }
+            System.out.println();
+            val = val >> 1;
+        }    
+    }
+}
+```
+
+---
+
+## 5. Shorthand Assignments and Mathematical Uses
+
+*   **Bitwise Shorthand:** All binary bitwise operators have a shorthand form combining assignment and operation.
+    *   *Example:* `x = x ^ 127;` is identical to `x ^= 127;`
+*   **Fast Math:** Bitwise shift operators can perform very fast multiplication or division by 2.
+    *   A **left shift** (`<<`) doubles a value.
+    *   A **right shift** (`>>`) halves a value.
+
+
+
+
+
+
+
+
+--------  GPT  --------
+
+
 # 2.17 Bitwise Operators (Recall C/C++ 7.7)
 
 ## 1. Introduction
