@@ -92,4 +92,599 @@ The bitwise shift operators can be used to perform very fast multiplication or d
     A shift left doubles a value.       A shift right halves it.
 
 
+
+
+# 2.17 Bitwise Operators (Recall C/C++ 7.7)
+
+## 1. Introduction
+
+Bitwise operators are used to **test, set, clear, or shift individual bits** within a value.
+
+### Applications
+
+* Systems-level programming
+* Device status checking
+* Hardware control
+* Data encoding/decoding
+* Performance optimization
+
+### Supported Data Types
+
+Bitwise operators can be used with:
+
+* `long`
+* `int`
+* `short`
+* `char`
+* `byte`
+
+### Not Supported
+
+Bitwise operations **cannot** be used with:
+
+* `boolean`
+* `float`
+* `double`
+* Class/Object types
+
+---
+
+## 2. Bitwise Operators
+
+| Operator | Meaning                |
+| -------- | ---------------------- |
+| `&`      | Bitwise AND            |
+| `\|`     | Bitwise OR             |
+| `^`      | Bitwise XOR            |
+| `~`      | One's Complement (NOT) |
+| `<<`     | Left Shift             |
+| `>>`     | Right Shift            |
+| `>>>`    | Unsigned Right Shift   |
+
+---
+
+# 3. Bitwise AND (`&`)
+
+### Purpose
+
+Used to **turn bits OFF** or test whether specific bits are set.
+
+### Rule
+
+| A | B | A & B |
+| - | - | ----- |
+| 0 | 0 | 0     |
+| 0 | 1 | 0     |
+| 1 | 0 | 0     |
+| 1 | 1 | 1     |
+
+### Example: Convert Lowercase to Uppercase
+
+```java
+char ch;
+
+for(int i=0; i<10; i++) {
+    ch = (char)('a' + i);
+    System.out.print(ch);
+
+    ch = (char)((int)ch & 65503);
+    System.out.print(ch + " ");
+}
+```
+
+**Output**
+
+```text
+aA bB cC dD eE fF gG hH iI jJ
+```
+
+### Why does it work?
+
+ASCII/Unicode values:
+
+```text
+A = 65
+a = 97
+
+Difference = 32
+```
+
+Binary of 32:
+
+```text
+0010 0000
+```
+
+Only the **6th bit** is ON.
+
+To convert lowercase to uppercase:
+
+* Turn OFF the 6th bit.
+* AND operation achieves this.
+
+### Mask Used
+
+```text
+65503 = 1111 1111 1101 1111
+```
+
+This clears only the 6th bit.
+
+---
+
+## 4. Bitwise OR (`|`)
+
+### Purpose
+
+Used to **turn bits ON**.
+
+### Rule
+
+| A | B | A | B |
+| - | - | ----- |
+| 0 | 0 | 0     |
+| 0 | 1 | 1     |
+| 1 | 0 | 1     |
+| 1 | 1 | 1     |
+
+### Example: Convert Uppercase to Lowercase
+
+```java
+char ch;
+
+for(int i=0; i<10; i++) {
+    ch = (char)('A' + i);
+    System.out.print(ch);
+
+    ch = (char)((int)ch | 32);
+    System.out.print(ch + " ");
+}
+```
+
+**Output**
+
+```text
+Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj
+```
+
+### Why does it work?
+
+```text
+32 = 0000 0000 0010 0000
+```
+
+OR operation turns the 6th bit ON, converting uppercase letters to lowercase.
+
+---
+
+## 5. Using AND to Test a Bit
+
+### Example
+
+```java
+if((status & 8) != 0)
+    System.out.println("Bit 4 is ON");
+```
+
+### Explanation
+
+```text
+8 = 1000
+```
+
+Only the 4th bit is ON.
+
+The condition succeeds only if bit 4 in `status` is also ON.
+
+---
+
+## 6. Displaying Binary Representation of a Byte
+
+### Program
+
+```java
+int t;
+byte val = 123;
+
+for(t = 128; t > 0; t = t/2) {
+    if((val & t) != 0)
+        System.out.print("1 ");
+    else
+        System.out.print("0 ");
+}
+```
+
+### Output
+
+```text
+0 1 1 1 1 0 1 1
+```
+
+### Explanation
+
+The loop checks each bit from left to right using the AND operator and prints:
+
+* `1` if the bit is ON
+* `0` if the bit is OFF
+
+---
+
+# 7. Bitwise XOR (`^`)
+
+### Purpose
+
+Produces `1` only when the compared bits are different.
+
+### Truth Table
+
+| A | B | A ^ B |
+| - | - | ----- |
+| 0 | 0 | 0     |
+| 0 | 1 | 1     |
+| 1 | 0 | 1     |
+| 1 | 1 | 0     |
+
+### Important Property
+
+```text
+(X ^ Y) ^ Y = X
+```
+
+This makes XOR useful for simple encoding and decoding.
+
+---
+
+## 8. XOR Cipher Example
+
+```java
+String msg = "This is a test";
+String encmsg = "";
+String decmsg = "";
+
+int key = 88;
+
+// Encode
+for(int i=0; i<msg.length(); i++)
+    encmsg += (char)(msg.charAt(i) ^ key);
+
+// Decode
+for(int i=0; i<msg.length(); i++)
+    decmsg += (char)(encmsg.charAt(i) ^ key);
+```
+
+### Working
+
+```text
+Original Message
+      ↓ XOR key
+Encrypted Message
+      ↓ XOR same key
+Original Message
+```
+
+> Note: This cipher is very weak and used only for demonstration purposes.
+
+---
+
+# 9. One's Complement (`~`)
+
+### Purpose
+
+Reverses every bit.
+
+### Example
+
+```text
+A      = 1001 0110
+~A     = 0110 1001
+```
+
+Every `1` becomes `0`, and every `0` becomes `1`.
+
+---
+
+# 10. Shift Operators
+
+## Overview
+
+| Operator | Meaning              | General Form |
+| -------- | -------------------- | ------------ |
+| `<<`     | Left Shift           | value << n   |
+| `>>`     | Right Shift          | value >> n   |
+| `>>>`    | Unsigned Right Shift | value >>> n  |
+
+---
+
+## 11. Left Shift (`<<`)
+
+### Syntax
+
+```java
+value << numBits
+```
+
+### Effect
+
+* Shifts all bits left.
+* Inserts `0` on the right.
+
+### Example
+
+```text
+0000 0001 << 1
+=
+0000 0010
+```
+
+### Shortcut
+
+```text
+Left shift by 1 = Multiply by 2
+```
+
+---
+
+## 12. Right Shift (`>>`)
+
+### Syntax
+
+```java
+value >> numBits
+```
+
+### Effect
+
+* Shifts bits right.
+* Preserves sign bit.
+
+### Example
+
+```text
+0000 1000 >> 1
+=
+0000 0100
+```
+
+### Shortcut
+
+```text
+Right shift by 1 = Divide by 2
+```
+
+---
+
+# 13. Negative Numbers and Two's Complement
+
+### Java Representation
+
+Java uses **Two's Complement** for negative numbers.
+
+### Steps
+
+1. Take positive binary number.
+2. Reverse all bits (One's Complement).
+3. Add 1.
+
+### Example: -8 (8-bit)
+
+```text
+8      = 0000 1000
+
+Invert = 1111 0111
+
+Add 1  = 1111 1000
+```
+
+Thus,
+
+```text
+-8 = 1111 1000
+```
+
+### Right Shift of Negative Numbers
+
+```text
+-8 >> 1
+
+1111 1000
+→
+1111 1100
+```
+
+A `1` enters from the left because the sign is preserved.
+
+---
+
+## 14. Unsigned Right Shift (`>>>`)
+
+### Purpose
+
+Removes sign extension.
+
+### Effect
+
+* Always inserts `0` from the left.
+* Also called **Zero-Fill Right Shift**.
+
+### Example
+
+```java
+value >>> n
+```
+
+Useful when shifting:
+
+* Bit patterns
+* Status codes
+* Raw binary data
+
+instead of signed integers.
+
+---
+
+## 15. Loss of Bits During Shifting
+
+Bits shifted out of either side are permanently lost.
+
+```text
+1000 0001 << 1
+
+→ 0000 0010
+```
+
+The leftmost `1` is discarded.
+
+### Note
+
+A shift is **not** a rotate operation.
+
+---
+
+## 16. Shift Demonstration Program
+
+```java
+class ShiftDemo {
+    public static void main(String args[]) {
+
+        int val = 1;
+
+        // Left Shift
+        for(int i=0; i<8; i++) {
+            for(int t=128; t>0; t=t/2) {
+                if((val & t) != 0)
+                    System.out.print("1 ");
+                else
+                    System.out.print("0 ");
+            }
+            System.out.println();
+            val = val << 1;
+        }
+
+        System.out.println();
+
+        val = 128;
+
+        // Right Shift
+        for(int i=0; i<8; i++) {
+            for(int t=128; t>0; t=t/2) {
+                if((val & t) != 0)
+                    System.out.print("1 ");
+                else
+                    System.out.print("0 ");
+            }
+            System.out.println();
+            val = val >> 1;
+        }
+    }
+}
+```
+
+---
+
+# 17. Byte and Short Shifting Warning
+
+### Automatic Promotion
+
+Before shifting:
+
+```java
+byte
+short
+```
+
+are automatically promoted to:
+
+```java
+int
+```
+
+### Consequences
+
+* Result type becomes `int`.
+* Negative values are sign-extended.
+
+Example:
+
+```text
+byte b = -1
+
+11111111
+```
+
+After promotion:
+
+```text
+11111111 11111111 11111111 11111111
+```
+
+Extra `1`s are added at the left.
+
+This affects zero-fill right shifts (`>>>`).
+
+---
+
+# 18. Bitwise Shorthand Assignment Operators
+
+| Standard Form | Shorthand  |
+| ------------- | ---------- |
+| `x = x & y`   | `x &= y`   |
+| `x = x \| y`  | `x \|= y`  |
+| `x = x ^ y`   | `x ^= y`   |
+| `x = x << n`  | `x <<= n`  |
+| `x = x >> n`  | `x >>= n`  |
+| `x = x >>> n` | `x >>>= n` |
+
+### Example
+
+```java
+x = x ^ 127;
+```
+
+Equivalent to:
+
+```java
+x ^= 127;
+```
+
+---
+
+# 19. Quick Summary
+
+### AND (`&`)
+
+* Turn bits OFF
+* Test bits
+
+### OR (`|`)
+
+* Turn bits ON
+
+### XOR (`^`)
+
+* Toggle bits
+* Encoding/Decoding
+
+### NOT (`~`)
+
+* Reverse all bits
+
+### Left Shift (`<<`)
+
+* Shift left
+* Multiply by 2
+
+### Right Shift (`>>`)
+
+* Shift right
+* Divide by 2
+* Preserves sign
+
+### Unsigned Right Shift (`>>>`)
+
+* Shift right
+* Fills with zeros
+* Ignores sign bit
+
+
+
  */
