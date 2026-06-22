@@ -3,19 +3,22 @@
 
 /* -=-=-=-=-=-=-=-=-=-=-=      Bitwise Operators      -=-=-=-=-=-=-=-=-=-=-=
 
+    Bitwise operators are used to test, set, or shift the "individual bits" that make up a value. 
+    
+    Bitwise operations are important to a wide variety of "systems-level programming tasks"
+        where "status information" from a device must be "interrogated" or "constructed".
 
-
-
-
-Bitwise operators are used to test, set, or shift the "individual bits" that make up a value. Bitwise operations are important to a wide variety of systems-level programming tasks in which status information from a device must be interrogated or constructed. 
-    The bitwise operators can be used on values of type long, int, short, char, or byte. 
-    Bitwise operations cannot be used on boolean, float, or double, or class types. 
-
-
-Purpose: Bitwise operators are used to test, set, or shift the individual bits that make up a value.
-Use Cases: Crucial for systems-level programming tasks where status information from a device must be interrogated or constructed.
-Allowed Types: Can be used on long, int, short, char, or byte.
-Disallowed Types: Cannot be used on boolean, float, double, or class types.
+    Bitwise operators can be used with:
+        long, 
+        int, 
+        short, 
+        char, or 
+        byte. 
+    
+    Bitwise operations cannot be used on: 
+        boolean, 
+        float, or double, or 
+        class types. 
 
 
 
