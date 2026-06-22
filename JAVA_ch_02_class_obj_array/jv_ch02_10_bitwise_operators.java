@@ -3,13 +3,56 @@
 
 /* -=-=-=-=-=-=-=-=-=-=-=      Bitwise Operators      -=-=-=-=-=-=-=-=-=-=-=
 
-// ---- rev[12-Jun-2026] ----
 
 
-2.17 Bitwise Operators (Recall C/C++ 7.7)
-Bitwise operators are used to test, set, or shift the individual bits that make up a value. Bitwise operations are important to a wide variety of systems-level programming tasks in which status information from a device must be interrogated or constructed. 
+
+
+Bitwise operators are used to test, set, or shift the "individual bits" that make up a value. Bitwise operations are important to a wide variety of systems-level programming tasks in which status information from a device must be interrogated or constructed. 
     The bitwise operators can be used on values of type long, int, short, char, or byte. 
     Bitwise operations cannot be used on boolean, float, or double, or class types. 
+
+
+Purpose: Bitwise operators are used to test, set, or shift the individual bits that make up a value.
+Use Cases: Crucial for systems-level programming tasks where status information from a device must be interrogated or constructed.
+Allowed Types: Can be used on long, int, short, char, or byte.
+Disallowed Types: Cannot be used on boolean, float, double, or class types.
+
+
+
+## 1. Introduction
+
+Bitwise operators are used to **test, set, clear, or shift individual bits** within a value.
+
+### Applications
+
+* Systems-level programming
+* Device status checking
+* Hardware control
+* Data encoding/decoding
+* Performance optimization
+
+### Supported Data Types
+
+Bitwise operators can be used with:
+
+* `long`
+* `int`
+* `short`
+* `char`
+* `byte`
+
+### Not Supported
+
+Bitwise operations **cannot** be used with:
+
+* `boolean`
+* `float`
+* `double`
+* Class/Object types
+
+---
+// ---- rev[12-Jun-2026] ----
+
 
 Operator    &   |   ^   >>  >>> <<  ~
 
@@ -102,11 +145,11 @@ The bitwise shift operators can be used to perform very fast multiplication or d
 
 Here is the text organized into a clear, pointwise structure with properly formatted code snippets and corrected minor typographical errors (such as the XOR truth table) for better readability.
 2.17 Bitwise Operators (Recall C/C++ 7.7)
+
+
 1. Overview and Allowed Data Types
-Purpose: Bitwise operators are used to test, set, or shift the individual bits that make up a value.
-Use Cases: Crucial for systems-level programming tasks where status information from a device must be interrogated or constructed.
-Allowed Types: Can be used on long, int, short, char, or byte.
-Disallowed Types: Cannot be used on boolean, float, double, or class types.
+
+
 2. List of Bitwise Operators
 Operator
 Result / Name
@@ -346,38 +389,6 @@ class ShiftDemo {
 
 # 2.17 Bitwise Operators (Recall C/C++ 7.7)
 
-## 1. Introduction
-
-Bitwise operators are used to **test, set, clear, or shift individual bits** within a value.
-
-### Applications
-
-* Systems-level programming
-* Device status checking
-* Hardware control
-* Data encoding/decoding
-* Performance optimization
-
-### Supported Data Types
-
-Bitwise operators can be used with:
-
-* `long`
-* `int`
-* `short`
-* `char`
-* `byte`
-
-### Not Supported
-
-Bitwise operations **cannot** be used with:
-
-* `boolean`
-* `float`
-* `double`
-* Class/Object types
-
----
 
 ## 2. Bitwise Operators
 
