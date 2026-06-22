@@ -21,40 +21,38 @@
         class types. 
 
 
+    Applications:
+        Systems-level programming
+        Device status checking
+        Hardware control
+        Data encoding/decoding
+        Performance optimization
 
-## 1. Introduction
 
-Bitwise operators are used to **test, set, clear, or shift individual bits** within a value.
 
-### Applications
+    --------  Bitwise Operators  --------
 
-* Systems-level programming
-* Device status checking
-* Hardware control
-* Data encoding/decoding
-* Performance optimization
+    ------------------------------------
+    Operator    Meaning
+    ------------------------------------
+    &           Bitwise AND           
+    |           Bitwise OR            
+    ^           Bitwise XOR           
+    ~           One's Complement (NOT)
+    <<          Left Shift            
+    >>          Right Shift           
+    >>>         Unsigned Right Shift  
 
-### Supported Data Types
 
-Bitwise operators can be used with:
+----  cp2  ----
 
-* `long`
-* `int`
-* `short`
-* `char`
-* `byte`
 
-### Not Supported
 
-Bitwise operations **cannot** be used with:
 
-* `boolean`
-* `float`
-* `double`
-* Class/Object types
+
 
 ---
-// ---- rev[12-Jun-2026] ----
+// ---- rev[22-Jun-2026] ----
 
 
 Operator    &   |   ^   >>  >>> <<  ~
@@ -392,18 +390,6 @@ class ShiftDemo {
 
 # 2.17 Bitwise Operators (Recall C/C++ 7.7)
 
-
-## 2. Bitwise Operators
-
-| Operator | Meaning                |
-| -------- | ---------------------- |
-| `&`      | Bitwise AND            |
-| `\|`     | Bitwise OR             |
-| `^`      | Bitwise XOR            |
-| `~`      | One's Complement (NOT) |
-| `<<`     | Left Shift             |
-| `>>`     | Right Shift            |
-| `>>>`    | Unsigned Right Shift   |
 
 ---
 
