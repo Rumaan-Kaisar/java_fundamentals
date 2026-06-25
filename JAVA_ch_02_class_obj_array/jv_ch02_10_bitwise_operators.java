@@ -52,7 +52,7 @@
 
 
 ---
-// ---- rev[22-Jun-2026] ----
+// ---- rev[26-Jun-2026] ----
 
 
 
@@ -62,9 +62,11 @@
     
     
     
-    The following program uses & to turn lowercase letter into uppercase by resetting the 6th bit to 0, | to turn uppercase letter into lowercase by resetting the 6th bit to 1. 
 
-[Why 6th bit? : By Unicode/ASCII character set is definition, the lowercase letters are the same as the uppercase ones except that the lowercase ones are greater in value by exactly 32. Therefore, to transform a lowercase letter to uppercase, just turn off the 6th bit, because in binary 32 is 100 000 "only 6th digit from right is 1/on". That is in binary " a=A+100,000" ]
+
+
+
+
 Bitwise AND Bitwise OR
     char ch;
     for(int i=0; i < 10; i++) { ch = (char) ('a' + i);
@@ -226,12 +228,19 @@ Here is the text organized into a clear, pointwise structure with properly forma
                             (e.g., `1001 0110` becomes `0110 1001`).
 
 
-### Practical Example: Case Conversion (Using AND & OR)
-*   **Why the 6th bit?** In the ASCII/Unicode character set, a lowercase letter is exactly 32 greater in value than its uppercase equivalent. In binary, 32 is `100000` (only the 6th digit from the right is 1). Therefore, `a = A + 100000`.
+    Example: Case Conversion (Using AND & OR):
+        The following program uses 
+        '&' to turn lowercase letter into uppercase by resetting the 6th bit to 0, 
+        '|' to turn uppercase letter into lowercase by resetting the 6th bit to 1. 
+
+Why the 6th bit?
+In the ASCII/Unicode character set, a lowercase letter is exactly 32 greater in value than its uppercase equivalent. 
+In binary, 32 is "100000" (only the 6th digit from the right is 1). 
+    Therefore, "a = A + 100000".
 *   **Lowercase to Uppercase:** Turn *off* the 6th bit using AND with `65503` (binary `1111 1111 1101 1111`).
 *   **Uppercase to Lowercase:** Turn *on* the 6th bit using OR with `32` (binary `0000 0000 0010 0000`).
 
-```java
+
 // Lowercase to Uppercase
 char ch;
 for(int i = 0; i < 10; i++) { 
@@ -252,6 +261,12 @@ for(int i = 0; i < 10; i++) {
     System.out.print(ch + " ");  
 }
 // Output: Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj 
+
+
+
+
+
+
 ```
 
 ### Other Uses of Bitwise AND
