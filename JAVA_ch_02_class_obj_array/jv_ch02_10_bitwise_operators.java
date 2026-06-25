@@ -15,7 +15,7 @@
         char, or 
         byte. 
     
-    Bitwise operations cannot be used on: 
+    Disallowed Types: Bitwise operations cannot be used on
         boolean, 
         float, or double, or 
         class types. 
@@ -55,10 +55,7 @@
 // ---- rev[22-Jun-2026] ----
 
 
-Operator    &   |   ^   >>  >>> <<  ~
 
-Result
-    Bitwise AND Bitwise OR  Bitwise XOR Shift right Unsigned shift right    Shift left  One’s complement (unary NOT)
     Bitwise AND, OR, XOR, and NOT: The bitwise operators &, |, ^, and ~ perform the same operations as their Boolean logical equivalents. The difference is that the bitwise operators work on a bit-by-bit basis. 
     You can think of the bitwise AND as a way to turn bits off (and '0' remain off), bitwise OR as a way to turn bits on (and '1' remain on). 
     The following program uses & to turn lowercase letter into uppercase by resetting the 6th bit to 0, | to turn uppercase letter into lowercase by resetting the 6th bit to 1. 
@@ -151,23 +148,6 @@ Here is the text organized into a clear, pointwise structure with properly forma
 1. Overview and Allowed Data Types
 
 
-2. List of Bitwise Operators
-Operator
-Result / Name
-&
-Bitwise AND
-|
-Bitwise OR
-^
-Bitwise XOR (Exclusive OR)
-~
-One’s complement (Unary NOT)
-<<
-Shift left
->>
-Shift right
->>>
-Unsigned shift right (Zero-fill right shift)
 3. Bitwise Logical Operators (&, |, ^, ~)
 Basic Concepts
 Unlike Boolean logical operators, bitwise operators work on a bit-by-bit basis.
@@ -226,24 +206,7 @@ Here is the text organized into a clear, pointwise structure with properly forma
 
 # 2.17 Bitwise Operators (Recall C/C++ 7.7)
 
-## 1. Overview and Allowed Data Types
-*   **Purpose:** Bitwise operators are used to test, set, or shift the individual bits that make up a value.
-*   **Use Cases:** Crucial for systems-level programming tasks where status information from a device must be interrogated or constructed.
-*   **Allowed Types:** Can be used on `long`, `int`, `short`, `char`, or `byte`.
-*   **Disallowed Types:** Cannot be used on `boolean`, `float`, `double`, or class types.
 
-## 2. List of Bitwise Operators
-| Operator | Result / Name |
-| :--- | :--- |
-| `&` | Bitwise AND |
-| `\|` | Bitwise OR |
-| `^` | Bitwise XOR (Exclusive OR) |
-| `~` | One’s complement (Unary NOT) |
-| `<<` | Shift left |
-| `>>` | Shift right |
-| `>>>` | Unsigned shift right (Zero-fill right shift) |
-
----
 
 ## 3. Bitwise Logical Operators (`&`, `|`, `^`, `~`)
 
@@ -937,4 +900,4 @@ x ^= 127;
 
 
 
- */
+*/
