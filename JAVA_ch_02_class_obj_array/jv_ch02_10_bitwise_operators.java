@@ -56,8 +56,12 @@
 
 
 
-    Bitwise AND, OR, XOR, and NOT: The bitwise operators &, |, ^, and ~ perform the same operations as their Boolean logical equivalents. The difference is that the bitwise operators work on a bit-by-bit basis. 
-    You can think of the bitwise AND as a way to turn bits off (and '0' remain off), bitwise OR as a way to turn bits on (and '1' remain on). 
+    Bitwise : The bitwise operators &, |, ^, and ~ 
+    
+    
+    
+    
+    
     The following program uses & to turn lowercase letter into uppercase by resetting the 6th bit to 0, | to turn uppercase letter into lowercase by resetting the 6th bit to 1. 
 
 [Why 6th bit? : By Unicode/ASCII character set is definition, the lowercase letters are the same as the uppercase ones except that the lowercase ones are greater in value by exactly 32. Therefore, to transform a lowercase letter to uppercase, just turn off the 6th bit, because in binary 32 is 100 000 "only 6th digit from right is 1/on". That is in binary " a=A+100,000" ]
@@ -206,15 +210,21 @@ Here is the text organized into a clear, pointwise structure with properly forma
 
 # 2.17 Bitwise Operators (Recall C/C++ 7.7)
 
+// -------- rev[25-Jun-2026]
 
+    ----------------    Bitwise Logical Operators ('&', '|', '^', '~')    ----------------
 
-## 3. Bitwise Logical Operators (`&`, `|`, `^`, `~`)
+    Unlike BOOLEAN logical operators, "BITWISE operators" work on a "bit-by-bit basis".
 
-### Basic Concepts
-*   Unlike Boolean logical operators, bitwise operators work on a **bit-by-bit basis**.
-*   **Bitwise AND (`&`):** Acts as a way to turn bits *off* (0 remains 0).
-*   **Bitwise OR (`|`):** Acts as a way to turn bits *on* (1 remains 1).
-*   **Bitwise NOT (`~`):** The unary one’s complement operator reverses the state of all bits in the operand (e.g., `1001 0110` becomes `0110 1001`).
+    Bitwise AND, OR, XOR, and NOT:
+        They perform the same operations as their Boolean logical equivalents. 
+        The difference is that the bitwise operators work on a "bit-by-bit basis".
+
+    Bitwise AND ('&'):      Acts as a way to turn bits "OFF" (0 remains OFF).
+    Bitwise OR ('|'):       Acts as a way to turn bits "ON" (1 remains ON).
+    Bitwise NOT ('~'):      The unary one's complement operator "reverses the state of all bits" in the operand 
+                            (e.g., `1001 0110` becomes `0110 1001`).
+
 
 ### Practical Example: Case Conversion (Using AND & OR)
 *   **Why the 6th bit?** In the ASCII/Unicode character set, a lowercase letter is exactly 32 greater in value than its uppercase equivalent. In binary, 32 is `100000` (only the 6th digit from the right is 1). Therefore, `a = A + 100000`.
