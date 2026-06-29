@@ -147,11 +147,9 @@ Here is the text organized into a clear, pointwise structure with properly forma
 
 3. Bitwise Logical Operators (&, |, ^, ~)
 Basic Concepts
-Unlike Boolean logical operators, bitwise operators work on a bit-by-bit basis.
-Bitwise AND (&): Acts as a way to turn bits off (0 remains 0).
-Bitwise OR (|): Acts as a way to turn bits on (1 remains 1).
-Bitwise NOT (~): The unary one’s complement operator reverses the state of all bits in the operand (e.g., 1001 0110 becomes 0110 1001).
-Practical Example: Case Conversion (Using AND & OR)
+
+
+
 Why the 6th bit? In the ASCII/Unicode character set, a lowercase letter is exactly 32 greater in value than its uppercase equivalent. In binary, 32 is 100000 (only the 6th digit from the right is 1). Therefore, a = A + 100000.
 Lowercase to Uppercase: Turn off the 6th bit using AND with 65503 (binary 1111 1111 1101 1111).
 Uppercase to Lowercase: Turn on the 6th bit using OR with 32 (binary 0000 0000 0010 0000).
@@ -203,7 +201,7 @@ Here is the text organized into a clear, pointwise structure with properly forma
 
 # 2.17 Bitwise Operators (Recall C/C++ 7.7)
 
-// -------- rev[25-Jun-2026]
+// -------- rev[29-Jun-2026]
 
     ----------------    Bitwise Logical Operators ('&', '|', '^', '~')    ----------------
 
@@ -224,74 +222,91 @@ Here is the text organized into a clear, pointwise structure with properly forma
         '&' to turn lowercase letter into uppercase by resetting the 6th bit to 0, 
         '|' to turn uppercase letter into lowercase by resetting the 6th bit to 1. 
 
-
------ rev below
-
-Why the 6th bit?
-In the ASCII/Unicode character set, a lowercase letter is exactly 32 greater in value than its uppercase equivalent. 
-In binary, 32 is "100000" (only the 6th digit from the right is 1). 
-    Therefore, "a = A + 100000".
-
-    Lowercase to Uppercase: Turn *off* the 6th bit using AND with `65503` (binary `1111 1111 1101 1111`).
-    Uppercase to Lowercase: Turn *on* the 6th bit using OR with `32` (binary `0000 0000 0010 0000`).
-
-
-This technique uses bitwise operations to change the case of ASCII characters by manipulating a single bit. [1, 2, 3] 
-In the ASCII character set, the only difference between an uppercase letter and its lowercase counterpart is the 6th bit (counting from the right, starting at bit 1). [4, 5] 
-## The ASCII Bit Pattern
-Look at how the letters 'A' and 'a' are represented in binary:
-
-* Uppercase 'A': 0100 0001 (Decimal 65)
-* Lowercase 'a': 0110 0001 (Decimal 97) [6, 7] 
-
-Notice that the only difference is the 6th bit from the right. It is 0 for uppercase and 1 for lowercase. [8, 9] 
-------------------------------
-## 1. Lowercase to Uppercase (Turning Bit 6 OFF)
-To force a character to be uppercase, you must ensure the 6th bit becomes 0, while keeping all other bits exactly the same. This is done using a bitwise AND (&) with the mask 65503. [10] 
-
-* The mask 65503 in 16-bit binary is 1111 1111 1101 1111.
-* Notice the 6th bit is 0, and all other bits are 1. [11, 12, 13] 
-
-How the math works on lowercase 'a':
-
-  0000 0000 0110 0001  (Lowercase 'a')
-& 1111 1111 1101 1111  (Mask 65503)
----------------------
-  0000 0000 0100 0001  (Result is 'A')
+                // Lowercase to Uppercase
+                char ch;
+                for(int i = 0; i < 10; i++) { 
+                    ch = (char) ('a' + i);
+                    System.out.print(ch);
+                    
+                    ch = (char) ((int) ch & 65503);     // Turns off the 6th bit
+                    System.out.print(ch + " ");  
+                }
+                // Output: aA bB cC dD eE fF gG hH iI jJ 
 
 
-* 1 & 1 = 1 (All other bits stay the same).
-* 1 & 0 = 0 (The 6th bit is forced to 0). [14, 15, 16] 
-
-------------------------------
-## 2. Uppercase to Lowercase (Turning Bit 6 ON)
-To force a character to be lowercase, you must ensure the 6th bit becomes 1, while keeping all other bits exactly the same. This is done using a bitwise OR (|) with the mask 32. [17] 
-
-* The mask 32 in binary is 0000 0000 0010 0000.
-* Notice the 6th bit is 1, and all other bits are 0. [18, 19, 20, 21] 
-
-How the math works on uppercase 'A':
-
-  0000 0000 0100 0001  (Uppercase 'A')
-| 0000 0000 0010 0000  (Mask 32)
----------------------
-  0000 0000 0110 0001  (Result is 'a')
+                // Uppercase to Lowercase
+                for(int i = 0; i < 10; i++) {
+                    ch = (char) ('A' + i);
+                    System.out.print(ch);
+                    
+                    ch = (char) ((int) ch | 32);        // Turns on the 6th bit
+                    System.out.print(ch + " ");  
+                }
+                // Output: Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj 
 
 
-* Bit | 0 = Bit (All other bits stay the same).
-* 0 | 1 = 1 (The 6th bit is forced to 1). [22, 23, 24] 
+    Why the 6th bit?
+        In the ASCII/Unicode character set, a lowercase letter is exactly 32 greater in value than its uppercase equivalent. 
+        In binary, 32 is "100000" (only the 6th digit from the right is 1). 
+            Therefore, "a = A + 100000".
 
-------------------------------
-## Why use 65503 instead of 223?
-The number 65503 is a 16-bit mask. If you are working strictly with standard 8-bit ASCII characters, you will often see developers use 223 (binary 1101 1111) instead. Both serve the exact same purpose of clearing the 6th bit.
-If you want, tell me:
-
-* What programming language you are using
-* If you want to see a code example (like in C, C++, or Python)
-
-I can provide the exact syntax to implement this in your project.
+            Lowercase to Uppercase: Turn *off* the 6th bit using AND with `65503` (binary `1111 1111 1101 1111`).
+            Uppercase to Lowercase: Turn *on* the 6th bit using OR with `32` (binary `0000 0000 0010 0000`).
 
 
+    The ASCII Bit Pattern:
+        Look at how the letters 'A' and 'a' are represented in binary:
+
+            Uppercase 'A': 0100 0001 (Decimal 65)
+            Lowercase 'a': 0110 0001 (Decimal 97)
+
+        Notice that the only difference is the 6th bit from the right. 
+        It is 0 for uppercase and 1 for lowercase.
+
+
+        Lowercase to Uppercase (Turning Bit 6 OFF):
+            For uppercase, you must ensure the 6th bit becomes 0, while keeping all other bits exactly the same. 
+            This is done using a bitwise AND (&) with the "mask 65503".
+
+                The mask 65503 in 16-bit binary is 1111 1111 1101 1111.
+                Notice the 6th bit is 0, and all other bits are 1. [11, 12, 13] 
+
+                How the math works on lowercase 'a':
+
+                    0000 0000 0110 0001  (Lowercase 'a')
+                & 1111 1111 1101 1111  (Mask 65503)
+                    ---------------------
+                    0000 0000 0100 0001  (Result is 'A')
+
+                1 & 1 = 1 (All other bits stay the same).
+                1 & 0 = 0 (The 6th bit is forced to 0). [14, 15, 16] 
+
+
+        Uppercase to Lowercase (Turning Bit 6 ON):
+            For lowercase, you must ensure the 6th bit becomes 1, while keeping all other bits exactly the same. 
+            This is done using a bitwise OR (|) with the mask 32.
+
+                The mask 32 in binary is 0000 0000 0010 0000.
+                Notice the 6th bit is 1, and all other bits are 0.
+
+                How the math works on uppercase 'A':
+
+                    0000 0000 0100 0001  (Uppercase 'A')
+                | 0000 0000 0010 0000  (Mask 32)
+                    ---------------------
+                    0000 0000 0110 0001  (Result is 'a')
+
+
+                Bit | 0 = Bit (All other bits stay the same).
+                0 | 1 = 1 (The 6th bit is forced to 1). [22, 23, 24] 
+
+
+    Why use 65503 instead of 223?
+        The number 65503 is a 16-bit mask. 
+        If you are working strictly with standard 8-bit ASCII characters, 
+        you will often see developers use 223 (binary 1101 1111) instead. 
+
+        Both serve the exact same purpose of clearing the 6th bit.
 
 
 
@@ -301,26 +316,9 @@ I can provide the exact syntax to implement this in your project.
 
 
 
-// Lowercase to Uppercase
-char ch;
-for(int i = 0; i < 10; i++) { 
-    ch = (char) ('a' + i);
-    System.out.print(ch);
-    // Turns off the 6th bit
-    ch = (char) ((int) ch & 65503); 
-    System.out.print(ch + " ");  
-}
-// Output: aA bB cC dD eE fF gG hH iI jJ 
 
-// Uppercase to Lowercase
-for(int i = 0; i < 10; i++) {
-    ch = (char) ('A' + i);
-    System.out.print(ch);
-    // Turns on the 6th bit
-    ch = (char) ((int) ch | 32); 
-    System.out.print(ch + " ");  
-}
-// Output: Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj 
+
+
 
 
 
