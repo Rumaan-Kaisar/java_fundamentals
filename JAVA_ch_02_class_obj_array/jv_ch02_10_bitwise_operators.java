@@ -150,16 +150,13 @@ Basic Concepts
 
 
 
-Why the 6th bit? In the ASCII/Unicode character set, a lowercase letter is exactly 32 greater in value than its uppercase equivalent. In binary, 32 is 100000 (only the 6th digit from the right is 1). Therefore, a = A + 100000.
-Lowercase to Uppercase: Turn off the 6th bit using AND with 65503 (binary 1111 1111 1101 1111).
-Uppercase to Lowercase: Turn on the 6th bit using OR with 32 (binary 0000 0000 0010 0000).
-java
-1234567891011121314151617181920
 Other Uses of Bitwise AND
 Checking if a specific bit is on: Use AND with a mask. For example, to check if bit 4 is set in a status variable, use if((status & 8) != 0). (8 is used because its binary is 1000, meaning only the 4th bit is on).
 Displaying a byte in binary format: Successively test each bit using a loop and bitwise AND.
 java
 1234567
+
+
 Practical Example: Simple Cipher (Using XOR)
 XOR Logic: Sets a bit on if and only if the bits being compared are different (i.e., 1^0=1, 0^1=1, 1^1=0, 0^0=0).
 Reversibility: If X is XORed with Y, and the result is XORed with Y again, the original X is produced: (X ^ Y) ^ Y = X.
@@ -327,7 +324,8 @@ Here is the text organized into a clear, pointwise structure with properly forma
 
 ```
 
-### Other Uses of Bitwise AND
+--------  Other Uses of Bitwise AND  --------
+
 *   **Checking if a specific bit is on:** Use AND with a mask. For example, to check if bit 4 is set in a `status` variable, use `if((status & 8) != 0)`. (8 is used because its binary is `1000`, meaning only the 4th bit is on).
 *   **Displaying a byte in binary format:** Successively test each bit using a loop and bitwise AND.
 
