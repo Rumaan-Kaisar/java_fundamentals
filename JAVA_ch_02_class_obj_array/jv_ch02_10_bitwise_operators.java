@@ -964,20 +964,20 @@ x ^= 127;
 
 ### Left Shift (`<<`)
 
-* Shift left
-* Multiply by 2
+    * Shift left
+    * Multiply by 2
 
 ### Right Shift (`>>`)
 
-* Shift right
-* Divide by 2
-* Preserves sign
+    * Shift right
+    * Divide by 2
+    * Preserves sign
 
 ### Unsigned Right Shift (`>>>`)
 
-* Shift right
-* Fills with zeros
-* Ignores sign bit
+    * Shift right
+    * Fills with zeros
+    * Ignores sign bit
 
 
 
