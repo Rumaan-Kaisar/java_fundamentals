@@ -70,8 +70,12 @@ Bitwise AND Bitwise OR
     // This statement turns on the 6th bit.
                        ch = (char) ((int) ch | 32); 
                        System.out.print(ch + " ");  }
-Output:     aA bB cC dD eE fF gG hH iI jJ   Output:     Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj
-65,503 is 1111 1111 1101 1111 in binary. Thus, the AND operation leaves all bits in ch unchanged except for the 6th one, which is set to 0. 32 is 0000 0000 0010 0000 in binary. Thus, the OR operation leaves all bits in ch unchanged except for the 6th one, which is set to 1.
+
+Output:     aA bB cC dD eE fF gG hH iI jJ   
+Output:     Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj
+65,503 is 1111 1111 1101 1111 in binary. 
+
+Thus, the AND operation leaves all bits in ch unchanged except for the 6th one, which is set to 0. 32 is 0000 0000 0010 0000 in binary. Thus, the OR operation leaves all bits in ch unchanged except for the 6th one, which is set to 1.
 
     Other usage of bitwise AND:     The AND operator is also useful when you want to determine whether a bit is on or off. For example, following determines whether bit 4 in status is set:
 if((status & 8)!= 0) System.out.println("bit 4 is on");
