@@ -1,6 +1,11 @@
 
 // jv_ch02_10_bitwise_operators        2.17        166.5-176.8
 
+asdtfuyvsuts
+    eybuiedv
+    eudbeub
+
+
 /* -=-=-=-=-=-=-=-=-=-=-=      Bitwise Operators      -=-=-=-=-=-=-=-=-=-=-=
 
     Bitwise operators are used to test, set, or shift the "individual bits" that make up a value. 
